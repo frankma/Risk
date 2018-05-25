@@ -7,4 +7,5 @@ class TestCSRandom(TestCase):
     seed = 99999
     rand = CSRandom(seed)
     print(rand.seed_array)
+    print(len(rand.seed_array))
     pass

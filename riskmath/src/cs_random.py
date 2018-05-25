@@ -2,9 +2,8 @@ import numpy as np
 
 
 class CSRandom(object):
-    BIG_INT = 2147483647
-    Z = 0
-    M_SEED = 161803398
+    __BIG_INT = 2147483647
+    __M_SEED = 161803398
 
     def __init__(self, seed: int):
         self.seed = seed
@@ -12,7 +11,7 @@ class CSRandom(object):
 
     def __gen_seed_array(self):
         arr = np.zeros(55, dtype=int)
-        arr[0], arr[1] = self.M_SEED - self.seed, 1
+        arr[0], arr[1] = self.__M_SEED - self.seed, 1
         for idx in range(2, 55):
             arr[idx] = self.__bound_int(arr[idx - 2] - arr[idx - 1])
         arr = arr[::-1]
@@ -25,4 +24,4 @@ class CSRandom(object):
         return arr
 
     def __bound_int(self, value: int):
-        return value if value > 0 else value + self.BIG_INT
+        return value if value > 0 else value + self.__BIG_INT
