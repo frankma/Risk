@@ -25,4 +25,4 @@ class CSRandom(object):
         return arr
 
     def __bound_int(self, value: int):
-        return value if value > 0 else value + self.M_SEED
+        return value if value > 0 else value + self.BIG_INT

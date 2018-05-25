@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from math.src.cs_random import CSRandom
+from riskmath.src.cs_random import CSRandom
 
 
 class TestCSRandom(TestCase):
