@@ -13,18 +13,18 @@ class CSRandom(object):
         self.__index = 0
 
     def __gen_seed_array(self):
-        arr = np.zeros(self.__RANGE, dtype=int)
-        arr[0], arr[1] = self.__BIG_SEED - self.seed, 1
+        seed_array = np.zeros(self.__RANGE, dtype=int)
+        seed_array[0], seed_array[1] = self.__BIG_SEED - self.seed, 1
         for idx in range(2, self.__RANGE):
-            arr[idx] = self.__bound_int(arr[idx - 2] - arr[idx - 1])
-        arr = arr[::-1]
+            seed_array[idx] = self.__bound_int(seed_array[idx - 2] - seed_array[idx - 1])
+        seed_array = seed_array[::-1]
         shuffle_order = np.array([(self.__BREAK * x) % self.__RANGE - 1 for x in range(self.__RANGE)], dtype=int)[::-1]
-        arr = arr[shuffle_order]
+        seed_array = seed_array[shuffle_order]
         shuffle_order = [(x + 31) % self.__RANGE for x in range(self.__RANGE)]
         for _ in range(4):
             for idx in range(self.__RANGE):
-                arr[idx] = self.__bound_int(arr[idx] - arr[shuffle_order[idx]])
-        return arr
+                seed_array[idx] = self.__bound_int(seed_array[idx] - seed_array[shuffle_order[idx]])
+        return seed_array
 
     def next_uniform(self, n: int = 1):
         pos_vec = np.zeros(n, dtype=float)
