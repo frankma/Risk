@@ -1,2 +1,0 @@
-class RiskEngine(object):
-    pass
