@@ -1,6 +1,6 @@
 import numpy as np
 from riskfactor.src.risk_factor_engine import RiskFactorEngine
-from riskmath.src.cs_random import CSRandom
+from riskmath.src.utils import CSRandom
 
 
 class RiskFactorEngineTCopula(RiskFactorEngine):
