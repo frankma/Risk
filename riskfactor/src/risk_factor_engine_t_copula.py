@@ -1,12 +1,13 @@
 import numpy as np
+
 from riskfactor.src.risk_factor_engine import RiskFactorEngine
-from riskmath.src.utils import CSRandom
+from riskmath.src.utils import CSRandom, Utils
 
 
 class RiskFactorEngineTCopula(RiskFactorEngine):
-    def __init__(self, n_path: int, co_dep_data_size: int, co_dep_data_shift: int, decay_rate: float, seed: int = 99999,
-                 dof: int = 4, num_draw: int = 30):
-        super().__init__(n_path)
+    def __init__(self, num_path: int, co_dep_data_size: int, co_dep_data_shift: int, decay_rate: float,
+                 seed: int = 99999, dof: int = 4, num_draw: int = 30):
+        super().__init__(num_path)
         self._co_dep_data_size = co_dep_data_size
         self._co_dep_data_shift = co_dep_data_shift
         self._decay_rate = decay_rate
@@ -35,7 +36,7 @@ class RiskFactorEngineTCopula(RiskFactorEngine):
         draw_sign[1::2] *= -1
         return draw_sign
 
-    def gen_rank(self, co_dep_data: np.ndarray):
+    def generate_rank(self, co_dep_data: np.ndarray):
         if np.shape(co_dep_data) != (self._co_dep_data_size,):
             raise ValueError('expect data shape in %i' % self._co_dep_data_size)
         co_dep_draw = np.sum(co_dep_data[self._t_indices].reshape((self._num_draw, self.num_path)), axis=0)
@@ -47,16 +48,18 @@ class RiskFactorEngineTCopula(RiskFactorEngine):
         rank[temp] = np.arange(co_dep_draw.__len__())
         return rank
 
-    def gen_marginal_dist(self, time_series: np.ndarray):
+    def generate_marginal_dist(self, time_series: np.ndarray):
         time_series_vol_adj, vol = RiskFactorEngineTCopula.volatility_filer(time_series, self._decay_rate)
         vol_adj = np.std(time_series_vol_adj)
-        marginal_dist = np.sort(time_series_vol_adj / vol_adj)
+        percentiles = [x * 100 for x in np.linspace(0.5 / self.num_path, 1.0 - 0.5 / self.num_path, num=self.num_path)]
+        marginal_dist = Utils.percentile(time_series_vol_adj / vol_adj, percentiles=percentiles)
+        return marginal_dist
         pass
 
     @staticmethod
     def volatility_filer(time_series: np.ndarray, decay_rate: float, volatility_floor: float = 1.0e-4):
-        if decay_rate >= 1.0 or time_series.__len__():
-            return time_series, np.std(time_series)
+        if decay_rate >= 1.0 or time_series.__len__() < 30:
+            return time_series, np.std(time_series, ddof=1)
         else:
             vol_flr = volatility_floor * np.std(time_series)
             vols = np.ones(np.shape(time_series)) * np.sqrt(np.average(np.square(time_series[0:28])))

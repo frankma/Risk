@@ -2,6 +2,24 @@ import numpy as np
 
 
 class Utils(object):
+    @staticmethod
+    def percentile(source_array: list, percentiles: list):
+        vec = np.array(source_array)
+        vec = vec.sort()
+        pct = np.array(percentiles) / 100.0
+        if np.any(pct > 1.0) or np.any(pct < 0.0):
+            raise ValueError('percentile should between 0 and 100, inclusive.')
+
+        shift = 0.5 / vec.size
+        interp_pos = (pct - shift).__mul__(vec.size)
+        interp_idx = interp_pos.astype(int)
+        interp_idx = np.maximum(np.minimum(interp_idx, vec.size - 2), 0)
+        interp_weight = interp_pos - interp_idx
+        projected_array = vec[interp_idx] + interp_weight * (vec[interp_idx + 1] - vec[interp_idx])
+        projected_array[pct < shift] = vec[0]  # left tail extrapolation
+        projected_array[pct > shift] = vec[-1]  # right tail extrapolation
+        return projected_array
+
     pass
 
 
@@ -43,3 +61,5 @@ class CSRandom(object):
 
     def __bound_int(self, value: int):
         return value if value > 0 else value + self.__BIG_INT
+
+    pass
