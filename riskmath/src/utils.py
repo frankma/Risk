@@ -5,7 +5,7 @@ class Utils(object):
     @staticmethod
     def percentile(source_array: list, percentiles: list):
         vec = np.array(source_array)
-        vec = vec.sort()
+        vec.sort()
         pct = np.array(percentiles) / 100.0
         if np.any(pct > 1.0) or np.any(pct < 0.0):
             raise ValueError('percentile should between 0 and 100, inclusive.')
@@ -17,7 +17,7 @@ class Utils(object):
         interp_weight = interp_pos - interp_idx
         projected_array = vec[interp_idx] + interp_weight * (vec[interp_idx + 1] - vec[interp_idx])
         projected_array[pct < shift] = vec[0]  # left tail extrapolation
-        projected_array[pct > shift] = vec[-1]  # right tail extrapolation
+        projected_array[pct > (1.0 - shift)] = vec[-1]  # right tail extrapolation
         return projected_array
 
     pass
