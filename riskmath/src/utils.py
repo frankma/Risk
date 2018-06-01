@@ -63,3 +63,44 @@ class CSRandom(object):
         return value if value > 0 else value + self.__BIG_INT
 
     pass
+
+
+class GeneralizedParetoDistribution(object):
+    def __init__(self, xi: float, mu: float = 0.0, sig: float = 1.0):
+        self._xi = xi
+        self._mu = mu
+        self._sig = sig
+        if self._xi < 0.0:
+            raise AttributeError('expect non-negative xi')
+        if self._sig <= 0.0:
+            raise AttributeError('expect volatility greater than zero')
+        pass
+
+    def cdf(self, x_array: list):
+        vec = (np.array(x_array, dtype=float) - self._mu) / self._sig
+        vec = np.maximum(vec, 0.0)
+        if abs(self._xi) < 1e-12:
+            vec = 1.0 - np.exp(-vec)
+        else:
+            vec = 1.0 - np.power(1.0 + self._xi * vec, -1.0 / self._xi)
+        return vec
+
+    def ppf(self, u_array: list):
+        vec = np.array(u_array, dtype=float)
+        if np.any(vec < 0.0) or np.any(vec >= 1.0):
+            raise AttributeError('inverse array must be in [0.0, 1.0)')
+        vec = -np.log(1.0 - vec)
+        if abs(self._xi) > 1e-12:
+            vec = (np.exp(self._xi * vec) - 1.0) / self._xi
+        return vec * self._sig + self._mu
+
+    def fit(self, x_array: list):
+        vec = np.array(x_array, dtype=float)
+        vec.sort()
+
+        return self._xi, self._mu, self._sig
+
+    def __calculate_cost(self):
+        pass
+
+    pass
