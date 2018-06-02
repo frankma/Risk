@@ -61,7 +61,7 @@ class RiskFactorEngineTCopula(RiskFactorEngine):
         if decay_rate >= 1.0 or time_series.__len__() < 30:
             return time_series, np.std(time_series, ddof=1)
         else:
-            vol_flr = volatility_floor * np.std(time_series)
+            vol_flr = volatility_floor * np.std(time_series, ddof=1)
             vols = np.ones(np.shape(time_series)) * np.sqrt(np.average(np.square(time_series[0:28])))
             for idx in range(30, time_series.__len__()):
                 roll_var = (1.0 - decay_rate) * (time_series[idx - 1] ** 2) + decay_rate * (vols[idx - 1] ** 2)

@@ -29,7 +29,7 @@ class TestGeneralizedParetoDistribution(TestCase):
         model = GeneralizedParetoDistribution(xi, mu, sig)
         model_sp = genpareto(c=xi, loc=mu, scale=sig)
 
-        xs = [x for x in np.linspace(0.0, 10.0)]
+        xs = np.linspace(0.0, 10.0)
 
         vec = model.cdf(xs)
         vec_sp = model_sp.cdf(xs)
@@ -47,7 +47,7 @@ class TestGeneralizedParetoDistribution(TestCase):
         model = GeneralizedParetoDistribution(xi, mu, sig)
         model_sp = genpareto(c=xi, loc=mu, scale=sig)
 
-        us = [x for x in np.linspace(0.01, 0.99)]
+        us = np.linspace(0.01, 0.99)
 
         vec = model.ppf(us)
         vec_sp = model_sp.ppf(us)

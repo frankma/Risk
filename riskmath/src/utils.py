@@ -76,23 +76,24 @@ class GeneralizedParetoDistribution(object):
             raise AttributeError('expect volatility greater than zero')
         pass
 
-    def cdf(self, x_array: list):
-        vec = (np.array(x_array, dtype=float) - self._mu) / self._sig
-        vec = np.maximum(vec, 0.0)
+    def cdf(self, x_vec: np.ndarray):
+        u_vec = (x_vec - self._mu) / self._sig
+        u_vec = np.maximum(u_vec, 0.0)
         if abs(self._xi) < 1e-12:
-            vec = 1.0 - np.exp(-vec)
+            u_vec = 1.0 - np.exp(-u_vec)
         else:
-            vec = 1.0 - np.power(1.0 + self._xi * vec, -1.0 / self._xi)
-        return vec
+            u_vec = 1.0 - np.power(1.0 + self._xi * u_vec, -1.0 / self._xi)
+        return u_vec
 
-    def ppf(self, u_array: list):
-        vec = np.array(u_array, dtype=float)
-        if np.any(vec < 0.0) or np.any(vec >= 1.0):
+    def ppf(self, u_vec: np.ndarray):
+        x_vec = np.array(u_vec, dtype=float)
+        if np.any(x_vec < 0.0) or np.any(x_vec >= 1.0):
             raise AttributeError('inverse array must be in [0.0, 1.0)')
-        vec = -np.log(1.0 - vec)
-        if abs(self._xi) > 1e-12:
-            vec = (np.exp(self._xi * vec) - 1.0) / self._xi
-        return vec * self._sig + self._mu
+        if abs(self._xi) < 1e-12:
+            x_vec = -np.log(1.0 - x_vec)
+        else:
+            x_vec = (np.power(1.0 - x_vec, -self._xi) - 1.0) / self._xi
+        return x_vec * self._sig + self._mu
 
     def fit(self, x_array: list):
         vec = np.array(x_array, dtype=float)
