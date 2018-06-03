@@ -56,3 +56,9 @@ class TestGeneralizedParetoDistribution(TestCase):
             self.assertAlmostEqual(vec[idx], vec_sp[idx], delta=1e-10)
 
         pass
+
+    def test_fit_given_mu(self):
+
+        pass
+
+    pass
