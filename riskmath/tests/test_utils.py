@@ -3,7 +3,7 @@ from unittest import TestCase
 import numpy as np
 from scipy.stats import genpareto
 
-from riskmath.src.utils import GeneralizedParetoDistribution
+from riskmath.src.utils import GenParetoDist
 
 
 class TestUtils(TestCase):
@@ -26,7 +26,7 @@ class TestGeneralizedParetoDistribution(TestCase):
         mu = 0.05
         sig = 0.5
 
-        model = GeneralizedParetoDistribution(xi, mu, sig)
+        model = GenParetoDist(xi, mu, sig)
         model_sp = genpareto(c=xi, loc=mu, scale=sig)
 
         xs = np.linspace(0.0, 10.0)
@@ -44,7 +44,7 @@ class TestGeneralizedParetoDistribution(TestCase):
         mu = 0.05
         sig = 0.5
 
-        model = GeneralizedParetoDistribution(xi, mu, sig)
+        model = GenParetoDist(xi, mu, sig)
         model_sp = genpareto(c=xi, loc=mu, scale=sig)
 
         us = np.linspace(0.01, 0.99)
@@ -57,7 +57,8 @@ class TestGeneralizedParetoDistribution(TestCase):
 
         pass
 
-    def test_fit_given_mu(self):
+    def test_fit_given_loc(self):
+
 
         pass
 
