@@ -98,11 +98,16 @@ class GeneralizedParetoDistribution(object):
                      xi_guess: float = 1e-10):
 
         model = GeneralizedParetoDistribution(xi=xi_guess, mu=mu, sig=sig_guess)
-        err = model.__calculate_cost()
+        err = model.__calculate_cost(x_array)
 
         return model
 
-    def __calculate_cost(self):
-        return 0.0
+    def __calculate_cost(self, x_array: np.array):
+        error_array = (x_array - self._mu) / self._sig
+        error_array = np.log(1.0 - self._xi * error_array)
+        mle_val = np.sum(error_array) * (1.0 + 1.0 / self._xi) + np.log(self._sig) * x_array.size
+        if self._xi < 0.0:
+            mle_val += 10.0 * np.max(np.max(error_array) + self._sig / self._xi, 0.0)
+        return mle_val
 
     pass
