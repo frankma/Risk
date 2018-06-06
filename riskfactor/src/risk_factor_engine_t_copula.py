@@ -1,10 +1,10 @@
 import numpy as np
 
 from riskfactor.src.risk_factor_engine import RiskFactorEngine
-from riskmath.src.utils import CSRandom, Utils
+from riskmath.src.utils import Utils, CSRandom, GenParetoDist
 
 
-class RiskFactorEngineTCopula(RiskFactorEngine):
+class RFETCopula(RiskFactorEngine):
     def __init__(self, num_path: int, co_dep_data_size: int, co_dep_data_shift: int, decay_rate: float,
                  seed: int = 99999, dof: int = 4, num_draw: int = 30):
         super().__init__(num_path)
@@ -48,13 +48,40 @@ class RiskFactorEngineTCopula(RiskFactorEngine):
         rank[temp] = np.arange(co_dep_draw.__len__())
         return rank
 
-    def generate_marginal_dist(self, time_series: np.ndarray):
-        time_series_vol_adj, vol = RiskFactorEngineTCopula.volatility_filer(time_series, self._decay_rate)
-        vol_adj = np.std(time_series_vol_adj)
-        percentiles = [x * 100 for x in np.linspace(0.5 / self.num_path, 1.0 - 0.5 / self.num_path, num=self.num_path)]
-        marginal_dist = Utils.percentile(time_series_vol_adj / vol_adj, percentiles=percentiles)
-        return marginal_dist
-        pass
+    def generate_marginal_dist(self, time_series: np.ndarray,
+                               left_tail_percentage: float = 1.0, right_tail_percentage: float = 99.0):
+        time_series_vol_adj, vol = RFETCopula.volatility_filer(time_series, self._decay_rate)
+        vol_adj = np.std(time_series_vol_adj, ddof=1)
+        time_series_vol_adj /= vol_adj
+
+        left_tail_cutoff = Utils.percentile(time_series_vol_adj, [left_tail_percentage])[0]
+        left_tail = time_series_vol_adj[time_series_vol_adj < left_tail_cutoff]
+        left_tail_model = GenParetoDist.fit_given_loc(left_tail, loc=left_tail_cutoff)
+
+        right_tail_cutoff = Utils.percentile(time_series_vol_adj, [right_tail_percentage])[0]
+        right_tail = time_series_vol_adj[time_series_vol_adj > right_tail_cutoff]
+        right_tail_model = GenParetoDist.fit_given_loc(right_tail, loc=right_tail_cutoff)
+
+        percentiles = np.linspace(0.5 / self.num_path, 1.0 - 0.5 / self.num_path, num=self.num_path) * 100.0
+
+        left_vec_idx = percentiles < left_tail_percentage
+        right_vec_idx = percentiles > right_tail_percentage
+        mid_vec_idx = np.logical_not(np.logical_or(left_vec_idx, right_vec_idx))
+
+        marginal_dist = np.zeros(self.num_path)
+        percentiles_left = percentiles[left_vec_idx]
+        percentiles_left /= left_tail_percentage
+        marginal_dist[left_vec_idx] = left_tail_model.ppf(u_array=percentiles_left)
+
+        percentiles_right = percentiles_left[right_vec_idx]
+        percentiles_right -= percentiles_right
+        percentiles_right /= 100.0 - percentiles_right
+        marginal_dist[right_vec_idx] = right_tail_model.ppf(u_array=percentiles_right)
+
+        percentiles_mid = [x for x in percentiles[mid_vec_idx]]
+        marginal_dist[mid_vec_idx] = Utils.percentile(time_series_vol_adj, percentiles=percentiles_mid)
+
+        return marginal_dist * vol_adj
 
     @staticmethod
     def volatility_filer(time_series: np.ndarray, decay_rate: float, volatility_floor: float = 1.0e-4):
