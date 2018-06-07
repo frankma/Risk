@@ -3,10 +3,10 @@ import numpy as np
 
 class Utils(object):
     @staticmethod
-    def percentile(source_array: list, percentiles: list):
-        vec = np.array(source_array)
+    def percentile(source_array: np.ndarray, percentiles: list):
+        vec = np.array(source_array, dtype=float)
         vec.sort()
-        pct = np.array(percentiles) / 100.0
+        pct = np.array(percentiles, dtype=float) / 100.00
         if np.any(pct > 1.0) or np.any(pct < 0.0):
             raise ValueError('percentile should between 0 and 100, inclusive.')
 
@@ -106,6 +106,8 @@ class GenParetoDist(object):
             sign = 1
         else:
             raise ValueError('expect data array to be singled sided to loc')
+        vec *= sign
+        vec.sort()
 
         cost = 100.0
         step_relative = scale_guess / 10.0
@@ -115,34 +117,38 @@ class GenParetoDist(object):
         xi = xi_guess
         xi_step = 10.0
         iter_count = 0
-        nll = GenParetoDist._calc_nll(x_array, loc, scale, xi)
+
+        nll = GenParetoDist.__calc_nll(x_array, scale, xi)
 
         while cost > cost_threshold and max(abs(xi_step), abs(scale_step)) > step_threshold and iter_count < iter_max:
-            scale_slope = (GenParetoDist._calc_nll(x_array, loc, scale + shock, xi) - nll) / shock
-            xi_slope = (GenParetoDist._calc_nll(x_array, loc, scale, xi + shock) - nll) / shock
+            scale_slope = (GenParetoDist.__calc_nll(x_array, scale + shock, xi) - nll) / shock
+            xi_slope = (GenParetoDist.__calc_nll(x_array, scale, xi + shock) - nll) / shock
             slope_norm = max(abs(scale_slope), abs(xi_slope))
+
             step_length = step_absolute if abs(xi_slope) == abs(slope_norm) else step_relative
             scale_step = scale_slope / slope_norm * step_length
             xi_step = xi_slope / slope_norm * step_length
+
             scale_descent = scale - scale_step if scale > abs(scale_step) else scale
-            xi_descent = xi - xi_step if abs(xi - xi_step) > 1e-10 else 1e-10
-            xi_descent = min(xi_descent, 1.0)
-            nll_descent = GenParetoDist._calc_nll(x_array, loc, scale_descent, xi_descent)
-            cost = abs(nll - nll_descent)
+            xi_descent = min(xi - xi_step if abs(xi - xi_step) > 1e-10 else 1e-10, 1.0)
+            nll_descent = GenParetoDist.__calc_nll(x_array, scale_descent, xi_descent)
+
             if nll_descent > nll:
                 step_relative /= 2.0
                 step_absolute /= 2.0
             else:
                 scale = scale_descent
                 xi = xi_descent
+                cost = abs(nll - nll_descent)
                 nll = nll_descent
+
             iter_count += 1
-        model = GenParetoDist(xi=xi, loc=loc, scale=scale, sign=sign)
-        return model
+
+        return GenParetoDist(xi=xi, loc=loc, scale=scale, sign=sign)
 
     @staticmethod
-    def _calc_nll(x_array: np.array, loc: float, scale: float, xi: float):
-        err_vec = np.log(1.0 + xi * (x_array - loc) / scale)
+    def __calc_nll(x_array_loc_adjusted: np.array, scale: float, xi: float):
+        err_vec = np.log(1.0 + xi * x_array_loc_adjusted / scale)
         nll = np.sum(err_vec) * (1.0 + 1.0 / xi) if (abs(xi) > 1e-12) else np.sum(err_vec)
         nll += np.log(scale) * err_vec.size
         if xi < 0.0:
