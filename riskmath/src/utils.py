@@ -66,48 +66,48 @@ class CSRandom(object):
 
 
 class GenParetoDist(object):
-    def __init__(self, xi: float, loc: float = 0.0, scale: float = 1.0, sign: float = 1.0):
+    def __init__(self, xi: float, location: float = 0.0, scale: float = 1.0, direction: float = 1.0):
         self._xi = xi
-        self._loc = loc
+        self._location = location
         self._scale = scale
-        self._sign = sign
+        self._direction = direction
         if self._scale <= 0.0:
             raise AttributeError('expect volatility greater than zero')
-        if abs(abs(sign) - 1) > 1e-12:
-            raise AttributeError('sign should be either 1 or -1')
+        if abs(abs(direction) - 1) > 1e-12:
+            raise AttributeError('direction must be either 1 or -1')
         pass
 
-    def cdf(self, x_array: np.ndarray):
-        u_array = np.maximum((x_array - self._loc) / self._scale, 0.0) * self._sign
+    def cdf(self, x_arr: np.ndarray):
+        u_arr = np.maximum((x_arr - self._location) / self._scale, 0.0) * self._direction
         if abs(self._xi) < 1e-12:
-            u_array = 1.0 - np.exp(-u_array)
+            u_arr = 1.0 - np.exp(-u_arr)
         else:
-            u_array = 1.0 - np.power(1.0 + self._xi * u_array, -1.0 / self._xi)
-        return u_array
+            u_arr = 1.0 - np.power(1.0 + self._xi * u_arr, -1.0 / self._xi)
+        return u_arr
 
-    def ppf(self, u_array: np.ndarray):
-        if np.any(u_array < 0.0) or np.any(u_array >= 1.0):
+    def ppf(self, u_arr: np.ndarray):
+        if np.any(u_arr < 0.0) or np.any(u_arr >= 1.0):
             raise AttributeError('inverse array must be in [0.0, 1.0)')
         if abs(self._xi) < 1e-12:
-            x_array = -np.log(1.0 - np.array(u_array, dtype=float))
+            x_arr = -np.log(1.0 - np.array(u_arr, dtype=float))
         else:
-            x_array = (np.power(1.0 - np.array(u_array, dtype=float), -self._xi) - 1.0) / self._xi
-        x_array = x_array if self._sign > 0.0 else x_array[::-1]
-        return x_array * self._scale * self._sign + self._loc
+            x_arr = (np.power(1.0 - np.array(u_arr, dtype=float), -self._xi) - 1.0) / self._xi
+        x_arr = x_arr if self._direction > 0.0 else x_arr[::-1]
+        return x_arr * self._scale * self._direction + self._location
 
     @staticmethod
-    def fit_given_loc(x_array: np.array, loc: float = 0.0, scale_guess: float = 1.0, xi_guess: float = 1e-10,
+    def fit_given_loc(x_arr: np.array, loc: float = 0.0, scale_guess: float = 1.0, xi_guess: float = 1e-10,
                       iter_max: int = 500, cost_threshold: float = 1e-12, step_threshold: float = 1e-10,
                       shock: float = 1e-5):
-        vec = np.array(x_array - loc, dtype=float)
-        if np.all(vec < 0.0):
-            sign = -1
-        elif np.all(vec > 0.0):
-            sign = 1
+        x_arr_loc_adj = np.array(x_arr - loc, dtype=float)
+        if np.all(x_arr_loc_adj < 0.0):
+            direction = -1
+        elif np.all(x_arr_loc_adj > 0.0):
+            direction = 1
         else:
             raise ValueError('expect data array to be singled sided to loc')
-        vec *= sign
-        vec.sort()
+        x_arr_loc_adj *= direction
+        x_arr_loc_adj.sort()
 
         cost = 100.0
         step_relative = scale_guess / 10.0
@@ -118,11 +118,11 @@ class GenParetoDist(object):
         xi_step = 10.0
         iter_count = 0
 
-        nll = GenParetoDist.__calc_nll(x_array, scale, xi)
+        nll = GenParetoDist.__calc_nll(x_arr_loc_adj, scale, xi)
 
         while cost > cost_threshold and max(abs(xi_step), abs(scale_step)) > step_threshold and iter_count < iter_max:
-            scale_slope = (GenParetoDist.__calc_nll(x_array, scale + shock, xi) - nll) / shock
-            xi_slope = (GenParetoDist.__calc_nll(x_array, scale, xi + shock) - nll) / shock
+            scale_slope = (GenParetoDist.__calc_nll(x_arr_loc_adj, scale + shock, xi) - nll) / shock
+            xi_slope = (GenParetoDist.__calc_nll(x_arr_loc_adj, scale, xi + shock) - nll) / shock
             slope_norm = max(abs(scale_slope), abs(xi_slope))
 
             step_length = step_absolute if abs(xi_slope) == abs(slope_norm) else step_relative
@@ -131,7 +131,7 @@ class GenParetoDist(object):
 
             scale_descent = scale - scale_step if scale > abs(scale_step) else scale
             xi_descent = min(xi - xi_step if abs(xi - xi_step) > 1e-10 else 1e-10, 1.0)
-            nll_descent = GenParetoDist.__calc_nll(x_array, scale_descent, xi_descent)
+            nll_descent = GenParetoDist.__calc_nll(x_arr_loc_adj, scale_descent, xi_descent)
 
             if nll_descent > nll:
                 step_relative /= 2.0
@@ -144,11 +144,11 @@ class GenParetoDist(object):
 
             iter_count += 1
 
-        return GenParetoDist(xi=xi, loc=loc, scale=scale, sign=sign)
+        return GenParetoDist(xi=xi, location=loc, scale=scale, direction=direction)
 
     @staticmethod
-    def __calc_nll(x_array_loc_adjusted: np.array, scale: float, xi: float):
-        err_vec = np.log(1.0 + xi * x_array_loc_adjusted / scale)
+    def __calc_nll(x_arr_loc_adj: np.array, scale: float, xi: float):
+        err_vec = np.log(1.0 + xi * x_arr_loc_adj / scale)
         nll = np.sum(err_vec) * (1.0 + 1.0 / xi) if (abs(xi) > 1e-12) else np.sum(err_vec)
         nll += np.log(scale) * err_vec.size
         if xi < 0.0:

@@ -50,14 +50,14 @@ class RFETCopula(RiskFactorEngine):
     def generate_shuffle(self, co_dep_data: np.ndarray):
         if np.shape(co_dep_data) != (self._co_dep_data_size,):
             raise ValueError('expect data shape in %i' % self._co_dep_data_size)
-        order = rankdata(co_dep_data, method='ordinal') - 1
-        co_dep_data_normed = self._co_dep_norms[order]
+        data_order = self.__rank_array(array=co_dep_data, force_unique=True)
+        co_dep_data_normed = self._co_dep_norms[data_order]
 
         co_dep_draw = np.sum(co_dep_data_normed[self._t_indices].reshape((self._num_draw, self.num_path)), axis=0)
         co_dep_draw *= np.sqrt(self._num_draw) * self._draw_signs
         co_dep_draw /= self._chi_draws
 
-        return rankdata(co_dep_draw, method='ordinal') - 1
+        return self.__rank_array(co_dep_draw)
 
     def generate_marginal_dist(self, time_series: np.ndarray):
         data = self.volatility_filer(time_series=time_series, decay_rate=self._decay_rate)
@@ -101,9 +101,9 @@ class RFETCopula(RiskFactorEngine):
 
         cutoff = Utils.percentile(data, [left_percentile])[0]
         tail = data[data < cutoff]
-        model = GenParetoDist.fit_given_loc(x_array=tail, loc=cutoff)
+        model = GenParetoDist.fit_given_loc(x_arr=tail, loc=cutoff)
 
-        return model.ppf(u_array=u_array)
+        return model.ppf(u_arr=u_array)
 
     @staticmethod
     def model_right_tail(data: np.ndarray, right_percentile: float, percentiles_to_extract: np.ndarray):
@@ -113,6 +113,13 @@ class RFETCopula(RiskFactorEngine):
 
         cutoff = Utils.percentile(data, [right_percentile])[0]
         tail = data[data > cutoff]
-        model = GenParetoDist.fit_given_loc(x_array=tail, loc=cutoff)
+        model = GenParetoDist.fit_given_loc(x_arr=tail, loc=cutoff)
 
-        return model.ppf(u_array=u_array)
+        return model.ppf(u_arr=u_array)
+
+    @staticmethod
+    def __rank_array(array: np.ndarray, force_unique: bool = True):
+        array_to_rank = array + np.linspace(0.0, 1e-16 * array.size, num=array.size) if force_unique else array
+        return rankdata(array_to_rank, method='ordinal') - 1
+
+    pass
