@@ -59,10 +59,24 @@ class RFETCopula(RiskFactorEngine):
 
         return self.__rank_array(co_dep_draw)
 
+    def adjust_time_series_volatility(self, time_series, volatility_floor: float = 1.0e-4, roll_window: int = 30):
+        if self._decay_rate >= 1.0 or time_series.__len__() < roll_window:
+            return time_series
+        else:
+            vol_flr = volatility_floor * np.std(time_series, ddof=1)
+            vols = np.ones(np.shape(time_series)) * np.sqrt(np.average(np.square(time_series[0:28])))
+            for idx in range(roll_window, time_series.__len__()):
+                roll_var = (1.0 - self._decay_rate) * (time_series[idx - 1] ** 2) \
+                           + self._decay_rate * (vols[idx - 1] ** 2)
+                vols[idx] = max(vol_flr, np.sqrt(roll_var))
+            vol_terminal = np.sqrt(
+                (1.0 - self._decay_rate) * (time_series[-1] ** 2) + self._decay_rate * (vols[-1] ** 2))
+            vol_filter = vols / max(vol_flr, vol_terminal)
+            return time_series / vol_filter
+
     def generate_marginal_dist(self, time_series: np.ndarray):
-        data = self.volatility_filer(time_series=time_series, decay_rate=self._decay_rate)
-        vol_adj = np.std(data, ddof=1)
-        data /= vol_adj
+        vol_adj = np.std(time_series, ddof=1)
+        time_series /= vol_adj
 
         shift = 0.5 / self.num_path
         percentiles = np.linspace(start=shift, stop=1.0 - shift, num=self.num_path) * 100.0
@@ -72,26 +86,12 @@ class RFETCopula(RiskFactorEngine):
         mid_idx = np.logical_not(np.logical_or(left_idx, right_idx))
 
         marginal_dist = np.zeros(self.num_path)
-        marginal_dist[left_idx] = self.model_left_tail(data, self._left_percentile, percentiles[left_idx])
-        marginal_dist[right_idx] = self.model_right_tail(data, self._right_percentile, percentiles[right_idx])
-        marginal_dist[mid_idx] = Utils.percentile(data, percentiles=percentiles[mid_idx])
+        marginal_dist[left_idx] = self.model_left_tail(time_series, self._left_percentile, percentiles[left_idx])
+        marginal_dist[right_idx] = self.model_right_tail(time_series, self._right_percentile, percentiles[right_idx])
+        marginal_dist[mid_idx] = Utils.percentile(time_series, percentiles=percentiles[mid_idx])
         marginal_dist *= vol_adj
 
         return marginal_dist
-
-    @staticmethod
-    def volatility_filer(time_series: np.ndarray, decay_rate: float, volatility_floor: float = 1.0e-4):
-        if decay_rate >= 1.0 or time_series.__len__() < 30:
-            return time_series
-        else:
-            vol_flr = volatility_floor * np.std(time_series, ddof=1)
-            vols = np.ones(np.shape(time_series)) * np.sqrt(np.average(np.square(time_series[0:28])))
-            for idx in range(30, time_series.__len__()):
-                roll_var = (1.0 - decay_rate) * (time_series[idx - 1] ** 2) + decay_rate * (vols[idx - 1] ** 2)
-                vols[idx] = max(vol_flr, np.sqrt(roll_var))
-            vol_terminal = np.sqrt((1.0 - decay_rate) * (time_series[-1] ** 2) + decay_rate * (vols[-1] ** 2))
-            vol_filter = vols / max(vol_flr, vol_terminal)
-            return time_series / vol_filter
 
     @staticmethod
     def model_left_tail(data: np.ndarray, left_percentile: float, percentiles_to_extract: np.ndarray):
