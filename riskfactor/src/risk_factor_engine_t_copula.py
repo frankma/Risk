@@ -47,17 +47,19 @@ class RFETCopula(RiskFactorEngine):
         draw_sign[1::2] *= -1
         return draw_sign
 
-    def generate_shuffle(self, co_dep_data: np.ndarray):
+    def generate_shuffle_indices(self, co_dep_data: np.ndarray):
         if np.shape(co_dep_data) != (self._co_dep_data_size,):
-            raise ValueError('expect data shape in %i' % self._co_dep_data_size)
-        data_order = self.__rank_array(array=co_dep_data, force_unique=True)
+            raise ValueError('expect co-dependent data shape in %i' % self._co_dep_data_size)
+        data_order = self.__rank_array(array_to_rank=co_dep_data, force_unique=True)
         co_dep_data_normed = self._co_dep_norms[data_order]
 
         co_dep_draw = np.sum(co_dep_data_normed[self._t_indices].reshape((self._num_draw, self.num_path)), axis=0)
         co_dep_draw *= np.sqrt(self._num_draw) * self._draw_signs
         co_dep_draw /= self._chi_draws
 
-        return self.__rank_array(co_dep_draw)
+        shuffle_indices = self.__rank_array(array_to_rank=co_dep_draw, force_unique=False)
+
+        return shuffle_indices
 
     def adjust_time_series_volatility(self, time_series, volatility_floor: float = 1.0e-4, roll_window: int = 30):
         if self._decay_rate >= 1.0 or time_series.__len__() < roll_window:
@@ -118,8 +120,10 @@ class RFETCopula(RiskFactorEngine):
         return model.ppf(u_arr=u_array)
 
     @staticmethod
-    def __rank_array(array: np.ndarray, force_unique: bool = True):
-        array_to_rank = array + np.linspace(0.0, 1e-16 * array.size, num=array.size) if force_unique else array
-        return rankdata(array_to_rank, method='ordinal') - 1
+    def __rank_array(array_to_rank: np.ndarray, force_unique: bool = True):
+        array = np.array(array_to_rank, dtype=float)
+        if force_unique:
+            array += np.linspace(0.0, 1e-16 * array.size, num=array_to_rank.size)
+        return rankdata(array, method='ordinal') - 1
 
     pass
