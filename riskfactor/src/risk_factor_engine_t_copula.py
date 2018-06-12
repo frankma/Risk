@@ -47,6 +47,9 @@ class RFETCopula(RiskFactorEngine):
         draw_sign[1::2] *= -1
         return draw_sign
 
+    def simulate(self, time_series: np.ndarray):
+        pass
+
     def generate_shuffle_indices(self, co_dep_data: np.ndarray):
         if np.shape(co_dep_data) != (self._co_dep_data_size,):
             raise ValueError('expect co-dependent data shape in %i' % self._co_dep_data_size)
