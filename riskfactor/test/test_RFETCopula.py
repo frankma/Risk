@@ -48,4 +48,28 @@ class TestRFETCopula(TestCase):
 
         pass
 
+    def test_correlation(self):
+        spot_1 = 100.0
+        mu_1 = 0.04
+        sig_1 = 0.2
+
+        spot_2 = 200.0
+        mu_2 = 0.01
+        sig_2 = 0.45
+
+        rho = 0.1
+
+        time_series_length = 1000.0
+        time_series_sample_points = 10 ** 6
+        dt = time_series_length / time_series_sample_points
+
+        norm_rand_1 = np.random.normal(size=time_series_sample_points)
+        norm_rand_aux = np.random.normal(size=time_series_sample_points)
+        norm_rand_2 = norm_rand_1 * rho + np.sqrt(1.0 - rho ** 2) * norm_rand_aux
+
+        correl = np.corrcoef(norm_rand_1, norm_rand_2)
+        print(correl)
+
+        pass
+
     pass
