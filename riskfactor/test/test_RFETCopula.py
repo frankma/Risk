@@ -57,7 +57,7 @@ class TestRFETCopula(TestCase):
         mu_2 = 0.01
         sig_2 = 0.45
 
-        rho = 0.5
+        rho = 0.25
 
         time_series_length = 1000.0
         time_series_sample_points = 10 ** 6
@@ -99,13 +99,14 @@ class TestRFETCopula(TestCase):
 
         print(rho, correl_hat[0][1])
 
-        num_path = 10 ** 4
+        num_path = 10 ** 6
 
-        rfe_1 = RFETCopula(num_path=num_path, co_dep_data_size=time_series_sample_points, co_dep_data_shift=0,
+        rfe = RFETCopula(num_path=num_path, co_dep_data_size=time_series_sample_points - 1, co_dep_data_shift=0,
                          decay_rate=1.0, left_percentile=0.01, right_percentile=99.99)
-        ret_time_series_vol_adj_1 = rfe_1.adjust_time_series_volatility(return_time_series_1)
-        marginal_dist_1 = rfe_1.generate_marginal_dist(ret_time_series_vol_adj_1)
-        shuffle_1 = rfe_1.generate_shuffle_indices(s_time_series_1)
+
+        ret_time_series_vol_adj_1 = rfe.adjust_time_series_volatility(return_time_series_1)
+        marginal_dist_1 = rfe.generate_marginal_dist(ret_time_series_vol_adj_1)
+        shuffle_1 = rfe.generate_shuffle_indices(ret_time_series_vol_adj_1)
         scenarios_1 = marginal_dist_1[shuffle_1]
 
         mu_1_sim = np.average(scenarios_1) / dt
@@ -114,11 +115,9 @@ class TestRFETCopula(TestCase):
         print(mu_1, mu_1_sim)
         print(sig_1, sig_1_sim)
 
-        rfe_2 = RFETCopula(num_path=num_path, co_dep_data_size=time_series_sample_points, co_dep_data_shift=0,
-                         decay_rate=1.0, left_percentile=0.01, right_percentile=99.99)
-        ret_time_series_vol_adj_2 = rfe_2.adjust_time_series_volatility(return_time_series_2)
-        marginal_dist_2 = rfe_2.generate_marginal_dist(ret_time_series_vol_adj_2)
-        shuffle_2 = rfe_2.generate_shuffle_indices(s_time_series_2)
+        ret_time_series_vol_adj_2 = rfe.adjust_time_series_volatility(return_time_series_2)
+        marginal_dist_2 = rfe.generate_marginal_dist(ret_time_series_vol_adj_2)
+        shuffle_2 = rfe.generate_shuffle_indices(ret_time_series_vol_adj_2)
         scenarios_2 = marginal_dist_2[shuffle_2]
 
         mu_2_sim = np.average(scenarios_2) / dt
@@ -127,9 +126,10 @@ class TestRFETCopula(TestCase):
         print(mu_2, mu_2_sim)
         print(sig_2, sig_2_sim)
 
-        correl_sim = np.corrcoef(scenarios_1, scenarios_2)
+        cor_sim_in = np.corrcoef(return_time_series_1, return_time_series_2)
+        cor_sim_out = np.corrcoef(scenarios_1, scenarios_2)
 
-        print(rho, correl_sim[0][1])
+        print(rho, cor_sim_in[0][1], cor_sim_out[0][1])
 
         pass
 
