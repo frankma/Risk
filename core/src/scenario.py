@@ -19,11 +19,25 @@ class Scenario(object):
         elif shock_type.__eq__(ShockType.CHANGE):
             self._scenarios -= base
         else:
-            raise NotImplemented('method not implemented yet')
+            raise NotImplemented('method %s not implemented yet' % shock_type.value)
+        pass
+
+    def reverse_shock(self, base: float, shock_type: ShockType):
+        if shock_type.__eq__(ShockType.ARITHMETIC):
+            self._scenarios += 1.0
+            self._scenarios *= base
+        elif shock_type.__eq__(ShockType.CHANGE):
+            self._scenarios += base
+        else:
+            raise NotImplemented('method %s not implemented yet' % shock_type.value)
+        pass
 
     def calculate_shock(self, base: float, shock_type: ShockType):
         scenarios_copy = self.clone()
         return scenarios_copy.apply_shock(base, shock_type)
-        pass
+
+    def calculate_level(self, base: float, shock_type: ShockType):
+        scenarios_copy = self.clone()
+        return scenarios_copy.reverse_shock(base, shock_type)
 
     pass
