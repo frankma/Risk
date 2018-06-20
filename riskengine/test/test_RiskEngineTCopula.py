@@ -2,10 +2,10 @@ from unittest import TestCase
 
 import numpy as np
 
-from riskfactor.src.risk_factor_engine_t_copula import RFETCopula
+from riskengine.src.risk_engine_t_copula import RiskEngineTCopula
 
 
-class TestRFETCopula(TestCase):
+class TestRiskEngineTCopula(TestCase):
     def test_volatility(self):
         spot = 100.0
         mu = 0.05
@@ -33,8 +33,8 @@ class TestRFETCopula(TestCase):
         print(sig, sig_hat)
 
         num_path = 10 ** 4
-        rfe = RFETCopula(num_path=num_path, co_dep_data_size=time_series_sample_points, co_dep_data_shift=0,
-                         decay_rate=1.0, left_percentile=0.01, right_percentile=99.99)
+        rfe = RiskEngineTCopula(num_path=num_path, co_dep_data_size=time_series_sample_points, co_dep_data_shift=0,
+                                decay_rate=1.0, left_percentile=0.01, right_percentile=99.99)
         ret_time_series_vol_adj = rfe.adjust_time_series_volatility(return_time_series)
         marginal_dist = rfe.generate_marginal_dist(ret_time_series_vol_adj)
         shuffle = rfe.generate_shuffle_indices(s_time_series)
@@ -101,8 +101,8 @@ class TestRFETCopula(TestCase):
 
         num_path = 10 ** 6
 
-        rfe = RFETCopula(num_path=num_path, co_dep_data_size=time_series_sample_points - 1, co_dep_data_shift=0,
-                         decay_rate=1.0, left_percentile=0.01, right_percentile=99.99)
+        rfe = RiskEngineTCopula(num_path=num_path, co_dep_data_size=time_series_sample_points - 1, co_dep_data_shift=0,
+                                decay_rate=1.0, left_percentile=0.01, right_percentile=99.99)
 
         ret_time_series_vol_adj_1 = rfe.adjust_time_series_volatility(return_time_series_1)
         marginal_dist_1 = rfe.generate_marginal_dist(ret_time_series_vol_adj_1)

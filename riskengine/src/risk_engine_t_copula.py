@@ -1,11 +1,11 @@
 import numpy as np
 from scipy.stats import norm, rankdata
 
-from riskfactor.src.risk_factor_engine import RiskFactorEngine
+from riskengine.src.risk_engine import RiskEngine
 from riskmath.src.utils import Utils, CSRandom, GenParetoDist
 
 
-class RFETCopula(RiskFactorEngine):
+class RiskEngineTCopula(RiskEngine):
     def __init__(self, num_path: int, co_dep_data_size: int, co_dep_data_shift: int, decay_rate: float,
                  left_percentile: float = 1.0, right_percentile: float = 99.0, seed: int = 99999,
                  dof: int = 4, num_draw: int = 30):

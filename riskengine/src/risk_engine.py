@@ -1,7 +1,7 @@
 import numpy as np
 
 
-class RiskFactorEngine(object):
+class RiskEngine(object):
     def __init__(self, num_path: int):
         self.num_path = num_path
         pass
