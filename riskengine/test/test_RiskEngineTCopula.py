@@ -123,7 +123,7 @@ class TestRiskEngineTCopula(TestCase):
         self.assertAlmostEqual(sig_1_hat, sig_1_sim, delta=1e-4)
         self.assertAlmostEqual(mu_2_hat, mu_2_sim, delta=1e-4)
         self.assertAlmostEqual(sig_2_hat, sig_2_sim, delta=1e-4)
-        self.assertAlmostEqual(cor_sim_in, cor_sim_out, delta=1e-2)
+        self.assertAlmostEqual(0.0, cor_sim_out / cor_sim_in - 1.0, delta=1e-1)
 
         pass
 
