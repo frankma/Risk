@@ -1,16 +1,14 @@
 import numpy as np
 from scipy.stats import norm, rankdata
 
-from riskengine.src.risk_engine import RiskEngine
 from riskmath.src.utils import Utils, CSRandom, GenParetoDist
 
 
-class RiskEngineTCopula(RiskEngine):
+class StudentTCopula(object):
     def __init__(self, num_path: int, co_dep_data_size: int, co_dep_data_shift: int, decay_rate: float,
-                 left_percentile: float = 1.0, right_percentile: float = 99.0, seed: int = 99999,
+                 left_percentile: float = 0.01, right_percentile: float = 0.99, seed: int = 99999,
                  dof: int = 4, num_draw: int = 30):
-        super().__init__(num_path)
-
+        self.num_path = num_path
         self._co_dep_data_size = co_dep_data_size
         self._co_dep_data_shift = co_dep_data_shift
         self._decay_rate = decay_rate
@@ -47,9 +45,6 @@ class RiskEngineTCopula(RiskEngine):
         draw_sign[1::2] *= -1
         return draw_sign
 
-    def simulate(self, time_series: np.ndarray):
-        pass
-
     def generate_shuffle_indices(self, co_dep_data: np.ndarray):
         if np.shape(co_dep_data) != (self._co_dep_data_size,):
             raise ValueError('expect co-dependent data shape in %i' % self._co_dep_data_size)
@@ -83,8 +78,8 @@ class RiskEngineTCopula(RiskEngine):
         vol_adj = np.std(time_series, ddof=1)
         time_series /= vol_adj
 
-        shift = 0.5 / self.num_path
-        percentiles = np.linspace(start=shift, stop=1.0 - shift, num=self.num_path) * 100.0
+        tail_bin = 0.5 / self.num_path
+        percentiles = np.array(np.linspace(start=tail_bin, stop=1.0 - tail_bin, num=self.num_path), dtype=float)
 
         left_idx = percentiles < self._left_percentile
         right_idx = percentiles > self._right_percentile
@@ -112,9 +107,9 @@ class RiskEngineTCopula(RiskEngine):
 
     @staticmethod
     def model_right_tail(data: np.ndarray, right_percentile: float, percentiles_to_extract: np.ndarray):
-        if np.any(percentiles_to_extract <= right_percentile) or np.any(percentiles_to_extract >= 100.0):
-            raise ValueError('the percentile should be bound by (%.f, 100.0) exclusively' % right_percentile)
-        u_array = (percentiles_to_extract - right_percentile) / (100.0 - right_percentile)  # u \in (0.0, 1.0)
+        if np.any(percentiles_to_extract <= right_percentile) or np.any(percentiles_to_extract >= 1.0):
+            raise ValueError('the percentile should be bound by (%.f, 1.0) exclusively' % right_percentile)
+        u_array = (percentiles_to_extract - right_percentile) / (1.0 - right_percentile)  # u \in (0.0, 1.0)
 
         cutoff = Utils.percentile(data, [right_percentile])[0]
         tail = data[data > cutoff]

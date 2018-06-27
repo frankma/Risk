@@ -6,7 +6,7 @@ class Utils(object):
     def percentile(source_array: np.ndarray, percentiles: list):
         vec = np.array(source_array, dtype=float)
         vec.sort()
-        pct = np.array(percentiles, dtype=float) / 100.00
+        pct = np.array(percentiles, dtype=float)
         if np.any(pct > 1.0) or np.any(pct < 0.0):
             raise ValueError('percentile should between 0 and 100, inclusive.')
 

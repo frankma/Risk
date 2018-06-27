@@ -2,7 +2,7 @@ from unittest import TestCase
 
 import numpy as np
 
-from riskengine.src.risk_engine_t_copula import RiskEngineTCopula
+from riskmath.src.student_t_copula import StudentTCopula
 
 
 class TestRiskEngineTCopula(TestCase):
@@ -22,16 +22,13 @@ class TestRiskEngineTCopula(TestCase):
 
         s_time_series = spot * np.exp(np.cumsum(dlnS))
 
-        # plt.plot(np.linspace(0.0, time_series_length - dt, num=time_series_sample_points), s_time_series)
-        # plt.show()
-
         return_time_series = s_time_series[1:] / s_time_series[:-1] - 1.0
         mu_hat = np.average(return_time_series) / dt
         sig_hat = np.std(return_time_series) / np.sqrt(dt)
 
         num_path = 10 ** 4
-        rfe = RiskEngineTCopula(num_path=num_path, co_dep_data_size=time_series_sample_points, co_dep_data_shift=0,
-                                decay_rate=1.0, left_percentile=0.01, right_percentile=99.99)
+        rfe = StudentTCopula(num_path=num_path, co_dep_data_size=time_series_sample_points, co_dep_data_shift=0,
+                             decay_rate=1.0, left_percentile=0.0001, right_percentile=0.9999)
         ret_time_series_vol_adj = rfe.adjust_time_series_volatility(return_time_series)
         marginal_dist = rfe.generate_marginal_dist(ret_time_series_vol_adj)
         shuffle = rfe.generate_shuffle_indices(s_time_series)
@@ -44,8 +41,8 @@ class TestRiskEngineTCopula(TestCase):
         print('mu \t%.4e\t%.4e\t%.4e\t%.4e' % (mu, mu_hat, mu_sim, mu_hat - mu_sim))
         print('sig\t%.4e\t%.4e\t%.4e\t%.4e' % (sig, sig_hat, sig_sim, sig_hat - sig_sim))
 
-        self.assertAlmostEqual(mu_hat, mu_sim, delta=1e-4)
-        self.assertAlmostEqual(sig_hat, sig_sim, delta=1e-4)
+        self.assertAlmostEqual(mu_hat, mu_sim, delta=1e-4)  # 1bps tolerance for drift
+        self.assertAlmostEqual(sig_hat, sig_sim, delta=1e-4)  # 1bps tolerance for volatility
 
         pass
 
@@ -68,7 +65,7 @@ class TestRiskEngineTCopula(TestCase):
         norm_rand_aux = np.random.normal(size=time_series_sample_points)
         norm_rand_2 = norm_rand_1 * rho + np.sqrt(1.0 - rho ** 2) * norm_rand_aux
 
-        correl = np.corrcoef(norm_rand_1, norm_rand_2)[0][1]
+        # correl = np.corrcoef(norm_rand_1, norm_rand_2)[0][1]
 
         drift_1 = (mu_1 - 0.5 * sig_1 * sig_1) * np.ones(time_series_sample_points) * dt
         diffusion_1 = sig_1 * norm_rand_1 * np.sqrt(dt)
@@ -90,8 +87,8 @@ class TestRiskEngineTCopula(TestCase):
 
         num_path = 10 ** 4
 
-        rfe = RiskEngineTCopula(num_path=num_path, co_dep_data_size=time_series_sample_points - 1, co_dep_data_shift=0,
-                                decay_rate=1.0, left_percentile=0.01, right_percentile=99.99)
+        rfe = StudentTCopula(num_path=num_path, co_dep_data_size=time_series_sample_points - 1, co_dep_data_shift=0,
+                             decay_rate=1.0, left_percentile=0.0001, right_percentile=0.9999)
 
         ret_time_series_vol_adj_1 = rfe.adjust_time_series_volatility(return_time_series_1)
         marginal_dist_1 = rfe.generate_marginal_dist(ret_time_series_vol_adj_1)
@@ -119,11 +116,11 @@ class TestRiskEngineTCopula(TestCase):
         print('sig_2\t%.4e\t%.4e\t%.4e\t%.4e' % (sig_2, sig_2_hat, sig_2_sim, sig_2_hat - sig_2_sim))
         print('rho\t%.4e\t%.4e\t%.4e\t%.4e' % (rho, cor_sim_in, cor_sim_out, cor_sim_in - cor_sim_out))
 
-        self.assertAlmostEqual(mu_1_hat, mu_1_sim, delta=1e-4)
-        self.assertAlmostEqual(sig_1_hat, sig_1_sim, delta=1e-4)
-        self.assertAlmostEqual(mu_2_hat, mu_2_sim, delta=1e-4)
-        self.assertAlmostEqual(sig_2_hat, sig_2_sim, delta=1e-4)
-        self.assertAlmostEqual(0.0, cor_sim_out / cor_sim_in - 1.0, delta=1e-1)
+        self.assertAlmostEqual(mu_1_hat, mu_1_sim, delta=1e-4)  # 1bps tolerance for drift of variable 1
+        self.assertAlmostEqual(sig_1_hat, sig_1_sim, delta=1e-4)  # 1bps tolerance for volatility of variable 1
+        self.assertAlmostEqual(mu_2_hat, mu_2_sim, delta=1e-4)  # 1bps tolerance for drift of variable 2
+        self.assertAlmostEqual(sig_2_hat, sig_2_sim, delta=1e-4)  # 1bps tolerance for volatility of variable 2
+        self.assertAlmostEqual(cor_sim_out, cor_sim_in, delta=5e-2)  # 5% tolerance for correlation between 1 and 2
 
         pass
 
