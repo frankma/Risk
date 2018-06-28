@@ -5,7 +5,7 @@ import numpy as np
 from riskmath.src.student_t_copula import StudentTCopula
 
 
-class TestRiskEngineTCopula(TestCase):
+class TestStudentTCopula(TestCase):
     def test_volatility(self):
         spot = 100.0
         mu = 0.05
