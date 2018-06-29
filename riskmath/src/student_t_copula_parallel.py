@@ -4,7 +4,7 @@ from scipy.stats import norm, rankdata
 from riskmath.src.utils import Utils, CSRandom, GenParetoDist
 
 
-class StudentTCopula(object):
+class StudentTCopulaParallel(object):
     def __init__(self, num_path: int, co_dep_data_size: int, co_dep_data_shift: int, decay_rate: float,
                  left_percentile: float = 0.01, right_percentile: float = 0.99, seed: int = 99999,
                  dof: int = 4, num_draw: int = 30):
