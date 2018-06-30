@@ -5,15 +5,11 @@ from riskmath.src.utils import Utils, CSRandom, GenParetoDist
 
 
 class StudentTCopulaParallel(object):
-    def __init__(self, num_path: int, co_dep_data_size: int, co_dep_data_shift: int, decay_rate: float,
-                 left_percentile: float = 0.01, right_percentile: float = 0.99, seed: int = 99999,
-                 dof: int = 4, num_draw: int = 30):
+    def __init__(self, num_path: int, co_dep_data_size: int, co_dep_data_shift: int,
+                 seed: int = 99999, dof: int = 4, num_draw: int = 30):
         self.num_path = num_path
         self._co_dep_data_size = co_dep_data_size
         self._co_dep_data_shift = co_dep_data_shift
-        self._decay_rate = decay_rate
-        self._left_percentile = left_percentile
-        self._right_percentile = right_percentile
         self._dof = dof
         self._num_draw = num_draw
         self._rand_num_gen = CSRandom(seed)
@@ -59,39 +55,40 @@ class StudentTCopulaParallel(object):
 
         return shuffle_indices
 
-    def adjust_time_series_volatility(self, time_series, volatility_floor: float = 1.0e-4, roll_window: int = 30):
-        if self._decay_rate >= 1.0 or time_series.__len__() < roll_window:
-            return time_series
-        else:
-            vol_flr = volatility_floor * np.std(time_series, ddof=1)
-            vols = np.ones(np.shape(time_series)) * np.sqrt(np.average(np.square(time_series[0:28])))
-            for idx in range(roll_window, time_series.__len__()):
-                roll_var = (1.0 - self._decay_rate) * (time_series[idx - 1] ** 2) \
-                           + self._decay_rate * (vols[idx - 1] ** 2)
-                vols[idx] = max(vol_flr, np.sqrt(roll_var))
-            vol_terminal = np.sqrt(
-                (1.0 - self._decay_rate) * (time_series[-1] ** 2) + self._decay_rate * (vols[-1] ** 2))
-            vol_filter = vols / max(vol_flr, vol_terminal)
-            return time_series / vol_filter
-
-    def generate_marginal_dist(self, time_series: np.ndarray):
+    def generate_marginal_dist(self, time_series: np.ndarray,
+                               left_percentile: float = 0.01, right_percentile: float = 0.99):
         vol_adj = np.std(time_series, ddof=1)
         time_series /= vol_adj
 
         tail_bin = 0.5 / self.num_path
         percentiles = np.array(np.linspace(start=tail_bin, stop=1.0 - tail_bin, num=self.num_path), dtype=float)
 
-        left_idx = percentiles < self._left_percentile
-        right_idx = percentiles > self._right_percentile
+        left_idx = percentiles < left_percentile
+        right_idx = percentiles > right_percentile
         mid_idx = np.logical_not(np.logical_or(left_idx, right_idx))
 
         marginal_dist = np.zeros(self.num_path)
-        marginal_dist[left_idx] = self.model_left_tail(time_series, self._left_percentile, percentiles[left_idx])
-        marginal_dist[right_idx] = self.model_right_tail(time_series, self._right_percentile, percentiles[right_idx])
+        marginal_dist[left_idx] = self.model_left_tail(time_series, left_percentile, percentiles[left_idx])
+        marginal_dist[right_idx] = self.model_right_tail(time_series, right_percentile, percentiles[right_idx])
         marginal_dist[mid_idx] = Utils.percentile(time_series, percentiles=percentiles[mid_idx])
         marginal_dist *= vol_adj
 
         return marginal_dist
+
+    @staticmethod
+    def adjust_time_series_volatility(time_series, decay_rate: float = 1.0, volatility_floor: float = 1.0e-4,
+                                      roll_window: int = 30):
+        if decay_rate >= 1.0 or time_series.__len__() < roll_window:
+            return time_series
+        else:
+            vol_flr = volatility_floor * np.std(time_series, ddof=1)
+            vols = np.ones(np.shape(time_series)) * np.sqrt(np.average(np.square(time_series[0:28])))
+            for idx in range(roll_window, time_series.__len__()):
+                roll_var = (1.0 - decay_rate) * (time_series[idx - 1] ** 2) + decay_rate * (vols[idx - 1] ** 2)
+                vols[idx] = max(vol_flr, np.sqrt(roll_var))
+            vol_terminal = np.sqrt((1.0 - decay_rate) * (time_series[-1] ** 2) + decay_rate * (vols[-1] ** 2))
+            vol_filter = vols / max(vol_flr, vol_terminal)
+            return time_series / vol_filter
 
     @staticmethod
     def model_left_tail(data: np.ndarray, left_percentile: float, percentiles_to_extract: np.ndarray):

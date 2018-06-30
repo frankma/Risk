@@ -27,10 +27,10 @@ class TestStudentTCopulaParallel(TestCase):
         sig_hat = np.std(return_time_series) / np.sqrt(d_t)
 
         num_path = 10 ** 4
-        rfe = StudentTCopulaParallel(num_path=num_path, co_dep_data_size=time_series_sample_points, co_dep_data_shift=0,
-                                     decay_rate=1.0, left_percentile=0.0001, right_percentile=0.9999)
+        rfe = StudentTCopulaParallel(num_path=num_path, co_dep_data_size=time_series_sample_points, co_dep_data_shift=0)
         ret_time_series_vol_adj = rfe.adjust_time_series_volatility(return_time_series)
-        marginal_dist = rfe.generate_marginal_dist(ret_time_series_vol_adj)
+        marginal_dist = rfe.generate_marginal_dist(ret_time_series_vol_adj,
+                                                   left_percentile=0.0001, right_percentile=0.9999)
         shuffle = rfe.generate_shuffle_indices(s_time_series)
         scenarios = marginal_dist[shuffle]
 
@@ -86,11 +86,11 @@ class TestStudentTCopulaParallel(TestCase):
         num_path = 10 ** 4
 
         rfe = StudentTCopulaParallel(num_path=num_path, co_dep_data_size=time_series_sample_points - 1,
-                                     co_dep_data_shift=0, decay_rate=1.0,
-                                     left_percentile=0.0001, right_percentile=0.9999)
+                                     co_dep_data_shift=0)
 
         ret_time_series_vol_adj_1 = rfe.adjust_time_series_volatility(return_time_series_1)
-        marginal_dist_1 = rfe.generate_marginal_dist(ret_time_series_vol_adj_1)
+        marginal_dist_1 = rfe.generate_marginal_dist(ret_time_series_vol_adj_1,
+                                                     left_percentile=0.0001, right_percentile=0.9999)
         shuffle_1 = rfe.generate_shuffle_indices(ret_time_series_vol_adj_1)
         scenarios_1 = marginal_dist_1[shuffle_1]
 
@@ -98,7 +98,8 @@ class TestStudentTCopulaParallel(TestCase):
         sig_1_sim = np.std(scenarios_1) / np.sqrt(d_t)
 
         ret_time_series_vol_adj_2 = rfe.adjust_time_series_volatility(return_time_series_2)
-        marginal_dist_2 = rfe.generate_marginal_dist(ret_time_series_vol_adj_2)
+        marginal_dist_2 = rfe.generate_marginal_dist(ret_time_series_vol_adj_2,
+                                                     left_percentile=0.0001, right_percentile=0.9999)
         shuffle_2 = rfe.generate_shuffle_indices(ret_time_series_vol_adj_2)
         scenarios_2 = marginal_dist_2[shuffle_2]
 
