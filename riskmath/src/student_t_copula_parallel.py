@@ -104,7 +104,7 @@ class StudentTCopulaParallel(object):
             model = GenParetoDist.fit_given_loc(x_arr=tail, loc=cutoff)
             return model.ppf(u_arr=u_array)
         else:
-            return Utils.percentile(tail, u_array.tolist())
+            return Utils.percentile(tail, [x for x in u_array])
 
     @staticmethod
     def model_right_tail(data: np.ndarray, right_percentile: float, percentiles_to_extract: np.ndarray):
@@ -119,7 +119,7 @@ class StudentTCopulaParallel(object):
             model = GenParetoDist.fit_given_loc(x_arr=tail, loc=cutoff)
             return model.ppf(u_arr=u_array)
         else:
-            return Utils.percentile(tail, u_array.tolist())
+            return Utils.percentile(tail, [x for x in u_array])
 
     @staticmethod
     def __rank_array(array_to_rank: np.ndarray, force_unique: bool = True):
