@@ -76,7 +76,7 @@ class StudentTCopulaParallel(object):
         return marginal_dist
 
     @staticmethod
-    def adjust_time_series_volatility(time_series, decay_rate: float = 1.0, volatility_floor: float = 1.0e-4,
+    def filter_time_series_volatility(time_series, decay_rate: float = 1.0, volatility_floor: float = 1.0e-4,
                                       roll_window: int = 30):
         if decay_rate >= 1.0 or time_series.__len__() < roll_window:
             return time_series

@@ -6,6 +6,7 @@ from core.src.type import ShockType
 class Scenario(object):
     def __init__(self, scenarios: np.ndarray):
         self._scenarios = scenarios
+        self.num_scen = np.size(self._scenarios)
         pass
 
     def clone(self):
