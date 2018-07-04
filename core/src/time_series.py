@@ -21,13 +21,14 @@ class TimeSeries(object):
     @staticmethod
     def restore_time_series(base: float, shocks: Scenario, shock_type: ShockType):
         time_series = np.ones(shocks.num_scen + 1, dtype=float) * base
-        # TODO: implement this
-        # if shock_type.__eq__(ShockType.ARITHMETIC):
-        #
-        # elif shock_type.__eq__(ShockType.CHANGE):
-        #
-        # else:
-        #     raise NotImplemented('method % not implemented yet' % shock_type.value)
+        if shock_type.__eq__(ShockType.ARITHMETIC):
+            for idx in range(1, time_series.size):
+                time_series[idx] = time_series[idx - 1] * (1.0 + shock_type[idx - 1])
+        elif shock_type.__eq__(ShockType.CHANGE):
+            for idx in range(1, time_series.size):
+                time_series[idx] = time_series[idx - 1] + shock_type[idx - 1]
+        else:
+            raise NotImplemented('method %s not implemented yet' % shock_type.value)
 
         return TimeSeries(time_series)
 
