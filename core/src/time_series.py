@@ -29,7 +29,6 @@ class TimeSeries(object):
                 time_series[idx] = time_series[idx - 1] + shock_type[idx - 1]
         else:
             raise NotImplemented('method %s not implemented yet' % shock_type.value)
-
         return TimeSeries(time_series)
 
     pass
