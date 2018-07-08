@@ -10,11 +10,11 @@ class TimeSeries(object):
         pass
 
     def calculate_time_step_shocks(self, shock_type: ShockType):
-        if shock_type.__eq__(ShockType.ARITHMETIC):
+        if shock_type == ShockType.ARITHMETIC:
             return Scenario(self._time_series[1:] / self._time_series[:-1] - 1.0)
-        elif shock_type.__eq__(ShockType.LOG):
+        elif shock_type == ShockType.LOG:
             return Scenario(np.log(self._time_series[1:] / self._time_series[:-1]))
-        elif shock_type.__eq__(ShockType.CHANGE):
+        elif shock_type == ShockType.CHANGE:
             return Scenario(self._time_series[1:] - self._time_series[:-1])
         else:
             raise NotImplemented('method %s not implemented yet' % shock_type.value)
@@ -23,13 +23,13 @@ class TimeSeries(object):
     @staticmethod
     def restore_time_series(base: float, shocks: Scenario, shock_type: ShockType):
         time_series = np.ones(shocks.num_scenarios + 1, dtype=float) * base
-        if shock_type.__eq__(ShockType.ARITHMETIC):
+        if shock_type == ShockType.ARITHMETIC:
             for idx in range(1, time_series.size):
                 time_series[idx] = time_series[idx - 1] * (1.0 + shocks.scenarios[idx - 1])
-        elif shock_type.__eq__(ShockType.LOG):
+        elif shock_type == ShockType.LOG:
             for idx in range(1, time_series.size):
                 time_series[idx] = time_series[idx - 1] * np.exp(shocks.scenarios[idx - 1])
-        elif shock_type.__eq__(ShockType.CHANGE):
+        elif shock_type == ShockType.CHANGE:
             for idx in range(1, time_series.size):
                 time_series[idx] = time_series[idx - 1] + shocks.scenarios[idx - 1]
         else:
