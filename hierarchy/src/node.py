@@ -39,7 +39,7 @@ class Node(object):
         return name_full
 
     def get_root(self):
-        if self.is_root:
+        if self.is_root():
             return self
         else:
             return self.get_parent().get_root()
