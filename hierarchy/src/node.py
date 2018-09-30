@@ -37,6 +37,12 @@ class Node(object):
     def is_root(self):
         return self._parent is None
 
+    def is_leaf(self):
+        return self._children.__len__() == 0
+
+    def is_my_parent(self, node):
+        return self.get_parent().__eq__(node)
+
     def is_my_child(self, node):
         return self.__eq__(node.get_parent())
 
