@@ -29,6 +29,13 @@ class Node(object):
             return self.get_parent().get_root()
         pass
 
+    def count_node_level(self):
+        if self.is_root():
+            return 1
+        else:
+            return self.get_parent().count_node_level() + 1
+        pass
+
     def create_child(self, child_name: str):
         child = Node(child_name, self, dict())
         self._children[child.get_name()] = child

@@ -28,6 +28,15 @@ class TestNode(TestCase):
         self.assertEqual(name_root + Node.JOINER_NAME + name_child, child.get_name_full())
         pass
 
+    def test_node_level(self):
+        root = Node('root')
+        child = root.create_child('child')
+        grand_child = child.create_child('grandchild')
+        self.assertEqual(1, root.count_node_level())
+        self.assertEqual(2, child.count_node_level())
+        self.assertEqual(3, grand_child.count_node_level())
+        pass
+
     def test_is_my_child(self):
         root = Node('root')
         child1 = root.create_child('child1')
