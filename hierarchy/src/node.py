@@ -41,7 +41,7 @@ class Node(object):
         return self._children.__len__() == 0
 
     def is_my_parent(self, node):
-        return self.get_parent().__eq__(node)
+        return not self.is_root() and self.get_parent().__eq__(node)
 
     def is_my_child(self, node):
         return self.__eq__(node.get_parent())
@@ -50,4 +50,4 @@ class Node(object):
         return hash(self.get_name_full())
 
     def __eq__(self, other):
-        return self.__hash__() == other.__hash__()
+        return other is not None and self.__hash__() == other.__hash__()

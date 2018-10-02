@@ -1,4 +1,5 @@
 from unittest import TestCase
+
 from hierarchy.src.node import Node
 
 
@@ -25,6 +26,7 @@ class TestNode(TestCase):
         self.assertEqual(name_root, root.get_name_full())
         self.assertEqual(name_child, child.get_name())
         self.assertEqual(name_root + Node.JOINER_NAME + name_child, child.get_name_full())
+        pass
 
     def test_is_my_child(self):
         root = Node('root')
@@ -36,11 +38,70 @@ class TestNode(TestCase):
         child_other = root_other.create_child('child_1')
 
         self.assertFalse(root.is_my_child(root))
-        self.assertFalse(root.is_my_child(child1))
-        self.assertFalse(root.is_my_child(child2))
+        self.assertTrue(root.is_my_child(child1))
+        self.assertTrue(root.is_my_child(child2))
         self.assertFalse(root.is_my_child(grandchild))
         self.assertFalse(root.is_my_child(root_other))
         self.assertFalse(root.is_my_child(child_other))
-        self.assertFalse(root.is_my_child(child1))
+
+        self.assertFalse(child1.is_my_child(root))
+        self.assertFalse(child1.is_my_child(child1))
+        self.assertFalse(child1.is_my_child(child2))
+        self.assertTrue(child1.is_my_child(grandchild))
+        self.assertFalse(child1.is_my_child(root_other))
+        self.assertFalse(child1.is_my_child(child_other))
+
+        self.assertFalse(child2.is_my_child(root))
+        self.assertFalse(child2.is_my_child(child1))
+        self.assertFalse(child2.is_my_child(child2))
+        self.assertFalse(child2.is_my_child(grandchild))
+        self.assertFalse(child2.is_my_child(root_other))
+        self.assertFalse(child2.is_my_child(child_other))
+
+        self.assertFalse(grandchild.is_my_child(root))
+        self.assertFalse(grandchild.is_my_child(child1))
+        self.assertFalse(grandchild.is_my_child(child2))
+        self.assertFalse(grandchild.is_my_child(grandchild))
+        self.assertFalse(grandchild.is_my_child(root_other))
+        self.assertFalse(grandchild.is_my_child(child_other))
+
+        pass
+
+    def test_is_my_parent(self):
+        root = Node('root')
+        child1 = root.create_child('child1')
+        child2 = root.create_child('child2')
+        grandchild = child1.create_child('grandchild')
+
+        root_other = Node('other_root')
+        child_other = root_other.create_child('child_1')
+
+        self.assertFalse(root.is_my_parent(root))
+        self.assertFalse(root.is_my_parent(child1))
+        self.assertFalse(root.is_my_parent(child2))
+        self.assertFalse(root.is_my_parent(grandchild))
+        self.assertFalse(root.is_my_parent(root_other))
+        self.assertFalse(root.is_my_parent(child_other))
+
+        self.assertTrue(child1.is_my_parent(root))
+        self.assertFalse(child1.is_my_parent(child1))
+        self.assertFalse(child1.is_my_parent(child2))
+        self.assertFalse(child1.is_my_parent(grandchild))
+        self.assertFalse(child1.is_my_parent(root_other))
+        self.assertFalse(child1.is_my_parent(child_other))
+
+        self.assertTrue(child2.is_my_parent(root))
+        self.assertFalse(child2.is_my_parent(child1))
+        self.assertFalse(child2.is_my_parent(child2))
+        self.assertFalse(child2.is_my_parent(grandchild))
+        self.assertFalse(child2.is_my_parent(root_other))
+        self.assertFalse(child2.is_my_parent(child_other))
+
+        self.assertFalse(grandchild.is_my_parent(root))
+        self.assertTrue(grandchild.is_my_parent(child1))
+        self.assertFalse(grandchild.is_my_parent(child2))
+        self.assertFalse(grandchild.is_my_parent(grandchild))
+        self.assertFalse(grandchild.is_my_parent(root_other))
+        self.assertFalse(grandchild.is_my_parent(child_other))
 
         pass
