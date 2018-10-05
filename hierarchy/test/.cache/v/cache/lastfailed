@@ -1,1 +1,3 @@
-{}
+{
+  "test_tree.py::TestTree::test_drop_node_from_tree": true
+}

@@ -5,7 +5,7 @@ from hierarchy.src.tree import Tree
 
 class TestTree(TestCase):
     def test_is_node_on_tree(self):
-        root = Node("root", [0], None, [])
+        root = Node("root", None, None)
         child = root.create_child("child")
         grandchild = child.create_child("grandchild")
 
@@ -16,7 +16,7 @@ class TestTree(TestCase):
         pass
 
     def test_add_node_to_tree(self):
-        root = Node("root", [0], None, [])
+        root = Node("root", None, None)
         child = root.create_child("child")
         grandchild = child.create_child("grandchild")
 
@@ -37,7 +37,7 @@ class TestTree(TestCase):
 
     def test_drop_node_from_tree(self):
 
-        root = Node("root", [0], None, [])
+        root = Node("root", None, None)
         child = root.create_child("child")
         grandchild_1 = child.create_child("grandchild1")
         grandchild_2 = child.create_child("grandchild2")
