@@ -9,9 +9,21 @@ class Tree(object):
         pass
 
     def is_node_on_tree(self, node: Node):
-        pass
+        node_level = node.count_node_level()
+        is_on_tree = self._root.__eq__(node.get_root())
+        is_on_tree &= self._node_on_tree.__contains__(node_level)
+        is_on_tree &= self._node_on_tree[node_level].__contains__(node.get_name_full())
+        return is_on_tree
 
     def add_node_to_tree(self, node: Node):
+        if not self._root.__eq__(node.get_root()):
+            raise ValueError('cannot add node from other tree')
+        node_level = node.count_node_level()
+        while not self.is_node_on_tree(node):
+            if self.is_node_on_tree(node.get_parent()):
+                self._node_on_tree[node_level][node.get_name_full()] = node
+            else:
+                self.add_node_to_tree(node.get_parent())
         pass
 
     def drop_node_from_tree(self, node: Node):

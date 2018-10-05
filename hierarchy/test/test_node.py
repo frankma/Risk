@@ -4,6 +4,7 @@ from hierarchy.src.node import Node
 
 
 class TestNode(TestCase):
+
     def test_init(self):
         name = 'root'
         root = Node(name)
@@ -112,5 +113,24 @@ class TestNode(TestCase):
         self.assertFalse(grandchild.is_my_parent(grandchild))
         self.assertFalse(grandchild.is_my_parent(root_other))
         self.assertFalse(grandchild.is_my_parent(child_other))
+
+        pass
+
+    def test_add_node(self):
+
+        root = Node('root', None, None)
+        child_linked = root.create_child('child_linked')
+        child_unlinked = Node('child', root, None)
+
+        self.assertTrue(root.is_my_child(child_linked))
+        self.assertTrue(child_linked.is_my_parent(root))
+        self.assertFalse(root.is_my_child(child_unlinked))
+        self.assertTrue(child_unlinked.is_my_parent(root))
+
+        root.add_child(child_unlinked)
+        self.assertTrue(root.is_my_child(child_linked))
+        self.assertTrue(child_linked.is_my_parent(root))
+        self.assertTrue(root.is_my_child(child_unlinked))
+        self.assertTrue(child_unlinked.is_my_parent(root))
 
         pass

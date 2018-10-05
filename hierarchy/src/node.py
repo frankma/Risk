@@ -41,6 +41,14 @@ class Node(object):
         self._children[child.get_name()] = child
         return child
 
+    def add_child(self, node_child):
+        if not isinstance(node_child, Node):
+            raise ValueError('expect input as Node type')
+        else:
+            if node_child.is_my_parent(self) and not self.is_my_child(node_child):
+                self._children[node_child.get_name()] = node_child
+        pass
+
     def is_root(self):
         return self._parent is None
 
@@ -51,7 +59,7 @@ class Node(object):
         return not self.is_root() and self.get_parent().__eq__(node)
 
     def is_my_child(self, node):
-        return self.__eq__(node.get_parent())
+        return self.__eq__(node.get_parent()) and node.get_name() in self._children
 
     def __hash__(self):
         return hash(self.get_name_full())
