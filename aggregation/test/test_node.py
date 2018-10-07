@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from hierarchy.src.node import Node
+from aggregation.src.node import Node
 
 
 class TestNode(TestCase):

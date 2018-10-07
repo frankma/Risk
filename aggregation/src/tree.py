@@ -1,4 +1,4 @@
-from hierarchy.src.node import Node
+from aggregation.src.node import Node
 
 
 class Tree(object):
