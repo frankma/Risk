@@ -1,0 +1,2 @@
+class LevelManager(object):
+    pass
