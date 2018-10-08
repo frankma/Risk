@@ -1,4 +1,5 @@
 from unittest import TestCase
+
 from aggregation.src.node import Node
 from aggregation.src.tree import Tree
 
@@ -36,7 +37,6 @@ class TestTree(TestCase):
         pass
 
     def test_drop_node_from_tree(self):
-
         root = Node("root", None, None)
         child = root.create_child("child")
         grandchild_1 = child.create_child("grandchild1")

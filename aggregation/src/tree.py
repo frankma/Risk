@@ -14,14 +14,13 @@ class Tree(object):
                node_level in self._node_on_tree and \
                node.get_name_full() in self._node_on_tree[node_level]
 
-    def is_any_child_on_tree(self, node: Node):
-        return self.get_all_children_on_tree(node).__len__ > 0
-
     def get_all_children_on_tree(self, node: Node):
-        children = node.get_children()
-        on_tree_children = [self.is_node_on_tree(x) for x in children]
-        return children[on_tree_children]
-
+        children_on_tree = []
+        if not node.is_leaf():
+            for child in node.get_children().values():
+                if self.is_node_on_tree(child):
+                    children_on_tree.append(child)
+        return children_on_tree
 
     def add_node_to_tree(self, node: Node):
         if not self._root.__eq__(node.get_root()):
@@ -43,7 +42,11 @@ class Tree(object):
 
     def drop_node_from_tree(self, node: Node):
         while self.is_node_on_tree(node):
-            if self.is_any_child_on_tree(node):
-
-
+            level = node.count_node_level()
+            on_tree_children = self.get_all_children_on_tree(node)
+            if on_tree_children.__len__() > 0:
+                for on_tree_child in on_tree_children:
+                    self.drop_node_from_tree(on_tree_child)
+            else:
+                self._node_on_tree[level].pop(node.get_name_full(), None)
         pass
