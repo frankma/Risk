@@ -1,10 +1,14 @@
+from typing import Set
+
+
 class Node(object):
     JOINER_NAME = "^"
 
-    def __init__(self, name: str, parent=None, children: dict = None):
+    def __init__(self, name: str, parent=None, children: Set = None):
         self._name = name
         self._parent = parent
-        self._children = children if children is not None else dict()
+        self._children = children if children is not None else set()
+        self.__name_full = None
         pass
 
     def get_parent(self):
@@ -17,10 +21,12 @@ class Node(object):
         return self._name
 
     def get_name_full(self):
-        name_full = self.get_name()
-        if not self.is_root():
-            name_full = self.get_parent().get_name_full() + Node.JOINER_NAME + name_full
-        return name_full
+        if self.__name_full is None:
+            full_name = self.get_name()
+            if not self.is_root():
+                full_name = self.get_parent().get_name_full() + Node.JOINER_NAME + full_name
+            self.__name_full = full_name
+        return self.__name_full
 
     def get_root(self):
         if self.is_root():
@@ -37,8 +43,8 @@ class Node(object):
         pass
 
     def create_child(self, child_name: str):
-        child = Node(child_name, self, dict())
-        self._children[child.get_name()] = child
+        child = Node(child_name, self, set())
+        self._children.add(child)
         return child
 
     def add_child(self, node_child):
@@ -46,7 +52,8 @@ class Node(object):
             raise ValueError('expect input as Node type')
         else:
             if node_child.is_my_parent(self) and not self.is_my_child(node_child):
-                self._children[node_child.get_name()] = node_child
+                self._children.add(node_child)
+                node_child._parent = self  # enforce bilateral reference
         pass
 
     def is_root(self):
@@ -65,4 +72,7 @@ class Node(object):
         return hash(self.get_name_full())
 
     def __eq__(self, other):
-        return other is not None and self.__hash__() == other.__hash__()
+        return other is not None and self.get_name_full() == other.get_name_full()
+
+    def __str__(self):
+        return self.get_name_full()
