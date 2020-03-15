@@ -12,7 +12,7 @@ class Tree(object):
         self._node_serial_num = None
         pass
 
-    def is_node_on_tree(self, node: Node):
+    def is_node_on_tree(self, node: Node) -> bool:
         is_on_tree = self._root.__eq__(node.get_root())
         is_on_tree = is_on_tree and (self._root.__eq__(node.get_root()))
         is_on_tree = is_on_tree and (node.count_node_level() in self._node_on_tree)
@@ -72,10 +72,10 @@ class Tree(object):
                 parent_children_map[level] = pcm
         return parent_children_map
 
-    def get_tree_depth_stack(self):
+    def get_tree_depth_stack(self) -> list:
         return sorted(self._node_on_tree.keys())
 
-    def get_node_serial_number(self, refresh: bool = False):
+    def get_node_serial_number(self, refresh: bool = False) -> Dict[Node, str]:
         if self._node_serial_num is None or refresh:
             self._node_serial_num = {}
             for level in sorted(self._node_on_tree.keys()):

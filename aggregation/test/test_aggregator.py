@@ -1,6 +1,7 @@
 from unittest import TestCase
 
 import numpy as np
+
 from aggregation.src.aggregator import Aggregator
 from aggregation.src.node import Node
 from aggregation.src.tree import Tree

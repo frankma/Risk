@@ -14,13 +14,13 @@ class Node(object):
     def get_parent(self):
         return self._parent
 
-    def get_children(self):
+    def get_children(self) -> Set:
         return self._children
 
-    def get_name(self):
+    def get_name(self) -> str:
         return self._name
 
-    def get_name_full(self):
+    def get_name_full(self) -> str:
         if self.__name_full is None:
             full_name = self.get_name()
             if not self.is_root():
@@ -29,18 +29,10 @@ class Node(object):
         return self.__name_full
 
     def get_root(self):
-        if self.is_root():
-            return self
-        else:
-            return self.get_parent().get_root()
-        pass
+        return self if self.is_root() else self.get_parent().get_root()
 
-    def count_node_level(self):
-        if self.is_root():
-            return 1
-        else:
-            return self.get_parent().count_node_level() + 1
-        pass
+    def count_node_level(self) -> int:
+        return 1 if self.is_root() else self.get_parent().count_node_level() + 1
 
     def create_child(self, child_name: str):
         child = Node(child_name, self, set())
@@ -56,17 +48,17 @@ class Node(object):
                 node_child._parent = self  # enforce bilateral reference
         pass
 
-    def is_root(self):
+    def is_root(self) -> bool:
         return self._parent is None
 
-    def is_leaf(self):
+    def is_leaf(self) -> bool:
         return self._children.__len__() == 0
 
-    def is_my_parent(self, node):
+    def is_my_parent(self, node) -> bool:
         return not self.is_root() and self.get_parent().__eq__(node)
 
-    def is_my_child(self, node):
-        return self.__eq__(node.get_parent()) and node.get_name() in self._children
+    def is_my_child(self, node) -> bool:
+        return self.__eq__(node.get_parent()) and node in self._children
 
     def __hash__(self):
         return hash(self.get_name_full())

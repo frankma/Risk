@@ -117,7 +117,6 @@ class TestNode(TestCase):
         pass
 
     def test_add_node(self):
-
         root = Node('root', None, None)
         child_linked = root.create_child('child_linked')
         child_unlinked = Node('child', root, None)
