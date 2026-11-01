@@ -42,7 +42,7 @@ provides.
 | [Investment risk](framework/02-investment-risk.md) | Definition and scope, the three pillars and the boundaries between them. |
 | [Redesign method](framework/03-redesign-method.md) | Seven steps to redesign one workflow, from outcome to measured result. |
 | [Controls](framework/04-controls.md) | Grounding checks, sign-off points, audit trails, governed thresholds, parallel runs, fallback, data handling, alignment with AI risk management expectations. |
-| [Measuring value](framework/05-measuring-value.md) | Capacity, speed, quality and influence, and why usage is not a measure. |
+| [Measuring value](framework/05-measuring-value.md) | Capacity, speed, quality and influence; a baseline and a reinvestment plan; why usage is not a measure. |
 | **Pillars** | |
 | [Market risk](pillars/market-risk.md) | Daily monitoring redesigned as a ranked exception queue with explanations of what changed. |
 | [Liquidity risk](pillars/liquidity-risk.md) | From periodic stress tests to continuous monitoring with event-triggered stress tests. |
