@@ -38,7 +38,7 @@ provides.
 | Chapter | Covers |
 |---|---|
 | **Framework** | |
-| [Principles](framework/01-principles.md) | Redesign rather than insert; the core pattern; exceptions over everything; reinvesting freed time. |
+| [Principles](framework/01-principles.md) | Why inserting AI fails; six principles for redesign; how the risk manager's role changes. |
 | [Investment risk](framework/02-investment-risk.md) | Definition and scope, the three pillars and the boundaries between them. |
 | [Redesign method](framework/03-redesign-method.md) | Seven steps to redesign one workflow, from outcome to measured result. |
 | [Controls](framework/04-controls.md) | Grounding checks, sign-off points, audit trails, parallel runs, alignment with AI risk management expectations. |
