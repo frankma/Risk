@@ -41,7 +41,7 @@ provides.
 | [Principles](framework/01-principles.md) | Why inserting AI fails; six principles for redesign; how the risk manager's role changes. |
 | [Investment risk](framework/02-investment-risk.md) | Definition and scope, the three pillars and the boundaries between them. |
 | [Redesign method](framework/03-redesign-method.md) | Seven steps to redesign one workflow, from outcome to measured result. |
-| [Controls](framework/04-controls.md) | Grounding checks, sign-off points, audit trails, parallel runs, alignment with AI risk management expectations. |
+| [Controls](framework/04-controls.md) | Grounding checks, sign-off points, audit trails, governed thresholds, parallel runs, fallback, data handling, alignment with AI risk management expectations. |
 | [Measuring value](framework/05-measuring-value.md) | Capacity, speed, quality and influence, and why usage is not a measure. |
 | **Pillars** | |
 | [Market risk](pillars/market-risk.md) | Daily monitoring redesigned as a ranked exception queue with explanations of what changed. |
