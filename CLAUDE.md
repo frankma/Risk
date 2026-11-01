@@ -32,9 +32,13 @@ content.
   offline; an LLM backend is optional and configured by environment variable.
 - Calculations stay simple and transparent. The examples demonstrate workflows, not risk models.
 
-## Ask, don't decide
-If a change involves a risk-methodology choice the framework doesn't already settle (a measure, an estimator, a
-default, a threshold convention, how a pillar is scoped), stop and ask rather than choosing.
+## Ask, don't assume
+This repo is built collaboratively. When anything is unclear (what a request means, its scope, what a chapter should
+say, how code should be structured, what to do next), ask for clarification rather than inferring an answer and acting
+on it. A short, specific question, with options where they help, is better than a confident guess.
+
+In particular, if a change involves a risk-methodology choice the framework doesn't already settle (a measure, an
+estimator, a default, a threshold convention, how a pillar is scoped), stop and ask rather than choosing.
 
 ## Keeping the framework consistent
 - A change to a chapter's scope updates every chapter that refers to it, and the map in `README.md`, in the same commit.
