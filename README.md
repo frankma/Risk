@@ -49,14 +49,14 @@ provides.
 | [Performance risk](pillars/performance-risk.md) | The pillar's workflows; portfolio manager reviews run on risk's agenda with an evidence-based challenge pack. |
 | [Integrated view](pillars/integrated-view.md) | One fund health view that ranks funds where signals across pillars combine, before any one threshold is breached. |
 | **Reference** | |
-| [Reference implementations](reference/) | Runnable examples on synthetic data. |
+| [Reference implementations](reference/) | The shared foundation and the daily market risk exception note, runnable on synthetic data. |
 
 ## Using this repository
 The framework chapters are written to be read in order. The pillar chapters can be read on their own once the
 principles and the method are familiar.
 
-The reference implementations use synthetic data only and run without an AI service; an optional AI backend can be
-configured.
+The reference implementations use synthetic data only and run without an AI service; an AI backend can be added behind
+the same narrator interface.
 
 ## Disclaimer
 This framework is general and illustrative. It is not advice for any particular firm, and any implementation should be
