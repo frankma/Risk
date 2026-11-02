@@ -86,7 +86,7 @@ illustrative.**
 
 | Dimension | Measure | Before | After |
 |---|---|---|---|
-| Capacity | Hours per cycle | 60 | 7 |
+| Effort | Hours per cycle | 60 | 7 |
 | Capacity | Deep-dive fund reviews per month | 1 | 4 |
 | Speed | Working days from month end to signed-off report | 17 | 3 |
 | Speed | Days from a threshold breach to an explanation | 5 | 1 |
@@ -95,7 +95,10 @@ illustrative.**
 | Influence | Issues raised with portfolio managers per quarter | 8 | 20 |
 | Influence | Share of risk manager time on challenge | 20% | 55% |
 
-The scorecard reads as a whole. The hours saved (capacity) are shown going into deep-dive reviews, which is the
+Effort is shown alongside the four dimensions because it is where the freed time comes from, while capacity is what
+that time buys.
+
+The scorecard reads as a whole. The hours saved (effort) are shown going into deep-dive reviews (capacity), which is the
 reinvestment plan in action. The earlier report (speed) gives the committee time to act. Errors caught by the
 grounding check and reconciliation, rather than by a reviewer, improve quality. More issues raised, and more time spent
 on challenge, show the change in influence that the redesign was for.

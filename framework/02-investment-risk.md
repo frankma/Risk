@@ -30,6 +30,15 @@ Within scope, and handled inside the pillar workflows:
   migration risk are measured and monitored with the other sources of loss.
 - **Concentration and leverage** are part of market risk: concentration by issuer, sector, country or factor, and
   leverage and derivative exposure, are drivers of how much the portfolio could lose.
+- **Counterparty exposure** is part of market risk: each fund's exposure to the firms it trades with or holds assets
+  through is monitored against limits.
+- **Weak and stale prices** are part of liquidity risk: the risk function knows which of its measures rest on prices
+  that are weak or stale, and flags holdings that are stale or cannot be priced.
+- **The limits of the risk function's own measures** apply to every pillar: the function understands and tests what its
+  measures and tools assume and where they are weak, including any AI step in its workflows.
+
+Counterparty, valuation and model risk are therefore split. Investment risk measures and monitors; approval, pricing
+and independent validation sit with functions that are independent of the measure's user.
 
 At the boundary, and owned elsewhere:
 
@@ -38,17 +47,17 @@ At the boundary, and owned elsewhere:
 | Operational risk | Errors, systems, processes, outsourcing | Arises from how the firm operates. |
 | Compliance | The legal reading of guidelines and regulation | A legal reading; the pillars monitor exposures. |
 | Business risk | Fees, flows into the firm, its own balance sheet | Concerns the firm's results, not the portfolio's. |
-| Counterparty risk | Exposure to firms the portfolio trades or holds assets with | Has its own exposure processes. |
-| Valuation risk | Whether the prices used for holdings are fair | The pillars take prices as given. |
-| Model risk | Whether models used across the firm are fit for purpose | Validated by an independent function. |
+| Counterparty approval | Approving which counterparties may be used | Independent of those who trade with them. |
+| Pricing | Setting and challenging the prices of holdings | Independent of those who use the prices. |
+| Model validation | Independent validation of models across the firm | Independent of those who build and use them. |
 
-The valuation boundary needs a word of explanation. Market risk measurement assumes that the prices of holdings are
-fair: it asks how much the portfolio could lose from those prices, not whether the prices themselves are right. Where
-that assumption is weak, for example in thinly traded assets, the risk function should know that its measures rest on
-it, and should rely on the owner of valuation to test it.
+The valuation split needs a word of explanation. Market risk measurement takes the prices of holdings as fair: it asks
+how much the portfolio could lose from those prices, not whether the prices themselves are right. Where that
+assumption is weak, for example in thinly traded assets, the risk function should know which of its measures rest on
+it and flag the holdings concerned. Setting the price, and challenging it, remain with the owner of pricing.
 
 A boundary is not a wall. Risk managers will often see signals that matter to the owner of an adjacent risk, such as a
-holding that cannot be priced or a breach that may have a legal reading, and the workflows should route those signals
+holding flagged as unpriceable or a breach that may have a legal reading, and the workflows should route those signals
 to the right owner rather than resolve them inside the pillar.
 
 ## The three pillars
@@ -62,8 +71,9 @@ deliver, and the measures it covers.
 why.
 
 **Covers:** absolute risk measures such as value at risk, expected shortfall, volatility and drawdown; sensitivities
-such as duration, spread duration, equity beta and currency exposure; concentration; stress and scenario tests; and
-leverage and derivative exposure. The redesigned workflow is set out in [market risk](../pillars/market-risk.md).
+such as duration, spread duration, equity beta and currency exposure; concentration; stress and scenario tests;
+leverage and derivative exposure; and counterparty exposure against limits. The redesigned workflow is set out in
+[market risk](../pillars/market-risk.md).
 
 ### Liquidity risk
 **Question:** Can we meet redemptions without disadvantaging the investors who stay?
@@ -74,7 +84,8 @@ whether the tools for managing liquidity are ready if it cannot.
 **Covers:** both sides of the balance, read together. On the asset side, what the portfolio can raise and how fast: the
 time and cost to liquidate holdings. On the liability side, what investors could redeem: investor and distributor
 concentration, flow patterns and stressed outflows. Redemption coverage compares the two. The pillar also covers the
-readiness of liquidity management tools such as swing pricing, redemption gates and in-kind redemptions. See
+readiness of liquidity management tools such as swing pricing, redemption gates and in-kind redemptions, and the
+flagging of holdings whose prices are stale or that cannot be priced. See
 [liquidity risk](../pillars/liquidity-risk.md).
 
 ### Performance risk

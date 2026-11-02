@@ -119,7 +119,10 @@ Supervisors' expectations for AI risk management share a common shape. The contr
 | Change management | Versioned thresholds, prompts and templates, with change records |
 | Board and senior management oversight | Regular reporting of AI use, results and incidents |
 
-A firm should map these to the specific requirements that apply to it.
+The risk function owns the testing of its own AI steps, through the grounding check, parallel runs and ongoing
+monitoring above, as part of the limits of its own measures and tools that it is responsible for. Independent
+validation of models sits with a separate function, as set out in [investment risk](02-investment-risk.md). A firm
+should map these expectations to the specific requirements that apply to it.
 
 ## Why risk should own the controls
 The controls in this chapter are what allow manual checks to be removed with confidence. A risk function that designs
