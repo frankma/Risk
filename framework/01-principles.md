@@ -5,15 +5,15 @@ workflow as it stands. This chapter sets out why insertion fails and the six pri
 describes how the risk manager's role changes as a result.
 
 ## The problem: insertion, not redesign
-Most fund managers now give their staff AI tools, yet few can point to a measurable return from them. The tools usually
+Many fund managers now give their staff AI tools, but few can show a measurable return from them. The tools usually
 work as intended. The return is missing because the tools are placed inside workflows that were designed for a manual
 process, and the constraints of that process stay in place.
 
-Take a recurring monthly risk report. Its cycle runs two to three weeks from month end to distribution. An AI tool that
-drafts the commentary in two hours instead of six looks like a large saving, yet the report still goes out on the same
-day. The commentary was never the bottleneck: most of the cycle was spent gathering data from several systems,
-handing work between people and waiting in review queues. Saving four hours inside a three-week cycle changes neither
-when the report arrives nor what it says. (The figures are illustrative.)
+Take a recurring monthly risk report. Its cycle runs three to four weeks from month end to distribution. An AI tool that
+drafts the commentary in four hours instead of fourteen looks like a large saving, yet the report still goes out on the
+same day. The commentary was never the bottleneck: most of the cycle was spent gathering data from several systems,
+handing work between people and waiting in review queues. Saving ten hours inside a cycle of more than three weeks
+changes neither when the report arrives nor what it says. (The figures are illustrative.)
 
 The evidence points the same way. McKinsey's *The State of AI* (November 2025) tested 25 organisational attributes and
 found that workflow redesign had the biggest effect on whether organisations saw financial returns from AI. The
@@ -44,7 +44,7 @@ rather than automated. An output that feeds no decision is stopped rather than p
 calculating measures and comparing them to limits must be exact and reproducible, so it belongs to code. Explaining
 what changed, drafting text and extracting information from documents is language and pattern work, which AI does in
 seconds. Deciding what matters, escalating and signing off require judgement and accountability, and belong to the
-risk manager.
+risk manager, and to the head of risk where escalation or sign-off requires it.
 
 **In practice.** Each step of a redesigned workflow is assigned to exactly one of the three owners. Where a step mixes
 kinds of work, it is split. A system in which AI calculates, or in which a person re-types figures that code produced,

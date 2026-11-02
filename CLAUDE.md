@@ -23,13 +23,13 @@ should...", "each workflow is redesigned by..."). No decision logs, status marke
 content.
 
 ## Design rules for the reference implementations
-- **The LLM never produces a number.** Every figure is computed by code from data. The narrative layer only writes text
+- **The AI never produces a number.** Every figure is computed by code from data. The narrative layer only writes text
   around figures it is given, and a grounding check verifies that every number in generated text matches a computed
   value; text that fails is rejected.
 - **Exceptions over everything.** Workflows rank what needs a human's attention rather than handing over everything.
 - **Every AI step has a human sign-off point and an audit trail** of what was generated and what the human changed.
-- **Examples run without an LLM.** The narrative layer has a deterministic template backend so tests and demos run
-  offline; an LLM backend is optional and configured by environment variable.
+- **Examples run without an AI service.** The narrative layer has a deterministic template backend so tests and demos
+  run offline; an AI backend is optional and configured by environment variable.
 - Calculations stay simple and transparent. The examples demonstrate workflows, not risk models.
 
 ## Ask, don't assume
@@ -48,5 +48,5 @@ estimator, a default, a threshold convention, how a pillar is scoped), stop and 
 ## Working conventions
 - One change per branch, merged by pull request; keep each diff small enough to review.
 - Python, managed with `uv`. Tests sit next to the code they cover; add tests with every code change.
-- Lines up to 120 characters.
+- Lines up to 120 characters; Markdown table rows that cannot wrap are exempt.
 - Earlier code is preserved under the git tag `legacy-2020`. Do not restore it to the main branch.

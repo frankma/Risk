@@ -2,10 +2,10 @@
 
 **A framework for redesigning investment risk management around AI.**
 
-Most fund managers now use AI tools, yet few can point to a measurable return. The return does not come from inserting
-AI into existing workflows. A tool that drafts a report faster changes little when the real bottleneck is gathering
-data, handing work between people and waiting in review queues. It comes from redesigning the workflow around what AI
-makes possible.
+Many fund managers now use AI tools, but few can show a measurable return from them. The return does not come from
+inserting AI into existing workflows. A tool that drafts a report faster changes little when the real bottleneck is
+gathering data, handing work between people and waiting in review queues. It comes from redesigning the workflow around
+what AI makes possible.
 
 This framework sets out how to do that for investment risk.
 
@@ -16,7 +16,7 @@ This framework sets out how to do that for investment risk.
 |---|---|---|
 | Gathering data, calculating, comparing to limits | Code | Deterministic; must be exact and reproducible. |
 | Explaining what changed, drafting, extracting from documents | AI | Language and pattern work, in seconds. |
-| Deciding what matters, escalating, signing off | The risk manager | Judgement and accountability. |
+| Deciding what matters, escalating, signing off | The risk manager and head of risk | Judgement and accountability. |
 
 Two rules make it safe: **the AI never produces a number**, and **the human reviews ranked exceptions, not everything.**
 
@@ -44,9 +44,9 @@ provides.
 | [Controls](framework/04-controls.md) | Grounding checks, sign-off points, audit trails, governed thresholds, parallel runs, fallback, data handling, alignment with AI risk management expectations. |
 | [Measuring value](framework/05-measuring-value.md) | Capacity, speed, quality and influence; a baseline and a reinvestment plan; why usage is not a measure. |
 | **Pillars** | |
-| [Market risk](pillars/market-risk.md) | Daily monitoring redesigned as a ranked exception queue with explanations of what changed. |
-| [Liquidity risk](pillars/liquidity-risk.md) | From periodic stress tests to continuous monitoring with event-triggered stress tests. |
-| [Performance risk](pillars/performance-risk.md) | Portfolio manager reviews run on risk's agenda, with an evidence-based challenge pack. |
+| [Market risk](pillars/market-risk.md) | The pillar's workflows; daily monitoring redesigned as a ranked queue of exceptions and watch items with drafted explanations. |
+| [Liquidity risk](pillars/liquidity-risk.md) | The pillar's workflows; periodic stress tests redesigned as continuous monitoring with event-triggered stress tests. |
+| [Performance risk](pillars/performance-risk.md) | The pillar's workflows; portfolio manager reviews run on risk's agenda with an evidence-based challenge pack. |
 | [Integrated view](pillars/integrated-view.md) | One fund health view that ranks funds where signals across pillars combine, before any one threshold is breached. |
 | **Reference** | |
 | [Reference implementations](reference/) | Runnable examples on synthetic data. |

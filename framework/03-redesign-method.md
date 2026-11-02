@@ -53,7 +53,7 @@ Each tagged step is assigned to one owner, following the core pattern.
 |---|---|
 | Gather, Compute | Code |
 | Interpret, Communicate | AI drafts; the risk manager edits and approves |
-| Judge, Approve | The risk manager |
+| Judge, Approve | The risk manager, or the head of risk for escalation and sign-off |
 | Steps that exist only because the old process was slow | Eliminated |
 
 The last row matters as much as the others. Re-keying figures between systems, reformatting tables, reconciling two
@@ -74,8 +74,8 @@ reviews the exceptions". Three changes follow.
 
 ### 6. Build in controls
 A redesigned workflow is only worth adopting if it can be relied on with fewer manual checks. The grounding check,
-sign-off points, audit trail, threshold governance and parallel run that make this possible are set out in
-[controls](04-controls.md).
+sign-off points, audit trail, threshold governance, parallel run, fallback and data handling that make this possible
+are set out in [controls](04-controls.md).
 
 ### 7. Measure and reinvest
 The redesign is measured against a baseline taken before it started, across capacity, speed, quality and influence,
@@ -127,7 +127,7 @@ The cycle falls to around 7 hours and 3 working days. The output is now a ranked
 covering every fund at equal length, and the committee sees it around three weeks earlier.
 
 **Steps 6 and 7.** The redesigned report runs in parallel with the old one for at least one full cycle before the old
-one is stopped, and the freed hours go to the use the risk function chose at the start, for example quarterly
+one is stopped, and the freed hours go to the use the risk function chose at the start, for example monthly
 deep-dive reviews of the funds that appear most often in the exception summary.
 
 ## Common failure modes

@@ -25,7 +25,8 @@ after the workflow is live.
 ## The grounding check
 The grounding check enforces the principle that
 [the AI never produces a number](01-principles.md#3-the-ai-never-produces-a-number). Every number in a piece of
-generated text is extracted and matched against the computed facts the text was generated from.
+generated text is extracted and matched against the computed facts the text was generated from. Numbers written as
+words, such as "three months", are extracted and matched in the same way as numerals.
 
 The match allows for formatting but not for substance. A computed value of 0.0473 matches "4.7%" and "4.73%"; a
 computed value of 12,450,000 matches "12.45 million" and "12.5m"; a value expressed in basis points matches the same
@@ -33,10 +34,10 @@ value expressed as a percentage. It does not match a figure that cannot be trace
 beyond the stated precision, or a figure attached to the wrong fund or measure where the check can tell. (The values are
 illustrative.)
 
-Text with an unmatched number is rejected before anyone sees it. The system then regenerates it, with the failure
-noted, up to a set number of attempts; if it still fails, the item is escalated to the risk manager with the computed
-facts and no draft. The rejection, the attempts and the outcome are all recorded in the audit trail. A grounding check
-that warns rather than rejects is not a control.
+Text with an unmatched number is rejected before anyone sees it. The system then regenerates it, with the failure noted,
+up to a set number of attempts; if it still fails, the item falls back to the template text described under fallback,
+which states the computed facts in fixed sentences, and is flagged to the risk manager. The rejection, the attempts and
+the outcome are all recorded in the audit trail. A grounding check that warns rather than rejects is not a control.
 
 The check is limited to numbers. It does not test whether the text's reasoning is sound or whether its emphasis is
 right; that remains the risk manager's judgement at the sign-off point.
@@ -93,8 +94,9 @@ Each workflow defines what happens when a component fails.
 - **AI backend failure.** The workflow falls back to a deterministic template that states the computed facts in fixed
   sentences. The output is plainer, but complete and correct, and the workflow's deadlines still hold.
 
-Because the template backend produces correct output without an AI service, the workflow can always run, and the
-reference implementations use it for testing and demonstration.
+Because the template backend produces correct output without an AI service, the workflow can always run. The same
+template covers a draft that repeatedly fails the grounding check, and the reference implementations use it for
+testing and demonstration.
 
 ## Data handling
 A risk function sends data to an AI service only under rules set before the workflow is built.

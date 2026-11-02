@@ -26,11 +26,12 @@ outcome and the way it was achieved.
 | Style and mandate consistency | Daily | Exposures against mandate terms | Risk manager | Whether the fund drifts |
 | Fund watch list management | Monthly | Funds under watch, with actions | Investment oversight | Whether to escalate |
 
-The portfolio manager review is the flagship, because it is where the pillar's evidence meets the person who can act
-on it. The other workflows feed it: attribution, peer comparison and consistency checks supply the evidence. The fund
-watch list holds the funds whose issues have not been resolved; it is a single list for the firm, to which this pillar
-and the [integrated view](integrated-view.md) both add funds. Tracking error is computed in the daily run described
-in [market risk](market-risk.md) and its exceptions are routed here, because active risk belongs to this pillar.
+The portfolio manager review is the flagship, because it is where the pillar's evidence meets the person who can act on
+it. The other workflows feed it: attribution, peer comparison and consistency checks supply the evidence. The fund watch
+list holds the funds whose issues have not been resolved; it is a single list for the firm, owned by the head of risk,
+to which this pillar and the [integrated view](integrated-view.md) both add funds, and which investment oversight uses
+to decide escalation. Tracking error is computed in the daily run described in [market risk](market-risk.md) and its
+exceptions are routed here, because active risk belongs to this pillar.
 
 ## Flagship redesign: the periodic portfolio manager review
 The example below follows the review of one fund. **The steps, hours and elapsed times are illustrative.**
@@ -95,7 +96,8 @@ prepared from data that is independent of the portfolio manager. The risk manage
 explains; and the actions agreed are tracked until they are closed.
 
 ## Materiality and exceptions
-An exception in this pillar is a sign that the fund is not delivering its promise, or not in the way it promised.
+An **exception** in this pillar is a rule that has fired: a sign that the fund is not delivering its promise, or not
+in the way it promised. A **watch item** is an early sign that has not yet persisted.
 Each rule is a [governed parameter](../framework/04-controls.md#materiality-thresholds-as-governed-parameters).
 **The example values below are illustrative and are not recommendations;** each risk function sets its own.
 
@@ -109,7 +111,9 @@ Each rule is a [governed parameter](../framework/04-controls.md#materiality-thre
 | Style consistency | Exposures outside the confirmed mandate terms | Style drift |
 | Overdue action | An agreed action past its due date | Follow-up that has stalled |
 
-Code ranks issues for each fund. Persistent issues rank above single-period ones, because short periods are noisy and
+A shortfall in a single period is a watch item; every other rule in the table, including persistent shortfall, gives
+an exception when it fires. Code ranks issues for each fund, exceptions before watch items. Persistent issues rank
+above single-period ones, because short periods are noisy and
 persistence carries more information than size. Issues where the outcome and the way it was achieved both depart from
 the promise rank highest. Overdue actions are always shown, so that the review starts from what was agreed last time.
 

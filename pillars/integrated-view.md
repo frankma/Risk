@@ -28,7 +28,7 @@ already exists, but a capability that did not exist at any speed.
 
 ## What the view reads
 The view reads each pillar's signals for each fund. Every signal carries a state and the date it was computed. The
-states map onto the tiers the pillar chapters already define:
+states are the ones each pillar chapter assigns to its rules:
 
 - **Exception:** the pillar's rule has fired, such as a limit breach, a fired trigger or a persistent shortfall.
 - **Watch:** the reading is moving towards a threshold, such as an early warning, a reading drifting towards a
@@ -54,7 +54,7 @@ difficulty.
 | Pattern | Chain of signals |
 |---|---|
 | Redemption spiral | Persistent shortfall → rising outflows → falling coverage → rising concentration |
-| Hidden illiquidity | Stale or unpriceable holdings + volatility below its usual range + steady relative return |
+| Hidden illiquidity | Stale or unpriceable holdings + volatility below its usual range; steady return as context |
 | Concentrated and crowded | Rising issuer or sector concentration + rising time or cost to sell those holdings |
 | Drift under pressure | Style drift or falling active share + rising outflows |
 
@@ -74,8 +74,9 @@ active share, with investors leaving. The combination suggests the portfolio may
 or underperformance rather than to its mandate, which is a question for the portfolio manager.
 
 Signals do not move together. Performance and flows usually move first, because they respond to outcomes; liquidity
-and market risk move later, because they respond to the selling that follows. The view gives weight to the early
-signals for that reason: by the time market risk readings rise, the cycle is already under way.
+and market risk move later, because they respond to the selling that follows. A sharp market loss is the exception:
+there, market risk moves first and performance follows. The view gives weight to the early signals for that reason:
+by the time market risk readings rise, the cycle is usually under way.
 
 ## Flagship redesign: the fund health review
 The example below follows the fund health review for a range of 40 funds and a monthly risk committee. **The steps,
@@ -126,8 +127,7 @@ The work falls to 3 hours a month. A combination is seen on the day it forms, by
 next committee, and the committee view is signed off in 1 working day instead of 9.
 
 **The shift.** The integrated picture moves from one assembled occasionally by one person, for the funds they think
-of, to one maintained continuously for every fund. The head of risk still decides what the committee should discuss,
-but now chooses from a ranked view of every fund rather than building the view first.
+of, to one maintained continuously for every fund.
 
 ## Combination rules and ranking
 The rules that decide which funds rank, and in what order, are
@@ -136,13 +136,14 @@ illustrative kinds of rule, not recommendations;** each risk function sets its o
 
 | Kind of rule | Example (illustrative) |
 |---|---|
-| Pattern match | A fund ranks if every signal in a named pattern is at watch or exception |
+| Pattern match | A fund ranks if every signal a named pattern requires is at watch or exception |
 | Breadth | A fund ranks if it has signals at watch or exception in at least two pillars |
 | Ordering | Pattern matches first, then more exceptions, then more pillars at watch, then longer persistence |
 | Grouping | Signals that share one underlying driver count once |
 
-A fund with an exception in one pillar and nothing elsewhere does not rank in the view. Its exception is handled by
-that pillar's workflow, as it would be anyway; the view is for combinations.
+A pattern may also show signals as context that it does not require, such as the steady return in hidden
+illiquidity; context signals can be normal. A fund with an exception in one pillar and nothing elsewhere does not rank
+in the view. Its exception is handled by that pillar's workflow, as it would be anyway; the view is for combinations.
 
 **Avoiding double counting.** One underlying driver can appear in two pillars. Concentration in a few holdings shows
 as issuer concentration in market risk, and, because those holdings take longer to sell, as a rising time to
@@ -165,14 +166,14 @@ it does not recommend an action or claim that one signal caused another. **The f
 | Fund | Fund K |
 | Pattern matched | Redemption spiral |
 | Shortfall against benchmark | 4 consecutive quarters (performance, exception) |
-| Net outflows, last month | 3.2% of net assets, outside the usual range (liquidity, watch) |
+| Net outflows, last month | 3.2% of net assets, near the top of the usual range (liquidity, watch) |
 | Redemption coverage, today / three months ago | 1.8x / 2.6x (liquidity, watch) |
-| Largest issuer weight, today / three months ago | 8.7% / 6.1% (market, watch) |
+| Largest issuer weight, today / three months ago | 9.3% / 6.1% (market, watch) |
 
 > Fund K matches the redemption spiral pattern. It has been below its benchmark for 4 consecutive quarters. At the
-> same time, net outflows last month were 3.2% of net assets, outside the fund's usual range; redemption coverage has
-> fallen from 2.6x to 1.8x over three months; and its largest issuer weight has risen from 6.1% to 8.7%. Only the
-> performance signal is at exception; the liquidity and market signals are at watch.
+> same time, net outflows last month were 3.2% of net assets, near the top of the fund's usual range; redemption
+> coverage has fallen from 2.6x to 1.8x over three months; and its largest issuer weight has risen from 6.1% to
+> 9.3%. Only the performance signal is at exception; the liquidity and market signals are at watch.
 
 **Hidden illiquidity.**
 
@@ -181,8 +182,8 @@ it does not recommend an action or claim that one signal caused another. **The f
 | Fund | Fund L |
 | Pattern matched | Hidden illiquidity |
 | Stale or unpriceable holdings | 12% of net assets (liquidity, exception) |
-| Volatility, today / usual range | 4.1% / 6% to 9% (market, watch) |
-| Return against benchmark, last 12 months | +1.9% (performance, normal) |
+| Volatility, today / usual range | 4.1% / 6% to 9% (market, exception) |
+| Return against benchmark, last 12 months | +1.9% (performance, normal; context) |
 | Measures using the flagged prices | Volatility; relative return |
 
 > Fund L matches the hidden illiquidity pattern. 12% of its net assets are in holdings flagged as stale or
@@ -202,7 +203,7 @@ The view inherits every limit of the pillar measures it reads, and adds four of 
   ranked funds the risk manager judges worth action is watched, and the rules are tightened when it falls.
 
 The function tests the view by replaying past episodes: taking funds that ran into difficulty and checking whether the
-view, with the rules in force, would have ranked them, and how much earlier than any single pillar. Episodes the view
+view would have ranked them, and how much earlier than any single pillar. Episodes the view
 would have missed are the main source of new patterns. The AI step is tested as in the pillars, by tracking how much
 the risk manager edits the accounts.
 
@@ -219,8 +220,8 @@ The general controls in [controls](../framework/04-controls.md) apply in full. T
 
 ## Measuring value
 The measure that matters most for the view is **lead time**: how much earlier the view ranked a fund than the first
-exception in any single pillar. Lead time is measured from replays of past episodes and, once the view is running,
-from live cases. The other dimensions come from [measuring value](../framework/05-measuring-value.md).
+exception in any single pillar. Lead time is measured from replays of past episodes and from live cases. The other
+dimensions come from [measuring value](../framework/05-measuring-value.md).
 
 | Dimension | Measure for the view |
 |---|---|
@@ -235,9 +236,9 @@ view covers all 40 funds rather than those one person recalls. (The figures are 
 
 ## Ownership and connections
 The head of risk, or a delegate, owns the view: its patterns, its grouping of drivers and its ranking rules. Risk
-managers judge the ranked funds as they appear and add them to the fund watch list or escalate them. The risk
-committee sees the top-ranked funds, each with its account and the signals behind it, and decides what the firm should
-do.
+managers judge the ranked funds as they appear and add them to the fund watch list, which the head of risk owns, or
+escalate them. The risk committee sees the top-ranked funds, each with its account and the signals behind it, and
+decides what the firm should do.
 
 Actions route back to the workflows that own them. A question about liquidity goes to the
 [liquidity risk](liquidity-risk.md) workflows, a challenge to the portfolio manager goes into the next review in
