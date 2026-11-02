@@ -55,8 +55,8 @@ provides.
 The framework chapters are written to be read in order. The pillar chapters can be read on their own once the
 principles and the method are familiar.
 
-The reference implementations use synthetic data only and run without an AI service; an optional AI backend can be
-configured.
+The reference implementations use synthetic data only and run without an AI service; an AI backend is optional, never
+required.
 
 ## Disclaimer
 This framework is general and illustrative. It is not advice for any particular firm, and any implementation should be
