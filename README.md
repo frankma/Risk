@@ -2,10 +2,10 @@
 
 **A framework for redesigning investment risk management around AI.**
 
-Most fund managers now use AI tools, yet few can point to a measurable return. The return does not come from inserting
-AI into existing workflows. A tool that drafts a report faster changes little when the real bottleneck is gathering
-data, handing work between people and waiting in review queues. It comes from redesigning the workflow around what AI
-makes possible.
+Many fund managers now use AI tools, but few can show a measurable return from them. The return does not come from
+inserting AI into existing workflows. A tool that drafts a report faster changes little when the real bottleneck is
+gathering data, handing work between people and waiting in review queues. It comes from redesigning the workflow around
+what AI makes possible.
 
 This framework sets out how to do that for investment risk.
 
@@ -16,7 +16,7 @@ This framework sets out how to do that for investment risk.
 |---|---|---|
 | Gathering data, calculating, comparing to limits | Code | Deterministic; must be exact and reproducible. |
 | Explaining what changed, drafting, extracting from documents | AI | Language and pattern work, in seconds. |
-| Deciding what matters, escalating, signing off | The risk manager | Judgement and accountability. |
+| Deciding what matters, escalating, signing off | The risk manager and head of risk | Judgement and accountability. |
 
 Two rules make it safe: **the AI never produces a number**, and **the human reviews ranked exceptions, not everything.**
 
