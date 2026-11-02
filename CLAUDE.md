@@ -47,6 +47,10 @@ estimator, a default, a threshold convention, how a pillar is scoped), stop and 
 
 ## Working conventions
 - One change per branch, merged by pull request; keep each diff small enough to review.
-- Python, managed with `uv`. Tests sit next to the code they cover; add tests with every code change.
+- Python 3.12 or later, managed with `uv`; one `pyproject.toml` at the repo root.
+- Dependencies: numpy and pandas only, plus the standard library (`tomllib` for configuration). Dev tools: pytest and
+  ruff.
+- Modern type hints (`list[str]`, `X | None`); dataclasses for structured records.
+- Tests are `test_*.py` files next to the modules they cover, run with `uv run pytest`; lint with `uv run ruff check`.
 - Lines up to 120 characters; Markdown table rows that cannot wrap are exempt.
 - Earlier code is preserved under the git tag `legacy-2020`. Do not restore it to the main branch.
