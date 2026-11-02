@@ -220,8 +220,8 @@ The general controls in [controls](../framework/04-controls.md) apply in full. T
 
 ## Measuring value
 The measure that matters most for the view is **lead time**: how much earlier the view ranked a fund than the first
-exception in any single pillar. Lead time is measured from replays of past episodes and, once the view is running,
-from live cases. The other dimensions come from [measuring value](../framework/05-measuring-value.md).
+exception in any single pillar. Lead time is measured from replays of past episodes and from live cases. The other
+dimensions come from [measuring value](../framework/05-measuring-value.md).
 
 | Dimension | Measure for the view |
 |---|---|
@@ -236,9 +236,9 @@ view covers all 40 funds rather than those one person recalls. (The figures are 
 
 ## Ownership and connections
 The head of risk, or a delegate, owns the view: its patterns, its grouping of drivers and its ranking rules. Risk
-managers judge the ranked funds as they appear and add them to the fund watch list or escalate them. The risk
-committee sees the top-ranked funds, each with its account and the signals behind it, and decides what the firm should
-do.
+managers judge the ranked funds as they appear and add them to the fund watch list, which the head of risk owns, or
+escalate them. The risk committee sees the top-ranked funds, each with its account and the signals behind it, and
+decides what the firm should do.
 
 Actions route back to the workflows that own them. A question about liquidity goes to the
 [liquidity risk](liquidity-risk.md) workflows, a challenge to the portfolio manager goes into the next review in
