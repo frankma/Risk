@@ -47,7 +47,7 @@ provides.
 | [Market risk](pillars/market-risk.md) | Daily monitoring redesigned as a ranked exception queue with explanations of what changed. |
 | [Liquidity risk](pillars/liquidity-risk.md) | From periodic stress tests to continuous monitoring with event-triggered stress tests. |
 | [Performance risk](pillars/performance-risk.md) | Portfolio manager reviews run on risk's agenda, with an evidence-based challenge pack. |
-| [Integrated view](pillars/integrated-view.md) | One fund health view that ranks funds where signals across pillars combine. |
+| [Integrated view](pillars/integrated-view.md) | One fund health view that ranks funds where signals across pillars combine, before any one threshold is breached. |
 | **Reference** | |
 | [Reference implementations](reference/) | Runnable examples on synthetic data. |
 
