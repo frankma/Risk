@@ -22,8 +22,14 @@ CURRENCIES = ["USD", "EUR", "GBP", "JPY"]
 COUNTERPARTIES = ["Counterparty X", "Counterparty Y", "Counterparty Z"]
 
 # Daily volatility of each sector factor; Technology is the most volatile and Utilities the least.
-SECTOR_VOL = {"Technology": 0.016, "Financials": 0.006, "Health Care": 0.005, "Energy": 0.008, "Utilities": 0.003,
-              "Consumer": 0.005}
+SECTOR_VOL = {
+    "Technology": 0.016,
+    "Financials": 0.006,
+    "Health Care": 0.005,
+    "Energy": 0.008,
+    "Utilities": 0.003,
+    "Consumer": 0.005,
+}
 MARKET_VOL = 0.008
 CURRENCY_VOL = 0.004
 IDIOSYNCRATIC_VOL = 0.012
@@ -94,12 +100,14 @@ def _securities(rng: np.random.Generator) -> pd.DataFrame:
     rows = []
     for k in range(N_SECURITIES):
         issuer = k % N_ISSUERS  # the first 20 issuers have two securities each
-        rows.append({
-            "security": f"Security {k + 1:02d}",
-            "issuer": f"Issuer {issuer + 1:02d}",
-            "sector": issuer_sector[issuer],
-            "currency": issuer_currency[issuer],
-        })
+        rows.append(
+            {
+                "security": f"Security {k + 1:02d}",
+                "issuer": f"Issuer {issuer + 1:02d}",
+                "sector": issuer_sector[issuer],
+                "currency": issuer_currency[issuer],
+            }
+        )
     return pd.DataFrame(rows).set_index("security")
 
 
@@ -113,8 +121,8 @@ def _returns(
     columns = {}
     for sec, row in securities.iterrows():
         beta = rng.uniform(0.7, 1.3)
-        columns[sec] = beta * market + sector[row["sector"]] + fx[row["currency"]] + rng.normal(
-            0.0, IDIOSYNCRATIC_VOL, n
+        columns[sec] = (
+            beta * market + sector[row["sector"]] + fx[row["currency"]] + rng.normal(0.0, IDIOSYNCRATIC_VOL, n)
         )
     return pd.DataFrame(columns, index=dates), pd.DataFrame(fx, index=dates)
 
@@ -179,22 +187,32 @@ def _forwards(rng: np.random.Generator, position_dates: pd.DatetimeIndex, fx_ret
     rows = []
     for fund in FUNDS:
         for counterparty in COUNTERPARTIES:
-            rows.append({
-                "fund": fund,
-                "counterparty": counterparty,
-                "currency": CURRENCIES[1 + rng.integers(3)],
-                "notional": float(rng.uniform(5e6, 20e6)),
-                "direction": int(rng.choice([-1, 1])),
-                "trade_date": position_dates[0],
-            })
+            rows.append(
+                {
+                    "fund": fund,
+                    "counterparty": counterparty,
+                    "currency": CURRENCIES[1 + rng.integers(3)],
+                    "notional": float(rng.uniform(5e6, 20e6)),
+                    "direction": int(rng.choice([-1, 1])),
+                    "trade_date": position_dates[0],
+                }
+            )
     # Fund B adds large new forwards with Counterparty X ten business days before the last day, on the side that the
     # currency has since moved in favour of, so that its exposure to that counterparty builds up.
     trade_date = position_dates[-11]
     fx_index = (1.0 + fx_returns).cumprod()
     for currency in ("EUR", "GBP", "JPY"):
         move = fx_index.at[AS_OF, currency] / fx_index.at[trade_date, currency] - 1.0
-        rows.append({"fund": "Fund B", "counterparty": "Counterparty X", "currency": currency, "notional": 60e6,
-                     "direction": 1 if move >= 0 else -1, "trade_date": trade_date})
+        rows.append(
+            {
+                "fund": "Fund B",
+                "counterparty": "Counterparty X",
+                "currency": currency,
+                "notional": 60e6,
+                "direction": 1 if move >= 0 else -1,
+                "trade_date": trade_date,
+            }
+        )
     return pd.DataFrame(rows)
 
 
@@ -214,7 +232,7 @@ def _limits(securities, returns, prices, positions, cash, forwards, fx_returns, 
         exposure = _max_counterparty_exposure(fund, forwards, fx_returns, prices, positions, cash, position_dates)
         cp_limit = max(exposure.max() / 0.6, 0.02)
         if fund == "Fund B":
-            cp_limit = exposure.iloc[-1] / 0.88
+            cp_limit = exposure.iloc[-1] / 0.93
         rows[fund] = {
             "cash": cash[fund],
             "var_limit": round(float(var_limit), 4),
@@ -250,8 +268,11 @@ def _max_counterparty_exposure(fund, forwards, fx_returns, prices, positions, ca
         nav += cash[fund]
         live = forwards[(forwards["fund"] == fund) & (forwards["trade_date"] <= date)]
         mtm = live.apply(
-            lambda f, d=date: f["notional"] * f["direction"]
-            * (fx_index.at[d, f["currency"]] / fx_index.at[f["trade_date"], f["currency"]] - 1.0),
+            lambda f, d=date: (
+                f["notional"]
+                * f["direction"]
+                * (fx_index.at[d, f["currency"]] / fx_index.at[f["trade_date"], f["currency"]] - 1.0)
+            ),
             axis=1,
         )
         by_cp = mtm.clip(lower=0.0).groupby(live["counterparty"]).sum() / nav

@@ -1,0 +1,21 @@
+# Governed parameters for the daily market risk workflow.
+# The values are illustrative, not recommendations. Change them only through a recorded change: update `version`,
+# so that every result can be traced to the thresholds it was computed with.
+
+version = "illustrative-2026.1"
+
+[var]
+confidence = 0.99          # 1-day parametric VaR at this confidence
+covariance_window = 250    # business days of security returns behind the covariance
+
+[rules]
+early_warning_share = 0.90 # a reading above this share of its limit is a watch item
+var_change_share = 0.10    # VaR rising by more than this share in one day is an exception
+persistence_days = 3       # this many consecutive days above the early warning is a persistence watch item
+range_window = 60          # business days of ex-ante volatility that define a fund's usual range
+
+[checks]
+reconciliation_tolerance = 1e-10  # the change decomposition must reconcile to the total within this
+
+[narration]
+max_draft_attempts = 3     # drafts that fail the grounding check this many times fall back to the plain template
