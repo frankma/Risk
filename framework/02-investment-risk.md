@@ -84,8 +84,8 @@ whether the tools for managing liquidity are ready if it cannot.
 **Covers:** both sides of the balance, read together. On the asset side, what the portfolio can raise and how fast: the
 time and cost to liquidate holdings. On the liability side, what investors could redeem: investor and distributor
 concentration, flow patterns and stressed outflows. Redemption coverage compares the two. The pillar also covers the
-readiness of liquidity management tools such as swing pricing, redemption gates and in-kind redemptions, and the
-flagging of holdings whose prices are stale or that cannot be priced. See
+readiness of liquidity management tools such as swing pricing, redemption gates, in-kind redemptions and slowing
+purchases of illiquid assets, and the flagging of holdings whose prices are stale or that cannot be priced. See
 [liquidity risk](../pillars/liquidity-risk.md).
 
 ### Performance risk

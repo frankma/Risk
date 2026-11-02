@@ -25,9 +25,9 @@ assets, are the means of doing so, and their readiness is part of the outcome.
 |---|---|---|---|---|
 | Liquidity monitoring and stress tests | Daily; on events | Coverage, stress results | Risk manager | Whether to act |
 | Redemption monitoring | Daily | Flows against the fund's history | Risk manager | Whether outflows are unusual |
-| Investor and distributor concentration | Monthly | Largest holders' shares | Risk manager | Whether it is too high |
+| Investor and distributor concentration | Daily | Largest holders' shares | Risk manager | Whether it is too high |
 | Liquidity tool readiness | Quarterly | Readiness of each tool | Risk manager, fund board | Whether tools can be used |
-| Board reporting | Quarterly | Liquidity paper | Fund board | Whether liquidity is adequate |
+| Board reporting | Monthly | Liquidity paper | Fund board | Whether liquidity is adequate |
 | Stale or unpriceable holdings | Daily | Flagged holdings | Pricing owner | Whether prices need challenge |
 
 Liquidity monitoring and stress testing is the flagship, because it is where the calendar-driven process leaves the
