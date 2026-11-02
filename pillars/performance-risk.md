@@ -24,11 +24,12 @@ outcome and the way it was achieved.
 | Attribution reporting | Monthly | Return by source | Risk manager | Whether returns come from intended sources |
 | Peer comparison | Monthly | Position against peers | Investment oversight | Whether the outcome is competitive |
 | Style and mandate consistency | Daily | Exposures against mandate terms | Risk manager | Whether the fund drifts |
-| Watch list management | Monthly | Funds under watch, with actions | Investment oversight | Whether to escalate |
+| Fund watch list management | Monthly | Funds under watch, with actions | Investment oversight | Whether to escalate |
 
 The portfolio manager review is the flagship, because it is where the pillar's evidence meets the person who can act
-on it. The other workflows feed it: attribution, peer comparison and consistency checks supply the evidence, and the
-watch list holds the funds whose issues have not been resolved. Tracking error is computed in the daily run described
+on it. The other workflows feed it: attribution, peer comparison and consistency checks supply the evidence. The fund
+watch list holds the funds whose issues have not been resolved; it is a single list for the firm, to which this pillar
+and the [integrated view](integrated-view.md) both add funds. Tracking error is computed in the daily run described
 in [market risk](market-risk.md) and its exceptions are routed here, because active risk belongs to this pillar.
 
 ## Flagship redesign: the periodic portfolio manager review
@@ -184,8 +185,8 @@ The general controls in [controls](../framework/04-controls.md) apply in full. T
 - **Evidence is independent.** The challenge pack is built from the risk function's own data, not from material the
   portfolio manager supplies.
 - **Questions are chosen by the risk manager.** Drafted questions are proposals; the risk manager decides what to ask.
-- **Watch list exits are decided.** A fund leaves the watch list only by a recorded decision, not because its actions
-  were closed automatically.
+- **Watch list exits are decided.** A fund leaves the fund watch list only by a recorded decision, not because its
+  actions were closed automatically, whichever workflow added it.
 
 ## Measuring value
 The measures from [measuring value](../framework/05-measuring-value.md) that matter most for this pillar are
