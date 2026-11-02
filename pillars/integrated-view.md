@@ -203,9 +203,9 @@ The view inherits every limit of the pillar measures it reads, and adds four of 
   ranked funds the risk manager judges worth action is watched, and the rules are tightened when it falls.
 
 The function tests the view by replaying past episodes: taking funds that ran into difficulty and checking whether the
-view would have ranked them, and how much earlier than any single pillar. Episodes the view
-would have missed are the main source of new patterns. The AI step is tested as in the pillars, by tracking how much
-the risk manager edits the accounts.
+view, with the rules in force at the time, would have ranked them, and how much earlier than any pillar. Episodes it
+would have missed are the main source of new patterns. The AI step is tested, as in the pillars, through the risk
+manager's edits to the accounts.
 
 ## Controls specific to the view
 The general controls in [controls](../framework/04-controls.md) apply in full. The view adds four.
