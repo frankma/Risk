@@ -19,3 +19,6 @@ htmlcov/
 .idea/
 .vscode/
 .DS_Store
+
+# Reference implementation outputs
+reference/output/

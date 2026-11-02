@@ -1,0 +1,35 @@
+[project]
+name = "riskref"
+version = "0.1.0"
+description = "Reference implementations for the Risk framework: code computes, AI narrates, a human judges."
+readme = "reference/README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy",
+    "pandas",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "ruff",
+]
+
+[build-system]
+requires = ["uv_build>=0.11,<0.12"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-root = "reference"
+module-name = "riskref"
+
+[tool.pytest.ini_options]
+testpaths = ["reference"]
+addopts = "--import-mode=importlib"
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
