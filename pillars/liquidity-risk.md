@@ -93,8 +93,9 @@ test every time a large redemption arrived, concentration rose or market liquidi
 days. The redesigned process does exactly that, which is a capability the old process did not have at any speed.
 
 ## Materiality and exceptions
-An exception in this pillar is either a reading that shows a fund may not meet redemptions fairly, or an event that
-should trigger the stress test. Each rule is a
+An **exception** in this pillar is a rule that has fired: a reading that shows a fund may not meet redemptions fairly,
+or an event that should trigger the stress test. A **watch item** is a reading drifting towards a threshold. Each rule
+is a
 [governed parameter](../framework/04-controls.md#materiality-thresholds-as-governed-parameters).
 **The example values below are illustrative and are not recommendations;** each risk function sets its own.
 
@@ -108,8 +109,10 @@ should trigger the stress test. Each rule is a
 | Stale or unpriceable | No price change for a set number of trading days | Holdings whose value is uncertain |
 
 The large redemption, investor concentration and market liquidity rules are also triggers: when one fires, code runs
-the stress test for that fund the same day. Code ranks exceptions in tiers. Funds with coverage below its threshold come
-first, then funds with a fired trigger, then funds whose readings are drifting towards a threshold. Stale and
+the stress test for that fund the same day. Every rule in the table gives an exception when it fires; a reading
+drifting towards one of those thresholds, such as coverage falling towards its threshold, is a watch item. Code ranks
+exceptions before watch items: funds with coverage below its threshold come first, then funds with a fired trigger,
+then other exceptions, then watch items. Stale and
 unpriceable holdings are listed separately and routed to the owner of pricing, as well as being shown against the
 measures they affect.
 

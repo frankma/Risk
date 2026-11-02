@@ -95,7 +95,8 @@ prepared from data that is independent of the portfolio manager. The risk manage
 explains; and the actions agreed are tracked until they are closed.
 
 ## Materiality and exceptions
-An exception in this pillar is a sign that the fund is not delivering its promise, or not in the way it promised.
+An **exception** in this pillar is a rule that has fired: a sign that the fund is not delivering its promise, or not
+in the way it promised. A **watch item** is an early sign that has not yet persisted.
 Each rule is a [governed parameter](../framework/04-controls.md#materiality-thresholds-as-governed-parameters).
 **The example values below are illustrative and are not recommendations;** each risk function sets its own.
 
@@ -109,7 +110,9 @@ Each rule is a [governed parameter](../framework/04-controls.md#materiality-thre
 | Style consistency | Exposures outside the confirmed mandate terms | Style drift |
 | Overdue action | An agreed action past its due date | Follow-up that has stalled |
 
-Code ranks issues for each fund. Persistent issues rank above single-period ones, because short periods are noisy and
+A shortfall in a single period is a watch item; every other rule in the table, including persistent shortfall, gives
+an exception when it fires. Code ranks issues for each fund, exceptions before watch items. Persistent issues rank
+above single-period ones, because short periods are noisy and
 persistence carries more information than size. Issues where the outcome and the way it was achieved both depart from
 the promise rank highest. Overdue actions are always shown, so that the review starts from what was agreed last time.
 

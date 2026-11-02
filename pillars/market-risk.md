@@ -2,8 +2,9 @@
 
 Market risk asks how much a fund could lose, and the risk function answers that question every day for every fund.
 This chapter applies the [redesign method](../framework/03-redesign-method.md) to the pillar: it lists the pillar's
-recurring workflows, redesigns daily monitoring from a manual scan of every fund into a ranked exception queue with
-drafted explanations, and sets out the thresholds, limits, controls and measures that make the redesign work.
+recurring workflows, redesigns daily monitoring from a manual scan of every fund into a ranked queue of exceptions and
+watch items with drafted explanations, and sets out the thresholds, limits, controls and measures that make the
+redesign work.
 
 ## The outcome
 The pillar's outcome, as defined in [investment risk](../framework/02-investment-risk.md#market-risk):
@@ -17,7 +18,7 @@ are outside their intended risk, or why, is a candidate for removal rather than 
 
 | Workflow | Cadence | Output | Used by | For which decision |
 |---|---|---|---|---|
-| Daily monitoring and exceptions | Daily | Ranked exceptions, explained | Risk manager | What to escalate or query |
+| Daily monitoring and exceptions | Daily | Ranked queue, explained | Risk manager | What to escalate or query |
 | Periodic risk report | Monthly | Risk profile of each fund | Risk committee | Whether profiles fit appetite |
 | Stress and scenario testing | Monthly, on events | Stress losses by fund | Risk committee | Whether tolerable |
 | Counterparty exposure monitoring | Daily | Exposure against limits | Risk manager | Whether to reduce exposure |
@@ -88,13 +89,14 @@ the day. The 4 hours a day freed are directed in advance, for example to deep-di
 most often in the queue.
 
 **The shift.** The risk manager no longer scans everything to find what matters. The system checks every fund against
-every threshold, and the risk manager's work is to judge which of the ranked exceptions matter and why, and what to do
+every threshold, and the risk manager's work is to judge which of the ranked items matter and why, and what to do
 about them. Coverage improves at the same time: every fund is checked in full every day, rather than the few the risk
 manager had time to examine.
 
 ## Materiality and exceptions
-An exception is a reading that the risk manager should see today. Exceptions come from a small number of kinds of
-rule, each owned and versioned as a
+The queue holds the readings the risk manager should see today. An **exception** is a reading where a rule has fired;
+a **watch item** is a reading moving towards a threshold. Both come from a small number of kinds of rule, each owned
+and versioned as a
 [governed parameter](../framework/04-controls.md#materiality-thresholds-as-governed-parameters).
 **The example values below are illustrative and are not recommendations;** each risk function sets its own.
 
@@ -102,14 +104,19 @@ rule, each owned and versioned as a
 |---|---|---|
 | Level against limit | VaR above its limit, or above an early warning such as 90% of it | Breaches and near-breaches |
 | Change since the previous day | VaR up by more than a set share in one day | Sudden shifts in risk |
-| Against the fund's own history | A measure outside its usual range over a lookback | Unusual risk for this fund |
+| Against the fund's own history | A measure, such as volatility, outside its usual range | Unusual risk for this fund |
 | Persistence | A near-limit reading for several consecutive days | Slow drift towards a limit |
 | Concentration | One issuer or sector above a set share of the fund | Build-up of single-name risk |
 | Counterparty exposure | Exposure to one counterparty above a share of its limit | Concentrated counterparty risk |
 
-Code ranks exceptions in tiers. Breaches come first, then early warnings, then unusual changes, then persistence. Within
-a tier, exceptions are ordered by size relative to the threshold, and a fund with several exceptions ranks above a fund
-with one. The ranking rule is itself a governed parameter, because it decides what the risk manager reads first.
+Breaches of a limit, including a concentration limit, large changes since the previous day and readings outside the
+fund's usual range are exceptions. Early warnings, persistent near-limit readings and counterparty exposure approaching
+its limit are watch items.
+
+Code ranks exceptions before watch items. Breaches come first, then the other exceptions, then early warnings, then
+persistence. Within a tier, items are ordered by size relative to the threshold, and a fund with several items ranks
+above a fund with one. The ranking rule is itself a governed parameter, because it decides what the risk manager reads
+first.
 
 Tracking error is computed in the same daily run, because it uses the same positions and market data, but it is a
 measure of active risk and belongs to [performance risk](performance-risk.md). Its exceptions are routed to that
@@ -118,8 +125,9 @@ pillar's workflows rather than to this queue, so each measure is computed once a
 ## What the AI drafts
 The AI drafts from the facts that code produced and from nothing else. In each example below, the facts are shown
 alongside the draft; every number in the draft appears in the facts, so the
-[grounding check](../framework/04-controls.md#the-grounding-check) would pass. **The funds and figures are
-illustrative.**
+[grounding check](../framework/04-controls.md#the-grounding-check) would pass. All three examples are watch items:
+Fund A is above its early warning, Fund B is approaching its counterparty limit and Fund C has stayed near its limit.
+Exceptions are drafted in the same way. **The funds and figures are illustrative.**
 
 **A rise in VaR.**
 
@@ -193,7 +201,7 @@ The general controls in [controls](../framework/04-controls.md) apply in full. T
   change, within a stated tolerance, before the AI drafts from them. A decomposition that does not reconcile is an
   exception in its own right.
 - **Silence is not a clean result.** A fund with missing or incomplete data is shown as not assessed, never as having
-  no exceptions.
+  nothing to report.
 - **Messages are sent by the risk manager.** Drafted messages to portfolio managers are never sent automatically.
 - **The scenario library is governed.** Scenarios the AI proposes are recorded as proposals; the risk manager's
   calibration and approval are recorded before a scenario enters the library.
@@ -207,7 +215,7 @@ capacity: how soon a portfolio manager hears about an issue, and how many funds 
 | Speed | Time from data availability to the first message to a portfolio manager |
 | Capacity | Funds reviewed in depth per day |
 | Quality | Issues found late, for example a limit breach first noticed by someone else |
-| Influence | Exceptions raised with portfolio managers and actions taken |
+| Influence | Issues raised with portfolio managers and actions taken |
 | Pillar-specific | Share of drafts that needed substantive edits; backtesting exceptions within expectation |
 
 In the flagship example, the time to the first message falls from about five hours to about an hour and a half,
@@ -216,6 +224,7 @@ and the 4 hours freed each day are tracked against the reinvestment plan. (The f
 ## Connections
 Market risk signals feed the other pillars. Rising concentration and volatility raise the cost and time of selling
 holdings, which matters to [liquidity risk](liquidity-risk.md); stress losses inform the redemption scenarios that
-pillar uses. Tracking error, computed here, is routed to [performance risk](performance-risk.md), and a large loss is
-often the first sign of the underperformance that pillar watches. The [integrated view](integrated-view.md) brings
+pillar uses. Tracking error, computed here, is routed to [performance risk](performance-risk.md). Performance and flows
+usually move before market risk, but a sharp market loss is the case where market risk moves first, ahead of the
+underperformance that pillar watches. The [integrated view](integrated-view.md) brings
 these signals together for each fund.
