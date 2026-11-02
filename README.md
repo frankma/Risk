@@ -44,9 +44,9 @@ provides.
 | [Controls](framework/04-controls.md) | Grounding checks, sign-off points, audit trails, governed thresholds, parallel runs, fallback, data handling, alignment with AI risk management expectations. |
 | [Measuring value](framework/05-measuring-value.md) | Capacity, speed, quality and influence; a baseline and a reinvestment plan; why usage is not a measure. |
 | **Pillars** | |
-| [Market risk](pillars/market-risk.md) | Daily monitoring redesigned as a ranked exception queue with explanations of what changed. |
-| [Liquidity risk](pillars/liquidity-risk.md) | From periodic stress tests to continuous monitoring with event-triggered stress tests. |
-| [Performance risk](pillars/performance-risk.md) | Portfolio manager reviews run on risk's agenda, with an evidence-based challenge pack. |
+| [Market risk](pillars/market-risk.md) | The pillar's workflows; daily monitoring redesigned as a ranked queue of exceptions and watch items with drafted explanations. |
+| [Liquidity risk](pillars/liquidity-risk.md) | The pillar's workflows; periodic stress tests redesigned as continuous monitoring with event-triggered stress tests. |
+| [Performance risk](pillars/performance-risk.md) | The pillar's workflows; portfolio manager reviews run on risk's agenda with an evidence-based challenge pack. |
 | [Integrated view](pillars/integrated-view.md) | One fund health view that ranks funds where signals across pillars combine, before any one threshold is breached. |
 | **Reference** | |
 | [Reference implementations](reference/) | Runnable examples on synthetic data. |
