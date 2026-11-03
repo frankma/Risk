@@ -32,7 +32,9 @@ assets, are the means of doing so, and their readiness is part of the outcome.
 
 Liquidity monitoring and stress testing is the flagship, because it is where the calendar-driven process leaves the
 largest gap. Redemption and concentration monitoring become inputs to it: they are the sources of the triggers that run
-the stress test. Board reporting draws on the period's monitoring rather than being a separate exercise.
+the stress test. Board reporting draws on the period's monitoring rather than being a separate exercise. The daily run
+also computes the firm's share of each issue and of each market's daily volume for the [firm's
+footprint](integrated-view.md#the-firms-footprint).
 
 Flagging stale or unpriceable holdings is the measuring side of valuation risk that this pillar owns, as set out in
 [investment risk](../framework/02-investment-risk.md#scope-and-boundaries). The risk function flags the holdings and

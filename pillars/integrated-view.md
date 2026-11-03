@@ -11,20 +11,18 @@ Redemptions are met by selling the most liquid assets first. The portfolio that 
 volatile, which makes further underperformance more likely, and the cycle repeats.
 
 A manual process tends to see this late. Each pillar is reviewed on its own cycle, often by different people, and each
-sees its own signal as moderate: a performance shortfall that is not yet severe, outflows that are higher than usual
-but within coverage, concentration that is rising but below its limit. No single threshold is breached, so no single
-workflow escalates. The combination is seen when one of the signals finally crosses a threshold, by which point the
-cycle is under way.
+sees its own signal as moderate: a performance shortfall that is not yet severe, outflows that are higher than usual but
+within coverage, concentration that is rising but below its limit. No single threshold is breached, so no single
+workflow escalates.
 
 The view's outcome:
 
 > The risk function knows which funds have signals combining across pillars, and why, before any one pillar's
 > threshold is breached.
 
-This is the framework's clearest example of
-[principle 6](../framework/01-principles.md#6-new-capabilities-beat-faster-old-ones). The manual process cannot watch
-every signal in every pillar for every fund every day and connect them; it is not a faster version of something that
-already exists, but a capability that did not exist at any speed.
+This is the framework's clearest example of [principle
+6](../framework/01-principles.md#6-new-capabilities-beat-faster-old-ones). The manual process cannot watch every signal
+for every fund every day and connect them.
 
 ## What the view reads
 The view reads each pillar's signals for each fund. Every signal carries a state and the date it was computed. The
@@ -38,14 +36,14 @@ states are the ones each pillar chapter assigns to its rules:
 The signals, each defined in its pillar chapter's rules:
 
 - **[Market risk](market-risk.md#materiality-and-exceptions):** limit utilisation; change since the previous day;
-  readings against the fund's own history, including volatility; issuer or sector concentration; counterparty exposure.
+  readings against the fund's own history, including volatility; issuer or sector concentration; drawdown against
+  tolerance; counterparty exposure.
 - **[Liquidity risk](liquidity-risk.md#materiality-and-exceptions):** redemption coverage; large redemptions; flows
   against history; investor and distributor concentration; time and cost to liquidate; stale or unpriceable holdings.
 - **[Performance risk](performance-risk.md#materiality-and-exceptions):** relative return; persistence of shortfall;
-  tracking error; active share; source of return; style consistency; overdue actions.
+  tracking error; active share; risk budget; source of return; style consistency; overdue actions.
 
-The view takes these signals as the pillars produce them. If a pillar changes how a signal is computed, the view
-changes with it; the view never computes its own version.
+The view takes these signals as the pillars produce them and never computes its own version.
 
 ## Patterns
 A pattern is a named chain of signals across pillars that, together, describe a known way for a fund to get into
@@ -145,13 +143,20 @@ A pattern may also show signals as context that it does not require, such as the
 illiquidity; context signals can be normal. A fund with an exception in one pillar and nothing elsewhere does not rank
 in the view. Its exception is handled by that pillar's workflow, as it would be anyway; the view is for combinations.
 
-**Avoiding double counting.** One underlying driver can appear in two pillars. Concentration in a few holdings shows
-as issuer concentration in market risk, and, because those holdings take longer to sell, as a rising time to
-liquidate in liquidity risk. Counted twice, it would make a fund look as if two pillars were elevated when there is
-one driver. The view groups signals that share a driver and counts the group once for breadth. The groups are part of
-the governed rules: concentration in market risk and the time to sell the same holdings form one group, while investor
-concentration, which concerns who owns the fund rather than what it holds, is a separate driver. The pattern
+**Avoiding double counting.** One underlying driver can appear in two pillars. Concentration in a few holdings shows as
+issuer concentration in market risk, and, because those holdings take longer to sell, as a rising time to liquidate in
+liquidity risk. The view groups signals that share a driver and counts the group once for breadth. The groups are part
+of the governed rules: concentration in market risk and the time to sell the same holdings form one group, while
+investor concentration, which concerns who owns the fund rather than what it holds, is a separate driver. The pattern
 *concentrated and crowded* still names the combination, so that it is seen, but it does not count as two pillars.
+
+## The firm's footprint
+Funds do not net, so the firm's footprint is read across them rather than ranked within them. The pillars compute it:
+[market risk](market-risk.md#workflows-in-this-pillar) the firm's totals by issuer, counterparty and factor, [liquidity
+risk](liquidity-risk.md#workflows-in-this-pillar) its share of each issue and of each market's daily volume. The view
+lists the readings above a governed threshold, largest first, beside the ranked funds. Each fund involved shows the
+reading as context only: it does not count towards the fund's rank, because one reading could otherwise rank many funds
+at once.
 
 ## What the AI drafts
 The AI drafts each fund's account from the signals and facts the view read, and from nothing else. Every number in
@@ -231,14 +236,11 @@ dimensions come from [measuring value](../framework/05-measuring-value.md).
 | Quality | Combinations first seen through a pillar breach rather than through the view |
 | Influence | Ranked funds discussed by the committee, and actions taken |
 
-In the flagship example, a combination is seen on the day it forms rather than at the next monthly committee, and the
-view covers all 40 funds rather than those one person recalls. (The figures are illustrative.)
-
 ## Ownership and connections
-The head of risk, or a delegate, owns the view: its patterns, its grouping of drivers and its ranking rules. Risk
-managers judge the ranked funds as they appear and add them to the fund watch list, which the head of risk owns, or
-escalate them. The risk committee sees the top-ranked funds, each with its account and the signals behind it, and
-decides what the firm should do.
+The head of risk, or a delegate, owns the view: its patterns, its grouping of drivers, its ranking rules and its
+footprint thresholds. Risk managers judge the ranked funds as they appear and add them to the fund watch list, which the
+head of risk owns, or escalate them. The risk committee sees the top-ranked funds, each with its account and the signals
+behind it, and the firm's footprint, and decides what the firm should do.
 
 Actions route back to the workflows that own them. A question about liquidity goes to the
 [liquidity risk](liquidity-risk.md) workflows, a challenge to the portfolio manager goes into the next review in

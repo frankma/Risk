@@ -70,10 +70,10 @@ deliver, and the measures it covers.
 **Outcome:** the risk manager knows, every day, which funds carry more absolute risk than their mandate intends, and
 why.
 
-**Covers:** absolute risk measures such as value at risk, expected shortfall, volatility and drawdown; sensitivities
-such as duration, spread duration, equity beta and currency exposure; concentration; stress and scenario tests;
-leverage and derivative exposure; and counterparty exposure against limits. The redesigned workflow is set out in
-[market risk](../pillars/market-risk.md).
+**Covers:** absolute risk measures such as value at risk, expected shortfall, volatility and drawdown against tolerance;
+sensitivities such as duration, spread duration, equity beta and currency exposure; concentration; stress, reverse
+stress and scenario tests; pre-trade what-ifs; leverage and derivative exposure; and counterparty exposure against
+limits. The redesigned workflow is set out in [market risk](../pillars/market-risk.md).
 
 ### Liquidity risk
 **Question:** Can we meet redemptions without disadvantaging the investors who stay?
@@ -94,9 +94,9 @@ purchases of illiquid assets, and the flagging of holdings whose prices are stal
 **Outcome:** the risk manager can show, with evidence, whether each fund is meeting its objective and whether its
 returns come from the sources its mandate describes.
 
-**Covers:** risk and return relative to the promise. Tracking error and active share; outcome against benchmark, peers
-or objective; attribution, to test whether returns come from the intended sources; style drift; and consistency and
-risk-adjusted returns. See [performance risk](../pillars/performance-risk.md).
+**Covers:** risk and return relative to the promise. Tracking error and active share; risk budgets against return;
+outcome against benchmark, peers or objective; attribution, to test whether returns come from the intended sources;
+style drift; and consistency and risk-adjusted returns. See [performance risk](../pillars/performance-risk.md).
 
 ## Boundaries between pillars
 The three pillars overlap in data but not in question, and the dividing lines follow from the questions.
@@ -125,6 +125,7 @@ Underperformance prompts redemptions. Redemptions force sales, and the most liqu
 portfolio that remains is more concentrated and more volatile, which raises market risk and makes further
 underperformance more likely.
 
-A manual process tends to see these links late, because each pillar is reviewed on its own cycle by different people.
-A redesigned process can watch the signals together and flag funds where they combine, which is a capability the
-manual process does not have. The [integrated view](../pillars/integrated-view.md) sets this out.
+A manual process tends to see these links late, because each pillar is reviewed on its own cycle by different people. A
+redesigned process can watch the signals together and flag funds where they combine, which is a capability the manual
+process does not have. The [integrated view](../pillars/integrated-view.md) sets this out, along with the firm's
+footprint across funds.
