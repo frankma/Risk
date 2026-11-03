@@ -2,7 +2,8 @@
 
 AI produces a return in investment risk when the workflow is redesigned around it, not when it is inserted into the
 workflow as it stands. This chapter sets out why insertion fails and the six principles a redesign should follow, then
-describes how the risk manager's role changes as a result.
+describes how the risk manager's role changes as a result. The [philosophy](00-philosophy.md) sets out what the function
+is for; these principles set out how to redesign its work around AI.
 
 ## The problem: insertion, not redesign
 Many fund managers now give their staff AI tools, but few can show a measurable return from them. The tools usually

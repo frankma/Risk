@@ -3,7 +3,8 @@
 Investment risk is the chance that a portfolio's outcome departs from what its mandate intends, arising from the
 investments themselves. This chapter defines it, sets out what sits inside and outside its scope, and organises a risk
 function's recurring work into three pillars: market, liquidity and performance risk. The pillars are a lens on
-workflows rather than a taxonomy of risks, and they connect.
+workflows rather than a taxonomy of risks, and they connect. The beliefs behind this definition are set out in the
+[philosophy](00-philosophy.md).
 
 ## Definition
 **Investment risk is the chance that a portfolio's outcome departs from what its mandate intends: a loss, a shortfall
