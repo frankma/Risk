@@ -6,8 +6,8 @@ organises the recurring work into three pillars, and the [principles](01-princip
 [redesign method](03-redesign-method.md) set out how the risk manager does that work alongside AI. The beliefs do not
 depend on any particular model; any model a risk function uses is judged against them.
 
-**Investment risk management makes sure every portfolio takes the risks its mandate intends, in the size it can bear,
-and is paid for them.**
+**Investment risk management shows whether every portfolio takes the risks its mandate intends, in the size it can bear,
+and is paid for them, and challenges it where it does not.**
 
 Risk management earns no return of its own. Its product is **sight**: out of millions of numbers (hundreds of
 positions, thousands of risk factors, millions of possible futures), the few worth questioning and acting on.
@@ -24,13 +24,14 @@ Each is a position a reasonable firm could reject. Together they decide what the
 illustrative.)
 
 1. **The mandate defines the risk.** Appetite belongs to the client, expressed as a benchmark, a tracking-error budget,
-   guidelines and liquidity terms, not a firm-wide number. Most risk is relative: losing 20% when the benchmark loses
-   22% is success.
+   guidelines and liquidity terms, not a firm-wide number. Risk is judged against the promise: losing 20% when the
+   benchmark loses 22% can be success.
 2. **Intended risk is the product; unintended risk is the hazard.** Clients pay for the bets the investment team means
    to take. The first job is to find the ones nobody chose: a value tilt in a growth fund, a rates bet in a credit
    fund, a crowded factor riding along with stock picks.
-3. **Risk must earn its place.** Risk and return are two sides of one coin. Every unit of active risk is paid for by
-   expected return, or it is cut. Risk that return does not justify is not taken.
+3. **Risk must earn its place.** Risk and return are two sides of one coin. Every unit of active risk should be paid for
+   by expected return. The portfolio manager decides what to hold; where return does not justify the risk, the risk
+   function challenges it and escalates what stays unresolved.
 4. **The tail and the path decide outcomes.** Mandates end on drawdowns and stress, not on average days. Positions are
    sized so the strategy survives the paths that end mandates, not only the average path.
 5. **Liquidity is part of the promise.** A fund that offers daily dealing on assets that take weeks to sell has made a
@@ -100,7 +101,8 @@ decomposition reconciles, within a stated tolerance.
 ### 3. Connection
 **Exposure, risk and performance on one timeline, in one language.** Each is credible only through the others.
 - **Return per unit of risk:** the information ratio, by bet and by manager.
-- **Risk budget against return, by source:** a bet that uses 30% of the budget and earns nothing is cut or resized.
+- **Risk budget against return, by source:** a bet that uses 30% of the budget and persistently earns nothing is
+  challenged; the portfolio manager resizes it, cuts it or explains why it stays.
 - **Forecast against outcome:** ex-ante tracking error against realized; VaR exceptions against the number expected.
 - **Drawdown against tolerance:** how close each mandate runs to the loss that would end it.
 
@@ -109,8 +111,9 @@ return and any day's change in risk can be explained by the same factors and own
 
 ### The firm view
 Holdings are aggregated across all funds to see the firm's **footprint**: its share of an issue or of a market's daily
-volume, its exposure to one counterparty, its weight in a crowded factor. These do not net (belief 6). They show
-where the firm, not one fund, could be the one that cannot get out.
+volume, its exposure to one counterparty, its weight in a crowded factor. These do not net (belief 6). They show where
+the firm, not one fund, could be the one that cannot get out. The pillars compute the footprint and the [integrated
+view](../pillars/integrated-view.md#the-firms-footprint) shows it.
 
 ## Boundaries
 Numbers do not replace judgment; they tell judgment where to look. Some things they cannot settle: regime changes,

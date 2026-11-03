@@ -22,16 +22,17 @@ outcome and the way it was achieved.
 |---|---|---|---|---|
 | Portfolio manager review | Quarterly | Challenge pack, minutes, actions | Risk manager | What must be explained |
 | Attribution reporting | Monthly | Return by source | Risk manager | Whether returns come from intended sources |
+| Risk budget review | Monthly | Budget use against return, by source | Risk manager | Which bets to challenge |
 | Peer comparison | Monthly | Position against peers | Investment oversight | Whether the outcome is competitive |
 | Style and mandate consistency | Daily | Exposures against mandate terms | Risk manager | Whether the fund drifts |
 | Fund watch list management | Monthly | Funds under watch, with actions | Investment oversight | Whether to escalate |
 
 The portfolio manager review is the flagship, because it is where the pillar's evidence meets the person who can act on
-it. The other workflows feed it: attribution, peer comparison and consistency checks supply the evidence. The fund watch
-list holds the funds whose issues have not been resolved; it is a single list for the firm, owned by the head of risk,
-to which this pillar and the [integrated view](integrated-view.md) both add funds, and which investment oversight uses
-to decide escalation. Tracking error is computed in the daily run described in [market risk](market-risk.md) and its
-exceptions are routed here, because active risk belongs to this pillar.
+it. The other workflows feed it: attribution, the risk budget review, peer comparison and consistency checks supply the
+evidence. The fund watch list holds the funds whose issues have not been resolved; it is a single list for the firm,
+owned by the head of risk, to which this pillar and the [integrated view](integrated-view.md) both add funds, and which
+investment oversight uses to decide escalation. Tracking error is computed in the daily run described in [market
+risk](market-risk.md) and its exceptions are routed here, because active risk belongs to this pillar.
 
 ## Flagship redesign: the periodic portfolio manager review
 The example below follows the review of one fund. **The steps, hours and elapsed times are illustrative.**
@@ -108,6 +109,7 @@ Each rule is a [governed parameter](../framework/04-controls.md#materiality-thre
 | Tracking error | Outside the range the mandate terms imply | Too much or too little active risk |
 | Active share | Falling for several consecutive quarters | A fund moving towards its benchmark |
 | Source of return | A large share of excess return from an unintended exposure | Returns from the wrong sources |
+| Risk budget | A bet using a large share of the budget with no return over several periods | Risk that has not earned its place |
 | Style consistency | Exposures outside the confirmed mandate terms | Style drift |
 | Overdue action | An agreed action past its due date | Follow-up that has stalled |
 

@@ -21,23 +21,29 @@ are outside their intended risk, or why, is a candidate for removal rather than 
 | Daily monitoring and exceptions | Daily | Ranked queue, explained | Risk manager | What to escalate or query |
 | Periodic risk report | Monthly | Risk profile of each fund | Risk committee | Whether profiles fit appetite |
 | Stress and scenario testing | Monthly, on events | Stress losses by fund | Risk committee | Whether tolerable |
+| Pre-trade what-ifs | On request | What a proposed trade adds to risk | Portfolio managers | Whether and how much to trade |
 | Counterparty exposure monitoring | Daily | Exposure against limits | Risk manager | Whether to reduce exposure |
 | New instrument review | On request | How it is measured | Risk manager, investment team | Whether it can be held |
 | Ad hoc queries | On request | Answers on exposures and risk | Portfolio managers | Positioning decisions |
 
 Daily monitoring is the flagship, because it runs most often and because most of the other workflows draw on what it
 computes. The periodic risk report becomes largely a summary of the month's exceptions and their resolution, as in the
-worked example in the
-[redesign method](../framework/03-redesign-method.md#worked-example-a-monthly-risk-and-performance-report).
-Counterparty exposure monitoring runs inside the same daily process, with its own limits; approving which
-counterparties may be used remains with the function that owns that decision.
+worked example in the [redesign
+method](../framework/03-redesign-method.md#worked-example-a-monthly-risk-and-performance-report). Counterparty exposure
+monitoring runs inside the same daily process, with its own limits; approving which counterparties may be used remains
+with the function that owns that decision. The same run totals holdings across funds by issuer, counterparty and factor
+for the [firm's footprint](integrated-view.md#the-firms-footprint); these totals do not net.
+
+Pre-trade what-ifs run the daily calculations on a proposed trade: code computes what it adds to VaR, concentration,
+tracking error and budget use, and the portfolio manager decides.
 
 Stress and scenario testing benefits from a different kind of redesign. A scenario library is usually refreshed
 occasionally, so its scenarios describe the conditions of the last refresh rather than today's. In a redesigned
 workflow, the AI drafts candidate forward-looking scenarios from current conditions, such as a sharp move in a market
 the funds are newly exposed to, and the risk manager decides which to adopt and calibrates the shocks. Code then runs
 every scenario against every fund. The library stays current, and the calibration, which is the judgement, stays with
-the risk manager.
+the risk manager. Reverse stress testing works the other way: it starts from the loss that would break the mandate and
+asks which shocks would cause it, and the risk manager judges how plausible they are.
 
 ## Flagship redesign: daily monitoring and exception handling
 The example below follows one risk manager covering 40 funds. **The steps, hours and elapsed times are
@@ -105,13 +111,14 @@ and versioned as a
 | Level against limit | VaR above its limit, or above an early warning such as 90% of it | Breaches and near-breaches |
 | Change since the previous day | VaR up by more than a set share in one day | Sudden shifts in risk |
 | Against the fund's own history | A measure, such as volatility, outside its usual range | Unusual risk for this fund |
+| Drawdown against tolerance | A peak-to-trough fall above a set tolerance, or above an early warning of it | Mandates nearing the loss that would end them |
 | Persistence | A near-limit reading for several consecutive days | Slow drift towards a limit |
 | Concentration | One issuer or sector above a set share of the fund | Build-up of single-name risk |
 | Counterparty exposure | Exposure to one counterparty above a share of its limit | Concentrated counterparty risk |
 
-Breaches of a limit, including a concentration limit, large changes since the previous day and readings outside the
-fund's usual range are exceptions. Early warnings, persistent near-limit readings and counterparty exposure approaching
-its limit are watch items.
+Breaches of a limit, including a concentration limit or a drawdown tolerance, large changes since the previous day and
+readings outside the fund's usual range are exceptions. Early warnings, persistent near-limit readings and counterparty
+exposure approaching its limit are watch items.
 
 Code ranks exceptions before watch items. Breaches come first, then the other exceptions, then early warnings, then
 persistence. Within a tier, items are ordered by size relative to the threshold, and a fund with several items ranks
