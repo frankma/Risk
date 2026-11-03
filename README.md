@@ -38,6 +38,7 @@ provides.
 | Chapter | Covers |
 |---|---|
 | **Framework** | |
+| [Investment risk philosophy](framework/00-philosophy.md) | What a risk function believes and is for: eight beliefs, the three decisions it serves, and transparency in three dimensions. |
 | [Principles](framework/01-principles.md) | Why inserting AI fails; six principles for redesign; how the risk manager's role changes. |
 | [Investment risk](framework/02-investment-risk.md) | Definition and scope, including what is measured here and what is owned elsewhere; the three pillars and the boundaries between them. |
 | [Redesign method](framework/03-redesign-method.md) | Seven steps to redesign one workflow, from outcome to measured result. |

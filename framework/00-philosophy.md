@@ -1,0 +1,120 @@
+# Investment risk philosophy
+
+This chapter sets out what a risk function believes about investment risk, what the function is for and how it works.
+It is the ground the rest of the framework stands on: [investment risk](02-investment-risk.md) defines the scope and
+organises the recurring work into three pillars, and the [principles](01-principles.md) and
+[redesign method](03-redesign-method.md) set out how the risk manager does that work alongside AI. The beliefs do not
+depend on any particular model; any model a risk function uses is judged against them.
+
+**Investment risk management makes sure every portfolio takes the risks its mandate intends, in the size it can bear,
+and is paid for them.**
+
+Risk management earns no return of its own. Its product is **sight**: out of millions of numbers (hundreds of
+positions, thousands of risk factors, millions of possible futures), the few worth questioning and acting on.
+
+**Investment risk is the chance that a portfolio's outcome departs from what its mandate intends:** a loss, a
+shortfall against its objective or benchmark, or an inability to meet redemptions, arising from the investments
+themselves. Its scope and boundaries are set out in [investment risk](02-investment-risk.md#scope-and-boundaries).
+
+The capital at risk is the clients', not the firm's. So risk is judged against what each client was promised, and
+the firm's franchise follows from keeping those promises.
+
+## Beliefs
+Each is a position a reasonable firm could reject. Together they decide what the rules don't. (The figures are
+illustrative.)
+
+1. **The mandate defines the risk.** Appetite belongs to the client, expressed as a benchmark, a tracking-error budget,
+   guidelines and liquidity terms, not a firm-wide number. Most risk is relative: losing 20% when the benchmark loses
+   22% is success.
+2. **Intended risk is the product; unintended risk is the hazard.** Clients pay for the bets the investment team means
+   to take. The first job is to find the ones nobody chose: a value tilt in a growth fund, a rates bet in a credit
+   fund, a crowded factor riding along with stock picks.
+3. **Risk must earn its place.** Risk and return are two sides of one coin. Every unit of active risk is paid for by
+   expected return, or it is cut. Risk that return does not justify is not taken.
+4. **The tail and the path decide outcomes.** Mandates end on drawdowns and stress, not on average days. Positions are
+   sized so the strategy survives the paths that end mandates, not only the average path.
+5. **Liquidity is part of the promise.** A fund that offers daily dealing on assets that take weeks to sell has made a
+   promise. Asset liquidity is matched to redemption terms under stress, not in calm markets.
+6. **Portfolios don't net.** Clients' money in one fund never offsets another's. Across funds the firm measures its
+   footprint (concentration, liquidity, crowding) and never takes diversification credit.
+7. **Stable over precise.** Portfolio managers act on changes in risk. A measure that jitters loses their trust faster
+   than one that is slightly off, so a change must come from markets or positions, not from sampling noise.
+8. **Every model is wrong in a known direction.** History is a prior, not a forecast. A risk function states which
+   assumptions bind and which way they err, and covers the rest with stress and reverse stress: what would break this
+   mandate?
+
+## Purpose: transparency for three decisions
+Sight serves decisions, and an investment has three moments:
+
+| | Decision | What risk provides |
+|---|---|---|
+| Before | **Construct** | What-ifs and marginal risk inside the investment process, before the trade: what this position adds, and what it crowds out of the budget |
+| During | **Oversee** | Risk against budgets and limits, monitored daily, with escalation to the head of risk and the risk committee |
+| After | **Judge** | Attribution that separates skill from luck and both from beta, and return per unit of risk by bet and by manager |
+
+Risk is independent of the investment teams but works inside their process. Challenge comes from understanding the
+strategy well enough to say "yes, and size it like this", not only "no".
+
+## Practice: transparency in three dimensions
+The three dimensions describe what every piece of risk work must provide. They cut across the
+[three pillars](02-investment-risk.md#the-three-pillars), which organise the recurring work: market, liquidity and
+performance risk each condense, drill in and connect.
+
+| | Dimension | The question it answers |
+|---|---|---|
+| 1 | **Condensation** (summarize) | What are we exposed to, and how much could we lose against the mandate? |
+| 2 | **Drill-in** (decompose) | Where do risk and return come from, and were they intended? |
+| 3 | **Connection** (over time) | Is the risk we take paid for by the return we earn? |
+
+All of it assumes the basics: data checked before use, models tested against outcomes, results reproducible.
+
+### 1. Condensation
+**Millions of numbers become a few that people can act on, without losing what matters.** The summaries come in
+three families, and a portfolio needs all three: **risk** (what it could do, with probability and dependence folded
+in, keeping the tail, joint extremes and nonlinearity), **exposure** (what it is sensitive to, factor by factor) and
+**liquidity** (what it could raise, and how fast).
+
+| Measure | Family | What it condenses |
+|---|---|---|
+| Ex-ante tracking error | Risk, active | How far the portfolio can drift from its benchmark |
+| Active share | Exposure, active | How different the holdings are from the benchmark's |
+| VaR, ES, maximum drawdown | Risk, absolute | The loss on a bad day, the average beyond it, and the worst peak-to-trough fall |
+| Beta, duration, DTS | Exposure | Sensitivity to the equity market, to rates and to credit spreads, scaled by the spread itself |
+| Days to liquidate | Liquidity | How long it takes to sell the portfolio, or a stressed redemption's share of it, at a set share of daily volume |
+
+*It fails* when the summary hides what it should show, or moves for no reason. *The test:* the number moves when,
+and only when, the risk moves.
+
+### 2. Drill-in
+**Any number opens on demand, the pieces add up, and each piece has an owner.**
+- **Risk factor decomposition.** Tracking error split into factors (market, style, sector, country, currency, rates,
+  spreads) and stock-specific risk. The shares sum to the whole: for
+  instance, 55% sector bets, 25% currency, 20% stock selection. A large share no one intended is belief 2 at work.
+- **Performance attribution.** Active return split the same way: by decision, into allocation and selection, and by
+  factor, into exposure × factor return plus the specific return.
+
+Risk and return use the same factors and owners, so the risk a bet takes and the return it earns sit side by side.
+*It fails* when the parts do not sum to the whole, or a residual nobody can explain is left over. *The test:* every
+decomposition reconciles, within a stated tolerance.
+
+### 3. Connection
+**Exposure, risk and performance on one timeline, in one language.** Each is credible only through the others.
+- **Return per unit of risk:** the information ratio, by bet and by manager.
+- **Risk budget against return, by source:** a bet that uses 30% of the budget and earns nothing is cut or resized.
+- **Forecast against outcome:** ex-ante tracking error against realized; VaR exceptions against the number expected.
+- **Drawdown against tolerance:** how close each mandate runs to the loss that would end it.
+
+*It fails* when risk and performance come from different systems and cannot be reconciled. *The test:* any day's
+return and any day's change in risk can be explained by the same factors and owners.
+
+### The firm view
+Holdings are aggregated across all funds to see the firm's **footprint**: its share of an issue or of a market's daily
+volume, its exposure to one counterparty, its weight in a crowded factor. These do not net (belief 6). They show
+where the firm, not one fund, could be the one that cannot get out.
+
+## Boundaries
+Numbers do not replace judgment; they tell judgment where to look. Some things they cannot settle: regime changes,
+crowded exits, liquidity in a panic, the next crisis that history never showed. There the risk committee decides,
+informed by stress and reverse stress, not replaced by them. Risks owned outside investment risk are managed elsewhere;
+investment risk works with their owners at the edges named in
+[investment risk](02-investment-risk.md#scope-and-boundaries).
