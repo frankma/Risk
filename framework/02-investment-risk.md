@@ -96,8 +96,9 @@ purchases of illiquid assets, and the flagging of holdings whose prices are stal
 returns come from the sources its mandate describes.
 
 **Covers:** risk and return relative to the promise. Tracking error and active share; risk budgets against return;
-outcome against benchmark, peers or objective; attribution, to test whether returns come from the intended sources;
-style drift; and consistency and risk-adjusted returns. See [performance risk](../pillars/performance-risk.md).
+outcome against benchmark, peers or objective; attribution, to test whether returns come from the intended sources,
+including the split into [alpha and beta](06-alpha-and-beta.md); style drift; and consistency and risk-adjusted
+returns. See [performance risk](../pillars/performance-risk.md).
 
 ## Boundaries between pillars
 The three pillars overlap in data but not in question, and the dividing lines follow from the questions.

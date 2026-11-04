@@ -97,8 +97,9 @@ risk moves, and any other movement stays within a stated tolerance.
   into exposure × factor return plus the specific return.
 
 The factor split uses the risk decomposition's factors and decision-makers, so the risk a bet takes and the return it
-earns sit side by side. *It fails* when the parts do not sum to the whole, or a residual nobody can explain is left
-over. *The test:* every decomposition reconciles, within a stated tolerance.
+earns sit side by side. [Alpha and beta](06-alpha-and-beta.md) joins the two splits and shows how a holding divides
+between them. *It fails* when the parts do not sum to the whole, or a residual nobody can explain is left over. *The
+test:* every decomposition reconciles, within a stated tolerance.
 
 ### 3. Connection
 **Exposure, risk and performance on one timeline, in one language.** Each is credible only through the others. This
