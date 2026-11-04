@@ -81,7 +81,7 @@ investors could take out).
 | Ex-ante tracking error | Risk, active | How far the portfolio can drift from its benchmark |
 | Active share | Exposure, active | How different the holdings are from the benchmark's |
 | VaR, expected shortfall, maximum drawdown | Risk, absolute | The loss on a bad day, the average beyond it, and the worst peak-to-trough fall |
-| Beta, duration, duration times spread | Exposure | Sensitivity to the equity market, to rates and to credit spreads, scaled by the spread itself |
+| Equity beta, duration, duration times spread | Exposure | Sensitivity to the equity market, to rates and to credit spreads, scaled by the spread itself |
 | Days to liquidate | Liquidity | How long it takes to sell the portfolio, or a stressed redemption's share of it, at a set share of daily volume |
 | Redemption coverage | Liquidity | What it could raise against what investors could redeem under stress |
 

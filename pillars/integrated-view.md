@@ -53,7 +53,7 @@ difficulty.
 |---|---|
 | Redemption spiral | Persistent shortfall → rising outflows → falling coverage → rising concentration |
 | Hidden illiquidity | Stale or unpriceable holdings + volatility below its usual range; steady return as context |
-| Concentrated and crowded | Rising issuer or sector concentration + rising time or cost to sell those holdings |
+| Concentrated and hard to sell | Rising issuer or sector concentration + rising time or cost to sell those holdings |
 | Drift under pressure | Style drift or falling active share + rising outflows |
 
 **The redemption spiral** is the self-reinforcing cycle set out above; outflows concentrated in a few distributors
@@ -63,9 +63,9 @@ can stand in for rising outflows. Its early links are in performance and liquidi
 prices are stale do not move, so volatility looks low and returns look smooth. A fund in this pattern may show normal
 market and performance readings because of, not despite, its liquidity signal.
 
-**Concentrated and crowded** joins a rising concentration in market risk with a rising time or cost to sell those same
-holdings in liquidity risk. Either alone may be acceptable; together they mean the fund holds more of something that is
-becoming harder to sell.
+**Concentrated and hard to sell** joins a rising concentration in market risk with a rising time or cost to sell those
+same holdings in liquidity risk. Either alone may be acceptable; together they mean the fund holds more of something
+that is becoming harder to sell.
 
 **Drift under pressure** joins a performance signal about how the fund is managed, such as style drift or falling
 active share, with investors leaving. The combination suggests the portfolio may be changing in response to outflows
@@ -148,7 +148,7 @@ issuer concentration in market risk, and, because those holdings take longer to 
 liquidity risk. The view groups signals that share a driver and counts the group once for breadth. The groups are part
 of the governed rules: concentration in market risk and the time to sell the same holdings form one group, while
 investor concentration, which concerns who owns the fund rather than what it holds, is a separate driver. The pattern
-*concentrated and crowded* still names the combination, so that it is seen, but it does not count as two pillars.
+*concentrated and hard to sell* still names the combination, so that it is seen, but it does not count as two pillars.
 
 ## The firm's footprint
 Funds do not net, so the firm's footprint is read across them rather than ranked within them. The pillars compute it:

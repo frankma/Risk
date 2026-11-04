@@ -72,9 +72,9 @@ deliver, and the measures it covers.
 why.
 
 **Covers:** absolute risk measures such as value at risk, expected shortfall, volatility and drawdown against tolerance;
-sensitivities such as duration, spread duration, equity beta and currency exposure; concentration; stress, reverse
-stress and scenario tests; pre-trade what-ifs; leverage and derivative exposure; and counterparty exposure against
-limits. The redesigned workflow is set out in [market risk](../pillars/market-risk.md).
+sensitivities such as duration, spread duration, duration times spread, equity beta and currency exposure;
+concentration; stress, reverse stress and scenario tests; pre-trade what-ifs; leverage and derivative exposure; and
+counterparty exposure against limits. The redesigned workflow is set out in [market risk](../pillars/market-risk.md).
 
 ### Liquidity risk
 **Question:** Can we meet redemptions without disadvantaging the investors who stay?
