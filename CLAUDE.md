@@ -2,8 +2,8 @@
 
 A framework for redesigning investment risk management around AI: a philosophy, principles, a definition of investment
 risk and its three workflow pillars (market, liquidity, performance risk), a method for redesigning each workflow, the
-controls that make it safe, and how to measure the value. Reference implementations on synthetic data show the core
-pattern: **code computes, AI narrates, a human judges.**
+controls that make it safe, how to measure the value, and how to separate alpha from beta. Reference implementations on
+synthetic data show the core pattern: **code computes, AI narrates, a human judges.**
 
 The framework's map is in `README.md`. Read it, and the chapters a change touches, before making the change.
 

@@ -29,9 +29,10 @@ outcome and the way it was achieved.
 
 The portfolio manager review is the flagship, because it is where the pillar's evidence meets the person who can act on
 it. The other workflows feed it: attribution, the risk budget review, peer comparison and consistency checks supply the
-evidence. The fund watch list holds the funds whose issues have not been resolved; it is a single list for the firm,
-owned by the head of risk, to which this pillar and the [integrated view](integrated-view.md) both add funds, and which
-investment oversight uses to decide escalation. Tracking error is computed in the daily run described in [market
+evidence. Attribution separates beta from alpha as set out in [alpha and beta](../framework/06-alpha-and-beta.md). The
+fund watch list holds the funds whose issues have not been resolved; it is a single list for the firm, owned by the
+head of risk, to which this pillar and the [integrated view](integrated-view.md) both add funds, and which investment
+oversight uses to decide escalation. Tracking error is computed in the daily run described in [market
 risk](market-risk.md) and its exceptions are routed here, because active risk belongs to this pillar.
 
 ## Flagship redesign: the periodic portfolio manager review
