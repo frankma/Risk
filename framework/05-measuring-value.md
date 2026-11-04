@@ -6,10 +6,11 @@ measurable, and why usage of AI tools is not a measure. It closes with an illust
 workflow.
 
 ## What value means for a risk function
-The purpose of a risk function is to make sure that risk is understood, challenged and acted on before it causes harm.
-A redesign creates value when it lets the function do more of that, do it sooner, do it more reliably, or have more
-effect on the decisions it informs. Hours saved are a means to those ends, not the end itself: an hour saved and spent
-on nothing has no value, and an hour saved and spent on challenging a portfolio manager may have a great deal.
+The [philosophy](00-philosophy.md) sets out a risk function's purpose: to show whether every portfolio takes the risks
+its mandate intends, in the size it can bear, and is paid for them, and to challenge it where it does not. A redesign
+creates value when it lets the function do more of that, do it sooner, do it more reliably, or have more effect on the
+decisions it informs. Hours saved are a means to those ends, not the end itself: an hour saved and spent on nothing has
+no value, and an hour saved and spent on challenging a portfolio manager may have a great deal.
 
 This is why value is measured in four dimensions rather than one, and why the measurement starts before the redesign
 does.

@@ -7,8 +7,9 @@ long-short book that makes the split exact. The split serves the Assess decision
 [performance risk](../pillars/performance-risk.md), which tests whether returns come from the sources a mandate
 describes.
 
-**Beta is the return from allocation calls. Alpha is the add-on return from security selection, measured after all the
-beta constructions, as a long-short book neutral to them.**
+**Beta is the return from market and factor exposure, whether an allocation call set it or a security pick carried it.
+Alpha is the add-on return from security selection, measured after all the beta constructions, as a long-short book
+neutral to them.**
 
 ## Definitions
 **Beta** is what a portfolio earns from its exposure to markets and factors. This exposure can be bought cheaply,
@@ -62,7 +63,7 @@ Zero net weight is not zero exposure. If X has a market beta of 1.3 and Y a mark
 market beta of 0.01 (2.0% × 1.3 less 2.0% × 0.8). With the market up 5%, 0.05% of the book's return is market return,
 and it moves to beta.
 
-| | Beta | Alpha | Fund |
+| | Beta | Alpha | Total |
 |---|---|---|---|
 | Split of weights | 1.09% | 0.16% | 1.25% |
 | Market return in the book | +0.05% | -0.05% | 0.00% |
@@ -73,8 +74,8 @@ return divides into exposure times factor return, which moves to beta, and speci
 where the two attribution splits in the [philosophy](00-philosophy.md#2-drill-in) meet: selection's factor return moves
 to beta, and the rest of selection is the specific return.
 
-The same cut applies to risk. Factor risk is beta and stock-specific risk is alpha, so the risk budget can set what each
-uses against what each earns.
+The same split applies to risk. Factor risk is beta and stock-specific risk is alpha, so the risk budget can set what
+each uses against what each earns.
 
 ## Booked or derived
 Two routes reach the same book.
@@ -88,8 +89,8 @@ Two routes reach the same book.
 | Weakness | A tilt can be tagged as selection | An underweight cannot exceed the beta weight |
 
 The booked book is the cleanest form, because its return is observed rather than estimated. That return is stated after
-borrow and financing costs and without the interest earned on the book's cash. The derived book is the same cut where
-booking is not possible. A tag is a label rather than evidence, so both routes pass the same test below.
+borrow and financing costs and without the interest earned on the book's cash. The derived book gives the same split
+where booking is not possible. A tag is a label rather than evidence, so both routes pass the same test below.
 
 On either route, the construction is on record before the period starts. Whoever picks the buckets, the index inside
 each and the factor list after the result is known can move return between beta and alpha. These choices are therefore
@@ -99,8 +100,8 @@ beta calls; the rules for splitting them do not.
 
 ## The test and its limits
 *It fails* when the construction is chosen after the result, or the alpha book carries exposure to a declared factor.
-*The test:* beta and alpha sum to the fund's return, and the book's exposure to each declared factor stays within a
-stated tolerance.
+*The test:* within stated tolerances, beta and alpha sum to the fund's return and the book carries no exposure to any
+declared factor.
 
 Passing the test shows that the split is clean, not that the alpha is skill or that it is safe.
 

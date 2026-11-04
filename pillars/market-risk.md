@@ -132,9 +132,10 @@ pillar's workflows rather than to this queue, so each measure is computed once a
 ## What the AI drafts
 The AI drafts from the facts that code produced and from nothing else. In each example below, the facts are shown
 alongside the draft; every number in the draft appears in the facts, so the
-[grounding check](../framework/04-controls.md#the-grounding-check) would pass. All three examples are watch items:
-Fund A is above its early warning, Fund B is approaching its counterparty limit and Fund C has stayed near its limit.
-Exceptions are drafted in the same way. **The funds and figures are illustrative.**
+[grounding check](../framework/04-controls.md#the-grounding-check) would pass. Fund A is an exception, for its large
+one-day rise, and also a watch item, for being above its early warning. Fund B is a watch item approaching its
+counterparty limit, and Fund C is a watch item that has stayed near its limit. **The funds and figures are
+illustrative.**
 
 **A rise in VaR.**
 
@@ -159,6 +160,7 @@ Exceptions are drafted in the same way. **The funds and figures are illustrative
 | Counterparty | Counterparty X |
 | Exposure today / previous day | 4.4% / 3.1% of net assets |
 | Limit / utilisation | 5.0% / 88% |
+| Early-warning share of the limit | 85% |
 | Driver | New currency forwards traded on the previous day |
 
 > Fund B's exposure to Counterparty X rose from 3.1% to 4.4% of net assets, 88% of its 5.0% limit. The increase follows

@@ -106,17 +106,16 @@ is a
 | Redemption coverage | Liquid assets below a set multiple of stressed outflows | Funds that may not meet redemptions |
 | Large redemption | A single redemption above a set share of net assets | Events that change the profile |
 | Flows against history | Net outflows outside the fund's usual range | Unusual investor behaviour |
-| Investor concentration | One investor above a set share of the fund | Dependence on few investors |
+| Investor and distributor concentration | One investor or distributor above a set share of the fund | Dependence on few investors or distributors |
 | Market liquidity | Time or cost to liquidate rising above a set level | Assets becoming harder to sell |
 | Stale or unpriceable | No price change for a set number of trading days | Holdings whose value is uncertain |
 
-The large redemption, investor concentration and market liquidity rules are also triggers: when one fires, code runs
-the stress test for that fund the same day. Every rule in the table gives an exception when it fires; a reading
-drifting towards one of those thresholds, such as coverage falling towards its threshold, is a watch item. Code ranks
-exceptions before watch items: funds with coverage below its threshold come first, then funds with a fired trigger,
-then other exceptions, then watch items. Stale and
-unpriceable holdings are listed separately and routed to the owner of pricing, as well as being shown against the
-measures they affect.
+The large redemption, investor and distributor concentration, and market liquidity rules are also triggers: when one
+fires, code runs the stress test for that fund the same day. Every rule in the table gives an exception when it fires;
+a reading drifting towards one of those thresholds, such as coverage falling towards its threshold, is a watch item.
+Code ranks exceptions before watch items: funds with coverage below its threshold come first, then funds with a fired
+trigger, then other exceptions, then watch items. Stale and unpriceable holdings are listed separately and routed to the
+owner of pricing, as well as being shown against the measures they affect.
 
 ## What the AI drafts
 The AI drafts from the facts that code produced and from nothing else. Every number in each draft appears in the facts
