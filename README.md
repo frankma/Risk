@@ -44,7 +44,7 @@ provides.
 | [Redesign method](framework/03-redesign-method.md) | Seven steps to redesign one workflow, from outcome to measured result. |
 | [Controls](framework/04-controls.md) | Grounding checks, sign-off points, audit trails, governed thresholds, parallel runs, fallback, data handling, alignment with AI risk management expectations. |
 | [Measuring value](framework/05-measuring-value.md) | Capacity, speed, quality and influence; a baseline and a reinvestment plan; why usage is not a measure. |
-| [Alpha and beta](framework/06-alpha-and-beta.md) | What beta and alpha are; how a holding's weight splits between them; the long-short book, booked or derived, that makes the split exact. |
+| [Alpha and beta](framework/06-alpha-and-beta.md) | What beta and alpha are, for publicly traded holdings on gross returns; how a holding's weight splits between them; the long-short book, booked or derived, that makes the split exact. |
 | **Pillars** | |
 | [Market risk](pillars/market-risk.md) | The pillar's workflows; daily monitoring redesigned as a ranked queue of exceptions and watch items with drafted explanations. |
 | [Liquidity risk](pillars/liquidity-risk.md) | The pillar's workflows; periodic stress tests redesigned as continuous monitoring with event-triggered stress tests. |
