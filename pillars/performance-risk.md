@@ -35,6 +35,18 @@ head of risk, to which this pillar and the [integrated view](integrated-view.md)
 oversight uses to decide escalation. Tracking error is computed in the daily run described in [market
 risk](market-risk.md) and its exceptions are routed here, because active risk belongs to this pillar.
 
+### Computing the split
+Each security's betas against the baskets are estimated together, so that overlapping baskets do not count the same
+return twice, over a long window with gradual decay, so that they do not jump when an old day drops out
+([belief 7](../framework/00-philosophy.md#beliefs)). A security with little history uses a stand-in, such as its
+sector's beta. Code weights the betas by each day's holdings and compares the book's exposure with the confirmed mandate
+terms and any recorded tilts; what does not match counts as carried beta until the risk manager judges otherwise.
+
+Trading cost is the gap between the fund's actual return and the return of its start-of-day holdings. A booked book
+charges it by trade tag. A derived book charges any net change in a bucket's weight to beta and the rest to alpha, which
+is approximate. The cost of trades forced by redemptions stays where it lands, because those trades cannot be reliably
+identified.
+
 ## Flagship redesign: the periodic portfolio manager review
 The example below follows the review of one fund. **The steps, hours and elapsed times are illustrative.**
 
@@ -109,7 +121,7 @@ Each rule is a [governed parameter](../framework/04-controls.md#materiality-thre
 | Persistence | Shortfall in several consecutive periods | Shortfall that is not noise |
 | Tracking error | Outside the range the mandate terms imply | Too much or too little active risk |
 | Active share | Falling for several consecutive quarters | A fund moving towards its benchmark |
-| Source of return | A large share of excess return from an unintended exposure | Returns from the wrong sources |
+| Source of return | A large share of excess return from an unintended exposure, including carried beta | Returns from the wrong sources |
 | Risk budget | A bet using a large share of the budget with no return over several periods | Risk that has not earned its place |
 | Style consistency | Exposures outside the confirmed mandate terms | Style drift |
 | Overdue action | An agreed action past its due date | Follow-up that has stalled |
@@ -174,7 +186,7 @@ elsewhere, as set out in [investment risk](../framework/02-investment-risk.md#sc
 | Attribution | Depends on the model and benchmark chosen | Comparing methods; reviewing benchmark fit |
 | Relative return | Short periods are noisy | Persistence over several periods |
 | Peer comparison | Peer groups can be poorly matched | Reviewing peer-group membership |
-| Factor exposures | Depend on the factor model | Checking against holdings-based measures |
+| Factor exposures | Depend on the baskets and the estimated betas | Comparing with a regression on fund returns |
 | Extracted mandate terms | The AI can miss or misread a term | Confirmation by the risk manager |
 
 Attribution answers the question it is set up to answer: a different model or benchmark can tell a different story,
@@ -184,7 +196,7 @@ look better or worse than it is. The extracted mandate terms are the AI step's m
 there would make every later test wrong, which is why the terms are confirmed by the risk manager before they are used.
 
 ## Controls specific to this pillar
-The general controls in [controls](../framework/04-controls.md) apply in full. This pillar adds four.
+The general controls in [controls](../framework/04-controls.md) apply in full. This pillar adds five.
 
 - **Mandate terms are confirmed before use.** Extracted terms are not tested against until the risk manager confirms
   them, each term links to its source passage, and a change to the documents triggers re-extraction with the
@@ -194,6 +206,10 @@ The general controls in [controls](../framework/04-controls.md) apply in full. T
 - **Questions are chosen by the risk manager.** Drafted questions are proposals; the risk manager decides what to ask.
 - **Watch list exits are decided.** A fund leaves the fund watch list only by a recorded decision, not because its
   actions were closed automatically, whichever workflow added it.
+- **The split reconciles before drafting.** The lines of the [alpha and beta](../framework/06-alpha-and-beta.md) split
+  must sum to the gross return, and alpha must show no exposure to a declared factor, within stated tolerances, before
+  the AI drafts from them. A split that fails is an exception in its own right. A missing-factor flag goes to the risk
+  manager.
 
 ## Measuring value
 The measures from [measuring value](../framework/05-measuring-value.md) that matter most for this pillar are
