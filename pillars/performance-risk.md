@@ -36,11 +36,12 @@ oversight uses to decide escalation. Tracking error is computed in the daily run
 risk](market-risk.md) and its exceptions are routed here, because active risk belongs to this pillar.
 
 ### Computing the split
-Each security's betas against the baskets are estimated together, so that overlapping baskets do not count the same
-return twice, over a long window with gradual decay, so that they do not jump when an old day drops out
-([belief 7](../framework/00-philosophy.md#beliefs)). A security with little history uses a stand-in, such as its
-sector's beta. Code weights the betas by each day's holdings and compares the book's exposure with the confirmed mandate
-terms and any recorded tilts; what does not match counts as carried beta until the risk manager judges otherwise.
+The [alpha and beta](../framework/06-alpha-and-beta.md) split reads exposures from the
+[daily run in market risk](market-risk.md#workflows-in-this-pillar). Code weights them by each day's holdings and
+compares them with the confirmed mandate terms and the tilts and timing calls on record; anything without a record,
+including price drift, is carried beta. The risk manager's judgement on it is noted beside the line and does not change
+the line, and a tilt the manager confirms counts once it is recorded. The book's return is shown separately for names
+held and names not held.
 
 Trading cost is the gap between the fund's actual return and the return of its start-of-day holdings. A booked book
 charges it by trade tag. A derived book charges any net change in a bucket's weight to beta and the rest to alpha, which
@@ -117,20 +118,20 @@ Each rule is a [governed parameter](../framework/04-controls.md#materiality-thre
 
 | Kind of rule | Example (illustrative) | What it catches |
 |---|---|---|
-| Relative return | Shortfall against benchmark or objective beyond a set level | Missing the promise |
+| Relative return | Shortfall net of fees against benchmark or objective beyond a set level | Missing the promise |
 | Persistence | Shortfall in several consecutive periods | Shortfall that is not noise |
 | Tracking error | Outside the range the mandate terms imply | Too much or too little active risk |
 | Active share | Falling for several consecutive quarters | A fund moving towards its benchmark |
-| Source of return | A large share of excess return from an unintended exposure, including carried beta | Returns from the wrong sources |
+| Source of return | A large share of gross excess return from an unintended exposure, including carried beta, over several periods | Returns from the wrong sources |
 | Risk budget | A bet using a large share of the budget with no return over several periods | Risk that has not earned its place |
 | Style consistency | Exposures outside the confirmed mandate terms | Style drift |
 | Overdue action | An agreed action past its due date | Follow-up that has stalled |
 
-A shortfall in a single period is a watch item; every other rule in the table, including persistent shortfall, gives
-an exception when it fires. Code ranks issues for each fund, exceptions before watch items. Persistent issues rank
-above single-period ones, because short periods are noisy and
-persistence carries more information than size. Issues where the outcome and the way it was achieved both depart from
-the promise rank highest. Overdue actions are always shown, so that the review starts from what was agreed last time.
+A single period of shortfall, or of the source-of-return reading, is a watch item; every other rule in the table,
+including persistent shortfall, gives an exception when it fires. Code ranks issues for each fund, exceptions before
+watch items. Persistent issues rank above single-period ones, because short periods are noisy and persistence carries
+more information than size. Issues where the outcome and the way it was achieved both depart from the promise rank
+highest. Overdue actions are always shown, so that the review starts from what was agreed last time.
 
 ## What the AI drafts
 The AI drafts each item of the challenge pack from the facts that code produced and from nothing else. Every number in
@@ -143,14 +144,14 @@ illustrative.**
 | Fact | Value |
 |---|---|
 | Fund | Fund G |
-| Excess return over benchmark, last 12 months | 2.1% |
+| Excess return over benchmark before fees, last 12 months | 2.1% |
 | Contribution from currency / security selection | 1.6% / 0.5% |
 | Currency in confirmed mandate terms | Not part of the stated strategy |
 | Average unhedged US dollar exposure | 14% of net assets |
 
-> Fund G returned 2.1% above its benchmark over the last 12 months, but 1.6% of that came from currency, which is not
-> part of its stated strategy; security selection contributed 0.5%. The fund held an average of 14% of net assets in
-> unhedged US dollar exposure. *Question: Is the currency exposure intended, and if so, how is it managed?*
+> Fund G returned 2.1% above its benchmark before fees over the last 12 months, but 1.6% of that came from currency,
+> which is not part of its stated strategy; security selection contributed 0.5%. The fund held an average of 14% of net
+> assets in unhedged US dollar exposure. *Question: Is the currency exposure intended, and if so, how is it managed?*
 
 **Active share falling while the fee is unchanged.**
 

@@ -34,6 +34,15 @@ monitoring runs inside the same daily process, with its own limits; approving wh
 with the function that owns that decision. The same run totals holdings across funds by issuer, counterparty and factor
 for the [firm's footprint](integrated-view.md#the-firms-footprint); these totals do not net.
 
+The same run computes each holding's exposures once, for this pillar and for
+[performance risk](performance-risk.md#computing-the-split). A direct measure is used where one exists: duration for
+rates, duration times spread for credit and the currency weight for currency, each scaled against its basket, so that a
+bond with a duration of 6 against a basket of 4 has an exposure of 1.5. Equity market and style exposures are betas,
+estimated together against all the baskets so that overlapping baskets do not count the same return twice, over a long
+window with gradual decay so that they do not jump when an old day drops out
+([belief 7](../framework/00-philosophy.md#beliefs)). A security with little history uses a stand-in, such as its
+sector's beta. (The figures are illustrative.)
+
 Pre-trade what-ifs run the daily calculations on a proposed trade: code computes what it adds to VaR, concentration,
 tracking error and budget use, and the portfolio manager decides.
 
@@ -191,6 +200,7 @@ test it. Independent validation of the models sits elsewhere, as set out in
 |---|---|---|
 | VaR and expected shortfall | Regime changes; losses beyond the tail | Backtesting against realised results |
 | Sensitivities | Large moves; non-linear positions such as options | Comparison with full revaluation |
+| Estimated betas | Estimation noise; short histories | Comparison with a regression on fund returns |
 | Stress tests | Scenarios nobody thought of | Review of the library against current conditions |
 | All measures | Thinly traded or stale-priced holdings | Flags from [liquidity risk](liquidity-risk.md) |
 
