@@ -49,16 +49,11 @@ provides.
 | [Market risk](pillars/market-risk.md) | The pillar's workflows; daily monitoring redesigned as a ranked queue of exceptions and watch items with drafted explanations. |
 | [Liquidity risk](pillars/liquidity-risk.md) | The pillar's workflows; periodic stress tests redesigned as continuous monitoring with event-triggered stress tests. |
 | [Performance risk](pillars/performance-risk.md) | The pillar's workflows; portfolio manager reviews run on risk's agenda with an evidence-based challenge pack. |
-| [Integrated view](pillars/integrated-view.md) | One fund health view that ranks funds where signals across pillars combine, before any one threshold is breached, and shows the firm's footprint across funds. |
-| **Reference** | |
-| [Reference implementations](reference/) | Runnable examples on synthetic data. |
+| [Integrated view](pillars/integrated-view.md) | One fund health view that ranks funds where signals across pillars combine, before any one pillar would escalate them, and shows the firm's footprint across funds. |
 
 ## Using this repository
 The framework chapters are written to be read in order. The pillar chapters can be read on their own once the
 principles and the method are familiar.
-
-The reference implementations use synthetic data only and run without an AI service; an AI backend is optional, never
-required.
 
 ## Disclaimer
 This framework is general and illustrative. It is not advice for any particular firm, and any implementation should be

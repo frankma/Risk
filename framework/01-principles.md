@@ -16,8 +16,8 @@ same day. The commentary was never the bottleneck: most of the cycle was spent g
 handing work between people and waiting in review queues. Saving ten hours inside a cycle of more than three weeks
 changes neither when the report arrives nor what it says. (The figures are illustrative.)
 
-The evidence points the same way. McKinsey's *The State of AI* (November 2025) tested 25 organisational attributes and
-found that workflow redesign had the biggest effect on whether organisations saw financial returns from AI. The
+The evidence points the same way. McKinsey's *The State of AI* (March 2025) tested 25 organisational attributes and
+found that workflow redesign had the biggest effect on whether organisations saw an EBIT impact from generative AI. The
 lesson for a risk function is that the unit of change is the workflow, not the task.
 
 ## Six principles

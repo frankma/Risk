@@ -96,8 +96,7 @@ Each workflow defines what happens when a component fails.
   sentences. The output is plainer, but complete and correct, and the workflow's deadlines still hold.
 
 Because the template backend produces correct output without an AI service, the workflow can always run. The same
-template covers a draft that repeatedly fails the grounding check, and the reference implementations use it for
-testing and demonstration.
+template covers a draft that repeatedly fails the grounding check.
 
 ## Data handling
 A risk function sends data to an AI service only under rules set before the workflow is built.
