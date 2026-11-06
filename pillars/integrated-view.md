@@ -1,7 +1,7 @@
 # Integrated view
 
 The integrated view ranks funds where signals across market, liquidity and performance risk are combining, so that the
-risk function sees a developing problem before any one pillar's threshold is breached. It computes nothing new: it
+risk function sees a developing problem before any one pillar would escalate it. It computes nothing new: it
 reads the signals the three pillar chapters already define, applies rules for the combinations that matter, and puts
 the funds where those combinations appear in front of a human with an account of what is happening.
 
@@ -17,8 +17,8 @@ workflow escalates.
 
 The view's outcome:
 
-> The risk function knows which funds have signals combining across pillars, and why, before any one pillar's
-> threshold is breached.
+> The risk function knows which funds have signals combining across pillars, and why, before any one pillar would
+> escalate them.
 
 This is the framework's clearest example of [principle
 6](../framework/01-principles.md#6-new-capabilities-beat-faster-old-ones). The manual process cannot watch every signal
@@ -225,15 +225,15 @@ The general controls in [controls](../framework/04-controls.md) apply in full. T
 
 ## Measuring value
 The measure that matters most for the view is **lead time**: how much earlier the view ranked a fund than the first
-exception in any single pillar. Lead time is measured from replays of past episodes and from live cases. The other
+escalation from any single pillar. Lead time is measured from replays of past episodes and from live cases. The other
 dimensions come from [measuring value](../framework/05-measuring-value.md).
 
 | Dimension | Measure for the view |
 |---|---|
-| Lead time | Days between the view ranking a fund and the first single-pillar exception |
+| Lead time | Days between the view ranking a fund and the first single-pillar escalation |
 | Speed | Time from a combination forming to the risk manager seeing it |
 | Capacity | Funds covered by the integrated view: every fund, against those one person recalls |
-| Quality | Combinations first seen through a pillar breach rather than through the view |
+| Quality | Combinations first seen through a pillar escalation rather than through the view |
 | Influence | Ranked funds discussed by the committee, and actions taken |
 
 ## Ownership and connections
