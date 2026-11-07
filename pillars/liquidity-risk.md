@@ -1,14 +1,14 @@
 # Liquidity risk
 
 Liquidity risk asks whether a fund can meet redemptions without disadvantaging the investors who stay. This chapter
-applies the [redesign method](../framework/03-redesign-method.md) to the pillar: it lists the pillar's recurring
+applies the [redesign method](../framework/04-redesign-method.md) to the pillar: it lists the pillar's recurring
 workflows, redesigns periodic stress testing into continuous monitoring with event-triggered stress tests, and sets out
 the thresholds, limits, controls and measures that make the redesign work. The redesign is a new capability, not only a
 faster version of the old process: the risk function sees a fund's liquidity when an event happens, not when the
 calendar says so.
 
 ## The outcome
-The pillar's outcome, as defined in [investment risk](../framework/02-investment-risk.md#liquidity-risk):
+The pillar's outcome, as defined in [investment risk](../framework/01-investment-risk.md#liquidity-risk):
 
 > The risk manager knows whether each fund can meet plausible redemptions in time and at a fair cost, and whether the
 > tools for managing liquidity are ready if it cannot.
@@ -37,7 +37,7 @@ also computes the firm's share of each issue and of each market's daily volume f
 footprint](integrated-view.md#the-firms-footprint).
 
 Flagging stale or unpriceable holdings is the measuring side of valuation risk that this pillar owns, as set out in
-[investment risk](../framework/02-investment-risk.md#scope-and-boundaries). The risk function flags the holdings and
+[investment risk](../framework/01-investment-risk.md#scope-and-boundaries). The risk function flags the holdings and
 knows which of its measures rest on them; setting and challenging the prices remains with the owner of pricing.
 
 ## Flagship redesign: from periodic stress testing to continuous liquidity monitoring
@@ -98,7 +98,7 @@ days. The redesigned process does exactly that, which is a capability the old pr
 An **exception** in this pillar is a rule that has fired: a reading that shows a fund may not meet redemptions fairly,
 or an event that should trigger the stress test. A **watch item** is a reading drifting towards a threshold. Each rule
 is a
-[governed parameter](../framework/04-controls.md#materiality-thresholds-as-governed-parameters).
+[governed parameter](../framework/05-controls.md#materiality-thresholds-as-governed-parameters).
 **The example values below are illustrative and are not recommendations;** each risk function sets its own.
 
 | Kind of rule | Example (illustrative) | What it catches |
@@ -119,7 +119,7 @@ owner of pricing, as well as being shown against the measures they affect.
 
 ## What the AI drafts
 The AI drafts from the facts that code produced and from nothing else. Every number in each draft appears in the facts
-beside it, so the [grounding check](../framework/04-controls.md#the-grounding-check) would pass. **The funds and
+beside it, so the [grounding check](../framework/05-controls.md#the-grounding-check) would pass. **The funds and
 figures are illustrative.**
 
 **A large redemption.**
@@ -166,7 +166,7 @@ None of the drafts recommends whether to use a liquidity management tool. That r
 
 ## Limits of the measures
 The risk function owns the model risk in its own liquidity measures; independent validation of the models sits
-elsewhere, as set out in [investment risk](../framework/02-investment-risk.md#scope-and-boundaries).
+elsewhere, as set out in [investment risk](../framework/01-investment-risk.md#scope-and-boundaries).
 
 | Measure | Where it is weak | How the function tests it |
 |---|---|---|
@@ -186,7 +186,7 @@ it is. The function tests this by reviewing how risk managers edit the narrative
 sample against the full stress results.
 
 ## Controls specific to this pillar
-The general controls in [controls](../framework/04-controls.md) apply in full. This pillar adds four.
+The general controls in [controls](../framework/05-controls.md) apply in full. This pillar adds four.
 
 - **Every trigger is recorded.** Each firing, the stress test it ran and the result are kept in the audit trail, so the
   record shows that an event was assessed, and when.
@@ -195,10 +195,10 @@ The general controls in [controls](../framework/04-controls.md) apply in full. T
 - **The recommendation is not drafted.** The AI drafts the facts and the narrative; the recommendation on liquidity
   management tools is written by the risk manager.
 - **Investor data is minimised.** Facts sent to an AI service describe shares and flows, not investor identities, in
-  line with [data handling](../framework/04-controls.md#data-handling).
+  line with [data handling](../framework/05-controls.md#data-handling).
 
 ## Measuring value
-The measures from [measuring value](../framework/05-measuring-value.md) that matter most for this pillar are speed and
+The measures from [measuring value](../framework/06-measuring-value.md) that matter most for this pillar are speed and
 quality: how soon an event is assessed, and whether any event is missed.
 
 | Dimension | Measure for this pillar |

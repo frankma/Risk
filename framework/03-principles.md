@@ -36,7 +36,7 @@ lesson for a risk function is that the unit of change is the workflow, not the t
 manager challenged. A redesign starts from that outcome and asks which steps it actually needs, rather than starting
 from the existing steps and asking which of them AI can speed up.
 
-**In practice.** Each workflow is redesigned end to end, using the [redesign method](03-redesign-method.md). Steps that
+**In practice.** Each workflow is redesigned end to end, using the [redesign method](04-redesign-method.md). Steps that
 exist only because the old process was slow, such as re-keying data, reformatting tables or chasing inputs, are removed
 rather than automated. An output that feeds no decision is stopped rather than produced faster.
 
@@ -58,7 +58,7 @@ text around figures it is given.
 
 **In practice.** Generated text passes a grounding check before anyone sees it: every number in it is matched against
 the computed values it was generated from, and text with an unmatched number is rejected. This check, and the other
-[controls](04-controls.md) that make it safe to rely on generated text, are what allow manual checking to be reduced.
+[controls](05-controls.md) that make it safe to rely on generated text, are what allow manual checking to be reduced.
 
 ### 4. Exceptions over everything
 **What it means.** A manual process cannot review every fund in depth every day, so it samples or reviews everything
@@ -75,7 +75,7 @@ never shows up as value. The use of the time is a design decision, made at the s
 
 **In practice.** Before a workflow is redesigned, the risk function records what the freed capacity will be spent on,
 for example deeper fund reviews or more frequent challenge of portfolio managers, and then tracks whether that happens.
-[Measuring value](05-measuring-value.md) sets out how.
+[Measuring value](06-measuring-value.md) sets out how.
 
 ### 6. New capabilities beat faster old ones
 **What it means.** Doing the old process faster has a ceiling: at best the old output arrives sooner. The larger gains

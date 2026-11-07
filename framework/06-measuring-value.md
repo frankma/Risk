@@ -33,19 +33,19 @@ funds properly, or review the most important ones more often, raises capacity ev
 Speed measures elapsed time, not effort. Time from data availability to signed-off output shows how soon a decision can
 be made on a recurring output; time from alert to explanation shows how soon the function understands an unexpected
 event. Elapsed time is usually dominated by gathering and waiting rather than by work, as the
-[redesign method](03-redesign-method.md) shows, so speed is often where a redesign shows its largest change.
+[redesign method](04-redesign-method.md) shows, so speed is often where a redesign shows its largest change.
 
 ### Quality
 Quality measures whether the function catches what matters and gets it right. Issues missed or detected late are the
 most important measure and the hardest to collect; they are recorded as they come to light, for example from
 post-event reviews. Errors found in review show how much rework the workflow creates. Parallel-run agreement, from the
-[controls](04-controls.md) chapter, shows whether a redesigned workflow can be relied on before the old one is stopped.
+[controls](05-controls.md) chapter, shows whether a redesigned workflow can be relied on before the old one is stopped.
 
 ### Influence
 Influence measures whether the function's work changes what happens. Issues raised with portfolio managers, and the
 actions taken in response, show whether challenge is being made and heard. The share of the risk manager's time spent
 on challenge rather than on producing outputs shows whether the shift described in the
-[principles](01-principles.md#what-changes-for-the-risk-manager) is happening. Influence is the dimension that most
+[principles](03-principles.md#what-changes-for-the-risk-manager) is happening. Influence is the dimension that most
 directly reflects the purpose of the function, and the one most often left unmeasured.
 
 ## Baseline first
@@ -74,7 +74,7 @@ existing work and the redesign shows a saving that no one can find.
 ## Why usage is not a measure
 The number of people using an AI tool, or the number of prompts they send, is easy to count and says nothing about
 value. High usage is consistent with a tool used for small tasks inside workflows that are otherwise unchanged, which
-is the insertion pattern the [principles](01-principles.md) warn against. Low usage is consistent with a workflow that
+is the insertion pattern the [principles](03-principles.md) warn against. Low usage is consistent with a workflow that
 has been redesigned so that AI runs inside it without anyone prompting it at all.
 
 Usage can be a useful diagnostic, for example to see whether a new tool is being adopted, but it is not reported as a
@@ -82,7 +82,7 @@ measure of return.
 
 ## Illustrative scorecard
 The scorecard below is for one redesigned workflow, the monthly risk and performance report from the worked example in
-the [redesign method](03-redesign-method.md#worked-example-a-monthly-risk-and-performance-report). **All figures are
+the [redesign method](04-redesign-method.md#worked-example-a-monthly-risk-and-performance-report). **All figures are
 illustrative.**
 
 | Dimension | Measure | Before | After |

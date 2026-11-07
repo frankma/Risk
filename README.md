@@ -1,6 +1,11 @@
 # Risk
 
-**A framework for redesigning investment risk management around AI.**
+**Asset management from an investment risk perspective, and how to redesign that work around AI.**
+
+An asset manager takes a client's money under a mandate, invests it through top-down views and bottom-up selection, and
+delivers an outcome. Investment risk is what can go wrong between that promise and that outcome, and a risk function
+shows whether each portfolio takes the risks its mandate intends. This framework covers that investment side of asset
+management; distribution, operations, compliance and the firm's own business sit outside it.
 
 Many fund managers now use AI tools, but few can show a measurable return from them. The return does not come from
 inserting AI into existing workflows. A tool that drafts a report faster changes little when the real bottleneck is
@@ -37,20 +42,23 @@ provides.
 ## Map
 | Chapter | Covers |
 |---|---|
-| **Framework** | |
+| **The investment backdrop** | |
 | [Investment risk philosophy](framework/00-philosophy.md) | What a risk function believes and is for: eight beliefs, the three decisions it serves, and transparency in three dimensions. |
-| [Principles](framework/01-principles.md) | Why inserting AI fails; six principles for redesign; how the risk manager's role changes. |
-| [Investment risk](framework/02-investment-risk.md) | Definition and scope, including what is measured here and what is owned elsewhere; the three pillars and the boundaries between them. |
-| [Redesign method](framework/03-redesign-method.md) | Seven steps to redesign one workflow, from outcome to measured result. |
-| [Controls](framework/04-controls.md) | Grounding checks, sign-off points, audit trails, governed thresholds, parallel runs, fallback, data handling, alignment with AI risk management expectations. |
-| [Measuring value](framework/05-measuring-value.md) | Capacity, speed, quality and influence; a baseline and a reinvestment plan; why usage is not a measure. |
-| [Alpha and beta](framework/06-alpha-and-beta.md) | What beta and alpha are, for publicly traded holdings on gross returns; how a holding's weight splits between them; the long-short book, booked or derived, that makes the split exact. |
-| [Concept map](framework/concept-map.md) | The main concepts on one page: what each is, where it is defined and which chapters use it. |
-| **Pillars** | |
+| [Investment risk](framework/01-investment-risk.md) | Definition and scope, including what is measured here and what is owned elsewhere; the three pillars and the boundaries between them. |
+| [Sources of return](framework/02-sources-of-return.md) | The two sources of every return, top-down views and bottom-up selection, loosely beta and alpha; who decides each, why it matters to asset owners, fund houses and risk functions, and how a holding splits between them. |
+| **The redesign around AI** | |
+| [Principles](framework/03-principles.md) | Why inserting AI fails; six principles for redesign; how the risk manager's role changes. |
+| [Redesign method](framework/04-redesign-method.md) | Seven steps to redesign one workflow, from outcome to measured result. |
+| [Controls](framework/05-controls.md) | Grounding checks, sign-off points, audit trails, governed thresholds, parallel runs, fallback, data handling, alignment with AI risk management expectations. |
+| [Measuring value](framework/06-measuring-value.md) | Capacity, speed, quality and influence; a baseline and a reinvestment plan; why usage is not a measure. |
+| **The pillars** | |
 | [Market risk](pillars/market-risk.md) | The pillar's workflows; daily monitoring redesigned as a ranked queue of exceptions and watch items with drafted explanations. |
 | [Liquidity risk](pillars/liquidity-risk.md) | The pillar's workflows; periodic stress tests redesigned as continuous monitoring with event-triggered stress tests. |
 | [Performance risk](pillars/performance-risk.md) | The pillar's workflows; portfolio manager reviews run on risk's agenda with an evidence-based challenge pack. |
 | [Integrated view](pillars/integrated-view.md) | One fund health view that ranks funds where signals across pillars combine, before any one pillar would escalate them, and shows the firm's footprint across funds. |
+| [Alpha and beta method](pillars/alpha-and-beta-method.md) | How the split is computed for publicly traded holdings on gross returns: neutralising the book, booked and derived routes, the factor list, the test and its limits. |
+| **Index** | |
+| [Concept map](framework/concept-map.md) | The main concepts on one page: what each is, where it is defined and which chapters use it. |
 
 ## Using this repository
 The framework chapters are written to be read in order. The pillar chapters can be read on their own once the

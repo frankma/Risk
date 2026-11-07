@@ -6,6 +6,13 @@ function's recurring work into three pillars: market, liquidity and performance 
 workflows rather than a taxonomy of risks, and they connect. The beliefs behind this definition are set out in the
 [philosophy](00-philosophy.md).
 
+## The backdrop
+An asset manager takes a client's money under a mandate, invests it and delivers an outcome. The mandate is the promise,
+the investing runs through [top-down views and bottom-up selection](02-sources-of-return.md), and the outcome is what
+the client receives. Distribution, operations and the firm's own business matter to an asset manager too, but they are
+not the subject here. A risk function sits beside the investment team and looks at this chain from one angle: how far
+the outcome could depart from the promise, and why.
+
 ## Definition
 **Investment risk is the chance that a portfolio's outcome departs from what its mandate intends: a loss, a shortfall
 against its objective or benchmark, or an inability to meet redemptions, arising from the investments themselves.**
@@ -97,8 +104,8 @@ returns come from the sources its mandate describes.
 
 **Covers:** risk and return relative to the promise. Tracking error and active share; risk budgets against return;
 outcome against benchmark, peers or objective; attribution, to test whether returns come from the intended sources,
-including the split into [alpha and beta](06-alpha-and-beta.md); style drift; and consistency and risk-adjusted
-returns. See [performance risk](../pillars/performance-risk.md).
+including the split between the two [sources of return](02-sources-of-return.md); style drift; and consistency and
+risk-adjusted returns. See [performance risk](../pillars/performance-risk.md).
 
 ## Boundaries between pillars
 The three pillars overlap in data but not in question, and the dividing lines follow from the questions.
