@@ -1,9 +1,9 @@
 # Risk
 
-A framework for redesigning investment risk management around AI: a philosophy, principles, a definition of investment
-risk and its three workflow pillars (market, liquidity, performance risk), a method for redesigning each workflow, the
-controls that make it safe, how to measure the value, and how to separate alpha from beta. Its core pattern: **code
-computes, AI narrates, a human judges.**
+Asset management from an investment risk perspective, and how to redesign that work around AI: a philosophy, a
+definition of investment risk and its three workflow pillars (market, liquidity, performance risk), the two sources of
+return, principles, a method for redesigning each workflow, the controls that make it safe and how to measure the
+value. Its core pattern: **code computes, AI narrates, a human judges.**
 
 The framework's map is in `README.md`. Read it, and the chapters a change touches, before making the change.
 
@@ -43,7 +43,8 @@ estimator, a default, a threshold convention, how a pillar is scoped), stop and 
 ## Keeping the framework consistent
 - A change to a chapter's scope updates every chapter that refers to it, the map in `README.md` and the concept map in
   `framework/concept-map.md`, in the same commit.
-- `framework/` holds the cross-cutting chapters; `pillars/` holds one chapter per pillar plus the integrated view;
+- `framework/` holds the cross-cutting chapters; `pillars/` holds one chapter per pillar plus the integrated view
+  and the alpha and beta method;
   `reference/` is for runnable code.
 
 ## Working conventions

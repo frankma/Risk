@@ -9,7 +9,7 @@ function should own them.
 A redesign removes steps that existed to catch errors: a second person checking figures, a manager reading every page.
 Those steps can only be removed if something at least as reliable takes their place. Without that, either the old
 checks stay and the redesign saves little, or they are removed and errors reach decisions. The controls below are what
-make the [redesign method](03-redesign-method.md) work in practice, and they should be designed in step 6, not added
+make the [redesign method](04-redesign-method.md) work in practice, and they should be designed in step 6, not added
 after the workflow is live.
 
 | Control | What it protects against |
@@ -24,7 +24,7 @@ after the workflow is live.
 
 ## The grounding check
 The grounding check enforces the principle that
-[the AI never produces a number](01-principles.md#3-the-ai-never-produces-a-number). Every number in a piece of
+[the AI never produces a number](03-principles.md#3-the-ai-never-produces-a-number). Every number in a piece of
 generated text is extracted and matched against the computed facts the text was generated from. Numbers written as
 words, such as "three months", are extracted and matched in the same way as numerals.
 
@@ -123,7 +123,7 @@ Supervisors' expectations for AI risk management share a common shape. The contr
 
 The risk function owns the testing of its own AI steps, through the grounding check, parallel runs and ongoing
 monitoring above, as part of the limits of its own measures and tools that it is responsible for. Independent
-validation of models sits with a separate function, as set out in [investment risk](02-investment-risk.md). A firm
+validation of models sits with a separate function, as set out in [investment risk](01-investment-risk.md). A firm
 should map these expectations to the specific requirements that apply to it.
 
 ## Why risk should own the controls

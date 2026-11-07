@@ -13,7 +13,8 @@ volatile, which makes further underperformance more likely, and the cycle repeat
 A manual process tends to see this late. Each pillar is reviewed on its own cycle, often by different people, and each
 sees its own signal as moderate: a performance shortfall that is not yet severe, outflows that are higher than usual but
 within coverage, concentration that is rising but below its limit. No single threshold is breached, so no single
-workflow escalates.
+workflow escalates. The combination is seen when one of the signals finally crosses a threshold, by which point the
+cycle is under way.
 
 The view's outcome:
 
@@ -21,7 +22,7 @@ The view's outcome:
 > escalate them.
 
 This is the framework's clearest example of [principle
-6](../framework/01-principles.md#6-new-capabilities-beat-faster-old-ones). The manual process cannot watch every signal
+6](../framework/03-principles.md#6-new-capabilities-beat-faster-old-ones). The manual process cannot watch every signal
 for every fund every day and connect them.
 
 ## What the view reads
@@ -43,7 +44,8 @@ The signals, each defined in its pillar chapter's rules:
 - **[Performance risk](performance-risk.md#materiality-and-exceptions):** relative return; persistence of shortfall;
   tracking error; active share; risk budget; source of return; style consistency; overdue actions.
 
-The view takes these signals as the pillars produce them and never computes its own version.
+The view takes these signals as the pillars produce them. If a pillar changes how a signal is computed, the view
+changes with it; the view never computes its own version.
 
 ## Patterns
 A pattern is a named chain of signals across pillars that, together, describe a known way for a fund to get into
@@ -129,7 +131,7 @@ of, to one maintained continuously for every fund.
 
 ## Combination rules and ranking
 The rules that decide which funds rank, and in what order, are
-[governed parameters](../framework/04-controls.md#materiality-thresholds-as-governed-parameters). **The rules below are
+[governed parameters](../framework/05-controls.md#materiality-thresholds-as-governed-parameters). **The rules below are
 illustrative kinds of rule, not recommendations;** each risk function sets its own.
 
 | Kind of rule | Example (illustrative) |
@@ -145,7 +147,8 @@ in the view. Its exception is handled by that pillar's workflow, as it would be 
 
 **Avoiding double counting.** One underlying driver can appear in two pillars. Concentration in a few holdings shows as
 issuer concentration in market risk, and, because those holdings take longer to sell, as a rising time to liquidate in
-liquidity risk. The view groups signals that share a driver and counts the group once for breadth. The groups are part
+liquidity risk. Counted twice, it would make a fund look as if two pillars were elevated when there is one driver. The
+view groups signals that share a driver and counts the group once for breadth. The groups are part
 of the governed rules: concentration in market risk and the time to sell the same holdings form one group, while
 investor concentration, which concerns who owns the fund rather than what it holds, is a separate driver. The pattern
 *concentrated and hard to sell* still names the combination, so that it is seen, but it does not count as two pillars.
@@ -161,7 +164,7 @@ at once.
 ## What the AI drafts
 The AI drafts each fund's account from the signals and facts the view read, and from nothing else. Every number in
 each draft appears in the facts beside it, so the
-[grounding check](../framework/04-controls.md#the-grounding-check) would pass. The account describes the combination;
+[grounding check](../framework/05-controls.md#the-grounding-check) would pass. The account describes the combination;
 it does not recommend an action or claim that one signal caused another. **The funds and figures are illustrative.**
 
 **A redemption spiral forming.**
@@ -213,7 +216,7 @@ would have missed are the main source of new patterns. The AI step is tested, as
 manager's edits to the accounts.
 
 ## Controls specific to the view
-The general controls in [controls](../framework/04-controls.md) apply in full. The view adds four.
+The general controls in [controls](../framework/05-controls.md) apply in full. The view adds four.
 
 - **Every signal shows its pillar and as-of date.** Nothing in an account is shown without its source.
 - **Missing data is not health.** A fund with missing signals from a pillar is shown as partly assessed, never as
@@ -226,7 +229,7 @@ The general controls in [controls](../framework/04-controls.md) apply in full. T
 ## Measuring value
 The measure that matters most for the view is **lead time**: how much earlier the view ranked a fund than the first
 escalation from any single pillar. Lead time is measured from replays of past episodes and from live cases. The other
-dimensions come from [measuring value](../framework/05-measuring-value.md).
+dimensions come from [measuring value](../framework/06-measuring-value.md).
 
 | Dimension | Measure for the view |
 |---|---|

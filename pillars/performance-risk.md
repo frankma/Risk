@@ -1,13 +1,13 @@
 # Performance risk
 
 Performance risk asks whether a fund is delivering what was promised, in the way it was promised. This chapter applies
-the [redesign method](../framework/03-redesign-method.md) to the pillar: it lists the pillar's recurring workflows,
+the [redesign method](../framework/04-redesign-method.md) to the pillar: it lists the pillar's recurring workflows,
 redesigns the periodic portfolio manager review so that it runs on the risk function's agenda with an evidence-based
 challenge pack, and sets out the thresholds, limits, controls and measures that make the redesign work. The shift is
 from receiving the portfolio manager's account of performance to challenging it with independent evidence.
 
 ## The outcome
-The pillar's outcome, as defined in [investment risk](../framework/02-investment-risk.md#performance-risk):
+The pillar's outcome, as defined in [investment risk](../framework/01-investment-risk.md#performance-risk):
 
 > The risk manager can show, with evidence, whether each fund is meeting its objective and whether its returns come
 > from the sources its mandate describes.
@@ -29,24 +29,12 @@ outcome and the way it was achieved.
 
 The portfolio manager review is the flagship, because it is where the pillar's evidence meets the person who can act on
 it. The other workflows feed it: attribution, the risk budget review, peer comparison and consistency checks supply the
-evidence. Attribution separates beta from alpha as set out in [alpha and beta](../framework/06-alpha-and-beta.md). The
-fund watch list holds the funds whose issues have not been resolved; it is a single list for the firm, owned by the
-head of risk, to which this pillar and the [integrated view](integrated-view.md) both add funds, and which investment
-oversight uses to decide escalation. Tracking error is computed in the daily run described in [market
-risk](market-risk.md) and its exceptions are routed here, because active risk belongs to this pillar.
-
-### Computing the split
-The [alpha and beta](../framework/06-alpha-and-beta.md) split reads exposures from the
-[daily run in market risk](market-risk.md#workflows-in-this-pillar). Code weights them by each day's holdings and
-compares them with the confirmed mandate terms and the tilts and timing calls on record; anything without a record,
-including price drift, is carried beta. The risk manager's judgement on it is noted beside the line and does not change
-the line, and a tilt the manager confirms counts once it is recorded. The book's return is shown separately for names
-held and names not held.
-
-Trading cost is the gap between the fund's actual return and the return of its start-of-day holdings. A booked book
-charges it by trade tag. A derived book charges any net change in a bucket's weight to beta and the rest to alpha, which
-is approximate. The cost of trades forced by redemptions stays where it lands, because those trades cannot be reliably
-identified.
+evidence. Attribution separates the two [sources of return](../framework/02-sources-of-return.md), using the
+[alpha and beta method](alpha-and-beta-method.md). The fund watch list holds the funds whose issues have not been
+resolved; it is a single list for the firm, owned by the head of risk, to which this pillar and the
+[integrated view](integrated-view.md) both add funds, and which investment oversight uses to decide escalation.
+Tracking error is computed in the daily run described in [market risk](market-risk.md) and its exceptions are routed
+here, because active risk belongs to this pillar.
 
 ## Flagship redesign: the periodic portfolio manager review
 The example below follows the review of one fund. **The steps, hours and elapsed times are illustrative.**
@@ -113,7 +101,7 @@ explains; and the actions agreed are tracked until they are closed.
 ## Materiality and exceptions
 An **exception** in this pillar is a rule that has fired: a sign that the fund is not delivering its promise, or not
 in the way it promised. A **watch item** is an early sign that has not yet persisted.
-Each rule is a [governed parameter](../framework/04-controls.md#materiality-thresholds-as-governed-parameters).
+Each rule is a [governed parameter](../framework/05-controls.md#materiality-thresholds-as-governed-parameters).
 **The example values below are illustrative and are not recommendations;** each risk function sets its own.
 
 | Kind of rule | Example (illustrative) | What it catches |
@@ -135,7 +123,7 @@ highest. Overdue actions are always shown, so that the review starts from what w
 
 ## What the AI drafts
 The AI drafts each item of the challenge pack from the facts that code produced and from nothing else. Every number in
-each draft appears in the facts beside it, so the [grounding check](../framework/04-controls.md#the-grounding-check)
+each draft appears in the facts beside it, so the [grounding check](../framework/05-controls.md#the-grounding-check)
 would pass. The questions are proposals; the risk manager decides which to ask. **The funds and figures are
 illustrative.**
 
@@ -180,7 +168,7 @@ illustrative.**
 
 ## Limits of the measures
 The risk function owns the model risk in its own performance measures; independent validation of the models sits
-elsewhere, as set out in [investment risk](../framework/02-investment-risk.md#scope-and-boundaries).
+elsewhere, as set out in [investment risk](../framework/01-investment-risk.md#scope-and-boundaries).
 
 | Measure | Where it is weak | How the function tests it |
 |---|---|---|
@@ -197,7 +185,7 @@ look better or worse than it is. The extracted mandate terms are the AI step's m
 there would make every later test wrong, which is why the terms are confirmed by the risk manager before they are used.
 
 ## Controls specific to this pillar
-The general controls in [controls](../framework/04-controls.md) apply in full. This pillar adds five.
+The general controls in [controls](../framework/05-controls.md) apply in full. This pillar adds five.
 
 - **Mandate terms are confirmed before use.** Extracted terms are not tested against until the risk manager confirms
   them, each term links to its source passage, and a change to the documents triggers re-extraction with the
@@ -207,13 +195,13 @@ The general controls in [controls](../framework/04-controls.md) apply in full. T
 - **Questions are chosen by the risk manager.** Drafted questions are proposals; the risk manager decides what to ask.
 - **Watch list exits are decided.** A fund leaves the fund watch list only by a recorded decision, not because its
   actions were closed automatically, whichever workflow added it.
-- **The split reconciles before drafting.** The lines of the [alpha and beta](../framework/06-alpha-and-beta.md) split
+- **The split reconciles before drafting.** The lines of the [alpha and beta](alpha-and-beta-method.md) split
   must sum to the gross return, and alpha must show no exposure to a declared factor, within stated tolerances, before
   the AI drafts from them. A split that fails is an exception in its own right. A missing-factor flag goes to the risk
   manager.
 
 ## Measuring value
-The measures from [measuring value](../framework/05-measuring-value.md) that matter most for this pillar are
+The measures from [measuring value](../framework/06-measuring-value.md) that matter most for this pillar are
 influence measures, because the purpose of the review is to change what happens.
 
 | Dimension | Measure for this pillar |

@@ -1,9 +1,9 @@
 # Investment risk philosophy
 
 This chapter sets out what a risk function believes about investment risk, what the function is for and how it works.
-It is the ground the rest of the framework stands on: [investment risk](02-investment-risk.md) defines the scope and
-organises the recurring work into three pillars, and the [principles](01-principles.md) and
-[redesign method](03-redesign-method.md) set out how the risk manager does that work alongside AI. The beliefs do not
+It is the ground the rest of the framework stands on: [investment risk](01-investment-risk.md) defines the scope and
+organises the recurring work into three pillars, and the [principles](03-principles.md) and
+[redesign method](04-redesign-method.md) set out how the risk manager does that work alongside AI. The beliefs do not
 depend on any particular model; any model a risk function uses is judged against them.
 
 **Investment risk management shows whether every portfolio takes the risks its mandate intends, in the size it can bear,
@@ -14,7 +14,7 @@ positions, thousands of risk factors, millions of possible futures), the few wor
 
 **Investment risk is the chance that a portfolio's outcome departs from what its mandate intends:** a loss, a
 shortfall against its objective or benchmark, or an inability to meet redemptions, arising from the investments
-themselves. Its scope and boundaries are set out in [investment risk](02-investment-risk.md#scope-and-boundaries).
+themselves. Its scope and boundaries are set out in [investment risk](01-investment-risk.md#scope-and-boundaries).
 
 The capital at risk is the clients', not the firm's. So risk is judged against what each client was promised, and
 the firm's franchise follows from keeping those promises.
@@ -58,7 +58,7 @@ strategy well enough to say "yes, and size it like this", not only "no".
 
 ## Practice: transparency in three dimensions
 The three dimensions describe what every piece of risk work must provide. They cut across the
-[three pillars](02-investment-risk.md#the-three-pillars), which organise the recurring work: market, liquidity and
+[three pillars](01-investment-risk.md#the-three-pillars), which organise the recurring work: market, liquidity and
 performance risk each condense, drill in and connect.
 
 | | Dimension | The question it answers |
@@ -97,9 +97,10 @@ risk moves, and any other movement stays within a stated tolerance.
   into exposure × factor return plus the specific return.
 
 The factor split uses the risk decomposition's factors and decision-makers, so the risk a bet takes and the return it
-earns sit side by side. [Alpha and beta](06-alpha-and-beta.md) joins the two splits and shows how a holding divides
-between them. *It fails* when the parts do not sum to the whole, or a residual nobody can explain is left over. *The
-test:* every decomposition reconciles, within a stated tolerance.
+earns sit side by side. [Sources of return](02-sources-of-return.md) shows how a holding divides between top-down and
+bottom-up, and its [method](../pillars/alpha-and-beta-method.md) joins the two splits. *It fails* when the parts do
+not sum to the whole, or a residual nobody can explain is left over. *The test:* every decomposition reconciles,
+within a stated tolerance.
 
 ### 3. Connection
 **Exposure, risk and performance on one timeline, in one language.** Each is credible only through the others. This
@@ -126,4 +127,4 @@ Numbers do not replace judgement; they tell judgement where to look. Some things
 crowded exits, liquidity in a panic, the next crisis that history never showed. There the risk committee decides,
 informed by stress and reverse stress, not replaced by them. Risks owned outside investment risk are managed elsewhere;
 investment risk works with their owners at the edges named in [investment
-risk](02-investment-risk.md#scope-and-boundaries).
+risk](01-investment-risk.md#scope-and-boundaries).
