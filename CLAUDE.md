@@ -41,7 +41,8 @@ In particular, if a change involves a risk-methodology choice the framework does
 estimator, a default, a threshold convention, how a pillar is scoped), stop and ask rather than choosing.
 
 ## Keeping the framework consistent
-- A change to a chapter's scope updates every chapter that refers to it, and the map in `README.md`, in the same commit.
+- A change to a chapter's scope updates every chapter that refers to it, the map in `README.md` and the concept map in
+  `framework/concept-map.md`, in the same commit.
 - `framework/` holds the cross-cutting chapters; `pillars/` holds one chapter per pillar plus the integrated view;
   `reference/` is for runnable code.
 

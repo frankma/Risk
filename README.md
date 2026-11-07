@@ -45,6 +45,7 @@ provides.
 | [Controls](framework/04-controls.md) | Grounding checks, sign-off points, audit trails, governed thresholds, parallel runs, fallback, data handling, alignment with AI risk management expectations. |
 | [Measuring value](framework/05-measuring-value.md) | Capacity, speed, quality and influence; a baseline and a reinvestment plan; why usage is not a measure. |
 | [Alpha and beta](framework/06-alpha-and-beta.md) | What beta and alpha are, for publicly traded holdings on gross returns; how a holding's weight splits between them; the long-short book, booked or derived, that makes the split exact. |
+| [Concept map](framework/concept-map.md) | The main concepts on one page: what each is, where it is defined and which chapters use it. |
 | **Pillars** | |
 | [Market risk](pillars/market-risk.md) | The pillar's workflows; daily monitoring redesigned as a ranked queue of exceptions and watch items with drafted explanations. |
 | [Liquidity risk](pillars/liquidity-risk.md) | The pillar's workflows; periodic stress tests redesigned as continuous monitoring with event-triggered stress tests. |
@@ -53,7 +54,7 @@ provides.
 
 ## Using this repository
 The framework chapters are written to be read in order. The pillar chapters can be read on their own once the
-principles and the method are familiar.
+principles and the method are familiar. The concept map is a reference, for finding where a concept is defined and used.
 
 ## Disclaimer
 This framework is general and illustrative. It is not advice for any particular firm, and any implementation should be
