@@ -6,7 +6,7 @@ describes how the risk manager's role changes as a result. The [philosophy](00-p
 is for; these principles set out how to redesign its work around AI.
 
 ## The problem: insertion, not redesign
-Many fund managers now give their staff AI tools, but few can show a measurable return from them. The tools usually
+Many asset managers now give their staff AI tools, but few can show a measurable return from them. The tools usually
 work as intended. The return is missing because the tools are placed inside workflows that were designed for a manual
 process, and the constraints of that process stay in place.
 
@@ -25,8 +25,8 @@ lesson for a risk function is that the unit of change is the workflow, not the t
 | # | Principle | In one line |
 |---|---|---|
 | 1 | Redesign, don't insert | Start from the outcome, then rebuild the steps. |
-| 2 | Code computes, AI narrates, a human judges | Each kind of work goes to the owner suited to it. |
-| 3 | The AI never produces a number | Every figure comes from code; generated text is checked against it. |
+| 2 | The risk engine computes, AI narrates, a human judges | Each kind of work goes to the owner suited to it. |
+| 3 | The AI never produces a number | Every figure comes from the risk engine; generated text is checked against it. |
 | 4 | Exceptions over everything | The system reviews every fund; the human reviews what is material. |
 | 5 | Decide where freed time goes before starting | Unredirected hours never show up as value. |
 | 6 | New capabilities beat faster old ones | The largest gains are things the manual process could not do. |
@@ -40,21 +40,22 @@ from the existing steps and asking which of them AI can speed up.
 exist only because the old process was slow, such as re-keying data, reformatting tables or chasing inputs, are removed
 rather than automated. An output that feeds no decision is stopped rather than produced faster.
 
-### 2. Code computes, AI narrates, a human judges
+### 2. The risk engine computes, AI narrates, a human judges
 **What it means.** The work in a risk workflow falls into three kinds, and each has a natural owner. Gathering data,
-calculating measures and comparing them to limits must be exact and reproducible, so it belongs to code. Explaining
-what changed, drafting text and extracting information from documents is language and pattern work, which AI does in
-seconds. Deciding what matters, escalating and signing off require judgement and accountability, and belong to the
-risk manager, and to the head of risk where escalation or sign-off requires it.
+calculating measures and comparing them to limits must be exact and reproducible, so it belongs to the risk engine: the
+deterministic part of the system, where the same data always gives the same figure and every figure can be traced and
+reproduced. Explaining what changed, drafting text and extracting information from documents is language and pattern
+work, which the AI assistant does in seconds. Deciding what matters, escalating and signing off require judgement and
+accountability, and belong to the risk manager, and to the head of risk where escalation or sign-off requires it.
 
 **In practice.** Each step of a redesigned workflow is assigned to exactly one of the three owners. Where a step mixes
-kinds of work, it is split. A system in which AI calculates, or in which a person re-types figures that code produced,
-has the wrong owner for that step.
+kinds of work, it is split. A system in which AI calculates, or in which a person re-types figures that the risk engine
+produced, has the wrong owner for that step.
 
 ### 3. The AI never produces a number
 **What it means.** Language models can produce plausible figures that are wrong, and a risk output with a wrong figure
-in it is worse than no output. Every number therefore comes from code that computed it from data. The AI only writes
-text around figures it is given.
+in it is worse than no output. Every number therefore comes from the risk engine that computed it from data. The AI only
+writes text around figures it is given.
 
 **In practice.** Generated text passes a grounding check before anyone sees it: every number in it is matched against
 the computed values it was generated from, and text with an unmatched number is rejected. This check, and the other
@@ -82,10 +83,10 @@ for example deeper fund reviews or more frequent challenge of portfolio managers
 come from things the manual process could not do at all, because they needed more data, more frequent checks or more
 connections than people could manage.
 
-**In practice.** A redesign looks for capabilities that become possible once code covers every fund continuously:
-monitoring liquidity continuously rather than at each periodic stress test, or connecting signals across market,
-liquidity and performance risk to see where they combine. The [integrated view](../pillars/integrated-view.md) is the
-clearest example.
+**In practice.** A redesign looks for capabilities that become possible once the risk engine covers every fund
+continuously: monitoring liquidity continuously rather than at each periodic stress test, or connecting signals across
+market, liquidity and performance risk to see where they combine. The [integrated view](../pillars/integrated-view.md)
+is the clearest example.
 
 ## What changes for the risk manager
 Under a manual process, much of a risk manager's time goes into producing outputs: gathering data, building tables,

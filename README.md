@@ -1,29 +1,10 @@
-# Risk
+# Investment risk framework
 
 **Asset management from an investment risk perspective, and how to redesign that work around AI.**
 
-An asset manager takes a client's money under a mandate, invests it through top-down views and bottom-up selection, and
-delivers an outcome. Investment risk is what can go wrong between that promise and that outcome, and a risk function
-shows whether each portfolio takes the risks its mandate intends. This framework covers that investment side of asset
-management; distribution, operations, compliance and the firm's own business sit outside it.
-
-Many fund managers now use AI tools, but few can show a measurable return from them. The return does not come from
-inserting AI into existing workflows. A tool that drafts a report faster changes little when the real bottleneck is
-gathering data, handing work between people and waiting in review queues. It comes from redesigning the workflow around
-what AI makes possible.
-
-This framework sets out how to do that for investment risk.
-
-## The core pattern
-**Code computes, AI narrates, a human judges.**
-
-| Work | Owner | Why |
-|---|---|---|
-| Gathering data, calculating, comparing to limits | Code | Deterministic; must be exact and reproducible. |
-| Explaining what changed, drafting, extracting from documents | AI | Language and pattern work, in seconds. |
-| Deciding what matters, escalating, signing off | The risk manager and head of risk | Judgement and accountability. |
-
-Two rules make it safe: **the AI never produces a number**, and **the human reviews ranked exceptions, not everything.**
+An asset manager invests a client's money under a mandate and delivers an outcome. This framework covers the investment
+side of that work, seen from investment risk: what can go wrong between the promise and the outcome, and how a risk
+function shows it. [Investment risk](framework/01-investment-risk.md#the-backdrop) sets out the backdrop.
 
 ## Investment risk, in three pillars
 Investment risk is the chance that a portfolio's outcome departs from what its mandate intends. A risk function's
@@ -39,13 +20,41 @@ The pillars are connected. Underperformance drives redemptions, redemptions forc
 what remains is more concentrated and more volatile. Seeing the pillars together is a capability no manual process
 provides.
 
+## Two sources of return
+Every return comes from two sources. Top-down views decide how much of which markets to hold, and bottom-up selection
+decides which securities to hold within them. Loosely, the first is called beta and the second alpha. A risk function
+uses the split to ask whether each risk was chosen and whether it was paid for; see
+[sources of return](framework/02-sources-of-return.md).
+
+## Redesigning the work around AI
+Many asset managers now use AI tools, but few can show a measurable return from them. The return does not come from
+inserting AI into existing workflows. A tool that drafts a report faster changes little when the real bottleneck is
+gathering data, handing work between people and waiting in review queues. It comes from redesigning the workflow around
+what AI makes possible.
+
+This framework sets out how to do that for investment risk.
+
+## The core pattern
+**The risk engine computes, AI narrates, a human judges.**
+
+The risk engine is the deterministic part of the system, where the same data always gives the same figure and every
+figure can be traced and reproduced.
+
+| Work | Owner | Why |
+|---|---|---|
+| Gathering data, calculating, comparing to limits | Risk engine | Deterministic; must be exact and reproducible. |
+| Explaining what changed, drafting, extracting from documents | AI assistant | Language and pattern work, in seconds. |
+| Deciding what matters, escalating, signing off | The risk manager and head of risk | Judgement and accountability. |
+
+Two rules make it safe: **the AI never produces a number**, and **the human reviews ranked exceptions, not everything.**
+
 ## Map
 | Chapter | Covers |
 |---|---|
 | **The investment backdrop** | |
 | [Investment risk philosophy](framework/00-philosophy.md) | What a risk function believes and is for: eight beliefs, the three decisions it serves, and transparency in three dimensions. |
 | [Investment risk](framework/01-investment-risk.md) | Definition and scope, including what is measured here and what is owned elsewhere; the three pillars and the boundaries between them. |
-| [Sources of return](framework/02-sources-of-return.md) | The two sources of every return, top-down views and bottom-up selection, loosely beta and alpha; who decides each, why it matters to asset owners, fund houses and risk functions, and how a holding splits between them. |
+| [Sources of return](framework/02-sources-of-return.md) | The two sources of every return, top-down views and bottom-up selection, loosely beta and alpha; who decides each, why it matters to asset owners, asset managers and risk functions, and how a holding splits between them. |
 | **The redesign around AI** | |
 | [Principles](framework/03-principles.md) | Why inserting AI fails; six principles for redesign; how the risk manager's role changes. |
 | [Redesign method](framework/04-redesign-method.md) | Seven steps to redesign one workflow, from outcome to measured result. |

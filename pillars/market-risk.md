@@ -43,16 +43,16 @@ return twice, over a long window with gradual decay so that they do not jump whe
 ([belief 7](../framework/00-philosophy.md#beliefs)). A security with little history uses a stand-in, such as its
 sector's beta. (The figures are illustrative.)
 
-Pre-trade what-ifs run the daily calculations on a proposed trade: code computes what it adds to VaR, concentration,
-tracking error and budget use, and the portfolio manager decides.
+Pre-trade what-ifs run the daily calculations on a proposed trade: the risk engine computes what it adds to VaR,
+concentration, tracking error and budget use, and the portfolio manager decides.
 
 Stress and scenario testing benefits from a different kind of redesign. A scenario library is usually refreshed
 occasionally, so its scenarios describe the conditions of the last refresh rather than today's. In a redesigned
 workflow, the AI drafts candidate forward-looking scenarios from current conditions, such as a sharp move in a market
-the funds are newly exposed to, and the risk manager decides which to adopt and calibrates the shocks. Code then runs
-every scenario against every fund. The library stays current, and the calibration, which is the judgement, stays with
-the risk manager. Reverse stress testing works the other way: it starts from the loss that would break the mandate and
-asks which shocks would cause it, and the risk manager judges how plausible they are.
+the funds are newly exposed to, and the risk manager decides which to adopt and calibrates the shocks. The risk engine
+then runs every scenario against every fund. The library stays current, and the calibration, which is the judgement,
+stays with the risk manager. Reverse stress testing works the other way: it starts from the loss that would break the
+mandate and asks which shocks would cause it, and the risk manager judges how plausible they are.
 
 ## Flagship redesign: daily monitoring and exception handling
 The example below follows one risk manager covering 40 funds. **The steps, hours and elapsed times are
@@ -78,11 +78,11 @@ few, so a moderate move in a fund that is not on their mind can pass unnoticed.
 
 **Owner assignment.**
 
-- Steps 1, 3 and 4 move to code, which loads data from source, computes every measure, compares each to its limit and
-  to the previous day, and does so for every fund.
+- Steps 1, 3 and 4 move to the risk engine, which loads data from source, computes every measure, compares each to its
+  limit and to the previous day, and does so for every fund.
 - Step 2 exists only because data was copied by hand, and is eliminated.
-- Step 5 is split. Code decomposes each change by position and by risk factor, which is computation; the AI drafts an
-  explanation from that decomposition, which is interpretation.
+- Step 5 is split. The risk engine decomposes each change by position and by risk factor, which is computation; the AI
+  drafts an explanation from that decomposition, which is interpretation.
 - Step 6 stays with the risk manager, who now judges a ranked queue rather than raw data.
 - Steps 7 and 8 become AI drafts that the risk manager edits and sends.
 
@@ -90,13 +90,13 @@ few, so a moderate move in a fund that is not on their mind can pass unnoticed.
 
 | # | Step | Owner | Hours | Elapsed |
 |---|---|---|---|---|
-| 1 | Load data, compute every measure, compare to limits and the previous day | Code | 0 | Overnight |
-| 2 | Decompose each change by position and risk factor | Code | 0 | Overnight |
-| 3 | Rank funds by materiality | Code | 0 | Overnight |
-| 4 | Draft an explanation for each flagged fund | AI | 0 | Overnight |
-| 5 | Grounding check on every draft | Code | 0 | Overnight |
+| 1 | Load data, compute every measure, compare to limits and the previous day | Risk engine | 0 | Overnight |
+| 2 | Decompose each change by position and risk factor | Risk engine | 0 | Overnight |
+| 3 | Rank funds by materiality | Risk engine | 0 | Overnight |
+| 4 | Draft an explanation for each flagged fund | AI assistant | 0 | Overnight |
+| 5 | Grounding check on every draft | Risk engine | 0 | Overnight |
 | 6 | Review the ranked queue, edit explanations, decide what matters | Risk manager | 1.0 | 1.0 h |
-| 7 | Draft the message to the portfolio manager and the log entry | AI | 0 | Minutes |
+| 7 | Draft the message to the portfolio manager and the log entry | AI assistant | 0 | Minutes |
 | 8 | Edit and send the message; confirm the log entry | Risk manager | 0.5 | 0.5 h |
 
 The cycle falls to 1.5 hours a day, and portfolio managers hear about issues within about 1.5 hours of the start of
@@ -129,22 +129,21 @@ Breaches of a limit, including a concentration limit or a drawdown tolerance, la
 readings outside the fund's usual range are exceptions. Early warnings, persistent near-limit readings and counterparty
 exposure approaching its limit are watch items.
 
-Code ranks exceptions before watch items. Breaches come first, then the other exceptions, then early warnings, then
-persistence. Within a tier, items are ordered by size relative to the threshold, and a fund with several items ranks
-above a fund with one. The ranking rule is itself a governed parameter, because it decides what the risk manager reads
-first.
+The risk engine ranks exceptions before watch items. Breaches come first, then the other exceptions, then early
+warnings, then persistence. Within a tier, items are ordered by size relative to the threshold, and a fund with several
+items ranks above a fund with one. The ranking rule is itself a governed parameter, because it decides what the risk
+manager reads first.
 
 Tracking error is computed in the same daily run, because it uses the same positions and market data, but it is a
 measure of active risk and belongs to [performance risk](performance-risk.md). Its exceptions are routed to that
 pillar's workflows rather than to this queue, so each measure is computed once and owned by one pillar.
 
 ## What the AI drafts
-The AI drafts from the facts that code produced and from nothing else. In each example below, the facts are shown
-alongside the draft; every number in the draft appears in the facts, so the
-[grounding check](../framework/05-controls.md#the-grounding-check) would pass. Fund A is an exception, for its large
-one-day rise, and also a watch item, for being above its early warning. Fund B is a watch item approaching its
-counterparty limit, and Fund C is a watch item that has stayed near its limit. **The funds and figures are
-illustrative.**
+The AI drafts from the facts that the risk engine produced and from nothing else. In each example below, the facts are
+shown alongside the draft; every number in the draft appears in the facts, so the [grounding
+check](../framework/05-controls.md#the-grounding-check) would pass. Fund A is an exception, for its large one-day rise,
+and also a watch item, for being above its early warning. Fund B is a watch item approaching its counterparty limit, and
+Fund C is a watch item that has stayed near its limit. **The funds and figures are illustrative.**
 
 **A rise in VaR.**
 

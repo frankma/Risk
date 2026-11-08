@@ -64,7 +64,7 @@ redemption, is either handled outside the process by hand or waits for the next 
 
 **Owner assignment.**
 
-- Steps 1 to 3 move to code, which assigns liquidity to every holding and applies the scenarios every day.
+- Steps 1 to 3 move to the risk engine, which assigns liquidity to every holding and applies the scenarios every day.
 - Step 4 is replaced by the grounding check and the system's reconciliation to source, and is eliminated as a manual
   step.
 - Steps 5 and 7 become AI drafts: the narrative for each fund, and the board paper.
@@ -76,13 +76,13 @@ redemption, is either handled outside the process by hand or waits for the next 
 
 | # | Step | Owner | Hours | Elapsed |
 |---|---|---|---|---|
-| 1 | Compute each fund's liquidity profile and redemption coverage | Code | 0 | Daily |
-| 2 | Monitor flows and investor concentration against each fund's history | Code | 0 | Daily |
-| 3 | Run the stress test when an event trigger fires | Code | 0 | Same day |
-| 4 | Draft the narrative for each triggered fund | AI | 0 | Same day |
-| 5 | Grounding check on every draft | Code | 0 | Same day |
+| 1 | Compute each fund's liquidity profile and redemption coverage | Risk engine | 0 | Daily |
+| 2 | Monitor flows and investor concentration against each fund's history | Risk engine | 0 | Daily |
+| 3 | Run the stress test when an event trigger fires | Risk engine | 0 | Same day |
+| 4 | Draft the narrative for each triggered fund | AI assistant | 0 | Same day |
+| 5 | Grounding check on every draft | Risk engine | 0 | Same day |
 | 6 | Review each triggered fund; recommend on liquidity tools | Risk manager | 2 | Same day |
-| 7 | Draft the board paper from the period's results and events | AI | 0 | Minutes |
+| 7 | Draft the board paper from the period's results and events | AI assistant | 0 | Minutes |
 | 8 | Review scenario calibration; edit the board paper | Risk manager | 4 | 2 days |
 | 9 | Review and sign off the paper | Head of risk | 1 | 1 day |
 
@@ -111,16 +111,16 @@ is a
 | Stale or unpriceable | No price change for a set number of trading days | Holdings whose value is uncertain |
 
 The large redemption, investor and distributor concentration, and market liquidity rules are also triggers: when one
-fires, code runs the stress test for that fund the same day. Every rule in the table gives an exception when it fires;
-a reading drifting towards one of those thresholds, such as coverage falling towards its threshold, is a watch item.
-Code ranks exceptions before watch items: funds with coverage below its threshold come first, then funds with a fired
-trigger, then other exceptions, then watch items. Stale and unpriceable holdings are listed separately and routed to the
-owner of pricing, as well as being shown against the measures they affect.
+fires, the risk engine runs the stress test for that fund the same day. Every rule in the table gives an exception when
+it fires; a reading drifting towards one of those thresholds, such as coverage falling towards its threshold, is a watch
+item. The risk engine ranks exceptions before watch items: funds with coverage below its threshold come first, then
+funds with a fired trigger, then other exceptions, then watch items. Stale and unpriceable holdings are listed
+separately and routed to the owner of pricing, as well as being shown against the measures they affect.
 
 ## What the AI drafts
-The AI drafts from the facts that code produced and from nothing else. Every number in each draft appears in the facts
-beside it, so the [grounding check](../framework/05-controls.md#the-grounding-check) would pass. **The funds and
-figures are illustrative.**
+The AI drafts from the facts that the risk engine produced and from nothing else. Every number in each draft appears in
+the facts beside it, so the [grounding check](../framework/05-controls.md#the-grounding-check) would pass. **The funds
+and figures are illustrative.**
 
 **A large redemption.**
 
