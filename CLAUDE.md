@@ -3,14 +3,14 @@
 Asset management from an investment risk perspective, and how to redesign that work around AI: a philosophy, a
 definition of investment risk and its three workflow pillars (market, liquidity, performance risk), the two sources of
 return, principles, a method for redesigning each workflow, the controls that make it safe and how to measure the
-value. Its core pattern: **code computes, AI narrates, a human judges.**
+value. Its core pattern: **the risk engine computes, AI narrates, a human judges.**
 
 The framework's map is in `README.md`. Read it, and the chapters a change touches, before making the change.
 
 ## This is a public repository
 - **Synthetic data only.** No real holdings, prices, flows, investor data or exports from any system.
 - **Generic content only.** No firm names, fund names, internal system names, real limits, thresholds or internal policy
-  text. Write about "a fund manager" or "a risk function"; use illustrative numbers.
+  text. Write about "an asset manager" or "a risk function"; use illustrative numbers.
 - **No secrets.** No API keys, tokens, connection strings or local paths. Read keys from environment variables.
 - **No dependency on private code.** Do not import from, vendor or copy code out of any other repository. Examples must
   run for anyone who clones this repo.

@@ -100,14 +100,14 @@ person thinks of, which with 40 funds is rarely all of them.
 
 **Owner assignment.**
 
-- Steps 1 and 2 move to code, which reads every pillar's signals for every fund each day, rather than one person
-  reading reports for the funds they recall.
-- Step 3 is split. Code aligns the signals by date, applies the pattern rules and ranks the funds, which is
+- Steps 1 and 2 move to the risk engine, which reads every pillar's signals for every fund each day, rather than one
+  person reading reports for the funds they recall.
+- Step 3 is split. The risk engine aligns the signals by date, applies the pattern rules and ranks the funds, which is
   computation; the AI drafts an account for each ranked fund that connects its signals, which is interpretation.
 - Step 4 stays with a human. The risk manager judges each ranked fund as it appears and decides whether it goes on the
   fund watch list or is escalated.
-- Step 5 is eliminated. Code assembles what the committee sees from the ranked funds, their accounts and the signals
-  behind them.
+- Step 5 is eliminated. The risk engine assembles what the committee sees from the ranked funds, their accounts and the
+  signals behind them.
 - Step 6 stays with the head of risk.
 
 **Redesigned flow.** Hours are per month. Step 6 assumes eight accounts reviewed in the month at a quarter of an hour
@@ -115,11 +115,11 @@ each.
 
 | # | Step | Owner | Hours | Elapsed |
 |---|---|---|---|---|
-| 1 | Read every pillar's signals for every fund; align them by date | Code | 0 | Daily |
-| 2 | Apply the pattern and combination rules; rank funds | Code | 0 | Daily |
-| 3 | Draft an account for each ranked fund | AI | 0 | Daily |
-| 4 | Grounding check on every account | Code | 0 | Daily |
-| 5 | Assemble the committee view from the top-ranked funds | Code | 0 | Minutes |
+| 1 | Read every pillar's signals for every fund; align them by date | Risk engine | 0 | Daily |
+| 2 | Apply the pattern and combination rules; rank funds | Risk engine | 0 | Daily |
+| 3 | Draft an account for each ranked fund | AI assistant | 0 | Daily |
+| 4 | Grounding check on every account | Risk engine | 0 | Daily |
+| 5 | Assemble the committee view from the top-ranked funds | Risk engine | 0 | Minutes |
 | 6 | Judge each ranked fund; add it to the fund watch list or escalate | Risk manager | 2 | Same day |
 | 7 | Review and sign off the committee view | Head of risk | 1 | 1 day |
 

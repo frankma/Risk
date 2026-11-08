@@ -51,14 +51,14 @@ Each tagged step is assigned to one owner, following the core pattern.
 
 | Tag | Owner |
 |---|---|
-| Gather, Compute | Code |
-| Interpret, Communicate | AI drafts; the risk manager edits and approves |
+| Gather, Compute | Risk engine |
+| Interpret, Communicate | AI assistant drafts; the risk manager edits and approves |
 | Judge, Approve | The risk manager, or the head of risk for escalation and sign-off |
 | Steps that exist only because the old process was slow | Eliminated |
 
 The last row matters as much as the others. Re-keying figures between systems, reformatting tables, reconciling two
 copies of the same number and chasing people for inputs exist because the manual process needed them. They are
-removed, not handed to code or AI.
+removed, not handed to the risk engine or the AI assistant.
 
 ### 5. Redesign the flow
 The redesigned workflow changes its shape, not only its speed. A manual workflow has the form "a human produces the
@@ -107,19 +107,19 @@ dropped.
 The cycle takes around 60 hours and 17 working days. Steps 1, 2, 6 and 8 account for half the hours and most of the
 elapsed time; none of them requires risk expertise.
 
-**Step 4, owners.** Steps 1 and 3 move to code, which reads from source systems and computes the measures. Step 2
-exists only because data was copied by hand and is eliminated. Step 4 is eliminated because code produces the output
-in its final format. Step 5 becomes an AI draft from the computed facts, edited by the risk manager. Step 6 is replaced
-by the grounding check and the system's reconciliation to source. Steps 7 and 8 stay with the risk manager and the head
-of risk.
+**Step 4, owners.** Steps 1 and 3 move to the risk engine, which reads from source systems and computes the measures.
+Step 2 exists only because data was copied by hand and is eliminated. Step 4 is eliminated because the risk engine
+produces the output in its final format. Step 5 becomes an AI draft from the computed facts, edited by the risk manager.
+Step 6 is replaced by the grounding check and the system's reconciliation to source. Steps 7 and 8 stay with the risk
+manager and the head of risk.
 
 **Step 5, redesigned flow.**
 
 | # | Step | Owner | Hours | Elapsed |
 |---|---|---|---|---|
-| 1 | Load data, compute measures, compare to thresholds, rank exceptions | Code | 0 | Same day |
-| 2 | Draft an explanation for each exception from the computed facts | AI | 0 | Same day |
-| 3 | Grounding check on every draft | Code | 0 | Same day |
+| 1 | Load data, compute measures, compare to thresholds, rank exceptions | Risk engine | 0 | Same day |
+| 2 | Draft an explanation for each exception from the computed facts | AI assistant | 0 | Same day |
+| 3 | Grounding check on every draft | Risk engine | 0 | Same day |
 | 4 | Review exceptions, edit explanations, decide what to escalate | Risk manager | 6 | 2 days |
 | 5 | Sign off the two-page summary with drill-down | Head of risk | 1 | 1 day |
 
@@ -135,7 +135,7 @@ deep-dive reviews of the funds that appear most often in the exception summary.
 | Failure mode | What happens | What prevents it |
 |---|---|---|
 | Automating outputs nobody uses | Cost falls, value does not rise | The inventory in step 2 |
-| Letting the AI calculate | Wrong figures reach decisions | Code computes; the grounding check |
+| Letting the AI calculate | Wrong figures reach decisions | The risk engine computes; the grounding check |
 | Keeping every old review gate | Elapsed time barely changes | Moving gates in step 5 |
 | No decision on freed time | Savings disappear into other work | A reinvestment plan before starting |
 | A tool rollout with no workflow rebuilt | Usage rises, returns do not | Redesign one workflow fully first |

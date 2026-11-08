@@ -59,36 +59,37 @@ escalates an action that has stalled.
 
 **Owner assignment.**
 
-- Step 1 moves to code, which tracks the pillar's measures continuously rather than pulling them before each review.
-- Step 2 is eliminated, because code produces the pack in its final format.
-- Step 3 is split. Code tests the fund against its mandate terms and ranks the issues, which is computation; the AI
-  drafts the evidence and the questions for each issue, which is interpretation.
+- Step 1 moves to the risk engine, which tracks the pillar's measures continuously rather than pulling them before each
+  review.
+- Step 2 is eliminated, because the risk engine produces the pack in its final format.
+- Step 3 is split. The risk engine tests the fund against its mandate terms and ranks the issues, which is computation;
+  the AI drafts the evidence and the questions for each issue, which is interpretation.
 - Step 4 stays with the risk manager, who now runs the meeting on the risk function's agenda.
 - Step 5 becomes an AI draft of the minutes and the action log, edited by the risk manager.
 - Step 6 stays as an approval, shortened because the risk manager edits a draft rather than writing from notes.
-- Step 7 exists only because nothing tracked the actions, and is eliminated: code tracks follow-ups and escalates
-  overdue actions to the watch list.
+- Step 7 exists only because nothing tracked the actions, and is eliminated: the risk engine tracks follow-ups and
+  escalates overdue actions to the watch list.
 
-**Mandate terms, set up once.** Testing a fund against what it promised needs the promise in a form code can test.
-The AI extracts the fund's stated objective, style and limits from its documents into structured terms, each linked to
-the passage it came from. The risk manager confirms the terms once, and again whenever the documents change. Code then
-tests holdings and exposures against the confirmed terms and flags style drift and unintended bets. The AI reads the
-documents, code makes the comparison, and the risk manager owns what the terms say.
+**Mandate terms, set up once.** Testing a fund against what it promised needs the promise in a form the risk engine can
+test. The AI extracts the fund's stated objective, style and limits from its documents into structured terms, each
+linked to the passage it came from. The risk manager confirms the terms once, and again whenever the documents change.
+The risk engine then tests holdings and exposures against the confirmed terms and flags style drift and unintended bets.
+The AI reads the documents, the risk engine makes the comparison, and the risk manager owns what the terms say.
 
 **Redesigned flow.**
 
 | # | Step | Owner | Hours | Elapsed |
 |---|---|---|---|---|
-| 1 | Track tracking error, active share, information ratio, factors and peer position | Code | 0 | Continuous |
-| 2 | Test exposures against the mandate terms; flag drift and unintended bets | Code | 0 | Continuous |
-| 3 | Rank the fund's issues | Code | 0 | Minutes |
-| 4 | Draft the challenge pack: evidence and questions for each issue | AI | 0 | Minutes |
-| 5 | Grounding check on the pack | Code | 0 | Minutes |
+| 1 | Track tracking error, active share, information ratio, factors and peer position | Risk engine | 0 | Continuous |
+| 2 | Test exposures against the mandate terms; flag drift and unintended bets | Risk engine | 0 | Continuous |
+| 3 | Rank the fund's issues | Risk engine | 0 | Minutes |
+| 4 | Draft the challenge pack: evidence and questions for each issue | AI assistant | 0 | Minutes |
+| 5 | Grounding check on the pack | Risk engine | 0 | Minutes |
 | 6 | Review and edit the pack; set the agenda | Risk manager | 1.5 | 1 day |
 | 7 | Run the meeting on the risk function's agenda | Risk manager | 1.5 | 1 day |
-| 8 | Draft the minutes and the action log | AI | 0 | Same day |
+| 8 | Draft the minutes and the action log | AI assistant | 0 | Same day |
 | 9 | Edit and agree the minutes and actions | Risk manager | 0.5 | 2 days |
-| 10 | Track follow-ups; escalate overdue actions to the watch list | Code | 0 | Ongoing |
+| 10 | Track follow-ups; escalate overdue actions to the watch list | Risk engine | 0 | Ongoing |
 
 Each review falls to 3.5 hours, and agreed minutes follow 4 working days after preparation starts instead of 13. The
 meeting itself takes the same time as before; what changes is whose agenda it follows and what happens afterwards.
@@ -110,22 +111,22 @@ Each rule is a [governed parameter](../framework/05-controls.md#materiality-thre
 | Persistence | Shortfall in several consecutive periods | Shortfall that is not noise |
 | Tracking error | Outside the range the mandate terms imply | Too much or too little active risk |
 | Active share | Falling for several consecutive quarters | A fund moving towards its benchmark |
-| Source of return | A large share of gross excess return from an unintended exposure, including carried beta, over several periods | Returns from the wrong sources |
+| Source of return | A large share of gross excess return from unintended beta, over several periods | Returns from the wrong sources |
 | Risk budget | A bet using a large share of the budget with no return over several periods | Risk that has not earned its place |
 | Style consistency | Exposures outside the confirmed mandate terms | Style drift |
 | Overdue action | An agreed action past its due date | Follow-up that has stalled |
 
 A single period of shortfall, or of the source-of-return reading, is a watch item; every other rule in the table,
-including persistent shortfall, gives an exception when it fires. Code ranks issues for each fund, exceptions before
-watch items. Persistent issues rank above single-period ones, because short periods are noisy and persistence carries
-more information than size. Issues where the outcome and the way it was achieved both depart from the promise rank
-highest. Overdue actions are always shown, so that the review starts from what was agreed last time.
+including persistent shortfall, gives an exception when it fires. The risk engine ranks issues for each fund, exceptions
+before watch items. Persistent issues rank above single-period ones, because short periods are noisy and persistence
+carries more information than size. Issues where the outcome and the way it was achieved both depart from the promise
+rank highest. Overdue actions are always shown, so that the review starts from what was agreed last time.
 
 ## What the AI drafts
-The AI drafts each item of the challenge pack from the facts that code produced and from nothing else. Every number in
-each draft appears in the facts beside it, so the [grounding check](../framework/05-controls.md#the-grounding-check)
-would pass. The questions are proposals; the risk manager decides which to ask. **The funds and figures are
-illustrative.**
+The AI drafts each item of the challenge pack from the facts that the risk engine produced and from nothing else. Every
+number in each draft appears in the facts beside it, so the [grounding
+check](../framework/05-controls.md#the-grounding-check) would pass. The questions are proposals; the risk manager
+decides which to ask. **The funds and figures are illustrative.**
 
 **Outperformance from an unintended exposure.**
 

@@ -14,7 +14,7 @@ the reasoning goes there.
 | Three decisions | Construct, Oversee and Assess: before, during and after an investment | [Philosophy](00-philosophy.md#purpose-transparency-for-three-decisions) | Market risk's what-ifs, alpha and beta |
 | Three dimensions | Condensation, drill-in and connection: what every piece of risk work provides | [Philosophy](00-philosophy.md#practice-transparency-in-three-dimensions) | All pillars |
 | Decision-maker | Whoever a piece of a decomposition belongs to | [Philosophy](00-philosophy.md#2-drill-in) | Alpha and beta |
-| Mandate terms | A fund's objective, style and limits in a form code can test, confirmed by the risk manager | [Performance risk](../pillars/performance-risk.md#flagship-redesign-the-periodic-portfolio-manager-review) | Performance risk's rules and split |
+| Mandate terms | A fund's objective, style and limits in a form the risk engine can test, confirmed by the risk manager | [Performance risk](../pillars/performance-risk.md#flagship-redesign-the-periodic-portfolio-manager-review) | Performance risk's rules and split |
 
 ## Scope
 
@@ -30,24 +30,25 @@ the reasoning goes there.
 
 | Concept | What it is | Defined in | Used by |
 |---|---|---|---|
-| Top-down view | Decides how much of which markets to hold; loosely, beta | [Sources of return](02-sources-of-return.md#the-two-sources) | Philosophy |
-| Bottom-up selection | Decides which securities to hold within them; loosely, alpha | [Sources of return](02-sources-of-return.md#the-two-sources) | Philosophy |
-| Policy beta | The return of the strategic allocation or benchmark | [Sources of return](02-sources-of-return.md#who-decides-each) | Alpha and beta method |
-| Tilts | The manager's standing positions against that allocation, recorded when taken | [Sources of return](02-sources-of-return.md#who-decides-each) | Alpha and beta method |
-| Timing | The return from recorded changes in exposure over time | [Sources of return](02-sources-of-return.md#who-decides-each) | Alpha and beta method |
-| Carried beta | Any exposure without a record that anyone chose it | [Sources of return](02-sources-of-return.md#who-decides-each) | Performance risk's source-of-return rule, alpha and beta method |
-| Beta portfolio | The fund's own weight in each asset class and sector, following the index inside each | [Sources of return](02-sources-of-return.md#splitting-a-holding) | Alpha and beta method |
-| Long-short book | The alpha weights, which sum to zero within each sector | [Sources of return](02-sources-of-return.md#splitting-a-holding) | Alpha and beta method |
+| Top-down view | Decides how much of which markets to hold; loosely, beta | [Sources of return](02-sources-of-return.md#what-are-the-two-sources) | Philosophy |
+| Bottom-up selection | Decides which securities to hold within them; loosely, alpha | [Sources of return](02-sources-of-return.md#what-are-the-two-sources) | Philosophy |
+| Policy beta | The return of the strategic allocation or benchmark | [Sources of return](02-sources-of-return.md#who-chose-each-part) | Alpha and beta method |
+| Tilts | The manager's standing positions against that allocation, recorded when taken | [Sources of return](02-sources-of-return.md#who-chose-each-part) | Alpha and beta method |
+| Timing | The return from recorded changes in exposure over time | [Sources of return](02-sources-of-return.md#who-chose-each-part) | Alpha and beta method |
+| Unintended beta | Any exposure with no record that anyone chose it; a test of record, not of motive | [Sources of return](02-sources-of-return.md#who-chose-each-part) | Performance risk's source-of-return rule, alpha and beta method |
+| Beta portfolio | The fund's own weight in each asset class and sector, following the index inside each | [Sources of return](02-sources-of-return.md#how-does-one-holding-split) | Alpha and beta method |
+| Long-short book | The alpha weights, which sum to zero within each sector | [Sources of return](02-sources-of-return.md#how-does-one-holding-split) | Alpha and beta method |
 
 ## Redesigning the work
 
 | Concept | What it is | Defined in | Used by |
 |---|---|---|---|
-| Core pattern | Code computes, AI narrates, a human judges | [Principles](03-principles.md#2-code-computes-ai-narrates-a-human-judges) | Every chapter |
+| Core pattern | The risk engine computes, AI narrates, a human judges | [Principles](03-principles.md#2-the-risk-engine-computes-ai-narrates-a-human-judges) | Every chapter |
+| Risk engine | The deterministic part of the system: the same data always gives the same figure | [Principles](03-principles.md#2-the-risk-engine-computes-ai-narrates-a-human-judges) | Every chapter |
 | Six principles | What a redesign should follow | [Principles](03-principles.md#six-principles) | Redesign method, all pillars |
 | Seven steps | How one workflow is redesigned, from outcome to measured result | [Redesign method](04-redesign-method.md#the-seven-steps) | All pillars |
 | Step tags | Gather, Compute, Interpret, Judge, Communicate, Approve / Wait | [Redesign method](04-redesign-method.md#3-map-the-current-state) | All pillars |
-| Owners | Who or what does each step: code, AI, the risk manager or the head of risk | [Redesign method](04-redesign-method.md#4-assign-each-step-an-owner) | All pillars |
+| Owners | Who or what does each step: the risk engine, the AI assistant, the risk manager or the head of risk | [Redesign method](04-redesign-method.md#4-assign-each-step-an-owner) | All pillars |
 | Four dimensions of value | Capacity, speed, quality and influence | [Measuring value](06-measuring-value.md#four-dimensions) | All pillars |
 | Baseline | A record of the current state, taken before anything changes | [Measuring value](06-measuring-value.md#baseline-first) | Redesign method |
 | Reinvestment plan | What freed time will be spent on, decided in advance | [Measuring value](06-measuring-value.md#reinvestment-plan) | Principles, redesign method, market risk |

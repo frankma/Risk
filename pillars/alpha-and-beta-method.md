@@ -22,23 +22,34 @@ it. Performance risk's outcome tests stay on what the client receives.
 A benchmark that cannot be held, such as inflation plus a margin or a peer-group median, still judges the promise, but
 an investable stand-in or cash serves as policy beta, and the gap is shown on its own line.
 
+## The four beta lines
+The [sources of return](../framework/02-sources-of-return.md#who-chose-each-part) chapter groups top-down return by
+whose call it was. The method keeps the manager's branch as two lines, because timing needs its own skill test.
+
+| Line | What it is | Who decides |
+|---|---|---|
+| Policy beta | The return of the strategic allocation or benchmark | The client, asset owner or chief investment officer |
+| Tilts | Standing positions against that allocation, recorded when taken | The manager |
+| Timing | The return from recorded changes in exposure over time | The manager |
+| Unintended beta | Any exposure with no record that anyone chose it, including price drift | Nobody |
+
 ## Weights
-The weight split is set out in
-[sources of return](../framework/02-sources-of-return.md#splitting-a-holding), with a worked example. The book counts a
-security the fund does not hold as a short, whether or not anyone decided against it. A holding outside the index has a
-beta weight of zero, so its whole position enters the book, and the next step removes its exposures. Because the beta
-portfolio uses the fund's own sector weights, the book's return equals the selection and interaction effects of an
-attribution. For bonds, the buckets are maturity, rating and sector, and the book holds the issues chosen within them.
+The weight split is set out in [sources of return](../framework/02-sources-of-return.md#how-does-one-holding-split),
+with a worked example. The book counts a security the fund does not hold as a short, whether or not anyone decided
+against it. A holding outside the index has a beta weight of zero, so its whole position enters the book, and the next
+step removes its exposures. Because the beta portfolio uses the fund's own sector weights, the book's return equals the
+selection and interaction effects of an attribution. For bonds, the buckets are maturity, rating and sector, and the
+book holds the issues chosen within them.
 
 ## Neutral to all of beta
 Zero net weight is not zero exposure. In the worked example, X has a market beta of 1.3 and Y a market beta of 0.8, so
 the book has a net market beta of 0.01 (2.0% × 1.3 less 2.0% × 0.8). With the market up 5%, 0.05% of the book's return
-is market return. That is carried beta, and it moves to beta. (The figures are illustrative.)
+is market return. That is unintended beta, and it moves to beta. (The figures are illustrative.)
 
 | | Beta | Alpha | Total |
 |---|---|---|---|
 | Split of weights | 1.09% | 0.16% | 1.25% |
-| Carried beta | +0.05% | -0.05% | 0.00% |
+| Unintended beta | +0.05% | -0.05% | 0.00% |
 | **Result** | **1.14%** | **0.11%** | **1.25%** |
 
 The same step applies to every declared factor: market, style, sector, country, currency, rates and spreads. The book's
@@ -51,10 +62,10 @@ exists, such as duration, and an estimated beta otherwise. Measuring it as often
 The same split applies to risk, using the same baskets: factor risk is beta and stock-specific risk is alpha.
 
 ## Computing the split
-Code weights the exposures by each day's holdings and compares them with the confirmed mandate terms and the tilts and
-timing calls on record; anything without a record, including price drift, is carried beta. The risk manager's judgement
-on it is noted beside the line and does not change the line, and a tilt the manager confirms counts once it is recorded.
-The book's return is shown separately for names held and names not held.
+The risk engine weights the exposures by each day's holdings and compares them with the confirmed mandate terms and the
+tilts and timing calls on record; anything without a record, including price drift, is unintended beta. The risk
+manager's judgement on it is noted beside the line and does not change the line, and a tilt the manager confirms counts
+once it is recorded. The book's return is shown separately for names held and names not held.
 
 Trading cost is the gap between the fund's actual return and the return of its start-of-day holdings. A booked book
 charges it by trade tag. A derived book charges any net change in a bucket's weight to beta and the rest to alpha, which
@@ -98,9 +109,9 @@ Passing shows that the split is clean, not that alpha is skill or safe.
   flagged in [liquidity risk](liquidity-risk.md) are marked in the split.
 
 ## In the workflow
-Within [attribution reporting](performance-risk.md#workflows-in-this-pillar), code computes the split and checks that it
-reconciles; a split that does not is an exception and is not drafted. A large share of gross excess return from carried
-beta, over several periods, fires the [source-of-return rule](performance-risk.md#materiality-and-exceptions). The AI
-drafts the explanation, and the [grounding check](../framework/05-controls.md#the-grounding-check) tests it. The risk
-manager judges whether alpha persists, whether beta was intended and which questions to put to the portfolio manager,
-who decides what to hold.
+Within [attribution reporting](performance-risk.md#workflows-in-this-pillar), the risk engine computes the split and
+checks that it reconciles; a split that does not is an exception and is not drafted. A large share of gross excess
+return from unintended beta, over several periods, fires the [source-of-return
+rule](performance-risk.md#materiality-and-exceptions). The AI drafts the explanation, and the [grounding
+check](../framework/05-controls.md#the-grounding-check) tests it. The risk manager judges whether alpha persists,
+whether beta was intended and which questions to put to the portfolio manager, who decides what to hold.
