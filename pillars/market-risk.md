@@ -1,7 +1,7 @@
 # Market risk
 
 Market risk asks how much a portfolio could lose, in total and against its benchmark, and the risk function answers that
-question every day for every portfolio. This chapter applies the [redesign method](../framework/04-redesign-method.md)
+question every day for every portfolio. This chapter applies the [redesign method](../framework/05-redesign-method.md)
 to the pillar: it lists the pillar's recurring workflows, redesigns daily monitoring from a manual scan of every
 portfolio into a ranked queue of exceptions and watch items with drafted explanations, and sets out the thresholds,
 limits, controls and measures that make the redesign work.
@@ -31,7 +31,7 @@ portfolios are outside their intended risk, or why, is a candidate for removal r
 Daily monitoring is the flagship, because it runs most often and because most of the other workflows draw on what it
 computes. The periodic risk report becomes largely a summary of the month's exceptions and their resolution, as in the
 worked example in the [redesign
-method](../framework/04-redesign-method.md#worked-example-a-monthly-risk-and-performance-report). Counterparty exposure
+method](../framework/05-redesign-method.md#worked-example-a-monthly-risk-and-performance-report). Counterparty exposure
 monitoring runs inside the same daily process, with its own limits; approving which counterparties may be used remains
 with the function that owns that decision. The same run totals holdings across portfolios by issuer, counterparty and
 factor for the [firm's footprint](integrated-view.md#the-firms-footprint); these totals do not net.
@@ -53,8 +53,8 @@ duration for rates, duration times spread for credit and the currency weight for
 basket, so that a bond with a duration of 6 against a basket of 4 has an exposure of 1.5. Equity market and style
 exposures are betas, estimated together against all the baskets so that overlapping baskets do not count the same
 return twice, over a long window with gradual decay so that they do not jump when an old day drops out
-([belief 7](../framework/00-philosophy.md#beliefs)). A security with little history uses a stand-in, such as its
-sector's beta. (The figures are illustrative.)
+([belief 7](../framework/00-philosophy.md#beliefs)). A security with little history uses a proxy under the
+[proxy policy](../framework/03-risk-data.md#proxies), such as its sector's beta. (The figures are illustrative.)
 
 Pre-trade what-ifs run the daily calculations on a proposed trade: the risk engine computes what it adds to VaR,
 concentration, tracking error and budget use, and the portfolio manager decides.
@@ -127,7 +127,7 @@ risk manager had time to examine.
 The queue holds the readings the risk manager should see today. An **exception** is a reading where a rule has fired;
 a **watch item** is a reading moving towards a threshold. Both come from a small number of kinds of rule, each owned
 and versioned as a
-[governed parameter](../framework/05-controls.md#materiality-thresholds-as-governed-parameters).
+[governed parameter](../framework/06-controls.md#materiality-thresholds-as-governed-parameters).
 **The example values below are illustrative and are not recommendations;** each risk function sets its own.
 
 | Kind of rule | Example (illustrative) | What it catches |
@@ -160,7 +160,7 @@ this pillar reads only the headroom it leaves.
 ## What the AI drafts
 The AI drafts from the facts that the risk engine produced and from nothing else. In each example below, the facts are
 shown alongside the draft; every number in the draft appears in the facts, so the [grounding
-check](../framework/05-controls.md#the-grounding-check) would pass. Fund A is an exception, for its large one-day rise,
+check](../framework/06-controls.md#the-grounding-check) would pass. Fund A is an exception, for its large one-day rise,
 and also a watch item, for being above its early warning. Fund B is likewise an exception, for a one-day rise above its
 change threshold, and a watch item approaching its counterparty limit. Fund C is a watch item that has stayed near its
 limit. **The funds and figures are illustrative.**
@@ -239,19 +239,19 @@ correct. The function tests this by tracking how often, and how substantially, r
 reviewing a sample of explanations against the full decomposition.
 
 ## Controls specific to this pillar
-The general controls in [controls](../framework/05-controls.md) apply in full. This pillar adds four.
+The general controls in [controls](../framework/06-controls.md) apply in full. This pillar adds four.
 
 - **Decomposition reconciles before drafting.** The contributions by position and by factor must add up to the total
   change, within a stated tolerance, before the AI drafts from them. A decomposition that does not reconcile is an
   exception in its own right.
 - **Silence is not a clean result.** A portfolio with missing or incomplete data is shown as not assessed, never as
-  having nothing to report.
+  having nothing to report, as set out in [risk data](../framework/03-risk-data.md#quality-before-computation).
 - **Messages are sent by the risk manager.** Drafted messages to portfolio managers are never sent automatically.
 - **The scenario library is governed.** Scenarios the AI proposes are recorded as proposals; the risk manager's
   calibration and approval are recorded before a scenario enters the library.
 
 ## Measuring value
-The measures from [measuring value](../framework/06-measuring-value.md) that matter most for this pillar are speed and
+The measures from [measuring value](../framework/07-measuring-value.md) that matter most for this pillar are speed and
 capacity: how soon a portfolio manager hears about an issue, and how many portfolios are reviewed in depth.
 
 | Dimension | Measure for this pillar |

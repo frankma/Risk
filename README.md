@@ -55,7 +55,7 @@ Two rules make it work:
   rule each day and ranks what it finds into a queue of exceptions and watch items. The risk manager reviews that queue
   rather than every portfolio, signs off what goes out, and spends the time freed on what a person adds: judging what
   matters to the portfolio and its intended risk profile, and bringing clarity to the risks being taken.
-  [Principles](framework/03-principles.md#what-the-risk-manager-adds) sets this out.
+  [Principles](framework/04-principles.md#what-the-risk-manager-adds) sets this out.
 
 ## Map
 | Chapter | Covers |
@@ -64,11 +64,13 @@ Two rules make it work:
 | [Investment risk philosophy](framework/00-philosophy.md) | What a risk function believes and is for: eight beliefs, the three decisions it serves, and transparency in three dimensions. |
 | [Investment risk](framework/01-investment-risk.md) | Definition and scope, including the portfolios covered, what is measured here and what is owned elsewhere; the three pillars, with market and performance risk divided by time into forward-looking and realised. |
 | [Sources of return](framework/02-sources-of-return.md) | The two sources of every return, top-down views and bottom-up selection, loosely beta and alpha; who decides each, why it matters to asset owners, asset managers and risk functions, and how a holding splits between them. |
+| **The practice** | |
+| [Risk data](framework/03-risk-data.md) | The data the risk engine reads, from golden source to computed figure; versioning as known, so any past output can be reproduced; quality checks before computation; the proxy policy; who owns fitness for use and who corrects; the daily data check redesigned as a ranked queue of data breaks. |
 | **The redesign around AI** | |
-| [Principles](framework/03-principles.md) | Why inserting AI fails; six principles for redesign; what the risk manager adds. |
-| [Redesign method](framework/04-redesign-method.md) | Seven steps to redesign one workflow, from outcome to measured result. |
-| [Controls](framework/05-controls.md) | Grounding checks, sign-off points, audit trails, governed thresholds, parallel runs, fallback, data handling, alignment with AI risk management expectations. |
-| [Measuring value](framework/06-measuring-value.md) | Capacity, speed, quality and influence; a baseline and a reinvestment plan; why usage is not a measure. |
+| [Principles](framework/04-principles.md) | Why inserting AI fails; six principles for redesign; what the risk manager adds. |
+| [Redesign method](framework/05-redesign-method.md) | Seven steps to redesign one workflow, from outcome to measured result. |
+| [Controls](framework/06-controls.md) | Grounding checks, sign-off points, audit trails, governed thresholds, parallel runs, fallback, data handling, alignment with AI risk management expectations. |
+| [Measuring value](framework/07-measuring-value.md) | Capacity, speed, quality and influence; a baseline and a reinvestment plan; why usage is not a measure. |
 | **The pillars** | |
 | [Market risk](pillars/market-risk.md) | The pillar's workflows, including ex-ante tracking error and the risk budget review; daily monitoring redesigned as a ranked queue of exceptions and watch items with drafted explanations. |
 | [Liquidity risk](pillars/liquidity-risk.md) | The pillar's workflows; periodic stress tests redesigned as continuous monitoring with event-triggered stress tests. |

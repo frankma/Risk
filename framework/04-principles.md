@@ -36,7 +36,7 @@ Sources). The lesson for a risk function is that the unit of change is the workf
 manager challenged. A redesign starts from that outcome and asks which steps it actually needs, rather than starting
 from the existing steps and asking which of them AI can speed up.
 
-**In practice.** Each workflow is redesigned end to end, using the [redesign method](04-redesign-method.md). Steps that
+**In practice.** Each workflow is redesigned end to end, using the [redesign method](05-redesign-method.md). Steps that
 exist only because the old process was slow, such as re-keying data, reformatting tables or chasing inputs, are removed
 rather than automated. An output that feeds no decision is stopped rather than produced faster.
 
@@ -60,7 +60,7 @@ checked, such as a difference or a ratio. It never originates a number.
 
 **In practice.** Generated text passes a grounding check before anyone sees it: every number in it is matched against
 the computed values it was generated from, or recomputed from them, and text with a number that cannot be traced is
-rejected. This check, and the other [controls](05-controls.md) that make it safe to rely on generated text, are what
+rejected. This check, and the other [controls](06-controls.md) that make it safe to rely on generated text, are what
 allow manual checking to be reduced.
 
 ### 4. Exceptions over everything
@@ -78,7 +78,7 @@ never shows up as value. The use of the time is a design decision, made at the s
 
 **In practice.** Before a workflow is redesigned, the risk function records what the freed capacity will be spent on,
 for example deeper portfolio reviews or more frequent challenge of portfolio managers, and then tracks whether that
-happens. [Measuring value](06-measuring-value.md) sets out how.
+happens. [Measuring value](07-measuring-value.md) sets out how.
 
 ### 6. New capabilities beat faster old ones
 **What it means.** Doing the old process faster has a ceiling: at best the old output arrives sooner. The larger gains
@@ -117,7 +117,7 @@ what they add is what goes into it.
   portfolio manager take risk deliberately, and the return follows from deliberate risk-taking. The risk manager stays
   independent of the investment team, and that independence is what makes the clarity credible.
 - **Challenge that changes decisions.** Evidence put to the portfolio manager, and escalation where an issue stays
-  unresolved. Influence is the dimension of [value](06-measuring-value.md#influence) closest to the function's
+  unresolved. Influence is the dimension of [value](07-measuring-value.md#influence) closest to the function's
   purpose.
 - **Deciding what the system flags, and in what order.** The thresholds that decide what reaches the queue, the
   ranking that orders it, the patterns that connect the pillars and the calibration of scenarios are where judgement is

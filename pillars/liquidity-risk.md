@@ -1,7 +1,7 @@
 # Liquidity risk
 
 Liquidity risk asks whether a portfolio can meet every call on its cash, in time and at a fair cost, without
-disadvantaging the investors who stay. This chapter applies the [redesign method](../framework/04-redesign-method.md) to
+disadvantaging the investors who stay. This chapter applies the [redesign method](../framework/05-redesign-method.md) to
 the pillar: it lists the pillar's recurring workflows, redesigns periodic stress testing into continuous monitoring with
 event-triggered stress tests, and sets out the thresholds, limits, controls and measures that make the redesign work.
 The redesign is a new capability, not only a faster version of the old process: the risk function sees a portfolio's
@@ -106,7 +106,7 @@ days. The redesigned process does exactly that, which is a capability the old pr
 An **exception** in this pillar is a rule that has fired: a reading that shows a portfolio may not meet its calls on
 cash fairly, or an event that should trigger the stress test. A **watch item** is a reading drifting towards a
 threshold. Each rule is a [governed
-parameter](../framework/05-controls.md#materiality-thresholds-as-governed-parameters). **The example values below are
+parameter](../framework/06-controls.md#materiality-thresholds-as-governed-parameters). **The example values below are
 illustrative and are not recommendations;** each risk function sets its own.
 
 | Kind of rule | Example (illustrative) | What it catches |
@@ -129,7 +129,7 @@ measures they affect.
 
 ## What the AI drafts
 The AI drafts from the facts that the risk engine produced and from nothing else. Every number in each draft appears in
-the facts beside it, so the [grounding check](../framework/05-controls.md#the-grounding-check) would pass. **The
+the facts beside it, so the [grounding check](../framework/06-controls.md#the-grounding-check) would pass. **The
 funds and figures are illustrative.**
 
 **A large redemption.**
@@ -197,7 +197,7 @@ urgent it is. The function tests this by reviewing how risk managers edit the na
 by checking a sample against the full stress results.
 
 ## Controls specific to this pillar
-The general controls in [controls](../framework/05-controls.md) apply in full. This pillar adds four.
+The general controls in [controls](../framework/06-controls.md) apply in full. This pillar adds four.
 
 - **Every trigger is recorded.** Each firing, the stress test it ran and the result are kept in the audit trail, so the
   record shows that an event was assessed, and when.
@@ -206,10 +206,10 @@ The general controls in [controls](../framework/05-controls.md) apply in full. T
 - **The recommendation is not drafted.** The AI drafts the facts and the narrative; the recommendation on liquidity
   management tools is written by the risk manager.
 - **Investor data is minimised.** Facts sent to an AI service describe shares and flows, not investor identities, in
-  line with [data handling](../framework/05-controls.md#data-handling).
+  line with [data handling](../framework/06-controls.md#data-handling).
 
 ## Measuring value
-The measures from [measuring value](../framework/06-measuring-value.md) that matter most for this pillar are speed and
+The measures from [measuring value](../framework/07-measuring-value.md) that matter most for this pillar are speed and
 quality: how soon an event is assessed, and whether any event is missed.
 
 | Dimension | Measure for this pillar |

@@ -9,7 +9,7 @@ function should own them.
 A redesign removes steps that existed to catch errors: a second person checking figures, a manager reading every page.
 Those steps can only be removed if something at least as reliable takes their place. Without that, either the old
 checks stay and the redesign saves little, or they are removed and errors reach decisions. The controls below are what
-make the [redesign method](04-redesign-method.md) work in practice, and they should be designed in step 6, not added
+make the [redesign method](05-redesign-method.md) work in practice, and they should be designed in step 6, not added
 after the workflow is live.
 
 | Control | What it protects against |
@@ -24,7 +24,7 @@ after the workflow is live.
 
 ## The grounding check
 The grounding check enforces the principle that
-[the AI never produces a number](03-principles.md#3-the-ai-never-produces-a-number). Every number in a piece of
+[the AI never produces a number](04-principles.md#3-the-ai-never-produces-a-number). Every number in a piece of
 generated text is extracted and matched against the computed facts the text was generated from. Numbers written as
 words, such as "three months", are extracted and matched in the same way as numerals.
 
@@ -63,7 +63,8 @@ The risk manager sees the computed facts alongside the generated text, so that t
 the arithmetic, which the system has already checked.
 
 ## The audit trail
-For every output, the workflow records: the input facts it was generated from, with their data versions; the threshold,
+For every output, the workflow records: the input facts it was generated from, with their data
+[versions](03-risk-data.md#versioned-as-known); the threshold,
 prompt, template and model versions in force; the text as generated; every edit the human made; the grounding check
 result; who approved it and when. The record is kept in a form that can be retrieved by output, by portfolio and by
 date.
@@ -98,7 +99,8 @@ recorded as a result of the run.
 Each workflow defines what happens when a component fails.
 
 - **Data pipeline failure.** The workflow does not run on stale or partial data without saying so. It either waits, or
-  runs with the affected portfolios clearly marked, according to a rule set in advance.
+  runs with the affected portfolios clearly marked, according to a rule set in advance. The checks that find the
+  failure are set out in [risk data](03-risk-data.md#quality-before-computation).
 - **AI backend failure.** The workflow falls back to a deterministic template that states the computed facts in fixed
   sentences. The output is plainer, but complete and correct, and the workflow's deadlines still hold.
 
@@ -106,7 +108,8 @@ Because the template backend produces correct output without an AI service, the 
 template covers a draft that repeatedly fails the grounding check.
 
 ## Data handling
-A risk function sends data to an AI service only under rules set before the workflow is built.
+A risk function sends data to an AI service only under rules set before the workflow is built. The data the risk engine
+itself reads, and the checks it passes, are set out in [risk data](03-risk-data.md).
 
 - **What may be sent.** The workflow defines which data may go to which service. Computed facts about a portfolio are
   often enough; raw positions, investor details and personal data are sent only where the service is approved for them.

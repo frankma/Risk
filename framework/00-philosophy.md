@@ -3,7 +3,7 @@
 This chapter sets out what a risk function believes about investment risk, what the function is for and how it works.
 It is the ground the rest of the framework stands on: [investment risk](01-investment-risk.md) defines the scope and
 organises the recurring work into three pillars, [sources of return](02-sources-of-return.md) sets out where return
-comes from, and the [principles](03-principles.md) and [redesign method](04-redesign-method.md) set out how the risk
+comes from, and the [principles](04-principles.md) and [redesign method](05-redesign-method.md) set out how the risk
 manager does that work alongside AI. The beliefs do not
 depend on any particular model; any model a risk function uses is judged against them.
 
@@ -70,7 +70,8 @@ performance risk each condense, drill in and connect.
 | 2 | **Drill-in** (decompose) | Where do risk and return come from, and were they intended? |
 | 3 | **Connection** (over time) | Is the risk we take paid for by the return we earn? |
 
-All of it assumes the basics: data checked before use, models tested against outcomes, results reproducible.
+All of it assumes the basics: data checked before use, models tested against outcomes, results reproducible. [Risk
+data](03-risk-data.md) sets out how the first and the last are made true.
 
 ### 1. Condensation
 **Millions of numbers become a few that people can act on, without losing what matters.** The summaries come in three
