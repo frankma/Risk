@@ -24,7 +24,8 @@ below them, and routes any breach it sees to compliance rather than handling it.
 parameters](07-controls.md#materiality-thresholds-as-governed-parameters), owned by the risk function, and they cover
 what the mandate leaves unsaid. A mandate that sets a benchmark and a tracking error budget rarely says how much the
 portfolio may lose in total; an internal limit on value at risk says it for the risk function. Each internal limit is
-set for its portfolio, from what the mandate intends, not copied from a firm-wide number.
+set for its portfolio, from what the mandate intends, not copied from a firm-wide number. For a new portfolio, internal
+limits are first set in the [new portfolio review](../pillars/new-portfolio-review.md).
 
 **Early warnings sit below every limit,** hard or soft. A reading above an early warning is a watch item, not a breach.
 

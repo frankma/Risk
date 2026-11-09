@@ -88,7 +88,8 @@ can test. The AI extracts the portfolio's stated objective, style and limits fro
 each linked to the passage it came from. The risk manager confirms the terms once, and again whenever the documents
 change. The risk engine then tests holdings and exposures against the confirmed terms and flags style drift and
 unintended bets. The AI reads the documents, the risk engine makes the comparison, and the risk function owns what the
-terms say once the risk manager has confirmed them.
+terms say once the risk manager has confirmed them. For a new portfolio, the terms are first extracted and confirmed
+in the [new portfolio review](new-portfolio-review.md).
 
 **Redesigned flow.**
 
