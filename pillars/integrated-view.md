@@ -59,6 +59,7 @@ difficulty.
 | Hidden illiquidity | Stale or unpriceable holdings + volatility below its usual range; steady return as context |
 | Concentrated and hard to sell | Rising issuer or sector concentration + rising time or cost to sell those holdings |
 | Drift under pressure | Style drift or falling active share + rising outflows |
+| Margin squeeze | Market loss or volatility above its range → rising margin and collateral calls → falling coverage; leverage as context |
 
 **The redemption spiral** is the self-reinforcing cycle set out above; outflows concentrated in a few distributors can
 stand in for rising outflows. Because relative return is read every day over a rolling window, the first link can appear
@@ -76,6 +77,11 @@ something that is becoming harder to sell.
 **Drift under pressure** joins a performance signal about how the portfolio is managed, such as style drift or falling
 active share, with investors leaving. The combination suggests the portfolio may be changing in response to outflows
 or underperformance rather than to its mandate, which is a question for the portfolio manager.
+
+**The margin squeeze** is the leveraged counterpart of the redemption spiral. A fall in markets brings margin and
+collateral calls; the collateral posted is encumbered and can no longer be sold; coverage falls; and the portfolio is
+left to sell what it still can, at stressed prices, which can bring further losses and further calls. It is the case in
+which market risk moves first, and its links follow within days rather than quarters.
 
 Signals do not move together. Performance and flows usually move first, because they respond to outcomes; liquidity
 and market risk move later, because they respond to the selling that follows. A sharp market loss is the exception:
@@ -153,7 +159,8 @@ view. Its exception is handled by that pillar's workflow, as it would be anyway;
 issuer concentration in market risk, and, because those holdings take longer to sell, as a rising time to liquidate in
 liquidity risk. Counted twice, it would make a portfolio look as if two pillars were elevated when there is one driver.
 The view groups signals that share a driver and counts the group once for breadth. The groups are part of the governed
-rules: concentration in market risk and the time to sell the same holdings form one group, while investor concentration,
+rules: concentration in market risk and the time to sell the same holdings form one group, as do margin and collateral
+calls and the fall in coverage they cause, while investor concentration,
 which concerns who owns the portfolio rather than what it holds, is a separate driver. The pattern *concentrated and
 hard to sell* still names the combination, so that it is seen, but it does not count as two pillars.
 
@@ -202,6 +209,23 @@ it does not recommend an action or claim that one signal caused another. **The f
 > unpriceable, and at the same time its volatility of 4.1% is below its usual range of 6% to 9%. Its return over the
 > last 12 months is 1.9% above its benchmark. Both volatility and relative return are computed using the prices of the
 > flagged holdings.
+
+**A margin squeeze forming.**
+
+| Fact | Value |
+|---|---|
+| Fund | Fund R |
+| Pattern matched | Margin squeeze |
+| Volatility, today / usual range | 14.8% / 6% to 10% (market, exception) |
+| Margin and collateral calls, last 5 days | 4.1% of net assets (liquidity, exception) |
+| Redemption coverage, today / one month ago | 1.4x / 2.2x (liquidity, exception) |
+| Share of liquid assets posted as collateral, today / one month ago | 22% / 9% (liquidity; context) |
+| Commitment leverage | 2.1 times net assets (market, normal; context) |
+
+> Fund R matches the margin squeeze pattern. Its volatility of 14.8% is above its usual range of 6% to 10%, and margin
+> and collateral calls over the last 5 days came to 4.1% of net assets. Redemption coverage has fallen from 2.2x to
+> 1.4x over a month, while the share of its liquid assets posted as collateral has risen from 9% to 22%. Its commitment
+> leverage is 2.1 times net assets.
 
 ## Limits of the view
 The view inherits every limit of the pillar measures it reads, and adds four of its own.

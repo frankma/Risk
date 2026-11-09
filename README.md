@@ -74,7 +74,7 @@ Two rules make it work:
 | [Measuring value](framework/08-measuring-value.md) | Capacity, speed, quality and influence; a baseline and a reinvestment plan; why usage is not a measure. |
 | **The pillars** | |
 | [Market risk](pillars/market-risk.md) | The pillar's workflows, including ex-ante tracking error and the risk budget review; design choices for VaR and expected shortfall, factors, backtesting, stress, credit, leverage and counterparty exposure; daily monitoring redesigned as a ranked queue of exceptions and watch items with drafted explanations. |
-| [Liquidity risk](pillars/liquidity-risk.md) | The pillar's workflows; periodic stress tests redesigned as continuous monitoring with event-triggered stress tests. |
+| [Liquidity risk](pillars/liquidity-risk.md) | The pillar's workflows; design choices for fairness and capacity, time and cost to sell, scenarios for calls on cash, encumbrance and second-round effects; periodic stress tests redesigned as continuous monitoring with event-triggered stress tests. |
 | [Performance risk](pillars/performance-risk.md) | The pillar's workflows; portfolio manager reviews run on risk's agenda with an evidence-based challenge pack. |
 | [Integrated view](pillars/integrated-view.md) | One portfolio health view that ranks portfolios where signals across pillars combine, before any one pillar would escalate them, and shows the firm's footprint across portfolios. |
 | [Alpha and beta method](pillars/alpha-and-beta-method.md) | How the split is computed for publicly traded holdings on gross returns: neutralising the book, booked and derived routes, the factor list, the test and its limits. |
