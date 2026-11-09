@@ -4,7 +4,7 @@ Market risk asks how much a portfolio could lose, in total and against its bench
 question every day for every portfolio. This chapter applies the [redesign method](../framework/06-redesign-method.md)
 to the pillar: it lists the pillar's recurring workflows, redesigns daily monitoring from a manual scan of every
 portfolio into a ranked queue of exceptions and watch items with drafted explanations, and sets out the thresholds,
-limits, controls and measures that make the redesign work.
+limits, controls and measures that make the redesign work, and the design choices behind the pillar's measures.
 
 ## The outcome
 The pillar's outcome, as defined in [investment risk](../framework/01-investment-risk.md#market-risk):
@@ -139,16 +139,18 @@ and versioned as a
 | Ex-ante tracking error | Outside the range the mandate terms imply, or beyond an early warning of it | Too much or too little active risk |
 | Persistence | A near-limit reading for several consecutive days | Slow drift towards a limit |
 | Concentration | One issuer or sector above the risk function's early warning, set below the mandate's limit | Build-up of single-name risk |
-| Counterparty exposure | Exposure to one counterparty above a share of its limit | Concentrated counterparty risk |
+| Jump to default | The loss if one issuer defaulted, net of expected recovery, above an early warning | Single-name credit loss |
+| Leverage | Gross or commitment leverage above its internal limit, or above an early warning of it | Scale or risk beyond what the mandate intends |
+| Counterparty exposure | Exposure to one counterparty, net of collateral and with the add-on, above a share of its limit | Concentrated counterparty risk |
 | Risk budget | A bet using a large share of the budget with no return over several periods | Risk that has not earned its place |
 
-Breaches of an internal limit, including a tracking error range, a stress loss beyond the drawdown headroom, large
-changes since the previous day, readings outside the portfolio's usual range and a fired risk budget rule are
-exceptions. Early warnings, persistent near-limit readings and counterparty exposure approaching its limit are watch
-items. A breach of a mandate or regulatory limit, such as a limit on one issuer's weight, is owned by compliance: it is
-shown beside the queue as a courtesy item and routed to compliance, while the risk function's own early warning below
-that limit stays in the queue. [Limits and escalation](../framework/04-limits-and-escalation.md) sets out which limits
-are internal and how a breach is handled.
+Breaches of an internal limit, including a tracking error range, a leverage limit, a stress loss beyond the drawdown
+headroom, large changes since the previous day, readings outside the portfolio's usual range and a fired risk budget
+rule are exceptions. Early warnings, persistent near-limit readings, jump to default above its early warning and
+counterparty exposure approaching its limit are watch items. A breach of a mandate or regulatory limit, such as a limit
+on one issuer's weight, is owned by compliance: it is shown beside the queue as a courtesy item and routed to
+compliance, while the risk function's own early warning below that limit stays in the queue. [Limits and
+escalation](../framework/04-limits-and-escalation.md) sets out which limits are internal and how a breach is handled.
 
 The risk engine ranks exceptions before watch items. Breaches come first, then the other exceptions, then early
 warnings, then persistence. Within a tier, items are ordered by size relative to the threshold, and a portfolio with
@@ -216,17 +218,87 @@ limit. **The funds and figures are illustrative.**
 None of the drafts recommends an action. Whether a reading matters, and what to ask the portfolio manager, is the risk
 manager's judgement at the sign-off point.
 
-## Limits of the measures
-The risk function owns the model risk in its own measures: it should know what each assumes, where it is weak, and
-test it. Independent validation of the models sits elsewhere, as set out in
+## Design choices
+A risk function chooses how each of its measures is computed, and records the choice. This section sets out the
+choices for this pillar, what each trades off, and how the function tests what it chose. The risk function owns the
+model risk in its own measures; independent validation of the models sits elsewhere, as set out in
 [investment risk](../framework/01-investment-risk.md#scope-and-boundaries).
 
+### Value at risk and expected shortfall
+| Choice | Options | Trade-off |
+|---|---|---|
+| Method | Historical simulation, parametric, Monte Carlo | Historical keeps the shape of past moves but only those moves; parametric is fast and smooth but thin in the tail; Monte Carlo is flexible but rests on the model behind it |
+| Confidence and horizon | For example 99% over one day, or 97.5% | Higher confidence says more about the tail and is noisier; a longer horizon needs scaling or overlapping periods |
+| Lookback and weighting | A short window, a long window, a long window with gradual decay | A short window reacts fast and jitters; a long window is stable and slow; decay sits between |
+| Expected shortfall | Alongside value at risk, or instead of it | Expected shortfall measures the average loss beyond the threshold, which value at risk ignores, but needs more data to estimate |
+| Stressed period | A separate measure on a fixed period of stress | Keeps a stressed view when the recent window is calm |
+
+**Illustrative setup** (not a recommendation): historical simulation; 1-day 99% value at risk alongside 97.5% expected
+shortfall; a long window with gradual decay, the same as the betas use, so the measure moves when markets or positions
+move rather than when an old day drops out ([belief 7](../framework/00-philosophy.md#beliefs)); and a separate value at
+risk on a fixed stressed period.
+
+### Factors
+The factor model behind ex-ante tracking error and the risk decomposition is chosen by the risk function's set process,
+and run by the risk engine. Whatever model is chosen, its factors are the
+[declared factor list](alpha-and-beta-method.md) of the alpha and beta method, or map to it one to one. Risk by factor
+and return by factor then line up, so that the risk budget review can set what each bet uses beside what it earns, and
+any period's return and change in risk can be explained by the same factors
+([connection](../framework/00-philosophy.md#3-connection)).
+
+### Backtesting
+A backtest compares the days on which losses exceeded value at risk with the number the confidence level implies, and
+it is judged against what the chosen design implies, stated before the test.
+
+- **A long lookback is built to be stable,** so breaches cluster when conditions change: the measure adjusts slowly by
+  design. Clustering is expected and recorded, and does not by itself lead to recalibration. The judgement is the count
+  of breaches over a long period against the number expected, read in zones set in advance, for example green, amber
+  and red. Recalibrating whenever breaches cluster would chase a moving target.
+- **A short, responsive measure is built to adapt,** so for it, clustered breaches are a failure, and the backtest adds
+  a check that breaches are independent of each other.
+- **Expected shortfall** is checked against the average of the losses beyond value at risk.
+
+A stable measure is paired with a responsive one. Value at risk on the long window carries the limits; volatility on a
+short window serves as the early warning that conditions are changing, through the rule on readings outside the
+portfolio's usual range.
+
+### Stress and reverse stress
+- **The library** holds historical episodes, hypothetical scenarios and sensitivity shocks to single factors, and is
+  reviewed on a set cycle and when conditions change.
+- **A scenario becomes shocks to every factor** in two steps: shocks are set on the factors that drive the scenario,
+  and the other factors are filled in from how they moved with those factors in the past.
+- **Shock sizes** come from data, where the risk engine computes them from a historical episode, or from the risk
+  manager; the AI proposes the story and never the size.
+- **Reverse stress** works back from the loss that would break the mandate: the risk engine searches for the smallest
+  combination of shocks that would cause it, and the risk manager judges how plausible that combination is.
+
+### Credit: spreads, default and migration
+Spread duration and duration times spread measure the loss when spreads move. They do not capture the loss when an
+issuer defaults, where the price falls to its recovery value at once. That loss is **jump to default**: for each issuer,
+the position times one minus the expected recovery rate, which is a governed parameter. It is read as a concentration
+measure, with an early warning, because a single default in a concentrated or high-yield portfolio can cost far more
+than spread volatility suggests. A downgrade shows up as spreads widening, so migration is covered by spread stress and
+needs no model of its own.
+
+### Leverage and options
+Leverage is measured two ways, each with an internal limit: **gross**, the total notional of all positions, which shows
+scale; and **commitment**, the exposure after netting and hedging, which shows the risk actually taken. Options carry
+delta, gamma and vega, so that the daily measures see how their value changes with the underlying and with volatility.
+Sensitivities assume small moves, so stress tests revalue options in full.
+
+### Counterparty exposure
+Exposure to a counterparty is the current exposure net of the collateral held under netting agreements, plus an add-on
+for how far it could grow before the next collateral call. The internal limit applies to the total. Without the add-on,
+a portfolio could reach its limit between two collateral calls without warning.
+
+### Where the measures are weak
 | Measure | Where it is weak | How the function tests it |
 |---|---|---|
-| VaR and expected shortfall | Regime changes; losses beyond the tail | Backtesting against realised results |
+| VaR and expected shortfall | Regime changes; losses beyond the tail | Backtesting judged against the design, as above |
 | Ex-ante tracking error | Model and factor choice; regime changes | Comparison with ex-post tracking error from performance risk |
 | Sensitivities | Large moves; non-linear positions such as options | Comparison with full revaluation |
 | Estimated betas | Estimation noise; short histories | Comparison with a regression on portfolio returns |
+| Jump to default | The recovery rate assumed | Comparison with recoveries in past defaults |
 | Stress tests | Scenarios nobody thought of | Review of the library against current conditions |
 | All measures | Thinly traded or stale-priced holdings | Flags from [liquidity risk](liquidity-risk.md) |
 
@@ -284,3 +356,12 @@ view](integrated-view.md) brings these signals together for each portfolio.
   risk by position and factor, and marginal risk for what-ifs.
 - Grinold, R. and Kahn, R. (2000). *Active Portfolio Management*, 2nd edition. McGraw-Hill. Ex-ante tracking error
   and allotting active risk to bets.
+- Kupiec, P. (1995). Techniques for Verifying the Accuracy of Risk Measurement Models. *Journal of Derivatives*.
+  Counting value at risk breaches against the number expected.
+- Christoffersen, P. (1998). Evaluating Interval Forecasts. *International Economic Review*. Testing whether breaches
+  are independent of each other as well as correct in number.
+- Acerbi, C. and Tasche, D. (2002). On the Coherence of Expected Shortfall. *Journal of Banking and Finance*. Expected
+  shortfall as the average loss beyond the threshold.
+- Breuer, T., Jandacka, M., Rheinberger, K. and Summer, M. (2009). How to Find Plausible, Severe and Useful Stress
+  Scenarios. *International Journal of Central Banking*. Searching for the scenarios that break a portfolio, and
+  judging their plausibility.

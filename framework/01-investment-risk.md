@@ -54,8 +54,10 @@ assumed to be covered when it is not.
 
 Within scope, and handled inside the pillar workflows:
 
-- **Credit risk** of the portfolio's holdings is part of market risk: spread risk, spread duration, and default and
-  migration risk are measured and monitored with the other sources of loss.
+- **Credit risk** of the portfolio's holdings is part of market risk: spread risk through spread duration and duration
+  times spread, default through the loss if each issuer defaulted, and migration through spread stress, all measured
+  and monitored with the other sources of loss, as set out in market risk's
+  [design choices](../pillars/market-risk.md#credit-spreads-default-and-migration).
 - **Concentration and leverage** are part of market risk: concentration by issuer, sector, country or factor, and
   leverage and derivative exposure, are drivers of how much the portfolio could lose.
 - **Counterparty exposure** is part of market risk: each portfolio's exposure to the firms it trades with or holds
