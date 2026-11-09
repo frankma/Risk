@@ -26,6 +26,9 @@ the reasoning goes there.
 | Forecast against outcome | Each forward-looking measure tested against its realised counterpart in the other pillar | [Investment risk](01-investment-risk.md#boundaries-between-pillars) | Philosophy, market risk, performance risk |
 | Calls on cash | Redemptions, withdrawals, margin and collateral calls, borrowing to roll over, distributions and commitments | [Investment risk](01-investment-risk.md#liquidity-risk) | Philosophy, liquidity risk |
 | Measuring and approving | Investment risk measures and monitors; approval, pricing and validation sit elsewhere | [Investment risk](01-investment-risk.md#scope-and-boundaries) | Market risk, liquidity risk, controls |
+| New portfolio review | What must be in place before a portfolio launches or changes materially | [New portfolio review](../pillars/new-portfolio-review.md) | Performance risk, limits and escalation |
+| Risk opinion | The risk function's recorded view on a launch, with conditions; product governance decides | [New portfolio review](../pillars/new-portfolio-review.md#the-risk-functions-opinion) | Limits and escalation |
+| Material change | A change of strategy or benchmark, a merger or a change in dealing terms, reviewed as a launch | [New portfolio review](../pillars/new-portfolio-review.md#what-the-review-covers) | Performance risk |
 | Integrated view | One view that ranks portfolios where signals across pillars combine | [Integrated view](../pillars/integrated-view.md) | Principles, investment risk, all pillars |
 | Firm's footprint | Holdings aggregated across portfolios, which do not net | [Philosophy](00-philosophy.md#the-firm-view) | Market risk, liquidity risk, integrated view, alpha and beta |
 

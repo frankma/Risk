@@ -49,8 +49,8 @@ estimator, a default, a threshold convention, how a pillar is scoped), stop and 
 ## Keeping the framework consistent
 - A change to a chapter's scope updates every chapter that refers to it, the map in `README.md` and the concept map in
   `framework/concept-map.md`, in the same commit.
-- `framework/` holds the cross-cutting chapters; `pillars/` holds one chapter per pillar plus the integrated view
-  and the alpha and beta method;
+- `framework/` holds the cross-cutting chapters; `pillars/` holds one chapter per pillar plus the integrated view,
+  the alpha and beta method and the new portfolio review;
   `reference/` is for runnable code.
 
 ## Working conventions
