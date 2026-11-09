@@ -3,9 +3,9 @@
 Liquidity risk asks whether a portfolio can meet every call on its cash, in time and at a fair cost, without
 disadvantaging the investors who stay. This chapter applies the [redesign method](../framework/06-redesign-method.md) to
 the pillar: it lists the pillar's recurring workflows, redesigns periodic stress testing into continuous monitoring with
-event-triggered stress tests, and sets out the thresholds, limits, controls and measures that make the redesign work.
-The redesign is a new capability, not only a faster version of the old process: the risk function sees a portfolio's
-liquidity when an event happens, not when the calendar says so.
+event-triggered stress tests, and sets out the thresholds, limits, controls and measures that make the redesign work,
+and the design choices behind the pillar's measures. The redesign is a new capability, not only a faster version of the
+old process: the risk function sees a portfolio's liquidity when an event happens, not when the calendar says so.
 
 ## The outcome
 The pillar's outcome, as defined in [investment risk](../framework/01-investment-risk.md#liquidity-risk):
@@ -174,23 +174,78 @@ funds and figures are illustrative.**
 
 None of the drafts recommends whether to use a liquidity management tool. That recommendation is the risk manager's.
 
-## Limits of the measures
-The risk function owns the model risk in its own liquidity measures; independent validation of the models sits
-elsewhere, as set out in [investment risk](../framework/01-investment-risk.md#scope-and-boundaries).
+## Design choices
+A risk function chooses how each of its liquidity measures is computed, and records the choice. This section sets out
+the choices for this pillar, what each trades off, and how the function tests what it chose. The risk function owns the
+model risk in its own liquidity measures; independent validation of the models sits elsewhere, as set out in
+[investment risk](../framework/01-investment-risk.md#scope-and-boundaries).
 
+### Fairness and capacity
+A portfolio can meet a call on its cash in two ways, and each answers a different question, so both are computed.
+
+| Way of selling | What it answers | What it shows |
+|---|---|---|
+| A slice of every holding | The fairness test: can the call be met without changing the portfolio the investors who stay are left with? | The time and cost of selling in proportion |
+| The most liquid first | The capacity test: how much can be raised, and how fast? | The most the portfolio can raise in each period |
+
+Redemption coverage reads the capacity test, because it asks whether the call can be met at all. The gap between the
+two is shown beside it: it measures how much of the cost of meeting the call would be shifted onto the investors who
+stay if the portfolio sold its most liquid holdings first, which is the "fair cost" in the pillar's outcome made
+measurable.
+
+### Time and cost to sell
+| Choice | Options | Trade-off |
+|---|---|---|
+| Time | Fixed buckets by asset type; a capped share of each holding's daily volume | Buckets are simple but blind to size; a share of volume scales with the position |
+| Volumes under stress | Normal volumes; volumes reduced by a stress factor | Normal volumes flatter exactly when liquidity matters |
+| Cost | The bid-offer spread alone; the spread plus a market-impact model | The spread alone misses the price move that a large sale causes |
+
+**Illustrative setup** (not a recommendation): time from a capped share of each holding's daily volume, with volumes
+reduced under stress; cost as half the bid-offer spread plus a market-impact term that rises with the square root of
+the trade's size relative to daily volume, scaled by the holding's volatility. Both are standard and transparent, and
+both become more conservative under stress.
+
+### Calls on cash
+The calls a portfolio could face are built from three scenarios, and **the worst of the three binds**:
+
+- **The portfolio's own history:** the largest outflows it has seen over a set horizon.
+- **Behaviour by investor type:** stressed outflows applied by type of investor, since retail investors on platforms,
+  institutions and funds of funds behave differently.
+- **Concentration:** the largest investors, or the investors behind the largest distributors, leave at once.
+
+Each scenario catches a failure the others miss: history misses what has not happened yet, behaviour by type misses a
+single large holder, and concentration misses a broad run. For other vehicles, the same three views apply to the calls
+they face: a segregated mandate's withdrawals and planned cash needs, a closed-ended fund's borrowing to roll over,
+distributions and commitments, and margin and collateral calls on any portfolio that holds derivatives.
+
+### Encumbrance and second-round effects
+- **Encumbered assets are not liquid.** Collateral already posted, and assets lent out, are left out of what a
+  portfolio can raise.
+- **Margin calls press on both sides.** In a stressed scenario, the same market move that cuts liquidity raises margin
+  and collateral calls, and the collateral posted against them is then encumbered, so the scenario applies both at once.
+- **The firm's own selling moves prices.** When several portfolios sell the same holdings, the firm's combined sale is
+  larger than any one portfolio's, and so is its cost. The stress uses the firm's share of each issue and of each
+  market's daily volume from the [firm's footprint](integrated-view.md#the-firms-footprint), so that the cost of
+  selling reflects the whole firm's sale.
+
+The readiness of liquidity management tools is assessed as set out under the pillar's workflows; how each tool is
+calibrated sits outside these design choices.
+
+### Where the measures are weak
 | Measure | Where it is weak | How the function tests it |
 |---|---|---|
 | Time and cost to liquidate | Volumes and costs worsen under stress | Comparison with trading in stressed periods |
-| Redemption scenarios | Investor behaviour differs from the assumption | Comparison with realised flows |
+| Market-impact model | Impact depends on who else is selling | Comparison with the cost of past large sales |
+| Scenarios for calls on cash | Investor behaviour differs from the assumption | Comparison with realised flows |
 | Redemption coverage | Outflows and market stress tend to arrive together | Scenarios that stress both sides at once |
 | Margin and collateral calls | Calls rise with the market moves that cut liquidity | One market shock applied to margin and to liquidity together |
 | Any measure using prices | Stale prices make holdings look stable | Stale flags; sale prices against prior prices |
 
 Liquidity estimates assume that past trading volumes and costs hold under stress, and they often do not: the assets
-that are easy to sell in normal markets can become hard to sell exactly when redemptions rise. Redemption scenarios rest
-on assumptions about how investors behave, which are tested against the flows that actually occur. Stale prices make
-illiquid holdings look more stable than they are, which understates both their risk and the cost of selling them;
-where realised sale prices differ from prior prices, the difference is evidence for the owner of pricing.
+that are easy to sell in normal markets can become hard to sell exactly when redemptions rise. Scenarios for calls on
+cash rest on assumptions about how investors behave, which are tested against the flows that actually occur. Stale
+prices make illiquid holdings look more stable than they are, which understates both their risk and the cost of
+selling them; where realised sale prices differ from prior prices, the difference is evidence for the owner of pricing.
 
 The AI step has its own limit: a narrative can describe a portfolio's position accurately and still understate how
 urgent it is. The function tests this by reviewing how risk managers edit the narratives for triggered portfolios, and
@@ -242,3 +297,7 @@ most liquid holdings leaves a more concentrated and more volatile portfolio, whi
   Mismatch in Open-Ended Funds.* Liquidity of assets set against the dealing terms an open-ended fund offers.
 - Brunnermeier, M. and Pedersen, L. (2009). Market Liquidity and Funding Liquidity. *Review of Financial Studies*. How
   margin calls and falling market liquidity reinforce each other.
+- European Securities and Markets Authority (2019). *Guidelines on Liquidity Stress Testing in UCITS and AIFs.*
+  Stressing both sides of the balance, and selling a slice of every holding against selling the most liquid first.
+- Bouchaud, J.-P., Bonart, J., Donier, J. and Gould, M. (2018). *Trades, Quotes and Prices: Financial Markets Under the
+  Microscope.* Cambridge University Press. The square-root law of market impact.
