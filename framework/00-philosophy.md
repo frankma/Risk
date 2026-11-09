@@ -13,9 +13,10 @@ and is paid for them, and challenges it where it does not.**
 Risk management earns no return of its own. Its product is **sight**: out of millions of numbers (hundreds of
 positions, thousands of risk factors, millions of possible futures), the few worth questioning and acting on.
 
-**Investment risk is the chance that a portfolio's outcome departs from what its mandate intends:** a loss, a
-shortfall against its objective or benchmark, or an inability to meet redemptions, arising from the investments
-themselves. Its scope and boundaries are set out in [investment risk](01-investment-risk.md#scope-and-boundaries).
+**Investment risk is the chance that a portfolio's outcome departs from what its mandate intends:** a loss, a shortfall
+against its objective or benchmark, or an inability to meet calls on its cash, such as redemptions, arising from the
+investments themselves. Its scope and boundaries are set out in [investment
+risk](01-investment-risk.md#scope-and-boundaries).
 
 The capital at risk is the clients', not the firm's. So risk is judged against what each client was promised, and
 the firm's franchise follows from keeping those promises.
@@ -36,9 +37,10 @@ illustrative.)
 4. **The tail and the path decide outcomes.** Mandates end on drawdowns and stress, not on average days. Positions are
    sized so the strategy survives the paths that end mandates, not only the average path.
 5. **Liquidity is part of the promise.** A fund that offers daily dealing on assets that take weeks to sell has made a
-   promise. Asset liquidity is matched to redemption terms under stress, not in calm markets.
-6. **Portfolios don't net.** Clients' money in one fund never offsets another's. Across funds the firm measures its
-   footprint (concentration, liquidity, crowding) and never takes diversification credit.
+   promise. Asset liquidity is matched to the calls the portfolio can face under stress, redemptions and margin among
+   them, not in calm markets.
+6. **Portfolios don't net.** Clients' money in one portfolio never offsets another's. Across portfolios the firm
+   measures its footprint (concentration, liquidity, crowding) and never takes diversification credit.
 7. **Stable over precise.** Portfolio managers act on changes in risk. A measure that jitters loses their trust faster
    than one that is slightly off, so a change must come from markets or positions, not from sampling noise.
 8. **Every model is wrong in a known direction.** History is a prior, not a forecast. A risk function states which
@@ -84,7 +86,7 @@ investors could take out).
 | VaR, expected shortfall, maximum drawdown | Risk, absolute | The loss on a bad day, the average beyond it, and the worst peak-to-trough fall |
 | Equity beta, duration, duration times spread | Exposure | Sensitivity to the equity market, to rates and to credit spreads, scaled by the spread itself |
 | Days to liquidate | Liquidity | How long it takes to sell the portfolio, or a stressed redemption's share of it, at a set share of daily volume |
-| Redemption coverage | Liquidity | What it could raise against what investors could redeem under stress |
+| Redemption coverage | Liquidity | What it could raise against the calls on its cash under stress, redemptions first among them |
 
 *It fails* when the summary hides what it should show, or moves for no reason. *The test:* the number moves when the
 risk moves, and any other movement stays within a stated tolerance.
@@ -112,16 +114,17 @@ pillars.
   challenged; the portfolio manager resizes it, cuts it or explains why it stays.
 - **Forecast against outcome:** ex-ante tracking error against realised; days when losses exceeded VaR against the
   number expected.
-- **Drawdown against tolerance:** how close each mandate runs to the loss that would end it.
+- **Drawdown against tolerance:** how close each portfolio runs to the loss, absolute or relative, that would end its
+  mandate.
 
 *It fails* when risk and performance come from different systems and cannot be reconciled. *The test:* any period's
 return and any period's change in risk can be explained by the same factors and decision-makers.
 
 ### The firm view
-Holdings are aggregated across all funds to see the firm's **footprint**: its share of an issue or of a market's daily
-volume, its exposure to one counterparty, its weight in a crowded factor. These do not net (belief 6). They show where
-the firm, not one fund, could be the one that cannot get out. The pillars compute the footprint and the [integrated
-view](../pillars/integrated-view.md#the-firms-footprint) shows it.
+Holdings are aggregated across all portfolios to see the firm's **footprint**: its share of an issue or of a market's
+daily volume, its exposure to one counterparty, its weight in a crowded factor. These do not net (belief 6). They show
+where the firm, not one portfolio, could be the one that cannot get out. The pillars compute the footprint and the
+[integrated view](../pillars/integrated-view.md#the-firms-footprint) shows it.
 
 ## Boundaries
 Numbers do not replace judgement; they tell judgement where to look. Some things they cannot settle: regime changes,
@@ -129,3 +132,9 @@ crowded exits, liquidity in a panic, the next crisis that history never showed. 
 informed by stress and reverse stress, not replaced by them. Risks owned outside investment risk are managed elsewhere;
 investment risk works with their owners at the edges named in [investment
 risk](01-investment-risk.md#scope-and-boundaries).
+
+## Sources
+- Grinold, R. and Kahn, R. (2000). *Active Portfolio Management*, 2nd edition. McGraw-Hill. The information ratio,
+  active risk and its allocation to bets.
+- Litterman, R. (1996). Hot Spots and Hedges. *Journal of Portfolio Management*, special issue. Decomposing risk into
+  contributions that sum to the whole, and marginal risk for decisions before the trade.

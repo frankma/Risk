@@ -6,11 +6,11 @@ chapter answers five questions about them. The [alpha and beta method](../pillar
 how the split is computed.
 
 ## What are the two sources?
-Every part of a fund's return lands in exactly one place in this breakdown.
+Every part of a portfolio's return lands in exactly one place in this breakdown.
 
-- **Fund return**
+- **Portfolio return**
   - **Top-down views**, loosely beta
-    - **Set by the client:** policy beta
+    - **Set in the mandate:** policy beta
     - **Chosen by the manager:** tilts and timing
     - **Chosen by nobody:** unintended beta
   - **Bottom-up selection**, loosely alpha: what selection adds once top-down is out
@@ -31,18 +31,22 @@ judged faster, because there are many.
 ## Who chose each part?
 Top-down return has three branches, according to whose call it was.
 
-- **Set by the client.** Policy beta is the return of the strategic allocation or benchmark, set by the client, the
-  asset owner or a chief investment officer. The manager earns no credit for it.
+- **Set in the mandate.** Policy beta is the return of the benchmark or strategic allocation in the portfolio's
+  governing documents. A client, an asset owner or a chief investment officer may have set it, or, for a pooled fund,
+  the manager when the fund was launched, which investors accepted when they bought. Whoever chose it, it is part of
+  the promise, and the manager earns no credit for it.
 - **Chosen by the manager.** Tilts are standing positions against that allocation, and timing is the return from
   changing exposure over time. Both count only if recorded when taken. Timing earns nothing without skill, so it is
   assessed on its own.
 - **Chosen by nobody.** Unintended beta is any exposure with no record that anyone chose it, including price drift. The
   portfolio manager holds it, but nobody decided it. "Unintended" is a test of record, not of motive: an exposure the
-  manager meant to take but did not record counts here until it is recorded.
+  manager meant to take but did not record counts here until it is recorded. Recording a tilt makes it accountable,
+  not exempt: a recorded tilt is still read against the risk budget, which challenges one that uses budget and earns
+  nothing, and a tilt outside the confirmed mandate terms still fails the style check.
 
 Alpha belongs to the manager who selected the securities. The manager's branch and the unintended branch together are
-active beta, and a fund's active return is active beta plus alpha. One beta is enough for general use; the branches are
-there when it helps to say whose call it was.
+active beta, and a portfolio's active return is active beta plus alpha. One beta is enough for general use; the branches
+are there when it helps to say whose call it was.
 
 ## Why does it matter?
 
@@ -68,14 +72,14 @@ the fee, tells the client whether selection is what they are paying for.
   decision-maker. At an information ratio of 0.5, it takes about 16 years to reach a t-statistic of 2.
 
 ## How does one holding split?
-A holding's weight is split, not its return. The beta portfolio holds the fund's own weight in each asset class and
-sector, and follows the index inside each one. A security's beta weight is the fund's sector weight times the
-security's weight in the sector index. Its alpha weight is the fund's weight less the beta weight.
+A holding's weight is split, not its return. The beta portfolio holds the portfolio's own weight in each asset class
+and sector, and follows the index inside each one. A security's beta weight is the portfolio's sector weight times the
+security's weight in the sector index. Its alpha weight is the portfolio's weight less the beta weight.
 
-Take a fund with 20% of net assets in one sector, where the sector index holds X at 15%, Y at 10% and the rest at 75%.
-(The figures are illustrative.)
+Take a portfolio with 20% of net assets in one sector, where the sector index holds X at 15%, Y at 10% and the rest
+at 75%. (The figures are illustrative.)
 
-| Security | Fund weight | Beta weight | Alpha weight | Return | Beta contribution | Alpha contribution |
+| Security | Portfolio weight | Beta weight | Alpha weight | Return | Beta contribution | Alpha contribution |
 |---|---|---|---|---|---|---|
 | X | 5.0% | 3.0% | +2.0% | 10% | 0.30% | +0.20% |
 | Y | 0.0% | 2.0% | -2.0% | 2% | 0.04% | -0.04% |
@@ -83,9 +87,19 @@ Take a fund with 20% of net assets in one sector, where the sector index holds X
 | **Total** | **20.0%** | **20.0%** | **0.0%** | | **1.09%** | **0.16%** |
 
 The holding in X earned 0.50%, of which 0.30% is beta and 0.20% is alpha. The alpha weights sum to zero within each
-sector, so together they form a long-short book: long what the fund prefers, short what it prefers less. Every portfolio
-has this book, including one that never shorts a security.
+sector, so together they form a long-short book: long what the manager prefers, short what is preferred less. Every
+portfolio has this book, including one that never shorts a security.
 
 The book still leans slightly towards the market, because X moves more with it than Y does. The
 [alpha and beta method](../pillars/alpha-and-beta-method.md) takes that lean out as well. In this example, that leaves
 1.14% from top-down and 0.11% from bottom-up, 1.25% in total.
+
+## Sources
+- Brinson, G., Hood, L. and Beebower, G. (1986). Determinants of Portfolio Performance. *Financial Analysts Journal*.
+  The split of active return into allocation and selection.
+- Sharpe, W. (1992). Asset Allocation: Management Style and Performance Measurement. *Journal of Portfolio
+  Management*. Return explained by exposure to asset class indices, with selection as what is left.
+- Fama, E. and French, K. (1993). Common Risk Factors in the Returns on Stocks and Bonds. *Journal of Financial
+  Economics*. Style factors such as value and size as sources of return that an index can hold.
+- Grinold, R. and Kahn, R. (2000). *Active Portfolio Management*, 2nd edition. McGraw-Hill. The link between the
+  information ratio, time and statistical significance.

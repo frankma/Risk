@@ -28,10 +28,17 @@ The grounding check enforces the principle that
 generated text is extracted and matched against the computed facts the text was generated from. Numbers written as
 words, such as "three months", are extracted and matched in the same way as numerals.
 
-The match allows for formatting but not for substance. A computed value of 0.0473 matches "4.7%" and "4.73%"; a
-computed value of 12,450,000 matches "12.45 million" and "12.5m"; a value expressed in basis points matches the same
-value expressed as a percentage. It does not match a figure that cannot be traced to a computed value, a figure rounded
-beyond the stated precision, or a figure attached to the wrong fund or measure where the check can tell. (The values are
+To produce a number, in the sense of the principle, is to originate it. A number in generated text is grounded if it
+is one of the computed facts, or the result of a simple operation on them that the check can recompute: a sum, a
+difference, a percentage change, a ratio or a simple multiple, including words such as "doubled" or "a third". A
+number the check cannot recompute from the facts is rejected like any unmatched number. Figures read from documents,
+such as the limits in a portfolio's mandate terms, follow the same rule: each must appear, as numerals or as words, in
+the source passage it is linked to, and the risk manager confirms it before it is used.
+
+The match allows for formatting but not for substance. A computed value of 0.0473 matches "4.7%" and "4.73%"; a computed
+value of 12,450,000 matches "12.45 million" and "12.5m"; a value expressed in basis points matches the same value
+expressed as a percentage. It does not match a figure that cannot be traced to a computed value, a figure rounded beyond
+the stated precision, or a figure attached to the wrong portfolio or measure where the check can tell. (The values are
 illustrative.)
 
 Text with an unmatched number is rejected before anyone sees it. The system then regenerates it, with the failure noted,
@@ -56,10 +63,10 @@ The risk manager sees the computed facts alongside the generated text, so that t
 the arithmetic, which the system has already checked.
 
 ## The audit trail
-For every output, the workflow records: the input facts it was generated from, with their data versions; the
-threshold, prompt, template and model versions in force; the text as generated; every edit the human made; the
-grounding check result; who approved it and when. The record is kept in a form that can be retrieved by output, by fund
-and by date.
+For every output, the workflow records: the input facts it was generated from, with their data versions; the threshold,
+prompt, template and model versions in force; the text as generated; every edit the human made; the grounding check
+result; who approved it and when. The record is kept in a form that can be retrieved by output, by portfolio and by
+date.
 
 The trail serves three purposes. It allows any figure or sentence in a released output to be traced back to its source.
 It shows how often humans change generated text and in what way, which is evidence of whether the AI step is working.
@@ -70,7 +77,7 @@ The thresholds that decide what counts as an exception, and the rules that rank 
 manager sees and what they do not. They encode the risk function's judgement and should be governed like any other
 risk parameter.
 
-- **Ownership.** Each threshold has a named owner in the risk function.
+- **Ownership.** Each threshold is owned by the risk function, which sets it, reviews it and records every change.
 - **Review.** Thresholds are reviewed on a set cycle, and when the exception queue shows signs of being set too tight
   (too many items to review properly) or too loose (issues found outside the queue).
 - **Change record.** Every change records the old and new values, the reason, who approved it and when it took effect.
@@ -91,7 +98,7 @@ recorded as a result of the run.
 Each workflow defines what happens when a component fails.
 
 - **Data pipeline failure.** The workflow does not run on stale or partial data without saying so. It either waits, or
-  runs with the affected funds clearly marked, according to a rule set in advance.
+  runs with the affected portfolios clearly marked, according to a rule set in advance.
 - **AI backend failure.** The workflow falls back to a deterministic template that states the computed facts in fixed
   sentences. The output is plainer, but complete and correct, and the workflow's deadlines still hold.
 
@@ -101,8 +108,8 @@ template covers a draft that repeatedly fails the grounding check.
 ## Data handling
 A risk function sends data to an AI service only under rules set before the workflow is built.
 
-- **What may be sent.** The workflow defines which data may go to which service. Computed facts about a fund are often
-  enough; raw positions, investor details and personal data are sent only where the service is approved for them.
+- **What may be sent.** The workflow defines which data may go to which service. Computed facts about a portfolio are
+  often enough; raw positions, investor details and personal data are sent only where the service is approved for them.
 - **Confidentiality.** Investor and portfolio information is confidential. The terms of any external service should
   prevent the data being retained or used to train models, and this should be verified, not assumed.
 - **Vendor and third-party risk.** An external AI service is a third party and is assessed as one: its security, its
@@ -132,3 +139,12 @@ and owns them decides how safe is safe enough, and can then remove its own manua
 risk the function that enables redesign across the firm, rather than the one that blocks it. A risk function that
 leaves the controls to others will find that each redesign waits for its approval and that the checks it trusts are
 the ones it cannot remove.
+
+## Sources
+- International Organization of Securities Commissions (2021). *The Use of Artificial Intelligence and Machine
+  Learning by Market Intermediaries and Asset Managers.* Final report. Supervisory expectations for governance,
+  testing, monitoring and oversight of AI in asset management.
+- National Institute of Standards and Technology (2023). *Artificial Intelligence Risk Management Framework
+  (AI RMF 1.0).* The common shape of AI risk management: govern, map, measure and manage.
+- ISO/IEC 42001:2023. *Information technology — Artificial intelligence — Management system.* Requirements for
+  inventory, risk assessment, change management and oversight of AI systems.

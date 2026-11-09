@@ -13,9 +13,28 @@ the client receives. Distribution, operations and the firm's own business matter
 not the subject here. A risk function sits beside the investment team and looks at this chain from one angle: how far
 the outcome could depart from the promise, and why.
 
+### Portfolios, funds and mandates
+The framework applies to every vehicle through which an asset manager invests for clients:
+
+- **Open-ended pooled funds,** dealing daily or less often, where many investors share one portfolio and can redeem.
+- **Closed-ended funds,** where investors cannot redeem, but the fund may borrow, pay distributions and make
+  commitments.
+- **Segregated mandates,** where one client's money is managed in its own portfolio under an investment management
+  agreement.
+
+It covers benchmarked long-only, absolute return and other objective-based strategies, multi-asset, long-short and
+leveraged strategies, fixed income and credit, and portfolios that invest in other funds, which are read through to
+their holdings. Money market funds follow a specialised regime of their own and sit outside it.
+
+The framework calls each of these a **portfolio**, and says fund or mandate only where the type matters, as it does for
+redemptions, which only open-ended funds face. **The mandate** is the promise, whatever the vehicle: the objective,
+benchmark, guidelines and dealing or withdrawal terms set out in the portfolio's governing documents, which are the
+prospectus of a fund or the investment management agreement of a segregated mandate.
+
 ## Definition
 **Investment risk is the chance that a portfolio's outcome departs from what its mandate intends: a loss, a shortfall
-against its objective or benchmark, or an inability to meet redemptions, arising from the investments themselves.**
+against its objective or benchmark, or an inability to meet calls on its cash, such as redemptions, arising from the
+investments themselves.**
 
 Three parts of this definition do the work.
 
@@ -23,10 +42,11 @@ Three parts of this definition do the work.
   what was promised; a fund that gains money while taking risks its mandate does not allow is not. Risk is measured
   against the promise, not against zero.
 - **There are three kinds of departure.** A portfolio can lose more than its investors were led to expect, fail to
-  deliver its objective or benchmark, or fail to meet redemptions fairly. Each is a distinct failure with distinct
-  causes, and each maps to one pillar.
-- **The source is the investments.** The definition covers risks that arise from what the portfolio holds and how it is
-  funded by its investors. Risks that arise from how the firm operates belong elsewhere.
+  deliver its objective or benchmark, or fail to meet the calls on its cash in time and fairly. Each is a distinct
+  failure with distinct causes, and each maps to one pillar.
+- **The source is the investments.** The definition covers risks that arise from what the portfolio holds, how it is
+  funded by its investors and the calls its positions make on its cash, such as margin. Risks that arise from how the
+  firm operates belong elsewhere.
 
 ## Scope and boundaries
 A risk function should be clear about where investment risk ends, so that each risk has one owner and nothing is
@@ -38,8 +58,8 @@ Within scope, and handled inside the pillar workflows:
   migration risk are measured and monitored with the other sources of loss.
 - **Concentration and leverage** are part of market risk: concentration by issuer, sector, country or factor, and
   leverage and derivative exposure, are drivers of how much the portfolio could lose.
-- **Counterparty exposure** is part of market risk: each fund's exposure to the firms it trades with or holds assets
-  through is monitored against limits.
+- **Counterparty exposure** is part of market risk: each portfolio's exposure to the firms it trades with or holds
+  assets through is monitored against limits.
 - **Weak and stale prices** are part of liquidity risk: the risk function knows which of its measures rest on prices
   that are weak or stale, and flags holdings that are stale or cannot be priced.
 - **The limits of the risk function's own measures** apply to every pillar: the function understands and tests what its
@@ -73,60 +93,77 @@ A risk function's recurring work answers three questions. Each pillar has a ques
 deliver, and the measures it covers.
 
 ### Market risk
-**Question:** How much could we lose?
+**Question:** How much could we lose, in total and against the benchmark?
 
-**Outcome:** the risk manager knows, every day, which funds carry more absolute risk than their mandate intends, and
-why.
+**Outcome:** the risk manager knows, every day, which portfolios carry more risk than their mandate intends, absolute or
+relative, and why.
 
-**Covers:** absolute risk measures such as value at risk, expected shortfall, volatility and drawdown against tolerance;
+**Covers:** what could happen, from today's holdings. Absolute risk measures such as value at risk, expected shortfall
+and volatility; relative risk, measured by ex-ante tracking error, and the risk budget that allots it to bets;
 sensitivities such as duration, spread duration, duration times spread, equity beta and currency exposure;
-concentration; stress, reverse stress and scenario tests; pre-trade what-ifs; leverage and derivative exposure; and
-counterparty exposure against limits. The redesigned workflow is set out in [market risk](../pillars/market-risk.md).
+concentration; stress, reverse stress and scenario tests, and the headroom they leave against the portfolio's drawdown
+tolerance; pre-trade what-ifs; leverage and derivative exposure; and counterparty exposure against limits. The
+redesigned workflow is set out in [market risk](../pillars/market-risk.md).
 
 ### Liquidity risk
-**Question:** Can we meet redemptions without disadvantaging the investors who stay?
+**Question:** Can the portfolio meet every call on its cash, in time and at a fair cost, without disadvantaging the
+investors who stay?
 
-**Outcome:** the risk manager knows whether each fund can meet plausible redemptions in time and at a fair cost, and
-whether the tools for managing liquidity are ready if it cannot.
+**Outcome:** the risk manager knows whether each portfolio can meet plausible calls on its cash in time and at a fair
+cost, and whether the tools for managing liquidity are ready if it cannot.
 
 **Covers:** both sides of the balance, read together. On the asset side, what the portfolio can raise and how fast: the
-time and cost to liquidate holdings. On the liability side, what investors could redeem: investor and distributor
-concentration, flow patterns and stressed outflows. Redemption coverage compares the two. The pillar also covers the
-readiness of liquidity management tools such as swing pricing, redemption gates, in-kind redemptions and slowing
-purchases of illiquid assets, and the flagging of holdings whose prices are stale or that cannot be priced. See
-[liquidity risk](../pillars/liquidity-risk.md).
+time and cost to liquidate holdings, leaving out assets already posted as collateral or otherwise encumbered. On the
+liability side, the calls the portfolio could face, which depend on the vehicle: redemptions from an open-ended fund,
+shown by investor and distributor concentration, flow patterns and stressed outflows; the withdrawals and planned
+cash needs of a segregated mandate's client; borrowing to roll over, distributions and commitments of a closed-ended
+fund; and margin and collateral calls on any portfolio that holds derivatives. Redemption coverage compares the two.
+Margin calls arrive when markets fall, and the collateral they take is no longer available to sell, so they press on
+both sides at once. The pillar also covers the readiness of liquidity management tools such as swing pricing,
+redemption gates, in-kind redemptions and slowing purchases of illiquid assets, and the flagging of holdings whose
+prices are stale or that cannot be priced. See [liquidity risk](../pillars/liquidity-risk.md).
 
 ### Performance risk
-**Question:** Is the fund delivering what was promised, in the way it was promised?
+**Question:** Is the portfolio delivering what was promised, in the way it was promised?
 
-**Outcome:** the risk manager can show, with evidence, whether each fund is meeting its objective and whether its
+**Outcome:** the risk manager can show, with evidence, whether each portfolio is meeting its objective and whether its
 returns come from the sources its mandate describes.
 
-**Covers:** risk and return relative to the promise. Tracking error and active share; risk budgets against return;
-outcome against benchmark, peers or objective; attribution, to test whether returns come from the intended sources,
-including the split between the two [sources of return](02-sources-of-return.md); style drift; and consistency and
-risk-adjusted returns. See [performance risk](../pillars/performance-risk.md).
+**Covers:** whether the promise is kept: realised outcomes, and whether holdings match the promised style. Outcome
+against benchmark, peers or objective; ex-post tracking error and realised drawdown, absolute and relative; attribution,
+to test whether returns come from the intended sources, including the split between the two
+[sources of return](02-sources-of-return.md); active share and style drift against the mandate terms; and consistency
+and risk-adjusted returns. See [performance risk](../pillars/performance-risk.md).
 
 ## Boundaries between pillars
-The three pillars overlap in data but not in question, and the dividing lines follow from the questions.
+The three pillars overlap in data but not in question, and the dividing lines follow from the questions. Market and
+performance risk are divided by time.
 
-- **Market risk is absolute.** It asks how much the portfolio could lose in total, whatever its benchmark does.
-- **Performance risk is relative.** It asks how the fund behaves against its promise, so active risk, such as tracking
-  error, belongs here even though it is computed from the same positions and market data as market risk.
-- **Liquidity risk is about flows and fairness.** It asks whether the fund can meet what investors take out without
-  shifting cost to those who remain.
+- **Market risk is forward-looking.** It asks what could happen from today's holdings, in total and against the
+  benchmark. Ex-ante tracking error, the forecast of how far the portfolio could drift from its benchmark, belongs here
+  beside value at risk, and so does the risk budget that allots it to bets.
+- **Performance risk is about the promise kept.** It asks what did happen, and whether the portfolio is run the way it
+  was promised: realised return, ex-post tracking error, realised drawdown and attribution, and whether holdings match
+  the promised style.
+- **Liquidity risk is about flows and fairness.** It asks whether the portfolio can meet the calls on its cash without
+  shifting cost to the investors who remain.
 
 | | Market risk | Liquidity risk | Performance risk |
 |---|---|---|---|
-| **Lens** | Absolute loss | Assets against redemptions | Relative to the promise |
-| **Typical measures** | VaR, volatility, stress tests | Liquidation cost, coverage | Tracking error, attribution |
-| **Typical triggers** | A limit breach; a large move | Falling coverage; big redemption | Persistent underperformance |
+| **Lens** | What could happen, absolute and relative | Calls on cash against assets | Whether the promise is kept |
+| **Typical measures** | VaR, ex-ante tracking error, stress tests | Liquidation cost, coverage | Realised return, ex-post tracking error, attribution |
+| **Typical triggers** | A limit breach; a large move | Falling coverage; a large redemption or margin call | Persistent underperformance |
 | **Main audience** | Risk and portfolio managers | Risk managers, fund boards | Portfolio managers, oversight |
 
 The table shows typical entries only; each pillar section above lists the full coverage.
 
 Placing each measure in exactly one pillar keeps ownership clear. Where a measure serves two pillars, for example
 concentration, which drives both potential loss and the cost of selling, it is computed once and read by both.
+
+The division by time gives each forecast a realised counterpart in the other pillar, and comparing the two tests the
+forecast: ex-ante tracking error against ex-post tracking error, and value at risk against realised losses. Drawdown
+works the same way. Performance risk measures how far the portfolio has fallen from its peak, absolute and relative,
+and market risk reads how much headroom that leaves under stress before the drawdown tolerance is reached.
 
 ## The pillars connect
 The pillars are separate lenses on one portfolio, and the most damaging episodes pass through all three.
@@ -135,6 +172,12 @@ portfolio that remains is more concentrated and more volatile, which raises mark
 underperformance more likely.
 
 A manual process tends to see these links late, because each pillar is reviewed on its own cycle by different people. A
-redesigned process can watch the signals together and flag funds where they combine, which is a capability the manual
-process does not have. The [integrated view](../pillars/integrated-view.md) sets this out, along with the firm's
-footprint across funds.
+redesigned process can watch the signals together and flag portfolios where they combine, which is a capability the
+manual process does not have. The [integrated view](../pillars/integrated-view.md) sets this out, along with the firm's
+footprint across portfolios.
+
+## Sources
+- Financial Stability Board (2023). *Revised Policy Recommendations to Address Structural Vulnerabilities from Liquidity
+  Mismatch in Open-Ended Funds.* Liquidity matched to dealing terms as part of what an open-ended fund promises.
+- International Organization of Securities Commissions (2018). *Recommendations for Liquidity Risk Management for
+  Collective Investment Schemes.* Both sides of the liquidity balance, and the tools for managing it.

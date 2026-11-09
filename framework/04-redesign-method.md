@@ -19,8 +19,8 @@ the failure modes that most often prevent a return. It is the core of the framew
 
 ### 1. Define the outcome
 Each workflow is described by the outcome it delivers, in one sentence, not by the tasks it involves. "Produce the
-monthly risk pack" is a task. "Ensure that the risk committee knows which funds have moved outside their intended risk
-profile and why, in time to act" is an outcome. The outcome sentence is the test for every later step: a step that
+monthly risk pack" is a task. "Ensure that the risk committee knows which portfolios have moved outside their intended
+risk profile and why, in time to act" is an outcome. The outcome sentence is the test for every later step: a step that
 does not serve it is a candidate for removal.
 
 ### 2. Inventory the workflows
@@ -84,12 +84,12 @@ and the freed time is directed to the use decided at the start. [Measuring value
 ## Worked example: a monthly risk and performance report
 The example below runs one generic workflow through the method. The steps, hours and elapsed days are illustrative.
 
-**Step 1, outcome.** *The risk committee knows, within five working days of month end, which funds have moved outside
-their intended risk or performance profile, why, and what the risk function recommends.*
+**Step 1, outcome.** *The risk committee knows, within five working days of month end, which portfolios have moved
+outside their intended risk or performance profile, why, and what the risk function recommends.*
 
-**Step 2, inventory.** The report covers every fund, takes around 60 hours a cycle across three people, and is used by
-the risk committee at its monthly meeting. Two of its appendices are not referred to in any committee minutes; they are
-dropped.
+**Step 2, inventory.** The report covers every portfolio, takes around 60 hours a cycle across three people, and is used
+by the risk committee at its monthly meeting. Two of its appendices are not referred to in any committee minutes; they
+are dropped.
 
 **Step 3, current-state map.**
 
@@ -99,7 +99,7 @@ dropped.
 | 2 | Reconcile and re-key into the reporting workbook | Gather | 10 | 2 days |
 | 3 | Calculate measures and compare to limits | Compute | 8 | 1 day |
 | 4 | Reformat tables and charts for the pack | Communicate | 6 | 1 day |
-| 5 | Write commentary on what changed for each fund | Interpret | 14 | 3 days |
+| 5 | Write commentary on what changed for each portfolio | Interpret | 14 | 3 days |
 | 6 | Second person checks figures against source | Approve / Wait | 4 | 3 days |
 | 7 | Head of risk reviews and decides what to escalate | Judge | 3 | 2 days |
 | 8 | Final sign-off and distribution | Approve / Wait | 3 | 2 days |
@@ -124,11 +124,11 @@ manager and the head of risk.
 | 5 | Sign off the two-page summary with drill-down | Head of risk | 1 | 1 day |
 
 The cycle falls to around 7 hours and 3 working days. The output is now a ranked exception summary rather than a pack
-covering every fund at equal length, and the committee sees it around three weeks earlier.
+covering every portfolio at equal length, and the committee sees it around three weeks earlier.
 
 **Steps 6 and 7.** The redesigned report runs in parallel with the old one for at least one full cycle before the old
 one is stopped, and the freed hours go to the use the risk function chose at the start, for example monthly
-deep-dive reviews of the funds that appear most often in the exception summary.
+deep-dive reviews of the portfolios that appear most often in the exception summary.
 
 ## Common failure modes
 
@@ -143,3 +143,7 @@ deep-dive reviews of the funds that appear most often in the exception summary.
 The last failure mode is the most common. Giving everyone a tool spreads small savings thinly across many tasks and
 rebuilds nothing. Redesigning one workflow fully, measuring the result and then moving to the next produces a return
 that can be shown.
+
+## Sources
+- Hammer, M. (1990). Reengineering Work: Don't Automate, Obliterate. *Harvard Business Review*. Redesigning a process
+  around what technology makes possible, rather than speeding up the steps it already has.
