@@ -9,7 +9,7 @@ function should own them.
 A redesign removes steps that existed to catch errors: a second person checking figures, a manager reading every page.
 Those steps can only be removed if something at least as reliable takes their place. Without that, either the old
 checks stay and the redesign saves little, or they are removed and errors reach decisions. The controls below are what
-make the [redesign method](05-redesign-method.md) work in practice, and they should be designed in step 6, not added
+make the [redesign method](06-redesign-method.md) work in practice, and they should be designed in step 6, not added
 after the workflow is live.
 
 | Control | What it protects against |
@@ -24,7 +24,7 @@ after the workflow is live.
 
 ## The grounding check
 The grounding check enforces the principle that
-[the AI never produces a number](04-principles.md#3-the-ai-never-produces-a-number). Every number in a piece of
+[the AI never produces a number](05-principles.md#3-the-ai-never-produces-a-number). Every number in a piece of
 generated text is extracted and matched against the computed facts the text was generated from. Numbers written as
 words, such as "three months", are extracted and matched in the same way as numerals.
 
@@ -83,6 +83,9 @@ risk parameter.
   (too many items to review properly) or too loose (issues found outside the queue).
 - **Change record.** Every change records the old and new values, the reason, who approved it and when it took effect.
   Thresholds are versioned, so that any past output can be reproduced with the thresholds in force at the time.
+
+Internal limits are governed in the same way. [Limits and escalation](04-limits-and-escalation.md) sets out where
+limits come from, how internal limits are calibrated and how a breach is handled.
 
 ## Parallel runs
 A redesigned workflow runs alongside the existing process for at least one full cycle before the old process is

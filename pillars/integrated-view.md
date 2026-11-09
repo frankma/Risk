@@ -22,7 +22,7 @@ The view's outcome:
 > escalate them.
 
 This is the framework's clearest example of [principle
-6](../framework/04-principles.md#6-new-capabilities-beat-faster-old-ones). The manual process cannot watch every signal
+6](../framework/05-principles.md#6-new-capabilities-beat-faster-old-ones). The manual process cannot watch every signal
 for every portfolio every day and connect them.
 
 ## What the view reads
@@ -135,7 +135,7 @@ of, to one maintained continuously for every portfolio.
 
 ## Combination rules and ranking
 The rules that decide which portfolios rank, and in what order, are
-[governed parameters](../framework/06-controls.md#materiality-thresholds-as-governed-parameters). **The rules below are
+[governed parameters](../framework/07-controls.md#materiality-thresholds-as-governed-parameters). **The rules below are
 illustrative kinds of rule, not recommendations;** each risk function sets its own.
 
 | Kind of rule | Example (illustrative) |
@@ -168,7 +168,7 @@ otherwise rank many portfolios at once.
 ## What the AI drafts
 The AI drafts each portfolio's account from the signals and facts the view read, and from nothing else. Every number in
 each draft appears in the facts beside it, so the
-[grounding check](../framework/06-controls.md#the-grounding-check) would pass. The account describes the combination;
+[grounding check](../framework/07-controls.md#the-grounding-check) would pass. The account describes the combination;
 it does not recommend an action or claim that one signal caused another. **The funds and figures are illustrative.**
 
 **A redemption spiral forming.**
@@ -222,7 +222,7 @@ would have missed are the main source of new patterns. The AI step is tested, as
 manager's edits to the accounts.
 
 ## Controls specific to the view
-The general controls in [controls](../framework/06-controls.md) apply in full. The view adds four.
+The general controls in [controls](../framework/07-controls.md) apply in full. The view adds four.
 
 - **Every signal shows its pillar and as-of date.** Nothing in an account is shown without its source.
 - **Missing data is not health.** A portfolio with missing signals from a pillar is shown as partly assessed, never as
@@ -235,7 +235,7 @@ The general controls in [controls](../framework/06-controls.md) apply in full. T
 ## Measuring value
 The measure that matters most for the view is **lead time**: how much earlier the view ranked a portfolio than the first
 escalation from any single pillar. Lead time is measured from replays of past episodes and from live cases. The other
-dimensions come from [measuring value](../framework/07-measuring-value.md).
+dimensions come from [measuring value](../framework/08-measuring-value.md).
 
 | Dimension | Measure for the view |
 |---|---|

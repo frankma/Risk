@@ -1,7 +1,7 @@
 # Market risk
 
 Market risk asks how much a portfolio could lose, in total and against its benchmark, and the risk function answers that
-question every day for every portfolio. This chapter applies the [redesign method](../framework/05-redesign-method.md)
+question every day for every portfolio. This chapter applies the [redesign method](../framework/06-redesign-method.md)
 to the pillar: it lists the pillar's recurring workflows, redesigns daily monitoring from a manual scan of every
 portfolio into a ranked queue of exceptions and watch items with drafted explanations, and sets out the thresholds,
 limits, controls and measures that make the redesign work.
@@ -31,7 +31,7 @@ portfolios are outside their intended risk, or why, is a candidate for removal r
 Daily monitoring is the flagship, because it runs most often and because most of the other workflows draw on what it
 computes. The periodic risk report becomes largely a summary of the month's exceptions and their resolution, as in the
 worked example in the [redesign
-method](../framework/05-redesign-method.md#worked-example-a-monthly-risk-and-performance-report). Counterparty exposure
+method](../framework/06-redesign-method.md#worked-example-a-monthly-risk-and-performance-report). Counterparty exposure
 monitoring runs inside the same daily process, with its own limits; approving which counterparties may be used remains
 with the function that owns that decision. The same run totals holdings across portfolios by issuer, counterparty and
 factor for the [firm's footprint](integrated-view.md#the-firms-footprint); these totals do not net.
@@ -127,7 +127,7 @@ risk manager had time to examine.
 The queue holds the readings the risk manager should see today. An **exception** is a reading where a rule has fired;
 a **watch item** is a reading moving towards a threshold. Both come from a small number of kinds of rule, each owned
 and versioned as a
-[governed parameter](../framework/06-controls.md#materiality-thresholds-as-governed-parameters).
+[governed parameter](../framework/07-controls.md#materiality-thresholds-as-governed-parameters).
 **The example values below are illustrative and are not recommendations;** each risk function sets its own.
 
 | Kind of rule | Example (illustrative) | What it catches |
@@ -138,14 +138,17 @@ and versioned as a
 | Headroom against drawdown tolerance | A stress loss larger than the headroom left before the drawdown tolerance, absolute or relative, or above an early warning of it | Mandates nearing the loss that would end them |
 | Ex-ante tracking error | Outside the range the mandate terms imply, or beyond an early warning of it | Too much or too little active risk |
 | Persistence | A near-limit reading for several consecutive days | Slow drift towards a limit |
-| Concentration | One issuer or sector above a set share of the portfolio | Build-up of single-name risk |
+| Concentration | One issuer or sector above the risk function's early warning, set below the mandate's limit | Build-up of single-name risk |
 | Counterparty exposure | Exposure to one counterparty above a share of its limit | Concentrated counterparty risk |
 | Risk budget | A bet using a large share of the budget with no return over several periods | Risk that has not earned its place |
 
-Breaches of a limit, including a concentration limit, a tracking error range or a stress loss beyond the drawdown
-headroom, large changes since the previous day, readings outside the portfolio's usual range and a fired risk budget
-rule are exceptions. Early warnings, persistent near-limit readings and counterparty
-exposure approaching its limit are watch items.
+Breaches of an internal limit, including a tracking error range, a stress loss beyond the drawdown headroom, large
+changes since the previous day, readings outside the portfolio's usual range and a fired risk budget rule are
+exceptions. Early warnings, persistent near-limit readings and counterparty exposure approaching its limit are watch
+items. A breach of a mandate or regulatory limit, such as a limit on one issuer's weight, is owned by compliance: it is
+shown beside the queue as a courtesy item and routed to compliance, while the risk function's own early warning below
+that limit stays in the queue. [Limits and escalation](../framework/04-limits-and-escalation.md) sets out which limits
+are internal and how a breach is handled.
 
 The risk engine ranks exceptions before watch items. Breaches come first, then the other exceptions, then early
 warnings, then persistence. Within a tier, items are ordered by size relative to the threshold, and a portfolio with
@@ -160,7 +163,7 @@ this pillar reads only the headroom it leaves.
 ## What the AI drafts
 The AI drafts from the facts that the risk engine produced and from nothing else. In each example below, the facts are
 shown alongside the draft; every number in the draft appears in the facts, so the [grounding
-check](../framework/06-controls.md#the-grounding-check) would pass. Fund A is an exception, for its large one-day rise,
+check](../framework/07-controls.md#the-grounding-check) would pass. Fund A is an exception, for its large one-day rise,
 and also a watch item, for being above its early warning. Fund B is likewise an exception, for a one-day rise above its
 change threshold, and a watch item approaching its counterparty limit. Fund C is a watch item that has stayed near its
 limit. **The funds and figures are illustrative.**
@@ -204,11 +207,11 @@ limit. **The funds and figures are illustrative.**
 | Fund | Fund C |
 | Measure | Largest single-issuer weight |
 | Today | 9.6% |
-| Early-warning level / limit | 9.0% / 10.0% |
+| Risk function's early warning / mandate limit | 9.0% / 10.0% |
 | Consecutive days above early warning | 6 |
 
 > Fund C's largest single-issuer weight has been above its 9.0% early-warning level for 6 consecutive days and stands
-> at 9.6% today, against a limit of 10.0%.
+> at 9.6% today, against a mandate limit of 10.0%, which compliance owns.
 
 None of the drafts recommends an action. Whether a reading matters, and what to ask the portfolio manager, is the risk
 manager's judgement at the sign-off point.
@@ -239,7 +242,7 @@ correct. The function tests this by tracking how often, and how substantially, r
 reviewing a sample of explanations against the full decomposition.
 
 ## Controls specific to this pillar
-The general controls in [controls](../framework/06-controls.md) apply in full. This pillar adds four.
+The general controls in [controls](../framework/07-controls.md) apply in full. This pillar adds four.
 
 - **Decomposition reconciles before drafting.** The contributions by position and by factor must add up to the total
   change, within a stated tolerance, before the AI drafts from them. A decomposition that does not reconcile is an
@@ -251,7 +254,7 @@ The general controls in [controls](../framework/06-controls.md) apply in full. T
   calibration and approval are recorded before a scenario enters the library.
 
 ## Measuring value
-The measures from [measuring value](../framework/07-measuring-value.md) that matter most for this pillar are speed and
+The measures from [measuring value](../framework/08-measuring-value.md) that matter most for this pillar are speed and
 capacity: how soon a portfolio manager hears about an issue, and how many portfolios are reviewed in depth.
 
 | Dimension | Measure for this pillar |

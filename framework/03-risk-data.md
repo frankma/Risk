@@ -27,7 +27,7 @@ arrive late and less often than the portfolio's own, so they carry their as-of d
 below.
 
 Personal data about investors is kept to what the measures need: shares and flows, not identities. The rules on what
-may be sent to an AI service are set out under [data handling](06-controls.md#data-handling).
+may be sent to an AI service are set out under [data handling](07-controls.md#data-handling).
 
 ## From source to computed figure
 Each domain has one **golden source**: the system or provider whose record the firm treats as correct. A domain may be
@@ -59,7 +59,7 @@ date it describes, and the date it became known.
 
 A correction never overwrites what was known before. Both versions stay, and the audit trail records which one each
 output used. The same applies to thresholds and other governed parameters, which are
-[versioned](06-controls.md#materiality-thresholds-as-governed-parameters) with the dates they took effect.
+[versioned](07-controls.md#materiality-thresholds-as-governed-parameters) with the dates they took effect.
 
 ## Quality before computation
 Every domain passes checks in five dimensions before the snapshot is fixed. **The examples below are illustrative;**
@@ -74,7 +74,7 @@ each risk function sets its own checks and tolerances.
 | Validity | Is it possible? | Values inside their allowed ranges, such as weights between limits and dates in order |
 
 A failed check is a **data break**. Each break is recorded with the portfolios and measures it affects, and the run then
-follows the rule set in advance under [fallback](06-controls.md#fallback): it waits for the correction, or it runs with
+follows the rule set in advance under [fallback](07-controls.md#fallback): it waits for the correction, or it runs with
 the affected portfolios marked. A portfolio whose data has a break it cannot run past is shown as not assessed, never as
 clean.
 
@@ -91,7 +91,7 @@ The risk function sets one proxy policy for all domains.
 
 - **Every proxy is flagged.** A figure computed partly from a proxy says so, wherever it appears.
 - **Every proxy is governed.** The choice of proxy for each kind of gap is a
-  [governed parameter](06-controls.md#materiality-thresholds-as-governed-parameters), owned by the risk function.
+  [governed parameter](07-controls.md#materiality-thresholds-as-governed-parameters), owned by the risk function.
 - **Proxies are measured.** The share of each portfolio, by value, that rests on proxies is reported beside its
   measures, and a share above a set level is a data break in its own right.
 - **Proxies are temporary.** A proxy is replaced as soon as the real data arrives, and a proxy that has stayed beyond a
@@ -161,7 +161,7 @@ with the risk manager judging the few breaks that matter and the source owners f
 
 ## What the AI drafts
 The AI drafts each notice from the facts the risk engine recorded about the break, and from nothing else. Every number
-in each draft appears in the facts beside it, so the [grounding check](06-controls.md#the-grounding-check) would pass.
+in each draft appears in the facts beside it, so the [grounding check](07-controls.md#the-grounding-check) would pass.
 The AI does not decide whether a break is real; the risk manager does. **The funds and figures are illustrative.**
 
 **A reconciliation break.**
@@ -195,7 +195,7 @@ The AI does not decide whether a break is real; the risk manager does. **The fun
 > reference data is corrected.
 
 ## Controls specific to risk data
-The general controls in [controls](06-controls.md) apply in full. Risk data adds four.
+The general controls in [controls](07-controls.md) apply in full. Risk data adds four.
 
 - **Nothing is computed from unchecked data.** Every measure points to a checked snapshot.
 - **A run never hides a break.** Every output shows the breaks and proxies that touch it, and a portfolio that could not
@@ -204,7 +204,7 @@ The general controls in [controls](06-controls.md) apply in full. Risk data adds
 - **The past can be reproduced.** Every output can be recomputed from the data as it was known when it was produced.
 
 ## Measuring value
-The measures from [measuring value](07-measuring-value.md) that matter most for risk data are speed and quality: how
+The measures from [measuring value](08-measuring-value.md) that matter most for risk data are speed and quality: how
 soon the day's measures can be trusted, and whether a break reaches an output unseen.
 
 | Dimension | Measure for risk data |

@@ -1,7 +1,7 @@
 # Performance risk
 
 Performance risk asks whether a portfolio is delivering what was promised, in the way it was promised. This chapter
-applies the [redesign method](../framework/05-redesign-method.md) to the pillar: it lists the pillar's recurring
+applies the [redesign method](../framework/06-redesign-method.md) to the pillar: it lists the pillar's recurring
 workflows, redesigns the periodic portfolio manager review so that it runs on the risk function's agenda with an
 evidence-based challenge pack, and sets out the thresholds, limits, controls and measures that make the redesign work.
 The shift is from receiving the portfolio manager's account of performance to challenging it with independent evidence.
@@ -114,7 +114,7 @@ explains; and the actions agreed are tracked until they are closed.
 ## Materiality and exceptions
 An **exception** in this pillar is a rule that has fired: a sign that the portfolio is not delivering its promise, or
 not in the way it promised. A **watch item** is an early sign that has not yet persisted. Each rule is a [governed
-parameter](../framework/06-controls.md#materiality-thresholds-as-governed-parameters). **The example values below are
+parameter](../framework/07-controls.md#materiality-thresholds-as-governed-parameters). **The example values below are
 illustrative and are not recommendations;** each risk function sets its own.
 
 | Kind of rule | Example (illustrative) | What it catches |
@@ -138,7 +138,7 @@ last time.
 ## What the AI drafts
 The AI drafts each item of the challenge pack from the facts that the risk engine produced and from nothing else. Every
 number in each draft appears in the facts beside it, so the [grounding
-check](../framework/06-controls.md#the-grounding-check) would pass. The questions are proposals; the risk manager
+check](../framework/07-controls.md#the-grounding-check) would pass. The questions are proposals; the risk manager
 decides which to ask. **The funds and figures are illustrative.**
 
 **Outperformance from unintended beta.**
@@ -203,7 +203,7 @@ error there would make every later test wrong, which is why the terms are confir
 used.
 
 ## Controls specific to this pillar
-The general controls in [controls](../framework/06-controls.md) apply in full. This pillar adds five.
+The general controls in [controls](../framework/07-controls.md) apply in full. This pillar adds five.
 
 - **Mandate terms are confirmed before use.** Extracted terms are not tested against until the risk manager confirms
   them, each term links to its source passage, and a change to the documents triggers re-extraction with the
@@ -219,7 +219,7 @@ The general controls in [controls](../framework/06-controls.md) apply in full. T
   manager.
 
 ## Measuring value
-The measures from [measuring value](../framework/07-measuring-value.md) that matter most for this pillar are
+The measures from [measuring value](../framework/08-measuring-value.md) that matter most for this pillar are
 influence measures, because the purpose of the review is to change what happens.
 
 | Dimension | Measure for this pillar |
