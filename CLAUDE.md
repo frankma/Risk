@@ -2,8 +2,8 @@
 
 Asset management from an investment risk perspective, and how to redesign that work around AI: a philosophy, a
 definition of investment risk and its three workflow pillars (market, liquidity, performance risk), the two sources of
-return, principles, a method for redesigning each workflow, the controls that make it safe and how to measure the
-value. Its core pattern: **the risk engine computes, AI narrates, a human judges.**
+return, the risk data the work rests on, principles, a method for redesigning each workflow, the controls that make it
+safe and how to measure the value. Its core pattern: **the risk engine computes, AI narrates, a human judges.**
 
 The framework's map is in `README.md`. Read it, and the chapters a change touches, before making the change.
 

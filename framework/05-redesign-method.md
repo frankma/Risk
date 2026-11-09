@@ -3,7 +3,7 @@
 A workflow is redesigned in seven steps, from defining the outcome it exists to deliver to measuring whether the
 redesign delivered it. This chapter sets out each step, runs one generic workflow through all seven, and closes with
 the failure modes that most often prevent a return. It is the core of the framework: the
-[principles](03-principles.md) say what a redesign should achieve, and this method says how.
+[principles](04-principles.md) say what a redesign should achieve, and this method says how.
 
 ## The seven steps
 
@@ -75,11 +75,11 @@ reviews the exceptions". Three changes follow.
 ### 6. Build in controls
 A redesigned workflow is only worth adopting if it can be relied on with fewer manual checks. The grounding check,
 sign-off points, audit trail, threshold governance, parallel run, fallback and data handling that make this possible
-are set out in [controls](05-controls.md).
+are set out in [controls](06-controls.md).
 
 ### 7. Measure and reinvest
 The redesign is measured against a baseline taken before it started, across capacity, speed, quality and influence,
-and the freed time is directed to the use decided at the start. [Measuring value](06-measuring-value.md) sets out how.
+and the freed time is directed to the use decided at the start. [Measuring value](07-measuring-value.md) sets out how.
 
 ## Worked example: a monthly risk and performance report
 The example below runs one generic workflow through the method. The steps, hours and elapsed days are illustrative.

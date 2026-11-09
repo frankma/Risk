@@ -42,20 +42,31 @@ the reasoning goes there.
 | Beta portfolio | The portfolio's own weight in each asset class and sector, following the index inside each | [Sources of return](02-sources-of-return.md#how-does-one-holding-split) | Alpha and beta method |
 | Long-short book | The alpha weights, which sum to zero within each sector | [Sources of return](02-sources-of-return.md#how-does-one-holding-split) | Alpha and beta method |
 
+## Risk data
+
+| Concept | What it is | Defined in | Used by |
+|---|---|---|---|
+| Golden source | The one system or provider whose record of a domain the firm treats as correct | [Risk data](03-risk-data.md#from-source-to-computed-figure) | Controls |
+| Snapshot | The checked and enriched data a run computes from, and only from | [Risk data](03-risk-data.md#from-source-to-computed-figure) | Controls, all pillars |
+| Versioned as known | Each record keeps the date it describes and the date it became known, so past outputs can be reproduced | [Risk data](03-risk-data.md#versioned-as-known) | Controls |
+| Data break | A failed quality check, recorded with the portfolios and measures it affects | [Risk data](03-risk-data.md#quality-before-computation) | Controls, all pillars |
+| Proxy policy | How gaps in data are filled: flagged, governed, measured and temporary | [Risk data](03-risk-data.md#proxies) | Market risk, all pillars |
+| Fitness for use | The risk function's call on whether data is good enough to compute from; correction stays with the source's owner | [Risk data](03-risk-data.md#who-owns-what) | Controls |
+
 ## Redesigning the work
 
 | Concept | What it is | Defined in | Used by |
 |---|---|---|---|
-| Core pattern | The risk engine computes, AI narrates, a human judges | [Principles](03-principles.md#2-the-risk-engine-computes-ai-narrates-a-human-judges) | Every chapter |
-| Risk engine | The deterministic part of the system: the same data always gives the same figure | [Principles](03-principles.md#2-the-risk-engine-computes-ai-narrates-a-human-judges) | Every chapter |
-| Six principles | What a redesign should follow | [Principles](03-principles.md#six-principles) | Redesign method, all pillars |
-| Seven steps | How one workflow is redesigned, from outcome to measured result | [Redesign method](04-redesign-method.md#the-seven-steps) | All pillars |
-| Step tags | Gather, Compute, Interpret, Judge, Communicate, Approve / Wait | [Redesign method](04-redesign-method.md#3-map-the-current-state) | All pillars |
-| Risk manager's value | Judging what matters to the portfolio and its intended risk profile, bringing clarity to the risks being taken, challenge, deciding what the system flags and judgement where the data runs out; the sign-off is the accountability | [Principles](03-principles.md#what-the-risk-manager-adds) | README, measuring value, all pillars |
-| Owners | Who or what does each step: the risk engine, the AI assistant, the risk manager or the head of risk | [Redesign method](04-redesign-method.md#4-assign-each-step-an-owner) | All pillars |
-| Four dimensions of value | Capacity, speed, quality and influence | [Measuring value](06-measuring-value.md#four-dimensions) | All pillars |
-| Baseline | A record of the current state, taken before anything changes | [Measuring value](06-measuring-value.md#baseline-first) | Redesign method |
-| Reinvestment plan | What freed time will be spent on, decided in advance | [Measuring value](06-measuring-value.md#reinvestment-plan) | Principles, redesign method, market risk |
+| Core pattern | The risk engine computes, AI narrates, a human judges | [Principles](04-principles.md#2-the-risk-engine-computes-ai-narrates-a-human-judges) | Every chapter |
+| Risk engine | The deterministic part of the system: the same data always gives the same figure | [Principles](04-principles.md#2-the-risk-engine-computes-ai-narrates-a-human-judges) | Every chapter |
+| Six principles | What a redesign should follow | [Principles](04-principles.md#six-principles) | Redesign method, all pillars |
+| Seven steps | How one workflow is redesigned, from outcome to measured result | [Redesign method](05-redesign-method.md#the-seven-steps) | All pillars |
+| Step tags | Gather, Compute, Interpret, Judge, Communicate, Approve / Wait | [Redesign method](05-redesign-method.md#3-map-the-current-state) | All pillars |
+| Risk manager's value | Judging what matters to the portfolio and its intended risk profile, bringing clarity to the risks being taken, challenge, deciding what the system flags and judgement where the data runs out; the sign-off is the accountability | [Principles](04-principles.md#what-the-risk-manager-adds) | README, measuring value, all pillars |
+| Owners | Who or what does each step: the risk engine, the AI assistant, the risk manager or the head of risk | [Redesign method](05-redesign-method.md#4-assign-each-step-an-owner) | All pillars |
+| Four dimensions of value | Capacity, speed, quality and influence | [Measuring value](07-measuring-value.md#four-dimensions) | All pillars |
+| Baseline | A record of the current state, taken before anything changes | [Measuring value](07-measuring-value.md#baseline-first) | Redesign method |
+| Reinvestment plan | What freed time will be spent on, decided in advance | [Measuring value](07-measuring-value.md#reinvestment-plan) | Principles, redesign method, market risk |
 
 ## Exceptions and ranking
 
@@ -63,8 +74,8 @@ the reasoning goes there.
 |---|---|---|---|
 | Exception | A reading where a rule has fired | [Each pillar's rules](../pillars/market-risk.md#materiality-and-exceptions) | Controls, integrated view |
 | Watch item | A reading moving towards a threshold | [Each pillar's rules](../pillars/market-risk.md#materiality-and-exceptions) | Integrated view |
-| Ranked queue | What the human reviews instead of everything | [Principles](03-principles.md#4-exceptions-over-everything) | Market risk, redesign method |
-| Not assessed | How a portfolio with missing data is shown, never as clean | [Market risk](../pillars/market-risk.md#controls-specific-to-this-pillar) | Integrated view |
+| Ranked queue | What the human reviews instead of everything | [Principles](04-principles.md#4-exceptions-over-everything) | Market risk, redesign method |
+| Not assessed | How a portfolio with missing data is shown, never as clean | [Market risk](../pillars/market-risk.md#controls-specific-to-this-pillar) | Risk data, integrated view |
 | Watch list | The firm's single list of portfolios with unresolved issues, owned by the risk function | [Performance risk](../pillars/performance-risk.md#workflows-in-this-pillar) | Integrated view |
 | Pattern | A named chain of signals across pillars | [Integrated view](../pillars/integrated-view.md#patterns) | Integrated view's rules |
 | Lead time | How much earlier the view ranked a portfolio than the first escalation from any single pillar | [Integrated view](../pillars/integrated-view.md#measuring-value) | Integrated view |
@@ -73,12 +84,12 @@ the reasoning goes there.
 
 | Concept | What it is | Defined in | Used by |
 |---|---|---|---|
-| Grounding check | Every number in generated text is a computed fact, or a simple operation on computed facts that the check recomputes | [Controls](05-controls.md#the-grounding-check) | Principles, all pillars, alpha and beta |
-| Sign-off point | Where a human must approve, and what they are approving | [Controls](05-controls.md#sign-off-points) | Every redesigned workflow |
-| Audit trail | The record of facts, versions, generated text, edits and approval | [Controls](05-controls.md#the-audit-trail) | Every redesigned workflow |
-| Governed parameter | A threshold or rule with an owner, a review cycle and a change record | [Controls](05-controls.md#materiality-thresholds-as-governed-parameters) | All pillars, alpha and beta |
-| Parallel run | The new workflow runs beside the old one before the old one stops | [Controls](05-controls.md#parallel-runs) | Redesign method, measuring value |
-| Fallback | What happens when a component fails, including a template in place of AI text | [Controls](05-controls.md#fallback) | Grounding check |
+| Grounding check | Every number in generated text is a computed fact, or a simple operation on computed facts that the check recomputes | [Controls](06-controls.md#the-grounding-check) | Principles, all pillars, alpha and beta |
+| Sign-off point | Where a human must approve, and what they are approving | [Controls](06-controls.md#sign-off-points) | Every redesigned workflow |
+| Audit trail | The record of facts, versions, generated text, edits and approval | [Controls](06-controls.md#the-audit-trail) | Every redesigned workflow |
+| Governed parameter | A threshold or rule with an owner, a review cycle and a change record | [Controls](06-controls.md#materiality-thresholds-as-governed-parameters) | All pillars, alpha and beta |
+| Parallel run | The new workflow runs beside the old one before the old one stops | [Controls](06-controls.md#parallel-runs) | Redesign method, measuring value |
+| Fallback | What happens when a component fails, including a template in place of AI text | [Controls](06-controls.md#fallback) | Grounding check |
 
 ## Measures
 
