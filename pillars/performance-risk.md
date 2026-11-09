@@ -3,8 +3,9 @@
 Performance risk asks whether a portfolio is delivering what was promised, in the way it was promised. This chapter
 applies the [redesign method](../framework/06-redesign-method.md) to the pillar: it lists the pillar's recurring
 workflows, redesigns the periodic portfolio manager review so that it runs on the risk function's agenda with an
-evidence-based challenge pack, and sets out the thresholds, limits, controls and measures that make the redesign work.
-The shift is from receiving the portfolio manager's account of performance to challenging it with independent evidence.
+evidence-based challenge pack, and sets out the thresholds, limits, controls and measures that make the redesign work,
+and the design choices behind the pillar's measures. The shift is from receiving the portfolio manager's account of
+performance to challenging it with independent evidence.
 
 ## The outcome
 The pillar's outcome, as defined in [investment risk](../framework/01-investment-risk.md#performance-risk):
@@ -45,7 +46,8 @@ review is also market risk's, and its exceptions come into the challenge pack he
 
 Relative return and drawdown are computed every day over a rolling window, a governed parameter illustrated here as 12
 months, so that a shortfall reaches watch as soon as it forms rather than at the end of a quarter. Persistence is still
-counted in whole periods.
+counted in whole periods. The windows, and the significance shown beside each figure, are set out under
+[design choices](performance-risk.md#windows-and-significance).
 
 ## Flagship redesign: the periodic portfolio manager review
 The example below follows the review of one portfolio. **The steps, hours and elapsed times are illustrative.**
@@ -128,12 +130,12 @@ illustrative and are not recommendations;** each risk function sets its own.
 | Style consistency | Exposures outside the confirmed mandate terms | Style drift |
 | Overdue action | An agreed action past its due date | Follow-up that has stalled |
 
-A shortfall over the rolling window, or a single period of the source-of-return reading, is a watch item; every other
-rule in the table, including persistent shortfall, gives an exception when it fires. The risk engine ranks issues for
-each portfolio, exceptions before watch items. Persistent issues rank above single-period ones, because short periods
-are noisy and persistence carries more information than size. Issues where the outcome and the way it was achieved both
-depart from the promise rank highest. Overdue actions are always shown, so that the review starts from what was agreed
-last time.
+A shortfall over the rolling window, a shortfall on both the 1-month and 3-month windows, or a single period of the
+source-of-return reading, is a watch item; every other rule in the table, including persistent shortfall, gives an
+exception when it fires. The risk engine ranks issues for each portfolio, exceptions before watch items. Persistent
+issues rank above single-period ones, because short periods are noisy and persistence carries more information than
+size. Issues where the outcome and the way it was achieved both depart from the promise rank highest. Overdue actions
+are always shown, so that the review starts from what was agreed last time.
 
 ## What the AI drafts
 The AI drafts each item of the challenge pack from the facts that the risk engine produced and from nothing else. Every
@@ -182,16 +184,72 @@ decides which to ask. **The funds and figures are illustrative.**
 > months, and its holdings in small companies have risen from 6% to 22% of net assets. *Question: Is the portfolio still
 > managed to its stated style, and if not, should its positioning or its documents change?*
 
-## Limits of the measures
-The risk function owns the model risk in its own performance measures; independent validation of the models sits
-elsewhere, as set out in [investment risk](../framework/01-investment-risk.md#scope-and-boundaries).
+## Design choices
+A risk function chooses how each of its performance measures is computed, and records the choice. This section sets
+out the choices for this pillar, what each trades off, and how the function tests what it chose. The risk function owns
+the model risk in its own performance measures; independent validation of the models sits elsewhere, as set out in
+[investment risk](../framework/01-investment-risk.md#scope-and-boundaries).
 
+### Risk-adjusted measures
+Each measure answers one question, and each misleads in a known way.
+
+| Measure | What it answers | Use it for | Where it misleads |
+|---|---|---|---|
+| Information ratio | Active return per unit of active risk | Benchmarked portfolios; the core measure of the pillar | Over short windows it is mostly noise, and a portfolio hugging its benchmark can show a high ratio on very little |
+| Sharpe ratio | Return above cash per unit of total volatility | Absolute return and objective-based portfolios | Treats gains and losses alike, and flatters strategies whose losses are rare and large |
+| Sortino ratio | Return above a target per unit of downside volatility | Absolute return portfolios where losses matter more than gains | Needs a long history, because downside observations are few |
+| Realised drawdown | The fall from the portfolio's peak, absolute and relative to the benchmark | Every portfolio, against its drawdown tolerance | Depends on the window, and says nothing about how long recovery takes |
+| Up-market and down-market capture | How much of the benchmark's rises and falls the portfolio takes part in | Showing whether returns come from the way the portfolio behaves in rising or in falling markets | Few observations in each state make it unstable over short periods |
+
+A portfolio is not judged on one measure. The measures shown for each portfolio follow its mandate: a benchmarked
+portfolio leads with the information ratio and relative drawdown, an absolute return portfolio with the Sharpe or
+Sortino ratio and absolute drawdown.
+
+### Windows and significance
+Every measure is shown over **1, 3, 12 and 36 months**. The 12-month window is the default for the relative return
+rule; a shortfall that shows on both the 1-month and the 3-month windows is an earlier watch, because the shorter
+windows agreeing is less likely to be noise than either alone. Persistence is still counted in whole periods.
+
+Beside every information ratio, the **t-statistic** shows how much of it could be noise: the ratio times the square root
+of the number of years measured. At an information ratio of 0.5 it takes about 16 years to reach a t-statistic of 2, as
+[sources of return](../framework/02-sources-of-return.md#where-do-the-labels-mislead) sets out. Showing it on every
+report keeps one good period from being read as skill.
+
+### Benchmarks and peer groups
+A benchmark decides every relative figure, so it is tested before it is used and reviewed while it is used. A sound
+benchmark is:
+
+- **Specified in advance,** before the period it judges.
+- **Investable,** so the portfolio could have held it instead.
+- **Unambiguous,** with its constituents and weights known.
+- **Measurable,** with its return computable as often as the portfolio's.
+- **Appropriate to the style** the mandate describes.
+- **Owned,** with the portfolio manager accepting it as the measure of the mandate.
+
+A benchmark that cannot be held, such as inflation plus a margin, still judges the promise, and the
+[alpha and beta method](alpha-and-beta-method.md#scope-and-basis) sets out how an investable stand-in serves for the
+split.
+
+A peer group is tested in the same spirit: its members are chosen by stated criteria of strategy and vehicle, the
+comparison includes portfolios that closed or merged during the period so that the survivors do not flatter the
+group, and membership is reviewed on a set cycle.
+
+### Linking attribution over time
+Attribution effects measured period by period do not add up over longer periods, because returns compound. A linking
+method spreads the difference across the periods so that the effects sum to the return over the whole period. Several
+published methods exist, and they give slightly different answers, so the method is stated, held as a
+[governed parameter](../framework/07-controls.md#materiality-thresholds-as-governed-parameters), and changed only from a
+recorded effective date. The same applies to linking the lines of the
+[alpha and beta split](alpha-and-beta-method.md#the-test-and-its-limits) over longer periods.
+
+### Where the measures are weak
 | Measure | Where it is weak | How the function tests it |
 |---|---|---|
-| Attribution | Depends on the model and benchmark chosen | Comparing methods; reviewing benchmark fit |
-| Relative return | Short periods are noisy | Persistence over several periods |
+| Attribution | Depends on the model and benchmark chosen | Comparing methods; testing the benchmark as above |
+| Relative return | Short periods are noisy | Several windows; persistence over several periods; the t-statistic |
 | Ex-post tracking error | Depends on the window; noisy over short ones | Several windows; comparison with ex-ante from market risk |
-| Peer comparison | Peer groups can be poorly matched | Reviewing peer-group membership |
+| Risk-adjusted ratios | Rare large losses are understated until they happen | Reading them beside drawdown and stress |
+| Peer comparison | Peer groups can be poorly matched or flattered by survivors | Membership criteria and a survivorship check |
 | Factor exposures | Depend on the baskets and the estimated betas | Comparing with a regression on portfolio returns |
 | Extracted mandate terms | The AI can miss or misread a term | Confirmation by the risk manager |
 
@@ -249,3 +307,13 @@ headroom it reads. The [integrated view](integrated-view.md) brings these signal
   Attribution by decision into allocation and selection.
 - Cremers, M. and Petajisto, A. (2009). How Active Is Your Fund Manager? A New Measure That Predicts Performance.
   *Review of Financial Studies*. Active share as a measure of how far holdings depart from the benchmark.
+- Sharpe, W. (1994). The Sharpe Ratio. *Journal of Portfolio Management*. Return per unit of total risk.
+- Sortino, F. and Price, L. (1994). Performance Measurement in a Downside Risk Framework. *Journal of Investing*.
+  Return per unit of downside risk against a target.
+- Bailey, J. (1992). Evaluating Benchmark Quality. *Financial Analysts Journal*. The properties of a sound benchmark.
+- Brown, S., Goetzmann, W., Ibbotson, R. and Ross, S. (1992). Survivorship Bias in Performance Studies. *Review of
+  Financial Studies*. How dropping closed portfolios flatters a peer group.
+- Carino, D. (1999). Combining Attribution Effects Over Time. *Journal of Performance Measurement*. Linking
+  single-period attribution so that it sums over longer periods.
+- Menchero, J. (2000). An Optimized Approach to Linking Attribution Effects Over Time. *Journal of Performance
+  Measurement*. An alternative linking method, and why methods differ.
