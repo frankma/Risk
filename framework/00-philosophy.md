@@ -3,7 +3,7 @@
 This chapter sets out what a risk function believes about investment risk, what the function is for and how it works.
 It is the ground the rest of the framework stands on: [investment risk](01-investment-risk.md) defines the scope and
 organises the recurring work into three pillars, [sources of return](02-sources-of-return.md) sets out where return
-comes from, and the [principles](04-principles.md) and [redesign method](05-redesign-method.md) set out how the risk
+comes from, and the [principles](05-principles.md) and [redesign method](06-redesign-method.md) set out how the risk
 manager does that work alongside AI. The beliefs do not
 depend on any particular model; any model a risk function uses is judged against them.
 
