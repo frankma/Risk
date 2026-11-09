@@ -117,6 +117,10 @@ the reasoning goes there.
 | Jump to default | The loss if an issuer defaulted, net of expected recovery, read as a concentration measure | [Market risk](../pillars/market-risk.md#credit-spreads-default-and-migration) | Investment risk |
 | Gross and commitment leverage | Total notional, and exposure after netting and hedging, each with an internal limit | [Market risk](../pillars/market-risk.md#leverage-and-options) | Limits and escalation |
 | Backtest against the design | VaR breaches judged against what the chosen design implies, stated in advance | [Market risk](../pillars/market-risk.md#backtesting) | Philosophy |
+| Information ratio and t-statistic | Active return per unit of active risk, shown with how much of it could be noise | [Performance risk](../pillars/performance-risk.md#windows-and-significance) | Sources of return, philosophy |
+| Windows | Every performance measure shown over 1, 3, 12 and 36 months, with 12 months the default for the relative return rule | [Performance risk](../pillars/performance-risk.md#windows-and-significance) | Integrated view |
+| Benchmark tests | Specified in advance, investable, unambiguous, measurable, appropriate to the style and owned | [Performance risk](../pillars/performance-risk.md#benchmarks-and-peer-groups) | Sources of return, alpha and beta |
+| Linking method | How single-period attribution is made to sum over longer periods, held as a governed parameter | [Performance risk](../pillars/performance-risk.md#linking-attribution-over-time) | Alpha and beta |
 | Risk budget | Active risk allotted to bets, read against the return they earn | [Philosophy](00-philosophy.md#3-connection) | Market risk, which owns the review; performance risk's challenge pack; integrated view |
 | Realised drawdown | The fall from a portfolio's peak value, absolute and relative to its benchmark | [Performance risk](../pillars/performance-risk.md#workflows-in-this-pillar) | Market risk, integrated view |
 | Headroom | A stress loss set against what is left of the drawdown tolerance | [Market risk](../pillars/market-risk.md#materiality-and-exceptions) | Integrated view |
