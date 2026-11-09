@@ -19,15 +19,16 @@ does.
 
 | Dimension | Question | Example measures |
 |---|---|---|
-| Capacity | How much can be covered in depth? | Funds covered in depth per person; deep-dive reviews per month |
+| Capacity | How much can be covered in depth? | Portfolios covered in depth per person; deep-dive reviews per month |
 | Speed | How quickly does the function know? | Data availability to signed-off output; alert to explanation |
 | Quality | Does it catch what matters? | Issues missed or found late; errors found in review; parallel-run agreement |
 | Influence | Does its work change decisions? | Issues raised and actions taken; share of time on challenge |
 
 ### Capacity
-Capacity measures how much risk work the function can do at the depth it should be done. Funds covered in depth per
+Capacity measures how much risk work the function can do at the depth it should be done. Portfolios covered in depth per
 person captures breadth; deep-dive reviews per month captures depth. A redesign that lets each risk manager cover more
-funds properly, or review the most important ones more often, raises capacity even if headcount and hours are unchanged.
+portfolios properly, or review the most important ones more often, raises capacity even if headcount and hours are
+unchanged.
 
 ### Speed
 Speed measures elapsed time, not effort. Time from data availability to signed-off output shows how soon a decision can
@@ -45,7 +46,7 @@ post-event reviews. Errors found in review show how much rework the workflow cre
 Influence measures whether the function's work changes what happens. Issues raised with portfolio managers, and the
 actions taken in response, show whether challenge is being made and heard. The share of the risk manager's time spent
 on challenge rather than on producing outputs shows whether the shift described in the
-[principles](03-principles.md#what-changes-for-the-risk-manager) is happening. Influence is the dimension that most
+[principles](03-principles.md#what-the-risk-manager-adds) is happening. Influence is the dimension that most
 directly reflects the purpose of the function, and the one most often left unmeasured.
 
 ## Baseline first
@@ -55,7 +56,7 @@ been redesigned, the old process can no longer be observed, and estimates made a
 The simplest baseline is a time study of one typical cycle of the workflow: each step, who did it, the hours it took
 and the elapsed time it added, recorded as the cycle runs. This is the same information as the current-state map in
 step 3 of the redesign method, so the two are done together. The baseline also records the current values of the other
-measures that apply, such as the number of funds reviewed in depth and the number of issues raised with portfolio
+measures that apply, such as the number of portfolios reviewed in depth and the number of issues raised with portfolio
 managers.
 
 A baseline taken from one cycle is approximate. It is still far better than none, and it can be refined by observing a
@@ -63,9 +64,9 @@ second cycle where the workflow varies a lot from one cycle to the next.
 
 ## Reinvestment plan
 Before a workflow is redesigned, the risk function decides what the freed time will be spent on, and records it. The
-plan names the activity, the expected volume, and who will do it: for example, monthly deep-dive reviews of the funds
-that appear most often in the exception queue, or a structured challenge session with each portfolio manager every
-quarter.
+plan names the activity, the expected volume, and who will do it: for example, monthly deep-dive reviews of the
+portfolios that appear most often in the exception queue, or a structured challenge session with each portfolio manager
+every quarter.
 
 After the redesign, the plan is tracked like any other commitment. If the freed time is not going where it was planned
 to go, the reason is found and either the plan or the work is changed. Without a plan, freed time is absorbed by
@@ -88,7 +89,7 @@ illustrative.**
 | Dimension | Measure | Before | After |
 |---|---|---|---|
 | Effort | Hours per cycle | 60 | 7 |
-| Capacity | Deep-dive fund reviews per month | 1 | 4 |
+| Capacity | Deep-dive portfolio reviews per month | 1 | 4 |
 | Speed | Working days from month end to signed-off report | 17 | 3 |
 | Speed | Days from a threshold breach to an explanation | 5 | 1 |
 | Quality | Figure errors found in review per cycle | 6 | 0 |
@@ -103,3 +104,7 @@ The scorecard reads as a whole. The hours saved (effort) are shown going into de
 reinvestment plan in action. The earlier report (speed) gives the committee time to act. Errors caught by the
 grounding check and reconciliation, rather than by a reviewer, improve quality. More issues raised, and more time spent
 on challenge, show the change in influence that the redesign was for.
+
+## Sources
+- Kaplan, R. and Norton, D. (1992). The Balanced Scorecard: Measures That Drive Performance. *Harvard Business
+  Review*. Measuring a function on several dimensions read together, rather than on one.

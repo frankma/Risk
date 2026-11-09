@@ -22,10 +22,15 @@ The repo presents a framework, not the history of how it was designed. Write in 
 should...", "each workflow is redesigned by..."). No decision logs, status markers, roadmaps or open questions in the
 content.
 
+"Portfolio" is the general term for a fund or a segregated mandate; say fund or mandate only where the type matters.
+The text stays jurisdiction-neutral, and each chapter ends with a Sources section listing the public standards and
+literature it draws on.
+
 ## Design rules for the reference implementations
 - **The AI never produces a number.** Every figure is computed by code from data. The narrative layer only writes text
-  around figures it is given, and a grounding check verifies that every number in generated text matches a computed
-  value; text that fails is rejected.
+  around figures it is given, at most combining them in simple ways (a sum, difference, ratio or percentage change), and
+  a grounding check verifies that every number in generated text is a computed value or is recomputed from computed
+  values; text that fails is rejected.
 - **Exceptions over everything.** Workflows rank what needs a human's attention rather than handing over everything.
 - **Every AI step has a human sign-off point and an audit trail** of what was generated and what the human changed.
 - **Examples run without an AI service.** The narrative layer has a deterministic template backend so tests and demos
