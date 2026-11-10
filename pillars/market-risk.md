@@ -124,9 +124,9 @@ do about them. Coverage improves at the same time: every portfolio is checked in
 risk manager had time to examine.
 
 ## Materiality and exceptions
-The queue holds the readings the risk manager should see today. An **exception** is a reading where a rule has fired;
-a **watch item** is a reading moving towards a threshold. Both come from a small number of kinds of rule, each owned
-and versioned as a
+The queue holds the readings the risk manager should see today. An **exception** is a reading that has crossed a limit
+or another rule's threshold; a **watch item** is a reading approaching one, which an early warning or a persistence
+rule picks up. Both come from a small number of kinds of rule, each owned and versioned as a
 [governed parameter](../framework/07-controls.md#materiality-thresholds-as-governed-parameters).
 **The example values below are illustrative and are not recommendations;** each risk function sets its own.
 
@@ -144,11 +144,11 @@ and versioned as a
 | Counterparty exposure | Exposure to one counterparty, net of collateral and with the add-on, above a share of its limit | Concentrated counterparty risk |
 | Risk budget | A bet using a large share of the budget with no return over several periods | Risk that has not earned its place |
 
-Breaches of an internal limit, including a tracking error range, a leverage limit, a stress loss beyond the drawdown
-headroom, large changes since the previous day, readings outside the portfolio's usual range and a fired risk budget
-rule are exceptions. Early warnings, persistent near-limit readings, jump to default above its early warning and
-counterparty exposure approaching its limit are watch items. A breach of a mandate or regulatory limit, such as a limit
-on one issuer's weight, is owned by compliance: it is shown beside the queue as a courtesy item and routed to
+Breaches of an internal limit, including a tracking error range and a leverage limit, are exceptions. So are a stress
+loss beyond the drawdown headroom, large changes since the previous day, readings outside the portfolio's usual range
+and a fired risk budget rule. Early warnings, persistent near-limit readings, jump to default above its early warning
+and counterparty exposure approaching its limit are watch items. A breach of a mandate or regulatory limit, such as a
+limit on one issuer's weight, is owned by compliance: it is shown beside the queue as a courtesy item and routed to
 compliance, while the risk function's own early warning below that limit stays in the queue. [Limits and
 escalation](../framework/04-limits-and-escalation.md) sets out which limits are internal and how a breach is handled.
 
