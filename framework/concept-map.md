@@ -88,7 +88,7 @@ the reasoning goes there.
 | Exception | A reading where a rule has fired | [Each pillar's rules](../pillars/market-risk.md#materiality-and-exceptions) | Controls, integrated view |
 | Watch item | A reading moving towards a threshold | [Each pillar's rules](../pillars/market-risk.md#materiality-and-exceptions) | Integrated view |
 | Ranked queue | What the human reviews instead of everything | [Principles](05-principles.md#4-exceptions-over-everything) | Market risk, redesign method |
-| Not assessed | How a portfolio with missing data is shown, never as clean | [Market risk](../pillars/market-risk.md#controls-specific-to-this-pillar) | Risk data, integrated view |
+| Not assessed | How a portfolio with missing data is shown, never as clean | [Risk data](03-risk-data.md#quality-before-computation) | Market risk, integrated view |
 | Watch list | The firm's single list of portfolios with unresolved issues, owned by the risk function | [Performance risk](../pillars/performance-risk.md#workflows-in-this-pillar) | Integrated view |
 | Pattern | A named chain of signals across pillars | [Integrated view](../pillars/integrated-view.md#patterns) | Integrated view's rules |
 | Lead time | How much earlier the view ranked a portfolio than the first escalation from any single pillar | [Integrated view](../pillars/integrated-view.md#measuring-value) | Integrated view |
@@ -124,7 +124,7 @@ the reasoning goes there.
 | Windows | Every performance measure shown over 1, 3, 12 and 36 months, with 12 months the default for the relative return rule | [Performance risk](../pillars/performance-risk.md#windows-and-significance) | Integrated view |
 | Benchmark tests | Specified in advance, investable, unambiguous, measurable, appropriate to the style and owned | [Performance risk](../pillars/performance-risk.md#benchmarks-and-peer-groups) | Sources of return, alpha and beta |
 | Linking method | How single-period attribution is made to sum over longer periods, held as a governed parameter | [Performance risk](../pillars/performance-risk.md#linking-attribution-over-time) | Alpha and beta |
-| Risk budget | Active risk allotted to bets, read against the return they earn | [Philosophy](00-philosophy.md#3-connection) | Market risk, which owns the review; performance risk's challenge pack; integrated view |
+| Risk budget | Active risk allotted to bets, read against the return they earn | [Market risk](../pillars/market-risk.md#workflows-in-this-pillar) | Philosophy; performance risk's challenge pack; integrated view |
 | Realised drawdown | The fall from a portfolio's peak value, absolute and relative to its benchmark | [Performance risk](../pillars/performance-risk.md#workflows-in-this-pillar) | Market risk, integrated view |
 | Headroom | A stress loss set against what is left of the drawdown tolerance | [Market risk](../pillars/market-risk.md#materiality-and-exceptions) | Integrated view |
 
