@@ -289,15 +289,17 @@ most liquid holdings leaves a more concentrated and more volatile portfolio, whi
 [integrated view](integrated-view.md) brings these signals together for each portfolio.
 
 ## Sources
-- International Organization of Securities Commissions (2018). *Recommendations for Liquidity Risk Management for
-  Collective Investment Schemes.* Matching assets to redemption terms, stress testing and liquidity management tools.
+- International Organization of Securities Commissions (2025). *Revised Recommendations for Liquidity Risk Management
+  for Collective Investment Schemes.* Matching assets to redemption terms, stress testing and liquidity management
+  tools.
 - International Organization of Securities Commissions (2023). *Anti-dilution Liquidity Management Tools: Guidance for
-  Effective Implementation.* Swing pricing and other tools that charge the cost of selling to the investors who leave.
+  Effective Implementation of the Recommendations for Liquidity Risk Management for Collective Investment Schemes.*
+  Swing pricing and other tools that charge the cost of selling to the investors who leave.
 - Financial Stability Board (2023). *Revised Policy Recommendations to Address Structural Vulnerabilities from Liquidity
   Mismatch in Open-Ended Funds.* Liquidity of assets set against the dealing terms an open-ended fund offers.
 - Brunnermeier, M. and Pedersen, L. (2009). Market Liquidity and Funding Liquidity. *Review of Financial Studies*. How
   margin calls and falling market liquidity reinforce each other.
 - European Securities and Markets Authority (2019). *Guidelines on Liquidity Stress Testing in UCITS and AIFs.*
-  Stressing both sides of the balance, and selling a slice of every holding against selling the most liquid first.
+  Stressing both sides of the balance, with a method of selling that reflects how the portfolio would be sold.
 - Bouchaud, J.-P., Bonart, J., Donier, J. and Gould, M. (2018). *Trades, Quotes and Prices: Financial Markets Under the
   Microscope.* Cambridge University Press. The square-root law of market impact.

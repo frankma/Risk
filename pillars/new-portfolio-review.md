@@ -169,8 +169,8 @@ data](../framework/03-risk-data.md); and the construction it declares is the one
 portfolio wants to hold is reviewed in [market risk](market-risk.md#workflows-in-this-pillar), not here.
 
 ## Sources
-- International Organization of Securities Commissions (2018). *Recommendations for Liquidity Risk Management for
-  Collective Investment Schemes.* Liquidity considered at the design stage, matching assets to the dealing terms
+- International Organization of Securities Commissions (2025). *Revised Recommendations for Liquidity Risk Management
+  for Collective Investment Schemes.* Liquidity considered at the design stage, matching assets to the dealing terms
   before launch.
 - Bailey, J. (1992). Evaluating Benchmark Quality. *Financial Analysts Journal*. The properties a benchmark should
   have before it is used.
