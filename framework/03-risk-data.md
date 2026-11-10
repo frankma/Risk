@@ -154,7 +154,7 @@ again tomorrow because nothing tracks its correction.
 
 The check falls to 0.75 hours a day, and every portfolio is checked in full before its measures are computed. Breaks
 are ranked by what they could change: a break affecting a large share of a portfolio, or a measure close to its
-threshold, ranks above one that could not move any reading the risk manager would see.
+limit, ranks above one that could not move any reading the risk manager would see.
 
 **The shift.** Data quality moves from a morning scan by eye to a check the risk engine runs on everything, every day,
 with the risk manager judging the few breaks that matter and the source owners fixing them at source.

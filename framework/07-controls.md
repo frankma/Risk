@@ -64,10 +64,9 @@ the arithmetic, which the system has already checked.
 
 ## The audit trail
 For every output, the workflow records: the input facts it was generated from, with their data
-[versions](03-risk-data.md#versioned-as-known); the threshold,
-prompt, template and model versions in force; the text as generated; every edit the human made; the grounding check
-result; who approved it and when. The record is kept in a form that can be retrieved by output, by portfolio and by
-date.
+[versions](03-risk-data.md#versioned-as-known); the threshold, prompt, template and model versions in force; the text
+as generated; every edit the human made; the grounding check result; who approved it and when. The record is kept in a
+form that can be retrieved by output, by portfolio and by date.
 
 The trail serves three purposes. It allows any figure or sentence in a released output to be traced back to its source.
 It shows how often humans change generated text and in what way, which is evidence of whether the AI step is working.

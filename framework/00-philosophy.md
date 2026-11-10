@@ -4,8 +4,8 @@ This chapter sets out what a risk function believes about investment risk, what 
 It is the ground the rest of the framework stands on: [investment risk](01-investment-risk.md) defines the scope and
 organises the recurring work into three pillars, [sources of return](02-sources-of-return.md) sets out where return
 comes from, and the [principles](05-principles.md) and [redesign method](06-redesign-method.md) set out how the risk
-manager does that work alongside AI. The beliefs do not
-depend on any particular model; any model a risk function uses is judged against them.
+manager does that work alongside AI. The beliefs do not depend on any particular model; any model a risk function
+uses is judged against them.
 
 **Investment risk management shows whether every portfolio takes the risks its mandate intends, in the size it can bear,
 and is paid for them, and challenges it where it does not.**
@@ -22,15 +22,15 @@ The capital at risk is the clients', not the firm's. So risk is judged against w
 the firm's franchise follows from keeping those promises.
 
 ## Beliefs
-Each is a position a reasonable firm could reject. Together they decide what the rules don't. (The figures are
+Each is a position a reasonable firm could reject. Together they decide what the rules do not. (The figures are
 illustrative.)
 
-1. **The mandate defines the risk.** Appetite belongs to the client, expressed as a benchmark, a tracking-error budget,
+1. **The mandate defines the risk.** Appetite belongs to the client, expressed as a benchmark, a tracking error budget,
    guidelines and liquidity terms, not a firm-wide number. Risk is judged against the promise: losing 20% when the
    benchmark loses 22% can be success.
 2. **Intended risk is the product; unintended risk is the hazard.** Clients pay for the bets the investment team means
-   to take. The first job is to find the ones nobody chose: a value tilt in a growth fund, a rates bet in a credit
-   fund, a crowded factor riding along with stock picks.
+   to take. The first job is to find the ones nobody chose: a value tilt in a growth portfolio, a rates bet in a
+   credit portfolio, a crowded factor riding along with stock picks.
 3. **Risk must earn its place.** Risk and return are two sides of one coin. Every unit of active risk should be paid for
    by expected return. The portfolio manager decides what to hold; where return does not justify the risk, the risk
    function challenges it and escalates what stays unresolved.
@@ -96,7 +96,7 @@ risk moves, and any other movement stays within a stated tolerance.
 **Any number opens on demand, the pieces add up, and each piece has a decision-maker.**
 - **Risk factor decomposition.** Tracking error split into factors (market, style, sector, country, currency, rates,
   spreads) and stock-specific risk. The shares sum to the whole: for instance, 55% sector bets, 25% currency, 20% stock
-  selection. A large share no one intended is belief 2 at work.
+  selection (illustrative figures). A large share no one intended is belief 2 at work.
 - **Performance attribution.** Active return split two ways: by decision, into allocation and selection, and by factor,
   into exposure × factor return plus the specific return.
 
@@ -111,8 +111,8 @@ within a stated tolerance.
 dimension joins risk and return over time; the [integrated view](../pillars/integrated-view.md) links signals across
 pillars.
 - **Return per unit of risk:** the information ratio, by bet and by manager.
-- **Risk budget against return, by source:** a bet that uses 30% of the budget and persistently earns nothing is
-  challenged; the portfolio manager resizes it, cuts it or explains why it stays.
+- **Risk budget against return, by source:** a bet that uses a large share of the budget and persistently earns
+  nothing is challenged; the portfolio manager resizes it, cuts it or explains why it stays.
 - **Forecast against outcome:** ex-ante tracking error against realised; days when losses exceeded VaR against the
   number expected.
 - **Drawdown against tolerance:** how close each portfolio runs to the loss, absolute or relative, that would end its

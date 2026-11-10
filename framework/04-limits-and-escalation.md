@@ -84,7 +84,7 @@ an active breach is decided within a day and a passive breach within a set numbe
 illustrative.)
 
 **Accepting a breach is a decision, not a lapse.** A breach accepted for a set period is recorded with its reason and an
-expiry date, and returns to the queue when it expires. A limit that is accepted repeatedly is a sign that it needs
+expiry date, and returns to the queue when it expires. Repeated acceptance is a sign that the limit needs
 recalibrating, not that it should be ignored.
 
 ## Who approves what
@@ -114,7 +114,7 @@ illustrative.**
 | 7 | Track the cure in a spreadsheet and chase it | Communicate | 1 | Ongoing |
 | 8 | Write the outcome up for the risk committee | Communicate | 0.5 | At month end |
 
-Each breach takes about 4.25 hours, and around 8 working days pass before a decision. Whether a breach was active or
+Each breach takes about 4.25 hours, and around 8.5 working days pass before a decision. Whether a breach was active or
 passive is often not recorded, accepted breaches have no expiry, and nothing shows when the same limit is breached again
 and again.
 
@@ -192,7 +192,7 @@ The general controls in [controls](07-controls.md) apply in full. Limits add fou
 - **Approvals expire.** An accepted breach returns to the queue on its expiry date.
 - **Hard limits stay with compliance.** The risk function routes a breach of a mandate or regulatory limit and does not
   handle it.
-- **Limits are reviewed by their behaviour.** A limit that is never approached, or breached repeatedly, is reviewed.
+- **Limits are reviewed by their behaviour.** A limit that is never approached, or is breached repeatedly, is reviewed.
 
 ## Measuring value
 The measures from [measuring value](08-measuring-value.md) that matter most for limits are speed and influence: how soon
@@ -204,10 +204,10 @@ a breach is known and decided, and whether the decisions are made and kept.
 | Capacity | Breaches handled with a full record, against those handled by email |
 | Quality | Breaches first noticed outside the risk function; decisions made after their deadline |
 | Influence | Breaches cured or accepted by a recorded decision; limits recalibrated from the record |
-| Limits specific | Share of internal limits never approached or breached repeatedly in a year |
+| Limits specific | Share of internal limits that were never approached, or were breached repeatedly, in a year |
 
 In the flagship example, each breach falls from about 4.25 hours to about 0.75 hours, and a decision follows in about a
-day rather than 8 working days. (The figures are illustrative.)
+day rather than 8.5 working days. (The figures are illustrative.)
 
 ## Sources
 - Financial Stability Board (2013). *Principles for an Effective Risk Appetite Framework.* Risk appetite expressed as

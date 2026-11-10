@@ -38,9 +38,9 @@ investments themselves.**
 
 Three parts of this definition do the work.
 
-- **The mandate is the reference point.** A fund that loses money when its benchmark loses more may be doing exactly
-  what was promised; a fund that gains money while taking risks its mandate does not allow is not. Risk is measured
-  against the promise, not against zero.
+- **The mandate is the reference point.** A portfolio that loses money when its benchmark loses more may be doing
+  exactly what was promised; a portfolio that gains money while taking risks its mandate does not allow is not. Risk
+  is measured against the promise, not against zero.
 - **There are three kinds of departure.** A portfolio can lose more than its investors were led to expect, fail to
   deliver its objective or benchmark, or fail to meet the calls on its cash in time and fairly. Each is a distinct
   failure with distinct causes, and each maps to one pillar.
@@ -159,8 +159,8 @@ performance risk are divided by time.
 
 The table shows typical entries only; each pillar section above lists the full coverage.
 
-Placing each measure in exactly one pillar keeps ownership clear. Where a measure serves two pillars, for example
-concentration, which drives both potential loss and the cost of selling, it is computed once and read by both.
+Each measure is owned by exactly one pillar, which keeps ownership clear. Where a measure serves two pillars, for
+example concentration, which drives both potential loss and the cost of selling, it is computed once and read by both.
 
 The division by time gives each forecast a realised counterpart in the other pillar, and comparing the two tests the
 forecast: ex-ante tracking error against ex-post tracking error, and value at risk against realised losses. Drawdown
