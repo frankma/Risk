@@ -138,10 +138,11 @@ and again.
 | 2 | Draft the notice to the portfolio manager and oversight | AI assistant | 0 | Overnight |
 | 3 | Grounding check on the notice | Risk engine | 0 | Overnight |
 | 4 | Confirm the breach and its classification; send the notice | Risk manager | 0.25 | Same morning |
-| 5 | Record the explanation; draft the decision note | AI assistant | 0 | On reply |
-| 6 | Decide: cure, accept for a set period, or escalate | Head of risk | 0.25 | 1 day |
-| 7 | Track the cure to its deadline; escalate a missed deadline | Risk engine | 0 | Ongoing |
-| 8 | Confirm the close; the record goes to the risk committee | Risk manager | 0.25 | Same day |
+| 5 | Record the portfolio manager's explanation | Risk engine | 0 | On reply |
+| 6 | Draft the decision note | AI assistant | 0 | On reply |
+| 7 | Decide: cure, accept for a set period, or escalate | Head of risk | 0.25 | 1 day |
+| 8 | Track the cure to its deadline; escalate a missed deadline | Risk engine | 0 | Ongoing |
+| 9 | Confirm the close; the record goes to the risk committee | Risk manager | 0.25 | Same day |
 
 Each breach takes about 0.75 hours, and a decision follows in about a day. Every breach carries its classification,
 its explanation, its decision and, where accepted, its expiry.

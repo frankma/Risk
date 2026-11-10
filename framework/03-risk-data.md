@@ -150,7 +150,8 @@ again tomorrow because nothing tracks its correction.
 | 5 | Draft a notice for each break to the owner of its source | AI assistant | 0 | Overnight |
 | 6 | Grounding check on every notice | Risk engine | 0 | Overnight |
 | 7 | Judge each ranked break; decide whether to run, wait or mark | Risk manager | 0.5 | 0.5 h |
-| 8 | Edit and send the notices; the risk engine tracks each break to closure | Risk manager | 0.25 | 0.25 h |
+| 8 | Edit and send the notices | Risk manager | 0.25 | 0.25 h |
+| 9 | Track each break to closure | Risk engine | 0 | Until closed |
 
 The check falls to 0.75 hours a day, and every portfolio is checked in full before its measures are computed. Breaks
 are ranked by what they could change: a break affecting a large share of a portfolio, or a measure close to its
