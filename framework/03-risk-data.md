@@ -177,7 +177,7 @@ The AI does not decide whether a break is real; the risk manager does. **The fun
 
 > Fund M's position total differs from its accounting value by 0.6% of net assets, above the 0.1% tolerance. The
 > difference matches one holding of 45,000 units of a bond that appears in the accounting records but not in the
-> position file. Fund M's measures are marked until the position file is corrected.
+> position file.
 
 **A missing classification.**
 

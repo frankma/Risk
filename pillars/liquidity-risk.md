@@ -145,7 +145,7 @@ funds and figures are illustrative.**
 
 > Fund D has received a redemption notice for 6.5% of net assets, above the 5.0% trigger, and the stress test has been
 > rerun. Redemption coverage falls from 2.4x to 1.6x, still above the 1.5x threshold. 80% of the redemption would be
-> met from the most liquid holdings, leaving the investors who stay with a less liquid portfolio.
+> met from the most liquid holdings.
 
 **Rising investor concentration.**
 

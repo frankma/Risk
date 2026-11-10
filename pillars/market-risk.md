@@ -180,10 +180,10 @@ limit. **The funds and figures are illustrative.**
 | Change | +0.47 percentage points |
 | Limit / utilisation | 2.50% / 92% |
 | Largest contributor (position) | Technology equity basket, +0.29 points |
-| Second contributor (factor) | US dollar exposure, +0.12 points |
+| Second contributor (position) | Energy equity basket, +0.12 points |
 
 > Fund A's 1-day 99% VaR rose from 1.84% to 2.31%, which is 92% of its 2.50% limit. Most of the 0.47 percentage point
-> rise came from the technology equity basket (0.29 points), with a further 0.12 points from higher US dollar exposure.
+> rise came from the technology equity basket (0.29 points), with a further 0.12 points from the energy equity basket.
 
 **Counterparty exposure near its limit.**
 
@@ -200,7 +200,7 @@ limit. **The funds and figures are illustrative.**
 
 > Fund B's exposure to Counterparty X rose by 1.3 percentage points in one day, from 3.1% to 4.4% of net assets, above
 > its one-day change threshold of 25%, and now stands at 88% of its 5.0% limit. The increase follows new currency
-> forwards traded with that counterparty on the previous day.
+> forwards traded on the previous day.
 
 **A reading that persists.**
 
