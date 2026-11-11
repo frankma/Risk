@@ -110,8 +110,8 @@ elapsed time; none of them requires risk expertise.
 **Step 4, owners.** Steps 1 and 3 move to the risk engine, which reads from source systems and computes the measures.
 Step 2 exists only because data was copied by hand and is eliminated. Step 4 is eliminated because the risk engine
 produces the output in its final format. Step 5 becomes an AI draft from the computed facts, edited by the risk manager.
-Step 6 is replaced by the grounding check and the system's reconciliation to source. Steps 7 and 8 stay with the risk
-manager and the head of risk.
+Step 6 is replaced by the grounding check and the system's reconciliation to source. Steps 7 and 8 stay with the head of
+risk, who now decides on the risk manager's proposal.
 
 **Step 5, redesigned flow.**
 
@@ -120,8 +120,8 @@ manager and the head of risk.
 | 1 | Load data, compute measures, compare to thresholds, rank exceptions | Risk engine | 0 | Same day |
 | 2 | Draft an explanation for each exception from the computed facts | AI assistant | 0 | Same day |
 | 3 | Grounding check on every draft | Risk engine | 0 | Same day |
-| 4 | Review exceptions, edit explanations, decide what to escalate | Risk manager | 6 | 2 days |
-| 5 | Sign off the two-page summary with drill-down | Head of risk | 1 | 1 day |
+| 4 | Review exceptions, edit explanations, propose what to escalate | Risk manager | 6 | 2 days |
+| 5 | Decide what to escalate; sign off the two-page summary with drill-down | Head of risk | 1 | 1 day |
 
 The cycle falls to around 7 hours and 3 working days. The output is now a ranked exception summary rather than a pack
 covering every portfolio at equal length, and the committee sees it around three weeks earlier.

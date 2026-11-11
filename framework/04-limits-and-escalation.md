@@ -125,7 +125,7 @@ and again.
 - Classification is added as a step for the risk engine, which compares the reading with the previous day's trades and
   market moves; the risk manager confirms it.
 - Steps 3 to 5 become an AI draft of the notice from the facts, and a draft of the decision note once the portfolio
-  manager has replied, both edited by the risk manager.
+  manager has replied, both edited by the risk manager; the risk engine records the reply.
 - Step 6 stays with the head of risk.
 - Steps 7 and 8 move to the risk engine, which tracks each breach to its deadline, escalates one that is missed and
   assembles the record for the committee.
