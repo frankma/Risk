@@ -103,9 +103,9 @@ test every time a large redemption arrived, concentration rose or market liquidi
 days. The redesigned process does exactly that, which is a capability the old process did not have at any speed.
 
 ## Materiality and exceptions
-An **exception** in this pillar is a rule that has fired: a reading that shows a portfolio may not meet its calls on
-cash fairly, or an event that should trigger the stress test. A **watch item** is a reading drifting towards a
-threshold. Each rule is a [governed
+An **exception** in this pillar is a reading that has crossed a rule's threshold: one that shows a portfolio may not
+meet its calls on cash fairly, or an event that should trigger the stress test. A **watch item** is a reading drifting
+towards a threshold. Each rule is a [governed
 parameter](../framework/07-controls.md#materiality-thresholds-as-governed-parameters). **The example values below are
 illustrative and are not recommendations;** each risk function sets its own.
 

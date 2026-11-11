@@ -29,9 +29,10 @@ for every portfolio every day and connect them.
 The view reads each pillar's signals for each portfolio. Every signal carries a state and the date it was computed. The
 states are the ones each pillar chapter assigns to its rules:
 
-- **Exception:** the pillar's rule has fired, such as a limit breach, a fired trigger or a persistent shortfall.
-- **Watch:** the reading is moving towards a threshold, such as an early warning, a reading drifting towards a
-  threshold, or a shortfall that is not yet persistent.
+- **Exception:** the reading has crossed a limit or another rule's threshold, such as a limit breach, a fired trigger
+  or a persistent shortfall.
+- **Watch:** the reading is approaching one: it is above an early warning, is drifting towards a threshold, or is a
+  shortfall that is not yet persistent.
 - **Normal:** neither.
 
 The signals, each defined in its pillar chapter's rules:

@@ -115,8 +115,9 @@ prepared from data that is independent of the portfolio manager. The risk manage
 explains; and the actions agreed are tracked until they are closed.
 
 ## Materiality and exceptions
-An **exception** in this pillar is a rule that has fired: a sign that the portfolio is not delivering its promise, or
-not in the way it promised. A **watch item** is an early sign that has not yet persisted. Each rule is a [governed
+An **exception** in this pillar is a reading that has crossed a rule's threshold: a sign that the portfolio is not
+delivering its promise, or not in the way it promised. A **watch item** is an early sign that has not yet persisted.
+Each rule is a [governed
 parameter](../framework/07-controls.md#materiality-thresholds-as-governed-parameters). **The example values below are
 illustrative and are not recommendations;** each risk function sets its own.
 

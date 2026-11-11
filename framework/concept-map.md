@@ -85,8 +85,8 @@ the reasoning goes there.
 
 | Concept | What it is | Defined in | Used by |
 |---|---|---|---|
-| Exception | A reading where a rule has fired | [Each pillar's rules](../pillars/market-risk.md#materiality-and-exceptions) | Controls, integrated view |
-| Watch item | A reading moving towards a threshold | [Each pillar's rules](../pillars/market-risk.md#materiality-and-exceptions) | Integrated view |
+| Exception | A reading that has crossed a limit or another rule's threshold | [Each pillar's rules](../pillars/market-risk.md#materiality-and-exceptions) | Controls, integrated view |
+| Watch item | A reading approaching a limit or threshold, picked up by an early warning or a persistence rule | [Each pillar's rules](../pillars/market-risk.md#materiality-and-exceptions) | Integrated view |
 | Ranked queue | What the human reviews instead of everything | [Principles](05-principles.md#4-exceptions-over-everything) | Market risk, redesign method |
 | Not assessed | How a portfolio with missing data is shown, never as clean | [Market risk](../pillars/market-risk.md#controls-specific-to-this-pillar) | Risk data, integrated view |
 | Watch list | The firm's single list of portfolios with unresolved issues, owned by the risk function | [Performance risk](../pillars/performance-risk.md#workflows-in-this-pillar) | Integrated view |
