@@ -73,8 +73,7 @@ redemption, is either handled outside the process by hand or waits for the next 
 **Owner assignment.**
 
 - Steps 1 to 3 move to the risk engine, which assigns liquidity to every holding and applies the scenarios every day.
-- Step 4 is replaced by the grounding check and the system's reconciliation to source, and is eliminated as a manual
-  step.
+- Step 4 is replaced by the grounding check and the system's reconciliation to source.
 - Steps 5 and 7 become AI drafts: the narrative for each portfolio, and the board paper.
 - Step 6 stays with the risk manager, who also proposes the calibration of the scenarios, which the risk function owns,
   and makes the recommendation on whether to use liquidity management tools.

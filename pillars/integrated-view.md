@@ -161,9 +161,9 @@ issuer concentration in market risk, and, because those holdings take longer to 
 liquidity risk. Counted twice, it would make a portfolio look as if two pillars were elevated when there is one driver.
 The view groups signals that share a driver and counts the group once for breadth. The groups are part of the governed
 rules: concentration in market risk and the time to sell the same holdings form one group, as do margin and collateral
-calls and the fall in coverage they cause, while investor concentration,
-which concerns who owns the portfolio rather than what it holds, is a separate driver. The pattern *concentrated and
-hard to sell* still names the combination, so that it is seen, but it does not count as two pillars.
+calls and the fall in coverage they cause, while investor concentration, which concerns who owns the portfolio rather
+than what it holds, is a separate driver. The pattern *concentrated and hard to sell* still names the combination, so
+that it is seen, but it does not count as two pillars.
 
 ## The firm's footprint
 Portfolios do not net, so the firm's footprint is read across them rather than ranked within them. The pillars compute
@@ -271,8 +271,8 @@ dimensions come from [measuring value](../framework/08-measuring-value.md).
 | Influence | Ranked portfolios discussed by the committee, and actions taken |
 
 ## Ownership and connections
-The risk function owns the view: its patterns, its grouping of drivers, its ranking rules and its
-footprint thresholds. Risk managers judge the ranked portfolios as they appear and add them to the watch list, which the
+The risk function owns the view: its patterns, its grouping of drivers, its ranking rules and its footprint thresholds.
+Risk managers judge the ranked portfolios as they appear and add them to the watch list, which the
 risk function owns, or escalate them. The risk committee sees the top-ranked portfolios, each with its account and the
 signals behind it, and the firm's footprint, and decides what the firm should do.
 

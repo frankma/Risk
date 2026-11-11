@@ -133,7 +133,7 @@ rule picks up. Both come from a small number of kinds of rule, each owned and ve
 | Kind of rule | Example (illustrative) | What it catches |
 |---|---|---|
 | Level against limit | VaR above its limit, or above an early warning such as 90% of it | Breaches and near-breaches |
-| Change since the previous day | Any measure with a limit moving by more than a set share in one day, each with its own threshold, such as VaR | Sudden shifts in risk |
+| Change since the previous day | Any measure with a limit, such as VaR, moving by more than a set share in one day; each measure has its own threshold | Sudden shifts in risk |
 | Against the portfolio's own history | A measure, such as volatility, outside its usual range | Unusual risk for this portfolio |
 | Headroom against drawdown tolerance | A stress loss larger than the headroom left before the drawdown tolerance, absolute or relative, or above an early warning of it | Mandates nearing the loss that would end them |
 | Ex-ante tracking error | Outside the range the mandate terms imply, or beyond an early warning of it | Too much or too little active risk |
@@ -335,7 +335,7 @@ capacity: how soon a portfolio manager hears about an issue, and how many portfo
 | Capacity | Portfolios reviewed in depth per day |
 | Quality | Issues found late, for example a limit breach first noticed by someone else |
 | Influence | Issues raised with portfolio managers and actions taken |
-| Pillar-specific | Share of drafts that needed substantive edits; backtesting exceptions within expectation |
+| Pillar-specific | Share of drafts that needed substantive edits; backtesting breaches within expectation |
 
 In the flagship example, the time to the first message falls from about five hours to about an hour and a half,
 and the 4 hours freed each day are tracked against the reinvestment plan. (The figures are illustrative.)

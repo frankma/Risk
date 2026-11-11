@@ -45,7 +45,7 @@ relative to its benchmark; market risk reads the headroom it leaves before the d
 review is also market risk's, and its exceptions come into the challenge pack here.
 
 Relative return and drawdown are computed every day over a rolling window, a governed parameter illustrated here as 12
-months, so that a shortfall reaches watch as soon as it forms rather than at the end of a quarter. Persistence is still
+months, so that a shortfall reaches watch as soon as it forms rather than at the end of a quarter. Persistence is
 counted in whole periods. The windows, and the significance shown beside each figure, are set out under
 [design choices](performance-risk.md#windows-and-significance).
 
@@ -210,7 +210,7 @@ Sortino ratio and absolute drawdown.
 ### Windows and significance
 Every measure is shown over **1, 3, 12 and 36 months**. The 12-month window is the default for the relative return
 rule; a shortfall that shows on both the 1-month and the 3-month windows is an earlier watch, because the shorter
-windows agreeing is less likely to be noise than either alone. Persistence is still counted in whole periods.
+windows agreeing is less likely to be noise than either alone. Persistence is counted in whole periods.
 
 Beside every information ratio, the **t-statistic** shows how much of it could be noise: the ratio times the square root
 of the number of years measured. At an information ratio of 0.5 it takes about 16 years to reach a t-statistic of 2, as
@@ -291,7 +291,7 @@ influence measures, because the purpose of the review is to change what happens.
 | Capacity | Reviews held per quarter at full depth |
 | Pillar-specific | Share of agreed actions closed by their due date; time on the watch list before an outcome |
 
-In the flagship example, preparation and follow-up fall from 12.5 hours to 3.5 hours per review, and agreed minutes
+In the flagship example, each review falls from 12.5 hours to 3.5 hours, and agreed minutes
 follow in 4 working days instead of 13. The freed time is directed in advance, for example to reviewing portfolios more
 often when they are on the watch list. (The figures are illustrative.)
 

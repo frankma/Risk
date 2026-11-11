@@ -66,7 +66,7 @@ allow manual checking to be reduced.
 ### 4. Exceptions over everything
 **What it means.** A manual process cannot review every portfolio in depth every day, so it samples or reviews
 everything at a shallow level. A redesigned workflow lets the system check every portfolio against every threshold and
-rank the results, so that the human reviews what is material instead of handing over everything.
+rank the results, so that the human reviews what is material instead of everything.
 
 **In practice.** The main output of a monitoring workflow is a ranked exception queue with an explanation for each
 item, not a long pack. The materiality thresholds that decide what counts as an exception are set by the risk function
