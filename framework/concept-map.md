@@ -64,7 +64,7 @@ the reasoning goes there.
 |---|---|---|---|
 | Hard limit | A mandate or regulatory limit; compliance owns its breach process, and the risk function watches it as a courtesy | [Limits and escalation](04-limits-and-escalation.md#where-limits-come-from) | Investment risk, market risk |
 | Internal limit | A soft limit the risk function sets where the mandate is silent, to produce insight first and constrain when judged necessary | [Limits and escalation](04-limits-and-escalation.md#what-internal-limits-are-for) | Market risk, liquidity risk, controls |
-| Early warning | A level below a hard or internal limit; a reading above it is a watch item | [Limits and escalation](04-limits-and-escalation.md#where-limits-come-from) | All pillars |
+| Early warning | A level ahead of a hard or internal limit, or on a measure with no limit; a reading beyond it is a watch item | [Limits and escalation](04-limits-and-escalation.md#where-limits-come-from) | All pillars |
 | Breach lifecycle | Detect, verify, classify, notify, explain, decide, cure and close | [Limits and escalation](04-limits-and-escalation.md#the-breach-lifecycle) | Market risk, liquidity risk |
 | Active and passive breach | A breach caused by a trade or decision, or by markets, flows or corporate actions | [Limits and escalation](04-limits-and-escalation.md#the-breach-lifecycle) | Market risk |
 

@@ -13,12 +13,12 @@ Limits come in three layers.
 |---|---|---|
 | Mandate and regulatory limits | Limits written in the portfolio's governing documents or in regulation, such as a maximum weight in one issuer | Compliance |
 | Internal limits | Limits the risk function sets where the mandate is silent, such as an absolute risk limit for a benchmarked portfolio | The risk function |
-| Early warnings | Levels set below a limit of either kind, so that a reading is seen before it breaches | The risk function |
+| Early warnings | Levels set ahead of a limit of either kind, so that a reading is seen before it breaches, or on a measure that has no limit | The risk function |
 
 **Mandate and regulatory limits are hard limits.** A breach must be cured, and compliance owns their legal reading, the
 breach process, cures and any extension, as set out in [investment risk](01-investment-risk.md#scope-and-boundaries).
 The risk function watches them as a courtesy: it shows each one beside its own readings, sets its own early warnings
-below them, and routes any breach it sees to compliance rather than handling it.
+ahead of them, and routes any breach it sees to compliance rather than handling it.
 
 **Internal limits are soft limits.** They are [governed
 parameters](07-controls.md#materiality-thresholds-as-governed-parameters), owned by the risk function, and they cover
@@ -27,7 +27,9 @@ portfolio may lose in total; an internal limit on value at risk says it for the 
 set for its portfolio, from what the mandate intends, not copied from a firm-wide number. For a new portfolio, internal
 limits are first set in the [new portfolio review](../pillars/new-portfolio-review.md).
 
-**Early warnings sit below every limit,** hard or soft. A reading above an early warning is a watch item, not a breach.
+**Early warnings sit ahead of every limit,** hard or soft, on the side a reading approaches from: below a ceiling and
+above a floor. A measure with no limit can carry an early warning of its own. A reading beyond an early warning is a
+watch item, not a breach.
 
 ## What internal limits are for
 Internal limits exist first to produce insight: they keep the portfolio manager, the risk manager and oversight on top
@@ -92,7 +94,7 @@ Each approval is recorded, and each one expires.
 
 | Decision | Who approves | Record |
 |---|---|---|
-| Acknowledging a reading above an early warning | Risk manager | The reading, the reason it stands and when it will be looked at again |
+| Acknowledging a reading beyond an early warning | Risk manager | The reading, the reason it stands and when it will be looked at again |
 | Accepting a breach of an internal limit for a set period | Head of risk | The breach, the reason, the expiry date and any conditions |
 | Changing an internal limit or how it is calibrated | Risk committee | The old and new values, the reason and the date it takes effect |
 | Anything about a mandate or regulatory limit | Compliance, under its own process | Routed by the risk function, with the evidence |
