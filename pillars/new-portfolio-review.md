@@ -93,10 +93,11 @@ uses a workbook nobody reruns, and nothing checks on launch day that what was ag
 | 3 | Run the pillars' measures on the model portfolio; test the benchmark and the liquidity profile | Risk engine | 0 | Same day |
 | 4 | Check data readiness; propose internal limits, early warnings and the alpha and beta construction | Risk engine | 0 | Same day |
 | 5 | Settle limits and construction with the portfolio manager | Risk manager | 3 | 3 days |
-| 6 | Draft the readiness summary; grounding check | AI assistant, risk engine | 0 | Minutes |
-| 7 | Write the opinion and any conditions | Risk manager | 2 | 1 day |
-| 8 | Sign off the opinion; product governance decides | Head of risk | 1 | 2 days |
-| 9 | On launch day, confirm every agreed item is in place | Risk engine | 0 | Launch day |
+| 6 | Draft the readiness summary | AI assistant | 0 | Minutes |
+| 7 | Grounding check on the summary | Risk engine | 0 | Minutes |
+| 8 | Write the opinion and any conditions | Risk manager | 2 | 1 day |
+| 9 | Sign off the opinion; product governance decides | Head of risk | 1 | 2 days |
+| 10 | On launch day, confirm every agreed item is in place | Risk engine | 0 | Launch day |
 
 The review falls to about 8 hours and 7 working days, and it can start as soon as draft documents exist.
 
