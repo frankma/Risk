@@ -72,27 +72,43 @@ the fee, tells the client whether selection is what they are paying for.
   decision-maker. At an information ratio of 0.5, it takes about 16 years to reach a t-statistic of 2.
 
 ## How does one holding split?
-A holding's weight is split, not its return. The beta portfolio holds the portfolio's own weight in each asset class
-and sector, and follows the index inside each one. A security's beta weight is the portfolio's sector weight times the
-security's weight in the sector index. Its alpha weight is the portfolio's weight less the beta weight.
+The split rests on three portfolios, each of which could be held.
 
-Take a portfolio with 20% of net assets in one sector, where the sector index holds X at 15%, Y at 10% and the rest
-at 75%. (The figures are illustrative.)
+| Portfolio | What it holds | What its return gives |
+|---|---|---|
+| **Benchmark portfolio** | The benchmark or strategic allocation in the governing documents, built mostly from indices | Policy beta |
+| **Top-down portfolio** | Investable ETFs, futures and cash, carrying the real portfolio's exposure to every market and factor, each day | Active beta: its return less the benchmark portfolio's |
+| **Real portfolio** | What the portfolio actually holds | Alpha: its return less the top-down portfolio's |
 
-| Security | Portfolio weight | Beta weight | Alpha weight | Return | Beta contribution | Alpha contribution |
-|---|---|---|---|---|---|---|
-| X | 5.0% | 3.0% | +2.0% | 10% | 0.30% | +0.20% |
-| Y | 0.0% | 2.0% | -2.0% | 2% | 0.04% | -0.04% |
-| Rest of sector | 15.0% | 15.0% | 0.0% | 5% | 0.75% | 0.00% |
-| **Total** | **20.0%** | **20.0%** | **0.0%** | | **1.09%** | **0.16%** |
+Beta is the step from the benchmark portfolio to the top-down portfolio, and every top-down call is measured there.
+Alpha is the step from the top-down portfolio to the real portfolio: the top-down portfolio has carried all the beta
+out, and what is left is selection. The top-down portfolio follows exposure as it is held, whether or not anyone chose
+it, and the record then divides the first step: exposure with a call on record is a tilt or timing, and exposure with
+no record is unintended beta.
 
-The holding in X earned 0.50%, of which 0.30% is beta and 0.20% is alpha. The alpha weights sum to zero within each
-sector, so together they form a long-short book: long what the manager prefers, short what is preferred less. Every
-portfolio has this book, including one that never shorts a security.
+A holding's weight is split, not its return. Take one sector, where the benchmark portfolio holds 16% of net assets
+and the real portfolio 20%, a tilt on record. The sector index holds X at 15%, Y at 10% and the rest at 75%. The
+top-down portfolio holds 20% in an ETF on the sector index, shown here by what is inside it. (The figures are
+illustrative.)
 
-The book still leans slightly towards the market, because X moves more with it than Y does. The
-[alpha and beta method](../pillars/alpha-and-beta-method.md) takes that lean out as well. In this example, that leaves
-1.14% from top-down and 0.11% from bottom-up, 1.25% in total.
+| Security | Benchmark portfolio | Top-down portfolio | Real portfolio | Real less top-down | Return |
+|---|---|---|---|---|---|
+| X | 2.4% | 3.0% | 5.0% | +2.0% | 10% |
+| Y | 1.6% | 2.0% | 0.0% | -2.0% | 2% |
+| Rest of sector | 12.0% | 15.0% | 15.0% | 0.0% | 5% |
+| **Total** | **16.0%** | **20.0%** | **20.0%** | **0.0%** | |
+| **Return from the sector** | **0.87%** | **1.09%** | **1.25%** | **0.16%** | |
+
+Of the real portfolio's 5.0% in X, 2.4% is the benchmark's, 0.6% is the tilt's and 2.0% is the manager's selection.
+The weights of the real portfolio less the top-down portfolio sum to zero within each sector, so together they form a
+long-short book: long what the manager prefers, short what is preferred less. Every portfolio has this book, including
+one that never shorts a security.
+
+The book still leans slightly towards the market, because X moves more with it than Y does. The top-down portfolio
+carries that lean too, as a small position in index futures that nobody called; the
+[alpha and beta method](../pillars/alpha-and-beta-method.md#building-the-top-down-portfolio) sets out how. In this
+example, the sector's 1.25% is 0.87% policy beta, 0.22% from the tilt, 0.05% unintended beta and 0.11% alpha: 1.14%
+from top-down and 0.11% from bottom-up. The tilt's funding sits in other sectors and is left out here.
 
 ## Sources
 - Brinson, G., Hood, L. and Beebower, G. (1986). Determinants of Portfolio Performance. *Financial Analysts Journal*.

@@ -42,8 +42,10 @@ the reasoning goes there.
 | Tilts | The manager's standing positions against that allocation, recorded when taken | [Sources of return](02-sources-of-return.md#who-chose-each-part) | Alpha and beta method |
 | Timing | The return from recorded changes in exposure over time | [Sources of return](02-sources-of-return.md#who-chose-each-part) | Alpha and beta method |
 | Unintended beta | Any exposure with no record that anyone chose it; a test of record, not of motive | [Sources of return](02-sources-of-return.md#who-chose-each-part) | Performance risk's source-of-return rule, alpha and beta method |
-| Beta portfolio | The portfolio's own weight in each asset class and sector, following the index inside each | [Sources of return](02-sources-of-return.md#how-does-one-holding-split) | Alpha and beta method |
-| Long-short book | The alpha weights, which sum to zero within each sector | [Sources of return](02-sources-of-return.md#how-does-one-holding-split) | Alpha and beta method |
+| Benchmark portfolio | The benchmark or strategic allocation in the governing documents, built mostly from indices; its return is policy beta | [Sources of return](02-sources-of-return.md#how-does-one-holding-split) | Alpha and beta method |
+| Top-down portfolio | Investable ETFs, futures and cash carrying the real portfolio's exposure as held; its return less the benchmark portfolio's is active beta, which the record divides | [Sources of return](02-sources-of-return.md#how-does-one-holding-split) | Alpha and beta method, new portfolio review |
+| Real portfolio | What the portfolio actually holds; its return less the top-down portfolio's is alpha | [Sources of return](02-sources-of-return.md#how-does-one-holding-split) | Alpha and beta method |
+| Long-short book | The real portfolio's weights less the top-down portfolio's, which sum to zero within each sector | [Sources of return](02-sources-of-return.md#how-does-one-holding-split) | Alpha and beta method |
 
 ## Risk data
 
@@ -133,8 +135,9 @@ the reasoning goes there.
 | Concept | What it is | Defined in | Used by |
 |---|---|---|---|
 | Beta | The return from market and factor exposure, however it arose | [Alpha and beta method](../pillars/alpha-and-beta-method.md) | Sources of return, performance risk |
-| Alpha | The add-on return from security selection, neutral to all beta at every moment | [Alpha and beta method](../pillars/alpha-and-beta-method.md) | Sources of return, performance risk |
+| Alpha | The add-on return from security selection: the real portfolio's return less the top-down portfolio's | [Alpha and beta method](../pillars/alpha-and-beta-method.md) | Sources of return, performance risk |
 | Gross return and the bridge | The split's basis, and the link from it to the net return | [Alpha and beta method](../pillars/alpha-and-beta-method.md#scope-and-basis) | Performance risk |
 | Declared factor list | The factors alpha must stay neutral to, held as a governed parameter | [Alpha and beta method](../pillars/alpha-and-beta-method.md) | Performance risk |
-| Factor return | The return of the investable index or basket for a declared factor | [Alpha and beta method](../pillars/alpha-and-beta-method.md#neutral-to-all-of-beta) | Philosophy |
+| Factor return | The return of the ETF or future that carries a declared factor | [Alpha and beta method](../pillars/alpha-and-beta-method.md#building-the-top-down-portfolio) | Philosophy |
+| Cost of holding beta | The top-down portfolio's instruments against the indices they track, on its own line beside the fee | [Alpha and beta method](../pillars/alpha-and-beta-method.md#the-four-beta-lines) | That page only |
 | Booked and derived books | Two routes to the same split, with different evidence | [Alpha and beta method](../pillars/alpha-and-beta-method.md#booked-or-derived) | That page only |
