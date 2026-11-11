@@ -181,5 +181,5 @@ footprint across portfolios.
 ## Sources
 - Financial Stability Board (2023). *Revised Policy Recommendations to Address Structural Vulnerabilities from Liquidity
   Mismatch in Open-Ended Funds.* Liquidity matched to dealing terms as part of what an open-ended fund promises.
-- International Organization of Securities Commissions (2018). *Recommendations for Liquidity Risk Management for
-  Collective Investment Schemes.* Both sides of the liquidity balance, and the tools for managing it.
+- International Organization of Securities Commissions (2025). *Revised Recommendations for Liquidity Risk Management
+  for Collective Investment Schemes.* Both sides of the liquidity balance, and the tools for managing it.

@@ -223,5 +223,5 @@ morning scan. (The figures are illustrative.)
   Accuracy, completeness, timeliness and adaptability of the data behind risk reporting, and its governance.
 - DAMA International (2017). *DAMA-DMBOK: Data Management Body of Knowledge*, 2nd edition. Technics Publications. Data
   quality dimensions, ownership of data and golden sources.
-- Snodgrass, R. (2000). *Developing Time-Oriented Database Applications in SQL.* Morgan Kaufmann. Recording both the
+- Snodgrass, R. (1999). *Developing Time-Oriented Database Applications in SQL.* Morgan Kaufmann. Recording both the
   date a fact describes and the date it became known, so that past states can be reproduced.
