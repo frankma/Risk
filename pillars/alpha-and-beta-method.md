@@ -27,11 +27,12 @@ an investable stand-in or cash serves as the benchmark portfolio, and the gap is
 | Portfolio | What it holds | What its return gives |
 |---|---|---|
 | Benchmark portfolio | The benchmark or strategic allocation in the governing documents, built mostly from indices | Policy beta |
-| Top-down portfolio | Investable ETFs, futures and cash, carrying the real portfolio's exposure to every declared factor on each day | Active beta: its return less the benchmark portfolio's |
+| Top-down portfolio | Investable ETFs, futures and cash, carrying the real portfolio's exposure to every declared factor on each day | Active beta, after the cost of holding it: its return less the benchmark portfolio's |
 | Real portfolio | The portfolio's actual holdings | Alpha: its return less the top-down portfolio's |
 
-The returns chain. The real portfolio's gross return is policy beta plus active beta plus alpha, and each step is the
-return of a portfolio that could be held, so no line is what a model leaves over.
+The returns chain. The real portfolio's gross return is the benchmark portfolio's return, plus the step to the
+top-down portfolio, plus the step to the real portfolio. The top-down and real portfolios can be held, and the
+benchmark portfolio is the promise they are measured against, so no line is what a model leaves over.
 
 The top-down portfolio follows exposure as held, not as called. If it held only the calls on record, the beta that
 security picks carry would stay in the last step and be counted as alpha. Because it holds all of the real portfolio's
@@ -40,8 +41,8 @@ exposure, the last step is selection alone, and the record divides the step befo
 ## The four beta lines
 The [sources of return](../framework/02-sources-of-return.md#who-chose-each-part) chapter groups top-down return by
 whose call it was. The method keeps the manager's branch as two lines, because timing needs its own skill test. Policy
-beta is the benchmark portfolio's return. The other three lines divide the step from the benchmark portfolio to the
-top-down portfolio.
+beta is the benchmark portfolio's return. The other three lines, with the cost of holding beta set out below, divide
+the step from the benchmark portfolio to the top-down portfolio.
 
 | Line | What it is | Who decides |
 |---|---|---|
@@ -82,7 +83,8 @@ and leave out the cost of holding the instruments.)
 | **Real portfolio** | **1.25%** | **+0.11%** | **Alpha** |
 
 The same step applies to every declared factor: market, style, sector, country, currency, rates and spreads. Each is
-carried by an ETF or a future, and the top-down portfolio holds each in the amount of the real portfolio's exposure.
+carried by an ETF or a future on the index or basket that defines it, and the top-down portfolio holds each in the
+amount of the real portfolio's exposure.
 The book's return divides into exposure times factor return, which the top-down portfolio carries, and specific return,
 which is alpha. This joins the two attribution splits in the [philosophy](../framework/00-philosophy.md#2-drill-in).
 

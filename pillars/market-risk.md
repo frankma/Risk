@@ -22,7 +22,7 @@ portfolios are outside their intended risk, or why, is a candidate for removal r
 | Daily monitoring and exceptions | Daily | Ranked queue, explained | Risk manager | What to escalate or query |
 | Risk budget review | Daily use; monthly review | Budget use against realised return, by bet | Risk manager | Which bets to challenge |
 | Periodic risk report | Monthly | Risk profile of each portfolio | Risk committee | Whether profiles fit appetite |
-| Stress and scenario testing | Monthly, on events | Stress losses by portfolio | Risk committee | Whether tolerable |
+| Stress and scenario testing | Daily run; library reviewed monthly and on events | Stress losses by portfolio | Risk committee | Whether tolerable |
 | Pre-trade what-ifs | On request | What a proposed trade adds to risk | Portfolio managers | Whether and how much to trade |
 | Counterparty exposure monitoring | Daily | Exposure against limits | Risk manager | Whether to reduce exposure |
 | New instrument review | On request | How it is measured | Risk manager, investment team | Whether it can be held |
