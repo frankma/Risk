@@ -78,7 +78,7 @@ Two rules make it work:
 | [Performance risk](pillars/performance-risk.md) | The pillar's workflows; design choices for risk-adjusted measures, windows and significance, benchmarks and peer groups, and linking attribution over time; portfolio manager reviews run on risk's agenda with an evidence-based challenge pack. |
 | [Integrated view](pillars/integrated-view.md) | One portfolio health view that ranks portfolios where signals across pillars combine, before any one pillar would escalate them, and shows the firm's footprint across portfolios. |
 | [New portfolio review](pillars/new-portfolio-review.md) | What must be in place before a portfolio launches or changes materially: confirmed mandate terms, a tested benchmark, limits, a liquidity profile that fits the dealing terms, data readiness, the alpha and beta construction and liquidity tools; the risk function's recorded opinion; the review redesigned with a launch-day check. |
-| [Alpha and beta method](pillars/alpha-and-beta-method.md) | How the split is computed for publicly traded holdings on gross returns: neutralising the book, booked and derived routes, the factor list, the test and its limits. |
+| [Alpha and beta method](pillars/alpha-and-beta-method.md) | How the split is computed for publicly traded holdings on gross returns: the benchmark, top-down and real portfolios, booked and derived routes, the factor list, the test and its limits. |
 | **Index** | |
 | [Concept map](framework/concept-map.md) | The main concepts on one page: what each is, where it is defined and which chapters use it. |
 
