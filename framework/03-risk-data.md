@@ -14,7 +14,7 @@ The risk engine reads the same domains for every portfolio, whatever its vehicle
 |---|---|---|
 | Positions | Each portfolio's holdings, cash and derivative positions, with collateral posted and received | Every pillar |
 | Prices | The price of each holding, with its source and the date it last changed | Every pillar |
-| Market data | Index and basket returns, rates, spreads, volatilities and trading volumes | Market and liquidity risk, alpha and beta |
+| Market data | Index and basket returns, the prices and holding costs of the ETFs and futures in top-down portfolios, rates, spreads, volatilities and trading volumes | Market and liquidity risk, alpha and beta |
 | Reference data | What each security is: issuer, type, sector, country, currency, rating, maturity | Every pillar |
 | Benchmarks | Each benchmark's constituents and weights | Market and performance risk, alpha and beta |
 | Flows and investors | Subscriptions, redemptions, withdrawals and the shares held by the largest investors and distributors | Liquidity risk |

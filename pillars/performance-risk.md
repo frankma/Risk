@@ -151,7 +151,7 @@ decides which to ask. **The funds and figures are illustrative.**
 |---|---|
 | Fund | Fund G |
 | Excess return over benchmark before fees, last 12 months | 2.1% |
-| Split of the excess: unintended beta from currency / alpha | 1.6% / 0.5% |
+| Split of the excess: unintended beta from currency, after its holding cost / alpha | 1.6% / 0.5% |
 | Currency in confirmed mandate terms | Not part of the stated strategy |
 | Currency tilt on record | None |
 | Average unhedged US dollar exposure | 14% of net assets |
@@ -222,7 +222,7 @@ A benchmark decides every relative figure, so it is tested before it is used and
 benchmark is:
 
 - **Specified in advance,** before the period it judges.
-- **Investable,** so the portfolio could have held it instead.
+- **Investable,** so the portfolio could have tracked it instead, at a known cost.
 - **Unambiguous,** with its constituents and weights known.
 - **Measurable,** with its return computable as often as the portfolio's.
 - **Appropriate to the style** the mandate describes.

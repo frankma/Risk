@@ -45,8 +45,8 @@ Top-down return has three branches, according to whose call it was.
   nothing, and a tilt outside the confirmed mandate terms still fails the style check.
 
 Alpha belongs to the manager who selected the securities. The manager's branch and the unintended branch together are
-active beta, and a portfolio's active return is active beta plus alpha. One beta is enough for general use; the branches
-are there when it helps to say whose call it was.
+active beta, and a portfolio's active return is active beta plus alpha, after the cost of holding the beta. One beta
+is enough for general use; the branches are there when it helps to say whose call it was.
 
 ## Why does it matter?
 
@@ -72,7 +72,7 @@ the fee, tells the client whether selection is what they are paying for.
   decision-maker. At an information ratio of 0.5, it takes about 16 years to reach a t-statistic of 2.
 
 ## How does one holding split?
-The split rests on three portfolios, each of which could be held.
+The split rests on three portfolios.
 
 | Portfolio | What it holds | What its return gives |
 |---|---|---|
@@ -84,7 +84,8 @@ Beta is the step from the benchmark portfolio to the top-down portfolio, and eve
 Alpha is the step from the top-down portfolio to the real portfolio: the top-down portfolio has carried all the beta
 out, and what is left is selection. The top-down portfolio follows exposure as it is held, whether or not anyone chose
 it, and the record then divides the first step: exposure with a call on record is a tilt or timing, and exposure with
-no record is unintended beta.
+no record is unintended beta. The top-down portfolio's instruments cost something to hold, which the indices behind
+the benchmark portfolio do not, and that cost has a line of its own.
 
 A holding's weight is split, not its return. Take one sector, where the benchmark portfolio holds 16% of net assets
 and the real portfolio 20%, a tilt on record. The sector index holds X at 15%, Y at 10% and the rest at 75%. The
