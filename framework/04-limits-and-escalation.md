@@ -56,7 +56,7 @@ By default, a risk function sets internal limits on:
 | Ex-ante tracking error | A range, so that active risk is neither too high nor too low for the mandate | [Market risk](../pillars/market-risk.md) |
 | Leverage, as gross and net exposure | The scale of positions, and the exposure left after netting and hedging | [Market risk](../pillars/market-risk.md) |
 | Counterparty exposure | Exposure to each firm the portfolio trades with or holds assets through | [Market risk](../pillars/market-risk.md) |
-| Redemption coverage | Unencumbered liquid assets against the stressed calls on cash | [Liquidity risk](../pillars/liquidity-risk.md) |
+| Redemption coverage | Unencumbered liquid assets against the stressed calls on cash, at the horizon the dealing terms set | [Liquidity risk](../pillars/liquidity-risk.md) |
 
 Where the governing documents or regulation already set a limit on one of these measures, that limit is a
 risk-measured hard limit, and the internal limit sits inside it.

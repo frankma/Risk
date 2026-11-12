@@ -115,7 +115,7 @@ illustrative and are not recommendations;** each risk function sets its own.
 
 | Kind of rule | Example (illustrative) | What it catches |
 |---|---|---|
-| Redemption coverage | Unencumbered liquid assets below a set multiple of the stressed calls on cash | Portfolios that may not meet their calls |
+| Redemption coverage | Unencumbered liquid assets that can be raised within the limit's horizon, below a set multiple of the stressed calls on cash due within it | Portfolios that may not meet their calls |
 | Large redemption | A single redemption above a set share of net assets | Events that change the profile |
 | Margin and collateral calls | Calls under stress above a set share of unencumbered liquid assets | Derivative positions draining liquidity |
 | Flows against history | Net outflows outside the portfolio's usual range | Unusual investor behaviour |
@@ -197,6 +197,11 @@ Redemption coverage reads the capacity test, because it asks whether the call ca
 two is shown beside it: it measures how much of the cost of meeting the call would be shifted onto the investors who
 stay if the portfolio sold its most liquid holdings first, which is the "fair cost" in the pillar's outcome made
 measurable.
+
+**Coverage has a horizon.** Assets that take a month to sell do not cover a call due in two days, so coverage compares
+what can be raised within a period with the calls due within it. It is shown over several horizons, illustrated here
+as 1 day, 1 week and 1 month. The internal limit applies at the horizon that matches the portfolio's dealing
+frequency, notice period and settlement period, because that is how long the portfolio has to pay.
 
 ### Time and cost to sell
 | Choice | Options | Trade-off |

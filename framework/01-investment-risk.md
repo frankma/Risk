@@ -119,13 +119,14 @@ cost, and whether the tools for managing liquidity are ready if it cannot.
 **Covers:** both sides of the balance, read together. On the asset side, what the portfolio can raise and how fast: the
 time and cost to liquidate holdings, leaving out assets already posted as collateral or otherwise encumbered. On the
 liability side, the calls the portfolio could face, which depend on the vehicle: redemptions from an open-ended fund,
-shown by investor and distributor concentration, flow patterns and stressed outflows; the withdrawals and planned
-cash needs of a segregated mandate's client; borrowing to roll over, distributions and commitments of a closed-ended
-fund; and margin and collateral calls on any portfolio that holds derivatives. Redemption coverage compares the two.
-Margin calls arrive when markets fall, and the collateral they take is no longer available to sell, so they press on
-both sides at once. The pillar also covers the readiness of liquidity management tools such as swing pricing,
-redemption gates, in-kind redemptions and slowing purchases of illiquid assets, and the flagging of holdings whose
-prices are stale or that cannot be priced. See [liquidity risk](../pillars/liquidity-risk.md).
+shown by investor and distributor concentration, flow patterns and stressed outflows; the withdrawals and planned cash
+needs of a segregated mandate's client; borrowing to roll over, distributions and commitments of a closed-ended fund;
+and margin and collateral calls on any portfolio that holds derivatives. Redemption coverage compares the two over the
+period the portfolio has to pay. Margin calls arrive when markets fall, and the collateral they take is no longer
+available to sell, so they press on both sides at once. The pillar also covers the readiness of liquidity management
+tools such as swing pricing, redemption gates, in-kind redemptions and slowing purchases of illiquid assets, and the
+flagging of holdings whose prices are stale or that cannot be priced. See [liquidity
+risk](../pillars/liquidity-risk.md).
 
 ### Performance risk
 **Question:** Is the portfolio delivering what was promised, in the way it was promised?
@@ -156,7 +157,7 @@ performance risk are divided by time.
 |---|---|---|---|
 | **Lens** | What could happen, absolute and relative | Calls on cash against assets | Whether the promise is kept |
 | **Typical measures** | VaR, ex-ante tracking error, stress tests | Liquidation cost, coverage | Realised return, ex-post tracking error, attribution |
-| **Typical triggers** | A limit breach; a large move | Falling coverage; a large redemption or margin call | Persistent underperformance |
+| **Typical triggers** | A limit breach; a large move | Falling coverage; a large redemption or margin call | Significant underperformance |
 | **Main audience** | Risk and portfolio managers | Risk managers, fund boards | Portfolio managers, oversight |
 
 The table shows typical entries only; each pillar section above lists the full coverage.

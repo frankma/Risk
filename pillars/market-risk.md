@@ -43,10 +43,12 @@ in [performance risk](performance-risk.md), and comparing the two is one of this
 
 The **risk budget review** allots ex-ante tracking error to the portfolio's bets and reads what each bet uses against
 the return it has earned, which performance risk measures. The budget carries no limit of its own: the daily check is of
-ex-ante tracking error against its range. Each month, a bet that uses a large share of the budget and has earned nothing
-over several periods is challenged: the portfolio manager resizes it, cuts it or explains why it stays. The exceptions
-go into the next challenge pack in performance risk, so that the challenge is made in the portfolio manager review and
-tracked in its action log.
+ex-ante tracking error against its range. Each month, a bet that uses a large share of the budget is tested on its
+cumulative return against the risk it has used. A bet whose return is
+[significantly](performance-risk.md#windows-and-significance) below zero is challenged: the portfolio manager resizes
+it, cuts it or explains why it stays. A bet that has only earned nothing for several periods is a watch item. The
+exceptions go into the next challenge pack in performance risk, so that the challenge is made in the portfolio manager
+review and tracked in its action log.
 
 The same run computes each holding's exposures once, for this pillar and for the
 [alpha and beta method](alpha-and-beta-method.md#computing-the-split). A direct measure is used where one exists:
@@ -148,16 +150,16 @@ rule picks up. Both come from a small number of kinds of rule, each owned and ve
 | Rating floor | A holding within one notch of the mandate's rating floor, read with its time to sell | A downgrade that would force a sale |
 | Leverage | Gross or net exposure above its internal limit, or above an early warning of it | Scale or risk beyond what the mandate intends |
 | Counterparty exposure | Exposure to one counterparty, net of collateral and with the add-on, above a share of its limit | Concentrated counterparty risk |
-| Risk budget | A bet using a large share of the budget with no return over several periods | Risk that has not earned its place |
+| Risk budget | A bet using a large share of the budget whose cumulative return is significantly below zero for the risk it used | Risk that has not earned its place |
 
 Breaches of an internal limit, including a tracking error range and a leverage limit, are exceptions. So are a stress
 loss beyond the drawdown headroom, large changes since the previous day, readings outside the portfolio's usual range
 and a fired risk budget rule. Early warnings, persistent near-limit readings, jump to default above its early warning,
-holdings near a rating floor and counterparty exposure approaching its limit are watch items. A breach of a position or
-eligibility rule, such as a limit on one issuer's weight, is owned by compliance: it is shown beside the queue and
-routed to compliance, while the risk function's own early warning below that limit stays in the queue. A breach of a
-risk-measured hard limit, such as a regulatory limit on leverage, is the risk function's to monitor: it enters the queue
-as an exception and is reported to compliance the same day. [Limits and
+holdings near a rating floor, a bet with a run of periods without return and counterparty exposure approaching its limit
+are watch items. A breach of a position or eligibility rule, such as a limit on one issuer's weight, is owned by
+compliance: it is shown beside the queue and routed to compliance, while the risk function's own early warning below
+that limit stays in the queue. A breach of a risk-measured hard limit, such as a regulatory limit on leverage, is the
+risk function's to monitor: it enters the queue as an exception and is reported to compliance the same day. [Limits and
 escalation](../framework/04-limits-and-escalation.md) sets out which limits are internal and how a breach is handled.
 
 The risk engine ranks exceptions before watch items. Breaches come first, then the other exceptions, then early
@@ -368,6 +370,9 @@ where market risk moves first, ahead of the underperformance that pillar watches
 view](integrated-view.md) brings these signals together for each portfolio.
 
 ## Sources
+- Basel Committee on Banking Supervision (1996). *Supervisory Framework for the Use of "Backtesting" in Conjunction
+  with the Internal Models Approach to Market Risk Capital Requirements.* The green, amber and red zones for reading a
+  count of breaches.
 - International Organization of Securities Commissions (2019). *Recommendations for a Framework Assessing Leverage in
   Investment Funds.* Gross and net exposure, with derivatives converted to the equivalent position in the underlying.
 - Jorion, P. (2006). *Value at Risk: The New Benchmark for Managing Financial Risk*, 3rd edition. McGraw-Hill. Value
