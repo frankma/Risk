@@ -42,10 +42,11 @@ and, like it, looks forward, so it belongs to this pillar. Its realised counterp
 in [performance risk](performance-risk.md), and comparing the two is one of this pillar's tests of its own measures.
 
 The **risk budget review** allots ex-ante tracking error to the portfolio's bets and reads what each bet uses against
-the return it has earned, which performance risk measures. Use of the budget is checked every day against its limit.
-Each month, a bet that uses a large share of the budget and has earned nothing over several periods is challenged: the
-portfolio manager resizes it, cuts it or explains why it stays. The exceptions go into the next challenge pack in
-performance risk, so that the challenge is made in the portfolio manager review and tracked in its action log.
+the return it has earned, which performance risk measures. The budget carries no limit of its own: the daily check is of
+ex-ante tracking error against its range. Each month, a bet that uses a large share of the budget and has earned nothing
+over several periods is challenged: the portfolio manager resizes it, cuts it or explains why it stays. The exceptions
+go into the next challenge pack in performance risk, so that the challenge is made in the portfolio manager review and
+tracked in its action log.
 
 The same run computes each holding's exposures once, for this pillar and for the
 [alpha and beta method](alpha-and-beta-method.md#computing-the-split). A direct measure is used where one exists:
@@ -144,16 +145,19 @@ rule picks up. Both come from a small number of kinds of rule, each owned and ve
 | Persistence | A near-limit reading for several consecutive days | Slow drift towards a limit |
 | Concentration | One issuer or sector above the risk function's early warning, set below the mandate's limit | Build-up of single-name risk |
 | Jump to default | The loss if one issuer defaulted, net of expected recovery, above an early warning | Single-name credit loss |
-| Leverage | Gross or commitment leverage above its internal limit, or above an early warning of it | Scale or risk beyond what the mandate intends |
+| Rating floor | A holding within one notch of the mandate's rating floor, read with its time to sell | A downgrade that would force a sale |
+| Leverage | Gross or net exposure above its internal limit, or above an early warning of it | Scale or risk beyond what the mandate intends |
 | Counterparty exposure | Exposure to one counterparty, net of collateral and with the add-on, above a share of its limit | Concentrated counterparty risk |
 | Risk budget | A bet using a large share of the budget with no return over several periods | Risk that has not earned its place |
 
 Breaches of an internal limit, including a tracking error range and a leverage limit, are exceptions. So are a stress
 loss beyond the drawdown headroom, large changes since the previous day, readings outside the portfolio's usual range
-and a fired risk budget rule. Early warnings, persistent near-limit readings, jump to default above its early warning
-and counterparty exposure approaching its limit are watch items. A breach of a mandate or regulatory limit, such as a
-limit on one issuer's weight, is owned by compliance: it is shown beside the queue as a courtesy item and routed to
-compliance, while the risk function's own early warning below that limit stays in the queue. [Limits and
+and a fired risk budget rule. Early warnings, persistent near-limit readings, jump to default above its early warning,
+holdings near a rating floor and counterparty exposure approaching its limit are watch items. A breach of a position or
+eligibility rule, such as a limit on one issuer's weight, is owned by compliance: it is shown beside the queue and
+routed to compliance, while the risk function's own early warning below that limit stays in the queue. A breach of a
+risk-measured hard limit, such as a regulatory limit on leverage, is the risk function's to monitor: it enters the queue
+as an exception and is reported to compliance the same day. [Limits and
 escalation](../framework/04-limits-and-escalation.md) sets out which limits are internal and how a breach is handled.
 
 The risk engine ranks exceptions before watch items. Breaches come first, then the other exceptions, then early
@@ -287,11 +291,16 @@ issuer defaults, where the price falls to its recovery value at once. That loss 
 the position times one minus the expected recovery rate, which is a governed parameter. It is read as a concentration
 measure, with an early warning, because a single default in a concentrated or high-yield portfolio can cost far more
 than spread volatility suggests. A downgrade shows up as spreads widening, so migration is covered by spread stress and
-needs no model of its own.
+needs no model of its own. One event is not covered that way: a downgrade below a mandate's rating floor forces a sale,
+at a cost that depends on how long the holding takes to sell. An early warning therefore flags holdings close to the
+floor, read with their [time to sell](liquidity-risk.md#time-and-cost-to-sell).
 
 ### Leverage and options
-Leverage is measured two ways, each with an internal limit: **gross**, the total notional of all positions, which shows
-scale; and **commitment**, the exposure after netting and hedging, which shows the risk actually taken. Options carry
+Leverage is measured two ways, each with an internal limit: **gross exposure**, the sum of all positions without
+netting, which shows scale; and **net exposure**, what is left after netting and hedging, which shows the risk actually
+taken. Derivatives are converted to the equivalent position in the underlying before either is summed: an option by
+its delta, and an interest rate derivative by its duration against a common maturity. Raw notional would overstate
+interest rate derivatives many times over. Options carry
 delta, gamma and vega, so that the daily measures see how their value changes with the underlying and with volatility.
 Sensitivities assume small moves, so stress tests revalue options in full.
 
@@ -359,6 +368,8 @@ where market risk moves first, ahead of the underperformance that pillar watches
 view](integrated-view.md) brings these signals together for each portfolio.
 
 ## Sources
+- International Organization of Securities Commissions (2019). *Recommendations for a Framework Assessing Leverage in
+  Investment Funds.* Gross and net exposure, with derivatives converted to the equivalent position in the underlying.
 - Jorion, P. (2006). *Value at Risk: The New Benchmark for Managing Financial Risk*, 3rd edition. McGraw-Hill. Value
   at risk, expected shortfall, stress testing and backtesting.
 - Litterman, R. (1996). Hot Spots and Hedges. *Journal of Portfolio Management*, special issue. Decomposing a change in

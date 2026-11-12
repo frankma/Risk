@@ -27,7 +27,7 @@ this review.
 ## What must be in place before launch
 | Item | What is tested | Defined in |
 |---|---|---|
-| Mandate terms | The objective, benchmark, guidelines and dealing terms, extracted and confirmed | [Performance risk](performance-risk.md#flagship-redesign-the-periodic-portfolio-manager-review) |
+| Mandate terms | The objective, benchmark, style, limits and dealing terms, extracted and confirmed | [Performance risk](performance-risk.md#flagship-redesign-the-periodic-portfolio-manager-review) |
 | Benchmark | It passes the benchmark tests: specified in advance, investable, unambiguous, measurable, appropriate to the style and owned | [Performance risk](performance-risk.md#benchmarks-and-peer-groups) |
 | Limits | Internal limits and early warnings set by the risk function; compliance's mandate and regulatory limits recorded | [Limits and escalation](../framework/04-limits-and-escalation.md) |
 | Liquidity profile | Redemption coverage under the scenarios for calls on cash, at the launch size and the expected size, against the dealing terms | [Liquidity risk](liquidity-risk.md#calls-on-cash) |
@@ -118,7 +118,8 @@ conditions. **The funds and figures are illustrative.**
 | Dealing | Daily | "shares may be redeemed on any business day" |
 | Benchmark | A broad index of large companies | "measured against a broad index of large companies" |
 
-Each extracted value is confirmed by the risk manager before it is used.
+Each extracted value is confirmed by the risk manager before it is used, and the single-issuer limit, a hard limit, is
+reconciled to compliance's coded rule.
 
 **A readiness summary.**
 

@@ -93,12 +93,14 @@ escalates an action that has stalled.
   escalates overdue actions to the watch list.
 
 **Mandate terms, set up once.** Testing a portfolio against what it promised needs the promise in a form the risk engine
-can test. The AI extracts the portfolio's stated objective, style and limits from its documents into structured terms,
-each linked to the passage it came from. The risk manager confirms the terms once, and again whenever the documents
-change. The risk engine then tests holdings and exposures against the confirmed terms and flags style drift and
-unintended bets. The AI reads the documents, the risk engine makes the comparison, and the risk function owns what the
-terms say once the risk manager has confirmed them. For a new portfolio, the terms are first extracted and confirmed
-in the [new portfolio review](new-portfolio-review.md).
+can test. The AI extracts the portfolio's stated objective, benchmark, style, limits and dealing terms from its
+documents into structured terms, each linked to the passage it came from. The risk manager confirms the terms once, and
+again whenever the documents change. The risk engine then tests holdings and exposures against the confirmed terms and
+flags style drift and unintended bets. The AI reads the documents and the risk engine makes the comparison. For a hard
+limit, compliance's coded rule is the master reading: the extracted limit is reconciled to it, and a difference is
+routed to compliance, not settled by the risk manager. The risk function owns the objective and style terms, which
+compliance does not code, once the risk manager has confirmed them. For a new portfolio, the terms are first extracted
+and confirmed in the [new portfolio review](new-portfolio-review.md).
 
 **Redesigned flow.**
 
