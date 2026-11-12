@@ -29,10 +29,9 @@ was paid for; see
 [sources of return](framework/02-sources-of-return.md).
 
 ## Redesigning the work around AI
-Many asset managers now use AI tools, but few can show a measurable return from them. The return does not come from
-inserting AI into existing workflows. A tool that drafts a report faster changes little when the real bottleneck is
-gathering data, handing work between people and waiting in review queues. It comes from redesigning the workflow around
-what AI makes possible.
+AI changes investment risk work when a workflow is redesigned around it, not when it is inserted into the workflow as
+it stands. A tool that drafts a report faster changes little when the report still waits for data to be gathered, for
+work to pass between people and for review queues.
 
 This framework sets out how to do that for investment risk, and how people and the AI then work together. It is
 written for the whole firm: the risk managers who do the work, the portfolio managers who receive it and the management
