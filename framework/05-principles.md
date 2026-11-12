@@ -1,24 +1,21 @@
 # Principles
 
-AI produces a return in investment risk when the workflow is redesigned around it, not when it is inserted into the
+AI changes investment risk work when the workflow is redesigned around it, not when it is inserted into the
 workflow as it stands. This chapter sets out why insertion fails and the six principles a redesign should follow, then
 sets out what the risk manager adds once the system produces the outputs. [Working with AI](06-working-with-ai.md)
 follows with how people and the AI work together. The [philosophy](00-philosophy.md) sets out what the function is for;
 these principles set out how to redesign its work around AI.
 
 ## The problem: insertion, not redesign
-Many asset managers now give their staff AI tools, but few can show a measurable return from them. The tools usually
-work as intended. The return is missing because the tools are placed inside workflows that were designed for a manual
-process, and the constraints of that process stay in place.
+Giving staff AI tools does not by itself change the work. The tools usually work as intended, but they are placed
+inside workflows that were designed for a manual process, and the constraints of that process stay in place.
 
 Take a recurring monthly risk report. Its cycle runs three to four weeks from month end to distribution. An AI tool that
 drafts the commentary faster looks like an improvement, yet the report still goes out on the same day. The commentary
 was never the bottleneck: most of the cycle was spent gathering data from several systems, handing work between people
 and waiting in review queues. A faster draft changes neither when the report arrives nor what it says.
 
-The evidence points the same way. A large survey of organisations using generative AI tested 25 organisational
-attributes and found that workflow redesign had the biggest effect on whether they saw an impact on earnings (see
-Sources). The lesson for a risk function is that the unit of change is the workflow, not the task.
+The unit of change is the workflow, not the task.
 
 ## Six principles
 
@@ -139,5 +136,5 @@ and the role becomes less about producing information and more about deciding wh
 each portfolio clarity on the risks it takes.
 
 ## Sources
-- McKinsey & Company (2025). *The State of AI: How Organizations Are Rewiring to Capture Value.* Global survey,
-  March 2025. Workflow redesign as the attribute with the largest effect on the earnings impact of generative AI.
+- Hammer, M. (1990). Reengineering Work: Don't Automate, Obliterate. *Harvard Business Review*. Rebuilding a process
+  around what a technology makes possible, instead of automating the steps of the old one.
