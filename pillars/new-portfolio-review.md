@@ -1,89 +1,19 @@
 # New portfolio review
 
-The new portfolio review makes sure that everything the pillars rely on is in place before a portfolio takes its first
-client money, and again whenever a portfolio changes enough to be a new portfolio in all but name. It draws on every
-pillar: the mandate terms that performance risk tests against, the limits that market and liquidity risk watch, the
-liquidity the dealing terms promise, the data the risk engine reads and the construction the alpha and beta split runs
-on. It computes nothing of its own beyond what those chapters define.
+## In short
+**The question:** is everything the pillars rely on in place before a portfolio takes its first client money, or changes
+enough to be a new portfolio in all but name?
 
-## The outcome
+**The outcome:**
+
 > Before a portfolio launches or changes materially, the risk function knows that its mandate can be monitored as
 > promised, and has put its view on record.
 
-A portfolio that launches without confirmed mandate terms, internal limits, data for the instruments it will hold or a
-liquidity profile that fits its dealing terms is monitored badly from its first day, and the gaps are found later, at
-greater cost. The review moves that work to before launch, when it is cheapest to fix.
-
-## What the review covers
-- **New open-ended and closed-ended funds.**
-- **New segregated mandates.**
-- **Material changes to an existing portfolio:** a change of strategy or benchmark, a merger, or a change in dealing
-  terms. A change of strategy is a relaunch in everything but name, and is reviewed as one.
-
-A change to a portfolio's governing documents triggers the re-extraction of its mandate terms, as set out in
-[performance risk](performance-risk.md#controls-specific-to-this-pillar); where the change is material, it also triggers
-this review.
-
-## What must be in place before launch
-| Item | What is tested | Defined in |
-|---|---|---|
-| Mandate terms | The objective, benchmark, style, limits and dealing terms, extracted and confirmed | [Performance risk](performance-risk.md#flagship-redesign-the-periodic-portfolio-manager-review) |
-| Benchmark | It passes the benchmark tests: specified in advance, investable, unambiguous, measurable, appropriate to the style and owned | [Performance risk](performance-risk.md#benchmarks-and-peer-groups) |
-| Limits | Internal limits and early warnings set by the risk function; the mandate and regulatory limits recorded, with each risk-measured limit set up for the risk function to monitor | [Limits and escalation](../framework/04-limits-and-escalation.md) |
-| Liquidity profile | Redemption coverage under the scenarios for calls on cash, at the launch size and the expected size, against the dealing terms | [Liquidity risk](liquidity-risk.md#calls-on-cash) |
-| Data | Every instrument the portfolio expects to hold, and every instrument in its top-down portfolio, can be priced and classified, or has a proxy under the policy | [Risk data](../framework/03-risk-data.md#proxies) |
-| Alpha and beta construction | The benchmark portfolio, the buckets, the instrument inside each and the factor list, declared before the first period | [Alpha and beta method](alpha-and-beta-method.md#booked-or-derived) |
-| Liquidity management tools | The tools the documents provide for, and whether each can be used | [Liquidity risk](liquidity-risk.md#workflows-in-this-pillar) |
-
-The liquidity profile carries [belief 5](../framework/00-philosophy.md#beliefs): a portfolio that will offer daily
-dealing on assets that take weeks to sell is making a promise it cannot keep, and the time to see that is before
-launch.
-
-## The risk function's opinion
-Product governance decides whether a portfolio launches. The risk function gives a **recorded opinion**: whether the
-portfolio can be monitored as its mandate promises, any conditions that must be met, and its reasons. The risk
-function can escalate to the risk committee where product governance proceeds against its opinion.
-
-The opinion is not a veto, in keeping with the
-[philosophy](../framework/00-philosophy.md#purpose-transparency-for-three-decisions): the risk function is independent
-of the investment team but works inside its process. The internal limits set at this stage follow the same spirit: they
-exist first to keep everyone on top of the portfolio's risks, as set out in [limits and
-escalation](../framework/04-limits-and-escalation.md#what-internal-limits-are-for), not to decide the launch.
-
-## Flagship redesign: the review of one new portfolio
-The example below follows the review of one new open-ended fund. **The steps are illustrative.**
-
-**Current state.** The risk function receives the draft documents late in the product process and works through them by
-hand.
-
-| # | Step | Tag |
-|---|---|---|
-| 1 | Read the draft documents and note the terms | Interpret |
-| 2 | Ask the portfolio manager for the intended strategy and a model portfolio | Gather |
-| 3 | Build risk and liquidity estimates on the model portfolio in a workbook | Compute |
-| 4 | Check whether data can be sourced for the expected instruments | Gather |
-| 5 | Agree limits with the portfolio manager by email | Communicate |
-| 6 | Write the risk opinion for product governance | Communicate |
-| 7 | Head of risk signs off the opinion | Approve / Wait |
-
-The review often starts too late to change the design, the liquidity test uses a workbook nobody reruns, and nothing
-checks on launch day that what was agreed has been set up.
-
-**Owner assignment.**
-
-- Step 1 becomes an AI extraction of the draft mandate terms, each linked to its passage, confirmed by the risk
-  manager.
-- Steps 3 and 4 move to the risk engine, which runs the pillars' measures on the model portfolio, tests the benchmark,
-  checks data readiness for every expected instrument and proposes internal limits and the alpha and beta construction.
-- Step 2 stays, earlier: the model portfolio is requested when the review starts.
-- Step 5 becomes a conversation about the proposed limits and construction: the portfolio manager is consulted, and
-  the risk manager decides.
-- Step 6 is split. The AI drafts the readiness summary from the facts; the risk manager writes the opinion and any
-  conditions.
-- Step 7 stays with the head of risk.
-- A launch-day check is added: the risk engine confirms that every item agreed is in place.
-
-**Redesigned flow.**
+**How the work is done:** the review computes nothing of its own. The AI extracts the draft mandate terms from the
+documents. The risk engine runs the pillars' measures on a model portfolio, checks data readiness and proposes limits
+and the alpha and beta construction. The risk manager confirms the terms, decides the limits and writes the opinion, and
+on launch day the risk engine confirms that everything agreed is in place. The review can start as soon as draft
+documents exist.
 
 | # | Step | Owner |
 |---|---|---|
@@ -98,16 +28,56 @@ checks on launch day that what was agreed has been set up.
 | 9 | Sign off the opinion; product governance decides | Head of risk |
 | 10 | On launch day, confirm every agreed item is in place | Risk engine |
 
-The review can start as soon as draft documents exist.
+**The opinion is not a veto:** product governance decides whether a portfolio launches. The risk function gives a
+recorded opinion and can escalate to the risk committee.
 
-**The shift.** The review moves from a late, manual assessment to a readiness check that runs the same measures the
-portfolio will be monitored with, and that confirms on launch day that what was agreed is in place.
+**Why before launch:** a portfolio that launches without confirmed mandate terms, internal limits, data for its
+instruments or a liquidity profile that fits its dealing terms is monitored badly from its first day. The gaps are
+cheapest to fix before launch.
+
+The rest of this chapter is the detail behind these points.
+
+## What the review covers
+- **New open-ended and closed-ended funds.**
+- **New segregated mandates.**
+- **Material changes to an existing portfolio:** a change of strategy or benchmark, a merger, or a change in dealing
+  terms. A change of strategy is a relaunch in everything but name, and is reviewed as one.
+
+A change to a portfolio's governing documents triggers the re-extraction of its mandate terms, as set out in
+[performance risk](performance-risk.md#controls-and-measures-specific-to-this-pillar); where the change is material, it
+also triggers this review. A new instrument that an existing portfolio wants to hold is reviewed in [market
+risk](market-risk.md#workflows-in-this-pillar), not here.
+
+## What must be in place before launch
+| Item | What is tested | Defined in |
+|---|---|---|
+| Mandate terms | The objective, benchmark, style, limits and dealing terms, extracted and confirmed | [Performance risk](performance-risk.md#mandate-terms) |
+| Benchmark | It passes the benchmark tests: specified in advance, investable, unambiguous, measurable, appropriate to the style and owned | [Performance risk](performance-risk.md#benchmarks-and-peer-groups) |
+| Limits | Internal limits and early warnings set by the risk function; the mandate and regulatory limits recorded, with each risk-measured limit set up for the risk function to monitor | [Limits and escalation](../framework/04-limits-and-escalation.md) |
+| Liquidity profile | Redemption coverage under the scenarios for calls on cash, at the launch size and the expected size, against the dealing terms | [Liquidity risk](liquidity-risk.md#calls-on-cash) |
+| Data | Every instrument the portfolio expects to hold, and every instrument in its top-down portfolio, can be priced and classified, or has a proxy under the policy | [Risk data](../framework/03-risk-data.md#proxies) |
+| Alpha and beta construction | The benchmark portfolio, the buckets, the instrument inside each and the factor list, declared before the first period | [Alpha and beta method](alpha-and-beta-method.md#booked-or-derived) |
+| Liquidity management tools | The tools the documents provide for, and whether each can be used | [Liquidity risk](liquidity-risk.md#workflows-in-this-pillar) |
+
+The liquidity profile carries [belief 5](../framework/00-philosophy.md#beliefs): a portfolio that will offer daily
+dealing on assets that take weeks to sell is making a promise it cannot keep, and the time to see that is before launch.
+
+## The risk function's opinion
+Product governance decides whether a portfolio launches. The risk function gives a **recorded opinion**: whether the
+portfolio can be monitored as its mandate promises, any conditions that must be met, and its reasons. The risk function
+can escalate to the risk committee where product governance proceeds against its opinion.
+
+The opinion is not a veto, in keeping with the
+[philosophy](../framework/00-philosophy.md#purpose-transparency-for-three-decisions): the risk function is independent
+of the investment team but works inside its process. The internal limits set at this stage follow the same spirit: they
+exist first to keep everyone on top of the portfolio's risks, as set out in [limits and
+escalation](../framework/04-limits-and-escalation.md#what-internal-limits-are-for), not to decide the launch.
 
 ## What the AI drafts
 The AI extracts and drafts from the documents and facts it is given, and from nothing else. Every figure it extracts
-must appear in the passage it links to, and every number in a draft appears in the facts beside it, so the
-[grounding check](../framework/08-controls.md#the-grounding-check) would pass. The AI does not write the opinion or its
-conditions. **The funds and figures are illustrative.**
+must appear in the passage it links to, and every number in a draft appears in the facts beside it, so the [grounding
+check](../framework/08-controls.md#the-grounding-check) would pass. The AI does not write the opinion or its conditions.
+**The funds and figures are illustrative.**
 
 **Extracted mandate terms.**
 
@@ -138,8 +108,8 @@ reconciled to compliance's coded rule.
 
 The opinion on whether Fund S should launch, and on what conditions, is the risk manager's.
 
-## Controls specific to the review
-The general controls in [controls](../framework/08-controls.md) apply in full. The review adds four.
+## Controls and measures specific to the review
+The general [controls](../framework/08-controls.md) apply in full. The review adds four.
 
 - **Terms are confirmed before anything is tested against them.**
 - **The opinion is written by a person.** The AI drafts the summary of facts; the risk manager writes the opinion and
@@ -148,7 +118,8 @@ The general controls in [controls](../framework/08-controls.md) apply in full. T
 - **Launch is checked.** On launch day the risk engine confirms that the terms, limits, data and construction agreed in
   the review are in place, and a gap is an exception.
 
-## Measuring value
+The measures for the review, from [measuring value](../framework/09-measuring-value.md):
+
 | Dimension | Measure for the review |
 |---|---|
 | Speed | Working days from draft documents to a recorded opinion |
@@ -157,18 +128,9 @@ The general controls in [controls](../framework/08-controls.md) apply in full. T
 | Influence | Conditions adopted; designs changed as a result of the review |
 | Review specific | Share of launches with every agreed item in place on launch day |
 
-## Connections
-The review sets up what the other chapters use. The mandate terms it confirms are the ones
-[performance risk](performance-risk.md) tests against; the limits it sets are watched by [market
-risk](market-risk.md) and [liquidity risk](liquidity-risk.md) under [limits and
-escalation](../framework/04-limits-and-escalation.md); the data readiness it checks follows [risk
-data](../framework/03-risk-data.md); and the construction it declares is the one the
-[alpha and beta method](alpha-and-beta-method.md) runs on from the first period. A new instrument that an existing
-portfolio wants to hold is reviewed in [market risk](market-risk.md#workflows-in-this-pillar), not here.
-
 ## Sources
 - International Organization of Securities Commissions (2025). *Revised Recommendations for Liquidity Risk Management
   for Collective Investment Schemes.* Liquidity considered at the design stage, matching assets to the dealing terms
   before launch.
-- Bailey, J. (1992). Evaluating Benchmark Quality. *Financial Analysts Journal*. The properties a benchmark should
-  have before it is used.
+- Bailey, J. (1992). Evaluating Benchmark Quality. *Financial Analysts Journal*. The properties a benchmark should have
+  before it is used.
