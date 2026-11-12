@@ -68,11 +68,11 @@ the reasoning goes there.
 | Concept | What it is | Defined in | Used by |
 |---|---|---|---|
 | Hard limit | A mandate or regulatory limit, which must be cured; compliance owns its legal reading, and its coded rule is the master reading | [Limits and escalation](04-limits-and-escalation.md#where-limits-come-from) | Investment risk, market risk |
-| Risk-measured limit | A hard limit on a measure only the risk engine computes (leverage, exposure by value at risk, counterparty exposure, liquidity); the risk function monitors it and compliance writes the breach report | [Limits and escalation](04-limits-and-escalation.md#where-limits-come-from) | Market risk |
+| Risk-measured limit | A hard limit on a measure only the risk engine computes (leverage, exposure by value at risk, counterparty exposure, liquidity); the risk function monitors it and compliance writes the breach report | [Limits and escalation](04-limits-and-escalation.md#where-limits-come-from) | Market risk, liquidity risk, new portfolio review |
 | Internal limit | A soft limit the risk function sets where the mandate is silent, to produce insight first and constrain when judged necessary | [Limits and escalation](04-limits-and-escalation.md#what-internal-limits-are-for) | Market risk, liquidity risk, controls |
 | Early warning | A level ahead of a hard or internal limit, or on a measure with no limit; a reading beyond it is a watch item | [Limits and escalation](04-limits-and-escalation.md#where-limits-come-from) | All pillars |
 | Breach lifecycle | Detect, verify, classify, notify, explain, decide, cure and close | [Limits and escalation](04-limits-and-escalation.md#the-breach-lifecycle) | Market risk |
-| Escalation path | Who a missed deadline, a declined cure, a dissent and a hard limit breach go to; the risk committee's decision on an uncured soft limit binds | [Limits and escalation](04-limits-and-escalation.md#escalation) | Controls specific to limits |
+| Escalation path | Who a missed deadline, a declined cure, a dissent and a hard limit breach go to; the risk committee's decision on an uncured soft limit or an escalated watch list portfolio binds | [Limits and escalation](04-limits-and-escalation.md#escalation) | Controls specific to limits |
 | Investment oversight | The head of investments, or the committee that supervises the portfolio managers | [Limits and escalation](04-limits-and-escalation.md#the-breach-lifecycle) | Performance risk |
 | Active and passive breach | A breach caused by a trade or decision, or by markets, flows or corporate actions | [Limits and escalation](04-limits-and-escalation.md#the-breach-lifecycle) | Market risk |
 
@@ -153,4 +153,4 @@ the reasoning goes there.
 | Generator tag | The return generator each declared factor is read against, held with the list as a governed parameter | [Alpha and beta method](../pillars/alpha-and-beta-method.md#building-the-top-down-portfolio) | Market risk |
 | Factor return | The return of the ETF or future that carries a declared factor | [Alpha and beta method](../pillars/alpha-and-beta-method.md#building-the-top-down-portfolio) | Philosophy |
 | Cost of holding beta | The top-down portfolio's instruments against the indices they track, on its own line beside the fee | [Alpha and beta method](../pillars/alpha-and-beta-method.md#the-four-beta-lines) | That page only |
-| Booked and derived books | Two routes to the same split, with different evidence | [Alpha and beta method](../pillars/alpha-and-beta-method.md#booked-or-derived) | That page only |
+| Booked and derived books | Two routes to the same split, with different evidence; on the booked route hedge error stays in alpha, as a stated exception | [Alpha and beta method](../pillars/alpha-and-beta-method.md#booked-or-derived) | That page only |

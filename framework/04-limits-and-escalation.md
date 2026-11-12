@@ -114,14 +114,16 @@ illustrative.**
 
 | Trigger | From | To | Deadline | What the body can decide |
 |---|---|---|---|---|
-| A decision or a cure passes its deadline | Risk engine | Head of risk | The same day | Decide, or extend the deadline once, with a reason |
+| A cure passes its deadline | Risk engine | Head of risk | The same day | Require the cure, or extend the deadline once, with a reason |
+| A decision on a breach passes its deadline | Risk engine | The risk committee's chair | The same day | Decide, or call the committee |
 | The portfolio manager declines to cure a breach of an internal limit | Head of risk | Risk committee | Its next meeting, or one called within 5 business days | Require the cure by a date, accept the breach for a set period, or change the limit |
 | A member of the risk committee dissents from its decision | The member | The board | The board's next report | Ask the committee to review its decision; the decision stands until then |
 | A breach of a hard limit | Risk function | Compliance | The same day | Under compliance's process |
+| A watch list portfolio that investment oversight escalates | Investment oversight | Risk committee | Its next meeting | Require an action by a date, or keep the portfolio under watch |
 
-**The risk committee has the final say on an uncured soft limit,** and its decision binds the portfolio manager. The
-committee is chaired by someone independent of the investment teams, and includes the head of risk and the head of
-investments.
+**The risk committee has the final say on an uncured soft limit and on an escalated watch list portfolio,** and its
+decision binds the portfolio manager. The committee is chaired by someone independent of the investment teams, and
+includes the head of risk and the head of investments.
 
 **A dissent has a route upward.** A member who disagrees with the committee's decision has the dissent recorded, and
 the board receives it with the decision.

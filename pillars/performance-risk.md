@@ -40,7 +40,8 @@ market risk premia or style premia, with alpha read as skill. The generator tell
 to put to the portfolio manager. The watch
 list holds the portfolios whose issues have not been resolved; it is a single list for the firm, owned by the risk
 function, to which this pillar and the [integrated view](integrated-view.md) both add portfolios, and which investment
-oversight uses to decide escalation.
+oversight uses to decide escalation. An escalated portfolio goes to the risk committee, as
+[limits and escalation](../framework/04-limits-and-escalation.md#escalation) sets out.
 
 The review also uses the challenge mode set out in
 [working with AI](../framework/06-working-with-ai.md#three-modes-of-working). When a portfolio manager explains an

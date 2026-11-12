@@ -30,15 +30,14 @@ generated text is extracted and traced to the computed facts behind it: the fact
 generated from, and the results of any analysis the AI ran through the risk engine, each recorded as a run. Numbers
 written as words, such as "three months", are extracted and traced in the same way as numerals.
 
-To fabricate a number is to state it with no computation behind it. A number in generated text is grounded if it is
-one of the computed facts, the result of a recorded analysis run, or the result of a simple operation on them that the
-check can recompute: a sum, a
-difference, a percentage change, a ratio or a simple multiple, including words such as "doubled" or "a third". A
-number the check cannot recompute from the facts is rejected like any unmatched number. Figures read from documents,
-such as the limits in a portfolio's mandate terms, follow the same rule: each must appear, as numerals or as words, in
-the source passage it is linked to, and the risk manager confirms it before it is used. A figure from an exploratory
-query is traced like any other and keeps its label: the check rejects it in any text bound for an output, as set out
-in [working with AI](06-working-with-ai.md#where-a-figure-may-come-from).
+To fabricate a number is to state it with no computation behind it. A number in generated text is grounded if it is one
+of the computed facts, the result of a recorded analysis run, or the result of a simple operation on them that the check
+can recompute: a sum, a difference, a percentage change, a ratio or a simple multiple, including words such as "doubled"
+or "a third". A number the check cannot recompute from the facts is rejected like any unmatched number. Figures read
+from documents, such as the limits in a portfolio's mandate terms, follow the same rule: each must appear, as numerals
+or as words, in the source passage it is linked to, and the risk manager confirms it before it is used. A figure from an
+exploratory query is traced like any other and keeps its label: the check rejects it in any text bound for an output, as
+set out in [working with AI](06-working-with-ai.md#where-a-figure-may-come-from).
 
 The match allows for formatting but not for substance. A computed value of 0.0473 matches "4.7%" and "4.73%"; a computed
 value of 12,450,000 matches "12.45 million" and "12.5m"; a value expressed in basis points matches the same value
@@ -57,9 +56,10 @@ right; that remains the risk manager's judgement at the sign-off point.
 ## AI permissions
 The AI works under a permission that the risk function sets and records: the data it may read, the analyses it may run
 and the actions it may never take, as set out in [working with AI](06-working-with-ai.md#what-the-ai-may-do). The risk
-engine enforces it. An analysis outside the governed list does not run, the AI has no write access to data or to
-governed parameters, and nothing it produces leaves the function without a sign-off. Every run the AI starts is
-recorded with its parameters, the person who asked and the result, so that any answer can be reproduced.
+engine enforces it. An analysis outside the governed list does not run. The one thing the AI may run outside the list is
+a read-only exploratory query, whose result is labelled unvalidated and kept out of outputs. The AI has no write access
+to data or to governed parameters, and nothing it produces leaves the function without a sign-off. Every run the AI
+starts is recorded with its parameters, the person who asked and the result, so that any answer can be reproduced.
 
 ## Sign-off points
 Each redesigned workflow names the points at which a human must approve before an output moves on, and what exactly
