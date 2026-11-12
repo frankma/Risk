@@ -24,7 +24,16 @@ The framework applies to every vehicle through which an asset manager invests fo
 
 It covers benchmarked long-only, absolute return and other objective-based strategies, multi-asset, long-short and
 leveraged strategies, fixed income and credit, and portfolios that invest in other funds, which are read through to
-their holdings. Money market funds follow a specialised regime of their own and sit outside it.
+their holdings.
+
+Three kinds of portfolio sit outside it:
+
+- **Money market funds,** which follow a specialised regime of their own.
+- **Exchange-traded funds,** because most of their investors trade on an exchange and units are created and redeemed
+  through authorised participants, so the calls on the fund's cash do not work as this framework's liquidity pillar
+  assumes.
+- **Model portfolios the firm advises on but does not hold.** The firm supplies a list of weights, and the party that
+  implements it holds the positions and the risks of holding them.
 
 The framework calls each of these a **portfolio**, and says fund or mandate only where the type matters, as it does for
 redemptions, which only open-ended funds face. **The mandate** is the promise, whatever the vehicle: the objective,
@@ -60,8 +69,8 @@ Within scope, and handled inside the pillar workflows:
   [design choices](../pillars/market-risk.md#credit-spreads-default-and-migration).
 - **Concentration and leverage** are part of market risk: concentration by issuer, sector, country or factor, and
   leverage and derivative exposure, are drivers of how much the portfolio could lose.
-- **Counterparty exposure** is part of market risk: each portfolio's exposure to the firms it trades with or holds
-  assets through is monitored against limits.
+- **Counterparty exposure** is part of market risk: each portfolio's exposure to the firms it trades with, lends
+  securities to or holds assets through is monitored against limits.
 - **Weak and stale prices** are part of liquidity risk: the risk function knows which of its measures rest on prices
   that are weak or stale, and flags holdings that are stale or cannot be priced.
 - **The limits of the risk function's own measures** apply to every pillar: the function understands and tests what its
@@ -121,12 +130,13 @@ time and cost to liquidate holdings, leaving out assets already posted as collat
 liability side, the calls the portfolio could face, which depend on the vehicle: redemptions from an open-ended fund,
 shown by investor and distributor concentration, flow patterns and stressed outflows; the withdrawals and planned cash
 needs of a segregated mandate's client; borrowing to roll over, distributions and commitments of a closed-ended fund;
-and margin and collateral calls on any portfolio that holds derivatives. Redemption coverage compares the two over the
-period the portfolio has to pay. Margin calls arrive when markets fall, and the collateral they take is no longer
-available to sell, so they press on both sides at once. The pillar also covers the readiness of liquidity management
-tools such as swing pricing, redemption gates, in-kind redemptions and slowing purchases of illiquid assets, and the
-flagging of holdings whose prices are stale or that cannot be priced. See [liquidity
-risk](../pillars/liquidity-risk.md).
+margin and collateral calls on any portfolio that holds derivatives; the cash settlement of currency hedges when they
+roll, including the hedges of hedged share classes; and the return of cash collateral when a securities loan ends.
+Redemption coverage compares the two over the period the portfolio has to pay. Margin calls arrive when markets fall,
+and the collateral they take is no longer available to sell, so they press on both sides at once. The pillar also covers
+the readiness of liquidity management tools such as swing pricing, redemption gates, in-kind redemptions and slowing
+purchases of illiquid assets, and the flagging of holdings whose prices are stale or that cannot be priced. See
+[liquidity risk](../pillars/liquidity-risk.md).
 
 ### Performance risk
 **Question:** Is the portfolio delivering what was promised, in the way it was promised?

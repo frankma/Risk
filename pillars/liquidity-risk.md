@@ -232,9 +232,18 @@ single large holder, and concentration misses a broad run. For other vehicles, t
 they face: a segregated mandate's withdrawals and planned cash needs, a closed-ended fund's borrowing to roll over,
 distributions and commitments, and margin and collateral calls on any portfolio that holds derivatives.
 
+Two further calls are counted in every scenario, because they arrive whatever investors do.
+
+- **Currency hedges that roll.** A hedge that has lost value is settled in cash when it rolls. This covers a
+  portfolio's own hedges and the hedges of its hedged share classes: the loss belongs to the class, but it is paid from
+  the portfolio's cash.
+- **Securities lending.** Cash collateral is returned when a loan ends, so where it has been reinvested, the
+  reinvestment is measured for time and cost to sell like any other holding. A security on loan can be sold only once
+  it has been recalled, which the next section covers.
+
 ### Encumbrance and second-round effects
-- **Encumbered assets are not liquid.** Collateral already posted, and assets lent out, are left out of what a
-  portfolio can raise.
+- **Encumbered assets are not liquid.** Collateral already posted is left out of what a portfolio can raise, and a
+  security on loan is left out until the end of its recall period.
 - **Margin calls press on both sides.** In a stressed scenario, the same market move that cuts liquidity raises margin
   and collateral calls, and the collateral posted against them is then encumbered, so the scenario applies both at once.
 - **The firm's own selling moves prices.** When several portfolios sell the same holdings, the firm's combined sale is
