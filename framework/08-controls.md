@@ -31,27 +31,41 @@ generated from, and the results of any analysis the AI ran through the risk engi
 written as words, such as "three months", are extracted and traced in the same way as numerals.
 
 To fabricate a number is to state it with no computation behind it. A number in generated text is grounded if it is one
-of the computed facts, the result of a recorded analysis run, or the result of a simple operation on them that the check
-can recompute: a sum, a difference, a percentage change, a ratio or a simple multiple, including words such as "doubled"
-or "a third". A number the check cannot recompute from the facts is rejected like any unmatched number. Figures read
-from documents, such as the limits in a portfolio's mandate terms, follow the same rule: each must appear, as numerals
-or as words, in the source passage it is linked to, and the risk manager confirms it before it is used. A figure from an
-exploratory query is traced like any other and keeps its label: the check rejects it in any text bound for an output, as
-set out in [working with AI](06-working-with-ai.md#where-a-figure-may-come-from).
+of the computed facts, the result of a recorded analysis run, or the result of a simple operation on them that the AI
+states and the check can recompute: a sum, a difference, a percentage change, a ratio or a simple multiple, including
+words such as "doubled" or "a third". A number the check cannot recompute from the facts is rejected like any unmatched
+number. Figures read from documents, such as the limits in a portfolio's mandate terms, follow the same rule: each must
+appear, as numerals or as words, in the source passage it is linked to, and the risk manager confirms it before it is
+used. A figure from an exploratory query is traced like any other and keeps its label: the check rejects it in any text
+bound for an output, as set out in [working with AI](06-working-with-ai.md#where-a-figure-may-come-from).
+
+**Derivations are stated, not searched for.** For each derived number the AI states which facts it used and which
+operation, and the check verifies that derivation only, one operation deep. It does not search the facts for any
+combination that reproduces the number, because in a long table of facts some combination will, by chance.
+
+**Each sentence is linked to its facts.** The AI marks every sentence with the facts it rests on. A sentence that
+states something about a portfolio and links to no fact is rejected, and the link tells the check which portfolio and
+measure each number belongs to, so a figure attached to the wrong one fails.
+
+**Direction and comparison are checked.** Words of direction and comparison, such as "rose", "fell", "above", "below",
+"within" and "breached", are tested against the linked facts. With a limit of 2.00%, "VaR fell from 1.84% to 2.31%,
+within its limit" fails twice, though every number in it is a computed fact. (The values are illustrative.)
 
 The match allows for formatting but not for substance. A computed value of 0.0473 matches "4.7%" and "4.73%"; a computed
 value of 12,450,000 matches "12.45 million" and "12.5m"; a value expressed in basis points matches the same value
 expressed as a percentage. It does not match a figure that cannot be traced to a computed value, a figure rounded beyond
-the stated precision, or a figure attached to the wrong portfolio or measure where the check can tell. (The values are
+the stated precision, or a figure attached to the wrong portfolio or measure. (The values are
 illustrative.)
 
-Text with an unmatched number is rejected before anyone sees it. The system then regenerates it, with the failure noted,
-up to a set number of attempts; if it still fails, the item falls back to the template text described under fallback,
-which states the computed facts in fixed sentences, and is flagged to the risk manager. The rejection, the attempts and
-the outcome are all recorded in the audit trail. A grounding check that warns rather than rejects is not a control.
+Text that fails any part of the check is rejected before anyone sees it. The system then regenerates it, with the
+failure noted, up to a set number of attempts; if it still fails, the item falls back to the template text described
+under fallback, which states the computed facts in fixed sentences, and is flagged to the risk manager. The rejection,
+the attempts and the outcome are all recorded in the audit trail. A grounding check that warns rather than rejects is
+not a control.
 
-The check is limited to numbers. It does not test whether the text's reasoning is sound or whether its emphasis is
-right; that remains the risk manager's judgement at the sign-off point.
+The check covers numbers, the direction of a change and comparisons with a limit or threshold. It does not test a
+stated cause, what was left out, whether the reasoning is sound or whether the emphasis is right; those remain the risk
+manager's judgement at the sign-off point.
 
 ## AI permissions
 The AI works under a permission that the risk function sets and records: the data it may read, the analyses it may run
@@ -144,19 +158,23 @@ Supervisors' expectations for AI risk management share a common shape. The contr
 | Ongoing monitoring | Grounding check results and human edit rates over time |
 | Human oversight | Named sign-off points with defined content |
 | Change management | Versioned thresholds, prompts and templates, with change records |
+| Independent review | Independent validation of each AI step and of the grounding check; internal audit's tests of the controls |
 | Board and senior management oversight | Regular reporting of AI use, results and incidents |
 
-The risk function owns the testing of its own AI steps, through the grounding check, parallel runs and ongoing
-monitoring above, as part of the limits of its own measures and tools that it is responsible for. Independent
-validation of models sits with a separate function, as set out in [investment risk](01-investment-risk.md). A firm
-should map these expectations to the specific requirements that apply to it.
+The risk function tests its own AI steps day to day, through the grounding check, parallel runs and ongoing monitoring
+above, as part of the limits of its own measures and tools that it is responsible for. It is not the only judge of
+them. The independent validation function, which sits outside the risk function as set out in
+[investment risk](01-investment-risk.md), reviews each AI step and the grounding check at first use and at each
+material change: a new model, a changed prompt or template, a new analysis on the governed list or a change to the
+check itself. Internal audit tests that the controls operate as described, from the audit trail, the sign-offs and the
+change records. A firm should map these expectations to the specific requirements that apply to it.
 
 ## Why risk should own the controls
 The controls in this chapter are what allow manual checks to be removed with confidence. A risk function that designs
-and owns them decides how safe is safe enough, and can then remove its own manual checks on that basis. That makes
-risk the function that enables redesign across the firm, rather than the one that blocks it. A risk function that
-leaves the controls to others will find that each redesign waits for its approval and that the checks it trusts are
-the ones it cannot remove.
+and owns them, under independent validation, decides how safe is safe enough, and can then remove its own manual checks
+on that basis. That makes risk the function that enables redesign across the firm, rather than the one that blocks it. A
+risk function that leaves the controls to others will find that each redesign waits for its approval and that the checks
+it trusts are the ones it cannot remove.
 
 ## Sources
 - International Organization of Securities Commissions (2021). *The Use of Artificial Intelligence and Machine
