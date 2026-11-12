@@ -1,7 +1,7 @@
 # Performance risk
 
 Performance risk asks whether a portfolio is delivering what was promised, in the way it was promised. This chapter
-applies the [redesign method](../framework/06-redesign-method.md) to the pillar: it lists the pillar's recurring
+applies the [redesign method](../framework/07-redesign-method.md) to the pillar: it lists the pillar's recurring
 workflows, redesigns the periodic portfolio manager review so that it runs on the risk function's agenda with an
 evidence-based challenge pack, and sets out the thresholds, limits, controls and measures that make the redesign work,
 and the design choices behind the pillar's measures. The shift is from receiving the portfolio manager's account of
@@ -37,6 +37,11 @@ return](../framework/02-sources-of-return.md), using the [alpha and beta method]
 list holds the portfolios whose issues have not been resolved; it is a single list for the firm, owned by the risk
 function, to which this pillar and the [integrated view](integrated-view.md) both add portfolios, and which investment
 oversight uses to decide escalation.
+
+The review also uses the challenge mode set out in
+[working with AI](../framework/06-working-with-ai.md#three-modes-of-working). When a portfolio manager explains an
+issue, the AI tests the explanation against the risk function's data and reports what supports it and what contradicts
+it. The risk manager weighs that evidence; the AI does not judge the explanation.
 
 **Ex-post tracking error** is the standard deviation of the portfolio's realised return relative to its benchmark over a
 stated window. Its forecast counterpart, ex-ante tracking error, belongs to [market risk](market-risk.md), which
@@ -118,7 +123,7 @@ explains; and the actions agreed are tracked until they are closed.
 An **exception** in this pillar is a reading that has crossed a rule's threshold: a sign that the portfolio is not
 delivering its promise, or not in the way it promised. A **watch item** is an early sign that has not yet persisted.
 Each rule is a [governed
-parameter](../framework/07-controls.md#materiality-thresholds-as-governed-parameters). **The example values below are
+parameter](../framework/08-controls.md#materiality-thresholds-as-governed-parameters). **The example values below are
 illustrative and are not recommendations;** each risk function sets its own.
 
 | Kind of rule | Example (illustrative) | What it catches |
@@ -142,7 +147,7 @@ are always shown, so that the review starts from what was agreed last time.
 ## What the AI drafts
 The AI drafts each item of the challenge pack from the facts that the risk engine produced and from nothing else. Every
 number in each draft appears in the facts beside it, so the [grounding
-check](../framework/07-controls.md#the-grounding-check) would pass. The questions are proposals; the risk manager
+check](../framework/08-controls.md#the-grounding-check) would pass. The questions are proposals; the risk manager
 decides which to ask. **The funds and figures are illustrative.**
 
 **Outperformance from unintended beta.**
@@ -240,7 +245,7 @@ group, and membership is reviewed on a set cycle.
 Attribution effects measured period by period do not add up over longer periods, because returns compound. A linking
 method spreads the difference across the periods so that the effects sum to the return over the whole period. Several
 published methods exist, and they give slightly different answers, so the method is stated, held as a
-[governed parameter](../framework/07-controls.md#materiality-thresholds-as-governed-parameters), and changed only from a
+[governed parameter](../framework/08-controls.md#materiality-thresholds-as-governed-parameters), and changed only from a
 recorded effective date. The same applies to linking the lines of the
 [alpha and beta split](alpha-and-beta-method.md#the-test-and-its-limits) over longer periods.
 
@@ -263,7 +268,7 @@ error there would make every later test wrong, which is why the terms are confir
 used.
 
 ## Controls specific to this pillar
-The general controls in [controls](../framework/07-controls.md) apply in full. This pillar adds five.
+The general controls in [controls](../framework/08-controls.md) apply in full. This pillar adds five.
 
 - **Mandate terms are confirmed before use.** Extracted terms are not tested against until the risk manager confirms
   them, each term links to its source passage, and a change to the documents triggers re-extraction with the
@@ -279,7 +284,7 @@ The general controls in [controls](../framework/07-controls.md) apply in full. T
   manager.
 
 ## Measuring value
-The measures from [measuring value](../framework/08-measuring-value.md) that matter most for this pillar are
+The measures from [measuring value](../framework/09-measuring-value.md) that matter most for this pillar are
 influence measures, because the purpose of the review is to change what happens.
 
 | Dimension | Measure for this pillar |

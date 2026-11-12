@@ -72,16 +72,19 @@ the reasoning goes there.
 
 | Concept | What it is | Defined in | Used by |
 |---|---|---|---|
-| Core pattern | The risk engine computes, AI narrates, a human judges | [Principles](05-principles.md#2-the-risk-engine-computes-ai-narrates-a-human-judges) | Every chapter |
-| Risk engine | The deterministic part of the system: the same data always gives the same figure | [Principles](05-principles.md#2-the-risk-engine-computes-ai-narrates-a-human-judges) | Every chapter |
+| Core pattern | The risk engine computes, AI analyses and narrates, a human judges | [Principles](05-principles.md#2-the-risk-engine-computes-ai-analyses-and-narrates-a-human-judges) | Every chapter |
+| Risk engine | The deterministic part of the system: the same data always gives the same figure | [Principles](05-principles.md#2-the-risk-engine-computes-ai-analyses-and-narrates-a-human-judges) | Every chapter |
+| Modes of working | Prepare, investigate and challenge: how a person and the AI work together | [Working with AI](06-working-with-ai.md#three-modes-of-working) | Market risk, liquidity risk, performance risk |
+| Analysis run | A governed analysis the AI runs through the risk engine, recorded so that its figures can be reproduced | [Working with AI](06-working-with-ai.md#where-a-figure-may-come-from) | Principles, controls |
+| Exploratory query | A read-only query the AI composes where no governed analysis exists; labelled unvalidated and kept out of outputs | [Working with AI](06-working-with-ai.md#where-a-figure-may-come-from) | Controls |
 | Six principles | What a redesign should follow | [Principles](05-principles.md#six-principles) | Redesign method, all pillars |
-| Seven steps | How one workflow is redesigned, from outcome to measured result | [Redesign method](06-redesign-method.md#the-seven-steps) | All pillars |
-| Step tags | Gather, Compute, Interpret, Judge, Communicate, Approve / Wait | [Redesign method](06-redesign-method.md#3-map-the-current-state) | All pillars |
+| Seven steps | How one workflow is redesigned, from outcome to measured result | [Redesign method](07-redesign-method.md#the-seven-steps) | All pillars |
+| Step tags | Gather, Compute, Interpret, Judge, Communicate, Approve / Wait | [Redesign method](07-redesign-method.md#3-map-the-current-state) | All pillars |
 | Risk manager's value | Judging what matters to the portfolio and its intended risk profile, bringing clarity to the risks being taken, challenge, deciding what the system flags and judgement where the data runs out; the sign-off is the accountability | [Principles](05-principles.md#what-the-risk-manager-adds) | README, measuring value, all pillars |
-| Owners | Who or what does each step: the risk engine, the AI assistant, the risk manager or the head of risk | [Redesign method](06-redesign-method.md#4-assign-each-step-an-owner) | All pillars |
-| Four dimensions of value | Capacity, speed, quality and influence | [Measuring value](08-measuring-value.md#four-dimensions) | All pillars |
-| Baseline | A record of the current state, taken before anything changes | [Measuring value](08-measuring-value.md#baseline-first) | Redesign method |
-| Reinvestment plan | What freed time will be spent on, decided in advance | [Measuring value](08-measuring-value.md#reinvestment-plan) | Principles, redesign method, market risk |
+| Owners | Who or what does each step: the risk engine, the AI assistant, the risk manager or the head of risk | [Redesign method](07-redesign-method.md#4-assign-each-step-an-owner) | All pillars |
+| Four dimensions of value | Capacity, speed, quality and influence | [Measuring value](09-measuring-value.md#four-dimensions) | All pillars |
+| Baseline | A record of the current state, taken before anything changes | [Measuring value](09-measuring-value.md#baseline-first) | Redesign method |
+| Reinvestment plan | What freed time will be spent on, decided in advance | [Measuring value](09-measuring-value.md#reinvestment-plan) | Principles, redesign method, market risk |
 
 ## Exceptions and ranking
 
@@ -99,12 +102,13 @@ the reasoning goes there.
 
 | Concept | What it is | Defined in | Used by |
 |---|---|---|---|
-| Grounding check | Every number in generated text is a computed fact, or a simple operation on computed facts that the check recomputes | [Controls](07-controls.md#the-grounding-check) | Principles, all pillars, alpha and beta |
-| Sign-off point | Where a human must approve, and what they are approving | [Controls](07-controls.md#sign-off-points) | Every redesigned workflow |
-| Audit trail | The record of facts, versions, generated text, edits and approval | [Controls](07-controls.md#the-audit-trail) | Every redesigned workflow |
-| Governed parameter | A threshold or rule with an owner, a review cycle and a change record | [Controls](07-controls.md#materiality-thresholds-as-governed-parameters) | All pillars, alpha and beta |
-| Parallel run | The new workflow runs beside the old one before the old one stops | [Controls](07-controls.md#parallel-runs) | Redesign method, measuring value |
-| Fallback | What happens when a component fails, including a template in place of AI text | [Controls](07-controls.md#fallback) | Grounding check |
+| Grounding check | Every number in generated text traces to the daily run or to a recorded analysis run, or is a simple operation on such figures that the check recomputes | [Controls](08-controls.md#the-grounding-check) | Principles, working with AI, all pillars, alpha and beta |
+| AI permissions | What the AI may read, which analyses it may run and what it may never do, set by the risk function and enforced by the risk engine | [Controls](08-controls.md#ai-permissions) | Working with AI |
+| Sign-off point | Where a human must approve, and what they are approving | [Controls](08-controls.md#sign-off-points) | Every redesigned workflow |
+| Audit trail | The record of facts, versions, generated text, edits and approval | [Controls](08-controls.md#the-audit-trail) | Every redesigned workflow |
+| Governed parameter | A threshold or rule with an owner, a review cycle and a change record | [Controls](08-controls.md#materiality-thresholds-as-governed-parameters) | All pillars, alpha and beta |
+| Parallel run | The new workflow runs beside the old one before the old one stops | [Controls](08-controls.md#parallel-runs) | Redesign method, measuring value |
+| Fallback | What happens when a component fails, including a template in place of AI text | [Controls](08-controls.md#fallback) | Grounding check |
 
 ## Measures
 

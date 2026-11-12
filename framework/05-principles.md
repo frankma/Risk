@@ -2,8 +2,9 @@
 
 AI produces a return in investment risk when the workflow is redesigned around it, not when it is inserted into the
 workflow as it stands. This chapter sets out why insertion fails and the six principles a redesign should follow, then
-sets out what the risk manager adds once the system produces the outputs. The [philosophy](00-philosophy.md) sets out
-what the function is for; these principles set out how to redesign its work around AI.
+sets out what the risk manager adds once the system produces the outputs. [Working with AI](06-working-with-ai.md)
+follows with how people and the AI work together. The [philosophy](00-philosophy.md) sets out what the function is for;
+these principles set out how to redesign its work around AI.
 
 ## The problem: insertion, not redesign
 Many asset managers now give their staff AI tools, but few can show a measurable return from them. The tools usually
@@ -25,8 +26,8 @@ Sources). The lesson for a risk function is that the unit of change is the workf
 | # | Principle | In one line |
 |---|---|---|
 | 1 | Redesign, don't insert | Start from the outcome, then rebuild the steps. |
-| 2 | The risk engine computes, AI narrates, a human judges | Each kind of work goes to the owner suited to it. |
-| 3 | The AI never produces a number | Every figure comes from the risk engine; generated text is checked against it. |
+| 2 | The risk engine computes, AI analyses and narrates, a human judges | Each kind of work goes to the owner suited to it. |
+| 3 | The AI never fabricates a number | Every figure has a recorded computation behind it; generated text is checked against it. |
 | 4 | Exceptions over everything | The system reviews every portfolio; the human reviews what is material. |
 | 5 | Decide where freed time goes before starting | Unredirected hours never show up as value. |
 | 6 | New capabilities beat faster old ones | The largest gains are things the manual process could not do. |
@@ -36,32 +37,37 @@ Sources). The lesson for a risk function is that the unit of change is the workf
 manager challenged. A redesign starts from that outcome and asks which steps it actually needs, rather than starting
 from the existing steps and asking which of them AI can speed up.
 
-**In practice.** Each workflow is redesigned end to end, using the [redesign method](06-redesign-method.md). Steps that
+**In practice.** Each workflow is redesigned end to end, using the [redesign method](07-redesign-method.md). Steps that
 exist only because the old process was slow, such as re-keying data, reformatting tables or chasing inputs, are removed
 rather than automated. An output that feeds no decision is stopped rather than produced faster.
 
-### 2. The risk engine computes, AI narrates, a human judges
+### 2. The risk engine computes, AI analyses and narrates, a human judges
 **What it means.** The work in a risk workflow falls into three kinds, and each has a natural owner. Gathering data,
 calculating measures and comparing them to limits must be exact and reproducible, so it belongs to the risk engine: the
 deterministic part of the system, where the same data always gives the same figure and every figure can be traced and
-reproduced. Explaining what changed, drafting text and extracting information from documents is language and pattern
-work, which the AI assistant does in seconds. Deciding what matters, escalating and signing off require judgement and
-accountability, and belong to the risk manager, and to the head of risk where escalation or sign-off requires it.
+reproduced. Working out which analyses answer a question, explaining what changed, drafting text and extracting
+information from documents is language and pattern work, which the AI assistant does in seconds. When that work needs
+a figure, the AI runs the analysis through the risk engine and does not compute it itself. Deciding what matters,
+escalating and signing off require judgement and accountability, and belong to the risk manager, and to the head of
+risk where escalation or sign-off requires it.
 
 **In practice.** Each step of a redesigned workflow is assigned to exactly one of the three owners. Where a step mixes
-kinds of work, it is split. A system in which AI calculates, or in which a person re-types figures that the risk engine
-produced, has the wrong owner for that step.
+kinds of work, it is split. A system in which the AI does the arithmetic itself, or in which a person re-types figures
+that the risk engine produced, has the wrong owner for that step. [Working with AI](06-working-with-ai.md) sets out how
+the person and the AI then work together.
 
-### 3. The AI never produces a number
+### 3. The AI never fabricates a number
 **What it means.** Language models can produce plausible figures that are wrong, and a risk output with a wrong figure
-in it is worse than no output. Every number therefore comes from the risk engine that computed it from data. The AI
-interprets: it writes text around the figures it is given, and at most combines them in simple ways that can be
-checked, such as a difference or a ratio. It never originates a number.
+in it is worse than no output. Every number therefore has a computation behind it: the risk engine computed it, in
+the daily run or in an analysis the AI ran through it. Aggregating and attributing produce numbers, and the AI may do
+both, because the risk engine does the arithmetic and the run is recorded and can be reproduced. Beyond that the AI
+at most combines figures in simple ways that can be checked, such as a difference or a ratio. What it never does is
+state a figure with no computation behind it.
 
-**In practice.** Generated text passes a grounding check before anyone sees it: every number in it is matched against
-the computed values it was generated from, or recomputed from them, and text with a number that cannot be traced is
-rejected. This check, and the other [controls](07-controls.md) that make it safe to rely on generated text, are what
-allow manual checking to be reduced.
+**In practice.** Generated text passes a grounding check before anyone sees it: every number in it is traced to the
+daily run or to a recorded analysis run, or recomputed from figures that are, and text with a number that cannot be
+traced is rejected. This check, and the other [controls](08-controls.md) that make it safe to rely on generated text,
+are what allow manual checking to be reduced.
 
 ### 4. Exceptions over everything
 **What it means.** A manual process cannot review every portfolio in depth every day, so it samples or reviews
@@ -78,7 +84,7 @@ never shows up as value. The use of the time is a design decision, made at the s
 
 **In practice.** Before a workflow is redesigned, the risk function records what the freed capacity will be spent on,
 for example deeper portfolio reviews or more frequent challenge of portfolio managers, and then tracks whether that
-happens. [Measuring value](08-measuring-value.md) sets out how.
+happens. [Measuring value](09-measuring-value.md) sets out how.
 
 ### 6. New capabilities beat faster old ones
 **What it means.** Doing the old process faster has a ceiling: at best the old output arrives sooner. The larger gains
@@ -117,7 +123,7 @@ what they add is what goes into it.
   portfolio manager take risk deliberately, and the return follows from deliberate risk-taking. The risk manager stays
   independent of the investment team, and that independence is what makes the clarity credible.
 - **Challenge that changes decisions.** Evidence put to the portfolio manager, and escalation where an issue stays
-  unresolved. Influence is the dimension of [value](08-measuring-value.md#influence) closest to the function's
+  unresolved. Influence is the dimension of [value](09-measuring-value.md#influence) closest to the function's
   purpose.
 - **Deciding what the system flags, and in what order.** The thresholds that decide what reaches the queue, the
   ranking that orders it, the patterns that connect the pillars and the calibration of scenarios are where judgement is

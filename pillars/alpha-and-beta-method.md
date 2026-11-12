@@ -126,7 +126,7 @@ is a label rather than evidence, so both routes pass the same test.
 
 On either route, the construction is on record before the period starts: the benchmark portfolio, the buckets, the
 instrument inside each and the factor list decide how much return counts as alpha. They are [governed
-parameters](../framework/07-controls.md#materiality-thresholds-as-governed-parameters), owned by the risk function and
+parameters](../framework/08-controls.md#materiality-thresholds-as-governed-parameters), owned by the risk function and
 versioned. A factor joins the list only if an ETF or a future can hold it at the portfolio's size and a stated cost,
 and a change applies from its effective date. Weights still move during the period, but a tilt or timing call counts
 only if recorded when taken.
@@ -154,7 +154,7 @@ Within [attribution reporting](performance-risk.md#workflows-in-this-pillar), th
 checks that it reconciles; a split that does not is an exception and is not drafted. A large share of gross excess
 return from unintended beta, over several periods, fires the [source-of-return
 rule](performance-risk.md#materiality-and-exceptions). The AI drafts the explanation, and the [grounding
-check](../framework/07-controls.md#the-grounding-check) tests it. The risk manager judges whether alpha persists,
+check](../framework/08-controls.md#the-grounding-check) tests it. The risk manager judges whether alpha persists,
 whether beta was intended and which questions to put to the portfolio manager, who decides what to hold.
 
 ## Sources

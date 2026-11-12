@@ -34,13 +34,13 @@ unchanged.
 Speed measures elapsed time, not effort. Time from data availability to signed-off output shows how soon a decision can
 be made on a recurring output; time from alert to explanation shows how soon the function understands an unexpected
 event. Elapsed time is usually dominated by gathering and waiting rather than by work, as the
-[redesign method](06-redesign-method.md) shows, so speed is often where a redesign shows its largest change.
+[redesign method](07-redesign-method.md) shows, so speed is often where a redesign shows its largest change.
 
 ### Quality
 Quality measures whether the function catches what matters and gets it right. Issues missed or detected late are the
 most important measure and the hardest to collect; they are recorded as they come to light, for example from
 post-event reviews. Errors found in review show how much rework the workflow creates. Parallel-run agreement, from the
-[controls](07-controls.md) chapter, shows whether a redesigned workflow can be relied on before the old one is stopped.
+[controls](08-controls.md) chapter, shows whether a redesigned workflow can be relied on before the old one is stopped.
 
 ### Influence
 Influence measures whether the function's work changes what happens. Issues raised with portfolio managers, and the
@@ -83,7 +83,7 @@ measure of return.
 
 ## Illustrative scorecard
 The scorecard below is for one redesigned workflow, the monthly risk and performance report from the worked example in
-the [redesign method](06-redesign-method.md#worked-example-a-monthly-risk-and-performance-report). **All figures are
+the [redesign method](07-redesign-method.md#worked-example-a-monthly-risk-and-performance-report). **All figures are
 illustrative.**
 
 | Dimension | Measure | Before | After |

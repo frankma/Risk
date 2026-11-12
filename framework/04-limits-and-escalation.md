@@ -21,7 +21,7 @@ The risk function watches them as a courtesy: it shows each one beside its own r
 ahead of them, and routes any breach it sees to compliance rather than handling it.
 
 **Internal limits are soft limits.** They are [governed
-parameters](07-controls.md#materiality-thresholds-as-governed-parameters), owned by the risk function, and they cover
+parameters](08-controls.md#materiality-thresholds-as-governed-parameters), owned by the risk function, and they cover
 what the mandate leaves unsaid. A mandate that sets a benchmark and a tracking error budget rarely says how much the
 portfolio may lose in total; an internal limit on value at risk says it for the risk function. Each internal limit is
 set for its portfolio, from what the mandate intends, not copied from a firm-wide number. For a new portfolio, internal
@@ -63,7 +63,7 @@ they anchor to.
 
 Whatever the approach, a limit is tested by how it behaves. A limit that is never approached says nothing, and one that
 is breached all the time is ignored; both are reviewed on the cycle set out in
-[controls](07-controls.md#materiality-thresholds-as-governed-parameters).
+[controls](08-controls.md#materiality-thresholds-as-governed-parameters).
 
 ## The breach lifecycle
 The lifecycle below applies to internal limits. A breach of a mandate or regulatory limit follows compliance's process.
@@ -154,7 +154,7 @@ shows which limits are breached repeatedly, which is the evidence for recalibrat
 
 ## What the AI drafts
 The AI drafts from the facts the risk engine recorded and from nothing else. Every number in each draft appears in the
-facts beside it, so the [grounding check](07-controls.md#the-grounding-check) would pass. The AI does not decide
+facts beside it, so the [grounding check](08-controls.md#the-grounding-check) would pass. The AI does not decide
 whether a breach is real, how it is classified or what is done about it. **The funds and figures are illustrative.**
 
 **A passive breach of an internal limit.**
@@ -188,7 +188,7 @@ whether a breach is real, how it is classified or what is done about it. **The f
 > remains in its own queue.
 
 ## Controls specific to limits
-The general controls in [controls](07-controls.md) apply in full. Limits add four.
+The general controls in [controls](08-controls.md) apply in full. Limits add four.
 
 - **Every breach is recorded.** Detection, verification, classification, notice, explanation, decision and close are
   kept in the audit trail.
@@ -198,7 +198,7 @@ The general controls in [controls](07-controls.md) apply in full. Limits add fou
 - **Limits are reviewed by their behaviour.** A limit that is never approached, or is breached repeatedly, is reviewed.
 
 ## Measuring value
-The measures from [measuring value](08-measuring-value.md) that matter most for limits are speed and influence: how soon
+The measures from [measuring value](09-measuring-value.md) that matter most for limits are speed and influence: how soon
 a breach is known and decided, and whether the decisions are made and kept.
 
 | Dimension | Measure for limits |

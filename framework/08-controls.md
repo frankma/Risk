@@ -9,12 +9,13 @@ function should own them.
 A redesign removes steps that existed to catch errors: a second person checking figures, a manager reading every page.
 Those steps can only be removed if something at least as reliable takes their place. Without that, either the old
 checks stay and the redesign saves little, or they are removed and errors reach decisions. The controls below are what
-make the [redesign method](06-redesign-method.md) work in practice, and they should be designed in step 6, not added
+make the [redesign method](07-redesign-method.md) work in practice, and they should be designed in step 6, not added
 after the workflow is live.
 
 | Control | What it protects against |
 |---|---|
 | Grounding check | A wrong number in generated text |
+| AI permissions | The AI reading, running or doing something the risk function did not delegate |
 | Sign-off points | An output reaching its audience without accountable review |
 | Audit trail | Being unable to show what was produced, changed and approved |
 | Governed thresholds | Silent changes to what counts as material |
@@ -24,16 +25,20 @@ after the workflow is live.
 
 ## The grounding check
 The grounding check enforces the principle that
-[the AI never produces a number](05-principles.md#3-the-ai-never-produces-a-number). Every number in a piece of
-generated text is extracted and matched against the computed facts the text was generated from. Numbers written as
-words, such as "three months", are extracted and matched in the same way as numerals.
+[the AI never fabricates a number](05-principles.md#3-the-ai-never-fabricates-a-number). Every number in a piece of
+generated text is extracted and traced to the computed facts behind it: the facts from the daily run that the text was
+generated from, and the results of any analysis the AI ran through the risk engine, each recorded as a run. Numbers
+written as words, such as "three months", are extracted and traced in the same way as numerals.
 
-To produce a number, in the sense of the principle, is to originate it. A number in generated text is grounded if it
-is one of the computed facts, or the result of a simple operation on them that the check can recompute: a sum, a
+To fabricate a number is to state it with no computation behind it. A number in generated text is grounded if it is
+one of the computed facts, the result of a recorded analysis run, or the result of a simple operation on them that the
+check can recompute: a sum, a
 difference, a percentage change, a ratio or a simple multiple, including words such as "doubled" or "a third". A
 number the check cannot recompute from the facts is rejected like any unmatched number. Figures read from documents,
 such as the limits in a portfolio's mandate terms, follow the same rule: each must appear, as numerals or as words, in
-the source passage it is linked to, and the risk manager confirms it before it is used.
+the source passage it is linked to, and the risk manager confirms it before it is used. A figure from an exploratory
+query is traced like any other and keeps its label: the check rejects it in any text bound for an output, as set out
+in [working with AI](06-working-with-ai.md#where-a-figure-may-come-from).
 
 The match allows for formatting but not for substance. A computed value of 0.0473 matches "4.7%" and "4.73%"; a computed
 value of 12,450,000 matches "12.45 million" and "12.5m"; a value expressed in basis points matches the same value
@@ -48,6 +53,13 @@ the outcome are all recorded in the audit trail. A grounding check that warns ra
 
 The check is limited to numbers. It does not test whether the text's reasoning is sound or whether its emphasis is
 right; that remains the risk manager's judgement at the sign-off point.
+
+## AI permissions
+The AI works under a permission that the risk function sets and records: the data it may read, the analyses it may run
+and the actions it may never take, as set out in [working with AI](06-working-with-ai.md#what-the-ai-may-do). The risk
+engine enforces it. An analysis outside the governed list does not run, the AI has no write access to data or to
+governed parameters, and nothing it produces leaves the function without a sign-off. Every run the AI starts is
+recorded with its parameters, the person who asked and the result, so that any answer can be reproduced.
 
 ## Sign-off points
 Each redesigned workflow names the points at which a human must approve before an output moves on, and what exactly
@@ -64,9 +76,10 @@ the arithmetic, which the system has already checked.
 
 ## The audit trail
 For every output, the workflow records: the input facts it was generated from, with their data
-[versions](03-risk-data.md#versioned-as-known); the threshold, prompt, template and model versions in force; the text
-as generated; every edit the human made; the grounding check result; who approved it and when. The record is kept in a
-form that can be retrieved by output, by portfolio and by date.
+[versions](03-risk-data.md#versioned-as-known); the analysis runs behind it, with their parameters; the threshold,
+prompt, template and model versions in force; the text as generated; every edit the human made; the grounding check
+result; who approved it and when. The record is kept in a form that can be retrieved by output, by portfolio and by
+date.
 
 The trail serves three purposes. It allows any figure or sentence in a released output to be traced back to its source.
 It shows how often humans change generated text and in what way, which is evidence of whether the AI step is working.
