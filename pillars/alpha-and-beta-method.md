@@ -10,7 +10,9 @@ it or a security pick carried it. Alpha is the step from the second to the third
 selection, once the top-down portfolio has carried all the beta out.**
 
 Alpha depends on a declared list: it is what the declared factors leave unexplained. When an ETF or a future can
-replicate a return, it joins the list. Value was once called alpha.
+replicate a return, it joins the list. Value was once called alpha. Each declared factor is tagged with the
+[return generator](../framework/02-sources-of-return.md#what-generates-return) that pays it, a market risk premium or a
+style premium, so that beta can be read by generator, and alpha is read as skill.
 
 ## Scope and basis
 The split runs on publicly traded holdings, on the asset side and on gross returns: after trading and financing costs,
@@ -85,6 +87,12 @@ and leave out the cost of holding the instruments.)
 The same step applies to every declared factor: market, style, sector, country, currency, rates and spreads. Each is
 carried by an ETF or a future on the index or basket that defines it, and the top-down portfolio holds each in the
 amount of the real portfolio's exposure.
+
+**Each factor carries one generator tag.** The equity market, rates and spreads are market risk premia, and a sector
+or country index takes the tag of the market it is a slice of. Value, momentum, size, carry and a basket of less
+liquid securities are style premia. The tag changes no line of the split. It groups the beta lines, so that policy
+beta, tilts, timing and unintended beta can each be shown by the generator that paid them.
+
 The book's return divides into exposure times factor return, which the top-down portfolio carries, and specific return,
 which is alpha. This joins the two attribution splits in the [philosophy](../framework/00-philosophy.md#2-drill-in).
 
@@ -125,7 +133,8 @@ stated after borrow and financing costs and without the interest on its cash, wh
 is a label rather than evidence, so both routes pass the same test.
 
 On either route, the construction is on record before the period starts: the benchmark portfolio, the buckets, the
-instrument inside each and the factor list decide how much return counts as alpha. They are [governed
+instrument inside each, the factor list and each factor's generator tag decide how much return counts as alpha and
+which generator the rest is read against. They are [governed
 parameters](../framework/08-controls.md#materiality-thresholds-as-governed-parameters), owned by the risk function and
 versioned. A factor joins the list only if an ETF or a future can hold it at the portfolio's size and a stated cost,
 and a change applies from its effective date. Weights still move during the period, but a tilt or timing call counts
@@ -139,7 +148,8 @@ return shows no exposure to any declared factor when regressed on the top-down p
 Passing shows that the split is clean, not that alpha is skill or safe.
 
 - **The list can miss a factor.** A book whose specific return moves more than independent positions would imply shares
-  something the list does not cover, and the risk manager judges what it is.
+  something the list does not cover, and the risk manager judges what it is. Until it is declared, a style premium
+  that the list misses is measured as alpha and read as skill.
 - **Betas are estimates.** The top-down portfolio matches exposure as estimated on each day's holdings. Estimation
   error leaves a little beta in alpha, which the regression test detects; a persistent finding is a reason to review
   the estimation, not the split.

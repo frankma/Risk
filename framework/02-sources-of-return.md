@@ -1,25 +1,60 @@
 # Sources of return
 
-Every investment return comes from two sources. Top-down views decide how much of which markets to hold. Bottom-up
-selection decides which securities to hold within them. Loosely, the first is called beta and the second alpha. This
-chapter answers five questions about them. The [alpha and beta method](../pillars/alpha-and-beta-method.md) sets out
-how the split is computed.
+Above the return on cash, every investment return is paid by one of three return generators: market risk premia, style
+premia and skill. An ETF or a future can hold the first two, so they are beta. Nothing can hold the third, so it is
+alpha. A generator says why a return is paid, and so how it can stop being paid, which is what a risk function most
+needs to know about it. This chapter answers seven questions about them. The
+[alpha and beta method](../pillars/alpha-and-beta-method.md) sets out how the split is computed.
+
+## What generates return?
+| Generator | What it is | Why it pays | Source |
+|---|---|---|---|
+| **Market risk premia** | The return for holding a market: the equity premium, the term premium in rates and the credit premium in spreads | It compensates for losses that arrive in bad times, when they hurt most | Beta |
+| **Style premia** | The return of a rule that an index or basket can follow: value, momentum, size, carry, and the premium for holding less liquid public securities | Disputed: it may compensate for a risk, or it may be a pattern in investor behaviour that persists | Beta, once declared |
+| **Skill** | The return from choosing between securities that share the same exposures | One investor finds a wrong price before others do. Measured against the market and before costs it is zero-sum: what one manager gains, another loses | Alpha |
+
+The framework takes no side on why style premia pay. The method needs only that an ETF or a future can hold a premium,
+and the risk function watches how it fails whichever explanation is right.
+
+The line between style premia and skill moves. A return counts as skill until an index or basket can replicate it, and
+from then on it is a style premium. Value was once called alpha. A premium that no instrument holds at the portfolio's
+size, as is often true of the premium for less liquid securities, is measured as alpha until one does, and
+[liquidity risk](../pillars/liquidity-risk.md) marks the holdings that carry it.
+
+A generator is not a decision. The mandate, the manager or nobody may have chosen how much of a premium a portfolio
+holds, and [who chose it](02-sources-of-return.md#who-chose-each-part) is a separate question. A timing call is still
+paid by the premium that was held, and what the call added is read on the timing line.
+
+## How does each generator fail?
+| Generator | How it fails | Where it is watched |
+|---|---|---|
+| **Market risk premia** | A large drawdown when the economy or the markets turn, with equities, rates and spreads often moving together | Market risk's [stress tests](../pillars/market-risk.md#stress-and-reverse-stress) and its rule on drawdown headroom |
+| **Style premia** | Long periods that pay nothing, and sharp reversals when many holders leave at once. The premium for less liquid securities is lost when they must be sold | The stress tests, the [firm's footprint](../pillars/integrated-view.md#the-firms-footprint) and [liquidity risk](../pillars/liquidity-risk.md) |
+| **Skill** | It decays as others find the same prices, crowded books lose together, and one period's result is mostly noise | Performance risk's [significance tests](../pillars/performance-risk.md#windows-and-significance) and the firm's footprint |
+
+The generator sets the question a risk manager asks of a return. Of a market risk premium: was the exposure chosen, and
+can the mandate bear its drawdown? Of a style premium: is it in the mandate terms, and how crowded is it? Of skill: is
+it more than noise, and does it cover the fee?
 
 ## What are the two sources?
-Every part of a portfolio's return lands in exactly one place in this breakdown.
+The generators group into two sources, by the decision that puts each in a portfolio. Top-down views decide how much of
+which markets and styles to hold, and bottom-up selection decides which securities to hold within them. Loosely, the
+first is called beta and the second alpha. Every part of a portfolio's return lands in exactly one place in this
+breakdown.
 
 - **Portfolio return**
-  - **Top-down views**, loosely beta
+  - **Top-down views**, loosely beta: paid by market risk premia and style premia
     - **Set in the mandate:** policy beta
     - **Chosen by the manager:** tilts and timing
     - **Chosen by nobody:** unintended beta
-  - **Bottom-up selection**, loosely alpha: what selection adds once top-down is out
+  - **Bottom-up selection**, loosely alpha: paid by skill, and what selection adds once top-down is out
 
 | | Top-down | Bottom-up |
 |---|---|---|
 | **The question** | How much of which markets? | Which securities within them? |
 | **Examples** | Asset allocation, market timing, sector and style tilts | Stock and bond selection |
 | **Who usually decides** | Asset owner, chief investment officer, allocation team | Portfolio manager, analysts |
+| **Paid by** | Market risk premia and style premia | Skill |
 | **Loose name** | Beta | Alpha |
 
 Both take judgement, and both can be wrong. Beta does not mean passive: market timing is a top-down view, and a
@@ -64,8 +99,8 @@ the fee, tells the client whether selection is what they are paying for.
 
 ## Where do the labels mislead?
 - **A top-down exposure needs no top-down view.** A pure stock picker still has sector and style positions, because the
-  picks add up to them. A manager who picks cheap small companies earns value and size returns, which are beta however
-  the picks were made. That return is unintended beta.
+  picks add up to them. A manager who picks cheap small companies earns value and size returns, which are style premia
+  and so beta, however the picks were made. That return is unintended beta.
 - **The instrument does not show the view.** A top-down view can be held through stocks, so only a record of what was
   chosen, and when, separates a tilt from unintended beta.
 - **A measurement is not skill.** One period's alpha is mostly noise, so it is read over several periods and by
@@ -112,6 +147,16 @@ example, the sector's 1.25% is 0.87% policy beta, 0.22% from the tilt, 0.05% uni
 from top-down and 0.11% from bottom-up. The tilt's funding sits in other sectors and is left out here.
 
 ## Sources
+- Sharpe, W. (1991). The Arithmetic of Active Management. *Financial Analysts Journal*. Before costs, active returns
+  measured against the market sum to zero.
+- Ilmanen, A. (2011). *Expected Returns: An Investor's Guide to Harvesting Market Rewards*. Wiley. Market and style
+  premia, why each may pay and how each has failed.
+- Ang, A. (2014). *Asset Management: A Systematic Approach to Factor Investing*. Oxford University Press. Premia as
+  compensation for losses in bad times.
+- Lakonishok, J., Shleifer, A. and Vishny, R. (1994). Contrarian Investment, Extrapolation, and Risk. *Journal of
+  Finance*. The behavioural explanation of the value premium, against the risk explanation of Fama and French.
+- Amihud, Y. and Mendelson, H. (1986). Asset Pricing and the Bid-Ask Spread. *Journal of Financial Economics*. The
+  premium for holding less liquid securities.
 - Brinson, G., Hood, L. and Beebower, G. (1986). Determinants of Portfolio Performance. *Financial Analysts Journal*.
   The split of active return into allocation and selection.
 - Sharpe, W. (1992). Asset Allocation: Management Style and Performance Measurement. *Journal of Portfolio
