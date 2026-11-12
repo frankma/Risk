@@ -110,24 +110,23 @@ risk function measures and flags, and routes what it finds to the owner who can 
 evidence, and tracked until it is closed.
 
 ## Flagship redesign: the daily data check
-The example below follows the daily data check for a range of 40 portfolios. **The steps, hours and elapsed times are
-illustrative.**
+The example below follows the daily data check for a range of 40 portfolios. **The steps are illustrative.**
 
 **Current state.** Each morning, before any measure can be trusted, a risk manager checks the overnight data by hand.
 
-| # | Step | Tag | Hours | Elapsed |
-|---|---|---|---|---|
-| 1 | Download files from several systems and check that each arrived | Gather | 0.5 | 0.5 h |
-| 2 | Compare each portfolio's position total with its accounting value | Compute | 0.75 | 0.75 h |
-| 3 | Scan prices for stale values and large jumps | Compute | 0.5 | 0.5 h |
-| 4 | Look up missing classifications and benchmark changes | Gather | 0.5 | 0.5 h |
-| 5 | Investigate each break and decide whether it is real | Judge | 0.75 | 0.75 h |
-| 6 | Email the owner of each source and chase corrections | Communicate | 0.5 | Until fixed |
-| 7 | Decide whether to run the day's measures or wait | Judge | 0.25 | 0.25 h |
+| # | Step | Tag |
+|---|---|---|
+| 1 | Download files from several systems and check that each arrived | Gather |
+| 2 | Compare each portfolio's position total with its accounting value | Compute |
+| 3 | Scan prices for stale values and large jumps | Compute |
+| 4 | Look up missing classifications and benchmark changes | Gather |
+| 5 | Investigate each break and decide whether it is real | Judge |
+| 6 | Email the owner of each source and chase corrections | Communicate |
+| 7 | Decide whether to run the day's measures or wait | Judge |
 
-The check takes 3.75 hours a day, and the day's measures wait for it. It is also uneven: a scan by eye catches large
-breaks in the portfolios a person looks at first and misses small ones elsewhere, and a break found today is often found
-again tomorrow because nothing tracks its correction.
+The day's measures wait for the check. It is also uneven: a scan by eye catches large breaks in the portfolios a person
+looks at first and misses small ones elsewhere, and a break found today is often found again tomorrow because nothing
+tracks its correction.
 
 **Owner assignment.**
 
@@ -141,21 +140,21 @@ again tomorrow because nothing tracks its correction.
 
 **Redesigned flow.**
 
-| # | Step | Owner | Hours | Elapsed |
-|---|---|---|---|---|
-| 1 | Take in every domain; check completeness, timeliness and validity | Risk engine | 0 | Overnight |
-| 2 | Reconcile positions to accounting values; check prices against each security's history | Risk engine | 0 | Overnight |
-| 3 | Apply proxies under the policy and flag them | Risk engine | 0 | Overnight |
-| 4 | Rank breaks by the portfolios and measures they affect | Risk engine | 0 | Overnight |
-| 5 | Draft a notice for each break to the owner of its source | AI assistant | 0 | Overnight |
-| 6 | Grounding check on every notice | Risk engine | 0 | Overnight |
-| 7 | Judge each ranked break; decide whether to run, wait or mark | Risk manager | 0.5 | 0.5 h |
-| 8 | Edit and send the notices | Risk manager | 0.25 | 0.25 h |
-| 9 | Track each break to closure | Risk engine | 0 | Until closed |
+| # | Step | Owner |
+|---|---|---|
+| 1 | Take in every domain; check completeness, timeliness and validity | Risk engine |
+| 2 | Reconcile positions to accounting values; check prices against each security's history | Risk engine |
+| 3 | Apply proxies under the policy and flag them | Risk engine |
+| 4 | Rank breaks by the portfolios and measures they affect | Risk engine |
+| 5 | Draft a notice for each break to the owner of its source | AI assistant |
+| 6 | Grounding check on every notice | Risk engine |
+| 7 | Judge each ranked break; decide whether to run, wait or mark | Risk manager |
+| 8 | Edit and send the notices | Risk manager |
+| 9 | Track each break to closure | Risk engine |
 
-The check falls to 0.75 hours a day, and every portfolio is checked in full before its measures are computed. Breaks
-are ranked by what they could change: a break affecting a large share of a portfolio, or a measure close to its
-limit, ranks above one that could not move any reading the risk manager would see.
+Every portfolio is checked in full before its measures are computed. Breaks are ranked by what they could change: a
+break affecting a large share of a portfolio, or a measure close to its limit, ranks above one that could not move any
+reading the risk manager would see.
 
 **The shift.** Data quality moves from a morning scan by eye to a check the risk engine runs on everything, every day,
 with the risk manager judging the few breaks that matter and the source owners fixing them at source.
@@ -215,9 +214,6 @@ soon the day's measures can be trusted, and whether a break reaches an output un
 | Quality | Breaks found after an output was released |
 | Influence | Breaks corrected at source by their due date; breaks that recur |
 | Risk data specific | Share of each portfolio resting on proxies; age of the oldest open break |
-
-In the flagship example, the check falls from 3.75 hours to 0.75 hours a day, and the measures no longer wait for a
-morning scan. (The figures are illustrative.)
 
 ## Sources
 - Basel Committee on Banking Supervision (2013). *Principles for Effective Risk Data Aggregation and Risk Reporting.*

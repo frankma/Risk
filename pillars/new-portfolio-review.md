@@ -51,24 +51,23 @@ exist first to keep everyone on top of the portfolio's risks, as set out in [lim
 escalation](../framework/04-limits-and-escalation.md#what-internal-limits-are-for), not to decide the launch.
 
 ## Flagship redesign: the review of one new portfolio
-The example below follows the review of one new open-ended fund. **The steps, hours and elapsed times are
-illustrative.**
+The example below follows the review of one new open-ended fund. **The steps are illustrative.**
 
 **Current state.** The risk function receives the draft documents late in the product process and works through them by
 hand.
 
-| # | Step | Tag | Hours | Elapsed |
-|---|---|---|---|---|
-| 1 | Read the draft documents and note the terms | Interpret | 4 | 3 days |
-| 2 | Ask the portfolio manager for the intended strategy and a model portfolio | Gather | 1 | 5 days |
-| 3 | Build risk and liquidity estimates on the model portfolio in a workbook | Compute | 6 | 3 days |
-| 4 | Check whether data can be sourced for the expected instruments | Gather | 3 | 5 days |
-| 5 | Agree limits with the portfolio manager by email | Communicate | 3 | 5 days |
-| 6 | Write the risk opinion for product governance | Communicate | 4 | 3 days |
-| 7 | Head of risk signs off the opinion | Approve / Wait | 1 | 3 days |
+| # | Step | Tag |
+|---|---|---|
+| 1 | Read the draft documents and note the terms | Interpret |
+| 2 | Ask the portfolio manager for the intended strategy and a model portfolio | Gather |
+| 3 | Build risk and liquidity estimates on the model portfolio in a workbook | Compute |
+| 4 | Check whether data can be sourced for the expected instruments | Gather |
+| 5 | Agree limits with the portfolio manager by email | Communicate |
+| 6 | Write the risk opinion for product governance | Communicate |
+| 7 | Head of risk signs off the opinion | Approve / Wait |
 
-The review takes about 22 hours and 27 working days. It often starts too late to change the design, the liquidity test
-uses a workbook nobody reruns, and nothing checks on launch day that what was agreed has been set up.
+The review often starts too late to change the design, the liquidity test uses a workbook nobody reruns, and nothing
+checks on launch day that what was agreed has been set up.
 
 **Owner assignment.**
 
@@ -77,8 +76,8 @@ uses a workbook nobody reruns, and nothing checks on launch day that what was ag
 - Steps 3 and 4 move to the risk engine, which runs the pillars' measures on the model portfolio, tests the benchmark,
   checks data readiness for every expected instrument and proposes internal limits and the alpha and beta construction.
 - Step 2 stays, earlier: the model portfolio is requested when the review starts.
-- Step 5 becomes a conversation about the proposed limits and construction, settled by the risk manager with the
-  portfolio manager.
+- Step 5 becomes a conversation about the proposed limits and construction: the portfolio manager is consulted, and
+  the risk manager decides.
 - Step 6 is split. The AI drafts the readiness summary from the facts; the risk manager writes the opinion and any
   conditions.
 - Step 7 stays with the head of risk.
@@ -86,20 +85,20 @@ uses a workbook nobody reruns, and nothing checks on launch day that what was ag
 
 **Redesigned flow.**
 
-| # | Step | Owner | Hours | Elapsed |
-|---|---|---|---|---|
-| 1 | Extract the draft mandate terms, each linked to its passage | AI assistant | 0 | Same day |
-| 2 | Confirm the terms; request the model portfolio | Risk manager | 2 | 1 day |
-| 3 | Run the pillars' measures on the model portfolio; test the benchmark and the liquidity profile | Risk engine | 0 | Same day |
-| 4 | Check data readiness; propose internal limits, early warnings and the alpha and beta construction | Risk engine | 0 | Same day |
-| 5 | Settle limits and construction with the portfolio manager | Risk manager | 3 | 3 days |
-| 6 | Draft the readiness summary | AI assistant | 0 | Minutes |
-| 7 | Grounding check on the summary | Risk engine | 0 | Minutes |
-| 8 | Write the opinion and any conditions | Risk manager | 2 | 1 day |
-| 9 | Sign off the opinion; product governance decides | Head of risk | 1 | 2 days |
-| 10 | On launch day, confirm every agreed item is in place | Risk engine | 0 | Launch day |
+| # | Step | Owner |
+|---|---|---|
+| 1 | Extract the draft mandate terms, each linked to its passage | AI assistant |
+| 2 | Confirm the terms; request the model portfolio | Risk manager |
+| 3 | Run the pillars' measures on the model portfolio; test the benchmark and the liquidity profile | Risk engine |
+| 4 | Check data readiness; propose internal limits, early warnings and the alpha and beta construction | Risk engine |
+| 5 | Consult the portfolio manager; decide the limits and the construction | Risk manager |
+| 6 | Draft the readiness summary | AI assistant |
+| 7 | Grounding check on the summary | Risk engine |
+| 8 | Write the opinion and any conditions | Risk manager |
+| 9 | Sign off the opinion; product governance decides | Head of risk |
+| 10 | On launch day, confirm every agreed item is in place | Risk engine |
 
-The review falls to about 8 hours and 7 working days, and it can start as soon as draft documents exist.
+The review can start as soon as draft documents exist.
 
 **The shift.** The review moves from a late, manual assessment to a readiness check that runs the same measures the
 portfolio will be monitored with, and that confirms on launch day that what was agreed is in place.
@@ -157,9 +156,6 @@ The general controls in [controls](../framework/08-controls.md) apply in full. T
 | Quality | Issues found after launch that the review should have caught; agreed items missing on launch day |
 | Influence | Conditions adopted; designs changed as a result of the review |
 | Review specific | Share of launches with every agreed item in place on launch day |
-
-In the flagship example, the review falls from about 22 hours and 27 working days to about 8 hours and 7 working days.
-(The figures are illustrative.)
 
 ## Connections
 The review sets up what the other chapters use. The mandate terms it confirms are the ones

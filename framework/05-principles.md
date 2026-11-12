@@ -12,10 +12,9 @@ work as intended. The return is missing because the tools are placed inside work
 process, and the constraints of that process stay in place.
 
 Take a recurring monthly risk report. Its cycle runs three to four weeks from month end to distribution. An AI tool that
-drafts the commentary in four hours instead of fourteen looks like a large saving, yet the report still goes out on the
-same day. The commentary was never the bottleneck: most of the cycle was spent gathering data from several systems,
-handing work between people and waiting in review queues. Saving ten hours inside a cycle of more than three weeks
-changes neither when the report arrives nor what it says. (The figures are illustrative.)
+drafts the commentary faster looks like an improvement, yet the report still goes out on the same day. The commentary
+was never the bottleneck: most of the cycle was spent gathering data from several systems, handing work between people
+and waiting in review queues. A faster draft changes neither when the report arrives nor what it says.
 
 The evidence points the same way. A large survey of organisations using generative AI tested 25 organisational
 attributes and found that workflow redesign had the biggest effect on whether they saw an impact on earnings (see
@@ -29,7 +28,7 @@ Sources). The lesson for a risk function is that the unit of change is the workf
 | 2 | The risk engine computes, AI analyses and narrates, a human judges | Each kind of work goes to the owner suited to it. |
 | 3 | The AI never fabricates a number | Every figure has a recorded computation behind it; generated text is checked against it. |
 | 4 | Exceptions over everything | The system reviews every portfolio; the human reviews what is material. |
-| 5 | Decide where freed time goes before starting | Unredirected hours never show up as value. |
+| 5 | Decide what the risk manager's time is for before starting | Time that is not directed is absorbed by existing work. |
 | 6 | New capabilities beat faster old ones | The largest gains are things the manual process could not do. |
 
 ### 1. Redesign, don't insert
@@ -78,11 +77,11 @@ rank the results, so that the human reviews what is material instead of everythi
 item, not a long pack. The materiality thresholds that decide what counts as an exception are set by the risk function
 and governed as parameters. The [market risk](../pillars/market-risk.md) chapter applies this to daily monitoring.
 
-### 5. Decide where freed time goes before starting
-**What it means.** A redesign frees time, but freed time that is not redirected disappears into existing work and
-never shows up as value. The use of the time is a design decision, made at the start rather than discovered at the end.
+### 5. Decide what the risk manager's time is for before starting
+**What it means.** A redesign changes what a risk manager spends time on, and time that is not directed is absorbed by
+existing work. The use of the time is a design decision, made at the start rather than discovered at the end.
 
-**In practice.** Before a workflow is redesigned, the risk function records what the freed capacity will be spent on,
+**In practice.** Before a workflow is redesigned, the risk function records what the risk manager's time will go to,
 for example deeper portfolio reviews or more frequent challenge of portfolio managers, and then tracks whether that
 happens. [Measuring value](09-measuring-value.md) sets out how.
 

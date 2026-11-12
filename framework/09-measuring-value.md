@@ -1,16 +1,15 @@
 # Measuring value
 
-A risk function earns no revenue, so the return on redesign has to be shown in other terms. This chapter sets out four
-dimensions of value (capacity, speed, quality and influence), the baseline and reinvestment plan that make them
-measurable, and why usage of AI tools is not a measure. It closes with an illustrative scorecard for one redesigned
-workflow.
+A redesigned workflow has to be shown to work. This chapter sets out four dimensions to measure it on (capacity, speed,
+quality and influence), the baseline and the plan for the risk manager's time that make them measurable, and why usage
+of AI tools is not a measure. It closes with an illustrative scorecard for one redesigned workflow.
 
 ## What value means for a risk function
 The [philosophy](00-philosophy.md) sets out a risk function's purpose: to show whether every portfolio takes the risks
 its mandate intends, in the size it can bear, and is paid for them, and to challenge it where it does not. A redesign
 creates value when it lets the function do more of that, do it sooner, do it more reliably, or have more effect on the
-decisions it informs. Hours saved are a means to those ends, not the end itself: an hour saved and spent on nothing has
-no value, and an hour saved and spent on challenging a portfolio manager may have a great deal.
+decisions it informs. Hours are not among the measures: what matters is what the function now does, not how long the old
+work took.
 
 This is why value is measured in four dimensions rather than one, and why the measurement starts before the redesign
 does.
@@ -31,10 +30,10 @@ portfolios properly, or review the most important ones more often, raises capaci
 unchanged.
 
 ### Speed
-Speed measures elapsed time, not effort. Time from data availability to signed-off output shows how soon a decision can
-be made on a recurring output; time from alert to explanation shows how soon the function understands an unexpected
-event. Elapsed time is usually dominated by gathering and waiting rather than by work, as the
-[redesign method](07-redesign-method.md) shows, so speed is often where a redesign shows its largest change.
+Speed measures how soon the function knows, not how long the work takes. Time from data availability to signed-off
+output shows how soon a decision can be made on a recurring output; time from alert to explanation shows how soon the
+function understands an unexpected event. An output that no longer waits for gathering and review queues arrives sooner,
+so speed is often where a redesign shows its largest change.
 
 ### Quality
 Quality measures whether the function catches what matters and gets it right. Issues missed or detected late are the
@@ -53,24 +52,22 @@ directly reflects the purpose of the function, and the one most often left unmea
 Every measure needs a starting point, and the starting point must be taken before anything changes. Once a workflow has
 been redesigned, the old process can no longer be observed, and estimates made afterwards tend to flatter the result.
 
-The simplest baseline is a time study of one typical cycle of the workflow: each step, who did it, the hours it took
-and the elapsed time it added, recorded as the cycle runs. This is the same information as the current-state map in
-step 3 of the redesign method, so the two are done together. The baseline also records the current values of the other
-measures that apply, such as the number of portfolios reviewed in depth and the number of issues raised with portfolio
-managers.
+The baseline records the current value of each measure that applies: how many portfolios are reviewed in depth, how
+soon an issue reaches a portfolio manager, how many issues are found late and how many are raised. It is taken
+alongside the current-state map in step 3 of the redesign method.
 
 A baseline taken from one cycle is approximate. It is still far better than none, and it can be refined by observing a
 second cycle where the workflow varies a lot from one cycle to the next.
 
-## Reinvestment plan
-Before a workflow is redesigned, the risk function decides what the freed time will be spent on, and records it. The
+## A plan for the risk manager's time
+Before a workflow is redesigned, the risk function decides what the risk manager's time will go to, and records it. The
 plan names the activity, the expected volume, and who will do it: for example, monthly deep-dive reviews of the
 portfolios that appear most often in the exception queue, or a structured challenge session with each portfolio manager
 every quarter.
 
-After the redesign, the plan is tracked like any other commitment. If the freed time is not going where it was planned
-to go, the reason is found and either the plan or the work is changed. Without a plan, freed time is absorbed by
-existing work and the redesign shows a saving that no one can find.
+After the redesign, the plan is tracked like any other commitment. If the time is not going where it was planned to
+go, the reason is found and either the plan or the work is changed. Without a plan, the time is absorbed by existing
+work.
 
 ## Why usage is not a measure
 The number of people using an AI tool, or the number of prompts they send, is easy to count and says nothing about
@@ -83,27 +80,23 @@ measure of return.
 
 ## Illustrative scorecard
 The scorecard below is for one redesigned workflow, the monthly risk and performance report from the worked example in
-the [redesign method](07-redesign-method.md#worked-example-a-monthly-risk-and-performance-report). **All figures are
+the [redesign method](07-redesign-method.md#worked-example-a-monthly-risk-and-performance-report). **The measures are
 illustrative.**
 
-| Dimension | Measure | Before | After |
-|---|---|---|---|
-| Effort | Hours per cycle | 60 | 7 |
-| Capacity | Deep-dive portfolio reviews per month | 1 | 4 |
-| Speed | Working days from month end to signed-off report | 17 | 3 |
-| Speed | Days from a threshold breach to an explanation | 5 | 1 |
-| Quality | Figure errors found in review per cycle | 6 | 0 |
-| Quality | Parallel-run agreement on escalated items | n/a | 100% |
-| Influence | Issues raised with portfolio managers per quarter | 8 | 20 |
-| Influence | Share of risk manager time on challenge | 20% | 55% |
+| Dimension | Measure | What it shows |
+|---|---|---|
+| Capacity | Deep-dive portfolio reviews per month | Whether the risk manager's time is going where the plan said |
+| Speed | Working days from month end to signed-off report | Whether the committee has time to act |
+| Speed | Days from a threshold breach to an explanation | How soon the function understands a change |
+| Quality | Figure errors found in review per cycle | Whether the grounding check and reconciliation catch what a reviewer used to |
+| Quality | Parallel-run agreement on escalated items | Whether the redesigned workflow can be relied on |
+| Influence | Issues raised with portfolio managers per quarter | Whether challenge is being made |
+| Influence | Share of risk manager time on challenge | Whether the shift in the risk manager's work is happening |
 
-Effort is shown alongside the four dimensions because it is where the freed time comes from, while capacity is what
-that time buys.
-
-The scorecard reads as a whole. The hours saved (effort) are shown going into deep-dive reviews (capacity), which is the
-reinvestment plan in action. The earlier report (speed) gives the committee time to act. Errors caught by the
-grounding check and reconciliation, rather than by a reviewer, improve quality. More issues raised, and more time spent
-on challenge, show the change in influence that the redesign was for.
+The scorecard reads as a whole, against the baseline. Deep-dive reviews show the plan for the risk manager's time in
+action. An earlier report gives the committee time to act. Errors found in review should fall but not to zero, and a
+review that never finds one is a reason to test the review. More issues raised, and more time spent on challenge, show
+the change in influence that the redesign was for.
 
 ## Sources
 - Kaplan, R. and Norton, D. (1992). The Balanced Scorecard: Measures That Drive Performance. *Harvard Business
