@@ -131,6 +131,11 @@ below its threshold come first, then portfolios with a fired trigger, then other
 unpriceable holdings are listed separately and routed to the owner of pricing, as well as being shown against the
 measures they affect.
 
+Where the governing documents or regulation set a liquidity limit, it is a
+[risk-measured hard limit](../framework/04-limits-and-escalation.md#where-limits-come-from): the risk function monitors
+it, a breach must be cured, and compliance writes the breach report. The internal limit on redemption coverage sits
+inside it.
+
 ## What the AI drafts
 The AI drafts from the facts that the risk engine produced and from nothing else. Every number in each draft appears in
 the facts beside it, so the [grounding check](../framework/08-controls.md#the-grounding-check) would pass. **The

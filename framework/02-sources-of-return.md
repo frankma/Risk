@@ -2,14 +2,15 @@
 
 Above the return on cash, every investment return is paid by one of three return generators: market risk premia, style
 premia and skill. An ETF or a future can hold the first two, so they are beta. Nothing can hold the third, so it is
-alpha. A generator says why a return is paid, and so how it can stop being paid, which is what a risk function most
-needs to know about it. This chapter answers seven questions about them. The
-[alpha and beta method](../pillars/alpha-and-beta-method.md) sets out how the split is computed.
+alpha. Two lines of a portfolio's return have no generator: the cost of holding beta, and the return of holdings that
+are not publicly traded, which is not split. A generator says why a return is paid, and so how it can stop being paid,
+which is what a risk function most needs to know about it. This chapter answers seven questions about them. The [alpha
+and beta method](../pillars/alpha-and-beta-method.md) sets out how the split is computed.
 
 ## What generates return?
 | Generator | What it is | Why it pays | Source |
 |---|---|---|---|
-| **Market risk premia** | The return for holding a market: the equity premium, the term premium in rates, the credit premium in spreads and the return for holding a currency | It compensates for losses that arrive in bad times, when they hurt most | Beta |
+| **Market risk premia** | The return for holding a market: the equity premium, the term premium in rates and the credit premium in spreads. Currency exposure is tagged here by convention | It compensates for losses that arrive in bad times, when they hurt most | Beta |
 | **Style premia** | The return of a rule that an index or basket can follow: value, momentum, size, carry, and the premium for holding less liquid public securities | Disputed: it may compensate for a risk, or it may be a pattern in investor behaviour that persists | Beta, once declared |
 | **Skill** | The return from choosing between securities that share the same exposures | One investor finds a wrong price before others do. Measured against the market, before costs and with the market's holdings unchanged, it is zero-sum: what one manager gains, another loses | Alpha |
 
@@ -118,9 +119,10 @@ The split rests on three portfolios.
 Beta is the step from the benchmark portfolio to the top-down portfolio, and every top-down call is measured there.
 Alpha is the step from the top-down portfolio to the real portfolio: the top-down portfolio has carried all the beta
 out, and what is left is selection. The top-down portfolio follows exposure as it is held, whether or not anyone chose
-it, and the record then divides the first step: exposure with a call on record is a tilt or timing, and exposure with
-no record is unintended beta. The top-down portfolio's instruments cost something to hold, which the indices behind
-the benchmark portfolio do not, and that cost has a line of its own.
+it (the booked route has [one exception](../pillars/alpha-and-beta-method.md#booked-or-derived)), and the record then
+divides the first step: exposure with a call on record is a tilt or timing, and exposure with no record is unintended
+beta. The top-down portfolio's instruments cost something to hold, which the indices behind the benchmark portfolio do
+not, and that cost has a line of its own.
 
 A holding's weight is split, not its return. Take one sector, where the benchmark portfolio holds 16% of net assets
 and the real portfolio 20%, a tilt on record. The sector index holds X at 15%, Y at 10% and the rest at 75%. The

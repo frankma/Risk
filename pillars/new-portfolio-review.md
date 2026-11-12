@@ -29,7 +29,7 @@ this review.
 |---|---|---|
 | Mandate terms | The objective, benchmark, style, limits and dealing terms, extracted and confirmed | [Performance risk](performance-risk.md#flagship-redesign-the-periodic-portfolio-manager-review) |
 | Benchmark | It passes the benchmark tests: specified in advance, investable, unambiguous, measurable, appropriate to the style and owned | [Performance risk](performance-risk.md#benchmarks-and-peer-groups) |
-| Limits | Internal limits and early warnings set by the risk function; compliance's mandate and regulatory limits recorded | [Limits and escalation](../framework/04-limits-and-escalation.md) |
+| Limits | Internal limits and early warnings set by the risk function; the mandate and regulatory limits recorded, with each risk-measured limit set up for the risk function to monitor | [Limits and escalation](../framework/04-limits-and-escalation.md) |
 | Liquidity profile | Redemption coverage under the scenarios for calls on cash, at the launch size and the expected size, against the dealing terms | [Liquidity risk](liquidity-risk.md#calls-on-cash) |
 | Data | Every instrument the portfolio expects to hold, and every instrument in its top-down portfolio, can be priced and classified, or has a proxy under the policy | [Risk data](../framework/03-risk-data.md#proxies) |
 | Alpha and beta construction | The benchmark portfolio, the buckets, the instrument inside each and the factor list, declared before the first period | [Alpha and beta method](alpha-and-beta-method.md#booked-or-derived) |
