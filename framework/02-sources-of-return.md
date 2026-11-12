@@ -9,9 +9,9 @@ needs to know about it. This chapter answers seven questions about them. The
 ## What generates return?
 | Generator | What it is | Why it pays | Source |
 |---|---|---|---|
-| **Market risk premia** | The return for holding a market: the equity premium, the term premium in rates and the credit premium in spreads | It compensates for losses that arrive in bad times, when they hurt most | Beta |
+| **Market risk premia** | The return for holding a market: the equity premium, the term premium in rates, the credit premium in spreads and the return for holding a currency | It compensates for losses that arrive in bad times, when they hurt most | Beta |
 | **Style premia** | The return of a rule that an index or basket can follow: value, momentum, size, carry, and the premium for holding less liquid public securities | Disputed: it may compensate for a risk, or it may be a pattern in investor behaviour that persists | Beta, once declared |
-| **Skill** | The return from choosing between securities that share the same exposures | One investor finds a wrong price before others do. Measured against the market and before costs it is zero-sum: what one manager gains, another loses | Alpha |
+| **Skill** | The return from choosing between securities that share the same exposures | One investor finds a wrong price before others do. Measured against the market, before costs and with the market's holdings unchanged, it is zero-sum: what one manager gains, another loses | Alpha |
 
 The framework takes no side on why style premia pay. The method needs only that an ETF or a future can hold a premium,
 and the risk function watches how it fails whichever explanation is right.
@@ -149,6 +149,8 @@ from top-down and 0.11% from bottom-up. The tilt's funding sits in other sectors
 ## Sources
 - Sharpe, W. (1991). The Arithmetic of Active Management. *Financial Analysts Journal*. Before costs, active returns
   measured against the market sum to zero.
+- Pedersen, L. (2018). Sharpening the Arithmetic of Active Management. *Financial Analysts Journal*. Why the zero-sum
+  result holds only while the market's holdings do not change.
 - Ilmanen, A. (2011). *Expected Returns: An Investor's Guide to Harvesting Market Rewards*. Wiley. Market and style
   premia, why each may pay and how each has failed.
 - Ang, A. (2014). *Asset Management: A Systematic Approach to Factor Investing*. Oxford University Press. Premia as

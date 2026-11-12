@@ -161,10 +161,10 @@ warnings, then persistence. Within a tier, items are ordered by size relative to
 several items ranks above a portfolio with one. The ranking rule is itself a governed parameter, because it decides what
 the risk manager reads first.
 
-Ex-ante tracking error and risk budget exceptions enter this queue, because both look forward. Risk budget exceptions
-also go into the next challenge pack in [performance risk](performance-risk.md), where the portfolio manager answers
-them. Each measure is computed once and owned by one pillar: realised drawdown is computed in performance risk, and
-this pillar reads only the headroom it leaves.
+Ex-ante tracking error and risk budget exceptions enter this queue, because both look forward. Both also go into the
+next challenge pack in [performance risk](performance-risk.md), where the portfolio manager answers them. Each measure
+is computed once and owned by one pillar: realised drawdown is computed in performance risk, and this pillar reads only
+the headroom it leaves.
 
 ## What the AI drafts
 The AI drafts from the facts that the risk engine produced and from nothing else. In each example below, the facts are
@@ -353,7 +353,7 @@ and the 4 hours freed each day are tracked against the reinvestment plan. (The f
 Market risk signals feed the other pillars. Rising concentration and volatility raise the cost and time of selling
 holdings, which matters to [liquidity risk](liquidity-risk.md); stress losses inform the redemption scenarios that
 pillar uses. Ex-ante tracking error and the risk budget belong here, and their realised counterparts to [performance
-risk](performance-risk.md), which also receives risk budget exceptions in its challenge pack and measures the drawdown
+risk](performance-risk.md), which also receives both kinds of exception in its challenge pack and measures the drawdown
 whose headroom is read here. Performance and flows usually move before market risk, but a sharp market loss is the case
 where market risk moves first, ahead of the underperformance that pillar watches. The [integrated
 view](integrated-view.md) brings these signals together for each portfolio.
