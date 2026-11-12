@@ -107,7 +107,7 @@ exploratory query can guide the question, but it stays out of any output.
 | Who | What changes |
 |---|---|
 | Risk manager | Less time producing outputs and more judging them, with a new skill: directing and supervising the AI |
-| Head of risk | Owns what the AI may do in the function, the rules it works within and where the freed time goes |
+| Head of risk | Owns what the AI may do in the function, the rules it works within and what risk managers' time goes to |
 | Portfolio manager | Receives questions sooner and with evidence, can ask for a what-if before a trade, and has explanations tested against the data |
 | Owners of adjacent risks and of data | Receive what is routed to them with the evidence attached |
 | Management | Decides, workflow by workflow, where AI enters the business, and judges the result by the [measures of value](09-measuring-value.md), not by usage |

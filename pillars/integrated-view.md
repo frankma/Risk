@@ -91,23 +91,23 @@ by the time market risk readings rise, the cycle is usually under way.
 
 ## Flagship redesign: the portfolio health review
 The example below follows the portfolio health review for a range of 40 portfolios and a monthly risk committee. **The
-steps, hours and elapsed times are illustrative.**
+steps are illustrative.**
 
 **Current state.** There is no integrated view. Before each committee, the head of risk assembles one by reading the
 three pillars' outputs and connecting them from memory and experience.
 
-| # | Step | Tag | Hours | Elapsed |
-|---|---|---|---|---|
-| 1 | Read the latest outputs of the three pillars | Gather | 3 | 2 days |
-| 2 | Pull more data for the portfolios that look worrying | Gather | 2 | 1 day |
-| 3 | Connect signals across pillars from memory and experience | Interpret | 3 | 1 day |
-| 4 | Decide which portfolios to raise with the committee | Judge | 1 | 1 day |
-| 5 | Write the committee note | Communicate | 3 | 2 days |
-| 6 | Review and sign off the note | Approve / Wait | 1 | 2 days |
+| # | Step | Tag |
+|---|---|---|
+| 1 | Read the latest outputs of the three pillars | Gather |
+| 2 | Pull more data for the portfolios that look worrying | Gather |
+| 3 | Connect signals across pillars from memory and experience | Interpret |
+| 4 | Decide which portfolios to raise with the committee | Judge |
+| 5 | Write the committee note | Communicate |
+| 6 | Review and sign off the note | Approve / Wait |
 
-The review takes 13 hours and 9 working days each month. It happens on the committee's cycle, so a combination that
-forms just after one committee is not seen until the next. It depends on one person, and it covers the portfolios that
-person thinks of, which with 40 portfolios is rarely all of them.
+The review happens on the committee's cycle, so a combination that forms just after one committee is not seen until the
+next. It depends on one person, and it covers the portfolios that person thinks of, which with 40 portfolios is rarely
+all of them.
 
 **Owner assignment.**
 
@@ -121,21 +121,19 @@ person thinks of, which with 40 portfolios is rarely all of them.
   the signals behind them.
 - Step 6 stays with the head of risk.
 
-**Redesigned flow.** Hours are per month. Step 6 assumes eight accounts reviewed in the month at a quarter of an hour
-each.
+**Redesigned flow.**
 
-| # | Step | Owner | Hours | Elapsed |
-|---|---|---|---|---|
-| 1 | Read every pillar's signals for every portfolio; align them by date | Risk engine | 0 | Daily |
-| 2 | Apply the pattern and combination rules; rank portfolios | Risk engine | 0 | Daily |
-| 3 | Draft an account for each ranked portfolio | AI assistant | 0 | Daily |
-| 4 | Grounding check on every account | Risk engine | 0 | Daily |
-| 5 | Assemble the committee view from the top-ranked portfolios | Risk engine | 0 | Minutes |
-| 6 | Judge each ranked portfolio; add it to the watch list or escalate | Risk manager | 2 | Same day |
-| 7 | Review and sign off the committee view | Head of risk | 1 | 1 day |
+| # | Step | Owner |
+|---|---|---|
+| 1 | Read every pillar's signals for every portfolio; align them by date | Risk engine |
+| 2 | Apply the pattern and combination rules; rank portfolios | Risk engine |
+| 3 | Draft an account for each ranked portfolio | AI assistant |
+| 4 | Grounding check on every account | Risk engine |
+| 5 | Assemble the committee view from the top-ranked portfolios | Risk engine |
+| 6 | Judge each ranked portfolio; add it to the watch list or escalate | Risk manager |
+| 7 | Review and sign off the committee view | Head of risk |
 
-The work falls to 3 hours a month. A combination is seen on the day it forms, by the risk manager, rather than at the
-next committee, and the committee view is signed off in 1 working day instead of 9.
+A combination is seen on the day it forms, by the risk manager, rather than at the next committee.
 
 **The shift.** The integrated picture moves from one assembled occasionally by one person, for the portfolios they think
 of, to one maintained continuously for every portfolio.

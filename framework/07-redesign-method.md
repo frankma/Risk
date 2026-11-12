@@ -10,12 +10,12 @@ the failure modes that most often prevent a return. It is the core of the framew
 | Step | Question it answers |
 |---|---|
 | 1. Define the outcome | What is this workflow for? |
-| 2. Inventory the workflows | What do we produce, for whom, and at what cost? |
-| 3. Map the current state | Where does the time actually go? |
+| 2. Inventory the workflows | What do we produce, for whom, and for which decision? |
+| 3. Map the current state | What kind of work is each step? |
 | 4. Assign each step an owner | Who or what should do each step? |
 | 5. Redesign the flow | What does the workflow look like when built around those owners? |
 | 6. Build in controls | What makes it safe to rely on? |
-| 7. Measure and reinvest | Did it work, and where did the freed time go? |
+| 7. Measure the result | Does it work, and is the risk manager's time going where it was meant to? |
 
 ### 1. Define the outcome
 Each workflow is described by the outcome it delivers, in one sentence, not by the tasks it involves. "Produce the
@@ -24,10 +24,10 @@ risk profile and why, in time to act" is an outcome. The outcome sentence is the
 does not serve it is a candidate for removal.
 
 ### 2. Inventory the workflows
-The risk function lists its recurring workflows and records, for each one, its cadence, its inputs, its output, who
-uses the output and for which decision, and how many hours a cycle takes. The inventory usually shows outputs that feed
-no decision: a report produced because it has always been produced, or a table nobody reads. These are eliminated, not
-automated. Automating an unused output turns a waste of time into a waste of money.
+The risk function lists its recurring workflows and records, for each one, its cadence, its inputs, its output, who uses
+the output and for which decision. The inventory usually shows outputs that feed no decision: a report produced because
+it has always been produced, or a table nobody reads. These are eliminated, not automated. Automating an unused output
+turns a waste of time into a waste of money.
 
 ### 3. Map the current state
 The chosen workflow is mapped step by step as it actually runs, not as the procedure describes it. Each step is tagged
@@ -42,9 +42,7 @@ with the kind of work it is.
 | Communicate | Write it up, send it |
 | Approve / Wait | Sign-offs, queues |
 
-Each step also records the time it takes and the elapsed time it adds, which are often very different: a sign-off that
-takes ten minutes may add three days of waiting. The map nearly always shows that most of the elapsed time sits in
-Gather and Approve / Wait, not in the steps that require expertise.
+The map nearly always shows that much of the work is Gather and Approve / Wait, not the steps that require expertise.
 
 ### 4. Assign each step an owner
 Each tagged step is assigned to one owner, following the core pattern.
@@ -77,35 +75,34 @@ A redesigned workflow is only worth adopting if it can be relied on with fewer m
 permissions, sign-off points, audit trail, threshold governance, parallel run, fallback and data handling that make this
 possible are set out in [controls](08-controls.md).
 
-### 7. Measure and reinvest
-The redesign is measured against a baseline taken before it started, across capacity, speed, quality and influence,
-and the freed time is directed to the use decided at the start. [Measuring value](09-measuring-value.md) sets out how.
+### 7. Measure the result
+The redesigned workflow is measured against a baseline taken before it started, across capacity, speed, quality and
+influence, and the risk manager's time is directed to the use decided at the start. [Measuring
+value](09-measuring-value.md) sets out how.
 
 ## Worked example: a monthly risk and performance report
-The example below runs one generic workflow through the method. The steps, hours and elapsed days are illustrative.
+The example below runs one generic workflow through the method. The steps are illustrative.
 
 **Step 1, outcome.** *The risk committee knows, within five working days of month end, which portfolios have moved
 outside their intended risk or performance profile, why, and what the risk function recommends.*
 
-**Step 2, inventory.** The report covers every portfolio, takes around 60 hours a cycle across three people, and is used
-by the risk committee at its monthly meeting. Two of its appendices are not referred to in any committee minutes; they
-are dropped.
+**Step 2, inventory.** The report covers every portfolio, is produced by three people, and is used by the risk committee
+at its monthly meeting. Two of its appendices are not referred to in any committee minutes; they are dropped.
 
 **Step 3, current-state map.**
 
-| # | Step | Tag | Hours | Elapsed |
-|---|---|---|---|---|
-| 1 | Extract positions, returns and limits from several systems | Gather | 12 | 3 days |
-| 2 | Reconcile and re-key into the reporting workbook | Gather | 10 | 2 days |
-| 3 | Calculate measures and compare to limits | Compute | 8 | 1 day |
-| 4 | Reformat tables and charts for the pack | Communicate | 6 | 1 day |
-| 5 | Write commentary on what changed for each portfolio | Interpret | 14 | 3 days |
-| 6 | Second person checks figures against source | Approve / Wait | 4 | 3 days |
-| 7 | Head of risk reviews and decides what to escalate | Judge | 3 | 2 days |
-| 8 | Final sign-off and distribution | Approve / Wait | 3 | 2 days |
+| # | Step | Tag |
+|---|---|---|
+| 1 | Extract positions, returns and limits from several systems | Gather |
+| 2 | Reconcile and re-key into the reporting workbook | Gather |
+| 3 | Calculate measures and compare to limits | Compute |
+| 4 | Reformat tables and charts for the pack | Communicate |
+| 5 | Write commentary on what changed for each portfolio | Interpret |
+| 6 | Second person checks figures against source | Approve / Wait |
+| 7 | Head of risk reviews and decides what to escalate | Judge |
+| 8 | Final sign-off and distribution | Approve / Wait |
 
-The cycle takes around 60 hours and 17 working days. Steps 1, 2, 6 and 8 account for half the hours and most of the
-elapsed time; none of them requires risk expertise.
+Steps 1, 2, 6 and 8 are gathering, checking and waiting; none of them requires risk expertise.
 
 **Step 4, owners.** Steps 1 and 3 move to the risk engine, which reads from source systems and computes the measures.
 Step 2 exists only because data was copied by hand and is eliminated. Step 4 is eliminated because the risk engine
@@ -115,34 +112,33 @@ risk, who now decides on the risk manager's proposal.
 
 **Step 5, redesigned flow.**
 
-| # | Step | Owner | Hours | Elapsed |
-|---|---|---|---|---|
-| 1 | Load data, compute measures, compare to thresholds, rank exceptions | Risk engine | 0 | Same day |
-| 2 | Draft an explanation for each exception from the computed facts | AI assistant | 0 | Same day |
-| 3 | Grounding check on every draft | Risk engine | 0 | Same day |
-| 4 | Review exceptions, edit explanations, propose what to escalate | Risk manager | 6 | 2 days |
-| 5 | Decide what to escalate; sign off the two-page summary with drill-down | Head of risk | 1 | 1 day |
+| # | Step | Owner |
+|---|---|---|
+| 1 | Load data, compute measures, compare to thresholds, rank exceptions | Risk engine |
+| 2 | Draft an explanation for each exception from the computed facts | AI assistant |
+| 3 | Grounding check on every draft | Risk engine |
+| 4 | Review exceptions, edit explanations, propose what to escalate | Risk manager |
+| 5 | Decide what to escalate; sign off the two-page summary with drill-down | Head of risk |
 
-The cycle falls to around 7 hours and 3 working days. The output is now a ranked exception summary rather than a pack
-covering every portfolio at equal length, and the committee sees it around three weeks earlier.
+The output is now a ranked exception summary rather than a pack covering every portfolio at equal length, and the
+committee sees it within days of month end.
 
 **Steps 6 and 7.** The redesigned report runs in parallel with the old one for at least one full cycle before the old
-one is stopped, and the freed hours go to the use the risk function chose at the start, for example monthly
+one is stopped, and the risk managers' time goes to the use the risk function chose at the start, for example monthly
 deep-dive reviews of the portfolios that appear most often in the exception summary.
 
 ## Common failure modes
 
 | Failure mode | What happens | What prevents it |
 |---|---|---|
-| Automating outputs nobody uses | Cost falls, value does not rise | The inventory in step 2 |
+| Automating outputs nobody uses | An unused output is produced faster | The inventory in step 2 |
 | Letting the AI do the arithmetic | Wrong figures reach decisions | The risk engine computes every figure; the grounding check |
-| Keeping every old review gate | Elapsed time barely changes | Moving gates in step 5 |
-| No decision on freed time | Savings disappear into other work | A reinvestment plan before starting |
-| A tool rollout with no workflow rebuilt | Usage rises, returns do not | Redesign one workflow fully first |
+| Keeping every old review gate | The output arrives no sooner | Moving gates in step 5 |
+| No decision on what the risk manager's time is for | The time is absorbed by existing work | A plan for that time before starting |
+| A tool rollout with no workflow rebuilt | Usage rises, the work does not change | Redesign one workflow fully first |
 
-The last failure mode is the most common. Giving everyone a tool spreads small savings thinly across many tasks and
-rebuilds nothing. Redesigning one workflow fully, measuring the result and then moving to the next produces a return
-that can be shown.
+The last failure mode is the most common. Giving everyone a tool changes many tasks a little and rebuilds nothing.
+Redesigning one workflow fully, measuring the result and then moving to the next changes how the work is done.
 
 ## Sources
 - Hammer, M. (1990). Reengineering Work: Don't Automate, Obliterate. *Harvard Business Review*. Redesigning a process

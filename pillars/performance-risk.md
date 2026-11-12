@@ -60,25 +60,24 @@ periods is counted in whole periods. The windows, and the significance shown bes
 [design choices](performance-risk.md#windows-and-significance).
 
 ## Flagship redesign: the periodic portfolio manager review
-The example below follows the review of one portfolio. **The steps, hours and elapsed times are illustrative.**
+The example below follows the review of one portfolio. **The steps are illustrative.**
 
 **Current state.** Before each review, the risk function prepares material; in the meeting, the portfolio manager
 presents their own account of performance.
 
-| # | Step | Tag | Hours | Elapsed |
-|---|---|---|---|---|
-| 1 | Pull attribution reports and performance data | Gather | 2 | 1 day |
-| 2 | Build charts and tables for the meeting | Communicate | 3 | 2 days |
-| 3 | Read the reports to find points to raise | Interpret | 2 | 1 day |
-| 4 | Hold the meeting; the portfolio manager presents their account | Judge | 1.5 | 1 day |
-| 5 | Write the minutes | Communicate | 2 | 3 days |
-| 6 | Circulate the minutes for agreement | Approve / Wait | 0.5 | 5 days |
-| 7 | Chase follow-up actions by email | Communicate | 1.5 | Ongoing |
+| # | Step | Tag |
+|---|---|---|
+| 1 | Pull attribution reports and performance data | Gather |
+| 2 | Build charts and tables for the meeting | Communicate |
+| 3 | Read the reports to find points to raise | Interpret |
+| 4 | Hold the meeting; the portfolio manager presents their account | Judge |
+| 5 | Write the minutes | Communicate |
+| 6 | Circulate the minutes for agreement | Approve / Wait |
+| 7 | Chase follow-up actions by email | Communicate |
 
-Each review takes 12.5 hours, and 13 working days pass from the start of preparation to agreed minutes, followed by
-open-ended chasing. The meeting runs on the portfolio manager's agenda, because the material describes performance
-without pointing to the questions it raises. Follow-up is loose: actions live in minutes and emails, and nothing
-escalates an action that has stalled.
+Preparation is slow, and agreed minutes are followed by open-ended chasing. The meeting runs on the portfolio manager's
+agenda, because the material describes performance without pointing to the questions it raises. Follow-up is loose:
+actions live in minutes and emails, and nothing escalates an action that has stalled.
 
 **Owner assignment.**
 
@@ -105,21 +104,20 @@ and confirmed in the [new portfolio review](new-portfolio-review.md).
 
 **Redesigned flow.**
 
-| # | Step | Owner | Hours | Elapsed |
-|---|---|---|---|---|
-| 1 | Track realised return, ex-post tracking error, drawdown, active share, information ratio, factors and peer position | Risk engine | 0 | Continuous |
-| 2 | Test exposures against the mandate terms; flag drift and unintended bets | Risk engine | 0 | Continuous |
-| 3 | Rank the portfolio's issues, with market risk's tracking error and risk budget exceptions | Risk engine | 0 | Minutes |
-| 4 | Draft the challenge pack: evidence and questions for each issue | AI assistant | 0 | Minutes |
-| 5 | Grounding check on the pack | Risk engine | 0 | Minutes |
-| 6 | Review and edit the pack; set the agenda | Risk manager | 1.5 | 1 day |
-| 7 | Run the meeting on the risk function's agenda | Risk manager | 1.5 | 1 day |
-| 8 | Draft the minutes and the action log | AI assistant | 0 | Same day |
-| 9 | Edit and agree the minutes and actions | Risk manager | 0.5 | 2 days |
-| 10 | Track follow-ups; escalate overdue actions to the watch list | Risk engine | 0 | Ongoing |
+| # | Step | Owner |
+|---|---|---|
+| 1 | Track realised return, ex-post tracking error, drawdown, active share, information ratio, factors and peer position | Risk engine |
+| 2 | Test exposures against the mandate terms; flag drift and unintended bets | Risk engine |
+| 3 | Rank the portfolio's issues, with market risk's tracking error and risk budget exceptions | Risk engine |
+| 4 | Draft the challenge pack: evidence and questions for each issue | AI assistant |
+| 5 | Grounding check on the pack | Risk engine |
+| 6 | Review and edit the pack; set the agenda | Risk manager |
+| 7 | Run the meeting on the risk function's agenda | Risk manager |
+| 8 | Draft the minutes and the action log | AI assistant |
+| 9 | Edit and agree the minutes and actions | Risk manager |
+| 10 | Track follow-ups; escalate overdue actions to the watch list | Risk engine |
 
-Each review falls to 3.5 hours, and agreed minutes follow 4 working days after preparation starts instead of 13. The
-meeting itself takes the same time as before; what changes is whose agenda it follows and what happens afterwards.
+The meeting itself takes the same time as before; what changes is whose agenda it follows and what happens afterwards.
 
 **The shift.** In the current state, the risk function receives the portfolio manager's account and asks what it can. In
 the redesigned state, it arrives with the top issues for the portfolio, the evidence for each and the questions to ask,
@@ -321,10 +319,6 @@ influence measures, because the purpose of the review is to change what happens.
 | Quality | Drift or underperformance first identified outside the risk function |
 | Capacity | Reviews held per quarter at full depth |
 | Pillar-specific | Share of agreed actions closed by their due date; time on the watch list before an outcome |
-
-In the flagship example, each review falls from 12.5 hours to 3.5 hours, and agreed minutes
-follow in 4 working days instead of 13. The freed time is directed in advance, for example to reviewing portfolios more
-often when they are on the watch list. (The figures are illustrative.)
 
 ## Connections
 Performance risk signals often come first. Underperformance prompts redemptions, which is why [liquidity

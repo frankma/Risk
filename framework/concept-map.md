@@ -91,8 +91,8 @@ the reasoning goes there.
 | Risk manager's value | Judging what matters to the portfolio and its intended risk profile, bringing clarity to the risks being taken, challenge, deciding what the system flags and judgement where the data runs out; the sign-off is the accountability | [Principles](05-principles.md#what-the-risk-manager-adds) | README, measuring value, all pillars |
 | Owners | Who or what does each step: the risk engine, the AI assistant, the risk manager or the head of risk | [Redesign method](07-redesign-method.md#4-assign-each-step-an-owner) | All pillars |
 | Four dimensions of value | Capacity, speed, quality and influence | [Measuring value](09-measuring-value.md#four-dimensions) | All pillars |
-| Baseline | A record of the current state, taken before anything changes | [Measuring value](09-measuring-value.md#baseline-first) | Redesign method |
-| Reinvestment plan | What freed time will be spent on, decided in advance | [Measuring value](09-measuring-value.md#reinvestment-plan) | Principles, redesign method, market risk |
+| Baseline | The value of each measure before anything changes | [Measuring value](09-measuring-value.md#baseline-first) | Redesign method |
+| Plan for the risk manager's time | What the risk manager's time will go to, decided in advance | [Measuring value](09-measuring-value.md#a-plan-for-the-risk-managers-time) | Principles, redesign method, market risk |
 
 ## Exceptions and ranking
 

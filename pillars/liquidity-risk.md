@@ -55,25 +55,25 @@ knows which of its measures rest on them; setting and challenging the prices rem
 
 ## Flagship redesign: from periodic stress testing to continuous liquidity monitoring
 The example below follows the liquidity work for a range of 40 portfolios, assessed monthly in the current state. **The
-steps, hours and elapsed times are illustrative.**
+steps are illustrative.**
 
 **Current state.** Each month, the risk manager builds a liquidity assessment for every portfolio and a paper for the
 fund board.
 
-| # | Step | Tag | Hours | Elapsed |
-|---|---|---|---|---|
-| 1 | Pull holdings and trading volumes for every portfolio | Gather | 6 | 2 days |
-| 2 | Assign each holding to a liquidity bucket from its trading volume | Compute | 8 | 2 days |
-| 3 | Apply redemption scenarios in the workbook | Compute | 6 | 1 day |
-| 4 | Second person checks the workbook | Approve / Wait | 3 | 2 days |
-| 5 | Explain the results for each portfolio | Interpret | 6 | 2 days |
-| 6 | Decide which portfolios need attention and what to recommend | Judge | 2 | 1 day |
-| 7 | Write the paper for the fund board | Communicate | 6 | 2 days |
-| 8 | Review and sign off the paper | Approve / Wait | 2 | 3 days |
+| # | Step | Tag |
+|---|---|---|
+| 1 | Pull holdings and trading volumes for every portfolio | Gather |
+| 2 | Assign each holding to a liquidity bucket from its trading volume | Compute |
+| 3 | Apply redemption scenarios in the workbook | Compute |
+| 4 | Second person checks the workbook | Approve / Wait |
+| 5 | Explain the results for each portfolio | Interpret |
+| 6 | Decide which portfolios need attention and what to recommend | Judge |
+| 7 | Write the paper for the fund board | Communicate |
+| 8 | Review and sign off the paper | Approve / Wait |
 
-The cycle takes 39 hours and 15 working days. The result is a snapshot of holdings and flows at the start of the
-cycle, around three weeks old by the time the board reads it. An event in the middle of the month, such as a large
-redemption, is either handled outside the process by hand or waits for the next cycle.
+The result is a snapshot of holdings and flows at the start of the cycle, weeks old by the time the board reads it. An
+event in the middle of the month, such as a large redemption, is either handled outside the process by hand or waits for
+the next cycle.
 
 **Owner assignment.**
 
@@ -84,23 +84,22 @@ redemption, is either handled outside the process by hand or waits for the next 
   and makes the recommendation on whether to use liquidity management tools.
 - Step 8 stays with the head of risk.
 
-**Redesigned flow.** Hours are per month. Step 6 assumes four triggered portfolios in the month at half an hour each.
+**Redesigned flow.**
 
-| # | Step | Owner | Hours | Elapsed |
-|---|---|---|---|---|
-| 1 | Compute each portfolio's liquidity profile and redemption coverage | Risk engine | 0 | Daily |
-| 2 | Monitor flows, margin calls and investor concentration against each portfolio's history | Risk engine | 0 | Daily |
-| 3 | Run the stress test when an event trigger fires | Risk engine | 0 | Same day |
-| 4 | Draft the narrative for each triggered portfolio | AI assistant | 0 | Same day |
-| 5 | Grounding check on every draft | Risk engine | 0 | Same day |
-| 6 | Review each triggered portfolio; recommend on liquidity tools | Risk manager | 2 | Same day |
-| 7 | Draft the board paper from the period's results and events | AI assistant | 0 | Minutes |
-| 8 | Review scenario calibration; edit the board paper | Risk manager | 4 | 2 days |
-| 9 | Review and sign off the paper | Head of risk | 1 | 1 day |
+| # | Step | Owner |
+|---|---|---|
+| 1 | Compute each portfolio's liquidity profile and redemption coverage | Risk engine |
+| 2 | Monitor flows, margin calls and investor concentration against each portfolio's history | Risk engine |
+| 3 | Run the stress test when an event trigger fires | Risk engine |
+| 4 | Draft the narrative for each triggered portfolio | AI assistant |
+| 5 | Grounding check on every draft | Risk engine |
+| 6 | Review each triggered portfolio; recommend on liquidity tools | Risk manager |
+| 7 | Draft the board paper from the period's results and events | AI assistant |
+| 8 | Review scenario calibration; edit the board paper | Risk manager |
+| 9 | Review and sign off the paper | Head of risk |
 
-The work falls to 7 hours a month, and the board paper is ready 3 working days after the end of the period rather
-than 15. The larger change is in timing: a portfolio's liquidity is current every day, and an event is assessed on the
-day it happens rather than at the next cycle.
+A portfolio's liquidity is current every day, and an event is assessed on the day it happens rather than at the next
+cycle.
 
 **The shift.** Liquidity work moves from calendar-driven to event-driven. The manual process could not run a stress
 test every time a large redemption arrived, concentration rose or market liquidity worsened, because each run took
@@ -291,9 +290,8 @@ quality: how soon an event is assessed, and whether any event is missed.
 | Influence | Recommendations on liquidity tools made and acted on |
 | Pillar-specific | Age of the liquidity view when a decision is made |
 
-The pillar-specific measure captures the new capability directly. In the flagship example, the liquidity view that
-informs a decision falls from as much as a month old to a day old, and the board paper is signed off 3 working days
-after period end instead of 15. (The figures are illustrative.)
+The pillar-specific measure captures the new capability directly: how old the liquidity view is when a decision is
+made.
 
 ## Connections
 Liquidity risk sits between the other two pillars. Rising volatility and concentration from

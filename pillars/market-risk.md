@@ -77,24 +77,22 @@ the risk manager. Reverse stress testing works the other way: it starts from the
 mandate and asks which shocks would cause it, and the risk manager judges how plausible they are.
 
 ## Flagship redesign: daily monitoring and exception handling
-The example below follows one risk manager covering 40 portfolios. **The steps, hours and elapsed times are
-illustrative.**
+The example below follows one risk manager covering 40 portfolios. **The steps are illustrative.**
 
 **Current state.** Each morning, once the overnight data is available, the risk manager works through every portfolio.
 
-| # | Step | Tag | Hours | Elapsed |
-|---|---|---|---|---|
-| 1 | Download risk reports and position files from several systems | Gather | 0.5 | 0.5 h |
-| 2 | Copy measures into the monitoring workbook | Gather | 0.5 | 0.5 h |
-| 3 | Check every measure against its limit | Compute | 0.5 | 0.5 h |
-| 4 | Scan every portfolio for large moves since the previous day | Compute | 1.0 | 1.0 h |
-| 5 | Dig into positions to find the cause of each move | Interpret | 1.5 | 1.5 h |
-| 6 | Decide which moves matter | Judge | 0.5 | 0.5 h |
-| 7 | Email the portfolio manager where needed | Communicate | 0.5 | 0.5 h |
-| 8 | Log each issue | Communicate | 0.5 | 0.5 h |
+| # | Step | Tag |
+|---|---|---|
+| 1 | Download risk reports and position files from several systems | Gather |
+| 2 | Copy measures into the monitoring workbook | Gather |
+| 3 | Check every measure against its limit | Compute |
+| 4 | Scan every portfolio for large moves since the previous day | Compute |
+| 5 | Dig into positions to find the cause of each move | Interpret |
+| 6 | Decide which moves matter | Judge |
+| 7 | Email the portfolio manager where needed | Communicate |
+| 8 | Log each issue | Communicate |
 
-The cycle takes 5.5 hours a day. Because one person does every step in sequence, elapsed time equals effort, and a
-portfolio manager hears about an issue about five hours after the data was available. Steps 1 to 4 take 2.5 hours and
+One person does every step in sequence, so a portfolio manager hears about an issue only late in the day. Steps 1 to 4
 need no expertise. The scan in step 4 is also shallow: with 40 portfolios, the risk manager can look closely at only a
 few, so a moderate move in a portfolio that is not on their mind can pass unnoticed.
 
@@ -110,20 +108,19 @@ few, so a moderate move in a portfolio that is not on their mind can pass unnoti
 
 **Redesigned flow.**
 
-| # | Step | Owner | Hours | Elapsed |
-|---|---|---|---|---|
-| 1 | Load data, compute every measure, compare to limits and the previous day | Risk engine | 0 | Overnight |
-| 2 | Decompose each change by position and risk factor | Risk engine | 0 | Overnight |
-| 3 | Rank portfolios by materiality | Risk engine | 0 | Overnight |
-| 4 | Draft an explanation for each flagged portfolio | AI assistant | 0 | Overnight |
-| 5 | Grounding check on every draft | Risk engine | 0 | Overnight |
-| 6 | Review the ranked queue, edit explanations, decide what matters | Risk manager | 1.0 | 1.0 h |
-| 7 | Draft the message to the portfolio manager and the log entry | AI assistant | 0 | Minutes |
-| 8 | Edit and send the message; confirm the log entry | Risk manager | 0.5 | 0.5 h |
+| # | Step | Owner |
+|---|---|---|
+| 1 | Load data, compute every measure, compare to limits and the previous day | Risk engine |
+| 2 | Decompose each change by position and risk factor | Risk engine |
+| 3 | Rank portfolios by materiality | Risk engine |
+| 4 | Draft an explanation for each flagged portfolio | AI assistant |
+| 5 | Grounding check on every draft | Risk engine |
+| 6 | Review the ranked queue, edit explanations, decide what matters | Risk manager |
+| 7 | Draft the message to the portfolio manager and the log entry | AI assistant |
+| 8 | Edit and send the message; confirm the log entry | Risk manager |
 
-The cycle falls to 1.5 hours a day, and portfolio managers hear about issues within about 1.5 hours of the start of
-the day. The 4 hours a day freed are directed in advance, for example to deep-dive reviews of the portfolios that appear
-most often in the queue.
+Portfolio managers hear about issues early in the day. The risk manager's time goes to judging the ranked items and,
+as planned in advance, to deep-dive reviews of the portfolios that appear most often in the queue.
 
 **The shift.** The risk manager no longer scans everything to find what matters. The system checks every portfolio
 against every threshold, and the risk manager's work is to judge which of the ranked items matter and why, and what to
@@ -356,9 +353,6 @@ capacity: how soon a portfolio manager hears about an issue, and how many portfo
 | Quality | Issues found late, for example a limit breach first noticed by someone else |
 | Influence | Issues raised with portfolio managers and actions taken |
 | Pillar-specific | Share of drafts that needed substantive edits; backtesting breaches within expectation |
-
-In the flagship example, the time to the first message falls from about five hours to about an hour and a half,
-and the 4 hours freed each day are tracked against the reinvestment plan. (The figures are illustrative.)
 
 ## Connections
 Market risk signals feed the other pillars. Rising concentration and volatility raise the cost and time of selling

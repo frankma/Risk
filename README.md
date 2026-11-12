@@ -57,7 +57,7 @@ Two rules make it work:
   be reproduced, and text with a figure that has no computation behind it is rejected.
 - **The system checks everything; a human judges what ranks.** The risk engine checks every portfolio against every
   rule each day and ranks what it finds into a queue of exceptions and watch items. The risk manager reviews that queue
-  rather than every portfolio, signs off what goes out, and spends the time freed on what a person adds: judging what
+  rather than every portfolio, signs off what goes out, and spends that time on what a person adds: judging what
   matters to the portfolio and its intended risk profile, and bringing clarity to the risks being taken.
   [Principles](framework/05-principles.md#what-the-risk-manager-adds) sets this out.
 
@@ -76,7 +76,7 @@ Two rules make it work:
 | [Working with AI](framework/06-working-with-ai.md) | How people and the AI work together: three modes of working (prepare, investigate, challenge); where a figure may come from; what the AI may do alone, with sign-off or never; supervising the AI; what changes for the risk manager, the portfolio manager and management. |
 | [Redesign method](framework/07-redesign-method.md) | Seven steps to redesign one workflow, from outcome to measured result. |
 | [Controls](framework/08-controls.md) | Grounding checks, AI permissions, sign-off points, audit trails, governed thresholds, parallel runs, fallback, data handling, alignment with AI risk management expectations. |
-| [Measuring value](framework/09-measuring-value.md) | Capacity, speed, quality and influence; a baseline and a reinvestment plan; why usage is not a measure. |
+| [Measuring value](framework/09-measuring-value.md) | How to know a redesigned workflow works: capacity, speed, quality and influence; a baseline and a plan for the risk manager's time; why usage is not a measure. |
 | **The pillars** | |
 | [Market risk](pillars/market-risk.md) | The pillar's workflows, including ex-ante tracking error and the risk budget review; design choices for VaR and expected shortfall, factors, backtesting, stress, credit, leverage and counterparty exposure; daily monitoring redesigned as a ranked queue of exceptions and watch items with drafted explanations. |
 | [Liquidity risk](pillars/liquidity-risk.md) | The pillar's workflows; design choices for fairness and capacity, time and cost to sell, scenarios for calls on cash, encumbrance and second-round effects; periodic stress tests redesigned as continuous monitoring with event-triggered stress tests. |

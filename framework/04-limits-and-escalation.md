@@ -144,25 +144,23 @@ Each approval is recorded, and each one expires.
 | The legal reading of a hard limit, its breach report and any extension | Compliance, under its own process | Routed or reported by the risk function, with the evidence |
 
 ## Flagship redesign: handling a breach
-The example below follows the handling of one breach of an internal limit. **The steps, hours and elapsed times are
-illustrative.**
+The example below follows the handling of one breach of an internal limit. **The steps are illustrative.**
 
 **Current state.** A breach is noticed in the morning check and handled by email.
 
-| # | Step | Tag | Hours | Elapsed |
-|---|---|---|---|---|
-| 1 | Notice the breach while checking the day's readings | Compute | 0.25 | Half a day |
-| 2 | Check that the data behind the reading is right | Gather | 0.5 | 1 day |
-| 3 | Email the portfolio manager for an explanation | Communicate | 0.25 | 2 days |
-| 4 | Chase the reply | Communicate | 0.5 | 2 days |
-| 5 | Write it up for the head of risk | Communicate | 1 | 1 day |
-| 6 | Head of risk decides | Approve / Wait | 0.25 | 2 days |
-| 7 | Track the cure in a spreadsheet and chase it | Communicate | 1 | Ongoing |
-| 8 | Write the outcome up for the risk committee | Communicate | 0.5 | At month end |
+| # | Step | Tag |
+|---|---|---|
+| 1 | Notice the breach while checking the day's readings | Compute |
+| 2 | Check that the data behind the reading is right | Gather |
+| 3 | Email the portfolio manager for an explanation | Communicate |
+| 4 | Chase the reply | Communicate |
+| 5 | Write it up for the head of risk | Communicate |
+| 6 | Head of risk decides | Approve / Wait |
+| 7 | Track the cure in a spreadsheet and chase it | Communicate |
+| 8 | Write the outcome up for the risk committee | Communicate |
 
-Each breach takes about 4.25 hours, and around 8.5 working days pass before a decision. Whether a breach was active or
-passive is often not recorded, accepted breaches have no expiry, and nothing shows when the same limit is breached again
-and again.
+A decision waits on a chain of emails. Whether a breach was active or passive is often not recorded, accepted breaches
+have no expiry, and nothing shows when the same limit is breached again and again.
 
 **Owner assignment.**
 
@@ -178,20 +176,20 @@ and again.
 
 **Redesigned flow.**
 
-| # | Step | Owner | Hours | Elapsed |
-|---|---|---|---|---|
-| 1 | Detect the breach; check it against data breaks; classify it as active or passive | Risk engine | 0 | Overnight |
-| 2 | Draft the notice to the portfolio manager and oversight | AI assistant | 0 | Overnight |
-| 3 | Grounding check on the notice | Risk engine | 0 | Overnight |
-| 4 | Confirm the breach and its classification; send the notice | Risk manager | 0.25 | Same morning |
-| 5 | Record the portfolio manager's explanation | Risk engine | 0 | On reply |
-| 6 | Draft the decision note | AI assistant | 0 | On reply |
-| 7 | Decide: cure, accept for a set period, or escalate | Head of risk | 0.25 | 1 day |
-| 8 | Track the cure to its deadline; escalate a missed deadline | Risk engine | 0 | Ongoing |
-| 9 | Confirm the close; the record goes to the risk committee | Risk manager | 0.25 | Same day |
+| # | Step | Owner |
+|---|---|---|
+| 1 | Detect the breach; check it against data breaks; classify it as active or passive | Risk engine |
+| 2 | Draft the notice to the portfolio manager and oversight | AI assistant |
+| 3 | Grounding check on the notice | Risk engine |
+| 4 | Confirm the breach and its classification; send the notice | Risk manager |
+| 5 | Record the portfolio manager's explanation | Risk engine |
+| 6 | Draft the decision note | AI assistant |
+| 7 | Decide: cure, accept for a set period, or escalate | Head of risk |
+| 8 | Track the cure to its deadline; escalate a missed deadline | Risk engine |
+| 9 | Confirm the close; the record goes to the risk committee | Risk manager |
 
-Each breach takes about 0.75 hours, and a decision follows in about a day. Every breach carries its classification,
-its explanation, its decision and, where accepted, its expiry.
+Every breach carries its classification, its explanation, its decision and, where accepted, its expiry. The portfolio
+manager's explanation and the decision each have a deadline.
 
 **The shift.** Breaches move from threads of email to a tracked record. Nothing is lost between stages, and the record
 shows which limits are breached repeatedly, which is the evidence for recalibrating them.
@@ -255,9 +253,6 @@ a breach is known and decided, and whether the decisions are made and kept.
 | Quality | Breaches first noticed outside the risk function; decisions made after their deadline |
 | Influence | Breaches cured or accepted by a recorded decision; limits recalibrated from the record |
 | Limits specific | Share of internal limits that were never approached, or were breached repeatedly, in a year |
-
-In the flagship example, each breach falls from about 4.25 hours to about 0.75 hours, and a decision follows in about a
-day rather than 8.5 working days. (The figures are illustrative.)
 
 ## Sources
 - Financial Stability Board (2013). *Principles for an Effective Risk Appetite Framework.* Risk appetite expressed as
