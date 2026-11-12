@@ -110,7 +110,7 @@ the reasoning goes there.
 
 | Concept | What it is | Defined in | Used by |
 |---|---|---|---|
-| Grounding check | Every number in generated text traces to the daily run or to a recorded analysis run, or is a simple operation on such figures that the check recomputes | [Controls](08-controls.md#the-grounding-check) | Principles, working with AI, all pillars, alpha and beta |
+| Grounding check | Every number in generated text traces to the daily run or to a recorded analysis run, or is a stated simple operation on such figures that the check recomputes; each sentence links to its facts, and direction and comparisons are checked | [Controls](08-controls.md#the-grounding-check) | Principles, working with AI, all pillars, alpha and beta |
 | AI permissions | What the AI may read, which analyses it may run and what it may never do, set by the risk function and enforced by the risk engine | [Controls](08-controls.md#ai-permissions) | Working with AI |
 | Sign-off point | Where a human must approve, and what they are approving | [Controls](08-controls.md#sign-off-points) | Every redesigned workflow |
 | Audit trail | The record of facts, versions, generated text, edits and approval | [Controls](08-controls.md#the-audit-trail) | Every redesigned workflow |

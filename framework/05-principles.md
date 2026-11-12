@@ -66,8 +66,9 @@ state a figure with no computation behind it.
 
 **In practice.** Generated text passes a grounding check before anyone sees it: every number in it is traced to the
 daily run or to a recorded analysis run, or recomputed from figures that are, and text with a number that cannot be
-traced is rejected. This check, and the other [controls](08-controls.md) that make it safe to rely on generated text,
-are what allow manual checking to be reduced.
+traced is rejected. The check also tests each stated direction and comparison against the facts. This check, and the
+other [controls](08-controls.md) that make it safe to rely on generated text, are what allow manual checking to be
+reduced.
 
 ### 4. Exceptions over everything
 **What it means.** A manual process cannot review every portfolio in depth every day, so it samples or reviews

@@ -79,7 +79,7 @@ At the boundary, and owned elsewhere:
 | Business risk | Fees, flows into the firm, its own balance sheet | Concerns the firm's results, not the portfolio's. |
 | Counterparty approval | Approving which counterparties may be used | Independent of those who trade with them. |
 | Pricing | Setting and challenging the prices of holdings | Independent of those who use the prices. |
-| Model validation | Independent validation of models across the firm | Independent of those who build and use them. |
+| Model validation | Independent validation of models across the firm, including the AI steps in the risk function's workflows | Independent of those who build and use them. |
 | Sustainability risk | Environmental, social and governance events that could lower a holding's value, and the portfolio's own sustainability commitments | Owned by a sustainability function; the pillars take its data as an input. |
 | Strategy capacity | How much money a strategy can run before its returns suffer | A decision about the investment business, owned by the chief investment officer; liquidity risk's figures are an input. |
 
