@@ -54,7 +54,7 @@ Sight serves decisions, and an investment has three moments:
 |---|---|---|
 | Before | **Construct** | What-ifs and marginal risk inside the investment process, before the trade: what this position adds, and what it crowds out of the budget |
 | During | **Oversee** | Risk against budgets and limits, monitored daily, with escalation to the head of risk and the risk committee |
-| After | **Assess** | Attribution that splits return by source, beta included; persistence over several periods as evidence of skill rather than luck; and return per unit of risk by bet and by manager |
+| After | **Assess** | Attribution that splits return by source, beta included; significance over several periods as evidence of skill rather than luck; and return per unit of risk by bet and by manager |
 
 Risk is independent of the investment teams but works inside their process. Challenge comes from understanding the
 strategy well enough to say "yes, and size it like this", not only "no".
@@ -111,8 +111,8 @@ within a stated tolerance.
 dimension joins risk and return over time; the [integrated view](../pillars/integrated-view.md) links signals across
 pillars.
 - **Return per unit of risk:** the information ratio, by bet and by manager.
-- **Risk budget against return, by source:** a bet that uses a large share of the budget and persistently earns
-  nothing is challenged; the portfolio manager resizes it, cuts it or explains why it stays.
+- **Risk budget against return, by source:** a bet that uses a large share of the budget and shows a significant
+  loss for the risk it uses is challenged; the portfolio manager resizes it, cuts it or explains why it stays.
 - **Forecast against outcome:** ex-ante tracking error against realised; days when losses exceeded VaR against the
   number expected.
 - **Drawdown against tolerance:** how close each portfolio runs to the loss, absolute or relative, that would end its

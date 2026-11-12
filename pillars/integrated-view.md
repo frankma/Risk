@@ -30,9 +30,9 @@ The view reads each pillar's signals for each portfolio. Every signal carries a 
 states are the ones each pillar chapter assigns to its rules:
 
 - **Exception:** the reading has crossed a limit or another rule's threshold, such as a limit breach, a fired trigger
-  or a persistent shortfall.
+  or a significant shortfall.
 - **Watch:** the reading is approaching one: it is above an early warning, is drifting towards a threshold, or is a
-  shortfall that is not yet persistent.
+  shortfall that is not yet significant.
 - **Normal:** neither.
 
 The signals, each defined in its pillar chapter's rules:
@@ -44,7 +44,7 @@ The signals, each defined in its pillar chapter's rules:
   collateral calls; flows against history; investor and distributor concentration; time and cost to liquidate; stale or
   unpriceable holdings.
 - **[Performance risk](performance-risk.md#materiality-and-exceptions):** relative return over the rolling window;
-  persistence of shortfall; ex-post tracking error; realised drawdown; active share; source of return; style
+  significance of shortfall; ex-post tracking error; realised drawdown; active share; source of return; style
   consistency; overdue actions.
 
 The view takes these signals as the pillars produce them. If a pillar changes how a signal is computed, the view
@@ -56,7 +56,7 @@ difficulty.
 
 | Pattern | Chain of signals |
 |---|---|
-| Redemption spiral | Shortfall, at watch or persistent → rising outflows → falling coverage → rising concentration |
+| Redemption spiral | Shortfall, at watch or significant → rising outflows → falling coverage → rising concentration |
 | Hidden illiquidity | Stale or unpriceable holdings + volatility below its usual range; steady return as context |
 | Concentrated and hard to sell | Rising issuer or sector concentration + rising time or cost to sell those holdings |
 | Drift under pressure | Style drift or falling active share + rising outflows |
@@ -64,7 +64,7 @@ difficulty.
 
 **The redemption spiral** is the self-reinforcing cycle set out above; outflows concentrated in a few distributors can
 stand in for rising outflows. Because relative return is read every day over a rolling window, the first link can appear
-at watch as soon as a shortfall forms, rather than only once it has persisted. Its early links are in performance and
+at watch as soon as a shortfall forms, rather than only once it is significant. Its early links are in performance and
 liquidity, its later links in market risk.
 
 **Hidden illiquidity** is a combination in which one signal makes others look better than they are. Holdings whose
@@ -185,15 +185,15 @@ it does not recommend an action or claim that one signal caused another. **The f
 |---|---|
 | Fund | Fund K |
 | Pattern matched | Redemption spiral |
-| Shortfall against benchmark | 4 consecutive quarters (performance, exception) |
+| Shortfall against benchmark, last 12 months | 4.6%, significant against tracking error (performance, exception) |
 | Net outflows, last month | 3.2% of net assets, near the top of the usual range (liquidity, watch) |
 | Redemption coverage, today / three months ago | 1.8x / 2.6x (liquidity, watch) |
 | Largest issuer weight, today / three months ago | 9.3% / 6.1% (market, watch) |
 
-> Fund K matches the redemption spiral pattern. It has been below its benchmark for 4 consecutive quarters. At the
-> same time, net outflows last month were 3.2% of net assets, near the top of the portfolio's usual range; redemption
-> coverage has fallen from 2.6x to 1.8x over three months; and its largest issuer weight has risen from 6.1% to
-> 9.3%. Only the performance signal is at exception; the liquidity and market signals are at watch.
+> Fund K matches the redemption spiral pattern. It is 4.6% below its benchmark over the last 12 months, a significant
+> shortfall. At the same time, net outflows last month were 3.2% of net assets, near the top of the portfolio's usual
+> range; redemption coverage has fallen from 2.6x to 1.8x over three months; and its largest issuer weight has risen
+> from 6.1% to 9.3%. Only the performance signal is at exception; the liquidity and market signals are at watch.
 
 **Hidden illiquidity.**
 
@@ -234,12 +234,12 @@ The view inherits every limit of the pillar measures it reads, and adds four of 
 - **Co-occurrence is not cause.** Signals that appear together may be unrelated. The view shows that they combine; the
   risk manager judges whether they are connected.
 - **Patterns encode judgement.** The rules catch the combinations someone has defined and miss those nobody has.
-- **Signals have different cadences.** Most signals are read daily, including relative return over its rolling
-  window, but persistence is counted in whole periods and some inputs, such as investor registers, update less often.
-  Readings of different ages are not contemporaneous, so the view shows each signal's as-of date and treats a signal
-  beyond a set age as stale.
-- **Too many ranked portfolios defeats the purpose.** If the view ranks most portfolios, it becomes another report. The
-  share of ranked portfolios the risk manager judges worth action is watched, and the rules are tightened when it falls.
+- **Signals have different cadences.** Most signals are read daily, including relative return over its rolling window,
+but runs of periods are counted in whole periods and some inputs, such as investor registers, update less often.
+Readings of different ages are not contemporaneous, so the view shows each signal's as-of date and treats a signal
+beyond a set age as stale. - **Too many ranked portfolios defeats the purpose.** If the view ranks most portfolios, it
+becomes another report. The share of ranked portfolios the risk manager judges worth action is watched, and the rules
+are tightened when it falls.
 
 The function tests the view by replaying past episodes: taking portfolios that ran into difficulty and checking whether
 the view, with the rules in force at the time, would have ranked them, and how much earlier than any pillar. Episodes it

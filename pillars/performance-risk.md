@@ -55,8 +55,8 @@ relative to its benchmark; market risk reads the headroom it leaves before the d
 review is also market risk's, and its exceptions come into the challenge pack here.
 
 Relative return and drawdown are computed every day over a rolling window, a governed parameter illustrated here as 12
-months, so that a shortfall reaches watch as soon as it forms rather than at the end of a quarter. Persistence is
-counted in whole periods. The windows, and the significance shown beside each figure, are set out under
+months, so that a shortfall reaches watch as soon as it forms rather than at the end of a quarter. A run of losing
+periods is counted in whole periods. The windows, and the significance shown beside each figure, are set out under
 [design choices](performance-risk.md#windows-and-significance).
 
 ## Flagship redesign: the periodic portfolio manager review
@@ -128,15 +128,15 @@ explains; and the actions agreed are tracked until they are closed.
 
 ## Materiality and exceptions
 An **exception** in this pillar is a reading that has crossed a rule's threshold: a sign that the portfolio is not
-delivering its promise, or not in the way it promised. A **watch item** is an early sign that has not yet persisted.
-Each rule is a [governed
+delivering its promise, or not in the way it promised. A **watch item** is an early sign that has not crossed one: a
+shortfall that is not yet significant, or a reading seen in one period only. Each rule is a [governed
 parameter](../framework/08-controls.md#materiality-thresholds-as-governed-parameters). **The example values below are
 illustrative and are not recommendations;** each risk function sets its own.
 
 | Kind of rule | Example (illustrative) | What it catches |
 |---|---|---|
-| Relative return | Shortfall net of fees against benchmark or objective over the rolling window, beyond a set level | Missing the promise |
-| Persistence | Shortfall in several consecutive periods | Shortfall that is not noise |
+| Significant shortfall | Cumulative shortfall net of fees against benchmark or objective that is large against tracking error: a t-statistic below a set level, such as -2 | Missing the promise by more than noise |
+| Shortfall not yet significant | A shortfall over the rolling window, on both short windows, or in several consecutive periods | A shortfall that may become significant |
 | Ex-post tracking error | Outside the range the mandate terms imply | Too much or too little active risk taken |
 | Drawdown | Realised drawdown, absolute or relative, beyond its tolerance | Losses that end mandates |
 | Active share | Falling for several consecutive quarters | A portfolio moving towards its benchmark |
@@ -144,12 +144,13 @@ illustrative and are not recommendations;** each risk function sets its own.
 | Style consistency | Exposures outside the confirmed mandate terms | Style drift |
 | Overdue action | An agreed action past its due date | Follow-up that has stalled |
 
-A shortfall over the rolling window, a shortfall on both the 1-month and 3-month windows, or a single period of the
-source-of-return reading, is a watch item; every other rule in the table, including persistent shortfall, gives an
-exception when it fires. The risk engine ranks issues for each portfolio, exceptions before watch items. Persistent
-issues rank above single-period ones, because short periods are noisy and persistence carries more information than
-size. Issues where the outcome and the way it was achieved both depart from the promise rank highest. Overdue actions
-are always shown, so that the review starts from what was agreed last time.
+A shortfall that is not yet significant is a watch item, whether it shows over the rolling window, on both the 1-month
+and 3-month windows, or as a run of consecutive periods. So is a single period of the source-of-return reading. Every
+other rule in the table, including a significant shortfall, gives an exception when it fires. The risk engine ranks
+issues for each portfolio, exceptions before watch items. Significant issues rank above those that are not, because
+short periods are noisy, and significance weighs both the size of a shortfall and how long it has lasted. Issues where
+the outcome and the way it was achieved both depart from the promise rank highest. Overdue actions are always shown, so
+that the review starts from what was agreed last time.
 
 ## What the AI drafts
 The AI drafts each item of the challenge pack from the facts that the risk engine produced and from nothing else. Every
@@ -221,14 +222,31 @@ portfolio leads with the information ratio and relative drawdown, an absolute re
 Sortino ratio and absolute drawdown.
 
 ### Windows and significance
-Every measure is shown over **1, 3, 12 and 36 months**. The 12-month window is the default for the relative return
-rule; a shortfall that shows on both the 1-month and the 3-month windows is an earlier watch, because the shorter
-windows agreeing is less likely to be noise than either alone. Persistence is counted in whole periods.
+Every measure is shown over several windows, because each answers a different question. **The set below is an
+illustrative setup;** each risk function chooses its own and holds it as a governed parameter.
+
+| Window | What it is for | Where it is weak |
+|---|---|---|
+| 1 and 3 months | An early sign that something has changed | Mostly noise on its own |
+| 12 months | The rolling window for relative return and drawdown | Still short against the time skill takes to show |
+| 36 months | A fuller view of how the portfolio is run | Slow to show a change, and may span a change of manager or style |
+| The mandate's own stated period | The period over which the promise was made, such as a rolling five years | May be longer than the portfolio's record |
+| Since inception | The whole record, and the most data | Dominated by early periods, when the portfolio may have been small |
+
+A shortfall that shows on both the 1-month and the 3-month windows is an earlier watch, because the shorter windows
+agreeing is less likely to be noise than either alone. A run of losing periods is counted in whole periods.
 
 Beside every information ratio, the **t-statistic** shows how much of it could be noise: the ratio times the square root
 of the number of years measured. At an information ratio of 0.5 it takes about 16 years to reach a t-statistic of 2, as
 [sources of return](../framework/02-sources-of-return.md#where-do-the-labels-mislead) sets out. Showing it on every
 report keeps one good period from being read as skill.
+
+The same statistic tests a shortfall: the cumulative shortfall over a window, divided by the tracking error scaled to
+the window's length. A shortfall is **significant** when the statistic falls below a set level, illustrated here as -2,
+on the rolling window or any longer one. A count of losing periods throws away the size of each shortfall, and a
+manager with real skill still loses in many periods, so a run of periods gives a watch item and only significance
+gives an exception. For a portfolio with an objective and no benchmark, the shortfall is set against the volatility of
+its return over the objective.
 
 ### Benchmarks and peer groups
 A benchmark decides every relative figure, so it is tested before it is used and reviewed while it is used. A sound
@@ -261,7 +279,7 @@ recorded effective date. The same applies to linking the lines of the
 | Measure | Where it is weak | How the function tests it |
 |---|---|---|
 | Attribution | Depends on the model and benchmark chosen | Comparing methods; testing the benchmark as above |
-| Relative return | Short periods are noisy | Several windows; persistence over several periods; the t-statistic |
+| Relative return | Short periods are noisy | Several windows; significance by the t-statistic; runs of periods as a watch only |
 | Ex-post tracking error | Depends on the window; noisy over short ones | Several windows; comparison with ex-ante from market risk |
 | Risk-adjusted ratios | Rare large losses are understated until they happen | Reading them beside drawdown and stress |
 | Peer comparison | Peer groups can be poorly matched or flattered by survivors | Membership criteria and a survivorship check |
@@ -269,11 +287,11 @@ recorded effective date. The same applies to linking the lines of the
 | Extracted mandate terms | The AI can miss or misread a term | Confirmation by the risk manager |
 
 Attribution answers the question it is set up to answer: a different model or benchmark can tell a different story, so
-the function checks that its choices fit each portfolio. Short periods are noisy, so persistence matters more than any
-single period, which is why the ranking rule weighs it heavily. Peer groups can be poorly matched, which makes a
-portfolio look better or worse than it is. The extracted mandate terms are the AI step's main limit in this pillar: an
-error there would make every later test wrong, which is why the terms are confirmed by the risk manager before they are
-used.
+the function checks that its choices fit each portfolio. Short periods are noisy, so significance matters more than any
+single period or run of periods, which is why the exception rule and the ranking rest on it. Peer groups can be poorly
+matched, which makes a portfolio look better or worse than it is. The extracted mandate terms are the AI step's main
+limit in this pillar: an error there would make every later test wrong, which is why the terms are confirmed by the risk
+manager before they are used.
 
 ## Controls specific to this pillar
 The general controls in [controls](../framework/08-controls.md) apply in full. This pillar adds five.
