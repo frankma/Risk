@@ -55,7 +55,8 @@ estimator, a default, a threshold convention, how a pillar is scoped), stop and 
   `reference/` is for runnable code.
 
 ## Working conventions
-- One change per branch, merged by pull request; keep each diff small enough to review.
+- One coherent piece of work per branch, merged by pull request as one commit. Small fixes cluster into one branch and
+  pull request; a substantial change gets its own. Keep each diff reviewable.
 - Python, managed with `uv`. Tests sit next to the code they cover; add tests with every code change.
 - Lines up to 120 characters; Markdown table rows that cannot wrap are exempt.
 - Earlier code is preserved under the git tag `legacy-2020`. Do not restore it to the main branch.

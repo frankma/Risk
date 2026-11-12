@@ -192,6 +192,7 @@ A portfolio can meet a call on its cash in two ways, and each answers a differen
 | A slice of every holding | The fairness test: can the call be met without changing the portfolio the investors who stay are left with? | The time and cost of selling in proportion |
 | The most liquid first | The capacity test: how much can be raised, and how fast? | The most the portfolio can raise in each period |
 
+The first is also called vertical slicing, or selling pro rata, and the second horizontal slicing, or a waterfall.
 Redemption coverage reads the capacity test, because it asks whether the call can be met at all. The gap between the
 two is shown beside it: it measures how much of the cost of meeting the call would be shifted onto the investors who
 stay if the portfolio sold its most liquid holdings first, which is the "fair cost" in the pillar's outcome made
@@ -305,5 +306,8 @@ most liquid holdings leaves a more concentrated and more volatile portfolio, whi
   margin calls and falling market liquidity reinforce each other.
 - European Securities and Markets Authority (2019). *Guidelines on Liquidity Stress Testing in UCITS and AIFs.*
   Stressing both sides of the balance, with a method of selling that reflects how the portfolio would be sold.
+- Bouveret, A. (2017). *Liquidity Stress Tests for Investment Funds: A Practical Guide.* International Monetary Fund
+  Working Paper 17/226. Selling a slice of every holding against selling the most liquid first, and the redemption
+  coverage ratio.
 - Bouchaud, J.-P., Bonart, J., Donier, J. and Gould, M. (2018). *Trades, Quotes and Prices: Financial Markets Under the
   Microscope.* Cambridge University Press. The square-root law of market impact.

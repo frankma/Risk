@@ -161,14 +161,15 @@ decides which to ask. **The funds and figures are illustrative.**
 | Fund | Fund G |
 | Excess return over benchmark before fees, last 12 months | 2.1% |
 | Split of the excess: unintended beta from currency, after its holding cost / alpha | 1.6% / 0.5% |
+| Return generator of the currency exposure | Market risk premium |
 | Currency in confirmed mandate terms | Not part of the stated strategy |
 | Currency tilt on record | None |
 | Average unhedged US dollar exposure | 14% of net assets |
 
 > Fund G returned 2.1% above its benchmark before fees over the last 12 months. Of that, 1.6% was unintended beta from
-> currency, which is not part of its stated strategy and has no tilt on record; alpha was 0.5%. The fund held an
-> average of 14% of net assets in unhedged US dollar exposure. *Question: Is the currency exposure intended, and if so,
-> how is it managed?*
+> currency, which is not part of its stated strategy and has no tilt on record; alpha was 0.5%. The currency return is a
+> market risk premium, not skill. The fund held an average of 14% of net assets in unhedged US dollar exposure.
+> *Question: Is the currency exposure intended, and if so, how is it managed?*
 
 **Active share falling while the fee is unchanged.**
 

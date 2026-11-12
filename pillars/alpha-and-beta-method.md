@@ -88,10 +88,10 @@ The same step applies to every declared factor: market, style, sector, country, 
 carried by an ETF or a future on the index or basket that defines it, and the top-down portfolio holds each in the
 amount of the real portfolio's exposure.
 
-**Each factor carries one generator tag.** The equity market, rates and spreads are market risk premia, and a sector
-or country index takes the tag of the market it is a slice of. Value, momentum, size, carry and a basket of less
-liquid securities are style premia. The tag changes no line of the split. It groups the beta lines, so that policy
-beta, tilts, timing and unintended beta can each be shown by the generator that paid them.
+**Each factor carries one generator tag.** The equity market, rates, spreads and currency are market risk premia, and a
+sector or country index takes the tag of the market it is a slice of. Value, momentum, size, carry and a basket of less
+liquid securities are style premia. The tag changes no line of the split. It groups the beta lines, so that policy beta,
+tilts, timing and unintended beta can each be shown by the generator that paid them.
 
 The book's return divides into exposure times factor return, which the top-down portfolio carries, and specific return,
 which is alpha. This joins the two attribution splits in the [philosophy](../framework/00-philosophy.md#2-drill-in).
@@ -119,7 +119,7 @@ is approximate. The cost of trades forced by redemptions or other calls on cash 
 trades cannot be reliably identified.
 
 ## Booked or derived
-Two routes apply the same split.
+Two routes apply the same split, with one stated exception.
 
 | | Booked | Derived |
 |---|---|---|
@@ -127,6 +127,11 @@ Two routes apply the same split.
 | Suits | Portfolios that can short | Portfolios that cannot short or do not book separately |
 | Evidence | Of each selection decision: each short was chosen | Of the manager's selection over several periods: labelled an estimate, with names held and not held shown apart |
 | Weakness | A tilt can be tagged as selection; hedge error lands in alpha | Most shorts are names nobody considered; an underweight cannot exceed the top-down weight |
+
+**Hedge error is the exception to the as-held rule.** On the booked route the top-down portfolio is the beta book as
+booked, so exposure that the alpha book fails to hedge stays in the alpha line. The regression test still runs on the
+booked book, and the exposure it finds is reported as hedge error beside alpha, so that the reader sees how much of
+the alpha is unhedged beta.
 
 The booked book is the standard. Its profit and loss is observed, but its hedge rests on estimated betas. Its return is
 stated after borrow and financing costs and without the interest on its cash, which belongs to the cash bucket. A tag
