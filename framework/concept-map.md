@@ -36,6 +36,11 @@ the reasoning goes there.
 
 | Concept | What it is | Defined in | Used by |
 |---|---|---|---|
+| Return generator | What pays a return above cash: market risk premia, style premia or skill | [Sources of return](02-sources-of-return.md#what-generates-return) | Alpha and beta method, performance risk, market risk |
+| Market risk premia | The return for holding a market (equity, term, credit), paid for losses in bad times; beta | [Sources of return](02-sources-of-return.md#what-generates-return) | Alpha and beta method |
+| Style premia | The return of a rule an index or basket can follow, such as value, momentum or carry; beta once declared | [Sources of return](02-sources-of-return.md#what-generates-return) | Alpha and beta method |
+| Skill | The return from choosing between securities that share the same exposures; alpha | [Sources of return](02-sources-of-return.md#what-generates-return) | Alpha and beta method, performance risk |
+| How a generator fails | Drawdown for market risk premia, dry spells and crowded reversals for style premia, decay and crowding for skill | [Sources of return](02-sources-of-return.md#how-does-each-generator-fail) | Market risk's stress library, performance risk |
 | Top-down view | Decides how much of which markets to hold; loosely, beta | [Sources of return](02-sources-of-return.md#what-are-the-two-sources) | Philosophy |
 | Bottom-up selection | Decides which securities to hold within them; loosely, alpha | [Sources of return](02-sources-of-return.md#what-are-the-two-sources) | Philosophy |
 | Policy beta | The return of the benchmark or strategic allocation in the governing documents | [Sources of return](02-sources-of-return.md#who-chose-each-part) | Alpha and beta method |
@@ -142,6 +147,7 @@ the reasoning goes there.
 | Alpha | The add-on return from security selection: the real portfolio's return less the top-down portfolio's | [Alpha and beta method](../pillars/alpha-and-beta-method.md#the-three-portfolios) | Sources of return, performance risk |
 | Gross return and the bridge | The split's basis, and the link from it to the net return | [Alpha and beta method](../pillars/alpha-and-beta-method.md#scope-and-basis) | Performance risk |
 | Declared factor list | The factors alpha must stay neutral to, held as a governed parameter | [Alpha and beta method](../pillars/alpha-and-beta-method.md#booked-or-derived) | Market risk, performance risk |
+| Generator tag | The return generator each declared factor is read against, held with the list as a governed parameter | [Alpha and beta method](../pillars/alpha-and-beta-method.md#building-the-top-down-portfolio) | Market risk |
 | Factor return | The return of the ETF or future that carries a declared factor | [Alpha and beta method](../pillars/alpha-and-beta-method.md#building-the-top-down-portfolio) | Philosophy |
 | Cost of holding beta | The top-down portfolio's instruments against the indices they track, on its own line beside the fee | [Alpha and beta method](../pillars/alpha-and-beta-method.md#the-four-beta-lines) | That page only |
 | Booked and derived books | Two routes to the same split, with different evidence | [Alpha and beta method](../pillars/alpha-and-beta-method.md#booked-or-derived) | That page only |

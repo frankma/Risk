@@ -21,9 +21,11 @@ what remains is more concentrated and more volatile. Seeing the pillars together
 provides.
 
 ## Two sources of return
-Every return comes from two sources. Top-down views decide how much of which markets to hold, and bottom-up selection
+Every return above cash is paid by one of three return generators: market risk premia, style premia and skill. They
+group into two sources. Top-down views decide how much of which markets and styles to hold, and bottom-up selection
 decides which securities to hold within them. Loosely, the first is called beta and the second alpha. A risk function
-uses the split to ask whether each risk was chosen and whether it was paid for; see
+uses the generators to ask how a return could stop, and the split to ask whether each risk was chosen and whether it
+was paid for; see
 [sources of return](framework/02-sources-of-return.md).
 
 ## Redesigning the work around AI
@@ -65,7 +67,7 @@ Two rules make it work:
 | **The investment backdrop** | |
 | [Investment risk philosophy](framework/00-philosophy.md) | What a risk function believes and is for: eight beliefs, the three decisions it serves, and transparency in three dimensions. |
 | [Investment risk](framework/01-investment-risk.md) | Definition and scope, including the portfolios covered, what is measured here and what is owned elsewhere; the three pillars, with market and performance risk divided by time into forward-looking and realised. |
-| [Sources of return](framework/02-sources-of-return.md) | The two sources of every return, top-down views and bottom-up selection, loosely beta and alpha; who decides each, why it matters to asset owners, asset managers and risk functions, and how a holding splits between them. |
+| [Sources of return](framework/02-sources-of-return.md) | The three return generators (market risk premia, style premia and skill), why each pays and how each fails; the two sources they group into, top-down views and bottom-up selection, loosely beta and alpha; who decides each, why it matters to asset owners, asset managers and risk functions, and how a holding splits between them. |
 | **The practice** | |
 | [Risk data](framework/03-risk-data.md) | The data the risk engine reads, from golden source to computed figure; versioning as known, so any past output can be reproduced; quality checks before computation; the proxy policy; who owns fitness for use and who corrects; the daily data check redesigned as a ranked queue of data breaks. |
 | [Limits and escalation](framework/04-limits-and-escalation.md) | Where limits come from: mandate and regulatory limits owned by compliance, internal limits owned by the risk function, and early warnings ahead of both; what internal limits are for; how they are calibrated; the breach lifecycle and who approves what; breach handling redesigned as a tracked record. |

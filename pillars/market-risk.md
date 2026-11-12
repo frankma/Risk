@@ -245,9 +245,10 @@ risk on a fixed stressed period.
 ### Factors
 The factor model behind ex-ante tracking error and the risk decomposition is chosen by the risk function's set process,
 and run by the risk engine. Whatever model is chosen, its factors are the
-[declared factor list](alpha-and-beta-method.md) of the alpha and beta method, or map to it one to one. Risk by factor
-and return by factor then line up, so that the risk budget review can set what each bet uses beside what it earns, and
-any period's return and change in risk can be explained by the same factors
+[declared factor list](alpha-and-beta-method.md) of the alpha and beta method, or map to it one to one, and carry the
+same generator tags. Risk by factor and return by factor then line up, and each can be grouped by return generator, so
+that the risk budget review can set what each bet uses beside what it earns, and any period's return and change in risk
+can be explained by the same factors
 ([connection](../framework/00-philosophy.md#3-connection)).
 
 ### Backtesting
@@ -269,6 +270,10 @@ portfolio's usual range.
 ### Stress and reverse stress
 - **The library** holds historical episodes, hypothetical scenarios and sensitivity shocks to single factors, and is
   reviewed on a set cycle and when conditions change.
+- **The library covers how each return generator fails.** The
+  [sources of return](../framework/02-sources-of-return.md#how-does-each-generator-fail) chapter names three ways: a
+  drawdown in market risk premia, a crowded reversal in a style premium, and books built on skill losing together. The
+  review of the library checks that each has at least one scenario.
 - **A scenario becomes shocks to every factor** in two steps: shocks are set on the factors that drive the scenario,
   and the other factors are filled in from how they moved with those factors in the past.
 - **Shock sizes** come from data, where the risk engine computes them from a historical episode, or from the risk

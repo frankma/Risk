@@ -33,7 +33,11 @@ risk](market-risk.md).
 The portfolio manager review is the flagship, because it is where the pillar's evidence meets the person who can act on
 it. The other workflows feed it: attribution, realised risk, peer comparison and consistency checks supply the evidence,
 and market risk's risk budget review adds its exceptions. Attribution separates the two [sources of
-return](../framework/02-sources-of-return.md), using the [alpha and beta method](alpha-and-beta-method.md). The watch
+return](../framework/02-sources-of-return.md), using the [alpha and beta method](alpha-and-beta-method.md), and shows
+each beta line by the [return generator](../framework/02-sources-of-return.md#what-generates-return) that paid it:
+market risk premia or style premia, with alpha read as skill. The generator tells the risk manager
+[how the return could stop](../framework/02-sources-of-return.md#how-does-each-generator-fail), which sets the question
+to put to the portfolio manager. The watch
 list holds the portfolios whose issues have not been resolved; it is a single list for the firm, owned by the risk
 function, to which this pillar and the [integrated view](integrated-view.md) both add portfolios, and which investment
 oversight uses to decide escalation.
