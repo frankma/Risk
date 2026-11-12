@@ -221,12 +221,12 @@ it does not recommend an action or claim that one signal caused another. **The f
 | Margin and collateral calls, last 5 days | 4.1% of net assets (liquidity, exception) |
 | Redemption coverage, today / one month ago | 1.4x / 2.2x (liquidity, exception) |
 | Share of liquid assets posted as collateral, today / one month ago | 22% / 9% (liquidity; context) |
-| Commitment leverage | 2.1 times net assets (market, normal; context) |
+| Net exposure | 2.1 times net assets (market, normal; context) |
 
 > Fund R matches the margin squeeze pattern. Its volatility of 14.8% is above its usual range of 6% to 10%, and margin
 > and collateral calls over the last 5 days came to 4.1% of net assets. Redemption coverage has fallen from 2.2x to
-> 1.4x over a month, while the share of its liquid assets posted as collateral has risen from 9% to 22%. Its commitment
-> leverage is 2.1 times net assets.
+> 1.4x over a month, while the share of its liquid assets posted as collateral has risen from 9% to 22%. Its net
+> exposure is 2.1 times net assets.
 
 ## Limits of the view
 The view inherits every limit of the pillar measures it reads, and adds four of its own.

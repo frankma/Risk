@@ -14,7 +14,7 @@ the reasoning goes there.
 | Three decisions | Construct, Oversee and Assess: before, during and after an investment | [Philosophy](00-philosophy.md#purpose-transparency-for-three-decisions) | Market risk's what-ifs, new portfolio review |
 | Three dimensions | Condensation, drill-in and connection: what every piece of risk work provides | [Philosophy](00-philosophy.md#practice-transparency-in-three-dimensions) | All pillars |
 | Decision-maker | Whoever a piece of a decomposition belongs to | [Philosophy](00-philosophy.md#2-drill-in) | Alpha and beta |
-| Mandate terms | A portfolio's objective, style and limits in a form the risk engine can test, confirmed by the risk manager | [Performance risk](../pillars/performance-risk.md#flagship-redesign-the-periodic-portfolio-manager-review) | Performance risk's rules and split |
+| Mandate terms | A portfolio's objective, benchmark, style, limits and dealing terms in a form the risk engine can test, confirmed by the risk manager; hard limits are reconciled to compliance's rules | [Performance risk](../pillars/performance-risk.md#flagship-redesign-the-periodic-portfolio-manager-review) | Performance risk's rules and split |
 
 ## Scope
 
@@ -67,10 +67,13 @@ the reasoning goes there.
 
 | Concept | What it is | Defined in | Used by |
 |---|---|---|---|
-| Hard limit | A mandate or regulatory limit; compliance owns its breach process, and the risk function watches it as a courtesy | [Limits and escalation](04-limits-and-escalation.md#where-limits-come-from) | Investment risk, market risk |
+| Hard limit | A mandate or regulatory limit, which must be cured; compliance owns its legal reading, and its coded rule is the master reading | [Limits and escalation](04-limits-and-escalation.md#where-limits-come-from) | Investment risk, market risk |
+| Risk-measured limit | A hard limit on a measure only the risk engine computes (leverage, exposure by value at risk, counterparty exposure, liquidity); the risk function monitors it and compliance writes the breach report | [Limits and escalation](04-limits-and-escalation.md#where-limits-come-from) | Market risk |
 | Internal limit | A soft limit the risk function sets where the mandate is silent, to produce insight first and constrain when judged necessary | [Limits and escalation](04-limits-and-escalation.md#what-internal-limits-are-for) | Market risk, liquidity risk, controls |
 | Early warning | A level ahead of a hard or internal limit, or on a measure with no limit; a reading beyond it is a watch item | [Limits and escalation](04-limits-and-escalation.md#where-limits-come-from) | All pillars |
 | Breach lifecycle | Detect, verify, classify, notify, explain, decide, cure and close | [Limits and escalation](04-limits-and-escalation.md#the-breach-lifecycle) | Market risk |
+| Escalation path | Who a missed deadline, a declined cure, a dissent and a hard limit breach go to; the risk committee's decision on an uncured soft limit binds | [Limits and escalation](04-limits-and-escalation.md#escalation) | Controls specific to limits |
+| Investment oversight | The head of investments, or the committee that supervises the portfolio managers | [Limits and escalation](04-limits-and-escalation.md#the-breach-lifecycle) | Performance risk |
 | Active and passive breach | A breach caused by a trade or decision, or by markets, flows or corporate actions | [Limits and escalation](04-limits-and-escalation.md#the-breach-lifecycle) | Market risk |
 
 ## Redesigning the work
@@ -129,7 +132,7 @@ the reasoning goes there.
 | Second-round effect | The extra cost when several of the firm's portfolios sell the same holdings, or when a market move also raises margin calls | [Liquidity risk](../pillars/liquidity-risk.md#encumbrance-and-second-round-effects) | That chapter only |
 | Stale or unpriceable holding | A holding whose value is uncertain, flagged to the owner of pricing | [Liquidity risk](../pillars/liquidity-risk.md#workflows-in-this-pillar) | Market risk, integrated view, alpha and beta |
 | Jump to default | The loss if an issuer defaulted, net of expected recovery, read as a concentration measure | [Market risk](../pillars/market-risk.md#credit-spreads-default-and-migration) | Investment risk |
-| Gross and commitment leverage | Total notional, and exposure after netting and hedging, each with an internal limit | [Market risk](../pillars/market-risk.md#leverage-and-options) | Limits and escalation |
+| Gross and net exposure | Leverage as the sum of all positions without netting, and as what is left after netting and hedging, with derivatives converted to the underlying; each has an internal limit | [Market risk](../pillars/market-risk.md#leverage-and-options) | Limits and escalation |
 | Backtest against the design | VaR breaches judged against what the chosen design implies, stated in advance | [Market risk](../pillars/market-risk.md#backtesting) | Philosophy |
 | Information ratio and t-statistic | Active return per unit of active risk, shown with how much of it could be noise | [Performance risk](../pillars/performance-risk.md#windows-and-significance) | Sources of return, philosophy |
 | Windows | Every performance measure shown over 1, 3, 12 and 36 months, with 12 months the default for the relative return rule | [Performance risk](../pillars/performance-risk.md#windows-and-significance) | Integrated view |

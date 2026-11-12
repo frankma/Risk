@@ -19,7 +19,7 @@ The risk engine reads the same domains for every portfolio, whatever its vehicle
 | Benchmarks | Each benchmark's constituents and weights | Market and performance risk, alpha and beta |
 | Flows and investors | Subscriptions, redemptions, withdrawals and the shares held by the largest investors and distributors | Liquidity risk |
 | Margin and financing | Margin and collateral calls, borrowing and its maturity, commitments | Liquidity risk |
-| Mandate terms | The objective, benchmark, guidelines and dealing terms, confirmed by the risk manager | Every pillar |
+| Mandate terms | The objective, benchmark, style, limits and dealing terms, confirmed by the risk manager, with hard limits reconciled to compliance's rules | Every pillar |
 | Records of decisions | Tilts and timing calls as recorded, and trades with their tags | Performance risk, alpha and beta |
 
 A portfolio that invests in other funds is read through to their holdings. The holdings of an underlying fund often

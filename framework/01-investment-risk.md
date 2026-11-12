@@ -75,7 +75,7 @@ At the boundary, and owned elsewhere:
 | Risk | What it covers | Why it sits outside |
 |---|---|---|
 | Operational risk | Errors, systems, processes, outsourcing | Arises from how the firm operates. |
-| Compliance | The legal reading of guidelines and regulation, and the handling of breaches of mandate and regulatory limits | A legal reading; the pillars monitor exposures and route breaches. |
+| Compliance | The legal reading of guidelines and regulation, the monitoring of position and eligibility rules, and the breach report for every mandate and regulatory limit | A legal reading; the pillars monitor exposures and risk-measured limits, and route or report breaches. |
 | Business risk | Fees, flows into the firm, its own balance sheet | Concerns the firm's results, not the portfolio's. |
 | Counterparty approval | Approving which counterparties may be used | Independent of those who trade with them. |
 | Pricing | Setting and challenging the prices of holdings | Independent of those who use the prices. |

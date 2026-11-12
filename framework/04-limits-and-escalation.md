@@ -2,23 +2,34 @@
 
 Limits turn a mandate's intent into readings a risk function can watch every day. This chapter sets out where limits
 come from and who owns each kind, what internal limits are for, how they are calibrated, how a breach of an internal
-limit is handled from detection to closure, and who approves what. It closes with breach handling redesigned from email
-chains into tracked stages. The [philosophy](00-philosophy.md#beliefs) holds that appetite belongs to the client and is
-judged against each mandate, not against a firm-wide number; limits are how that belief is applied.
+limit is handled from detection to closure, how it is escalated, and who approves what. It closes with breach handling
+redesigned from email chains into tracked stages. The [philosophy](00-philosophy.md#beliefs) holds that appetite belongs
+to the client and is judged against each mandate, not against a firm-wide number; limits are how that belief is applied.
 
 ## Where limits come from
-Limits come in three layers.
+Limits come in three layers, and the first has two kinds.
 
 | Layer | What it is | Who owns it |
 |---|---|---|
-| Mandate and regulatory limits | Limits written in the portfolio's governing documents or in regulation, such as a maximum weight in one issuer | Compliance |
+| Mandate and regulatory limits: position and eligibility rules | Limits written in the portfolio's governing documents or in regulation on what may be held and how much of it, such as a maximum weight in one issuer | Compliance |
+| Mandate and regulatory limits: risk-measured limits | Limits written in the governing documents or in regulation on a measure that only the risk engine computes: leverage, exposure measured by value at risk, counterparty exposure and liquidity | The risk function monitors them; compliance owns the legal reading and the breach report |
 | Internal limits | Limits the risk function sets where the mandate is silent, such as an absolute risk limit for a benchmarked portfolio | The risk function |
 | Early warnings | Levels set ahead of a limit of either kind, so that a reading is seen before it breaches, or on a measure that has no limit | The risk function |
 
-**Mandate and regulatory limits are hard limits.** A breach must be cured, and compliance owns their legal reading, the
-breach process, cures and any extension, as set out in [investment risk](01-investment-risk.md#scope-and-boundaries).
-The risk function watches them as a courtesy: it shows each one beside its own readings, sets its own early warnings
-ahead of them, and routes any breach it sees to compliance rather than handling it.
+**Mandate and regulatory limits are hard limits.** A breach must be cured. Compliance owns the legal reading of every
+hard limit, and its coded rule is the master reading. Where the risk function's
+[mandate terms](../pillars/performance-risk.md#flagship-redesign-the-periodic-portfolio-manager-review) hold the same
+limit, they are reconciled to compliance's rule, and a difference is routed to compliance.
+
+**Position and eligibility rules stay with compliance,** which monitors them and owns the breach process, cures and any
+extension, as set out in [investment risk](01-investment-risk.md#scope-and-boundaries). The risk function shows each one
+beside its own readings, sets its own early warnings ahead of them, and routes any breach it sees to compliance rather
+than handling it.
+
+**Risk-measured limits are monitored by the risk function as its own duty,** because only the risk engine can compute
+them. The risk function detects and verifies a breach, tells compliance and the portfolio manager on the same day, and
+tracks the cure. Compliance keeps the legal reading and the breach report. A breach of a hard limit cannot be accepted
+the way a breach of an internal limit can.
 
 **Internal limits are soft limits.** They are [governed
 parameters](08-controls.md#materiality-thresholds-as-governed-parameters), owned by the risk function, and they cover
@@ -34,8 +45,8 @@ watch item, not a breach.
 ## What internal limits are for
 Internal limits exist first to produce insight: they keep the portfolio manager, the risk manager and oversight on top
 of an issue, start the conversation and record its outcome. They are designed so that they can constrain when needed,
-but whether to use them that way is a judgement, not an automatic ruling. Automatic constraint is what the mandate and
-regulatory limits, owned by compliance, are for.
+but whether to use them that way is a judgement, not an automatic ruling. Automatic constraint is what hard limits are
+for.
 
 By default, a risk function sets internal limits on:
 
@@ -43,9 +54,12 @@ By default, a risk function sets internal limits on:
 |---|---|---|
 | Value at risk or expected shortfall | Absolute forward-looking risk | [Market risk](../pillars/market-risk.md) |
 | Ex-ante tracking error | A range, so that active risk is neither too high nor too low for the mandate | [Market risk](../pillars/market-risk.md) |
-| Leverage, gross and commitment | The scale of positions and the risk they take after netting and hedging | [Market risk](../pillars/market-risk.md) |
+| Leverage, as gross and net exposure | The scale of positions, and the exposure left after netting and hedging | [Market risk](../pillars/market-risk.md) |
 | Counterparty exposure | Exposure to each firm the portfolio trades with or holds assets through | [Market risk](../pillars/market-risk.md) |
 | Redemption coverage | Unencumbered liquid assets against the stressed calls on cash | [Liquidity risk](../pillars/liquidity-risk.md) |
+
+Where the governing documents or regulation already set a limit on one of these measures, that limit is a
+risk-measured hard limit, and the internal limit sits inside it.
 
 Other readings, such as stress losses against the drawdown tolerance, concentration below a mandate limit, flows and
 relative return, are watched through early warnings and the pillars' rules rather than limits.
@@ -66,7 +80,9 @@ is breached all the time is ignored; both are reviewed on the cycle set out in
 [controls](08-controls.md#materiality-thresholds-as-governed-parameters).
 
 ## The breach lifecycle
-The lifecycle below applies to internal limits. A breach of a mandate or regulatory limit follows compliance's process.
+The lifecycle below applies to internal limits. A breach of a risk-measured hard limit follows the same stages, except
+that the decision is always to cure and compliance writes the breach report. A breach of a position or eligibility rule
+follows compliance's process.
 
 | # | Stage | What happens |
 |---|---|---|
@@ -79,6 +95,9 @@ The lifecycle below applies to internal limits. A breach of a mandate or regulat
 | 7 | Cure | Where the decision is to cure, the reading returns within the limit by a deadline |
 | 8 | Close | The outcome is recorded, with the reason, and the breach is closed |
 
+**Oversight** means investment oversight: the head of investments, or the committee that supervises the portfolio
+managers on the firm's behalf.
+
 **Active and passive breaches differ.** An active breach comes from a choice, so the question is why it was made and
 whether it should stand. A passive breach comes from markets or flows, so the question is whether the position still
 fits the mandate now that conditions have changed. Deadlines differ accordingly, and are set in advance: for example,
@@ -89,6 +108,28 @@ illustrative.)
 expiry date, and returns to the queue when it expires. Repeated acceptance is a sign that the limit needs
 recalibrating, not that it should be ignored.
 
+## Escalation
+Escalating is one of the three outcomes of the Decide stage, and it follows a stated path. **The deadlines are
+illustrative.**
+
+| Trigger | From | To | Deadline | What the body can decide |
+|---|---|---|---|---|
+| A decision or a cure passes its deadline | Risk engine | Head of risk | The same day | Decide, or extend the deadline once, with a reason |
+| The portfolio manager declines to cure a breach of an internal limit | Head of risk | Risk committee | Its next meeting, or one called within 5 business days | Require the cure by a date, accept the breach for a set period, or change the limit |
+| A member of the risk committee dissents from its decision | The member | The board | The board's next report | Ask the committee to review its decision; the decision stands until then |
+| A breach of a hard limit | Risk function | Compliance | The same day | Under compliance's process |
+
+**The risk committee has the final say on an uncured soft limit,** and its decision binds the portfolio manager. The
+committee is chaired by someone independent of the investment teams, and includes the head of risk and the head of
+investments.
+
+**A dissent has a route upward.** A member who disagrees with the committee's decision has the dissent recorded, and
+the board receives it with the decision.
+
+**The board sees the outcomes.** On its reporting cycle, the board receives the breaches of hard limits, the breaches
+accepted and their expiry dates, the committee's binding decisions and any dissent. What the client of a segregated
+mandate is told follows the mandate's reporting terms and compliance's process.
+
 ## Who approves what
 Each approval is recorded, and each one expires.
 
@@ -96,8 +137,9 @@ Each approval is recorded, and each one expires.
 |---|---|---|
 | Acknowledging a reading beyond an early warning | Risk manager | The reading, the reason it stands and when it will be looked at again |
 | Accepting a breach of an internal limit for a set period | Head of risk | The breach, the reason, the expiry date and any conditions |
+| Requiring a cure the portfolio manager declines | Risk committee, whose decision binds | The decision, the deadline for the cure and any dissent |
 | Changing an internal limit or how it is calibrated | Risk committee | The old and new values, the reason and the date it takes effect |
-| Anything about a mandate or regulatory limit | Compliance, under its own process | Routed by the risk function, with the evidence |
+| The legal reading of a hard limit, its breach report and any extension | Compliance, under its own process | Routed or reported by the risk function, with the evidence |
 
 ## Flagship redesign: handling a breach
 The example below follows the handling of one breach of an internal limit. **The steps, hours and elapsed times are
@@ -188,13 +230,16 @@ whether a breach is real, how it is classified or what is done about it. **The f
 > remains in its own queue.
 
 ## Controls specific to limits
-The general controls in [controls](08-controls.md) apply in full. Limits add four.
+The general controls in [controls](08-controls.md) apply in full. Limits add five.
 
 - **Every breach is recorded.** Detection, verification, classification, notice, explanation, decision and close are
   kept in the audit trail.
 - **Approvals expire.** An accepted breach returns to the queue on its expiry date.
-- **Hard limits stay with compliance.** The risk function routes a breach of a mandate or regulatory limit and does not
-  handle it.
+- **Hard limits are never accepted.** Compliance owns the legal reading and the breach report of every hard limit. The
+  risk function routes a breach of a position or eligibility rule, and detects, reports and tracks a breach of a
+  risk-measured limit.
+- **Escalation has an end.** A breach the portfolio manager declines to cure goes to the risk committee, whose decision
+  binds, and a dissent reaches the board.
 - **Limits are reviewed by their behaviour.** A limit that is never approached, or is breached repeatedly, is reviewed.
 
 ## Measuring value
@@ -215,5 +260,7 @@ day rather than 8.5 working days. (The figures are illustrative.)
 ## Sources
 - Financial Stability Board (2013). *Principles for an Effective Risk Appetite Framework.* Risk appetite expressed as
   limits, with roles, escalation and the link between appetite and the limits that apply it.
+- International Organization of Securities Commissions (2019). *Recommendations for a Framework Assessing Leverage in
+  Investment Funds.* Gross and net exposure as measures of leverage, with derivatives converted to the underlying.
 - Committee of Sponsoring Organizations of the Treadway Commission (2017). *Enterprise Risk Management: Integrating
   with Strategy and Performance.* Appetite, tolerance and the review of limits as part of governing risk.
