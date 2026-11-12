@@ -1,11 +1,8 @@
 # Redesign method
 
-A workflow is redesigned in seven steps, from defining the outcome it exists to deliver to measuring whether the
-redesign delivered it. This chapter sets out each step, runs one generic workflow through all seven, and closes with
-the failure modes that most often prevent a return. It is the core of the framework: the
-[principles](05-principles.md) say what a redesign should achieve, and this method says how.
-
-## The seven steps
+## In short
+**The rule:** a workflow is redesigned in seven steps, from the outcome it exists to deliver to measuring whether the
+redesign delivers it. The [principles](05-principles.md) say what a redesign should achieve, and this method says how.
 
 | Step | Question it answers |
 |---|---|
@@ -17,6 +14,12 @@ the failure modes that most often prevent a return. It is the core of the framew
 | 6. Build in controls | What makes it safe to rely on? |
 | 7. Measure the result | Does it work, and is the risk manager's time going where it was meant to? |
 
+**What changes:** a manual workflow has the form "a human produces the output, then a human reviews it". A redesigned
+workflow has the form "the system produces the output, and the human reviews the exceptions".
+
+The rest of this chapter sets out each step, runs one generic workflow through all seven and lists the failure modes.
+
+## The seven steps
 ### 1. Define the outcome
 Each workflow is described by the outcome it delivers, in one sentence, not by the tasks it involves. "Produce the
 monthly risk pack" is a task. "Ensure that the risk committee knows which portfolios have moved outside their intended
@@ -55,8 +58,8 @@ Each tagged step is assigned to one owner, following the core pattern.
 | Steps that exist only because the old process was slow | Eliminated |
 
 The last row matters as much as the others. Re-keying figures between systems, reformatting tables, reconciling two
-copies of the same number and chasing people for inputs exist because the manual process needed them. They are
-removed, not handed to the risk engine or the AI assistant.
+copies of the same number and chasing people for inputs exist because the manual process needed them. They are removed,
+not handed to the risk engine or the AI assistant.
 
 ### 5. Redesign the flow
 The redesigned workflow changes its shape, not only its speed. A manual workflow has the form "a human produces the
@@ -65,8 +68,8 @@ reviews the exceptions". Three changes follow.
 
 - **Materiality thresholds are encoded.** The rules that decide what counts as an exception, and how exceptions are
   ranked, are written down as parameters rather than applied by eye.
-- **Approval gates are moved.** Gates that existed to catch manual errors, such as a second person checking that
-  figures were copied correctly, are replaced by controls in the system. Gates that exist for judgement stay.
+- **Approval gates are moved.** Gates that existed to catch manual errors, such as a second person checking that figures
+  were copied correctly, are replaced by controls in the system. Gates that exist for judgement stay.
 - **The output changes.** A long pack is replaced by what the decision needs, for example a two-page exception summary
   with drill-down into the detail behind each item.
 
@@ -128,7 +131,6 @@ one is stopped, and the risk managers' time goes to the use the risk function ch
 deep-dive reviews of the portfolios that appear most often in the exception summary.
 
 ## Common failure modes
-
 | Failure mode | What happens | What prevents it |
 |---|---|---|
 | Automating outputs nobody uses | An unused output is produced faster | The inventory in step 2 |

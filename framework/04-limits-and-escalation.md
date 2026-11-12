@@ -1,10 +1,35 @@
 # Limits and escalation
 
-Limits turn a mandate's intent into readings a risk function can watch every day. This chapter sets out where limits
-come from and who owns each kind, what internal limits are for, how they are calibrated, how a breach of an internal
-limit is handled from detection to closure, how it is escalated, and who approves what. It closes with breach handling
-redesigned from email chains into tracked stages. The [philosophy](00-philosophy.md#beliefs) holds that appetite belongs
-to the client and is judged against each mandate, not against a firm-wide number; limits are how that belief is applied.
+## In short
+**The question:** which limits apply to a portfolio, who owns each, and what happens when one is breached?
+
+**The rule:** limits turn a mandate's intent into readings a risk function can watch every day. They come in three
+layers. Mandate and regulatory limits are hard: a breach must be cured, and compliance owns the legal reading. Internal
+limits are soft: the risk function sets them where the mandate is silent, to produce insight first. Early warnings sit
+ahead of both. A breach of an internal limit ends in a recorded decision, and where the portfolio manager declines to
+cure it, the risk committee decides and its decision binds.
+
+**How the work is done:** the risk engine detects a breach in the daily run, checks it against data breaks, classifies
+it and tracks it to its deadline. The AI drafts the notice and the decision note. The risk manager confirms the breach
+and sends the notice, and the head of risk decides.
+
+| # | Step | Owner |
+|---|---|---|
+| 1 | Detect the breach; check it against data breaks; classify it as active or passive | Risk engine |
+| 2 | Draft the notice to the portfolio manager and oversight | AI assistant |
+| 3 | Grounding check on the notice | Risk engine |
+| 4 | Confirm the breach and its classification; send the notice | Risk manager |
+| 5 | Record the portfolio manager's explanation | Risk engine |
+| 6 | Draft the decision note | AI assistant |
+| 7 | Decide: cure, accept for a set period, or escalate | Head of risk |
+| 8 | Track the cure to its deadline; escalate a missed deadline | Risk engine |
+| 9 | Confirm the close; the record goes to the risk committee | Risk manager |
+
+Every breach carries its classification, its explanation, its decision and, where accepted, its expiry. The record shows
+which limits are breached repeatedly, which is the evidence for recalibrating them. Appetite belongs to the client and
+is judged against each mandate, not against a firm-wide number ([philosophy](00-philosophy.md#beliefs)).
+
+The rest of this chapter is the detail behind these points.
 
 ## Where limits come from
 Limits come in three layers, and the first has two kinds.
@@ -17,9 +42,9 @@ Limits come in three layers, and the first has two kinds.
 | Early warnings | Levels set ahead of a limit of either kind, so that a reading is seen before it breaches, or on a measure that has no limit | The risk function |
 
 **Mandate and regulatory limits are hard limits.** A breach must be cured. Compliance owns the legal reading of every
-hard limit, and its coded rule is the master reading. Where the risk function's
-[mandate terms](../pillars/performance-risk.md#mandate-terms) hold the same
-limit, they are reconciled to compliance's rule, and a difference is routed to compliance.
+hard limit, and its coded rule is the master reading. Where the risk function's [mandate
+terms](../pillars/performance-risk.md#mandate-terms) hold the same limit, they are reconciled to compliance's rule, and
+a difference is routed to compliance.
 
 **Position and eligibility rules stay with compliance,** which monitors them and owns the breach process, cures and any
 extension, as set out in [investment risk](01-investment-risk.md#scope-and-boundaries). The risk function shows each one
@@ -58,15 +83,15 @@ By default, a risk function sets internal limits on:
 | Counterparty exposure | Exposure to each firm the portfolio trades with or holds assets through | [Market risk](../pillars/market-risk.md) |
 | Redemption coverage | Unencumbered liquid assets against the stressed calls on cash, at the horizon the dealing terms set | [Liquidity risk](../pillars/liquidity-risk.md) |
 
-Where the governing documents or regulation already set a limit on one of these measures, that limit is a
-risk-measured hard limit, and the internal limit sits inside it.
+Where the governing documents or regulation already set a limit on one of these measures, that limit is a risk-measured
+hard limit, and the internal limit sits inside it.
 
 Other readings, such as stress losses against the drawdown tolerance, concentration below a mandate limit, flows and
 relative return, are watched through early warnings and the pillars' rules rather than limits.
 
 ## How internal limits are calibrated
-A risk function chooses how to calibrate each internal limit, and records the choice. The approaches differ in what
-they anchor to.
+A risk function chooses how to calibrate each internal limit, and records the choice. The approaches differ in what they
+anchor to.
 
 | Approach | What it anchors to | Strength | Weakness |
 |---|---|---|---|
@@ -100,13 +125,13 @@ managers on the firm's behalf.
 
 **Active and passive breaches differ.** An active breach comes from a choice, so the question is why it was made and
 whether it should stand. A passive breach comes from markets or flows, so the question is whether the position still
-fits the mandate now that conditions have changed. Deadlines differ accordingly, and are set in advance: for example,
-an active breach is decided within a day and a passive breach within a set number of business days. (The examples are
+fits the mandate now that conditions have changed. Deadlines differ accordingly, and are set in advance: for example, an
+active breach is decided within a day and a passive breach within a set number of business days. (The examples are
 illustrative.)
 
 **Accepting a breach is a decision, not a lapse.** A breach accepted for a set period is recorded with its reason and an
-expiry date, and returns to the queue when it expires. Repeated acceptance is a sign that the limit needs
-recalibrating, not that it should be ignored.
+expiry date, and returns to the queue when it expires. Repeated acceptance is a sign that the limit needs recalibrating,
+not that it should be ignored.
 
 ## Escalation
 Escalating is one of the three outcomes of the Decide stage, and it follows a stated path. **The deadlines are
@@ -125,8 +150,8 @@ illustrative.**
 decision binds the portfolio manager. The committee is chaired by someone independent of the investment teams, and
 includes the head of risk and the head of investments.
 
-**A dissent has a route upward.** A member who disagrees with the committee's decision has the dissent recorded, and
-the board receives it with the decision.
+**A dissent has a route upward.** A member who disagrees with the committee's decision has the dissent recorded, and the
+board receives it with the decision.
 
 **The board sees the outcomes.** On its reporting cycle, the board receives the breaches of hard limits, the breaches
 accepted and their expiry dates, the committee's binding decisions and any dissent. What the client of a segregated
@@ -143,63 +168,10 @@ Each approval is recorded, and each one expires.
 | Changing an internal limit or how it is calibrated | Risk committee | The old and new values, the reason and the date it takes effect |
 | The legal reading of a hard limit, its breach report and any extension | Compliance, under its own process | Routed or reported by the risk function, with the evidence |
 
-## Flagship redesign: handling a breach
-The example below follows the handling of one breach of an internal limit. **The steps are illustrative.**
-
-**Current state.** A breach is noticed in the morning check and handled by email.
-
-| # | Step | Tag |
-|---|---|---|
-| 1 | Notice the breach while checking the day's readings | Compute |
-| 2 | Check that the data behind the reading is right | Gather |
-| 3 | Email the portfolio manager for an explanation | Communicate |
-| 4 | Chase the reply | Communicate |
-| 5 | Write it up for the head of risk | Communicate |
-| 6 | Head of risk decides | Approve / Wait |
-| 7 | Track the cure in a spreadsheet and chase it | Communicate |
-| 8 | Write the outcome up for the risk committee | Communicate |
-
-A decision waits on a chain of emails. Whether a breach was active or passive is often not recorded, accepted breaches
-have no expiry, and nothing shows when the same limit is breached again and again.
-
-**Owner assignment.**
-
-- Steps 1 and 2 move to the risk engine, which detects the breach in the daily run and checks it against the day's data
-  breaks.
-- Classification is added as a step for the risk engine, which compares the reading with the previous day's trades and
-  market moves; the risk manager confirms it.
-- Steps 3 to 5 become an AI draft of the notice from the facts, and a draft of the decision note once the portfolio
-  manager has replied, both edited by the risk manager; the risk engine records the reply.
-- Step 6 stays with the head of risk.
-- Steps 7 and 8 move to the risk engine, which tracks each breach to its deadline, escalates one that is missed and
-  assembles the record for the committee.
-
-**Redesigned flow.**
-
-| # | Step | Owner |
-|---|---|---|
-| 1 | Detect the breach; check it against data breaks; classify it as active or passive | Risk engine |
-| 2 | Draft the notice to the portfolio manager and oversight | AI assistant |
-| 3 | Grounding check on the notice | Risk engine |
-| 4 | Confirm the breach and its classification; send the notice | Risk manager |
-| 5 | Record the portfolio manager's explanation | Risk engine |
-| 6 | Draft the decision note | AI assistant |
-| 7 | Decide: cure, accept for a set period, or escalate | Head of risk |
-| 8 | Track the cure to its deadline; escalate a missed deadline | Risk engine |
-| 9 | Confirm the close; the record goes to the risk committee | Risk manager |
-
-Every breach carries its classification, its explanation, its decision and, where accepted, its expiry. The portfolio
-manager's explanation and the decision each have a deadline.
-
-**The shift.** Breaches move from threads of email to a tracked record. Nothing is lost between stages, and the record
-shows which limits are breached repeatedly, which is the evidence for recalibrating them.
-
 ## What the AI drafts
-The AI drafts from the facts the risk engine recorded and from nothing else. Every number in each draft appears in the
-facts beside it, so the [grounding check](08-controls.md#the-grounding-check) would pass. The AI does not decide
-whether a breach is real, how it is classified or what is done about it. **The funds and figures are illustrative.**
-
-**A passive breach of an internal limit.**
+The AI drafts from the facts the risk engine recorded and from nothing else. Every number in the draft appears in the
+facts beside it, so the [grounding check](08-controls.md#the-grounding-check) would pass. The AI does not decide whether
+a breach is real, how it is classified or what is done about it. **The fund and figures are illustrative.**
 
 | Fact | Value |
 |---|---|
@@ -215,22 +187,8 @@ whether a breach is real, how it is classified or what is done about it. **The f
 > passive: no trades were made, and the rise came from higher market volatility. A decision to cure, accept or escalate
 > is due within 5 business days.
 
-**A breach of a mandate limit, routed to compliance.**
-
-| Fact | Value |
-|---|---|
-| Fund | Fund Q |
-| Measure | Largest single-issuer weight |
-| Today | 10.4% |
-| Mandate limit, owned by compliance | 10.0% |
-| Risk function's early warning | 9.0% |
-
-> Fund Q's largest single-issuer weight is 10.4%, above the mandate limit of 10.0%. This limit is owned by compliance,
-> and the breach has been routed to compliance with the supporting data. The risk function's early warning at 9.0%
-> remains in its own queue.
-
-## Controls specific to limits
-The general controls in [controls](08-controls.md) apply in full. Limits add five.
+## Controls and measures specific to limits
+The general [controls](08-controls.md) apply in full. Limits add five.
 
 - **Every breach is recorded.** Detection, verification, classification, notice, explanation, decision and close are
   kept in the audit trail.
@@ -242,9 +200,8 @@ The general controls in [controls](08-controls.md) apply in full. Limits add fiv
   binds, and a dissent reaches the board.
 - **Limits are reviewed by their behaviour.** A limit that is never approached, or is breached repeatedly, is reviewed.
 
-## Measuring value
-The measures from [measuring value](09-measuring-value.md) that matter most for limits are speed and influence: how soon
-a breach is known and decided, and whether the decisions are made and kept.
+Of the measures in [measuring value](09-measuring-value.md), speed and influence matter most here: how soon a breach is
+known and decided, and whether the decisions are made and kept.
 
 | Dimension | Measure for limits |
 |---|---|
@@ -259,5 +216,5 @@ a breach is known and decided, and whether the decisions are made and kept.
   limits, with roles, escalation and the link between appetite and the limits that apply it.
 - International Organization of Securities Commissions (2019). *Recommendations for a Framework Assessing Leverage in
   Investment Funds.* Gross and net exposure as measures of leverage, with derivatives converted to the underlying.
-- Committee of Sponsoring Organizations of the Treadway Commission (2017). *Enterprise Risk Management: Integrating
-  with Strategy and Performance.* Appetite, tolerance and the review of limits as part of governing risk.
+- Committee of Sponsoring Organizations of the Treadway Commission (2017). *Enterprise Risk Management: Integrating with
+  Strategy and Performance.* Appetite, tolerance and the review of limits as part of governing risk.

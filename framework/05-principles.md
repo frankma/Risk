@@ -1,23 +1,8 @@
 # Principles
 
-AI changes investment risk work when the workflow is redesigned around it, not when it is inserted into the
-workflow as it stands. This chapter sets out why insertion fails and the six principles a redesign should follow, then
-sets out what the risk manager adds once the system produces the outputs. [Working with AI](06-working-with-ai.md)
-follows with how people and the AI work together. The [philosophy](00-philosophy.md) sets out what the function is for;
-these principles set out how to redesign its work around AI.
-
-## The problem: insertion, not redesign
-Giving staff AI tools does not by itself change the work. The tools usually work as intended, but they are placed
-inside workflows that were designed for a manual process, and the constraints of that process stay in place.
-
-Take a recurring monthly risk report. Its cycle runs three to four weeks from month end to distribution. An AI tool that
-drafts the commentary faster looks like an improvement, yet the report still goes out on the same day. The commentary
-was never the bottleneck: most of the cycle was spent gathering data from several systems, handing work between people
-and waiting in review queues. A faster draft changes neither when the report arrives nor what it says.
-
-The unit of change is the workflow, not the task.
-
-## Six principles
+## In short
+**The rule:** AI changes investment risk work when a workflow is redesigned around it, not when it is inserted into the
+workflow as it stands. The unit of change is the workflow, not the task.
 
 | # | Principle | In one line |
 |---|---|---|
@@ -28,6 +13,17 @@ The unit of change is the workflow, not the task.
 | 5 | Decide what the risk manager's time is for before starting | Time that is not directed is absorbed by existing work. |
 | 6 | New capabilities beat faster old ones | The largest gains are things the manual process could not do. |
 
+**Why inserting fails:** a tool placed inside a workflow that was designed for a manual process leaves that process's
+constraints in place. A report whose commentary is drafted faster still waits for data to be gathered, for work to pass
+between people and for review queues, so it arrives on the same day and says the same thing.
+
+**What the risk manager adds:** once the system produces the outputs, the risk manager's time goes to judging what
+matters, bringing clarity to the risks being taken, challenging with evidence and deciding what the system flags.
+
+The rest of this chapter is the detail behind these points. [Working with AI](06-working-with-ai.md) follows with how
+people and the AI work together.
+
+## Six principles
 ### 1. Redesign, don't insert
 **What it means.** A workflow exists to deliver an outcome, such as a decision made, a limit enforced or a portfolio
 manager challenged. A redesign starts from that outcome and asks which steps it actually needs, rather than starting
@@ -42,10 +38,10 @@ rather than automated. An output that feeds no decision is stopped rather than p
 calculating measures and comparing them to limits must be exact and reproducible, so it belongs to the risk engine: the
 deterministic part of the system, where the same data always gives the same figure and every figure can be traced and
 reproduced. Working out which analyses answer a question, explaining what changed, drafting text and extracting
-information from documents is language and pattern work, which the AI assistant does in seconds. When that work needs
-a figure, the AI runs the analysis through the risk engine and does not compute it itself. Deciding what matters,
-escalating and signing off require judgement and accountability, and belong to the risk manager, and to the head of
-risk where escalation or sign-off requires it.
+information from documents is language and pattern work, which the AI assistant does in seconds. When that work needs a
+figure, the AI runs the analysis through the risk engine and does not compute it itself. Deciding what matters,
+escalating and signing off require judgement and accountability, and belong to the risk manager, and to the head of risk
+where escalation or sign-off requires it.
 
 **In practice.** Each step of a redesigned workflow is assigned to exactly one of the three owners. Where a step mixes
 kinds of work, it is split. A system in which the AI does the arithmetic itself, or in which a person re-types figures
@@ -54,11 +50,11 @@ the person and the AI then work together.
 
 ### 3. The AI never fabricates a number
 **What it means.** Language models can produce plausible figures that are wrong, and a risk output with a wrong figure
-in it is worse than no output. Every number therefore has a computation behind it: the risk engine computed it, in
-the daily run or in an analysis the AI ran through it. Aggregating and attributing produce numbers, and the AI may do
-both, because the risk engine does the arithmetic and the run is recorded and can be reproduced. Beyond that the AI
-at most combines figures in simple ways that can be checked, such as a difference or a ratio. What it never does is
-state a figure with no computation behind it.
+in it is worse than no output. Every number therefore has a computation behind it: the risk engine computed it, in the
+daily run or in an analysis the AI ran through it. Aggregating and attributing produce numbers, and the AI may do both,
+because the risk engine does the arithmetic and the run is recorded and can be reproduced. Beyond that the AI at most
+combines figures in simple ways that can be checked, such as a difference or a ratio. What it never does is state a
+figure with no computation behind it.
 
 **In practice.** Generated text passes a grounding check before anyone sees it: every number in it is traced to the
 daily run or to a recorded analysis run, or recomputed from figures that are, and text with a number that cannot be
@@ -71,17 +67,17 @@ reduced.
 everything at a shallow level. A redesigned workflow lets the system check every portfolio against every threshold and
 rank the results, so that the human reviews what is material instead of everything.
 
-**In practice.** The main output of a monitoring workflow is a ranked exception queue with an explanation for each
-item, not a long pack. The materiality thresholds that decide what counts as an exception are set by the risk function
-and governed as parameters. The [market risk](../pillars/market-risk.md) chapter applies this to daily monitoring.
+**In practice.** The main output of a monitoring workflow is a ranked exception queue with an explanation for each item,
+not a long pack. The materiality thresholds that decide what counts as an exception are set by the risk function and
+governed as parameters. The [market risk](../pillars/market-risk.md) chapter applies this to daily monitoring.
 
 ### 5. Decide what the risk manager's time is for before starting
 **What it means.** A redesign changes what a risk manager spends time on, and time that is not directed is absorbed by
 existing work. The use of the time is a design decision, made at the start rather than discovered at the end.
 
-**In practice.** Before a workflow is redesigned, the risk function records what the risk manager's time will go to,
-for example deeper portfolio reviews or more frequent challenge of portfolio managers, and then tracks whether that
-happens. [Measuring value](09-measuring-value.md) sets out how.
+**In practice.** Before a workflow is redesigned, the risk function records what the risk manager's time will go to, for
+example deeper portfolio reviews or more frequent challenge of portfolio managers, and then tracks whether that happens.
+[Measuring value](09-measuring-value.md) sets out how.
 
 ### 6. New capabilities beat faster old ones
 **What it means.** Doing the old process faster has a ceiling: at best the old output arrives sooner. The larger gains
@@ -95,8 +91,8 @@ is the clearest example.
 
 ## What the risk manager adds
 Under a manual process, much of a risk manager's time goes into producing outputs: gathering data, building tables,
-writing commentary and checking that the figures agree. Under a redesigned process, the system produces the outputs,
-and the risk manager's time goes to the work only a person can do.
+writing commentary and checking that the figures agree. Under a redesigned process, the system produces the outputs, and
+the risk manager's time goes to the work only a person can do.
 
 | From | To |
 |---|---|
@@ -105,30 +101,29 @@ and the risk manager's time goes to the work only a person can do.
 | Explaining figures after the fact | Challenging portfolio managers' decisions with evidence |
 | Applying thresholds by hand | Deciding what the system flags, and in what order |
 
-The value a risk manager adds is not the sign-off. The sign-off is how a person is held accountable for an output;
-what they add is what goes into it.
+The value a risk manager adds is not the sign-off. The sign-off is how a person is held accountable for an output; what
+they add is what goes into it.
 
-- **Judging what matters to the portfolio and its intended risk profile.** The risk engine ranks readings by their
-  size against a threshold; the risk manager decides whether a reading matters for this portfolio, given the risks its
+- **Judging what matters to the portfolio and its intended risk profile.** The risk engine ranks readings by their size
+  against a threshold; the risk manager decides whether a reading matters for this portfolio, given the risks its
   mandate intends. That means telling intended risk from unintended, telling signals that are connected from signals
   that merely appear together, and seeing when a drafted explanation gives weight to the wrong driver, which the
   grounding check cannot test.
-- **Bringing clarity to the risks being taken.** Risk and return are two sides of one coin
-  ([belief 3](00-philosophy.md#beliefs)). The risk manager makes clear which risks a portfolio runs, whether they were
-  chosen, what each uses of the budget and whether it is paid for. Before a trade, a what-if shows what a position adds
-  and what it crowds out of the budget; after it, the review shows which bets earned their risk. That clarity lets the
-  portfolio manager take risk deliberately, and the return follows from deliberate risk-taking. The risk manager stays
-  independent of the investment team, and that independence is what makes the clarity credible.
+- **Bringing clarity to the risks being taken.** Risk and return are two sides of one coin ([belief
+  3](00-philosophy.md#beliefs)). The risk manager makes clear which risks a portfolio runs, whether they were chosen,
+  what each uses of the budget and whether it is paid for. Before a trade, a what-if shows what a position adds and what
+  it crowds out of the budget; after it, the review shows which bets earned their risk. That clarity lets the portfolio
+  manager take risk deliberately, and the return follows from deliberate risk-taking. The risk manager stays independent
+  of the investment team, and that independence is what makes the clarity credible.
 - **Challenge that changes decisions.** Evidence put to the portfolio manager, and escalation where an issue stays
-  unresolved. Influence is the dimension of [value](09-measuring-value.md#influence) closest to the function's
-  purpose.
-- **Deciding what the system flags, and in what order.** The thresholds that decide what reaches the queue, the
-  ranking that orders it, the patterns that connect the pillars and the calibration of scenarios are where judgement is
-  written down. They filter what the risk manager sees, not what the portfolio may hold, and the risk function
-  designs, tests and owns them.
+  unresolved. Influence is the dimension of [value](09-measuring-value.md#influence) closest to the function's purpose.
+- **Deciding what the system flags, and in what order.** The thresholds that decide what reaches the queue, the ranking
+  that orders it, the patterns that connect the pillars and the calibration of scenarios are where judgement is written
+  down. They filter what the risk manager sees, not what the portfolio may hold, and the risk function designs, tests
+  and owns them.
 - **Judgement where the data runs out.** Shock sizes, how plausible a reverse stress is, regime changes, crowded exits
-  and the direction in which each model errs ([beliefs 4 and 8](00-philosophy.md#beliefs)) have no history for the
-  risk engine to compute from.
+  and the direction in which each model errs ([beliefs 4 and 8](00-philosophy.md#beliefs)) have no history for the risk
+  engine to compute from.
 
 Deciding what the system flags matters most, because it scales. Done well, it makes a risk manager's judgement apply
 across every portfolio every day, not only to the portfolios they had time to look at. The sign-off rests on all five,

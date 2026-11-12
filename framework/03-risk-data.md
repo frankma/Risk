@@ -1,11 +1,32 @@
 # Risk data
 
-Every figure a risk function shows rests on data it did not create: positions, prices, market data, reference data,
-flows and the terms of each mandate. This chapter sets out the data the risk engine reads, how it travels from source to
-computed figure, how it is versioned so that any past output can be reproduced, the checks it passes before anything is
-computed, how gaps are filled with proxies, and who owns what. It closes with the daily data check redesigned as a
-ranked queue of data breaks. The [philosophy](00-philosophy.md#practice-transparency-in-three-dimensions) assumes the
-basics, data checked before use and results reproducible; this chapter sets out how a risk function makes them true.
+## In short
+**The question:** can every figure the risk function shows be trusted, and reproduced later?
+
+**The rule:** every figure rests on data the risk function did not create: positions, prices, market data, reference
+data, flows and the terms of each mandate. The data is checked before anything is computed, versioned as it was known so
+that any past output can be reproduced, filled with flagged proxies where it has gaps, and corrected at its source.
+
+**How the work is done:** the risk engine takes in every domain, runs every check on every portfolio and ranks the
+breaks by what they could change. The AI drafts a notice to the owner of each break's source. The risk manager judges
+each ranked break and decides whether to run the day's measures, wait or mark them.
+
+| # | Step | Owner |
+|---|---|---|
+| 1 | Take in every domain; check completeness, timeliness and validity | Risk engine |
+| 2 | Reconcile positions to accounting values; check prices against each security's history | Risk engine |
+| 3 | Apply proxies under the policy and flag them | Risk engine |
+| 4 | Rank breaks by the portfolios and measures they affect | Risk engine |
+| 5 | Draft a notice for each break to the owner of its source | AI assistant |
+| 6 | Grounding check on every notice | Risk engine |
+| 7 | Judge each ranked break; decide whether to run, wait or mark | Risk manager |
+| 8 | Edit and send the notices | Risk manager |
+| 9 | Track each break to closure | Risk engine |
+
+A break affecting a large share of a portfolio, or a measure close to its limit, ranks above one that could not move any
+reading the risk manager would see.
+
+The rest of this chapter is the detail behind these points.
 
 ## What the risk engine reads
 The risk engine reads the same domains for every portfolio, whatever its vehicle or strategy.
@@ -26,16 +47,16 @@ A portfolio that invests in other funds is read through to their holdings. The h
 arrive late and less often than the portfolio's own, so they carry their as-of date and are covered by the proxy policy
 below.
 
-Personal data about investors is kept to what the measures need: shares and flows, not identities. The rules on what
-may be sent to an AI service are set out under [data handling](08-controls.md#data-handling).
+Personal data about investors is kept to what the measures need: shares and flows, not identities. The rules on what may
+be sent to an AI service are set out under [data handling](08-controls.md#data-handling).
 
 ## From source to computed figure
 Each domain has one **golden source**: the system or provider whose record the firm treats as correct. A domain may be
 fed by several systems, but the risk engine takes each item from its golden source and nowhere else, so two outputs
 never disagree because they read different copies of the same number.
 
-The risk engine keeps what it reads in a **risk data store**, separate from the systems that produce the data. Every
-run follows the same order.
+The risk engine keeps what it reads in a **risk data store**, separate from the systems that produce the data. Every run
+follows the same order.
 
 | Step | What happens |
 |---|---|
@@ -53,8 +74,8 @@ Data is corrected after the fact: a price is revised, a trade is booked late, a 
 must be able to reproduce what it showed on a given day, so each record in the risk data store carries two dates: the
 date it describes, and the date it became known.
 
-- **Reproducing a past output** uses the data as it was known on the day the output was produced, so the figure that
-  was shown, and acted on, can be shown again exactly.
+- **Reproducing a past output** uses the data as it was known on the day the output was produced, so the figure that was
+  shown, and acted on, can be shown again exactly.
 - **Measuring history**, such as a backtest or a volatility, uses the data as it is known today, corrections included.
 
 A correction never overwrites what was known before. Both versions stay, and the audit trail records which one each
@@ -90,8 +111,8 @@ compute from, such as the sector's beta for a new security or the last known hol
 The risk function sets one proxy policy for all domains.
 
 - **Every proxy is flagged.** A figure computed partly from a proxy says so, wherever it appears.
-- **Every proxy is governed.** The choice of proxy for each kind of gap is a
-  [governed parameter](08-controls.md#materiality-thresholds-as-governed-parameters), owned by the risk function.
+- **Every proxy is governed.** The choice of proxy for each kind of gap is a [governed
+  parameter](08-controls.md#materiality-thresholds-as-governed-parameters), owned by the risk function.
 - **Proxies are measured.** The share of each portfolio, by value, that rests on proxies is reported beside its
   measures, and a share above a set level is a data break in its own right.
 - **Proxies are temporary.** A proxy is replaced as soon as the real data arrives, and a proxy that has stayed beyond a
@@ -109,62 +130,10 @@ This follows the same pattern as the [boundaries](01-investment-risk.md#scope-an
 risk function measures and flags, and routes what it finds to the owner who can fix it. A break is routed with the
 evidence, and tracked until it is closed.
 
-## Flagship redesign: the daily data check
-The example below follows the daily data check for a range of 40 portfolios. **The steps are illustrative.**
-
-**Current state.** Each morning, before any measure can be trusted, a risk manager checks the overnight data by hand.
-
-| # | Step | Tag |
-|---|---|---|
-| 1 | Download files from several systems and check that each arrived | Gather |
-| 2 | Compare each portfolio's position total with its accounting value | Compute |
-| 3 | Scan prices for stale values and large jumps | Compute |
-| 4 | Look up missing classifications and benchmark changes | Gather |
-| 5 | Investigate each break and decide whether it is real | Judge |
-| 6 | Email the owner of each source and chase corrections | Communicate |
-| 7 | Decide whether to run the day's measures or wait | Judge |
-
-The day's measures wait for the check. It is also uneven: a scan by eye catches large breaks in the portfolios a person
-looks at first and misses small ones elsewhere, and a break found today is often found again tomorrow because nothing
-tracks its correction.
-
-**Owner assignment.**
-
-- Steps 1 to 4 move to the risk engine, which takes in every domain, runs every check on every portfolio and applies
-  the proxy policy.
-- Step 5 is split. The risk engine ranks the breaks by what they could change, which is computation; the risk manager
-  judges whether each ranked break is real and what it means, which is judgement.
-- Step 6 becomes an AI draft of the notice to each source's owner, which the risk manager edits and sends; the risk
-  engine tracks each break until it is closed.
-- Step 7 stays with the risk manager.
-
-**Redesigned flow.**
-
-| # | Step | Owner |
-|---|---|---|
-| 1 | Take in every domain; check completeness, timeliness and validity | Risk engine |
-| 2 | Reconcile positions to accounting values; check prices against each security's history | Risk engine |
-| 3 | Apply proxies under the policy and flag them | Risk engine |
-| 4 | Rank breaks by the portfolios and measures they affect | Risk engine |
-| 5 | Draft a notice for each break to the owner of its source | AI assistant |
-| 6 | Grounding check on every notice | Risk engine |
-| 7 | Judge each ranked break; decide whether to run, wait or mark | Risk manager |
-| 8 | Edit and send the notices | Risk manager |
-| 9 | Track each break to closure | Risk engine |
-
-Every portfolio is checked in full before its measures are computed. Breaks are ranked by what they could change: a
-break affecting a large share of a portfolio, or a measure close to its limit, ranks above one that could not move any
-reading the risk manager would see.
-
-**The shift.** Data quality moves from a morning scan by eye to a check the risk engine runs on everything, every day,
-with the risk manager judging the few breaks that matter and the source owners fixing them at source.
-
 ## What the AI drafts
 The AI drafts each notice from the facts the risk engine recorded about the break, and from nothing else. Every number
-in each draft appears in the facts beside it, so the [grounding check](08-controls.md#the-grounding-check) would pass.
-The AI does not decide whether a break is real; the risk manager does. **The funds and figures are illustrative.**
-
-**A reconciliation break.**
+in the draft appears in the facts beside it, so the [grounding check](08-controls.md#the-grounding-check) would pass.
+The AI does not decide whether a break is real; the risk manager does. **The fund and figures are illustrative.**
 
 | Fact | Value |
 |---|---|
@@ -179,23 +148,8 @@ The AI does not decide whether a break is real; the risk manager does. **The fun
 > difference matches one holding of 45,000 units of a bond that appears in the accounting records but not in the
 > position file.
 
-**A missing classification.**
-
-| Fact | Value |
-|---|---|
-| Fund | Fund N |
-| Check | Every holding classified |
-| Holding without a sector | One newly issued security |
-| Its share of net assets | 1.2% |
-| Proxy applied under the policy | The issuer's existing sector |
-| Source | Reference data |
-
-> One newly issued security in Fund N, 1.2% of net assets, has no sector classification in the reference data. Under the
-> proxy policy it has been given its issuer's existing sector, and the measures that use it are flagged until the
-> reference data is corrected.
-
-## Controls specific to risk data
-The general controls in [controls](08-controls.md) apply in full. Risk data adds four.
+## Controls and measures specific to risk data
+The general [controls](08-controls.md) apply in full. Risk data adds four.
 
 - **Nothing is computed from unchecked data.** Every measure points to a checked snapshot.
 - **A run never hides a break.** Every output shows the breaks and proxies that touch it, and a portfolio that could not
@@ -203,9 +157,8 @@ The general controls in [controls](08-controls.md) apply in full. Risk data adds
 - **Corrections are made at source.** The risk function does not patch data in its own store.
 - **The past can be reproduced.** Every output can be recomputed from the data as it was known when it was produced.
 
-## Measuring value
-The measures from [measuring value](09-measuring-value.md) that matter most for risk data are speed and quality: how
-soon the day's measures can be trusted, and whether a break reaches an output unseen.
+Of the measures in [measuring value](09-measuring-value.md), speed and quality matter most here: how soon the day's
+measures can be trusted, and whether a break reaches an output unseen.
 
 | Dimension | Measure for risk data |
 |---|---|
