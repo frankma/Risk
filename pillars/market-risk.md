@@ -305,8 +305,9 @@ Sensitivities assume small moves, so stress tests revalue options in full.
 
 ### Counterparty exposure
 Exposure to a counterparty is the current exposure net of the collateral held under netting agreements, plus an add-on
-for how far it could grow before the next collateral call. The internal limit applies to the total. Without the add-on,
-a portfolio could reach its limit between two collateral calls without warning.
+for how far it could grow before the next collateral call. It includes the counterparties to share-class hedges and the
+borrowers of lent securities, net of the collateral they have posted. The internal limit applies to the total. Without
+the add-on, a portfolio could reach its limit between two collateral calls without warning.
 
 ### Where the measures are weak
 | Measure | Where it is weak | How the function tests it |
