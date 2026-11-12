@@ -107,7 +107,7 @@ portfolio will be monitored with, and that confirms on launch day that what was 
 ## What the AI drafts
 The AI extracts and drafts from the documents and facts it is given, and from nothing else. Every figure it extracts
 must appear in the passage it links to, and every number in a draft appears in the facts beside it, so the
-[grounding check](../framework/07-controls.md#the-grounding-check) would pass. The AI does not write the opinion or its
+[grounding check](../framework/08-controls.md#the-grounding-check) would pass. The AI does not write the opinion or its
 conditions. **The funds and figures are illustrative.**
 
 **Extracted mandate terms.**
@@ -139,7 +139,7 @@ Each extracted value is confirmed by the risk manager before it is used.
 The opinion on whether Fund S should launch, and on what conditions, is the risk manager's.
 
 ## Controls specific to the review
-The general controls in [controls](../framework/07-controls.md) apply in full. The review adds four.
+The general controls in [controls](../framework/08-controls.md) apply in full. The review adds four.
 
 - **Terms are confirmed before anything is tested against them.**
 - **The opinion is written by a person.** The AI drafts the summary of facts; the risk manager writes the opinion and

@@ -4,7 +4,7 @@ Asset management from an investment risk perspective, and how to redesign that w
 definition of investment risk and its three workflow pillars (market, liquidity, performance risk), the two sources of
 return, the risk data the work rests on, the limits that apply each mandate, principles, a method for redesigning each
 workflow, the controls that make it safe and how to measure the value. Its core pattern: **the risk engine computes, AI
-narrates, a human judges.**
+analyses and narrates, a human judges.**
 
 The framework's map is in `README.md`. Read it, and the chapters a change touches, before making the change.
 
@@ -28,10 +28,11 @@ The text stays jurisdiction-neutral, and each chapter ends with a Sources sectio
 literature it draws on.
 
 ## Design rules for the reference implementations
-- **The AI never produces a number.** Every figure is computed by code from data. The narrative layer only writes text
-  around figures it is given, at most combining them in simple ways (a sum, difference, ratio or percentage change), and
-  a grounding check verifies that every number in generated text is a computed value or is recomputed from computed
-  values; text that fails is rejected.
+- **The AI never fabricates a number.** Every figure is computed by code from data, in the daily run or in an analysis
+  the AI layer runs through the risk engine (an aggregation, an attribution, a what-if), with the run recorded. Beyond
+  that the AI layer at most combines figures in simple ways (a sum, difference, ratio or percentage change), and a
+  grounding check verifies that every number in generated text traces to a computed value or is recomputed from
+  computed values; text that fails is rejected.
 - **Exceptions over everything.** Workflows rank what needs a human's attention rather than handing over everything.
 - **Every AI step has a human sign-off point and an audit trail** of what was generated and what the human changed.
 - **Examples run without an AI service.** The narrative layer has a deterministic template backend so tests and demos

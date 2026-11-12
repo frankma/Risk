@@ -52,7 +52,7 @@ Each tagged step is assigned to one owner, following the core pattern.
 | Tag | Owner |
 |---|---|
 | Gather, Compute | Risk engine |
-| Interpret, Communicate | AI assistant drafts; the risk manager edits and approves |
+| Interpret, Communicate | AI assistant analyses through the risk engine and drafts; the risk manager edits and approves |
 | Judge, Approve | The risk manager, or the head of risk for escalation and sign-off |
 | Steps that exist only because the old process was slow | Eliminated |
 
@@ -73,13 +73,13 @@ reviews the exceptions". Three changes follow.
   with drill-down into the detail behind each item.
 
 ### 6. Build in controls
-A redesigned workflow is only worth adopting if it can be relied on with fewer manual checks. The grounding check,
-sign-off points, audit trail, threshold governance, parallel run, fallback and data handling that make this possible
-are set out in [controls](07-controls.md).
+A redesigned workflow is only worth adopting if it can be relied on with fewer manual checks. The grounding check, AI
+permissions, sign-off points, audit trail, threshold governance, parallel run, fallback and data handling that make this
+possible are set out in [controls](08-controls.md).
 
 ### 7. Measure and reinvest
 The redesign is measured against a baseline taken before it started, across capacity, speed, quality and influence,
-and the freed time is directed to the use decided at the start. [Measuring value](08-measuring-value.md) sets out how.
+and the freed time is directed to the use decided at the start. [Measuring value](09-measuring-value.md) sets out how.
 
 ## Worked example: a monthly risk and performance report
 The example below runs one generic workflow through the method. The steps, hours and elapsed days are illustrative.
@@ -135,7 +135,7 @@ deep-dive reviews of the portfolios that appear most often in the exception summ
 | Failure mode | What happens | What prevents it |
 |---|---|---|
 | Automating outputs nobody uses | Cost falls, value does not rise | The inventory in step 2 |
-| Letting the AI calculate | Wrong figures reach decisions | The risk engine computes; the grounding check |
+| Letting the AI do the arithmetic | Wrong figures reach decisions | The risk engine computes every figure; the grounding check |
 | Keeping every old review gate | Elapsed time barely changes | Moving gates in step 5 |
 | No decision on freed time | Savings disappear into other work | A reinvestment plan before starting |
 | A tool rollout with no workflow rebuilt | Usage rises, returns do not | Redesign one workflow fully first |
