@@ -1,90 +1,18 @@
 # Liquidity risk
 
-Liquidity risk asks whether a portfolio can meet every call on its cash, in time and at a fair cost, without
-disadvantaging the investors who stay. This chapter applies the [redesign method](../framework/07-redesign-method.md) to
-the pillar: it lists the pillar's recurring workflows, redesigns periodic stress testing into continuous monitoring with
-event-triggered stress tests, and sets out the thresholds, limits, controls and measures that make the redesign work,
-and the design choices behind the pillar's measures. The redesign is a new capability, not only a faster version of the
-old process: the risk function sees a portfolio's liquidity when an event happens, not when the calendar says so.
+## In short
+**The question:** can a portfolio meet every call on its cash, in time and at a fair cost, without disadvantaging the
+investors who stay?
 
-## The outcome
-The pillar's outcome, as defined in [investment risk](../framework/01-investment-risk.md#liquidity-risk):
+**The outcome:**
 
 > The risk manager knows whether each portfolio can meet plausible calls on its cash in time and at a fair cost, and
 > whether the tools for managing liquidity are ready if it cannot.
 
-"At a fair cost" carries the pillar's purpose. When an open-ended fund meets redemptions by selling its most liquid
-holdings, the investors who stay are left with a less liquid and more concentrated portfolio, and they bear the cost of
-the selling. The pillar exists to protect them from that transfer, as well as to make sure redemptions are met at all.
-Liquidity management tools, such as swing pricing, redemption gates, in-kind redemptions and slowing purchases of
-illiquid assets, are the means of doing so, and their readiness is part of the outcome.
-
-The calls on cash differ by vehicle, and so does the question of fairness. An open-ended fund faces redemptions, and
-fairness is between the investors who leave and those who stay. A segregated mandate has one client, so the question
-is whether the client's withdrawals and planned cash needs can be met in time and at a fair cost. A closed-ended fund
-faces no redemptions, but must roll over its borrowing, pay its distributions and meet its commitments. Any portfolio
-that holds derivatives faces margin and collateral calls, which press on both sides of the balance at once: they arrive
-when markets fall, and the collateral they take is encumbered and can no longer be sold to meet other calls. The
-pillar's measures leave encumbered assets out of what a portfolio can raise.
-
-## Workflows in this pillar
-
-| Workflow | Cadence | Output | Used by | For which decision |
-|---|---|---|---|---|
-| Liquidity monitoring and stress tests | Daily; on events | Coverage, stress results | Risk manager | Whether to act |
-| Redemption and cash-call monitoring | Daily | Flows, margin and other calls against the portfolio's history | Risk manager | Whether calls are unusual |
-| Investor and distributor concentration | Daily | Largest holders' shares | Risk manager | Whether it is too high |
-| Liquidity tool readiness | Quarterly | Readiness of each tool | Risk manager, fund board | Whether tools can be used |
-| Board reporting | Monthly | Liquidity paper | Fund board | Whether liquidity is adequate |
-| Stale or unpriceable holdings | Daily | Flagged holdings | Pricing owner | Whether prices need challenge |
-
-Liquidity monitoring and stress testing is the flagship, because it is where the calendar-driven process leaves the
-largest gap. Monitoring of redemptions, other calls and concentration becomes an input to it: they are the sources of
-the triggers that run the stress test. Board reporting draws on the period's monitoring rather than being a separate
-exercise. The daily run also computes the firm's share of each issue and of each market's daily volume for the [firm's
-footprint](integrated-view.md#the-firms-footprint).
-
-Between triggers, the risk manager can investigate. Asked what a redemption of a given size, or the loss of a named
-distributor, would do to a portfolio's coverage, the AI runs the stress test through the risk engine with those
-parameters and reports the result with the run behind it, as set out in
-[working with AI](../framework/06-working-with-ai.md#three-modes-of-working).
-
-Flagging stale or unpriceable holdings is the measuring side of valuation risk that this pillar owns, as set out in
-[investment risk](../framework/01-investment-risk.md#scope-and-boundaries). The risk function flags the holdings and
-knows which of its measures rest on them; setting and challenging the prices remains with the owner of pricing.
-
-## Flagship redesign: from periodic stress testing to continuous liquidity monitoring
-The example below follows the liquidity work for a range of 40 portfolios, assessed monthly in the current state. **The
-steps are illustrative.**
-
-**Current state.** Each month, the risk manager builds a liquidity assessment for every portfolio and a paper for the
-fund board.
-
-| # | Step | Tag |
-|---|---|---|
-| 1 | Pull holdings and trading volumes for every portfolio | Gather |
-| 2 | Assign each holding to a liquidity bucket from its trading volume | Compute |
-| 3 | Apply redemption scenarios in the workbook | Compute |
-| 4 | Second person checks the workbook | Approve / Wait |
-| 5 | Explain the results for each portfolio | Interpret |
-| 6 | Decide which portfolios need attention and what to recommend | Judge |
-| 7 | Write the paper for the fund board | Communicate |
-| 8 | Review and sign off the paper | Approve / Wait |
-
-The result is a snapshot of holdings and flows at the start of the cycle, weeks old by the time the board reads it. An
-event in the middle of the month, such as a large redemption, is either handled outside the process by hand or waits for
-the next cycle.
-
-**Owner assignment.**
-
-- Steps 1 to 3 move to the risk engine, which assigns liquidity to every holding and applies the scenarios every day.
-- Step 4 is replaced by the grounding check and the system's reconciliation to source.
-- Steps 5 and 7 become AI drafts: the narrative for each portfolio, and the board paper.
-- Step 6 stays with the risk manager, who also proposes the calibration of the scenarios, which the risk function owns,
-  and makes the recommendation on whether to use liquidity management tools.
-- Step 8 stays with the head of risk.
-
-**Redesigned flow.**
+**How the work is done:** the risk engine measures every portfolio's liquidity every day and runs a stress test on the
+day an event fires a trigger, not when the calendar says so. The AI drafts the narrative for each triggered portfolio
+and the board paper. The risk manager reviews each triggered portfolio and makes any recommendation on liquidity
+management tools.
 
 | # | Step | Owner |
 |---|---|---|
@@ -98,12 +26,45 @@ the next cycle.
 | 8 | Review scenario calibration; edit the board paper | Risk manager |
 | 9 | Review and sign off the paper | Head of risk |
 
-A portfolio's liquidity is current every day, and an event is assessed on the day it happens rather than at the next
-cycle.
+**What "a fair cost" means:** when an open-ended fund meets redemptions by selling its most liquid holdings, the
+investors who stay are left with a less liquid and more concentrated portfolio, and they bear the cost of the selling.
+The pillar protects them from that transfer. Liquidity management tools, such as swing pricing, redemption gates,
+in-kind redemptions and slowing purchases of illiquid assets, are the means, and their readiness is part of the outcome.
+A segregated mandate has one client, so the question is whether the client's withdrawals and planned cash needs can be
+met in time and at a fair cost.
 
-**The shift.** Liquidity work moves from calendar-driven to event-driven. The manual process could not run a stress
-test every time a large redemption arrived, concentration rose or market liquidity worsened, because each run took
-days. The redesigned process does exactly that, which is a capability the old process did not have at any speed.
+**Where it connects:** rising volatility and concentration in [market risk](market-risk.md) raise the time and cost of
+selling, and underperformance in [performance risk](performance-risk.md) often comes before redemptions. In the other
+direction, meeting redemptions from the most liquid holdings leaves a more concentrated and more volatile portfolio. The
+[integrated view](integrated-view.md) reads these signals together.
+
+The rest of this chapter is the detail behind these points.
+
+## Workflows in this pillar
+
+| Workflow | Cadence | Output | Used by | For which decision |
+|---|---|---|---|---|
+| Liquidity monitoring and stress tests | Daily; on events | Coverage, stress results | Risk manager | Whether to act |
+| Redemption and cash-call monitoring | Daily | Flows, margin and other calls against the portfolio's history | Risk manager | Whether calls are unusual |
+| Investor and distributor concentration | Daily | Largest holders' shares | Risk manager | Whether it is too high |
+| Liquidity tool readiness | Quarterly | Readiness of each tool | Risk manager, fund board | Whether tools can be used |
+| Board reporting | Monthly | Liquidity paper | Fund board | Whether liquidity is adequate |
+| Stale or unpriceable holdings | Daily | Flagged holdings | Pricing owner | Whether prices need challenge |
+
+Liquidity monitoring and stress testing is the flagship, shown in the table at the top.
+
+- **Monitoring of redemptions, other calls and concentration** feeds it: these are the sources of the triggers that run
+  the stress test.
+- **Board reporting** draws on the period's monitoring and is not a separate exercise.
+- **Investigations.** Between triggers, the risk manager can ask what a redemption of a given size, or the loss of a
+  named distributor, would do to a portfolio's coverage. The AI runs the stress test through the risk engine with those
+  parameters and reports the result with the run behind it, as set out in [working with
+  AI](../framework/06-working-with-ai.md#three-modes-of-working).
+- **Stale or unpriceable holdings.** Flagging them is the measuring side of valuation risk that this pillar owns, as set
+  out in [investment risk](../framework/01-investment-risk.md#scope-and-boundaries). The risk function knows which of
+  its measures rest on them; setting and challenging the prices stays with the owner of pricing.
+- **The firm's footprint.** The daily run computes the firm's share of each issue and of each market's daily volume for
+  the [firm's footprint](integrated-view.md#the-firms-footprint).
 
 ## Materiality and exceptions
 An **exception** in this pillar is a reading that has crossed a rule's threshold: one that shows a portfolio may not
@@ -130,17 +91,14 @@ below its threshold come first, then portfolios with a fired trigger, then other
 unpriceable holdings are listed separately and routed to the owner of pricing, as well as being shown against the
 measures they affect.
 
-Where the governing documents or regulation set a liquidity limit, it is a
-[risk-measured hard limit](../framework/04-limits-and-escalation.md#where-limits-come-from): the risk function monitors
-it, a breach must be cured, and compliance writes the breach report. The internal limit on redemption coverage sits
-inside it.
+Where the governing documents or regulation set a liquidity limit, it is a [risk-measured hard
+limit](../framework/04-limits-and-escalation.md#where-limits-come-from): the risk function monitors it, a breach must be
+cured, and compliance writes the breach report. The internal limit on redemption coverage sits inside it.
 
 ## What the AI drafts
-The AI drafts from the facts that the risk engine produced and from nothing else. Every number in each draft appears in
-the facts beside it, so the [grounding check](../framework/08-controls.md#the-grounding-check) would pass. **The
-funds and figures are illustrative.**
-
-**A large redemption.**
+The AI drafts from the facts that the risk engine produced and from nothing else. Every number in the draft appears in
+the facts beside it, so the [grounding check](../framework/08-controls.md#the-grounding-check) would pass. **The fund
+and figures are illustrative.**
 
 | Fact | Value |
 |---|---|
@@ -152,41 +110,15 @@ funds and figures are illustrative.**
 | Share of the redemption met from the most liquid holdings | 80% |
 
 > Fund D has received a redemption notice for 6.5% of net assets, above the 5.0% trigger, and the stress test has been
-> rerun. Redemption coverage falls from 2.4x to 1.6x, still above the 1.5x threshold. 80% of the redemption would be
-> met from the most liquid holdings.
+> rerun. Redemption coverage falls from 2.4x to 1.6x, still above the 1.5x threshold. 80% of the redemption would be met
+> from the most liquid holdings.
 
-**Rising investor concentration.**
-
-| Fact | Value |
-|---|---|
-| Fund | Fund E |
-| Largest investor's share, today / three months ago | 18% / 11% |
-| Single-investor trigger | 15% |
-| Top five investors' share | 46% |
-| Days to liquidate 18% of the portfolio at normal volumes | 7 |
-
-> The largest investor in Fund E now holds 18% of the portfolio, up from 11% three months ago and above the 15% trigger.
-> Meeting a full redemption by that investor would take 7 days of selling at normal volumes. The top five investors
-> together hold 46%.
-
-**Stale prices.**
-
-| Fact | Value |
-|---|---|
-| Fund | Fund F |
-| Holdings with no price change for 10 or more trading days | 3 |
-| Their share of net assets | 4.2% |
-
-> 3 holdings in Fund F, together 4.2% of net assets, have had no price change for at least 10 trading days. They have
-> been flagged to the owner of pricing for review.
-
-None of the drafts recommends whether to use a liquidity management tool. That recommendation is the risk manager's.
+The draft does not recommend whether to use a liquidity management tool. That recommendation is the risk manager's.
 
 ## Design choices
-A risk function chooses how each of its liquidity measures is computed, and records the choice. This section sets out
-the choices for this pillar, what each trades off, and how the function tests what it chose. The risk function owns the
-model risk in its own liquidity measures; independent validation of the models sits elsewhere, as set out in
-[investment risk](../framework/01-investment-risk.md#scope-and-boundaries).
+A risk function chooses how each of its liquidity measures is computed, records the choice and tests it. Independent
+validation of the models sits outside the risk function, as set out in [investment
+risk](../framework/01-investment-risk.md#scope-and-boundaries).
 
 ### Fairness and capacity
 A portfolio can meet a call on its cash in two ways, and each answers a different question, so both are computed.
@@ -197,15 +129,14 @@ A portfolio can meet a call on its cash in two ways, and each answers a differen
 | The most liquid first | The capacity test: how much can be raised, and how fast? | The most the portfolio can raise in each period |
 
 The first is also called vertical slicing, or selling pro rata, and the second horizontal slicing, or a waterfall.
-Redemption coverage reads the capacity test, because it asks whether the call can be met at all. The gap between the
-two is shown beside it: it measures how much of the cost of meeting the call would be shifted onto the investors who
-stay if the portfolio sold its most liquid holdings first, which is the "fair cost" in the pillar's outcome made
-measurable.
+Redemption coverage reads the capacity test, because it asks whether the call can be met at all. The gap between the two
+is shown beside it: it measures how much of the cost of meeting the call would be shifted onto the investors who stay if
+the portfolio sold its most liquid holdings first, which is the "fair cost" in the pillar's outcome made measurable.
 
 **Coverage has a horizon.** Assets that take a month to sell do not cover a call due in two days, so coverage compares
-what can be raised within a period with the calls due within it. It is shown over several horizons, illustrated here
-as 1 day, 1 week and 1 month. The internal limit applies at the horizon that matches the portfolio's dealing
-frequency, notice period and settlement period, because that is how long the portfolio has to pay.
+what can be raised within a period with the calls due within it. It is shown over several horizons, illustrated here as
+1 day, 1 week and 1 month. The internal limit applies at the horizon that matches the portfolio's dealing frequency,
+notice period and settlement period, because that is how long the portfolio has to pay.
 
 ### Time and cost to sell
 | Choice | Options | Trade-off |
@@ -215,9 +146,9 @@ frequency, notice period and settlement period, because that is how long the por
 | Cost | The bid-offer spread alone; the spread plus a market-impact model | The spread alone misses the price move that a large sale causes |
 
 **Illustrative setup** (not a recommendation): time from a capped share of each holding's daily volume, with volumes
-reduced under stress; cost as half the bid-offer spread plus a market-impact term that rises with the square root of
-the trade's size relative to daily volume, scaled by the holding's volatility. Both are standard and transparent, and
-both become more conservative under stress.
+reduced under stress; cost as half the bid-offer spread plus a market-impact term that rises with the square root of the
+trade's size relative to daily volume, scaled by the holding's volatility. Both are standard and transparent, and both
+become more conservative under stress.
 
 ### Calls on cash
 The calls a portfolio could face are built from three scenarios, and **the worst of the three binds**:
@@ -234,12 +165,12 @@ distributions and commitments, and margin and collateral calls on any portfolio 
 
 Two further calls are counted in every scenario, because they arrive whatever investors do.
 
-- **Currency hedges that roll.** A hedge that has lost value is settled in cash when it rolls. This covers a
-  portfolio's own hedges and the hedges of its hedged share classes: the loss belongs to the class, but it is paid from
-  the portfolio's cash.
+- **Currency hedges that roll.** A hedge that has lost value is settled in cash when it rolls. This covers a portfolio's
+  own hedges and the hedges of its hedged share classes: the loss belongs to the class, but it is paid from the
+  portfolio's cash.
 - **Securities lending.** Cash collateral is returned when a loan ends, so where it has been reinvested, the
-  reinvestment is measured for time and cost to sell like any other holding. A security on loan can be sold only once
-  it has been recalled, which the next section covers.
+  reinvestment is measured for time and cost to sell like any other holding. A security on loan can be sold only once it
+  has been recalled, which the next section covers.
 
 ### Encumbrance and second-round effects
 - **Encumbered assets are not liquid.** Collateral already posted is left out of what a portfolio can raise, and a
@@ -248,8 +179,8 @@ Two further calls are counted in every scenario, because they arrive whatever in
   and collateral calls, and the collateral posted against them is then encumbered, so the scenario applies both at once.
 - **The firm's own selling moves prices.** When several portfolios sell the same holdings, the firm's combined sale is
   larger than any one portfolio's, and so is its cost. The stress uses the firm's share of each issue and of each
-  market's daily volume from the [firm's footprint](integrated-view.md#the-firms-footprint), so that the cost of
-  selling reflects the whole firm's sale.
+  market's daily volume from the [firm's footprint](integrated-view.md#the-firms-footprint), so that the cost of selling
+  reflects the whole firm's sale.
 
 The readiness of liquidity management tools is assessed as set out under the pillar's workflows; how each tool is
 calibrated sits outside these design choices.
@@ -257,25 +188,16 @@ calibrated sits outside these design choices.
 ### Where the measures are weak
 | Measure | Where it is weak | How the function tests it |
 |---|---|---|
-| Time and cost to liquidate | Volumes and costs worsen under stress | Comparison with trading in stressed periods |
+| Time and cost to liquidate | Volumes and costs worsen under stress, when redemptions rise | Comparison with trading in stressed periods |
 | Market-impact model | Impact depends on who else is selling | Comparison with the cost of past large sales |
 | Scenarios for calls on cash | Investor behaviour differs from the assumption | Comparison with realised flows |
 | Redemption coverage | Outflows and market stress tend to arrive together | Scenarios that stress both sides at once |
 | Margin and collateral calls | Calls rise with the market moves that cut liquidity | One market shock applied to margin and to liquidity together |
 | Any measure using prices | Stale prices make holdings look stable | Stale flags; sale prices against prior prices |
+| AI narratives | A narrative can be accurate and still understate how urgent a position is | How risk managers edit the narratives for triggered portfolios; a sample checked against the full stress results |
 
-Liquidity estimates assume that past trading volumes and costs hold under stress, and they often do not: the assets
-that are easy to sell in normal markets can become hard to sell exactly when redemptions rise. Scenarios for calls on
-cash rest on assumptions about how investors behave, which are tested against the flows that actually occur. Stale
-prices make illiquid holdings look more stable than they are, which understates both their risk and the cost of
-selling them; where realised sale prices differ from prior prices, the difference is evidence for the owner of pricing.
-
-The AI step has its own limit: a narrative can describe a portfolio's position accurately and still understate how
-urgent it is. The function tests this by reviewing how risk managers edit the narratives for triggered portfolios, and
-by checking a sample against the full stress results.
-
-## Controls specific to this pillar
-The general controls in [controls](../framework/08-controls.md) apply in full. This pillar adds four.
+## Controls and measures specific to this pillar
+The general [controls](../framework/08-controls.md) apply in full. This pillar adds four.
 
 - **Every trigger is recorded.** Each firing, the stress test it ran and the result are kept in the audit trail, so the
   record shows that an event was assessed, and when.
@@ -286,9 +208,8 @@ The general controls in [controls](../framework/08-controls.md) apply in full. T
 - **Investor data is minimised.** Facts sent to an AI service describe shares and flows, not investor identities, in
   line with [data handling](../framework/08-controls.md#data-handling).
 
-## Measuring value
-The measures from [measuring value](../framework/09-measuring-value.md) that matter most for this pillar are speed and
-quality: how soon an event is assessed, and whether any event is missed.
+Of the measures in [measuring value](../framework/09-measuring-value.md), speed and quality matter most here: how soon
+an event is assessed, and whether any event is missed. The pillar-specific measure captures the new capability directly.
 
 | Dimension | Measure for this pillar |
 |---|---|
@@ -298,17 +219,6 @@ quality: how soon an event is assessed, and whether any event is missed.
 | Quality | Events assessed late or not at all; parallel-run agreement on coverage |
 | Influence | Recommendations on liquidity tools made and acted on |
 | Pillar-specific | Age of the liquidity view when a decision is made |
-
-The pillar-specific measure captures the new capability directly: how old the liquidity view is when a decision is
-made.
-
-## Connections
-Liquidity risk sits between the other two pillars. Rising volatility and concentration from
-[market risk](market-risk.md) raise the time and cost of selling; stale prices flagged here weaken the measures that
-pillar relies on. Underperformance from [performance risk](performance-risk.md) often comes before redemptions, so
-flows in underperforming portfolios are watched more closely. In the other direction, meeting redemptions by selling the
-most liquid holdings leaves a more concentrated and more volatile portfolio, which raises market risk. The
-[integrated view](integrated-view.md) brings these signals together for each portfolio.
 
 ## Sources
 - International Organization of Securities Commissions (2025). *Revised Recommendations for Liquidity Risk Management

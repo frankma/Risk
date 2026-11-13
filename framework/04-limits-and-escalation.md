@@ -18,7 +18,7 @@ Limits come in three layers, and the first has two kinds.
 
 **Mandate and regulatory limits are hard limits.** A breach must be cured. Compliance owns the legal reading of every
 hard limit, and its coded rule is the master reading. Where the risk function's
-[mandate terms](../pillars/performance-risk.md#flagship-redesign-the-periodic-portfolio-manager-review) hold the same
+[mandate terms](../pillars/performance-risk.md#mandate-terms) hold the same
 limit, they are reconciled to compliance's rule, and a difference is routed to compliance.
 
 **Position and eligibility rules stay with compliance,** which monitors them and owns the breach process, cures and any

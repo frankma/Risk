@@ -1,36 +1,44 @@
 # Integrated view
 
-The integrated view ranks portfolios where signals across market, liquidity and performance risk are combining, so that
-the risk function sees a developing problem before any one pillar would escalate it. It computes nothing new: it reads
-the signals the three pillar chapters already define, applies rules for the combinations that matter, and puts the
-portfolios where those combinations appear in front of a human with an account of what is happening.
+## In short
+**The question:** where are signals combining across market, liquidity and performance risk, before any one pillar would
+escalate?
 
-## Why an integrated view
-The episodes that do most damage to a portfolio pass through all three pillars. Underperformance prompts redemptions.
-Redemptions are met by selling the most liquid assets first. The portfolio that remains is more concentrated and more
-volatile, which makes further underperformance more likely, and the cycle repeats.
-
-A manual process tends to see this late. Each pillar is reviewed on its own cycle, often by different people, and each
-sees its own signal as moderate: a performance shortfall that is not yet severe, outflows that are higher than usual but
-within coverage, concentration that is rising but below its limit. No single threshold is breached, so no single
-workflow escalates. The combination is seen when one of the signals finally crosses a threshold, by which point the
-cycle is under way.
-
-The view's outcome:
+**The outcome:**
 
 > The risk function knows which portfolios have signals combining across pillars, and why, before any one pillar would
 > escalate them.
 
-This is the framework's clearest example of [principle
-6](../framework/05-principles.md#6-new-capabilities-beat-faster-old-ones). The manual process cannot watch every signal
-for every portfolio every day and connect them.
+**How the work is done:** the view computes nothing new. The risk engine reads the signals the three pillars already
+produce, for every portfolio every day, applies rules for the combinations that matter and ranks the portfolios. The AI
+drafts an account of each ranked portfolio. The risk manager judges each one and adds it to the watch list or escalates
+it.
+
+| # | Step | Owner |
+|---|---|---|
+| 1 | Read every pillar's signals for every portfolio; align them by date | Risk engine |
+| 2 | Apply the pattern and combination rules; rank portfolios | Risk engine |
+| 3 | Draft an account for each ranked portfolio | AI assistant |
+| 4 | Grounding check on every account | Risk engine |
+| 5 | Assemble the committee view from the top-ranked portfolios | Risk engine |
+| 6 | Judge each ranked portfolio; add it to the watch list or escalate | Risk manager |
+| 7 | Review and sign off the committee view | Head of risk |
+
+**Why it is needed:** the episodes that do most damage pass through all three pillars. Underperformance prompts
+redemptions, redemptions are met by selling the most liquid assets, and the portfolio that remains is more concentrated
+and more volatile, which makes further underperformance more likely. Each pillar sees its own signal as moderate, so no
+single threshold is breached and no single workflow escalates. Watching every signal for every portfolio every day is
+something a manual process cannot do ([principle
+6](../framework/05-principles.md#6-new-capabilities-beat-faster-old-ones)).
+
+The rest of this chapter is the detail behind these points.
 
 ## What the view reads
 The view reads each pillar's signals for each portfolio. Every signal carries a state and the date it was computed. The
 states are the ones each pillar chapter assigns to its rules:
 
-- **Exception:** the reading has crossed a limit or another rule's threshold, such as a limit breach, a fired trigger
-  or a significant shortfall.
+- **Exception:** the reading has crossed a limit or another rule's threshold, such as a limit breach, a fired trigger or
+  a significant shortfall.
 - **Watch:** the reading is approaching one: it is above an early warning, is drifting towards a threshold, or is a
   shortfall that is not yet significant.
 - **Normal:** neither.
@@ -47,8 +55,8 @@ The signals, each defined in its pillar chapter's rules:
   significance of shortfall; ex-post tracking error; realised drawdown; active share; source of return; style
   consistency; overdue actions.
 
-The view takes these signals as the pillars produce them. If a pillar changes how a signal is computed, the view
-changes with it; the view never computes its own version.
+The view takes these signals as the pillars produce them. If a pillar changes how a signal is computed, the view changes
+with it; the view never computes its own version.
 
 ## Patterns
 A pattern is a named chain of signals across pillars that, together, describe a known way for a portfolio to get into
@@ -62,10 +70,10 @@ difficulty.
 | Drift under pressure | Style drift or falling active share + rising outflows |
 | Margin squeeze | Market loss or volatility above its range → rising margin and collateral calls → falling coverage; leverage as context |
 
-**The redemption spiral** is the self-reinforcing cycle set out above; outflows concentrated in a few distributors can
-stand in for rising outflows. Because relative return is read every day over a rolling window, the first link can appear
-at watch as soon as a shortfall forms, rather than only once it is significant. Its early links are in performance and
-liquidity, its later links in market risk.
+**The redemption spiral** is the self-reinforcing cycle described at the top; outflows concentrated in a few
+distributors can stand in for rising outflows. Because relative return is read every day over a rolling window, the
+first link can appear at watch as soon as a shortfall forms, rather than only once it is significant. Its early links
+are in performance and liquidity, its later links in market risk.
 
 **Hidden illiquidity** is a combination in which one signal makes others look better than they are. Holdings whose
 prices are stale do not move, so volatility looks low and returns look smooth. A portfolio in this pattern may show
@@ -76,71 +84,22 @@ same holdings in liquidity risk. Either alone may be acceptable; together they m
 something that is becoming harder to sell.
 
 **Drift under pressure** joins a performance signal about how the portfolio is managed, such as style drift or falling
-active share, with investors leaving. The combination suggests the portfolio may be changing in response to outflows
-or underperformance rather than to its mandate, which is a question for the portfolio manager.
+active share, with investors leaving. The combination suggests the portfolio may be changing in response to outflows or
+underperformance rather than to its mandate, which is a question for the portfolio manager.
 
 **The margin squeeze** is the leveraged counterpart of the redemption spiral. A fall in markets brings margin and
 collateral calls; the collateral posted is encumbered and can no longer be sold; coverage falls; and the portfolio is
 left to sell what it still can, at stressed prices, which can bring further losses and further calls. It is the case in
 which market risk moves first, and its links follow within days rather than quarters.
 
-Signals do not move together. Performance and flows usually move first, because they respond to outcomes; liquidity
-and market risk move later, because they respond to the selling that follows. A sharp market loss is the exception:
-there, market risk moves first and performance follows. The view gives weight to the early signals for that reason:
-by the time market risk readings rise, the cycle is usually under way.
-
-## Flagship redesign: the portfolio health review
-The example below follows the portfolio health review for a range of 40 portfolios and a monthly risk committee. **The
-steps are illustrative.**
-
-**Current state.** There is no integrated view. Before each committee, the head of risk assembles one by reading the
-three pillars' outputs and connecting them from memory and experience.
-
-| # | Step | Tag |
-|---|---|---|
-| 1 | Read the latest outputs of the three pillars | Gather |
-| 2 | Pull more data for the portfolios that look worrying | Gather |
-| 3 | Connect signals across pillars from memory and experience | Interpret |
-| 4 | Decide which portfolios to raise with the committee | Judge |
-| 5 | Write the committee note | Communicate |
-| 6 | Review and sign off the note | Approve / Wait |
-
-The review happens on the committee's cycle, so a combination that forms just after one committee is not seen until the
-next. It depends on one person, and it covers the portfolios that person thinks of, which with 40 portfolios is rarely
-all of them.
-
-**Owner assignment.**
-
-- Steps 1 and 2 move to the risk engine, which reads every pillar's signals for every portfolio each day, rather than
-  one person reading reports for the portfolios they recall.
-- Step 3 is split. The risk engine aligns the signals by date, applies the pattern rules and ranks the portfolios, which
-  is computation; the AI drafts an account for each ranked portfolio that connects its signals, which is interpretation.
-- Step 4 stays with a human. The risk manager judges each ranked portfolio as it appears and decides whether it goes on
-  the watch list or is escalated.
-- Step 5 is eliminated. The risk engine assembles what the committee sees from the ranked portfolios, their accounts and
-  the signals behind them.
-- Step 6 stays with the head of risk.
-
-**Redesigned flow.**
-
-| # | Step | Owner |
-|---|---|---|
-| 1 | Read every pillar's signals for every portfolio; align them by date | Risk engine |
-| 2 | Apply the pattern and combination rules; rank portfolios | Risk engine |
-| 3 | Draft an account for each ranked portfolio | AI assistant |
-| 4 | Grounding check on every account | Risk engine |
-| 5 | Assemble the committee view from the top-ranked portfolios | Risk engine |
-| 6 | Judge each ranked portfolio; add it to the watch list or escalate | Risk manager |
-| 7 | Review and sign off the committee view | Head of risk |
-
-A combination is seen on the day it forms, by the risk manager, rather than at the next committee.
-
-**The shift.** The integrated picture moves from one assembled occasionally by one person, for the portfolios they think
-of, to one maintained continuously for every portfolio.
+Signals do not move together. Performance and flows usually move first, because they respond to outcomes; liquidity and
+market risk move later, because they respond to the selling that follows. A sharp market loss is the exception: there,
+market risk moves first and performance follows. The view gives weight to the early signals for that reason: by the time
+market risk readings rise, the cycle is usually under way.
 
 ## Combination rules and ranking
-The rules that decide which portfolios rank, and in what order, are
-[governed parameters](../framework/08-controls.md#materiality-thresholds-as-governed-parameters). **The rules below are
+The rules that decide which portfolios rank, and in what order, are [governed
+parameters](../framework/08-controls.md#materiality-thresholds-as-governed-parameters). **The rules below are
 illustrative kinds of rule, not recommendations;** each risk function sets its own.
 
 | Kind of rule | Example (illustrative) |
@@ -173,11 +132,9 @@ otherwise rank many portfolios at once.
 
 ## What the AI drafts
 The AI drafts each portfolio's account from the signals and facts the view read, and from nothing else. Every number in
-each draft appears in the facts beside it, so the
-[grounding check](../framework/08-controls.md#the-grounding-check) would pass. The account describes the combination;
-it does not recommend an action or claim that one signal caused another. **The funds and figures are illustrative.**
-
-**A redemption spiral forming.**
+the draft appears in the facts beside it, so the [grounding check](../framework/08-controls.md#the-grounding-check)
+would pass. The account describes the combination; it does not recommend an action or claim that one signal caused
+another. **The fund and figures are illustrative.**
 
 | Fact | Value |
 |---|---|
@@ -193,39 +150,6 @@ it does not recommend an action or claim that one signal caused another. **The f
 > range; redemption coverage has fallen from 2.6x to 1.8x over three months; and its largest issuer weight has risen
 > from 6.1% to 9.3%. Only the performance signal is at exception; the liquidity and market signals are at watch.
 
-**Hidden illiquidity.**
-
-| Fact | Value |
-|---|---|
-| Fund | Fund L |
-| Pattern matched | Hidden illiquidity |
-| Stale or unpriceable holdings | 12% of net assets (liquidity, exception) |
-| Volatility, today / usual range | 4.1% / 6% to 9% (market, exception) |
-| Return against benchmark, last 12 months | +1.9% (performance, normal; context) |
-| Measures using the flagged prices | Volatility; relative return |
-
-> Fund L matches the hidden illiquidity pattern. 12% of its net assets are in holdings flagged as stale or
-> unpriceable, and at the same time its volatility of 4.1% is below its usual range of 6% to 9%. Its return over the
-> last 12 months is 1.9% above its benchmark. Both volatility and relative return are computed using the prices of the
-> flagged holdings.
-
-**A margin squeeze forming.**
-
-| Fact | Value |
-|---|---|
-| Fund | Fund R |
-| Pattern matched | Margin squeeze |
-| Volatility, today / usual range | 14.8% / 6% to 10% (market, exception) |
-| Margin and collateral calls, last 5 days | 4.1% of net assets (liquidity, exception) |
-| Redemption coverage, today / one month ago | 1.4x / 2.2x (liquidity, exception) |
-| Share of liquid assets posted as collateral, today / one month ago | 22% / 9% (liquidity; context) |
-| Net exposure | 2.1 times net assets (market, normal; context) |
-
-> Fund R matches the margin squeeze pattern. Its volatility of 14.8% is above its usual range of 6% to 10%, and margin
-> and collateral calls over the last 5 days came to 4.1% of net assets. Redemption coverage has fallen from 2.2x to
-> 1.4x over a month, while the share of its liquid assets posted as collateral has risen from 9% to 22%. Its net
-> exposure is 2.1 times net assets.
-
 ## Limits of the view
 The view inherits every limit of the pillar measures it reads, and adds four of its own.
 
@@ -233,29 +157,27 @@ The view inherits every limit of the pillar measures it reads, and adds four of 
   risk manager judges whether they are connected.
 - **Patterns encode judgement.** The rules catch the combinations someone has defined and miss those nobody has.
 - **Signals have different cadences.** Most signals are read daily, including relative return over its rolling window,
-but runs of periods are counted in whole periods and some inputs, such as investor registers, update less often.
-Readings of different ages are not contemporaneous, so the view shows each signal's as-of date and treats a signal
-beyond a set age as stale. - **Too many ranked portfolios defeats the purpose.** If the view ranks most portfolios, it
-becomes another report. The share of ranked portfolios the risk manager judges worth action is watched, and the rules
-are tightened when it falls.
+  but runs of periods are counted in whole periods and some inputs, such as investor registers, update less often. The
+  view shows each signal's as-of date and treats a signal beyond a set age as stale.
+- **Too many ranked portfolios defeats the purpose.** If the view ranks most portfolios, it becomes another report. The
+  share of ranked portfolios the risk manager judges worth action is watched, and the rules are tightened when it falls.
 
 The function tests the view by replaying past episodes: taking portfolios that ran into difficulty and checking whether
 the view, with the rules in force at the time, would have ranked them, and how much earlier than any pillar. Episodes it
 would have missed are the main source of new patterns. The AI step is tested, as in the pillars, through the risk
 manager's edits to the accounts.
 
-## Controls specific to the view
-The general controls in [controls](../framework/08-controls.md) apply in full. The view adds four.
+## Controls and measures specific to the view
+The general [controls](../framework/08-controls.md) apply in full. The view adds four.
 
 - **Every signal shows its pillar and as-of date.** Nothing in an account is shown without its source.
 - **Missing data is not health.** A portfolio with missing signals from a pillar is shown as partly assessed, never as
   healthy.
-- **The view never overrides a pillar.** A pillar's exception still goes through that pillar's workflow, whether or
-  not the view ranks the portfolio.
-- **Pattern and grouping rules are governed.** Adding, removing or changing a pattern or a driver group is recorded
-  like any other threshold change.
+- **The view never overrides a pillar.** A pillar's exception still goes through that pillar's workflow, whether or not
+  the view ranks the portfolio.
+- **Pattern and grouping rules are governed.** Adding, removing or changing a pattern or a driver group is recorded like
+  any other threshold change.
 
-## Measuring value
 The measure that matters most for the view is **lead time**: how much earlier the view ranked a portfolio than the first
 escalation from any single pillar. Lead time is measured from replays of past episodes and from live cases. The other
 dimensions come from [measuring value](../framework/09-measuring-value.md).
@@ -270,14 +192,14 @@ dimensions come from [measuring value](../framework/09-measuring-value.md).
 
 ## Ownership and connections
 The risk function owns the view: its patterns, its grouping of drivers, its ranking rules and its footprint thresholds.
-Risk managers judge the ranked portfolios as they appear and add them to the watch list, which the
-risk function owns, or escalate them. The risk committee sees the top-ranked portfolios, each with its account and the
-signals behind it, and the firm's footprint, and decides what the firm should do.
+Risk managers judge the ranked portfolios as they appear and add them to the watch list, which the risk function owns,
+or escalate them. The risk committee sees the top-ranked portfolios, each with its account and the signals behind it,
+and the firm's footprint, and decides what the firm should do.
 
-Actions route back to the workflows that own them. A question about liquidity goes to the
-[liquidity risk](liquidity-risk.md) workflows, a challenge to the portfolio manager goes into the next review in
-[performance risk](performance-risk.md), and a concentration issue is followed in [market risk](market-risk.md). The
-view does not hold actions of its own; it shows where the pillars' signals combine, and the pillars do the work.
+Actions route back to the workflows that own them. A question about liquidity goes to the [liquidity
+risk](liquidity-risk.md) workflows, a challenge to the portfolio manager goes into the next review in [performance
+risk](performance-risk.md), and a concentration issue is followed in [market risk](market-risk.md). The view does not
+hold actions of its own; it shows where the pillars' signals combine, and the pillars do the work.
 
 ## Sources
 - Chen, Q., Goldstein, I. and Jiang, W. (2010). Payoff Complementarities and Financial Fragility: Evidence from Mutual

@@ -14,7 +14,7 @@ the reasoning goes there.
 | Three decisions | Construct, Oversee and Assess: before, during and after an investment | [Philosophy](00-philosophy.md#purpose-transparency-for-three-decisions) | Market risk's what-ifs, new portfolio review |
 | Three dimensions | Condensation, drill-in and connection: what every piece of risk work provides | [Philosophy](00-philosophy.md#practice-transparency-in-three-dimensions) | All pillars |
 | Decision-maker | Whoever a piece of a decomposition belongs to | [Philosophy](00-philosophy.md#2-drill-in) | Alpha and beta |
-| Mandate terms | A portfolio's objective, benchmark, style, limits and dealing terms in a form the risk engine can test, confirmed by the risk manager; hard limits are reconciled to compliance's rules | [Performance risk](../pillars/performance-risk.md#flagship-redesign-the-periodic-portfolio-manager-review) | Performance risk's rules and split |
+| Mandate terms | A portfolio's objective, benchmark, style, limits and dealing terms in a form the risk engine can test, confirmed by the risk manager; hard limits are reconciled to compliance's rules | [Performance risk](../pillars/performance-risk.md#mandate-terms) | Performance risk's rules and split |
 
 ## Scope
 
@@ -104,7 +104,7 @@ the reasoning goes there.
 | Not assessed | How a portfolio with missing data is shown, never as clean | [Risk data](03-risk-data.md#quality-before-computation) | Market risk, integrated view |
 | Watch list | The firm's single list of portfolios with unresolved issues, owned by the risk function | [Performance risk](../pillars/performance-risk.md#workflows-in-this-pillar) | Integrated view |
 | Pattern | A named chain of signals across pillars | [Integrated view](../pillars/integrated-view.md#patterns) | Integrated view's rules |
-| Lead time | How much earlier the view ranked a portfolio than the first escalation from any single pillar | [Integrated view](../pillars/integrated-view.md#measuring-value) | Integrated view |
+| Lead time | How much earlier the view ranked a portfolio than the first escalation from any single pillar | [Integrated view](../pillars/integrated-view.md#controls-and-measures-specific-to-the-view) | Integrated view |
 
 ## Controls
 
