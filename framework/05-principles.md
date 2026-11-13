@@ -49,12 +49,11 @@ that the risk engine produced, has the wrong owner for that step. [Working with 
 the person and the AI then work together.
 
 ### 3. The AI never fabricates a number
-**What it means.** Language models can produce plausible figures that are wrong, and a risk output with a wrong figure
-in it is worse than no output. Every number therefore has a computation behind it: the risk engine computed it, in the
-daily run or in an analysis the AI ran through it. Aggregating and attributing produce numbers, and the AI may do both,
-because the risk engine does the arithmetic and the run is recorded and can be reproduced. Beyond that the AI at most
-combines figures in simple ways that can be checked, such as a difference or a ratio. What it never does is state a
-figure with no computation behind it.
+**What it means.** A risk output with a wrong figure in it is worse than no output. Every number has a computation
+behind it: the risk engine computed it, in the daily run or in an analysis the AI ran through it. Aggregating and
+attributing produce numbers, and the AI may do both, because the risk engine does the arithmetic and the run is recorded
+and can be reproduced. Beyond that the AI at most combines figures in simple ways that can be checked, such as a
+difference or a ratio. What it never does is state a figure with no computation behind it.
 
 **In practice.** Generated text passes a grounding check before anyone sees it: every number in it is traced to the
 daily run or to a recorded analysis run, or recomputed from figures that are, and text with a number that cannot be

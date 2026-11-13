@@ -1,14 +1,10 @@
 # Investment risk framework
 
-**Asset management from an investment risk perspective, and how to redesign that work around AI.**
-
-An asset manager invests clients' money under a mandate and delivers an outcome. This framework looks at that work from
-an investment risk perspective, and sets out how a risk function's part of it is redesigned around AI. The
-[investment risk](framework/01-investment-risk.md#the-backdrop) chapter sets out the backdrop.
+**How a risk function at an asset manager should work, with each workflow redesigned around AI.**
 
 ## Investment risk, in three pillars
-Investment risk is the chance that a portfolio's outcome departs from what its mandate intends. A risk function's
-recurring work answers three questions:
+A risk function judges each portfolio against what its mandate intends
+([investment risk](framework/01-investment-risk.md)). Its recurring work answers three questions:
 
 | Pillar | Question |
 |---|---|
@@ -16,26 +12,19 @@ recurring work answers three questions:
 | **Liquidity risk** | Can the portfolio meet every call on its cash, in time and at a fair cost, without disadvantaging the investors who stay? |
 | **Performance risk** | Is the portfolio delivering what was promised, in the way it was promised? |
 
-The pillars are connected. Underperformance drives redemptions, redemptions force sales of the most liquid assets, and
-what remains is more concentrated and more volatile. Seeing the pillars together is a capability no manual process
-provides.
+The pillars connect, and the [integrated view](pillars/integrated-view.md) reads them together.
 
 ## Two sources of return
 Every return above cash is paid by one of three return generators: market risk premia, style premia and skill. They
 group into two sources. Top-down views decide how much of which markets and styles to hold, and bottom-up selection
-decides which securities to hold within them. Loosely, the first is called beta and the second alpha. A risk function
-uses the generators to ask how a return could stop, and the split to ask whether each risk was chosen and whether it
-was paid for; see
+decides which securities to hold within them: loosely, beta and alpha. A risk function uses the generators to ask how a
+return could stop, and the split to ask whether each risk was chosen and paid for; see
 [sources of return](framework/02-sources-of-return.md).
 
 ## Redesigning the work around AI
 AI changes investment risk work when a workflow is redesigned around it, not when it is inserted into the workflow as
 it stands. A tool that drafts a report faster changes little when the report still waits for data to be gathered, for
 work to pass between people and for review queues.
-
-This framework sets out how to do that for investment risk, and how people and the AI then work together. It is
-written for the whole firm: the risk managers who do the work, the portfolio managers who receive it and the management
-that decides where AI enters the business.
 
 ## The core pattern
 **The risk engine computes, AI analyses and narrates, a human judges.**

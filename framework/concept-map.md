@@ -20,7 +20,6 @@ the reasoning goes there.
 
 | Concept | What it is | Defined in | Used by |
 |---|---|---|---|
-| The backdrop | A client's mandate, invested and delivered as an outcome: the chain a risk function looks at | [Investment risk](01-investment-risk.md#the-backdrop) | README |
 | Portfolio | The general term for a fund or a segregated mandate; its mandate is the promise | [Investment risk](01-investment-risk.md#portfolios-funds-and-mandates) | Every chapter |
 | Three pillars | Market, liquidity and performance risk: a lens on the recurring work, with market and performance risk divided by time into forward-looking and realised | [Investment risk](01-investment-risk.md#the-three-pillars) | Every chapter |
 | Forecast against outcome | Each forward-looking measure tested against its realised counterpart in the other pillar | [Investment risk](01-investment-risk.md#boundaries-between-pillars) | Philosophy, market risk, performance risk |
@@ -122,8 +121,6 @@ the reasoning goes there.
 
 | Concept | What it is | Defined in | Used by |
 |---|---|---|---|
-| Ex-ante tracking error | The forecast of how far a portfolio could drift from its benchmark | [Market risk](../pillars/market-risk.md#workflows-in-this-pillar) | Philosophy, performance risk, integrated view |
-| Ex-post tracking error | How far a portfolio's realised return has drifted from its benchmark | [Performance risk](../pillars/performance-risk.md#workflows-in-this-pillar) | Market risk, integrated view |
 | Exposure | What a holding is sensitive to, computed once in the daily run | [Market risk](../pillars/market-risk.md#workflows-in-this-pillar) | Performance risk, alpha and beta |
 | Stress and reverse stress | Losses under scenarios, and the shocks that would break a mandate | [Market risk](../pillars/market-risk.md#stress-and-reverse-stress) | Philosophy, liquidity risk, alpha and beta |
 | Redemption coverage | What a portfolio could raise within a horizon, leaving out encumbered assets, against the calls on its cash under stress due within it; the limit sits at the horizon the dealing terms set | [Liquidity risk](../pillars/liquidity-risk.md#materiality-and-exceptions) | Philosophy, investment risk, integrated view |
@@ -134,13 +131,11 @@ the reasoning goes there.
 | Jump to default | The loss if an issuer defaulted, net of expected recovery, read as a concentration measure | [Market risk](../pillars/market-risk.md#credit-spreads-default-and-migration) | Investment risk |
 | Gross and net exposure | Leverage as the sum of all positions without netting, and as what is left after netting and hedging, with derivatives converted to the underlying; each has an internal limit | [Market risk](../pillars/market-risk.md#leverage-and-options) | Limits and escalation |
 | Backtest against the design | VaR breaches judged against what the chosen design implies, stated in advance | [Market risk](../pillars/market-risk.md#backtesting) | Philosophy |
-| Information ratio and t-statistic | Active return per unit of active risk, shown with how much of it could be noise | [Performance risk](../pillars/performance-risk.md#windows-and-significance) | Sources of return, philosophy |
 | Significant shortfall | A cumulative shortfall large against tracking error over its window, by the t-statistic; it gives an exception, where a run of losing periods gives a watch item | [Performance risk](../pillars/performance-risk.md#windows-and-significance) | Market risk, integrated view |
 | Windows | Every performance measure shown over several windows, illustrated as 1, 3, 12 and 36 months, the mandate's own stated period and since inception | [Performance risk](../pillars/performance-risk.md#windows-and-significance) | Integrated view |
 | Benchmark tests | Specified in advance, investable, unambiguous, measurable, appropriate to the style and owned | [Performance risk](../pillars/performance-risk.md#benchmarks-and-peer-groups) | New portfolio review |
 | Linking method | How single-period attribution is made to sum over longer periods, held as a governed parameter | [Performance risk](../pillars/performance-risk.md#linking-attribution-over-time) | Alpha and beta |
 | Risk budget | Active risk allotted to bets, read against the return they earn | [Market risk](../pillars/market-risk.md#workflows-in-this-pillar) | Philosophy; performance risk's challenge pack; integrated view |
-| Realised drawdown | The fall from a portfolio's peak value, absolute and relative to its benchmark | [Performance risk](../pillars/performance-risk.md#workflows-in-this-pillar) | Market risk, integrated view |
 | Headroom | A stress loss set against what is left of the drawdown tolerance | [Market risk](../pillars/market-risk.md#materiality-and-exceptions) | Integrated view |
 
 ## Alpha and beta method
