@@ -61,35 +61,35 @@ Two rules make it work:
   [Principles](framework/05-principles.md#what-the-risk-manager-adds) sets this out.
 
 ## Map
+Every chapter opens with an **In short** block that states the chapter whole, and the detail follows beneath it. Reading
+the In short blocks in order gives the framework; the detail is there when a point needs it.
+
 | Chapter | Covers |
 |---|---|
 | **The investment backdrop** | |
-| [Investment risk philosophy](framework/00-philosophy.md) | What a risk function believes and is for: eight beliefs, the three decisions it serves, and transparency in three dimensions. |
-| [Investment risk](framework/01-investment-risk.md) | Definition and scope, including the portfolios covered and the three kinds left out, what is measured here and what is owned elsewhere; the three pillars, with market and performance risk divided by time into forward-looking and realised. |
-| [Sources of return](framework/02-sources-of-return.md) | The three return generators (market risk premia, style premia and skill), why each pays and how each fails; the two sources they group into, top-down views and bottom-up selection, loosely beta and alpha; who decides each, why it matters to asset owners, asset managers and risk functions, and how a holding splits between them. |
+| [Investment risk philosophy](framework/00-philosophy.md) | What a risk function believes and is for. |
+| [Investment risk](framework/01-investment-risk.md) | The definition, the scope and the three pillars. |
+| [Sources of return](framework/02-sources-of-return.md) | The three return generators, and the split into beta and alpha. |
 | **The practice** | |
-| [Risk data](framework/03-risk-data.md) | The data the risk engine reads, from golden source to computed figure; versioning as known, so any past output can be reproduced; quality checks before computation; the proxy policy; who owns fitness for use and who corrects; the daily data check redesigned as a ranked queue of data breaks. |
-| [Limits and escalation](framework/04-limits-and-escalation.md) | Where limits come from: mandate and regulatory limits, split into position and eligibility rules monitored by compliance and risk-measured limits monitored by the risk function; internal limits owned by the risk function; and early warnings ahead of both; what internal limits are for; how they are calibrated; the breach lifecycle, the escalation path and who approves what; breach handling redesigned as a tracked record. |
+| [Risk data](framework/03-risk-data.md) | The data every figure rests on: checked, versioned, proxied and corrected at source. |
+| [Limits and escalation](framework/04-limits-and-escalation.md) | Hard limits, internal limits and early warnings; the breach lifecycle and the escalation path. |
 | **The redesign around AI** | |
-| [Principles](framework/05-principles.md) | Why inserting AI fails; six principles for redesign; what the risk manager adds. |
-| [Working with AI](framework/06-working-with-ai.md) | How people and the AI work together: three modes of working (prepare, investigate, challenge); where a figure may come from; what the AI may do alone, with sign-off or never; supervising the AI; what changes for the risk manager, the portfolio manager and management. |
-| [Redesign method](framework/07-redesign-method.md) | Seven steps to redesign one workflow, from outcome to measured result. |
-| [Controls](framework/08-controls.md) | Grounding checks, AI permissions, sign-off points, audit trails, governed thresholds, parallel runs, fallback, data handling, alignment with AI risk management expectations. |
-| [Measuring value](framework/09-measuring-value.md) | How to know a redesigned workflow works: capacity, speed, quality and influence; a baseline and a plan for the risk manager's time; why usage is not a measure. |
+| [Principles](framework/05-principles.md) | Six principles for redesigning the work around AI, and what the risk manager adds. |
+| [Working with AI](framework/06-working-with-ai.md) | Three modes of working, where a figure may come from and what the AI may do. |
+| [Redesign method](framework/07-redesign-method.md) | Seven steps to redesign one workflow. |
+| [Controls](framework/08-controls.md) | What makes a redesigned workflow safe to rely on, from the grounding check to fallback. |
+| [Measuring value](framework/09-measuring-value.md) | How to know a redesigned workflow works. |
 | **The pillars** | |
-| [Market risk](pillars/market-risk.md) | The pillar's workflows, including ex-ante tracking error and the risk budget review; design choices for VaR and expected shortfall, factors, backtesting, stress, credit, leverage and counterparty exposure; daily monitoring redesigned as a ranked queue of exceptions and watch items with drafted explanations. |
-| [Liquidity risk](pillars/liquidity-risk.md) | The pillar's workflows; design choices for fairness and capacity, time and cost to sell, scenarios for calls on cash, encumbrance and second-round effects; periodic stress tests redesigned as continuous monitoring with event-triggered stress tests. |
-| [Performance risk](pillars/performance-risk.md) | The pillar's workflows; design choices for risk-adjusted measures, windows and significance, benchmarks and peer groups, and linking attribution over time; portfolio manager reviews run on risk's agenda with an evidence-based challenge pack. |
-| [Integrated view](pillars/integrated-view.md) | One portfolio health view that ranks portfolios where signals across pillars combine, before any one pillar would escalate them, and shows the firm's footprint across portfolios. |
-| [New portfolio review](pillars/new-portfolio-review.md) | What must be in place before a portfolio launches or changes materially: confirmed mandate terms, a tested benchmark, limits, a liquidity profile that fits the dealing terms, data readiness, the alpha and beta construction and liquidity tools; the risk function's recorded opinion; the review redesigned with a launch-day check. |
-| [Alpha and beta method](pillars/alpha-and-beta-method.md) | How the split is computed for publicly traded holdings on gross returns: the benchmark, top-down and real portfolios, booked and derived routes, the factor list, the test and its limits. |
+| [Market risk](pillars/market-risk.md) | How much a portfolio could lose: daily monitoring as a ranked queue with drafted explanations. |
+| [Liquidity risk](pillars/liquidity-risk.md) | Whether a portfolio can meet its calls on cash fairly: continuous monitoring with event-triggered stress tests. |
+| [Performance risk](pillars/performance-risk.md) | Whether the promise is kept: portfolio manager reviews on the risk function's agenda. |
+| [Integrated view](pillars/integrated-view.md) | Where signals combine across the pillars, and the firm's footprint. |
+| [New portfolio review](pillars/new-portfolio-review.md) | What must be in place before a portfolio launches or changes materially. |
+| [Alpha and beta method](pillars/alpha-and-beta-method.md) | How the split is computed, on three portfolios. |
 | **Index** | |
-| [Concept map](framework/concept-map.md) | The main concepts on one page: what each is, where it is defined and which chapters use it. |
+| [Concept map](framework/concept-map.md) | Every concept: what it is, where it is defined and which chapters use it. |
 
-## Using this repository
-The framework chapters are written to be read in order. The pillar chapters can be read on their own once the principles
-and the method are familiar. The concept map is a reference, for finding where a concept is defined and used. Each
-chapter ends with the public sources it draws on.
+Each chapter ends with the public sources it draws on.
 
 ## Disclaimer
 This framework is general and illustrative. It is not advice for any particular firm, and any implementation should be

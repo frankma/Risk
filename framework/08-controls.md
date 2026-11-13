@@ -1,16 +1,9 @@
 # Controls
 
-Controls are what make a redesigned workflow safe enough to remove the manual checks it replaces. This chapter sets out
-the controls every redesigned risk workflow should have, from the grounding check on generated text to fallback when a
-component fails, and how they align with supervisory expectations for AI risk management. It closes with why the risk
-function should own them.
-
-## Why controls come first
-A redesign removes steps that existed to catch errors: a second person checking figures, a manager reading every page.
-Those steps can only be removed if something at least as reliable takes their place. Without that, either the old
-checks stay and the redesign saves little, or they are removed and errors reach decisions. The controls below are what
-make the [redesign method](07-redesign-method.md) work in practice, and they should be designed in step 6, not added
-after the workflow is live.
+## In short
+**The rule:** a redesign removes steps that existed to catch errors, such as a second person checking figures. Those
+steps can be removed only if something at least as reliable takes their place. The controls below are designed in step 6
+of the [redesign method](07-redesign-method.md), not added after the workflow is live.
 
 | Control | What it protects against |
 |---|---|
@@ -23,12 +16,17 @@ after the workflow is live.
 | Fallback | A failed component stopping the workflow |
 | Data handling | Sensitive data reaching a service it should not |
 
+**Who owns them:** the risk function designs and owns the controls, under independent validation, and can then remove
+its own manual checks on that basis.
+
+The rest of this chapter is the detail behind these points.
+
 ## The grounding check
-The grounding check enforces the principle that
-[the AI never fabricates a number](05-principles.md#3-the-ai-never-fabricates-a-number). Every number in a piece of
-generated text is extracted and traced to the computed facts behind it: the facts from the daily run that the text was
-generated from, and the results of any analysis the AI ran through the risk engine, each recorded as a run. Numbers
-written as words, such as "three months", are extracted and traced in the same way as numerals.
+The grounding check enforces the principle that [the AI never fabricates a
+number](05-principles.md#3-the-ai-never-fabricates-a-number). Every number in a piece of generated text is extracted and
+traced to the computed facts behind it: the facts from the daily run that the text was generated from, and the results
+of any analysis the AI ran through the risk engine, each recorded as a run. Numbers written as words, such as "three
+months", are extracted and traced in the same way as numerals.
 
 To fabricate a number is to state it with no computation behind it. A number in generated text is grounded if it is one
 of the computed facts, the result of a recorded analysis run, or the result of a simple operation on them that the AI
@@ -43,9 +41,9 @@ bound for an output, as set out in [working with AI](06-working-with-ai.md#where
 operation, and the check verifies that derivation only, one operation deep. It does not search the facts for any
 combination that reproduces the number, because in a long table of facts some combination will, by chance.
 
-**Each sentence is linked to its facts.** The AI marks every sentence with the facts it rests on. A sentence that
-states something about a portfolio and links to no fact is rejected, and the link tells the check which portfolio and
-measure each number belongs to, so a figure attached to the wrong one fails.
+**Each sentence is linked to its facts.** The AI marks every sentence with the facts it rests on. A sentence that states
+something about a portfolio and links to no fact is rejected, and the link tells the check which portfolio and measure
+each number belongs to, so a figure attached to the wrong one fails.
 
 **Direction and comparison are checked.** Words of direction and comparison, such as "rose", "fell", "above", "below",
 "within" and "breached", are tested against the linked facts. With a limit of 2.00%, "VaR fell from 1.84% to 2.31%,
@@ -54,8 +52,7 @@ within its limit" fails twice, though every number in it is a computed fact. (Th
 The match allows for formatting but not for substance. A computed value of 0.0473 matches "4.7%" and "4.73%"; a computed
 value of 12,450,000 matches "12.45 million" and "12.5m"; a value expressed in basis points matches the same value
 expressed as a percentage. It does not match a figure that cannot be traced to a computed value, a figure rounded beyond
-the stated precision, or a figure attached to the wrong portfolio or measure. (The values are
-illustrative.)
+the stated precision, or a figure attached to the wrong portfolio or measure. (The values are illustrative.)
 
 Text that fails any part of the check is rejected before anyone sees it. The system then regenerates it, with the
 failure noted, up to a set number of attempts; if it still fails, the item falls back to the template text described
@@ -63,8 +60,8 @@ under fallback, which states the computed facts in fixed sentences, and is flagg
 the attempts and the outcome are all recorded in the audit trail. A grounding check that warns rather than rejects is
 not a control.
 
-The check covers numbers, the direction of a change and comparisons with a limit or threshold. It does not test a
-stated cause, what was left out, whether the reasoning is sound or whether the emphasis is right; those remain the risk
+The check covers numbers, the direction of a change and comparisons with a limit or threshold. It does not test a stated
+cause, what was left out, whether the reasoning is sound or whether the emphasis is right; those remain the risk
 manager's judgement at the sign-off point.
 
 ## AI permissions
@@ -76,8 +73,8 @@ to data or to governed parameters, and nothing it produces leaves the function w
 starts is recorded with its parameters, the person who asked and the result, so that any answer can be reproduced.
 
 ## Sign-off points
-Each redesigned workflow names the points at which a human must approve before an output moves on, and what exactly
-they are approving. A sign-off is a statement about content, not a click to release a document.
+Each redesigned workflow names the points at which a human must approve before an output moves on, and what exactly they
+are approving. A sign-off is a statement about content, not a click to release a document.
 
 | Sign-off | Who | What they are approving |
 |---|---|---|
@@ -96,13 +93,13 @@ result; who approved it and when. The record is kept in a form that can be retri
 date.
 
 The trail serves three purposes. It allows any figure or sentence in a released output to be traced back to its source.
-It shows how often humans change generated text and in what way, which is evidence of whether the AI step is working.
-It supports review by internal audit and by supervisors.
+It shows how often humans change generated text and in what way, which is evidence of whether the AI step is working. It
+supports review by internal audit and by supervisors.
 
 ## Materiality thresholds as governed parameters
 The thresholds that decide what counts as an exception, and the rules that rank exceptions, determine what the risk
-manager sees and what they do not. They encode the risk function's judgement and should be governed like any other
-risk parameter.
+manager sees and what they do not. They encode the risk function's judgement and should be governed like any other risk
+parameter.
 
 - **Ownership.** Each threshold is owned by the risk function, which sets it, reviews it and records every change.
 - **Review.** Thresholds are reviewed on a set cycle, and when the exception queue shows signs of being set too tight
@@ -110,26 +107,26 @@ risk parameter.
 - **Change record.** Every change records the old and new values, the reason, who approved it and when it took effect.
   Thresholds are versioned, so that any past output can be reproduced with the thresholds in force at the time.
 
-Internal limits are governed in the same way. [Limits and escalation](04-limits-and-escalation.md) sets out where
-limits come from, how internal limits are calibrated and how a breach is handled.
+Internal limits are governed in the same way. [Limits and escalation](04-limits-and-escalation.md) sets out where limits
+come from, how internal limits are calibrated and how a breach is handled.
 
 ## Parallel runs
-A redesigned workflow runs alongside the existing process for at least one full cycle before the old process is
-stopped. For a monthly workflow that means at least one month end; for a daily workflow, enough days to include a
-period of market stress or an unusual event, where possible.
+A redesigned workflow runs alongside the existing process for at least one full cycle before the old process is stopped.
+For a monthly workflow that means at least one month end; for a daily workflow, enough days to include a period of
+market stress or an unusual event, where possible.
 
 Agreement criteria are set before the run starts. Typical criteria: every computed figure agrees with the existing
 process within a stated tolerance, or the difference is explained; every exception the old process escalated also
 appears in the new queue; and the risk manager judges the new explanations at least as useful as the old commentary.
-Differences are investigated, not averaged away. A difference often shows an error in the old process, which is
-recorded as a result of the run.
+Differences are investigated, not averaged away. A difference often shows an error in the old process, which is recorded
+as a result of the run.
 
 ## Fallback
 Each workflow defines what happens when a component fails.
 
 - **Data pipeline failure.** The workflow does not run on stale or partial data without saying so. It either waits, or
-  runs with the affected portfolios clearly marked, according to a rule set in advance. The checks that find the
-  failure are set out in [risk data](03-risk-data.md#quality-before-computation).
+  runs with the affected portfolios clearly marked, according to a rule set in advance. The checks that find the failure
+  are set out in [risk data](03-risk-data.md#quality-before-computation).
 - **AI backend failure.** The workflow falls back to a deterministic template that states the computed facts in fixed
   sentences. The output is plainer, but complete and correct, and the workflow's deadlines still hold.
 
@@ -162,25 +159,18 @@ Supervisors' expectations for AI risk management share a common shape. The contr
 | Board and senior management oversight | Regular reporting of AI use, results and incidents |
 
 The risk function tests its own AI steps day to day, through the grounding check, parallel runs and ongoing monitoring
-above, as part of the limits of its own measures and tools that it is responsible for. It is not the only judge of
-them. The independent validation function, which sits outside the risk function as set out in
-[investment risk](01-investment-risk.md), reviews each AI step and the grounding check at first use and at each
-material change: a new model, a changed prompt or template, a new analysis on the governed list or a change to the
-check itself. Internal audit tests that the controls operate as described, from the audit trail, the sign-offs and the
-change records. A firm should map these expectations to the specific requirements that apply to it.
-
-## Why risk should own the controls
-The controls in this chapter are what allow manual checks to be removed with confidence. A risk function that designs
-and owns them, under independent validation, decides how safe is safe enough, and can then remove its own manual checks
-on that basis. That makes risk the function that enables redesign across the firm, rather than the one that blocks it. A
-risk function that leaves the controls to others will find that each redesign waits for its approval and that the checks
-it trusts are the ones it cannot remove.
+above, as part of the limits of its own measures and tools that it is responsible for. It is not the only judge of them.
+The independent validation function, which sits outside the risk function as set out in [investment
+risk](01-investment-risk.md), reviews each AI step and the grounding check at first use and at each material change: a
+new model, a changed prompt or template, a new analysis on the governed list or a change to the check itself. Internal
+audit tests that the controls operate as described, from the audit trail, the sign-offs and the change records. A firm
+should map these expectations to the specific requirements that apply to it.
 
 ## Sources
-- International Organization of Securities Commissions (2021). *The Use of Artificial Intelligence and Machine
-  Learning by Market Intermediaries and Asset Managers.* Final report. Supervisory expectations for governance,
-  testing, monitoring and oversight of AI in asset management.
-- National Institute of Standards and Technology (2023). *Artificial Intelligence Risk Management Framework
-  (AI RMF 1.0).* The common shape of AI risk management: govern, map, measure and manage.
+- International Organization of Securities Commissions (2021). *The Use of Artificial Intelligence and Machine Learning
+  by Market Intermediaries and Asset Managers.* Final report. Supervisory expectations for governance, testing,
+  monitoring and oversight of AI in asset management.
+- National Institute of Standards and Technology (2023). *Artificial Intelligence Risk Management Framework (AI RMF
+  1.0).* The common shape of AI risk management: govern, map, measure and manage.
 - ISO/IEC 42001:2023. *Information technology — Artificial intelligence — Management system.* Requirements for
   inventory, risk assessment, change management and oversight of AI systems.

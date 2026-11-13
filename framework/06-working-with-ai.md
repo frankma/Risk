@@ -1,10 +1,22 @@
 # Working with AI
 
-The [principles](05-principles.md) divide the work between the risk engine, the AI and a person. This chapter sets out
-how the person and the AI then work together: three modes of working, where a figure may come from, what the AI may do
-alone, with sign-off or never, how people supervise it, and what changes for the people involved. It is written for
-the whole firm, because the working relationship reaches beyond the risk function to the portfolio managers who
-receive its questions and the management that decides where AI enters the business.
+## In short
+**The rule:** the risk engine computes, the AI analyses and narrates, and a person judges.
+
+**Three modes:** the AI prepares outputs from what the risk engine found, investigates a person's question by running
+analyses through the risk engine, and challenges a conclusion against the data. In each mode the risk engine does the
+computing and a person keeps the judgement.
+
+**Numbers:** the AI never fabricates a number. Every figure it reports has a recorded computation behind it that can be
+reproduced.
+
+**Permissions:** the AI may draft, run governed analyses and propose. Anything that leaves the function needs a person's
+sign-off. The AI never sends a message, writes a recommendation, decides what matters or changes a governed parameter.
+
+**People:** supervising the AI is a skill, the craft still has to be learned, and accountability does not move.
+
+The rest of this chapter is the detail behind these points. It is written for the whole firm: the risk function, the
+portfolio managers who receive its questions and the management that decides where AI enters the business.
 
 ## Three modes of working
 The AI does more than draft. It works in three modes, and in each one the risk engine does the computing and a person
@@ -20,9 +32,9 @@ keeps the judgement.
 the person reviews the exceptions.
 
 **Investigate** replaces the ad hoc query. A risk manager, or a portfolio manager before a trade, asks a question in
-plain words. The AI works out which analyses answer it, runs them through the risk engine, and reports what they show:
-a drill-down into a change, an aggregation across portfolios, an attribution over a period, a what-if on a proposed
-trade, a scenario. The answer arrives in minutes, with every figure tied to the run that produced it.
+plain words. The AI works out which analyses answer it, runs them through the risk engine, and reports what they show: a
+drill-down into a change, an aggregation across portfolios, an attribution over a period, a what-if on a proposed trade,
+a scenario. The answer arrives in minutes, with every figure tied to the run that produced it.
 
 **Challenge** turns the AI on a conclusion. The conclusion may be a portfolio manager's explanation of a breach, a risk
 manager's own reading of a portfolio, or a draft paper for a committee. The AI looks for what would contradict it and
@@ -64,8 +76,8 @@ to a view, a message or a decision.
 ## Supervising the AI
 Working with the AI is a skill, and the hardest part of it is staying critical of fluent text.
 
-- **Read the figures before the words.** The facts and the runs are shown beside the text, so that the review is of
-  what was computed and then of what was said about it.
+- **Read the figures before the words.** The facts and the runs are shown beside the text, so that the review is of what
+  was computed and then of what was said about it.
 - **Open the run.** A figure from an analysis run is correct for the question the run asked. The run shows which
   portfolios, which dates and which analysis, so the person can see whether that was the question they meant.
 - **Ask what is missing.** A draft can be accurate in every figure and leave out the one that matters. No check sees an
@@ -76,12 +88,12 @@ Working with the AI is a skill, and the hardest part of it is staying critical o
   and the decision and its reasons are theirs.
 
 A sign-off given without reading is the failure this section exists to prevent, and it leaves no trace in the edits. The
-risk function therefore reviews a sample of signed-off items against the facts and runs behind them, as each pillar
-sets out for its own drafts.
+risk function therefore reviews a sample of signed-off items against the facts and runs behind them, as each pillar sets
+out for its own drafts.
 
 ## A worked exchange
-A risk manager asks why Fund T's ex-ante tracking error rose over the week, and whether other portfolios are exposed
-to the same thing. The AI runs three analyses and one exploratory query. **The fund and figures are illustrative.**
+A risk manager asks why Fund T's ex-ante tracking error rose over the week, and whether other portfolios are exposed to
+the same thing. The AI runs three analyses and one exploratory query. **The fund and figures are illustrative.**
 
 | Run | Kind | What was run | Result |
 |---|---|---|---|
@@ -90,15 +102,15 @@ to the same thing. The AI runs three analyses and one exploratory query. **The f
 | 3 | Exploratory query, unvalidated | Holdings of Fund T bought in the last 5 business days | 4 holdings, 3.8% of net assets |
 | 4 | Analysis | Tilts and timing calls on record for Fund T | None |
 
-> Fund T's ex-ante tracking error rose from 2.4% to 3.1% over 5 business days, and most of the rise is the value
-> factor, whose contribution went from 0.5 to 1.1 points (run 1). Across the firm, 6 of 40 portfolios hold a value
-> exposure above 0.30 (run 2). An exploratory query, not validated, suggests the rise came with 4 holdings bought in
-> the period, 3.8% of net assets (run 3).
+> Fund T's ex-ante tracking error rose from 2.4% to 3.1% over 5 business days, and most of the rise is the value factor,
+> whose contribution went from 0.5 to 1.1 points (run 1). Across the firm, 6 of 40 portfolios hold a value exposure
+> above 0.30 (run 2). An exploratory query, not validated, suggests the rise came with 4 holdings bought in the period,
+> 3.8% of net assets (run 3).
 
 The risk manager reads this as a deliberate value tilt and asks the AI to challenge that reading.
 
-> No tilt or timing call is on record for Fund T (run 4), so on the record the value exposure is unintended beta, not
-> a tilt.
+> No tilt or timing call is on record for Fund T (run 4), so on the record the value exposure is unintended beta, not a
+> tilt.
 
 What the exposure means, and what to ask the portfolio manager, is the risk manager's judgement. The figure from the
 exploratory query can guide the question, but it stays out of any output.
@@ -123,8 +135,8 @@ person can show what was generated, what they changed and why.
 ## How the working relationship improves
 Each mode leaves a record, and the record is how the system gets better. Edits to drafts show where the AI's
 explanations miss. Challenges that changed a conclusion, and challenges that were set aside, show where it helps.
-Exploratory queries show what the risk engine cannot yet compute. The risk function reads these on a set cycle and
-turns them into governed changes: a new analysis, a retuned threshold, a rule added to a pillar.
+Exploratory queries show what the risk engine cannot yet compute. The risk function reads these on a set cycle and turns
+them into governed changes: a new analysis, a retuned threshold, a rule added to a pillar.
 
 ## Sources
 - Parasuraman, R., Sheridan, T. and Wickens, C. (2000). A Model for Types and Levels of Human Interaction with
@@ -134,5 +146,5 @@ turns them into governed changes: a new analysis, a retuned threshold, a rule ad
   *Human Factors*. Why people over-trust automated output, and why review has to be designed and tested.
 - Bainbridge, L. (1983). Ironies of Automation. *Automatica*. Automating the routine work removes the practice that
   built the skill to supervise it.
-- National Institute of Standards and Technology (2023). *Artificial Intelligence Risk Management Framework
-  (AI RMF 1.0).* Defined roles and responsibilities for the people who oversee AI systems.
+- National Institute of Standards and Technology (2023). *Artificial Intelligence Risk Management Framework (AI RMF
+  1.0).* Defined roles and responsibilities for the people who oversee AI systems.
