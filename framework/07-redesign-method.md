@@ -29,8 +29,7 @@ does not serve it is a candidate for removal.
 ### 2. Inventory the workflows
 The risk function lists its recurring workflows and records, for each one, its cadence, its inputs, its output, who uses
 the output and for which decision. The inventory usually shows outputs that feed no decision: a report produced because
-it has always been produced, or a table nobody reads. These are eliminated, not automated. Automating an unused output
-turns a waste of time into a waste of money.
+it has always been produced, or a table nobody reads. These are eliminated, not automated.
 
 ### 3. Map the current state
 The chosen workflow is mapped step by step as it actually runs, not as the procedure describes it. Each step is tagged
@@ -53,7 +52,7 @@ Each tagged step is assigned to one owner, following the core pattern.
 | Tag | Owner |
 |---|---|
 | Gather, Compute | Risk engine |
-| Interpret, Communicate | AI assistant analyses through the risk engine and drafts; the risk manager edits and approves |
+| Interpret, Communicate | AI assistant, which drafts through the risk engine; the risk manager's edit and approval is a step of its own |
 | Judge, Approve | The risk manager, or the head of risk for escalation and sign-off |
 | Steps that exist only because the old process was slow | Eliminated |
 
@@ -62,9 +61,7 @@ copies of the same number and chasing people for inputs exist because the manual
 not handed to the risk engine or the AI assistant.
 
 ### 5. Redesign the flow
-The redesigned workflow changes its shape, not only its speed. A manual workflow has the form "a human produces the
-output, then a human reviews it". A redesigned workflow has the form "the system produces the output, and the human
-reviews the exceptions". Three changes follow.
+The redesigned workflow changes its shape, as the opening sets out. Three changes follow.
 
 - **Materiality thresholds are encoded.** The rules that decide what counts as an exception, and how exceptions are
   ranked, are written down as parameters rather than applied by eye.
@@ -74,9 +71,7 @@ reviews the exceptions". Three changes follow.
   with drill-down into the detail behind each item.
 
 ### 6. Build in controls
-A redesigned workflow is only worth adopting if it can be relied on with fewer manual checks. The grounding check, AI
-permissions, sign-off points, audit trail, threshold governance, parallel run, fallback and data handling that make this
-possible are set out in [controls](08-controls.md).
+The controls are designed in this step, not added after the workflow is live; [controls](08-controls.md) sets them out.
 
 ### 7. Measure the result
 The redesigned workflow is measured against a baseline taken before it started, across capacity, speed, quality and
@@ -138,9 +133,6 @@ deep-dive reviews of the portfolios that appear most often in the exception summ
 | Keeping every old review gate | The output arrives no sooner | Moving gates in step 5 |
 | No decision on what the risk manager's time is for | The time is absorbed by existing work | A plan for that time before starting |
 | A tool rollout with no workflow rebuilt | Usage rises, the work does not change | Redesign one workflow fully first |
-
-The last failure mode is the most common. Giving everyone a tool changes many tasks a little and rebuilds nothing.
-Redesigning one workflow fully, measuring the result and then moving to the next changes how the work is done.
 
 ## Sources
 - Hammer, M. (1990). Reengineering Work: Don't Automate, Obliterate. *Harvard Business Review*. Redesigning a process

@@ -16,7 +16,7 @@ and sends the notice, and the head of risk decides.
 | # | Step | Owner |
 |---|---|---|
 | 1 | Detect the breach; check it against data breaks; classify it as active or passive | Risk engine |
-| 2 | Draft the notice to the portfolio manager and oversight | AI assistant |
+| 2 | Draft the notice to the portfolio manager and investment oversight | AI assistant |
 | 3 | Grounding check on the notice | Risk engine |
 | 4 | Confirm the breach and its classification; send the notice | Risk manager |
 | 5 | Record the portfolio manager's explanation | Risk engine |
@@ -26,8 +26,8 @@ and sends the notice, and the head of risk decides.
 | 9 | Confirm the close; the record goes to the risk committee | Risk manager |
 
 Every breach carries its classification, its explanation, its decision and, where accepted, its expiry. The record shows
-which limits are breached repeatedly, which is the evidence for recalibrating them. Appetite belongs to the client and
-is judged against each mandate, not against a firm-wide number ([philosophy](00-philosophy.md#beliefs)).
+which limits are breached repeatedly, which is the evidence for recalibrating them. **Investment oversight** is the head
+of investments, or the committee that supervises the portfolio managers on the firm's behalf.
 
 The rest of this chapter is the detail behind these points.
 
@@ -41,20 +41,15 @@ Limits come in three layers, and the first has two kinds.
 | Internal limits | Limits the risk function sets where the mandate is silent, such as an absolute risk limit for a benchmarked portfolio | The risk function |
 | Early warnings | Levels set ahead of a limit of either kind, so that a reading is seen before it breaches, or on a measure that has no limit | The risk function |
 
-**Mandate and regulatory limits are hard limits.** A breach must be cured. Compliance owns the legal reading of every
-hard limit, and its coded rule is the master reading. Where the risk function's [mandate
-terms](../pillars/performance-risk.md#mandate-terms) hold the same limit, they are reconciled to compliance's rule, and
-a difference is routed to compliance.
+**Hard limits must be cured.** Compliance's coded rule is the master reading of every hard limit. Where the risk
+function's [mandate terms](../pillars/performance-risk.md#mandate-terms) hold the same limit, they are reconciled to
+compliance's rule, and a difference is routed to compliance.
 
-**Position and eligibility rules stay with compliance,** which monitors them and owns the breach process, cures and any
-extension, as set out in [investment risk](01-investment-risk.md#scope-and-boundaries). The risk function shows each one
-beside its own readings, sets its own early warnings ahead of them, and routes any breach it sees to compliance rather
-than handling it.
+**Position and eligibility rules:** the risk function shows each one beside its own readings, sets its own early
+warnings ahead of them, and routes any breach it sees to compliance.
 
-**Risk-measured limits are monitored by the risk function as its own duty,** because only the risk engine can compute
-them. The risk function detects and verifies a breach, tells compliance and the portfolio manager on the same day, and
-tracks the cure. Compliance keeps the legal reading and the breach report. A breach of a hard limit cannot be accepted
-the way a breach of an internal limit can.
+**Risk-measured limits** are the risk function's own duty, because only the risk engine can compute them. It detects and
+verifies a breach, tells compliance and the portfolio manager on the same day, and tracks the cure.
 
 **Internal limits are soft limits.** They are [governed
 parameters](08-controls.md#materiality-thresholds-as-governed-parameters), owned by the risk function, and they cover
@@ -80,7 +75,7 @@ By default, a risk function sets internal limits on:
 | Value at risk or expected shortfall | Absolute forward-looking risk | [Market risk](../pillars/market-risk.md) |
 | Ex-ante tracking error | A range, so that active risk is neither too high nor too low for the mandate | [Market risk](../pillars/market-risk.md) |
 | Leverage, as gross and net exposure | The scale of positions, and the exposure left after netting and hedging | [Market risk](../pillars/market-risk.md) |
-| Counterparty exposure | Exposure to each firm the portfolio trades with or holds assets through | [Market risk](../pillars/market-risk.md) |
+| Counterparty exposure | Exposure to each firm the portfolio trades with, lends securities to or holds assets through | [Market risk](../pillars/market-risk.md) |
 | Redemption coverage | Unencumbered liquid assets against the stressed calls on cash, at the horizon the dealing terms set | [Liquidity risk](../pillars/liquidity-risk.md) |
 
 Where the governing documents or regulation already set a limit on one of these measures, that limit is a risk-measured
@@ -114,14 +109,11 @@ follows compliance's process.
 | 1 | Detect | The risk engine finds the breach in the daily run |
 | 2 | Verify | The breach is checked against [data breaks](03-risk-data.md#quality-before-computation): is the reading real? |
 | 3 | Classify | Active, caused by a trade or decision, or passive, caused by market moves, flows or corporate actions |
-| 4 | Notify | The portfolio manager and oversight are told, with the facts |
+| 4 | Notify | The portfolio manager and investment oversight are told, with the facts |
 | 5 | Explain | The portfolio manager explains the position, and the explanation is recorded |
 | 6 | Decide | Cure it, accept it for a set period, or escalate it |
 | 7 | Cure | Where the decision is to cure, the reading returns within the limit by a deadline |
 | 8 | Close | The outcome is recorded, with the reason, and the breach is closed |
-
-**Oversight** means investment oversight: the head of investments, or the committee that supervises the portfolio
-managers on the firm's behalf.
 
 **Active and passive breaches differ.** An active breach comes from a choice, so the question is why it was made and
 whether it should stand. A passive breach comes from markets or flows, so the question is whether the position still
@@ -158,13 +150,10 @@ accepted and their expiry dates, the committee's binding decisions and any disse
 mandate is told follows the mandate's reporting terms and compliance's process.
 
 ## Who approves what
-Each approval is recorded, and each one expires.
-
 | Decision | Who approves | Record |
 |---|---|---|
 | Acknowledging a reading beyond an early warning | Risk manager | The reading, the reason it stands and when it will be looked at again |
 | Accepting a breach of an internal limit for a set period | Head of risk | The breach, the reason, the expiry date and any conditions |
-| Requiring a cure the portfolio manager declines | Risk committee, whose decision binds | The decision, the deadline for the cure and any dissent |
 | Changing an internal limit or how it is calibrated | Risk committee | The old and new values, the reason and the date it takes effect |
 | The legal reading of a hard limit, its breach report and any extension | Compliance, under its own process | Routed or reported by the risk function, with the evidence |
 
@@ -196,8 +185,7 @@ The general [controls](08-controls.md) apply in full. Limits add five.
 - **Hard limits are never accepted.** Compliance owns the legal reading and the breach report of every hard limit. The
   risk function routes a breach of a position or eligibility rule, and detects, reports and tracks a breach of a
   risk-measured limit.
-- **Escalation has an end.** A breach the portfolio manager declines to cure goes to the risk committee, whose decision
-  binds, and a dissent reaches the board.
+- **Escalation has an end.** Every path in the escalation table finishes with a body whose decision binds.
 - **Limits are reviewed by their behaviour.** A limit that is never approached, or is breached repeatedly, is reviewed.
 
 Of the measures in [measuring value](09-measuring-value.md), speed and influence matter most here: how soon a breach is

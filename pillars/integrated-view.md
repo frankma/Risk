@@ -27,36 +27,16 @@ it.
 **Why it is needed:** the episodes that do most damage pass through all three pillars. Underperformance prompts
 redemptions, redemptions are met by selling the most liquid assets, and the portfolio that remains is more concentrated
 and more volatile, which makes further underperformance more likely. Each pillar sees its own signal as moderate, so no
-single threshold is breached and no single workflow escalates. Watching every signal for every portfolio every day is
-something a manual process cannot do ([principle
-6](../framework/05-principles.md#6-new-capabilities-beat-faster-old-ones)).
+single threshold is breached and no single workflow escalates.
 
 The rest of this chapter is the detail behind these points.
 
 ## What the view reads
-The view reads each pillar's signals for each portfolio. Every signal carries a state and the date it was computed. The
-states are the ones each pillar chapter assigns to its rules:
-
-- **Exception:** the reading has crossed a limit or another rule's threshold, such as a limit breach, a fired trigger or
-  a significant shortfall.
-- **Watch:** the reading is approaching one: it is above an early warning, is drifting towards a threshold, or is a
-  shortfall that is not yet significant.
-- **Normal:** neither.
-
-The signals, each defined in its pillar chapter's rules:
-
-- **[Market risk](market-risk.md#materiality-and-exceptions):** limit utilisation; change since the previous day;
-  readings against the portfolio's own history, including volatility; issuer or sector concentration; headroom against
-  drawdown tolerance; ex-ante tracking error; risk budget; counterparty exposure.
-- **[Liquidity risk](liquidity-risk.md#materiality-and-exceptions):** redemption coverage; large redemptions; margin and
-  collateral calls; flows against history; investor and distributor concentration; time and cost to liquidate; stale or
-  unpriceable holdings.
-- **[Performance risk](performance-risk.md#materiality-and-exceptions):** relative return over the rolling window;
-  significance of shortfall; ex-post tracking error; realised drawdown; active share; source of return; style
-  consistency; overdue actions.
-
-The view takes these signals as the pillars produce them. If a pillar changes how a signal is computed, the view changes
-with it; the view never computes its own version.
+The view reads every rule in each pillar's table: [market risk](market-risk.md#materiality-and-exceptions), [liquidity
+risk](liquidity-risk.md#materiality-and-exceptions) and [performance
+risk](performance-risk.md#materiality-and-exceptions). Every signal carries its pillar's state (exception, watch or
+normal) and the date it was computed. The view takes the signals as the pillars produce them, and never computes its own
+version.
 
 ## Patterns
 A pattern is a named chain of signals across pillars that, together, describe a known way for a portfolio to get into
@@ -92,10 +72,7 @@ collateral calls; the collateral posted is encumbered and can no longer be sold;
 left to sell what it still can, at stressed prices, which can bring further losses and further calls. It is the case in
 which market risk moves first, and its links follow within days rather than quarters.
 
-Signals do not move together. Performance and flows usually move first, because they respond to outcomes; liquidity and
-market risk move later, because they respond to the selling that follows. A sharp market loss is the exception: there,
-market risk moves first and performance follows. The view gives weight to the early signals for that reason: by the time
-market risk readings rise, the cycle is usually under way.
+The view weights early signals, because by the time market risk readings rise the cycle is usually under way.
 
 ## Combination rules and ranking
 The rules that decide which portfolios rank, and in what order, are [governed
@@ -106,21 +83,17 @@ illustrative kinds of rule, not recommendations;** each risk function sets its o
 |---|---|
 | Pattern match | A portfolio ranks if every signal a named pattern requires is at watch or exception |
 | Breadth | A portfolio ranks if it has signals at watch or exception in at least two pillars |
-| Ordering | Pattern matches first, then more exceptions, then more pillars at watch, then longer persistence |
+| Ordering | Pattern matches first, then more exceptions, then more pillars at watch, then signals held for longer |
 | Grouping | Signals that share one underlying driver count once |
 
 A pattern may also show signals as context that it does not require, such as the steady return in hidden illiquidity;
 context signals can be normal. A portfolio with an exception in one pillar and nothing elsewhere does not rank in the
 view. Its exception is handled by that pillar's workflow, as it would be anyway; the view is for combinations.
 
-**Avoiding double counting.** One underlying driver can appear in two pillars. Concentration in a few holdings shows as
-issuer concentration in market risk, and, because those holdings take longer to sell, as a rising time to liquidate in
-liquidity risk. Counted twice, it would make a portfolio look as if two pillars were elevated when there is one driver.
-The view groups signals that share a driver and counts the group once for breadth. The groups are part of the governed
-rules: concentration in market risk and the time to sell the same holdings form one group, as do margin and collateral
-calls and the fall in coverage they cause, while investor concentration, which concerns who owns the portfolio rather
-than what it holds, is a separate driver. The pattern *concentrated and hard to sell* still names the combination, so
-that it is seen, but it does not count as two pillars.
+**Avoiding double counting.** One driver can show in two pillars, as issuer concentration and a rising time to sell the
+same holdings, or as margin calls and the fall in coverage they cause. Signals that share a driver are grouped and count
+once for breadth; investor concentration is a separate driver. The groups are governed rules, and a pattern such as
+*concentrated and hard to sell* still names the combination.
 
 ## The firm's footprint
 Portfolios do not net, so the firm's footprint is read across them rather than ranked within them. The pillars compute
@@ -174,13 +147,13 @@ The general [controls](../framework/08-controls.md) apply in full. The view adds
 - **Missing data is not health.** A portfolio with missing signals from a pillar is shown as partly assessed, never as
   healthy.
 - **The view never overrides a pillar.** A pillar's exception still goes through that pillar's workflow, whether or not
-  the view ranks the portfolio.
+  the view ranks the portfolio, and actions the view raises route back to the pillar that owns them. The view holds no
+  actions of its own.
 - **Pattern and grouping rules are governed.** Adding, removing or changing a pattern or a driver group is recorded like
   any other threshold change.
 
-The measure that matters most for the view is **lead time**: how much earlier the view ranked a portfolio than the first
-escalation from any single pillar. Lead time is measured from replays of past episodes and from live cases. The other
-dimensions come from [measuring value](../framework/09-measuring-value.md).
+Of the measures in [measuring value](../framework/09-measuring-value.md), **lead time** matters most here. It is
+measured from replays of past episodes and from live cases.
 
 | Dimension | Measure for the view |
 |---|---|
@@ -190,16 +163,10 @@ dimensions come from [measuring value](../framework/09-measuring-value.md).
 | Quality | Combinations first seen through a pillar escalation rather than through the view |
 | Influence | Ranked portfolios discussed by the committee, and actions taken |
 
-## Ownership and connections
+## Ownership
 The risk function owns the view: its patterns, its grouping of drivers, its ranking rules and its footprint thresholds.
-Risk managers judge the ranked portfolios as they appear and add them to the watch list, which the risk function owns,
-or escalate them. The risk committee sees the top-ranked portfolios, each with its account and the signals behind it,
-and the firm's footprint, and decides what the firm should do.
-
-Actions route back to the workflows that own them. A question about liquidity goes to the [liquidity
-risk](liquidity-risk.md) workflows, a challenge to the portfolio manager goes into the next review in [performance
-risk](performance-risk.md), and a concentration issue is followed in [market risk](market-risk.md). The view does not
-hold actions of its own; it shows where the pillars' signals combine, and the pillars do the work.
+The risk committee sees the top-ranked portfolios, each with its account and the signals behind it, and the firm's
+footprint, and decides what the firm should do.
 
 ## Sources
 - Chen, Q., Goldstein, I. and Jiang, W. (2010). Payoff Complementarities and Financial Fragility: Evidence from Mutual

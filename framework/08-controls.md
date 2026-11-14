@@ -28,14 +28,13 @@ traced to the computed facts behind it: the facts from the daily run that the te
 of any analysis the AI ran through the risk engine, each recorded as a run. Numbers written as words, such as "three
 months", are extracted and traced in the same way as numerals.
 
-To fabricate a number is to state it with no computation behind it. A number in generated text is grounded if it is one
-of the computed facts, the result of a recorded analysis run, or the result of a simple operation on them that the AI
-states and the check can recompute: a sum, a difference, a percentage change, a ratio or a simple multiple, including
-words such as "doubled" or "a third". A number the check cannot recompute from the facts is rejected like any unmatched
-number. Figures read from documents, such as the limits in a portfolio's mandate terms, follow the same rule: each must
-appear, as numerals or as words, in the source passage it is linked to, and the risk manager confirms it before it is
-used. A figure from an exploratory query is traced like any other and keeps its label: the check rejects it in any text
-bound for an output, as set out in [working with AI](06-working-with-ai.md#where-a-figure-may-come-from).
+A number in generated text is grounded if it is one of the computed facts, the result of a recorded analysis run, or the
+result of a simple operation on them that the AI states and the check can recompute: a sum, a difference, a percentage
+change, a ratio or a simple multiple, including words such as "doubled" or "a third". A number the check cannot
+recompute from the facts is rejected like any unmatched number. Figures read from documents, such as the limits in a
+portfolio's mandate terms, follow the same rule: each must appear, as numerals or as words, in the source passage it is
+linked to, and the risk manager confirms it before it is used. A figure from an exploratory query is rejected in any
+text bound for an output.
 
 **Derivations are stated, not searched for.** For each derived number the AI states which facts it used and which
 operation, and the check verifies that derivation only, one operation deep. It does not search the facts for any
@@ -79,7 +78,7 @@ are approving. A sign-off is a statement about content, not a click to release a
 | Sign-off | Who | What they are approving |
 |---|---|---|
 | Exception review | Risk manager | Which items are material, and that each explanation is fair |
-| Escalation | Head of risk or delegate | That escalated items, and recommended actions, are right |
+| Escalation | Head of risk or delegate | That what is escalated, and any action the risk manager recommends, is right |
 | Release | Owner of the output | That the output may go to its audience |
 
 The risk manager sees the computed facts alongside the generated text, so that the review is of the content and not of
@@ -124,14 +123,12 @@ as a result of the run.
 ## Fallback
 Each workflow defines what happens when a component fails.
 
-- **Data pipeline failure.** The workflow does not run on stale or partial data without saying so. It either waits, or
-  runs with the affected portfolios clearly marked, according to a rule set in advance. The checks that find the failure
-  are set out in [risk data](03-risk-data.md#quality-before-computation).
+- **Data pipeline failure.** The run follows the rule set in advance in [risk
+  data](03-risk-data.md#quality-before-computation): it waits, or runs with the affected portfolios marked.
 - **AI backend failure.** The workflow falls back to a deterministic template that states the computed facts in fixed
   sentences. The output is plainer, but complete and correct, and the workflow's deadlines still hold.
 
-Because the template backend produces correct output without an AI service, the workflow can always run. The same
-template covers a draft that repeatedly fails the grounding check.
+Because the template backend produces correct output without an AI service, the workflow can always run.
 
 ## Data handling
 A risk function sends data to an AI service only under rules set before the workflow is built. The data the risk engine
@@ -139,8 +136,8 @@ itself reads, and the checks it passes, are set out in [risk data](03-risk-data.
 
 - **What may be sent.** The workflow defines which data may go to which service. Computed facts about a portfolio are
   often enough; raw positions, investor details and personal data are sent only where the service is approved for them.
-- **Confidentiality.** Investor and portfolio information is confidential. The terms of any external service should
-  prevent the data being retained or used to train models, and this should be verified, not assumed.
+- **Retention.** The terms of any external service prevent the data being retained or used to train models, and this is
+  verified, not assumed.
 - **Vendor and third-party risk.** An external AI service is a third party and is assessed as one: its security, its
   resilience, where it processes data, and what happens if it changes or withdraws its service.
 

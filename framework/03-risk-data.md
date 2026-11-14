@@ -43,17 +43,14 @@ The risk engine reads the same domains for every portfolio, whatever its vehicle
 | Mandate terms | The objective, benchmark, style, limits and dealing terms, confirmed by the risk manager, with hard limits reconciled to compliance's rules | Every pillar |
 | Records of decisions | Tilts and timing calls as recorded, and trades with their tags | Performance risk, alpha and beta |
 
-A portfolio that invests in other funds is read through to their holdings. The holdings of an underlying fund often
-arrive late and less often than the portfolio's own, so they carry their as-of date and are covered by the proxy policy
-below.
+A portfolio that invests in other funds is read through to their holdings, which carry their as-of date.
 
 Personal data about investors is kept to what the measures need: shares and flows, not identities. The rules on what may
 be sent to an AI service are set out under [data handling](08-controls.md#data-handling).
 
 ## From source to computed figure
-Each domain has one **golden source**: the system or provider whose record the firm treats as correct. A domain may be
-fed by several systems, but the risk engine takes each item from its golden source and nowhere else, so two outputs
-never disagree because they read different copies of the same number.
+The risk engine takes each item from its domain's **golden source** and nowhere else, so two outputs never disagree
+because they read different copies of the same number.
 
 The risk engine keeps what it reads in a **risk data store**, separate from the systems that produce the data. Every run
 follows the same order.
@@ -70,9 +67,7 @@ The order matters. Nothing is computed from data that has not been checked, and 
 snapshot it came from, so that it can be traced back to the records and sources behind it.
 
 ## Versioned as known
-Data is corrected after the fact: a price is revised, a trade is booked late, a classification changes. A risk function
-must be able to reproduce what it showed on a given day, so each record in the risk data store carries two dates: the
-date it describes, and the date it became known.
+Each record in the risk data store carries two dates: the date it describes and the date it became known.
 
 - **Reproducing a past output** uses the data as it was known on the day the output was produced, so the figure that was
   shown, and acted on, can be shown again exactly.
@@ -86,13 +81,13 @@ output used. The same applies to thresholds and other governed parameters, which
 Every domain passes checks in five dimensions before the snapshot is fixed. **The examples below are illustrative;**
 each risk function sets its own checks and tolerances.
 
-| Dimension | The question | Example checks (illustrative) |
-|---|---|---|
-| Completeness | Is everything there? | Every holding priced and classified; every portfolio's file arrived |
-| Accuracy | Is it right? | Positions reconcile to the portfolio's accounting value within a tolerance; price jumps outside a security's usual range |
-| Timeliness | Is it current? | Files arrived by their deadline; prices that have not changed for a set number of days |
-| Consistency | Do the sources agree? | The same security described the same way in every domain; benchmark weights summing to the whole |
-| Validity | Is it possible? | Values inside their allowed ranges, such as weights between limits and dates in order |
+| Dimension | Example checks (illustrative) |
+|---|---|
+| Completeness | Every holding priced and classified; every portfolio's file arrived |
+| Accuracy | Positions reconcile to the portfolio's accounting value within a tolerance; price jumps outside a security's usual range |
+| Timeliness | Files arrived by their deadline; prices that have not changed for a set number of days |
+| Consistency | The same security described the same way in every domain; benchmark weights summing to the whole |
+| Validity | Values inside their allowed ranges, such as weights between limits and dates in order |
 
 A failed check is a **data break**. Each break is recorded with the portfolios and measures it affects, and the run then
 follows the rule set in advance under [fallback](08-controls.md#fallback): it waits for the correction, or it runs with
@@ -100,13 +95,12 @@ the affected portfolios marked. A portfolio whose data has a break it cannot run
 clean.
 
 Stale prices are both a data check and a measure of valuation risk. The check finds them; [liquidity
-risk](../pillars/liquidity-risk.md#workflows-in-this-pillar) flags the holdings to the owner of pricing and shows which
-measures rest on them.
+risk](../pillars/liquidity-risk.md#materiality-and-exceptions) flags the holdings to the owner of pricing and shows
+which measures rest on them.
 
 ## Proxies
-Some data is missing for good reason: a security too new to have a history, a derivative with no direct measure of its
-exposure, an underlying fund whose holdings have not arrived. A **proxy** fills the gap with something close enough to
-compute from, such as the sector's beta for a new security or the last known holdings of an underlying fund.
+A **proxy** fills a gap with something close enough to compute from, such as a sector's beta for a new security or the
+last known holdings of an underlying fund.
 
 The risk function sets one proxy policy for all domains.
 
@@ -124,11 +118,7 @@ Each pillar chooses the proxies for its own measures within this policy, in its 
 The risk function owns **fitness for use**: the checks, their tolerances, the proxy policy and the decision whether a
 run can go ahead. The owner of each source owns **correcting** it. The risk function does not patch data in its own
 store; where it cannot wait for a correction, it runs with the affected portfolios marked or uses a proxy under the
-policy.
-
-This follows the same pattern as the [boundaries](01-investment-risk.md#scope-and-boundaries) of investment risk: the
-risk function measures and flags, and routes what it finds to the owner who can fix it. A break is routed with the
-evidence, and tracked until it is closed.
+policy. A break is routed to the source's owner with the evidence and tracked until it is closed.
 
 ## What the AI drafts
 The AI drafts each notice from the facts the risk engine recorded about the break, and from nothing else. Every number
@@ -149,13 +139,8 @@ The AI does not decide whether a break is real; the risk manager does. **The fun
 > position file.
 
 ## Controls and measures specific to risk data
-The general [controls](08-controls.md) apply in full. Risk data adds four.
-
-- **Nothing is computed from unchecked data.** Every measure points to a checked snapshot.
-- **A run never hides a break.** Every output shows the breaks and proxies that touch it, and a portfolio that could not
-  be assessed is shown as not assessed.
-- **Corrections are made at source.** The risk function does not patch data in its own store.
-- **The past can be reproduced.** Every output can be recomputed from the data as it was known when it was produced.
+The rules above (a checked snapshot, breaks shown, corrections at source, a reproducible past) are this chapter's
+controls; the general [controls](08-controls.md) apply in full.
 
 Of the measures in [measuring value](09-measuring-value.md), speed and quality matter most here: how soon the day's
 measures can be trusted, and whether a break reaches an output unseen.

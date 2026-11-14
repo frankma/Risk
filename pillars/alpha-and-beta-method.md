@@ -23,9 +23,9 @@ This page is a companion to [sources of return](../framework/02-sources-of-retur
 risk](performance-risk.md). The rest of it is the detail behind these points.
 
 ## Scope and basis
-The split runs on publicly traded holdings, on the asset side and on gross returns: after trading and financing costs,
-before fees. Fees and investor flows belong to the liability side. Holdings that are not publicly traded have no index
-to replicate them, so they sit on one line that is not split, and nothing unmeasured is called alpha.
+The split runs on publicly traded holdings and on gross returns: after trading and financing costs, before fees.
+Holdings that are not publicly traded have no index to replicate them, so they sit on one line that is not split, and
+nothing unmeasured is called alpha.
 
 A bridge from gross to net return shows fees and flow effects, with the fee beside alpha to show whether alpha covers
 it. Performance risk's outcome tests stay on what the client receives.
@@ -40,46 +40,59 @@ an investable stand-in or cash serves as the benchmark portfolio, and the gap is
 | Top-down portfolio | Investable ETFs, futures and cash, carrying the real portfolio's exposure to every declared factor on each day | Active beta, after the cost of holding it: its return less the benchmark portfolio's |
 | Real portfolio | The portfolio's actual holdings | Alpha: its return less the top-down portfolio's |
 
-The returns chain. The real portfolio's gross return is the benchmark portfolio's return, plus the step to the top-down
-portfolio, plus the step to the real portfolio. The top-down and real portfolios can be held, and the benchmark
-portfolio is the promise they are measured against, so no line is what a model leaves over.
+The real portfolio's gross return is the benchmark portfolio's return plus the two steps, so no line is what a model
+leaves over.
 
 The top-down portfolio follows exposure as held, not as called. If it held only the calls on record, the beta that
 security picks carry would stay in the last step and be counted as alpha. Because it holds all of the real portfolio's
 exposure, the last step is selection alone, and the record divides the step before it.
 
-## The four beta lines
+## The beta lines
 The [sources of return](../framework/02-sources-of-return.md#who-chose-each-part) chapter groups top-down return by
 whose call it was. The method keeps the manager's branch as two lines, because timing needs its own skill test. Policy
-beta is the benchmark portfolio's return. The other three lines, with the cost of holding beta set out below, divide the
-step from the benchmark portfolio to the top-down portfolio.
+beta is the benchmark portfolio's return, and the other lines divide the step from the benchmark portfolio to the
+top-down portfolio.
 
 | Line | What it is | Who decides |
 |---|---|---|
-| Policy beta | The return of the benchmark or strategic allocation in the governing documents | Whoever set the mandate: the client, an asset owner, a chief investment officer, or the manager at a fund's launch |
+| Policy beta | The return of the benchmark or strategic allocation in the governing documents | [Whoever set the mandate](../framework/02-sources-of-return.md#who-chose-each-part) |
 | Tilts | Standing positions against that allocation, recorded when taken | The manager |
 | Timing | The return from recorded changes in exposure over time | The manager |
 | Unintended beta | Any exposure with no record that anyone chose it, including price drift | Nobody |
+| Cost of holding beta | The return of the top-down portfolio's instruments less the return of the indices they track | Nobody |
 
-**The cost of holding beta** has a line of its own. ETFs charge fees and futures carry roll and financing costs, while
-the indices behind the benchmark portfolio cost nothing, so a top-down portfolio that copied the benchmark exactly would
-still trail it. That shortfall is nobody's call. It is measured as the return of the top-down portfolio's instruments
-less the return of the indices they track, and it is shown beside the fee, because it is what the replicable part of the
-return costs to buy.
+**The cost of holding beta** exists because ETFs charge fees and futures carry roll and financing costs, while the
+indices behind the benchmark portfolio cost nothing, so a top-down portfolio that copied the benchmark exactly would
+still trail it. It is shown beside the fee, because it is what the replicable part of the return costs to buy.
 
 ## Building the top-down portfolio
 The top-down portfolio is built in two steps, each day, from the real portfolio's holdings.
 
 **Bucket weights.** It first takes the real portfolio's own weight in each asset class and sector, held through an ETF
-or a future on the index of each. [Sources of return](../framework/02-sources-of-return.md#how-does-one-holding-split)
-sets this out with a worked example. The weights of the real portfolio less this first step form the long-short book.
+or a future on the index of each. The weights of the real portfolio less this first step form the long-short book.
 The book counts a security the portfolio does not hold as a short, whether or not anyone decided against it. A holding
 outside the index has no weight in the top-down portfolio, so its whole position enters the book, and the next step
 removes its exposures. Because this step uses the real portfolio's own sector weights, the book's return equals the
 selection and interaction effects of an attribution. For bonds, the buckets are maturity, rating and sector, and the
 book holds the issues chosen within them.
 
-**The book's exposures.** Zero net weight is not zero exposure. In the worked example, X has a market beta of 1.3 and Y
+**A worked example.** Take one sector, where the benchmark portfolio holds 16% of net assets and the real portfolio
+20%, a tilt on record. The sector index holds X at 15%, Y at 10% and the rest at 75%. The top-down portfolio holds 20%
+in an ETF on the sector index, shown here by what is inside it. (The figures are illustrative.)
+
+| Security | Benchmark portfolio | Top-down portfolio | Real portfolio | Real less top-down | Return |
+|---|---|---|---|---|---|
+| X | 2.4% | 3.0% | 5.0% | +2.0% | 10% |
+| Y | 1.6% | 2.0% | 0.0% | -2.0% | 2% |
+| Rest of sector | 12.0% | 15.0% | 15.0% | 0.0% | 5% |
+| **Total** | **16.0%** | **20.0%** | **20.0%** | **0.0%** | |
+| **Return from the sector** | **0.87%** | **1.09%** | **1.25%** | **0.16%** | |
+
+Of the real portfolio's 5.0% in X, 2.4% is the benchmark's, 0.6% is the tilt's and 2.0% is the manager's selection. The
+real portfolio less the top-down portfolio sums to zero within the sector: a long-short book, long what the manager
+prefers and short what is preferred less. Every portfolio has this book, including one that never shorts a security.
+
+**The book's exposures.** Zero net weight is not zero exposure. In the example above, X has a market beta of 1.3 and Y
 a market beta of 0.8, so the book has a net market beta of 0.01 (2.0% × 1.3 less 2.0% × 0.8). The top-down portfolio
 takes that exposure on as index futures worth 1% of net assets. With the market up 5%, the futures earn 0.05%, which
 leaves the book and joins beta. No call is on record for it, so it is unintended beta. (The figures are illustrative,
@@ -105,9 +118,9 @@ The book's return divides into exposure times factor return, which the top-down 
 which is alpha. This joins the two attribution splits in the [philosophy](../framework/00-philosophy.md#2-drill-in).
 
 **Factor returns** are the returns of those instruments. **Exposure** is computed once, in [market risk's daily
-run](market-risk.md#workflows-in-this-pillar), from daily holdings: a direct measure where one exists, such as duration,
-and an estimated beta otherwise. Measuring it as often as calls are made keeps timing in beta. The same split applies to
-risk, using the same instruments: factor risk is beta and stock-specific risk is alpha.
+run](market-risk.md#factors), from daily holdings; measuring it as often as calls are made keeps timing
+in beta. The same split applies to risk, using the same instruments: factor risk is beta and stock-specific risk is
+alpha.
 
 The top-down portfolio is rebuilt against each day's holdings. Exposure is each day's weights times betas estimated over
 a long window, so the last step is neutral to estimated exposure, not to a true exposure no one can observe. Error in
@@ -117,20 +130,19 @@ the estimates is one of the limits set out below, and the regression test is wha
 The risk engine weights the exposures by each day's holdings, builds the top-down portfolio from them and compares its
 positions with the benchmark portfolio, the confirmed mandate terms and the tilts and timing calls on record; anything
 without a record, including price drift, is unintended beta. The risk manager's judgement on it is noted beside the line
-and does not change the line, and a tilt the manager confirms counts once it is recorded, and is then accountable, not
-exempt: it is read against the risk budget like any other bet. The book's return is shown separately for names held and
+and does not change the line. The book's return is shown separately for names held and
 names not held.
 
-Trading cost is the gap between the portfolio's actual return and the return of its start-of-day holdings. A booked book
-charges it by trade tag. A derived book charges any net change in a bucket's weight to beta and the rest to alpha, which
-is approximate. The cost of trades forced by redemptions or other calls on cash stays where it lands, because those
-trades cannot be reliably identified.
+The **trading effect** is the gap between the portfolio's actual return and the return of its start-of-day holdings:
+trading cost, and the gains and losses from trading during the day. A booked book charges it by trade tag. A derived
+book charges any net change in a bucket's weight to beta and the rest to alpha, which is approximate. The cost of trades
+forced by redemptions or other calls on cash stays where it lands, because those trades cannot be reliably identified.
 
 A large share of gross excess return from unintended beta, over several periods, fires the [source-of-return
 rule](performance-risk.md#materiality-and-exceptions).
 
 ## Booked or derived
-Two routes apply the same split, with one stated exception.
+Two routes apply the same split; on the booked route, hedge error stays in alpha.
 
 | | Booked | Derived |
 |---|---|---|
