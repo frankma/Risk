@@ -49,10 +49,8 @@ draw on what it computes.
 
 - **Periodic risk report.** Largely a summary of the month's exceptions and their resolution, as in the [redesign
   method's worked example](../framework/07-redesign-method.md#worked-example-a-monthly-risk-and-performance-report).
-- **Stress and scenario testing.** The AI drafts candidate scenarios from current conditions and names a historical
-  analogue, but never states a shock size. The risk manager decides which to adopt and approves the shocks, and the risk
-  engine runs every scenario against every portfolio. [Stress and reverse
-  stress](market-risk.md#stress-and-reverse-stress) has the detail.
+- **Stress and scenario testing.** Runs every scenario in the library against every portfolio, daily; how the library is
+  built and governed is under [stress and reverse stress](market-risk.md#stress-and-reverse-stress).
 - **Pre-trade what-ifs.** The risk engine runs the daily calculations on a proposed trade and computes what it adds to
   VaR, concentration, tracking error and budget use. The portfolio manager decides.
 - **Counterparty exposure monitoring.** Runs inside the daily process, with its own limits. Approving which
@@ -63,24 +61,12 @@ draw on what it computes.
 - **The firm's footprint.** The daily run totals holdings across portfolios by issuer, counterparty and factor for the
   [firm's footprint](integrated-view.md#the-firms-footprint). These totals do not net.
 
-**Ex-ante tracking error** looks forward, so it belongs to this pillar. Its realised counterpart, ex-post tracking
-error, is measured in [performance risk](performance-risk.md), and comparing the two tests this pillar's measures.
-
 **The risk budget review** allots ex-ante tracking error to the portfolio's bets and reads what each bet uses against
 the return it has earned, which performance risk measures. The budget carries no limit of its own: the daily check is of
 ex-ante tracking error against its range. Each month, a bet that uses a large share of the budget is tested on its
 cumulative return against the risk it has used. A bet whose return is
 [significantly](performance-risk.md#windows-and-significance) below zero is challenged: the portfolio manager resizes
 it, cuts it or explains why it stays. A bet that has only earned nothing for several periods is a watch item.
-
-**Exposures are computed once,** for this pillar and for the [alpha and beta
-method](alpha-and-beta-method.md#computing-the-split). A direct measure is used where one exists: duration for rates,
-duration times spread for credit and the currency weight for currency, each scaled against its basket, so that a bond
-with a duration of 6 against a basket of 4 has an exposure of 1.5. Equity market and style exposures are betas,
-estimated together against all the baskets so that overlapping baskets do not count the same return twice, over a long
-window with gradual decay ([belief 7](../framework/00-philosophy.md#beliefs)). A security with little history uses a
-proxy under the [proxy policy](../framework/03-risk-data.md#proxies), such as its sector's beta. (The figures are
-illustrative.)
 
 ## Materiality and exceptions
 The queue comes from a small number of kinds of rule, each owned and versioned as a [governed
@@ -102,21 +88,16 @@ illustrative and are not recommendations;** each risk function sets its own.
 | Counterparty exposure | Exposure to one counterparty, net of collateral and with the add-on, above a share of its limit | Concentrated counterparty risk | Watch item; exception on a breach |
 | Risk budget | A bet using a large share of the budget whose cumulative return is significantly below zero for the risk it used | Risk that has not earned its place | Exception; a run of periods without return is a watch item |
 
-**Hard limits.** A breach of a position or eligibility rule, such as a limit on one issuer's weight, is owned by
-compliance: it is shown beside the queue and routed to compliance, while the risk function's own early warning below
-that limit stays in the queue. A breach of a risk-measured hard limit, such as a regulatory limit on leverage, is the
-risk function's to monitor: it enters the queue as an exception and is reported to compliance the same day. [Limits and
-escalation](../framework/04-limits-and-escalation.md) sets out which limits are internal and how a breach is handled.
+**Hard limits.** A breach of a position or eligibility rule is routed to compliance, while the risk function's own early
+warning below it stays in the queue. A breach of a risk-measured hard limit enters the queue as an exception and is
+reported to compliance the same day, as [limits and escalation](../framework/04-limits-and-escalation.md) sets out.
 
-**Ranking.** Exceptions rank before watch items: breaches first, then the other exceptions, then early warnings, then
-persistence. Within a tier, items are ordered by size relative to the threshold, and a portfolio with several items
-ranks above a portfolio with one. The ranking rule is itself a governed parameter, because it decides what the risk
-manager reads first.
+**Ranking.** Breaches rank first, then the other exceptions, then early warnings, then persistence. Within a tier, items
+are ordered by size relative to the threshold, and a portfolio with several items ranks above a portfolio with one. The
+ranking rule is itself a governed parameter, because it decides what the risk manager reads first.
 
 **Shared with performance risk.** Ex-ante tracking error and risk budget exceptions also go into the next challenge pack
-in [performance risk](performance-risk.md), where the portfolio manager answers them. Each measure is computed once and
-owned by one pillar: realised drawdown is computed in performance risk, and this pillar reads only the headroom it
-leaves.
+in [performance risk](performance-risk.md), where the portfolio manager answers them.
 
 ## What the AI drafts
 The AI drafts from the facts that the risk engine produced and from nothing else. Every number in the draft appears in
@@ -160,10 +141,19 @@ move rather than when an old day drops out; and a separate value at risk on a fi
 
 ### Factors
 The risk function chooses the factor model behind ex-ante tracking error and the risk decomposition, and the risk engine
-runs it. Its factors are the [declared factor list](alpha-and-beta-method.md) of the alpha and beta method, or map to it
-one to one, and carry the same generator tags. Risk by factor and return by factor then line up, so the risk budget
-review can set what each bet uses beside what it earns, and one set of factors explains any period's return and change
-in risk ([connection](../framework/00-philosophy.md#3-connection)).
+runs it. Its factors are the [declared factor list](alpha-and-beta-method.md) of the alpha and beta method, or map to
+it, many to one where needed, and carry the same generator tags. Risk by factor and return by factor then line up, so
+the risk budget review can set what each bet uses beside what it earns, and one set of factors explains any period's
+return and change in risk ([connection](../framework/00-philosophy.md#3-connection)).
+
+**Exposures are computed once** in the daily run, for this pillar and for the [alpha and beta
+method](alpha-and-beta-method.md#computing-the-split). A direct measure is used where one exists: duration for rates,
+duration times spread for credit and the currency weight for currency, each scaled against its basket, so that a bond
+with a duration of 6 against a basket of 4 has an exposure of 1.5. Equity market and style exposures are betas,
+estimated together against all the baskets so that overlapping baskets do not count the same return twice, over a long
+window with gradual decay ([belief 7](../framework/00-philosophy.md#beliefs)). A security with little history uses a
+proxy under the [proxy policy](../framework/03-risk-data.md#proxies), such as its sector's beta. (The figures are
+illustrative.)
 
 ### Backtesting
 A backtest is judged against what the chosen design implies, stated before the test.
@@ -193,7 +183,7 @@ usual range.
 - **Reverse stress** works back from the loss that would break the mandate: the risk engine searches for the smallest
   combination of shocks that would cause it, and the risk manager judges how plausible that combination is.
 
-### Credit: spreads, default and migration
+### Credit: default and migration
 - **Default.** **Jump to default** is the position times one minus the expected recovery rate, which is a governed
   parameter. It is read as a concentration measure, with an early warning, because one default in a concentrated or
   high-yield portfolio can cost far more than spread volatility suggests.
@@ -224,6 +214,7 @@ borrowers of lent securities, net of the collateral they have posted. The intern
 | Estimated betas | Estimation noise; short histories | Comparison with a regression on portfolio returns |
 | Jump to default | The recovery rate assumed | Comparison with recoveries in past defaults |
 | Stress tests | Scenarios nobody thought of | Review of the library against current conditions |
+| Scenario fill-in | Correlations shift in stress, so factors filled in from past co-movement can be wrong | Comparison with co-movement in past stressed periods |
 | All measures | Thinly traded or stale-priced holdings | Flags from [liquidity risk](liquidity-risk.md) |
 | AI explanations | Weight on the wrong driver, even when every number is correct | How often and how much risk managers edit the drafts; a sample reviewed against the full decomposition |
 

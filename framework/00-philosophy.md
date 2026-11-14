@@ -1,14 +1,14 @@
 # Investment risk philosophy
 
 ## In short
-**The purpose:** investment risk management shows whether every portfolio takes the risks its mandate intends, in the
-size it can bear, and is paid for them, and challenges it where it does not.
+**Why a risk function exists:** an asset manager needs one for two reasons. As a **check and balance**, it gives the
+firm's governance and its clients an independent view of whether every portfolio takes the risks its mandate intends, in
+the size it can bear, and challenges it where it does not. In **serving the investment process**, it brings the
+discipline of uncertainty to investment decisions: what could happen, what each position adds and whether the risk is
+paid for.
 
 **The product is sight:** out of millions of numbers (hundreds of positions, thousands of risk factors, millions of
 possible futures), the few worth questioning and acting on.
-
-**Whose risk it is:** the capital at risk is the clients', not the firm's. Risk is judged against what each client was
-promised, and the firm's franchise follows from keeping those promises.
 
 **What follows from this:** eight beliefs that decide what the rules do not, three decisions the function serves
 (construct, oversee, assess), and three dimensions that every piece of risk work provides (condensation, drill-in,
@@ -16,19 +16,32 @@ connection). None depends on a particular model; any model a risk function uses 
 
 The rest of this chapter is the detail behind these points.
 
+## Why a risk function exists
+- **Check and balance.** An independent view, for the firm's governance and its clients, of whether every portfolio
+  takes the risks its mandate intends, in the size it can bear, with challenge where it does not, escalated where it
+  stays unresolved.
+- **Serving the investment process.** The discipline of uncertainty brought to investment decisions: what could happen,
+  what each position adds and whether the risk is paid for, before and after the trade. It comes from understanding the
+  strategy well enough to say "yes, and size it like this", not only "no".
+
+Both rest on the same measures. Oversight escalates, service informs, and the portfolio manager decides what to hold.
+Independence is what makes the service credible. The roles meet in three decisions:
+
+| | Decision | Role | What risk provides |
+|---|---|---|---|
+| Before | **Construct** | Serving the investment process | What-ifs and marginal risk inside the investment process, before the trade: what this position adds, and what it crowds out of the budget |
+| During | **Oversee** | Check and balance | Risk against budgets and limits, monitored daily, with escalation to the head of risk and the risk committee |
+| After | **Assess** | Serving the investment process | Attribution that splits return by source, beta included; significance over several periods as evidence of skill rather than luck; and return per unit of risk by bet and by manager |
+
 ## Beliefs
-Each is a position a reasonable firm could reject. Together they decide what the rules do not. (The figures are
-illustrative.)
+Each is a position a reasonable firm could reject. Together they decide what the rules do not.
 
 1. **The mandate defines the risk.** Appetite belongs to the client, expressed as a benchmark, a tracking error budget,
-   guidelines and liquidity terms, not a firm-wide number. Risk is judged against the promise: losing 20% when the
-   benchmark loses 22% can be success.
+   guidelines and liquidity terms, not a firm-wide number. The capital at risk is the clients', not the firm's.
 2. **Intended risk is the product; unintended risk is the hazard.** Clients pay for the bets the investment team means
-   to take. The first job is to find the ones nobody chose: a value tilt in a growth portfolio, a rates bet in a
-   credit portfolio, a crowded factor riding along with stock picks.
-3. **Risk must earn its place.** Risk and return are two sides of one coin. Every unit of active risk should be paid for
-   by expected return. The portfolio manager decides what to hold; where return does not justify the risk, the risk
-   function challenges it and escalates what stays unresolved.
+   to take. The first job is to find the ones nobody chose: a value tilt in a growth portfolio, a rates bet in a credit
+   portfolio, a crowded factor riding along with stock picks.
+3. **Risk must earn its place.** Every unit of active risk should be paid for by expected return.
 4. **The tail and the path decide outcomes.** Mandates end on drawdowns and stress, not on average days. Positions are
    sized so the strategy survives the paths that end mandates, not only the average path.
 5. **Liquidity is part of the promise.** A fund that offers daily dealing on assets that take weeks to sell has made a
@@ -42,22 +55,9 @@ illustrative.)
    assumptions bind and which way they err, and covers the rest with stress and reverse stress: what would break this
    mandate?
 
-## Purpose: transparency for three decisions
-Sight serves three decisions:
-
-| | Decision | What risk provides |
-|---|---|---|
-| Before | **Construct** | What-ifs and marginal risk inside the investment process, before the trade: what this position adds, and what it crowds out of the budget |
-| During | **Oversee** | Risk against budgets and limits, monitored daily, with escalation to the head of risk and the risk committee |
-| After | **Assess** | Attribution that splits return by source, beta included; significance over several periods as evidence of skill rather than luck; and return per unit of risk by bet and by manager |
-
-Risk is independent of the investment teams but works inside their process. Challenge comes from understanding the
-strategy well enough to say "yes, and size it like this", not only "no".
-
-## Practice: transparency in three dimensions
-The three dimensions describe what every piece of risk work must provide. They cut across the [three
-pillars](01-investment-risk.md#the-three-pillars), which organise the recurring work: market, liquidity and performance
-risk each condense, drill in and connect.
+## What every piece of risk work provides
+Every piece of risk work provides three things, in every pillar. All of it assumes the basics: data checked before use,
+models tested against outcomes, results reproducible, as [risk data](03-risk-data.md) sets out.
 
 | | Dimension | The question it answers |
 |---|---|---|
@@ -65,15 +65,9 @@ risk each condense, drill in and connect.
 | 2 | **Drill-in** (decompose) | Where do risk and return come from, and were they intended? |
 | 3 | **Connection** (over time) | Is the risk we take paid for by the return we earn? |
 
-All of it assumes the basics: data checked before use, models tested against outcomes, results reproducible. [Risk
-data](03-risk-data.md) sets out how the first and the last are made true.
-
 ### 1. Condensation
-**Millions of numbers become a few that people can act on, without losing what matters.** The summaries come in three
-families, and a portfolio needs all three: **risk** (what it could do, with probability and dependence folded in,
-keeping the tail, joint extremes and nonlinearity, and the worst it has already done), **exposure** (what it is
-sensitive to, factor by factor) and **liquidity** (what it could raise, how fast and at what cost, against what
-investors could take out).
+**Millions of numbers become a few that people can act on, without losing what matters.** A portfolio needs summaries in
+three families: risk, exposure and liquidity.
 
 | Measure | Family |
 |---|---|
@@ -88,12 +82,11 @@ investors could take out).
 risk moves, and any other movement stays within a stated tolerance.
 
 ### 2. Drill-in
-**Any number opens on demand, the pieces add up, and each piece has a decision-maker.**
-- **Risk factor decomposition.** Tracking error split into factors (market, style, sector, country, currency, rates,
-  spreads) and stock-specific risk. The shares sum to the whole: for instance, 55% sector bets, 25% currency, 20% stock
-  selection (illustrative figures). A large share no one intended is belief 2 at work.
-- **Performance attribution.** Active return split two ways: by decision, into allocation and selection, and by factor,
-  into exposure × factor return plus the specific return.
+**Any number opens on demand, the pieces add up, and each piece has a decision-maker.** - **Risk factor decomposition.**
+Tracking error split into factors (market, style, sector, country, currency, rates, spreads) and stock-specific risk.
+The shares sum to the whole: for instance, 55% sector bets, 25% currency, 20% stock selection (illustrative figures). A
+large share no one intended is belief 2 at work. - **Performance attribution.** Active return split two ways: by
+decision, into allocation and selection, and by factor, into exposure × factor return plus the specific return.
 
 The factor split uses the risk decomposition's factors and decision-makers, so the risk a bet takes and the return it
 earns sit side by side. [Sources of return](02-sources-of-return.md) shows how a holding divides between top-down and
@@ -102,32 +95,22 @@ sum to the whole, or a residual nobody can explain is left over. *The test:* eve
 stated tolerance.
 
 ### 3. Connection
-**Exposure, risk and performance on one timeline, in one language.** Each is credible only through the others. This
-dimension joins risk and return over time; the [integrated view](../pillars/integrated-view.md) links signals across
-pillars.
-- **Return per unit of risk:** the information ratio, by bet and by manager.
-- **Risk budget against return, by source:** a bet that uses a large share of the budget and shows a significant loss
-  for the risk it uses is challenged; the portfolio manager resizes it, cuts it or explains why it stays.
-- **Forecast against outcome:** ex-ante tracking error against realised; days when losses exceeded VaR against the
-  number expected.
-- **Drawdown against tolerance:** how close each portfolio runs to the loss, absolute or relative, that would end its
-  mandate.
+**Exposure, risk and performance on one timeline, in one language.** Each is credible only through the others. The links
+are return per unit of risk, by bet and by manager; the [risk
+budget](../pillars/market-risk.md#workflows-in-this-pillar) against return; each forecast against its [realised
+counterpart](01-investment-risk.md#the-three-pillars); and drawdown against tolerance.
 
 *It fails* when risk and performance come from different systems and cannot be reconciled. *The test:* any period's
 return and any period's change in risk can be explained by the same factors and decision-makers.
 
 ### The firm view
-Holdings are aggregated across all portfolios to see the firm's **footprint**: its share of an issue or of a market's
-daily volume, its exposure to one counterparty, its weight in a crowded factor. These do not net (belief 6). They show
-where the firm, not one portfolio, could be the one that cannot get out. The pillars compute the footprint and the
-[integrated view](../pillars/integrated-view.md#the-firms-footprint) shows it.
+Portfolios don't net (belief 6), so the firm's footprint across them is read on its own, as the [integrated
+view](../pillars/integrated-view.md#the-firms-footprint) sets out.
 
 ## Boundaries
 Numbers do not replace judgement; they tell judgement where to look. Some things they cannot settle: regime changes,
 crowded exits, liquidity in a panic, the next crisis that history never showed. There the risk committee decides,
-informed by stress and reverse stress, not replaced by them. Risks owned outside investment risk are managed elsewhere;
-investment risk works with their owners at the edges named in [investment
-risk](01-investment-risk.md#scope-and-boundaries).
+informed by stress and reverse stress, not replaced by them.
 
 ## Sources
 - Grinold, R. and Kahn, R. (2000). *Active Portfolio Management*, 2nd edition. McGraw-Hill. The information ratio,

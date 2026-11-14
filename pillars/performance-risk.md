@@ -27,13 +27,11 @@ is independent of the portfolio manager, and the agreed actions are tracked unti
 | 10 | Track follow-ups; escalate overdue actions to the watch list | Risk engine |
 
 **Both halves of the outcome count:** a portfolio that beats its benchmark through an exposure its mandate does not
-describe is not delivering what was promised, and the success may not last. The pillar reads what has happened. What
-could happen next, including ex-ante tracking error and the risk budget, belongs to [market risk](market-risk.md).
+describe is not delivering what was promised, and the success may not last.
 
-**Where it connects:** underperformance often comes before redemptions, so [liquidity risk](liquidity-risk.md) watches
-flows more closely in portfolios flagged here. Style drift and unintended bets can raise concentration and volatility in
-market risk, whose tracking error and risk budget exceptions feed the challenge pack. The [integrated
-view](integrated-view.md) reads these signals together.
+**Where it connects:** underperformance often comes before redemptions, and the [integrated view](integrated-view.md)
+reads that combination; [market risk](market-risk.md)'s tracking error and risk budget exceptions feed the challenge
+pack.
 
 The rest of this chapter is the detail behind these points.
 
@@ -66,51 +64,36 @@ person who can act on it. The other workflows feed it.
   AI](../framework/06-working-with-ai.md#three-modes-of-working). The risk manager weighs that evidence; the AI does not
   judge the explanation.
 
-**Ex-post tracking error** and **realised drawdown**, absolute and relative, belong to this pillar. Their
-forward-looking counterparts belong to [market risk](market-risk.md), which also reads the headroom the drawdown leaves
-before the drawdown tolerance.
-
-Relative return and drawdown are computed every day over a rolling window, a governed parameter illustrated here as 12
-months, so that a shortfall reaches watch as soon as it forms rather than at the end of a quarter. A run of losing
-periods is counted in whole periods. The windows, and the significance shown beside each figure, are set out under
-[design choices](performance-risk.md#windows-and-significance).
-
 ## Mandate terms
 Testing a portfolio against what it promised needs the promise in a form the risk engine can test. The AI extracts the
 portfolio's stated objective, benchmark, style, limits and dealing terms from its documents into structured terms, each
-linked to the passage it came from. The risk manager confirms the terms once, and again whenever the documents change.
-The risk engine then tests holdings and exposures against the confirmed terms and flags style drift and unintended bets.
-The AI reads the documents and the risk engine makes the comparison. For a hard limit, compliance's coded rule is the
-master reading: the extracted limit is reconciled to it, and a difference is routed to compliance, not settled by the
-risk manager. The risk function owns the objective and style terms, which compliance does not code, once the risk
-manager has confirmed them. For a new portfolio, the terms are first extracted and confirmed in the [new portfolio
-review](new-portfolio-review.md).
+linked to the passage it came from. The risk manager confirms the terms. The risk engine then tests holdings and
+exposures against the confirmed terms and flags style drift and unintended bets. For a hard limit, compliance's coded
+rule is the master reading: the extracted limit is reconciled to it, and a difference is routed to compliance, not
+settled by the risk manager. The risk function owns the objective and style terms, which compliance does not code, once
+the risk manager has confirmed them. For a new portfolio, the terms are first extracted and confirmed in the [new
+portfolio review](new-portfolio-review.md).
 
 ## Materiality and exceptions
-An **exception** in this pillar is a reading that has crossed a rule's threshold: a sign that the portfolio is not
-delivering its promise, or not in the way it promised. A **watch item** is an early sign that has not crossed one: a
-shortfall that is not yet significant, or a reading seen in one period only. Each rule is a [governed
-parameter](../framework/08-controls.md#materiality-thresholds-as-governed-parameters). **The example values below are
-illustrative and are not recommendations;** each risk function sets its own.
+An **exception** is a reading that has crossed a rule's threshold, and a **watch item** an early sign that has not. Each
+rule is a [governed parameter](../framework/08-controls.md#materiality-thresholds-as-governed-parameters). **The example
+values below are illustrative and are not recommendations;** each risk function sets its own.
 
-| Kind of rule | Example (illustrative) | What it catches |
-|---|---|---|
-| Significant shortfall | Cumulative shortfall net of fees against benchmark or objective that is large against tracking error: a t-statistic below a set level, such as -2 | Missing the promise by more than noise |
-| Shortfall not yet significant | A shortfall over the rolling window, on both short windows, or in several consecutive periods | A shortfall that may become significant |
-| Ex-post tracking error | Outside the range the mandate terms imply | Too much or too little active risk taken |
-| Drawdown | Realised drawdown, absolute or relative, beyond its tolerance | Losses that end mandates |
-| Active share | Falling for several consecutive quarters | A portfolio moving towards its benchmark |
-| Source of return | A large share of gross excess return from unintended beta, over several periods | Returns from the wrong sources |
-| Style consistency | Exposures outside the confirmed mandate terms | Style drift |
-| Overdue action | An agreed action past its due date | Follow-up that has stalled |
+| Kind of rule | Example (illustrative) | What it catches | What it gives |
+|---|---|---|---|
+| Significant shortfall | Cumulative shortfall net of fees against benchmark or objective that is large against tracking error: a t-statistic below a set level, such as -2 | Missing the promise by more than noise | Exception |
+| Shortfall not yet significant | A shortfall over the rolling window, on both short windows, or in several consecutive periods | A shortfall that may become significant | Watch item |
+| Ex-post tracking error | Outside the range the mandate terms imply | Too much or too little active risk taken | Exception |
+| Drawdown | Realised drawdown, absolute or relative, beyond its tolerance | Losses that end mandates | Exception |
+| Active share | Falling for several consecutive quarters | A portfolio moving towards its benchmark | Exception |
+| Source of return | A large share of gross excess return from unintended beta, over several periods | Returns from the wrong sources | Exception; a single period is a watch item |
+| Style consistency | Exposures outside the confirmed mandate terms | Style drift | Exception |
+| Overdue action | An agreed action past its due date | Follow-up that has stalled | Exception |
 
-A shortfall that is not yet significant is a watch item, whether it shows over the rolling window, on both the 1-month
-and 3-month windows, or as a run of consecutive periods. So is a single period of the source-of-return reading. Every
-other rule in the table, including a significant shortfall, gives an exception when it fires. The risk engine ranks
-issues for each portfolio, exceptions before watch items. Significant issues rank above those that are not, because
-short periods are noisy, and significance weighs both the size of a shortfall and how long it has lasted. Issues where
-the outcome and the way it was achieved both depart from the promise rank highest. Overdue actions are always shown, so
-that the review starts from what was agreed last time.
+The risk engine ranks issues for each portfolio, exceptions before watch items. Significant issues rank above those that
+are not, because significance weighs both the size of a shortfall and how long it has lasted. Issues where the outcome
+and the way it was achieved both depart from the promise rank highest. Overdue actions are always shown, so that the
+review starts from what was agreed last time.
 
 ## What the AI drafts
 The AI drafts each item of the challenge pack from the facts that the risk engine produced and from nothing else. Every
@@ -165,13 +148,12 @@ illustrative setup;** each risk function chooses its own and holds it as a gover
 | The mandate's own stated period | The period over which the promise was made, such as a rolling five years | May be longer than the portfolio's record |
 | Since inception | The whole record, and the most data | Dominated by early periods, when the portfolio may have been small |
 
-A shortfall that shows on both the 1-month and the 3-month windows is an earlier watch, because the shorter windows
-agreeing is less likely to be noise than either alone. A run of losing periods is counted in whole periods.
+Relative return and drawdown are computed every day over the rolling window, so that a shortfall reaches watch as soon
+as it forms rather than at the end of a quarter.
 
 Beside every information ratio, the **t-statistic** shows how much of it could be noise: the ratio times the square root
-of the number of years measured. At an information ratio of 0.5 it takes about 16 years to reach a t-statistic of 2, as
-[sources of return](../framework/02-sources-of-return.md#where-do-the-labels-mislead) sets out. Showing it on every
-report keeps one good period from being read as skill.
+of the number of years measured. At an information ratio of 0.5 it takes about 16 years to reach a t-statistic of 2.
+Showing it on every report keeps one good period from being read as skill.
 
 The same statistic tests a shortfall: the cumulative shortfall over a window, divided by the tracking error scaled to
 the window's length. A shortfall is **significant** when the statistic falls below a set level, illustrated here as -2,
@@ -244,7 +226,7 @@ purpose of the review is to change what happens.
 
 ## Sources
 - Grinold, R. and Kahn, R. (2000). *Active Portfolio Management*, 2nd edition. McGraw-Hill. Ex-post tracking error, the
-  information ratio and persistence as evidence of skill.
+  information ratio and its significance as evidence of skill.
 - Brinson, G., Hood, L. and Beebower, G. (1986). Determinants of Portfolio Performance. *Financial Analysts Journal*.
   Attribution by decision into allocation and selection.
 - Cremers, M. and Petajisto, A. (2009). How Active Is Your Fund Manager? A New Measure That Predicts Performance.

@@ -15,36 +15,29 @@ sign-off. The AI never sends a message, writes a recommendation, decides what ma
 
 **People:** supervising the AI is a skill, the craft still has to be learned, and accountability does not move.
 
-The rest of this chapter is the detail behind these points. It is written for the whole firm: the risk function, the
-portfolio managers who receive its questions and the management that decides where AI enters the business.
+The rest of this chapter is the detail behind these points.
 
 ## Three modes of working
-The AI does more than draft. It works in three modes, and in each one the risk engine does the computing and a person
-keeps the judgement.
-
 | Mode | What starts it | What the AI does | What the person does |
 |---|---|---|---|
 | **Prepare** | The daily run, a trigger or a schedule | Drafts explanations, notices, packs and minutes from what the risk engine found | Judges the ranked items, edits and signs off |
 | **Investigate** | A person's question | Runs analyses through the risk engine and reports the figures with the runs behind them | Asks, follows up and decides what the answer means |
 | **Challenge** | A conclusion or an explanation | Tests it against the data, looks for the figures that would contradict it and reports what it finds | Weighs the challenge and decides |
 
-**Prepare** is the mode the pillar chapters redesign their flagship workflows around: the system produces the output and
-the person reviews the exceptions.
+**Prepare** is the mode each pillar's flagship workflow runs in.
 
 **Investigate** replaces the ad hoc query. A risk manager, or a portfolio manager before a trade, asks a question in
 plain words. The AI works out which analyses answer it, runs them through the risk engine, and reports what they show: a
 drill-down into a change, an aggregation across portfolios, an attribution over a period, a what-if on a proposed trade,
-a scenario. The answer arrives in minutes, with every figure tied to the run that produced it.
+a scenario. Every figure is tied to the run that produced it.
 
 **Challenge** turns the AI on a conclusion. The conclusion may be a portfolio manager's explanation of a breach, a risk
 manager's own reading of a portfolio, or a draft paper for a committee. The AI looks for what would contradict it and
 reports the evidence either way. A challenge is evidence put to a person, not a verdict.
 
 ## Where a figure may come from
-**The AI never fabricates a number.** Every figure it reports has a computation behind it that is recorded and can be
-reproduced. Aggregating and attributing produce numbers, and the AI may do both, because the risk engine does the
-arithmetic and the AI only chooses what to run. A figure with no computation behind it is a fabrication, and text that
-contains one is rejected.
+A figure may reach an output only from the sources below; a figure with no computation behind it is a fabrication, and
+text that contains one is rejected.
 
 | Source of a figure | What it is | May it reach an output? |
 |---|---|---|
@@ -118,7 +111,7 @@ exploratory query can guide the question, but it stays out of any output.
 ## What changes for people
 | Who | What changes |
 |---|---|
-| Risk manager | Less time producing outputs and more judging them, with a new skill: directing and supervising the AI |
+| Risk manager | A new skill: directing and supervising the AI, as [principles](05-principles.md#what-the-risk-manager-adds) sets out |
 | Head of risk | Owns what the AI may do in the function, the rules it works within and what risk managers' time goes to |
 | Portfolio manager | Receives questions sooner and with evidence, can ask for a what-if before a trade, and has explanations tested against the data |
 | Owners of adjacent risks and of data | Receive what is routed to them with the evidence attached |

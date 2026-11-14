@@ -26,17 +26,13 @@ management tools.
 | 8 | Review scenario calibration; edit the board paper | Risk manager |
 | 9 | Review and sign off the paper | Head of risk |
 
-**What "a fair cost" means:** when an open-ended fund meets redemptions by selling its most liquid holdings, the
-investors who stay are left with a less liquid and more concentrated portfolio, and they bear the cost of the selling.
-The pillar protects them from that transfer. Liquidity management tools, such as swing pricing, redemption gates,
-in-kind redemptions and slowing purchases of illiquid assets, are the means, and their readiness is part of the outcome.
-A segregated mandate has one client, so the question is whether the client's withdrawals and planned cash needs can be
-met in time and at a fair cost.
+**What "a fair cost" means:** the investors who stay must not bear the cost of others leaving, and liquidity management
+tools are the means. A segregated mandate has one client, so the question is whether the client's withdrawals and
+planned cash needs can be met in time and at a fair cost.
 
-**Where it connects:** rising volatility and concentration in [market risk](market-risk.md) raise the time and cost of
-selling, and underperformance in [performance risk](performance-risk.md) often comes before redemptions. In the other
-direction, meeting redemptions from the most liquid holdings leaves a more concentrated and more volatile portfolio. The
-[integrated view](integrated-view.md) reads these signals together.
+**Where it connects:** [market risk](market-risk.md) raises the time and cost of selling, underperformance in
+[performance risk](performance-risk.md) often comes before redemptions, and the [integrated view](integrated-view.md)
+reads them together.
 
 The rest of this chapter is the detail behind these points.
 
@@ -60,36 +56,31 @@ Liquidity monitoring and stress testing is the flagship, shown in the table at t
   named distributor, would do to a portfolio's coverage. The AI runs the stress test through the risk engine with those
   parameters and reports the result with the run behind it, as set out in [working with
   AI](../framework/06-working-with-ai.md#three-modes-of-working).
-- **Stale or unpriceable holdings.** Flagging them is the measuring side of valuation risk that this pillar owns, as set
-  out in [investment risk](../framework/01-investment-risk.md#scope-and-boundaries). The risk function knows which of
-  its measures rest on them; setting and challenging the prices stays with the owner of pricing.
+- **Stale or unpriceable holdings** are shown against the measures that rest on them.
+- **Liquidity tool readiness.** A tool is ready when the governing documents provide for it, the operations to apply it
+  have been tested, and the decision to use it has a named owner and a process.
 - **The firm's footprint.** The daily run computes the firm's share of each issue and of each market's daily volume for
   the [firm's footprint](integrated-view.md#the-firms-footprint).
 
 ## Materiality and exceptions
-An **exception** in this pillar is a reading that has crossed a rule's threshold: one that shows a portfolio may not
-meet its calls on cash fairly, or an event that should trigger the stress test. A **watch item** is a reading drifting
-towards a threshold. Each rule is a [governed
-parameter](../framework/08-controls.md#materiality-thresholds-as-governed-parameters). **The example values below are
-illustrative and are not recommendations;** each risk function sets its own.
+An **exception** in this pillar is a reading that has crossed a rule's threshold, and a **watch item** is a reading
+drifting towards one. A rule marked as a trigger also runs the stress test for that portfolio the same day. Each rule is
+a [governed parameter](../framework/08-controls.md#materiality-thresholds-as-governed-parameters). **The example values
+below are illustrative and are not recommendations;** each risk function sets its own.
 
-| Kind of rule | Example (illustrative) | What it catches |
-|---|---|---|
-| Redemption coverage | Unencumbered liquid assets that can be raised within the limit's horizon, below a set multiple of the stressed calls on cash due within it | Portfolios that may not meet their calls |
-| Large redemption | A single redemption above a set share of net assets | Events that change the profile |
-| Margin and collateral calls | Calls under stress above a set share of unencumbered liquid assets | Derivative positions draining liquidity |
-| Flows against history | Net outflows outside the portfolio's usual range | Unusual investor behaviour |
-| Investor and distributor concentration | One investor or distributor above a set share of the portfolio | Dependence on few investors or distributors |
-| Market liquidity | Time or cost to liquidate rising above a set level | Assets becoming harder to sell |
-| Stale or unpriceable | No price change for a set number of trading days | Holdings whose value is uncertain |
+| Kind of rule | Example (illustrative) | What it catches | Trigger |
+|---|---|---|---|
+| Redemption coverage | Unencumbered liquid assets that can be raised within the limit's horizon, below a set multiple of the stressed calls on cash due within it | Portfolios that may not meet their calls | No |
+| Large redemption | A single redemption above a set share of net assets | Events that change the profile | Yes |
+| Margin and collateral calls | Calls under stress above a set share of unencumbered liquid assets | Derivative positions draining liquidity | Yes |
+| Flows against history | Net outflows outside the portfolio's usual range | Unusual investor behaviour | No |
+| Investor and distributor concentration | One investor or distributor above a set share of the portfolio | Dependence on few investors or distributors | Yes |
+| Market liquidity | Time or cost to liquidate rising above a set level | Assets becoming harder to sell | Yes |
+| Stale or unpriceable | No price change for a set number of trading days | Holdings whose value is uncertain | No |
 
-The large redemption, margin and collateral call, investor and distributor concentration, and market liquidity rules are
-also triggers: when one fires, the risk engine runs the stress test for that portfolio the same day. Every rule in the
-table gives an exception when it fires; a reading drifting towards one of those thresholds, such as coverage falling
-towards its threshold, is a watch item. The risk engine ranks exceptions before watch items: portfolios with coverage
-below its threshold come first, then portfolios with a fired trigger, then other exceptions, then watch items. Stale and
-unpriceable holdings are listed separately and routed to the owner of pricing, as well as being shown against the
-measures they affect.
+The risk engine ranks exceptions before watch items: portfolios with coverage below its threshold come first, then
+portfolios with a fired trigger, then other exceptions, then watch items. Stale and unpriceable holdings are also listed
+separately and routed to the owner of pricing.
 
 Where the governing documents or regulation set a liquidity limit, it is a [risk-measured hard
 limit](../framework/04-limits-and-escalation.md#where-limits-come-from): the risk function monitors it, a breach must be
@@ -147,15 +138,13 @@ notice period and settlement period, because that is how long the portfolio has 
 
 **Illustrative setup** (not a recommendation): time from a capped share of each holding's daily volume, with volumes
 reduced under stress; cost as half the bid-offer spread plus a market-impact term that rises with the square root of the
-trade's size relative to daily volume, scaled by the holding's volatility. Both are standard and transparent, and both
-become more conservative under stress.
+trade's size relative to daily volume, scaled by the holding's volatility.
 
 ### Calls on cash
 The calls a portfolio could face are built from three scenarios, and **the worst of the three binds**:
 
 - **The portfolio's own history:** the largest outflows it has seen over a set horizon.
-- **Behaviour by investor type:** stressed outflows applied by type of investor, since retail investors on platforms,
-  institutions and funds of funds behave differently.
+- **Behaviour by investor type:** stressed outflows applied by type of investor.
 - **Concentration:** the largest investors, or the investors behind the largest distributors, leave at once.
 
 Each scenario catches a failure the others miss: history misses what has not happened yet, behaviour by type misses a
@@ -181,9 +170,6 @@ Two further calls are counted in every scenario, because they arrive whatever in
   larger than any one portfolio's, and so is its cost. The stress uses the firm's share of each issue and of each
   market's daily volume from the [firm's footprint](integrated-view.md#the-firms-footprint), so that the cost of selling
   reflects the whole firm's sale.
-
-The readiness of liquidity management tools is assessed as set out under the pillar's workflows; how each tool is
-calibrated sits outside these design choices.
 
 ### Where the measures are weak
 | Measure | Where it is weak | How the function tests it |

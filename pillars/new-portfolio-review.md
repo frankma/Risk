@@ -68,7 +68,7 @@ portfolio can be monitored as its mandate promises, any conditions that must be 
 can escalate to the risk committee where product governance proceeds against its opinion.
 
 The opinion is not a veto, in keeping with the
-[philosophy](../framework/00-philosophy.md#purpose-transparency-for-three-decisions): the risk function is independent
+[philosophy](../framework/00-philosophy.md#why-a-risk-function-exists): the risk function is independent
 of the investment team but works inside its process. The internal limits set at this stage follow the same spirit: they
 exist first to keep everyone on top of the portfolio's risks, as set out in [limits and
 escalation](../framework/04-limits-and-escalation.md#what-internal-limits-are-for), not to decide the launch.

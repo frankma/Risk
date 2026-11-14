@@ -11,7 +11,7 @@ workflow as it stands. The unit of change is the workflow, not the task.
 | 3 | The AI never fabricates a number | Every figure has a recorded computation behind it; generated text is checked against it. |
 | 4 | Exceptions over everything | The system reviews every portfolio; the human reviews what is material. |
 | 5 | Decide what the risk manager's time is for before starting | Time that is not directed is absorbed by existing work. |
-| 6 | New capabilities beat faster old ones | The largest gains are things the manual process could not do. |
+| 6 | Build what the manual process could not do | Look for capabilities that need every portfolio checked continuously. |
 
 **Why inserting fails:** a tool placed inside a workflow that was designed for a manual process leaves that process's
 constraints in place. A report whose commentary is drafted faster still waits for data to be gathered, for work to pass
@@ -29,19 +29,14 @@ people and the AI work together.
 manager challenged. A redesign starts from that outcome and asks which steps it actually needs, rather than starting
 from the existing steps and asking which of them AI can speed up.
 
-**In practice.** Each workflow is redesigned end to end, using the [redesign method](07-redesign-method.md). Steps that
-exist only because the old process was slow, such as re-keying data, reformatting tables or chasing inputs, are removed
-rather than automated. An output that feeds no decision is stopped rather than produced faster.
+**In practice.** Each workflow is redesigned end to end, using the [redesign method](07-redesign-method.md): unused
+outputs are stopped (step 2), and steps that exist only because the old process was slow are removed rather than
+automated (step 4).
 
 ### 2. The risk engine computes, AI analyses and narrates, a human judges
-**What it means.** The work in a risk workflow falls into three kinds, and each has a natural owner. Gathering data,
-calculating measures and comparing them to limits must be exact and reproducible, so it belongs to the risk engine: the
-deterministic part of the system, where the same data always gives the same figure and every figure can be traced and
-reproduced. Working out which analyses answer a question, explaining what changed, drafting text and extracting
-information from documents is language and pattern work, which the AI assistant does in seconds. When that work needs a
-figure, the AI runs the analysis through the risk engine and does not compute it itself. Deciding what matters,
-escalating and signing off require judgement and accountability, and belong to the risk manager, and to the head of risk
-where escalation or sign-off requires it.
+**What it means.** Each kind of work goes to its owner: the risk engine computes, the AI analyses, drafts, extracts and
+challenges a conclusion against the data, and the risk manager judges, escalates and signs off. When the AI's work needs
+a figure, the AI runs the analysis through the risk engine and does not compute it itself.
 
 **In practice.** Each step of a redesigned workflow is assigned to exactly one of the three owners. Where a step mixes
 kinds of work, it is split. A system in which the AI does the arithmetic itself, or in which a person re-types figures
@@ -49,22 +44,16 @@ that the risk engine produced, has the wrong owner for that step. [Working with 
 the person and the AI then work together.
 
 ### 3. The AI never fabricates a number
-**What it means.** A risk output with a wrong figure in it is worse than no output. Every number has a computation
-behind it: the risk engine computed it, in the daily run or in an analysis the AI ran through it. Aggregating and
-attributing produce numbers, and the AI may do both, because the risk engine does the arithmetic and the run is recorded
-and can be reproduced. Beyond that the AI at most combines figures in simple ways that can be checked, such as a
-difference or a ratio. What it never does is state a figure with no computation behind it.
+**What it means.** A risk output with a wrong figure in it is worse than no output. Every figure has a recorded
+computation behind it, and generated text passes the grounding check before anyone sees it.
 
-**In practice.** Generated text passes a grounding check before anyone sees it: every number in it is traced to the
-daily run or to a recorded analysis run, or recomputed from figures that are, and text with a number that cannot be
-traced is rejected. The check also tests each stated direction and comparison against the facts. This check, and the
-other [controls](08-controls.md) that make it safe to rely on generated text, are what allow manual checking to be
-reduced.
+**In practice.** [Working with AI](06-working-with-ai.md#where-a-figure-may-come-from) sets out where a figure may come
+from, and [controls](08-controls.md#the-grounding-check) how the check works. The check, and the other controls that
+make it safe to rely on generated text, are what allow manual checking to be reduced.
 
 ### 4. Exceptions over everything
-**What it means.** A manual process cannot review every portfolio in depth every day, so it samples or reviews
-everything at a shallow level. A redesigned workflow lets the system check every portfolio against every threshold and
-rank the results, so that the human reviews what is material instead of everything.
+**What it means.** The system checks every portfolio against every threshold and ranks the results; the human reviews
+what is material.
 
 **In practice.** The main output of a monitoring workflow is a ranked exception queue with an explanation for each item,
 not a long pack. The materiality thresholds that decide what counts as an exception are set by the risk function and
@@ -78,20 +67,20 @@ existing work. The use of the time is a design decision, made at the start rathe
 example deeper portfolio reviews or more frequent challenge of portfolio managers, and then tracks whether that happens.
 [Measuring value](09-measuring-value.md) sets out how.
 
-### 6. New capabilities beat faster old ones
-**What it means.** Doing the old process faster has a ceiling: at best the old output arrives sooner. The larger gains
-come from things the manual process could not do at all, because they needed more data, more frequent checks or more
+### 6. Build what the manual process could not do
+**What it means.** Doing the old process faster has a ceiling: at best the old output arrives sooner. A redesign also
+looks for what the manual process could not do at all, because it needed more data, more frequent checks or more
 connections than people could manage.
 
-**In practice.** A redesign looks for capabilities that become possible once the risk engine covers every portfolio
-continuously: monitoring liquidity continuously rather than at each periodic stress test, or connecting signals across
-market, liquidity and performance risk to see where they combine. The [integrated view](../pillars/integrated-view.md)
-is the clearest example.
+**In practice.** Once the risk engine covers every portfolio continuously, liquidity can be monitored continuously
+rather than at each periodic stress test, and signals can be connected across market, liquidity and performance risk to
+see where they combine. The [integrated view](../pillars/integrated-view.md) is the clearest example.
 
 ## What the risk manager adds
 Under a manual process, much of a risk manager's time goes into producing outputs: gathering data, building tables,
 writing commentary and checking that the figures agree. Under a redesigned process, the system produces the outputs, and
-the risk manager's time goes to the work only a person can do.
+the risk manager's time goes to the work only a person can do, in both of the function's
+[roles](00-philosophy.md#why-a-risk-function-exists): check and balance, and serving the investment process.
 
 | From | To |
 |---|---|
@@ -108,12 +97,11 @@ they add is what goes into it.
   mandate intends. That means telling intended risk from unintended, telling signals that are connected from signals
   that merely appear together, and seeing when a drafted explanation gives weight to the wrong driver, which the
   grounding check cannot test.
-- **Bringing clarity to the risks being taken.** Risk and return are two sides of one coin ([belief
+- **Bringing clarity to the risks being taken.** Every unit of active risk should be paid for ([belief
   3](00-philosophy.md#beliefs)). The risk manager makes clear which risks a portfolio runs, whether they were chosen,
   what each uses of the budget and whether it is paid for. Before a trade, a what-if shows what a position adds and what
   it crowds out of the budget; after it, the review shows which bets earned their risk. That clarity lets the portfolio
-  manager take risk deliberately, and the return follows from deliberate risk-taking. The risk manager stays independent
-  of the investment team, and that independence is what makes the clarity credible.
+  manager take risk deliberately.
 - **Challenge that changes decisions.** Evidence put to the portfolio manager, and escalation where an issue stays
   unresolved. Influence is the dimension of [value](09-measuring-value.md#influence) closest to the function's purpose.
 - **Deciding what the system flags, and in what order.** The thresholds that decide what reaches the queue, the ranking
@@ -124,10 +112,8 @@ they add is what goes into it.
   and the direction in which each model errs ([beliefs 4 and 8](00-philosophy.md#beliefs)) have no history for the risk
   engine to compute from.
 
-Deciding what the system flags matters most, because it scales. Done well, it makes a risk manager's judgement apply
-across every portfolio every day, not only to the portfolios they had time to look at. The sign-off rests on all five,
-and the role becomes less about producing information and more about deciding what it means, acting on it and giving
-each portfolio clarity on the risks it takes.
+Deciding what the system flags matters most, because it scales: done well, it makes a risk manager's judgement apply
+across every portfolio every day, not only to the portfolios they had time to look at.
 
 ## Sources
 - Hammer, M. (1990). Reengineering Work: Don't Automate, Obliterate. *Harvard Business Review*. Rebuilding a process
