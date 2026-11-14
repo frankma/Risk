@@ -1,7 +1,7 @@
 # Risk
 
 Asset management from an investment risk perspective, and how to redesign that work around AI: a philosophy, a
-definition of investment risk and its three workflow pillars (market, liquidity, performance risk), the two sources of
+definition of investment risk and its three workflow pillars (market, liquidity, performance risk), the sources of
 return, the risk data the work rests on, the limits that apply each mandate, principles, a method for redesigning each
 workflow, the controls that make it safe and how to measure the value. Its core pattern: **the risk engine computes, AI
 analyses and narrates, a human judges.**
