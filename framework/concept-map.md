@@ -1,18 +1,17 @@
 # Concept map
 
-This page lists the framework's main concepts: what each one is, where it is defined and which chapters use it. It
-defines nothing new. The chapter named under "Defined in" is the single source for each concept, and a reader who wants
-the reasoning goes there.
+Each concept is defined in the chapter named under "Defined in", where the reasoning lives; this page is the index.
 
 ## Purpose and beliefs
 
 | Concept | What it is | Defined in | Used by |
 |---|---|---|---|
-| Investment risk | The chance that a portfolio's outcome departs from what its mandate intends | [Investment risk](01-investment-risk.md#definition) | Every chapter |
+| Investment risk | The chance that a portfolio's outcome departs from what its mandate intends | [Investment risk](01-investment-risk.md#the-essentials) | Every chapter |
+| Two roles | Check and balance for the firm's governance and clients, and serving the investment process under uncertainty | [Philosophy](00-philosophy.md#why-a-risk-function-exists) | README, principles |
 | Sight | The few numbers worth questioning and acting on, out of millions | [Philosophy](00-philosophy.md) | The three decisions |
 | Beliefs | Eight positions that decide what the rules do not | [Philosophy](00-philosophy.md#beliefs) | Market risk; any model a risk function uses |
-| Three decisions | Construct, Oversee and Assess: before, during and after an investment | [Philosophy](00-philosophy.md#purpose-transparency-for-three-decisions) | Market risk's what-ifs, new portfolio review |
-| Three dimensions | Condensation, drill-in and connection: what every piece of risk work provides | [Philosophy](00-philosophy.md#practice-transparency-in-three-dimensions) | All pillars |
+| Three decisions | Construct, Oversee and Assess: before, during and after an investment | [Philosophy](00-philosophy.md#why-a-risk-function-exists) | Market risk's what-ifs |
+| Three dimensions | Condensation, drill-in and connection: what every piece of risk work provides | [Philosophy](00-philosophy.md#what-every-piece-of-risk-work-provides) | All pillars |
 | Decision-maker | Whoever a piece of a decomposition belongs to | [Philosophy](00-philosophy.md#2-drill-in) | Alpha and beta |
 | Mandate terms | A portfolio's objective, benchmark, style, limits and dealing terms in a form the risk engine can test, confirmed by the risk manager; hard limits are reconciled to compliance's rules | [Performance risk](../pillars/performance-risk.md#mandate-terms) | Performance risk's rules and split |
 
@@ -22,14 +21,14 @@ the reasoning goes there.
 |---|---|---|---|
 | Portfolio | The general term for a fund or a segregated mandate; its mandate is the promise | [Investment risk](01-investment-risk.md#portfolios-funds-and-mandates) | Every chapter |
 | Three pillars | Market, liquidity and performance risk: a lens on the recurring work, with market and performance risk divided by time into forward-looking and realised | [Investment risk](01-investment-risk.md#the-three-pillars) | Every chapter |
-| Forecast against outcome | Each forward-looking measure tested against its realised counterpart in the other pillar | [Investment risk](01-investment-risk.md#boundaries-between-pillars) | Philosophy, market risk, performance risk |
-| Calls on cash | Redemptions, withdrawals, margin and collateral calls, borrowing to roll over, distributions and commitments, the settlement of rolling currency hedges and the return of securities lending collateral | [Investment risk](01-investment-risk.md#liquidity-risk) | Philosophy, liquidity risk |
+| Forecast against outcome | Each forward-looking measure tested against its realised counterpart in the other pillar | [Investment risk](01-investment-risk.md#the-three-pillars) | Philosophy, market risk, performance risk |
+| Calls on cash | Redemptions, withdrawals, margin and collateral calls, borrowing to roll over, distributions and commitments, the settlement of rolling currency hedges and the return of securities lending collateral | [Liquidity risk](../pillars/liquidity-risk.md#calls-on-cash) | Philosophy, liquidity risk |
 | Measuring and approving | Investment risk measures and monitors; approval, pricing and validation sit elsewhere | [Investment risk](01-investment-risk.md#scope-and-boundaries) | Market risk, liquidity risk, controls |
 | New portfolio review | What must be in place before a portfolio launches or changes materially | [New portfolio review](../pillars/new-portfolio-review.md) | Performance risk, limits and escalation |
 | Risk opinion | The risk function's recorded view on a launch, with conditions; product governance decides | [New portfolio review](../pillars/new-portfolio-review.md#the-risk-functions-opinion) | That chapter only |
 | Material change | A change of strategy or benchmark, a merger or a change in dealing terms, reviewed as a launch | [New portfolio review](../pillars/new-portfolio-review.md#what-the-review-covers) | Performance risk |
 | Integrated view | One view that ranks portfolios where signals across pillars combine | [Integrated view](../pillars/integrated-view.md) | Principles, investment risk, all pillars |
-| Firm's footprint | Holdings aggregated across portfolios, which do not net | [Philosophy](00-philosophy.md#the-firm-view) | Market risk, liquidity risk, integrated view, alpha and beta |
+| Firm's footprint | Holdings aggregated across portfolios, which do not net | [Integrated view](../pillars/integrated-view.md#the-firms-footprint) | Market risk, liquidity risk, integrated view, alpha and beta |
 
 ## Sources of return
 
@@ -40,22 +39,22 @@ the reasoning goes there.
 | Style premia | The return of a rule an index or basket can follow, such as value, momentum or carry; beta once declared | [Sources of return](02-sources-of-return.md#what-generates-return) | Alpha and beta method |
 | Skill | The return from choosing between securities that share the same exposures; alpha | [Sources of return](02-sources-of-return.md#what-generates-return) | Alpha and beta method, performance risk |
 | How a generator fails | Drawdown for market risk premia, dry spells and crowded reversals for style premia, decay and crowding for skill | [Sources of return](02-sources-of-return.md#how-does-each-generator-fail) | Market risk's stress library, performance risk |
-| Top-down view | Decides how much of which markets to hold; loosely, beta | [Sources of return](02-sources-of-return.md#what-are-the-two-sources) | Philosophy |
-| Bottom-up selection | Decides which securities to hold within them; loosely, alpha | [Sources of return](02-sources-of-return.md#what-are-the-two-sources) | Philosophy |
+| Top-down view | Holds market and style premia; loosely, beta | [Sources of return](02-sources-of-return.md#what-are-the-two-sources) | Philosophy |
+| Bottom-up selection | Earns skill; loosely, alpha | [Sources of return](02-sources-of-return.md#what-are-the-two-sources) | Philosophy |
 | Policy beta | The return of the benchmark or strategic allocation in the governing documents | [Sources of return](02-sources-of-return.md#who-chose-each-part) | Alpha and beta method |
 | Tilts | The manager's standing positions against that allocation, recorded when taken | [Sources of return](02-sources-of-return.md#who-chose-each-part) | Alpha and beta method |
 | Timing | The return from recorded changes in exposure over time | [Sources of return](02-sources-of-return.md#who-chose-each-part) | Alpha and beta method |
 | Unintended beta | Any exposure with no record that anyone chose it; a test of record, not of motive | [Sources of return](02-sources-of-return.md#who-chose-each-part) | Performance risk's source-of-return rule, alpha and beta method |
-| Benchmark portfolio | The benchmark or strategic allocation in the governing documents, built mostly from indices; its return is policy beta | [Sources of return](02-sources-of-return.md#how-does-one-holding-split) | Alpha and beta method |
-| Top-down portfolio | Investable ETFs, futures and cash carrying the real portfolio's exposure as held; its return less the benchmark portfolio's is active beta, which the record divides | [Sources of return](02-sources-of-return.md#how-does-one-holding-split) | Alpha and beta method, new portfolio review |
-| Real portfolio | What the portfolio actually holds; its return less the top-down portfolio's is alpha | [Sources of return](02-sources-of-return.md#how-does-one-holding-split) | Alpha and beta method |
-| Long-short book | The real portfolio's weights less the top-down portfolio's, which sum to zero within each sector | [Sources of return](02-sources-of-return.md#how-does-one-holding-split) | Alpha and beta method |
+| Benchmark portfolio | The benchmark or strategic allocation in the governing documents, built mostly from indices; its return is policy beta | [Alpha and beta method](../pillars/alpha-and-beta-method.md#the-three-portfolios) | Alpha and beta method |
+| Top-down portfolio | Investable ETFs, futures and cash carrying the real portfolio's exposure as held; its return less the benchmark portfolio's is active beta, which the record divides | [Alpha and beta method](../pillars/alpha-and-beta-method.md#the-three-portfolios) | Alpha and beta method, new portfolio review |
+| Real portfolio | What the portfolio actually holds; its return less the top-down portfolio's is alpha | [Alpha and beta method](../pillars/alpha-and-beta-method.md#the-three-portfolios) | Alpha and beta method |
+| Long-short book | The real portfolio's weights less the top-down portfolio's, which sum to zero within each sector | [Alpha and beta method](../pillars/alpha-and-beta-method.md#building-the-top-down-portfolio) | Alpha and beta method |
 
 ## Risk data
 
 | Concept | What it is | Defined in | Used by |
 |---|---|---|---|
-| Golden source | The one system or provider whose record of a domain the firm treats as correct | [Risk data](03-risk-data.md#from-source-to-computed-figure) | That chapter only |
+| Golden source | The one source each domain is read from | [Risk data](03-risk-data.md#from-source-to-computed-figure) | That chapter only |
 | Snapshot | The checked and enriched data a run computes from, and only from | [Risk data](03-risk-data.md#from-source-to-computed-figure) | That chapter only |
 | Versioned as known | Each record keeps the date it describes and the date it became known, so past outputs can be reproduced | [Risk data](03-risk-data.md#versioned-as-known) | Controls |
 | Data break | A failed quality check, recorded with the portfolios and measures it affects | [Risk data](03-risk-data.md#quality-before-computation) | Limits and escalation |
@@ -72,7 +71,7 @@ the reasoning goes there.
 | Early warning | A level ahead of a hard or internal limit, or on a measure with no limit; a reading beyond it is a watch item | [Limits and escalation](04-limits-and-escalation.md#where-limits-come-from) | All pillars |
 | Breach lifecycle | Detect, verify, classify, notify, explain, decide, cure and close | [Limits and escalation](04-limits-and-escalation.md#the-breach-lifecycle) | Market risk |
 | Escalation path | Who a missed deadline, a declined cure, a dissent and a hard limit breach go to; the risk committee's decision on an uncured soft limit or an escalated watch list portfolio binds | [Limits and escalation](04-limits-and-escalation.md#escalation) | Controls specific to limits |
-| Investment oversight | The head of investments, or the committee that supervises the portfolio managers | [Limits and escalation](04-limits-and-escalation.md#the-breach-lifecycle) | Performance risk |
+| Investment oversight | The head of investments, or the committee that supervises the portfolio managers | [Limits and escalation](04-limits-and-escalation.md#the-essentials) | Performance risk |
 | Active and passive breach | A breach caused by a trade or decision, or by markets, flows or corporate actions | [Limits and escalation](04-limits-and-escalation.md#the-breach-lifecycle) | Market risk |
 
 ## Redesigning the work
@@ -86,19 +85,19 @@ the reasoning goes there.
 | Exploratory query | A read-only query the AI composes where no governed analysis exists; labelled unvalidated and kept out of outputs | [Working with AI](06-working-with-ai.md#where-a-figure-may-come-from) | Controls |
 | Six principles | What a redesign should follow | [Principles](05-principles.md#six-principles) | Redesign method, all pillars |
 | Seven steps | How one workflow is redesigned, from outcome to measured result | [Redesign method](07-redesign-method.md#the-seven-steps) | All pillars |
-| Step tags | Gather, Compute, Interpret, Judge, Communicate, Approve / Wait | [Redesign method](07-redesign-method.md#3-map-the-current-state) | All pillars |
-| Risk manager's value | Judging what matters to the portfolio and its intended risk profile, bringing clarity to the risks being taken, challenge, deciding what the system flags and judgement where the data runs out; the sign-off is the accountability | [Principles](05-principles.md#what-the-risk-manager-adds) | README, measuring value, all pillars |
-| Owners | Who or what does each step: the risk engine, the AI assistant, the risk manager or the head of risk | [Redesign method](07-redesign-method.md#4-assign-each-step-an-owner) | All pillars |
+| Step tags | Gather, Compute, Interpret, Judge, Communicate, Approve / Wait | [Redesign method](07-redesign-method.md#3-map-the-current-state) | That chapter only |
+| Risk manager's value | Judging what matters to the portfolio and its intended risk profile, bringing clarity to the risks being taken, challenge, deciding what the system flags and judgement where the data runs out; the sign-off is the accountability | [Principles](05-principles.md#what-the-risk-manager-adds) | Principles, all pillars |
+| Owners | Who or what does each step: the risk engine, the AI assistant, the risk manager or the head of risk | [Redesign method](07-redesign-method.md#4-assign-each-step-an-owner) | That chapter only |
 | Four dimensions of value | Capacity, speed, quality and influence | [Measuring value](09-measuring-value.md#four-dimensions) | All pillars |
 | Baseline | The value of each measure before anything changes | [Measuring value](09-measuring-value.md#baseline-first) | Redesign method |
-| Plan for the risk manager's time | What the risk manager's time will go to, decided in advance | [Measuring value](09-measuring-value.md#a-plan-for-the-risk-managers-time) | Principles, redesign method, market risk |
+| Plan for the risk manager's time | What the risk manager's time will go to, decided in advance | [Measuring value](09-measuring-value.md#a-plan-for-the-risk-managers-time) | Redesign method, measuring value |
 
 ## Exceptions and ranking
 
 | Concept | What it is | Defined in | Used by |
 |---|---|---|---|
 | Exception | A reading that has crossed a limit or another rule's threshold | [Each pillar's rules](../pillars/market-risk.md#materiality-and-exceptions) | Controls, integrated view |
-| Watch item | A reading approaching a limit or threshold, picked up by an early warning or a persistence rule | [Each pillar's rules](../pillars/market-risk.md#materiality-and-exceptions) | Integrated view |
+| Watch item | A reading approaching a limit or threshold, or an early sign that has not crossed one | [Each pillar's rules](../pillars/market-risk.md#materiality-and-exceptions) | Integrated view |
 | Ranked queue | What the human reviews instead of everything | [Principles](05-principles.md#4-exceptions-over-everything) | Market risk, redesign method |
 | Not assessed | How a portfolio with missing data is shown, never as clean | [Risk data](03-risk-data.md#quality-before-computation) | Market risk, integrated view |
 | Watch list | The firm's single list of portfolios with unresolved issues, owned by the risk function | [Performance risk](../pillars/performance-risk.md#workflows-in-this-pillar) | Integrated view |
@@ -121,14 +120,16 @@ the reasoning goes there.
 
 | Concept | What it is | Defined in | Used by |
 |---|---|---|---|
-| Exposure | What a holding is sensitive to, computed once in the daily run | [Market risk](../pillars/market-risk.md#workflows-in-this-pillar) | Performance risk, alpha and beta |
+| Exposure | What a holding is sensitive to, computed once in the daily run | [Market risk](../pillars/market-risk.md#factors) | Performance risk, alpha and beta |
 | Stress and reverse stress | Losses under scenarios, and the shocks that would break a mandate | [Market risk](../pillars/market-risk.md#stress-and-reverse-stress) | Philosophy, liquidity risk, alpha and beta |
 | Redemption coverage | What a portfolio could raise within a horizon, leaving out encumbered assets, against the calls on its cash under stress due within it; the limit sits at the horizon the dealing terms set | [Liquidity risk](../pillars/liquidity-risk.md#materiality-and-exceptions) | Philosophy, investment risk, integrated view |
 | Fairness and capacity | Selling a slice of every holding against selling the most liquid first; the gap is the cost shifted to the investors who stay | [Liquidity risk](../pillars/liquidity-risk.md#fairness-and-capacity) | Investment risk |
 | Encumbrance | Collateral posted, left out of what a portfolio can raise, and securities on loan, left out until they can be recalled | [Liquidity risk](../pillars/liquidity-risk.md#encumbrance-and-second-round-effects) | Investment risk, integrated view |
+| Trigger | A liquidity rule that, when it fires, also runs the stress test for that portfolio the same day | [Liquidity risk](../pillars/liquidity-risk.md#materiality-and-exceptions) | Integrated view |
+| Tool readiness | A liquidity management tool is ready when the documents provide for it, its operations are tested and its use has a named owner and a process | [Liquidity risk](../pillars/liquidity-risk.md#workflows-in-this-pillar) | New portfolio review |
 | Second-round effect | The extra cost when several of the firm's portfolios sell the same holdings, or when a market move also raises margin calls | [Liquidity risk](../pillars/liquidity-risk.md#encumbrance-and-second-round-effects) | That chapter only |
 | Stale or unpriceable holding | A holding whose value is uncertain, flagged to the owner of pricing | [Liquidity risk](../pillars/liquidity-risk.md#workflows-in-this-pillar) | Market risk, integrated view, alpha and beta |
-| Jump to default | The loss if an issuer defaulted, net of expected recovery, read as a concentration measure | [Market risk](../pillars/market-risk.md#credit-spreads-default-and-migration) | Investment risk |
+| Jump to default | The loss if an issuer defaulted, net of expected recovery, read as a concentration measure | [Market risk](../pillars/market-risk.md#credit-default-and-migration) | Investment risk |
 | Gross and net exposure | Leverage as the sum of all positions without netting, and as what is left after netting and hedging, with derivatives converted to the underlying; each has an internal limit | [Market risk](../pillars/market-risk.md#leverage-and-options) | Limits and escalation |
 | Backtest against the design | VaR breaches judged against what the chosen design implies, stated in advance | [Market risk](../pillars/market-risk.md#backtesting) | Philosophy |
 | Significant shortfall | A cumulative shortfall large against tracking error over its window, by the t-statistic; it gives an exception, where a run of losing periods gives a watch item | [Performance risk](../pillars/performance-risk.md#windows-and-significance) | Market risk, integrated view |
@@ -148,5 +149,6 @@ the reasoning goes there.
 | Declared factor list | The factors alpha must stay neutral to, held as a governed parameter | [Alpha and beta method](../pillars/alpha-and-beta-method.md#booked-or-derived) | Market risk, performance risk |
 | Generator tag | The return generator each declared factor is read against, held with the list as a governed parameter | [Alpha and beta method](../pillars/alpha-and-beta-method.md#building-the-top-down-portfolio) | Market risk |
 | Factor return | The return of the ETF or future that carries a declared factor | [Alpha and beta method](../pillars/alpha-and-beta-method.md#building-the-top-down-portfolio) | Philosophy |
-| Cost of holding beta | The top-down portfolio's instruments against the indices they track, on its own line beside the fee | [Alpha and beta method](../pillars/alpha-and-beta-method.md#the-four-beta-lines) | That page only |
+| Cost of holding beta | The top-down portfolio's instruments against the indices they track, on its own line beside the fee | [Alpha and beta method](../pillars/alpha-and-beta-method.md#the-beta-lines) | That page only |
+| Trading effect | The gap between the actual return and the return of start-of-day holdings: trading cost, and gains and losses from trading during the day | [Alpha and beta method](../pillars/alpha-and-beta-method.md#computing-the-split) | That page only |
 | Booked and derived books | Two routes to the same split, with different evidence; on the booked route hedge error stays in alpha, as a stated exception | [Alpha and beta method](../pillars/alpha-and-beta-method.md#booked-or-derived) | That page only |
