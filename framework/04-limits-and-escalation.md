@@ -63,10 +63,10 @@ above a floor. A measure with no limit can carry an early warning of its own. A 
 watch item, not a breach.
 
 ## What internal limits are for
-Internal limits exist first to produce insight: they keep the portfolio manager, the risk manager and oversight on top
-of an issue, start the conversation and record its outcome. They are designed so that they can constrain when needed,
-but whether to use them that way is a judgement, not an automatic ruling. Automatic constraint is what hard limits are
-for.
+Internal limits exist first to produce insight: they keep the portfolio manager, the risk manager and investment
+oversight on top of an issue, start the conversation and record its outcome. They are designed so that they can
+constrain when needed, but whether to use them that way is a judgement, not an automatic ruling. Automatic constraint is
+what hard limits are for.
 
 By default, a risk function sets internal limits on:
 
@@ -136,6 +136,7 @@ illustrative.**
 | The portfolio manager declines to cure a breach of an internal limit | Head of risk | Risk committee | Its next meeting, or one called within 5 business days | Require the cure by a date, accept the breach for a set period, or change the limit |
 | A member of the risk committee dissents from its decision | The member | The board | The board's next report | Ask the committee to review its decision; the decision stands until then |
 | A breach of a hard limit | Risk function | Compliance | The same day | Under compliance's process |
+| Product governance proceeds against the risk function's opinion on a new portfolio | Head of risk | Risk committee | Its next meeting | Require conditions, or record the dissent for the board |
 | A watch list portfolio that investment oversight escalates | Investment oversight | Risk committee | Its next meeting | Require an action by a date, or keep the portfolio under watch |
 
 **The risk committee has the final say on an uncured soft limit and on an escalated watch list portfolio,** and its

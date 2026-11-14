@@ -17,7 +17,7 @@ manager's time will go to, and then tracks whether it does.
 The rest of this chapter is the detail behind these points, with an illustrative scorecard.
 
 ## Four dimensions
-The table in the opening sets out the four. Two points add to it.
+The table in the essentials sets out the four. Two points add to it.
 
 - **Quality.** Issues missed or found late are the most important measure and the hardest to collect; they are recorded
   as they come to light, for example from post-event reviews.

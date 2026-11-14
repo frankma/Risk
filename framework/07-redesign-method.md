@@ -61,7 +61,7 @@ copies of the same number and chasing people for inputs exist because the manual
 not handed to the risk engine or the AI assistant.
 
 ### 5. Redesign the flow
-The redesigned workflow changes its shape, as the opening sets out. Three changes follow.
+The redesigned workflow changes its shape, as the essentials set out. Three changes follow.
 
 - **Materiality thresholds are encoded.** The rules that decide what counts as an exception, and how exceptions are
   ranked, are written down as parameters rather than applied by eye.

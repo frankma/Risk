@@ -9,9 +9,9 @@ questions:
 
 | Pillar | Question |
 |---|---|
-| **Market risk** | How much could we lose, in total and against the benchmark? |
-| **Liquidity risk** | Can the portfolio meet every call on its cash, in time and at a fair cost, without disadvantaging the investors who stay? |
-| **Performance risk** | Is the portfolio delivering what was promised, in the way it was promised? |
+| **Market risk** | How much could a portfolio lose, in total and against its benchmark? |
+| **Liquidity risk** | Can a portfolio meet every call on its cash, in time and at a fair cost, without disadvantaging the investors who stay? |
+| **Performance risk** | Is a portfolio delivering what was promised, in the way it was promised? |
 
 The pillars connect, and the [integrated view](pillars/integrated-view.md) reads them together.
 
@@ -43,8 +43,8 @@ Two rules make it work:
   and signs off what goes out. [Principles](framework/05-principles.md#4-exceptions-over-everything) sets this out.
 
 ## Map
-Every chapter opens with **The essentials**, which states the chapter whole, and the detail follows beneath it. Reading
-the essentials in order gives the framework; the detail is there when a point needs it.
+Every chapter except the concept map opens with **The essentials**, which states the chapter whole, and the detail
+follows beneath it. Reading the essentials in order gives the framework; the detail is there when a point needs it.
 
 | Chapter | Covers |
 |---|---|
