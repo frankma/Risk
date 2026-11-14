@@ -7,64 +7,41 @@ arising from the investments themselves.
 
 **The mandate is the reference point:** risk is measured against the promise, not against zero.
 
-**Three pillars organise the recurring work.** They are a lens on workflows, not a taxonomy of risks.
+**Three pillars organise the recurring work.** They are a lens on workflows, not a taxonomy of risks. Each pillar's
+question opens its own chapter.
 
-| Pillar | Question | Outcome |
-|---|---|---|
-| [Market risk](../pillars/market-risk.md) | How much could we lose, in total and against the benchmark? | The risk manager knows, every day, which portfolios carry more risk than their mandate intends, absolute or relative, and why |
-| [Liquidity risk](../pillars/liquidity-risk.md) | Can the portfolio meet every call on its cash, in time and at a fair cost, without disadvantaging the investors who stay? | The risk manager knows whether each portfolio can meet plausible calls on its cash in time and at a fair cost, and whether the tools for managing liquidity are ready if it cannot |
-| [Performance risk](../pillars/performance-risk.md) | Is the portfolio delivering what was promised, in the way it was promised? | The risk manager can show, with evidence, whether each portfolio is meeting its objective and whether its returns come from the sources its mandate describes |
+| Pillar | Outcome |
+|---|---|
+| [Market risk](../pillars/market-risk.md) | The risk manager knows, every day, which portfolios carry more risk than their mandate intends, absolute or relative, and why |
+| [Liquidity risk](../pillars/liquidity-risk.md) | The risk manager knows whether each portfolio can meet plausible calls on its cash in time and at a fair cost, and whether the tools for managing liquidity are ready if it cannot |
+| [Performance risk](../pillars/performance-risk.md) | The risk manager can show, with evidence, whether each portfolio is meeting its objective and whether its returns come from the sources its mandate describes |
 
 **The scope:** every vehicle through which an asset manager invests for clients, with three kinds of portfolio left out,
 and the risks that arise from the investments, with the risks that arise from how the firm operates owned elsewhere.
 
-**The pillars connect:** the most damaging episodes pass through all three. Underperformance prompts redemptions,
-redemptions force sales of the most liquid assets, and the portfolio that remains is more concentrated and more
-volatile. The [integrated view](../pillars/integrated-view.md) watches the signals together.
+**The pillars connect:** the most damaging episodes pass through all three, and the
+[integrated view](../pillars/integrated-view.md) watches the signals together.
 
 The rest of this chapter is the detail behind these points. The beliefs behind the definition are in the
 [philosophy](00-philosophy.md).
 
-## The backdrop
-An asset manager takes a client's money under a mandate, invests it and delivers an outcome. The mandate is the promise,
-the investing runs through [top-down views and bottom-up selection](02-sources-of-return.md), and the outcome is what
-the client receives. Distribution, operations and the firm's own business matter to an asset manager too, but they are
-not the subject here. A risk function sits beside the investment team and looks at this chain from one angle: how far
-the outcome could depart from the promise, and why.
-
-### Portfolios, funds and mandates
-The framework applies to every vehicle through which an asset manager invests for clients:
-
-- **Open-ended pooled funds,** dealing daily or less often, where many investors share one portfolio and can redeem.
-- **Closed-ended funds,** where investors cannot redeem, but the fund may borrow, pay distributions and make
-  commitments.
-- **Segregated mandates,** where one client's money is managed in its own portfolio under an investment management
-  agreement.
-
-It covers benchmarked long-only, absolute return and other objective-based strategies, multi-asset, long-short and
-leveraged strategies, fixed income and credit, and portfolios that invest in other funds, which are read through to
-their holdings.
+## Portfolios, funds and mandates
+The framework covers open-ended and closed-ended funds and segregated mandates, across benchmarked long-only, absolute
+return and other objective-based strategies, multi-asset, long-short and leveraged strategies, fixed income and credit,
+and funds of funds, which are read through to their holdings. It calls each a **portfolio**, and says fund or mandate
+only where the type matters. **The mandate** is the promise, whatever the vehicle: the objective, benchmark, guidelines
+and dealing or withdrawal terms in the governing documents.
 
 Three kinds of portfolio sit outside it:
 
 - **Money market funds,** which follow a specialised regime of their own.
-- **Exchange-traded funds,** because most of their investors trade on an exchange and units are created and redeemed
-  through authorised participants, so the calls on the fund's cash do not work as this framework's liquidity pillar
-  assumes.
-- **Model portfolios the firm advises on but does not hold.** The firm supplies a list of weights, and the party that
-  implements it holds the positions and the risks of holding them.
-
-The framework calls each of these a **portfolio**, and says fund or mandate only where the type matters, as it does for
-redemptions, which only open-ended funds face. **The mandate** is the promise, whatever the vehicle: the objective,
-benchmark, guidelines and dealing or withdrawal terms set out in the portfolio's governing documents, which are the
-prospectus of a fund or the investment management agreement of a segregated mandate.
+- **Exchange-traded funds,** because units are created and redeemed through authorised participants, so the calls on
+  the fund's cash do not work as the liquidity pillar assumes.
+- **Model portfolios the firm advises on but does not hold,** whose positions and risks sit with the party that
+  implements them.
 
 ## Definition
-**Investment risk is the chance that a portfolio's outcome departs from what its mandate intends: a loss, a shortfall
-against its objective or benchmark, or an inability to meet calls on its cash, such as redemptions, arising from the
-investments themselves.**
-
-Three parts of this definition do the work.
+The definition is stated at the top of this chapter. Three parts of it do the work.
 
 - **The mandate is the reference point.** A portfolio that loses money when its benchmark loses more may be doing
   exactly what was promised; a portfolio that gains money while taking risks its mandate does not allow is not. Risk is

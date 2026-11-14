@@ -66,10 +66,9 @@ person who can act on it. The other workflows feed it.
   AI](../framework/06-working-with-ai.md#three-modes-of-working). The risk manager weighs that evidence; the AI does not
   judge the explanation.
 
-**Ex-post tracking error** is the standard deviation of the portfolio's realised return relative to its benchmark over a
-stated window. Its forecast counterpart, ex-ante tracking error, belongs to [market risk](market-risk.md), which
-compares the two. **Realised drawdown** is the fall from the portfolio's peak value, measured in absolute terms and
-relative to its benchmark; market risk reads the headroom it leaves before the drawdown tolerance.
+**Ex-post tracking error** and **realised drawdown**, absolute and relative, belong to this pillar. Their
+forward-looking counterparts belong to [market risk](market-risk.md), which also reads the headroom the drawdown leaves
+before the drawdown tolerance.
 
 Relative return and drawdown are computed every day over a rolling window, a governed parameter illustrated here as 12
 months, so that a shortfall reaches watch as soon as it forms rather than at the end of a quarter. A run of losing
@@ -140,15 +139,15 @@ validation of the models sits outside the risk function, as set out in [investme
 risk](../framework/01-investment-risk.md#scope-and-boundaries).
 
 ### Risk-adjusted measures
-Each measure answers one question, and each misleads in a known way.
+Each measure misleads in a known way.
 
-| Measure | What it answers | Use it for | Where it misleads |
-|---|---|---|---|
-| Information ratio | Active return per unit of active risk | Benchmarked portfolios; the core measure of the pillar | Over short windows it is mostly noise, and a portfolio hugging its benchmark can show a high ratio on very little |
-| Sharpe ratio | Return above cash per unit of total volatility | Absolute return and objective-based portfolios | Treats gains and losses alike, and flatters strategies whose losses are rare and large |
-| Sortino ratio | Return above a target per unit of downside volatility | Absolute return portfolios where losses matter more than gains | Needs a long history, because downside observations are few |
-| Realised drawdown | The fall from the portfolio's peak, absolute and relative to the benchmark | Every portfolio, against its drawdown tolerance | Depends on the window, and says nothing about how long recovery takes |
-| Up-market and down-market capture | How much of the benchmark's rises and falls the portfolio takes part in | Showing whether returns come from the way the portfolio behaves in rising or in falling markets | Few observations in each state make it unstable over short periods |
+| Measure | Use it for | Where it misleads |
+|---|---|---|
+| Information ratio | Benchmarked portfolios; the core measure of the pillar | Over short windows it is mostly noise, and a portfolio hugging its benchmark can show a high ratio on very little |
+| Sharpe ratio | Absolute return and objective-based portfolios | Treats gains and losses alike, and flatters strategies whose losses are rare and large |
+| Sortino ratio | Absolute return portfolios where losses matter more than gains | Needs a long history, because downside observations are few |
+| Realised drawdown | Every portfolio, against its drawdown tolerance | Depends on the window, and says nothing about how long recovery takes |
+| Up-market and down-market capture | Showing whether returns come from the way the portfolio behaves in rising or in falling markets | Few observations in each state make it unstable over short periods |
 
 A portfolio is not judged on one measure. The measures shown for each portfolio follow its mandate: a benchmarked
 portfolio leads with the information ratio and relative drawdown, an absolute return portfolio with the Sharpe or
@@ -200,9 +199,7 @@ comparison includes portfolios that closed or merged during the period so that t
 and membership is reviewed on a set cycle.
 
 ### Linking attribution over time
-Attribution effects measured period by period do not add up over longer periods, because returns compound. A linking
-method spreads the difference across the periods so that the effects sum to the return over the whole period. Several
-published methods exist, and they give slightly different answers, so the method is stated, held as a [governed
+Published linking methods give slightly different answers, so the method is stated, held as a [governed
 parameter](../framework/08-controls.md#materiality-thresholds-as-governed-parameters), and changed only from a recorded
 effective date. The same applies to linking the lines of the [alpha and beta
 split](alpha-and-beta-method.md#the-test-and-its-limits) over longer periods.

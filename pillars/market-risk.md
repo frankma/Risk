@@ -63,10 +63,8 @@ draw on what it computes.
 - **The firm's footprint.** The daily run totals holdings across portfolios by issuer, counterparty and factor for the
   [firm's footprint](integrated-view.md#the-firms-footprint). These totals do not net.
 
-**Ex-ante tracking error** is the forecast standard deviation of the portfolio's return relative to its benchmark, from
-today's holdings and the risk model. It is the relative counterpart of value at risk and looks forward, so it belongs to
-this pillar. Its realised counterpart, ex-post tracking error, is measured in [performance risk](performance-risk.md),
-and comparing the two tests this pillar's measures.
+**Ex-ante tracking error** looks forward, so it belongs to this pillar. Its realised counterpart, ex-post tracking
+error, is measured in [performance risk](performance-risk.md), and comparing the two tests this pillar's measures.
 
 **The risk budget review** allots ex-ante tracking error to the portfolio's bets and reads what each bet uses against
 the return it has earned, which performance risk measures. The budget carries no limit of its own: the daily check is of
@@ -153,7 +151,7 @@ risk](../framework/01-investment-risk.md#scope-and-boundaries).
 | Method | Historical simulation, parametric, Monte Carlo | Historical keeps the shape of past moves but only those moves; parametric is fast and smooth but thin in the tail; Monte Carlo is flexible but rests on the model behind it |
 | Confidence and horizon | For example 99% over one day, or 97.5% | Higher confidence says more about the tail and is noisier; a longer horizon needs scaling or overlapping periods |
 | Lookback and weighting | A short window, a long window, a long window with gradual decay | A short window reacts fast and jitters; a long window is stable and slow; decay sits between |
-| Expected shortfall | Alongside value at risk, or instead of it | Expected shortfall measures the average loss beyond the threshold, which value at risk ignores, but needs more data to estimate |
+| Expected shortfall | Alongside value at risk, or instead of it | Sees the tail beyond the threshold, but needs more data to estimate |
 | Stressed period | A separate measure on a fixed period of stress | Keeps a stressed view when the recent window is calm |
 
 **Illustrative setup** (not a recommendation): historical simulation; 1-day 99% value at risk alongside 97.5% expected
@@ -168,8 +166,7 @@ review can set what each bet uses beside what it earns, and one set of factors e
 in risk ([connection](../framework/00-philosophy.md#3-connection)).
 
 ### Backtesting
-A backtest compares the days on which losses exceeded value at risk with the number the confidence level implies. It is
-judged against what the chosen design implies, stated before the test.
+A backtest is judged against what the chosen design implies, stated before the test.
 
 - **A long lookback is built to be stable,** so breaches cluster when conditions change. Clustering is expected and
   recorded, and does not by itself lead to recalibration. The judgement is the count of breaches over a long period
@@ -197,10 +194,9 @@ usual range.
   combination of shocks that would cause it, and the risk manager judges how plausible that combination is.
 
 ### Credit: spreads, default and migration
-- **Spreads.** Spread duration and duration times spread measure the loss when spreads move.
-- **Default.** **Jump to default** is the loss if an issuer defaulted at once: the position times one minus the expected
-  recovery rate, which is a governed parameter. It is read as a concentration measure, with an early warning, because
-  one default in a concentrated or high-yield portfolio can cost far more than spread volatility suggests.
+- **Default.** **Jump to default** is the position times one minus the expected recovery rate, which is a governed
+  parameter. It is read as a concentration measure, with an early warning, because one default in a concentrated or
+  high-yield portfolio can cost far more than spread volatility suggests.
 - **Migration.** A downgrade shows up as wider spreads, so spread stress covers it. One event is not covered that way: a
   downgrade below a mandate's rating floor forces a sale, at a cost that depends on how long the holding takes to sell.
   An early warning therefore flags holdings close to the floor, read with their [time to
@@ -210,17 +206,14 @@ usual range.
 Leverage is measured two ways, each with an internal limit: **gross exposure**, the sum of all positions without
 netting, which shows scale; and **net exposure**, what is left after netting and hedging, which shows the risk actually
 taken. Derivatives are converted to the equivalent position in the underlying before either is summed: an option by its
-delta, and an interest rate derivative by its duration against a common maturity. Raw notional would overstate interest
-rate derivatives many times over.
+delta, and an interest rate derivative by its duration against a common maturity.
 
-Options carry delta, gamma and vega, so that the daily measures see how their value changes with the underlying and with
-volatility. Sensitivities assume small moves, so stress tests revalue options in full.
+Options are measured by delta, gamma and vega in the daily run, and revalued in full under stress.
 
 ### Counterparty exposure
 Exposure to a counterparty is the current exposure net of the collateral held under netting agreements, plus an add-on
 for how far it could grow before the next collateral call. It includes the counterparties to share-class hedges and the
-borrowers of lent securities, net of the collateral they have posted. The internal limit applies to the total. Without
-the add-on, a portfolio could reach its limit between two collateral calls without warning.
+borrowers of lent securities, net of the collateral they have posted. The internal limit applies to the total.
 
 ### Where the measures are weak
 | Measure | Where it is weak | How the function tests it |

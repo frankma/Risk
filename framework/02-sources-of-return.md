@@ -56,9 +56,12 @@ which markets and styles to hold, and bottom-up selection decides which securiti
 first is called beta and the second alpha. Every part of a portfolio's return lands in exactly one place in this
 breakdown.
 
-- **Portfolio return** - **Top-down views**, loosely beta: paid by market risk premia and style premia - **Set in the
-  mandate:** policy beta - **Chosen by the manager:** tilts and timing - **Chosen by nobody:** unintended beta -
-  **Bottom-up selection**, loosely alpha: paid by skill, and what selection adds once top-down is out
+- **Portfolio return**
+  - **Top-down views**, loosely beta: paid by market risk premia and style premia
+    - **Set in the mandate:** policy beta
+    - **Chosen by the manager:** tilts and timing
+    - **Chosen by nobody:** unintended beta
+  - **Bottom-up selection**, loosely alpha: paid by skill, and what selection adds once top-down is out
 
 | | Top-down | Bottom-up |
 |---|---|---|
