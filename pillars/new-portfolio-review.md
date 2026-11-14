@@ -1,6 +1,6 @@
 # New portfolio review
 
-## In short
+## The essentials
 **The question:** is everything the pillars rely on in place before a portfolio takes its first client money, or changes
 enough to be a new portfolio in all but name?
 
@@ -55,23 +55,15 @@ risk](market-risk.md#workflows-in-this-pillar), not here.
 | Benchmark | It passes the benchmark tests: specified in advance, investable, unambiguous, measurable, appropriate to the style and owned | [Performance risk](performance-risk.md#benchmarks-and-peer-groups) |
 | Limits | Internal limits and early warnings set by the risk function; the mandate and regulatory limits recorded, with each risk-measured limit set up for the risk function to monitor | [Limits and escalation](../framework/04-limits-and-escalation.md) |
 | Liquidity profile | Redemption coverage under the scenarios for calls on cash, at the launch size and the expected size, against the dealing terms | [Liquidity risk](liquidity-risk.md#calls-on-cash) |
-| Data | Every instrument the portfolio expects to hold, and every instrument in its top-down portfolio, can be priced and classified, or has a proxy under the policy | [Risk data](../framework/03-risk-data.md#proxies) |
+| Data | Every instrument the portfolio expects to hold, and every instrument in its top-down portfolio, can be priced, classified and measured by the risk engine, or has a proxy under the policy | [Risk data](../framework/03-risk-data.md#proxies) |
 | Alpha and beta construction | The benchmark portfolio, the buckets, the instrument inside each and the factor list, declared before the first period | [Alpha and beta method](alpha-and-beta-method.md#booked-or-derived) |
-| Liquidity management tools | The tools the documents provide for, and whether each can be used | [Liquidity risk](liquidity-risk.md#workflows-in-this-pillar) |
-
-The liquidity profile carries [belief 5](../framework/00-philosophy.md#beliefs): a portfolio that will offer daily
-dealing on assets that take weeks to sell is making a promise it cannot keep, and the time to see that is before launch.
+| Liquidity management tools | The tools the documents provide for, and whether each is ready by liquidity risk's readiness test | [Liquidity risk](liquidity-risk.md#workflows-in-this-pillar) |
+| Stress | The model portfolio's stress loss against the drawdown tolerance | [Market risk](market-risk.md#stress-and-reverse-stress) |
+| Seed investors | Expected investor concentration at launch is recorded, with the date or size at which it should fall below the rule; until then the breach is expected, not an exception | [Liquidity risk](liquidity-risk.md#materiality-and-exceptions) |
 
 ## The risk function's opinion
-Product governance decides whether a portfolio launches. The risk function gives a **recorded opinion**: whether the
-portfolio can be monitored as its mandate promises, any conditions that must be met, and its reasons. The risk function
-can escalate to the risk committee where product governance proceeds against its opinion.
-
-The opinion is not a veto, in keeping with the
-[philosophy](../framework/00-philosophy.md#purpose-transparency-for-three-decisions): the risk function is independent
-of the investment team but works inside its process. The internal limits set at this stage follow the same spirit: they
-exist first to keep everyone on top of the portfolio's risks, as set out in [limits and
-escalation](../framework/04-limits-and-escalation.md#what-internal-limits-are-for), not to decide the launch.
+The opinion states whether the portfolio can be monitored as its mandate promises, any conditions that must be met, and
+the reasons. Where product governance proceeds against it, the risk function can escalate to the risk committee.
 
 ## What the AI drafts
 The AI extracts and drafts from the documents and facts it is given, and from nothing else. Every figure it extracts
@@ -109,9 +101,8 @@ reconciled to compliance's coded rule.
 The opinion on whether Fund S should launch, and on what conditions, is the risk manager's.
 
 ## Controls and measures specific to the review
-The general [controls](../framework/08-controls.md) apply in full. The review adds four.
+The general [controls](../framework/08-controls.md) apply in full. The review adds three.
 
-- **Terms are confirmed before anything is tested against them.**
 - **The opinion is written by a person.** The AI drafts the summary of facts; the risk manager writes the opinion and
   its conditions.
 - **Conditions are tracked.** Each condition has a due date and is tracked until it is met or escalated.
