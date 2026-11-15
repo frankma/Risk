@@ -10,23 +10,23 @@ enough to be a new portfolio in all but name?
 > promised, and has put its view on record.
 
 **How the work is done:** the review computes nothing of its own. The AI extracts the draft mandate terms from the
-documents. The risk engine runs the pillars' measures on a model portfolio, checks data readiness and proposes limits
-and the alpha and beta construction. The risk manager confirms the terms, decides the limits and writes the opinion, and
-on launch day the risk engine confirms that everything agreed is in place. The review can start as soon as draft
-documents exist.
+documents. The analytics engine runs the pillars' measures on a model portfolio, checks data readiness and proposes
+limits and the alpha and beta construction. The risk manager confirms the terms, decides the limits and writes the
+opinion, and on launch day the analytics engine confirms that everything agreed is in place. The review can start as
+soon as draft documents exist.
 
 | # | Step | Owner |
 |---|---|---|
 | 1 | Extract the draft mandate terms, each linked to its passage | AI assistant |
 | 2 | Confirm the terms; request the model portfolio | Risk manager |
-| 3 | Run the pillars' measures on the model portfolio; test the benchmark and the liquidity profile | Risk engine |
-| 4 | Check data readiness; propose internal limits, early warnings and the alpha and beta construction | Risk engine |
+| 3 | Run the pillars' measures on the model portfolio; test the benchmark and the liquidity profile | Analytics engine |
+| 4 | Check data readiness; propose internal limits, early warnings and the alpha and beta construction | Analytics engine |
 | 5 | Consult the portfolio manager; decide the limits and the construction | Risk manager |
 | 6 | Draft the readiness summary | AI assistant |
-| 7 | Grounding check on the summary | Risk engine |
+| 7 | Grounding check on the summary | Analytics engine |
 | 8 | Write the opinion and any conditions | Risk manager |
 | 9 | Sign off the opinion; product governance decides | Head of risk |
-| 10 | On launch day, confirm every agreed item is in place | Risk engine |
+| 10 | On launch day, confirm every agreed item is in place | Analytics engine |
 
 **The opinion is not a veto:** product governance decides whether a portfolio launches. The risk function gives a
 recorded opinion and can escalate to the risk committee.
@@ -55,7 +55,7 @@ risk](market-risk.md#workflows-in-this-pillar), not here.
 | Benchmark | It passes the benchmark tests: specified in advance, investable, unambiguous, measurable, appropriate to the style and owned | [Performance risk](performance-risk.md#benchmarks-and-peer-groups) |
 | Limits | Internal limits and early warnings set by the risk function; the mandate and regulatory limits recorded, with each risk-measured limit set up for the risk function to monitor | [Limits and escalation](../framework/04-limits-and-escalation.md) |
 | Liquidity profile | Redemption coverage under the scenarios for calls on cash, at the launch size and the expected size, against the dealing terms | [Liquidity risk](liquidity-risk.md#calls-on-cash) |
-| Data | Every instrument the portfolio expects to hold, and every instrument in its top-down portfolio, can be priced, classified and measured by the risk engine, or has a proxy under the policy | [Risk data](../framework/03-risk-data.md#proxies) |
+| Data | Every instrument the portfolio expects to hold, and every instrument in its top-down portfolio, can be priced, classified and measured by the analytics engine, or has a proxy under the policy | [Risk data](../framework/03-risk-data.md#proxies) |
 | Alpha and beta construction | The benchmark portfolio, the buckets, the instrument inside each and the factor list, declared before the first period | [Alpha and beta method](alpha-and-beta-method.md#booked-or-derived) |
 | Liquidity management tools | The tools the documents provide for, and whether each is ready by liquidity risk's readiness test | [Liquidity risk](liquidity-risk.md#workflows-in-this-pillar) |
 | Stress | The model portfolio's stress loss against the drawdown tolerance | [Market risk](market-risk.md#stress-and-reverse-stress) |
@@ -102,8 +102,8 @@ reconciled to compliance's coded rule.
 The general [controls](../framework/08-controls.md) apply in full. The review adds two.
 
 - **Conditions are tracked.** Each condition has a due date and is tracked until it is met or escalated.
-- **Launch is checked.** On launch day the risk engine confirms that the terms, limits, data and construction agreed in
-  the review are in place, and a gap is an exception.
+- **Launch is checked.** On launch day the analytics engine confirms that the terms, limits, data and construction
+  agreed in the review are in place, and a gap is an exception.
 
 The measures for the review, from [measuring value](../framework/09-measuring-value.md):
 

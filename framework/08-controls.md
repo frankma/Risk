@@ -25,8 +25,8 @@ The rest of this chapter is the detail behind these points.
 The grounding check enforces the principle that [the AI never fabricates a
 number](05-principles.md#3-the-ai-never-fabricates-a-number). Every number in a piece of generated text is extracted and
 traced to the computed facts behind it: the facts from the daily run that the text was generated from, and the results
-of any analysis the AI ran through the risk engine, each recorded as a run. Numbers written as words, such as "three
-months", are extracted and traced in the same way as numerals.
+of any analysis the AI ran through the analytics engine, each recorded as a run. Numbers written as words, such as
+"three months", are extracted and traced in the same way as numerals.
 
 A number in generated text is grounded if it is one of the computed facts, the result of a recorded analysis run, or the
 result of a simple operation on them that the AI states and the check can recompute: a sum, a difference, a percentage
@@ -68,8 +68,10 @@ The AI works under a permission that the risk function sets and records: the dat
 and the actions it may never take, as set out in [working with AI](06-working-with-ai.md#what-the-ai-may-do). The risk
 engine enforces it. An analysis outside the governed list does not run. The one thing the AI may run outside the list is
 a read-only exploratory query, whose result is labelled unvalidated and kept out of outputs. The AI has no write access
-to data or to governed parameters, and nothing it produces leaves the function without a sign-off. Every run the AI
-starts is recorded with its parameters, the person who asked and the result, so that any answer can be reproduced.
+to data or to governed parameters, and nothing it produces leaves the function without a sign-off, except the routine
+actions a governed rule allows: a breach notice the rule covers, and closing a breach that came from a data break. The
+risk manager reviews each of those the same day, and the rule is itself a governed parameter. Every run the AI starts is
+recorded with its parameters, the person who asked and the result, so that any answer can be reproduced.
 
 ## Sign-off points
 Each redesigned workflow names the points at which a human must approve before an output moves on, and what exactly they
@@ -80,6 +82,7 @@ are approving. A sign-off is a statement about content, not a click to release a
 | Exception review | Risk manager | Which items are material, and that each explanation is fair |
 | Escalation | Head of risk or delegate | That what is escalated, and any action the risk manager recommends, is right |
 | Release | Owner of the output | That the output may go to its audience |
+| Same-day review | Risk manager | That each notice the AI sent, and each breach it closed, under a governed rule was right |
 
 The risk manager sees the computed facts alongside the generated text, so that the review is of the content and not of
 the arithmetic, which the system has already checked.
@@ -131,8 +134,8 @@ Each workflow defines what happens when a component fails.
 Because the template backend produces correct output without an AI service, the workflow can always run.
 
 ## Data handling
-A risk function sends data to an AI service only under rules set before the workflow is built. The data the risk engine
-itself reads, and the checks it passes, are set out in [risk data](03-risk-data.md).
+A risk function sends data to an AI service only under rules set before the workflow is built. The data the analytics
+engine itself reads, and the checks it passes, are set out in [risk data](03-risk-data.md).
 
 - **What may be sent.** The workflow defines which data may go to which service. Computed facts about a portfolio are
   often enough; raw positions, investor details and personal data are sent only where the service is approved for them.

@@ -7,29 +7,29 @@
 data, flows and the terms of each mandate. The data is checked before anything is computed, versioned as it was known so
 that any past output can be reproduced, filled with flagged proxies where it has gaps, and corrected at its source.
 
-**How the work is done:** the risk engine takes in every domain, runs every check on every portfolio and ranks the
+**How the work is done:** the analytics engine takes in every domain, runs every check on every portfolio and ranks the
 breaks by what they could change. The AI drafts a notice to the owner of each break's source. The risk manager judges
 each ranked break and decides whether to run the day's measures, wait or mark them.
 
 | # | Step | Owner |
 |---|---|---|
-| 1 | Take in every domain; check completeness, timeliness and validity | Risk engine |
-| 2 | Reconcile positions to accounting values; check prices against each security's history | Risk engine |
-| 3 | Apply proxies under the policy and flag them | Risk engine |
-| 4 | Rank breaks by the portfolios and measures they affect | Risk engine |
+| 1 | Take in every domain; check completeness, timeliness and validity | Analytics engine |
+| 2 | Reconcile positions to accounting values; check prices against each security's history | Analytics engine |
+| 3 | Apply proxies under the policy and flag them | Analytics engine |
+| 4 | Rank breaks by the portfolios and measures they affect | Analytics engine |
 | 5 | Draft a notice for each break to the owner of its source | AI assistant |
-| 6 | Grounding check on every notice | Risk engine |
+| 6 | Grounding check on every notice | Analytics engine |
 | 7 | Judge each ranked break; decide whether to run, wait or mark | Risk manager |
 | 8 | Edit and send the notices | Risk manager |
-| 9 | Track each break to closure | Risk engine |
+| 9 | Track each break to closure | Analytics engine |
 
 A break affecting a large share of a portfolio, or a measure close to its limit, ranks above one that could not move any
 reading the risk manager would see.
 
 The rest of this chapter is the detail behind these points.
 
-## What the risk engine reads
-The risk engine reads the same domains for every portfolio, whatever its vehicle or strategy.
+## What the analytics engine reads
+The analytics engine reads the same domains for every portfolio, whatever its vehicle or strategy.
 
 | Domain | What it holds | Used by |
 |---|---|---|
@@ -49,11 +49,11 @@ Personal data about investors is kept to what the measures need: shares and flow
 be sent to an AI service are set out under [data handling](08-controls.md#data-handling).
 
 ## From source to computed figure
-The risk engine takes each item from its domain's **golden source** and nowhere else, so two outputs never disagree
+The analytics engine takes each item from its domain's **golden source** and nowhere else, so two outputs never disagree
 because they read different copies of the same number.
 
-The risk engine keeps what it reads in a **risk data store**, separate from the systems that produce the data. Every run
-follows the same order.
+The analytics engine keeps what it reads in a **risk data store**, separate from the systems that produce the data.
+Every run follows the same order.
 
 | Step | What happens |
 |---|---|

@@ -3,8 +3,8 @@
 Asset management from an investment risk perspective, and how to redesign that work around AI: a philosophy, a
 definition of investment risk and its three workflow pillars (market, liquidity, performance risk), the sources of
 return, the risk data the work rests on, the limits that apply each mandate, principles, a method for redesigning each
-workflow, the controls that make it safe and how to measure the value. Its core pattern: **the risk engine computes, AI
-analyses and narrates, a human judges.**
+workflow, the controls that make it safe and how to measure the value. Its core pattern: **the analytics engine
+computes, AI interprets and narrates, a human judges.**
 
 The framework's map is in `README.md`. Read it, and the chapters a change touches, before making the change.
 
@@ -29,12 +29,14 @@ literature it draws on.
 
 ## Design rules for the reference implementations
 - **The AI never fabricates a number.** Every figure is computed by code from data, in the daily run or in an analysis
-  the AI layer runs through the risk engine (an aggregation, an attribution, a what-if), with the run recorded. Beyond
-  that the AI layer at most combines figures in simple ways (a sum, difference, ratio or percentage change), and a
-  grounding check verifies that every number in generated text traces to a computed value or is recomputed from
+  the AI layer runs through the analytics engine (an aggregation, an attribution, a what-if), with the run recorded.
+  Beyond that the AI layer at most combines figures in simple ways (a sum, difference, ratio or percentage change), and
+  a grounding check verifies that every number in generated text traces to a computed value or is recomputed from
   computed values; text that fails is rejected.
 - **Exceptions over everything.** Workflows rank what needs a human's attention rather than handing over everything.
 - **Every AI step has a human sign-off point and an audit trail** of what was generated and what the human changed.
+  The one exception is a routine action a governed rule allows, such as a standard breach notice: a person reviews it
+  the same day, and it is recorded in the same trail.
 - **Examples run without an AI service.** The narrative layer has a deterministic template backend so tests and demos
   run offline; an AI backend is optional and configured by environment variable.
 - Calculations stay simple and transparent. The examples demonstrate workflows, not risk models.

@@ -8,23 +8,23 @@
 > The risk manager can show, with evidence, whether each portfolio is meeting its objective and whether its returns come
 > from the sources its mandate describes.
 
-**How the work is done:** the risk engine tracks every portfolio's realised measures and tests its exposures against the
-confirmed mandate terms. The AI drafts a challenge pack: the top issues for the portfolio, the evidence for each and the
-questions to ask. The risk manager runs the portfolio manager review on the risk function's agenda, with evidence that
-is independent of the portfolio manager, and the agreed actions are tracked until they are closed.
+**How the work is done:** the analytics engine tracks every portfolio's realised measures and tests its exposures
+against the confirmed mandate terms. The AI drafts a challenge pack: the top issues for the portfolio, the evidence for
+each and the questions to ask. The risk manager runs the portfolio manager review on the risk function's agenda, with
+evidence that is independent of the portfolio manager, and the agreed actions are tracked until they are closed.
 
 | # | Step | Owner |
 |---|---|---|
-| 1 | Track realised return, ex-post tracking error, drawdown, active share, information ratio, factors and peer position | Risk engine |
-| 2 | Test exposures against the mandate terms; flag drift and unintended bets | Risk engine |
-| 3 | Rank the portfolio's issues, with market risk's tracking error and risk budget exceptions | Risk engine |
+| 1 | Track realised return, ex-post tracking error, drawdown, active share, information ratio, factors and peer position | Analytics engine |
+| 2 | Test exposures against the mandate terms; flag drift and unintended bets | Analytics engine |
+| 3 | Rank the portfolio's issues, with market risk's tracking error and risk budget exceptions | Analytics engine |
 | 4 | Draft the challenge pack: evidence and questions for each issue | AI assistant |
-| 5 | Grounding check on the pack | Risk engine |
+| 5 | Grounding check on the pack | Analytics engine |
 | 6 | Review and edit the pack; set the agenda | Risk manager |
 | 7 | Run the meeting on the risk function's agenda | Risk manager |
 | 8 | Draft the minutes and the action log | AI assistant |
 | 9 | Edit and agree the minutes and actions | Risk manager |
-| 10 | Track follow-ups; escalate overdue actions to the watch list | Risk engine |
+| 10 | Track follow-ups; escalate overdue actions to the watch list | Analytics engine |
 
 **Both halves of the outcome count:** a portfolio that beats its benchmark through an exposure its mandate does not
 describe is not delivering what was promised, and the success may not last.
@@ -65,11 +65,11 @@ person who can act on it. The other workflows feed it.
   judge the explanation.
 
 ## Mandate terms
-Testing a portfolio against what it promised needs the promise in a form the risk engine can test. The AI extracts the
-portfolio's stated objective, benchmark, style, limits and dealing terms from its documents into structured terms, each
-linked to the passage it came from. The risk manager confirms the terms. The risk engine then tests holdings and
-exposures against the confirmed terms and flags style drift and unintended bets. For a hard limit, compliance's coded
-rule is the master reading: the extracted limit is reconciled to it, and a difference is routed to compliance, not
+Testing a portfolio against what it promised needs the promise in a form the analytics engine can test. The AI extracts
+the portfolio's stated objective, benchmark, style, limits and dealing terms from its documents into structured terms,
+each linked to the passage it came from. The risk manager confirms the terms. The analytics engine then tests holdings
+and exposures against the confirmed terms and flags style drift and unintended bets. For a hard limit, compliance's
+coded rule is the master reading: the extracted limit is reconciled to it, and a difference is routed to compliance, not
 settled by the risk manager. The risk function owns the objective and style terms, which compliance does not code, once
 the risk manager has confirmed them. For a new portfolio, the terms are first extracted and confirmed in the [new
 portfolio review](new-portfolio-review.md).
@@ -90,10 +90,10 @@ values below are illustrative and are not recommendations;** each risk function 
 | Style consistency | Exposures outside the confirmed mandate terms | Style drift | Exception |
 | Overdue action | An agreed action past its due date | Follow-up that has stalled | Exception |
 
-The risk engine ranks issues for each portfolio, exceptions before watch items. Significant issues rank above those that
-are not, because significance weighs both the size of a shortfall and how long it has lasted. Issues where the outcome
-and the way it was achieved both depart from the promise rank highest. Overdue actions are always shown, so that the
-review starts from what was agreed last time.
+The analytics engine ranks issues for each portfolio, exceptions before watch items. Significant issues rank above those
+that are not, because significance weighs both the size of a shortfall and how long it has lasted. Issues where the
+outcome and the way it was achieved both depart from the promise rank highest. Overdue actions are always shown, so that
+the review starts from what was agreed last time.
 
 ## What the AI drafts
 The AI drafts each item of the challenge pack. Every number in the draft appears in the facts beside it, so the
