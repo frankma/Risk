@@ -92,6 +92,10 @@ illustrative and are not recommendations;** each risk function sets its own.
 warning below it stays in the queue. A breach of a risk-measured hard limit enters the queue as an exception and is
 reported to compliance the same day, as [limits and escalation](../framework/04-limits-and-escalation.md) sets out.
 
+**Internal limits.** A breach follows the [breach
+lifecycle](../framework/04-limits-and-escalation.md#the-breach-lifecycle): the AI may send a notice a governed rule
+covers, and the risk manager reviews it the same day.
+
 **Ranking.** Breaches rank first, then the other exceptions, then early warnings, then persistence. Within a tier, items
 are ordered by size relative to the threshold, and a portfolio with several items ranks above a portfolio with one. The
 ranking rule is itself a governed parameter, because it decides what the risk manager reads first.
