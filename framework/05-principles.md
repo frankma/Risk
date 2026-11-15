@@ -7,7 +7,7 @@ workflow as it stands. The unit of change is the workflow, not the task.
 | # | Principle | In one line |
 |---|---|---|
 | 1 | Redesign, don't insert | Start from the outcome, then rebuild the steps. |
-| 2 | The risk engine computes, AI analyses and narrates, a human judges | Each kind of work goes to the owner suited to it. |
+| 2 | The analytics engine computes, AI interprets and narrates, a human judges | Each kind of work goes to the owner suited to it. |
 | 3 | The AI never fabricates a number | Every figure has a recorded computation behind it; generated text is checked against it. |
 | 4 | Exceptions over everything | The system reviews every portfolio; the human reviews what is material. |
 | 5 | Decide what the risk manager's time is for before starting | Time that is not directed is absorbed by existing work. |
@@ -33,16 +33,16 @@ from the existing steps and asking which of them AI can speed up.
 outputs are stopped (step 2), and steps that exist only because the old process was slow are removed rather than
 automated (step 4).
 
-### 2. The risk engine computes, AI analyses and narrates, a human judges
-**What it means.** Each kind of work goes to its owner: the risk engine, the deterministic part of the system, computes;
-the AI analyses, drafts, extracts and challenges a conclusion against the data; and the risk manager judges, escalates
-and signs off. When the AI's work needs a figure, the AI runs the analysis through the risk engine and does not compute
-it itself.
+### 2. The analytics engine computes, AI interprets and narrates, a human judges
+**What it means.** Each kind of work goes to its owner: the analytics engine, the deterministic part of the system,
+computes; the AI interprets, drafts, extracts and challenges a conclusion against the data; and the risk manager judges,
+escalates and signs off. When the AI's work needs a figure, the AI runs the analysis through the analytics engine and
+does not compute it itself.
 
 **In practice.** Each step of a redesigned workflow is assigned to exactly one of the three owners. Where a step mixes
 kinds of work, it is split. A system in which the AI does the arithmetic itself, or in which a person re-types figures
-that the risk engine produced, has the wrong owner for that step. [Working with AI](06-working-with-ai.md) sets out how
-the person and the AI then work together.
+that the analytics engine produced, has the wrong owner for that step. [Working with AI](06-working-with-ai.md) sets out
+how the person and the AI then work together.
 
 ### 3. The AI never fabricates a number
 **What it means.** A risk output with a wrong figure in it is worse than no output. Every figure has a recorded
@@ -72,7 +72,7 @@ value](09-measuring-value.md#a-plan-for-the-risk-managers-time) sets out.
 looks for what the manual process could not do at all, because it needed more data, more frequent checks or more
 connections than people could manage.
 
-**In practice.** Once the risk engine covers every portfolio continuously, liquidity can be monitored continuously
+**In practice.** Once the analytics engine covers every portfolio continuously, liquidity can be monitored continuously
 rather than at each periodic stress test, and signals can be connected across market, liquidity and performance risk to
 see where they combine. The [integrated view](../pillars/integrated-view.md) is the clearest example.
 
@@ -92,8 +92,8 @@ the risk manager's time goes to the work only a person can do, in both of the fu
 The value a risk manager adds is not the sign-off. The sign-off is how a person is held accountable for an output; what
 they add is what goes into it.
 
-- **Judging what matters to the portfolio and its intended risk profile.** The risk engine ranks readings by their size
-  against a threshold; the risk manager decides whether a reading matters for this portfolio, given the risks its
+- **Judging what matters to the portfolio and its intended risk profile.** The analytics engine ranks readings by their
+  size against a threshold; the risk manager decides whether a reading matters for this portfolio, given the risks its
   mandate intends. That means telling intended risk from unintended, telling signals that are connected from signals
   that merely appear together, and seeing when a drafted explanation gives weight to the wrong driver, which the
   grounding check cannot test.

@@ -8,16 +8,16 @@
 > The risk manager knows, every day, which portfolios carry more risk than their mandate intends, absolute or relative,
 > and why.
 
-**How the work is done:** the risk engine measures every portfolio every day and ranks what needs attention. The AI
+**How the work is done:** the analytics engine measures every portfolio every day and ranks what needs attention. The AI
 drafts an explanation of each ranked item. The risk manager judges which items matter and sends what goes out.
 
 | # | Step | Owner |
 |---|---|---|
-| 1 | Load data, compute every measure, compare to limits and the previous day | Risk engine |
-| 2 | Decompose each change by position and risk factor | Risk engine |
-| 3 | Rank portfolios by materiality | Risk engine |
+| 1 | Load data, compute every measure, compare to limits and the previous day | Analytics engine |
+| 2 | Decompose each change by position and risk factor | Analytics engine |
+| 3 | Rank portfolios by materiality | Analytics engine |
 | 4 | Draft an explanation for each flagged portfolio | AI assistant |
-| 5 | Grounding check on every draft | Risk engine |
+| 5 | Grounding check on every draft | Analytics engine |
 | 6 | Review the ranked queue, edit explanations, decide what matters | Risk manager |
 | 7 | Draft the message to the portfolio manager and the log entry | AI assistant |
 | 8 | Edit and send the message; confirm the log entry | Risk manager |
@@ -51,13 +51,13 @@ draw on what it computes.
   method's worked example](../framework/07-redesign-method.md#worked-example-a-monthly-risk-and-performance-report).
 - **Stress and scenario testing.** Runs every scenario in the library against every portfolio, daily; how the library is
   built and governed is under [stress and reverse stress](market-risk.md#stress-and-reverse-stress).
-- **Pre-trade what-ifs.** The risk engine runs the daily calculations on a proposed trade and computes what it adds to
-  VaR, concentration, tracking error and budget use. The portfolio manager decides.
+- **Pre-trade what-ifs.** The analytics engine runs the daily calculations on a proposed trade and computes what it adds
+  to VaR, concentration, tracking error and budget use. The portfolio manager decides.
 - **Counterparty exposure monitoring.** Runs inside the daily process, with its own limits. Approving which
   counterparties may be used stays with the function that owns that decision.
 - **Ad hoc queries.** They become investigations: someone asks in plain words, and the AI runs the drill-down, the
-  aggregation or the what-if through the risk engine and reports the figures with the runs behind them, as set out in
-  [working with AI](../framework/06-working-with-ai.md#three-modes-of-working).
+  aggregation or the what-if through the analytics engine and reports the figures with the runs behind them, as set out
+  in [working with AI](../framework/06-working-with-ai.md#three-modes-of-working).
 - **The firm's footprint.** The daily run totals holdings across portfolios by issuer, counterparty and factor for the
   [firm's footprint](integrated-view.md#the-firms-footprint). These totals do not net.
 
@@ -137,11 +137,11 @@ shortfall; a long window with gradual decay, the same as the betas use, so the m
 move rather than when an old day drops out; and a separate value at risk on a fixed stressed period.
 
 ### Factors
-The risk function chooses the factor model behind ex-ante tracking error and the risk decomposition, and the risk engine
-runs it. Its factors are the [declared factor list](alpha-and-beta-method.md) of the alpha and beta method, or map to
-it, many to one where needed, and carry the same generator tags. Risk by factor and return by factor then line up, so
-the risk budget review can set what each bet uses beside what it earns, and one set of factors explains any period's
-return and change in risk ([connection](../framework/00-philosophy.md#3-connection)).
+The risk function chooses the factor model behind ex-ante tracking error and the risk decomposition, and the analytics
+engine runs it. Its factors are the [declared factor list](alpha-and-beta-method.md) of the alpha and beta method, or
+map to it, many to one where needed, and carry the same generator tags. Risk by factor and return by factor then line
+up, so the risk budget review can set what each bet uses beside what it earns, and one set of factors explains any
+period's return and change in risk ([connection](../framework/00-philosophy.md#3-connection)).
 
 **Exposures are computed once** in the daily run, for this pillar and for the [alpha and beta
 method](alpha-and-beta-method.md#computing-the-split). A direct measure is used where one exists: duration for rates,
@@ -175,10 +175,10 @@ usual range.
   library checks that each has at least one scenario.
 - **A scenario becomes shocks to every factor** in two steps: shocks are set on the factors that drive the scenario, and
   the other factors are filled in from how they moved with those factors in the past.
-- **Shock sizes** come from data, where the risk engine computes them from a historical episode, or from the risk
+- **Shock sizes** come from data, where the analytics engine computes them from a historical episode, or from the risk
   manager. The AI proposes the story and never the size.
-- **Reverse stress** works back from the loss that would break the mandate: the risk engine searches for the smallest
-  combination of shocks that would cause it, and the risk manager judges how plausible that combination is.
+- **Reverse stress** works back from the loss that would break the mandate: the analytics engine searches for the
+  smallest combination of shocks that would cause it, and the risk manager judges how plausible that combination is.
 
 ### Credit: default and migration
 - **Default.** **Jump to default** is the position times one minus the expected recovery rate, which is a governed

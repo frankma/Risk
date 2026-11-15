@@ -9,9 +9,9 @@ beta, where all market and factor exposure is measured, whether an allocation ca
 it. Alpha is the step from the top-down portfolio to the real portfolio: the add-on return from security selection,
 once the top-down portfolio has carried all the beta out.
 
-**How the work is done:** within [attribution reporting](performance-risk.md#workflows-in-this-pillar), the risk engine
-builds the top-down portfolio each day, computes the split and checks that it reconciles; a split that does not is an
-exception and is not drafted. The AI drafts the explanation, and the [grounding
+**How the work is done:** within [attribution reporting](performance-risk.md#workflows-in-this-pillar), the analytics
+engine builds the top-down portfolio each day, computes the split and checks that it reconciles; a split that does not
+is an exception and is not drafted. The AI drafts the explanation, and the [grounding
 check](../framework/08-controls.md#the-grounding-check) tests it. The risk manager judges whether alpha persists,
 whether beta was intended and which questions to put to the portfolio manager, who decides what to hold.
 
@@ -126,9 +126,9 @@ Because exposure is each day's weights times betas estimated over a long window,
 exposure, not to a true exposure no one can observe.
 
 ## Computing the split
-The risk engine compares the top-down portfolio's positions with the benchmark portfolio, the confirmed mandate terms
-and the tilts and timing calls on record. The risk manager's judgement on unintended beta is noted beside the line and
-does not change it. The book's return is shown separately for names held and names not held.
+The analytics engine compares the top-down portfolio's positions with the benchmark portfolio, the confirmed mandate
+terms and the tilts and timing calls on record. The risk manager's judgement on unintended beta is noted beside the line
+and does not change it. The book's return is shown separately for names held and names not held.
 
 The **trading effect** is the gap between the portfolio's actual return and the return of its start-of-day holdings:
 trading cost, and the gains and losses from trading during the day. A booked book charges it by trade tag. A derived
