@@ -110,7 +110,7 @@ they add is what goes into it.
   down. They filter what the risk manager sees, not what the portfolio may hold, and the risk function designs, tests
   and owns them.
 - **Judgement where the data runs out.** Shock sizes, how plausible a reverse stress is, regime changes, crowded exits
-  and the direction in which each model errs ([beliefs 4 and 8](00-philosophy.md#beliefs)) have no history for the risk
+  and the direction in which each model errs ([beliefs 4 and 8](00-philosophy.md#beliefs)) have no history for the
   engine to compute from.
 
 Deciding what the system flags matters most, because it scales: done well, it makes a risk manager's judgement apply

@@ -65,10 +65,10 @@ manager's judgement at the sign-off point.
 
 ## AI permissions
 The AI works under a permission that the risk function sets and records: the data it may read, the analyses it may run
-and the actions it may never take, as set out in [working with AI](06-working-with-ai.md#what-the-ai-may-do). The risk
-engine enforces it. An analysis outside the governed list does not run. The one thing the AI may run outside the list is
-a read-only exploratory query, whose result is labelled unvalidated and kept out of outputs. The AI has no write access
-to data or to governed parameters, and nothing it produces leaves the function without a sign-off, except the routine
+and the actions it may never take, as set out in [working with AI](06-working-with-ai.md#what-the-ai-may-do). The engine
+enforces it. An analysis outside the governed list does not run. The one thing the AI may run outside the list is a
+read-only exploratory query, whose result is labelled unvalidated and kept out of outputs. The AI has no write access to
+data or to governed parameters, and nothing it produces leaves the function without a sign-off, except the routine
 actions a governed rule allows: a breach notice the rule covers, and closing a breach that came from a data break. The
 risk manager reviews each of those the same day, and the rule is itself a governed parameter. Every run the AI starts is
 recorded with its parameters, the person who asked and the result, so that any answer can be reproduced.
