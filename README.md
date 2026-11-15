@@ -23,24 +23,24 @@ stop, and the split to ask whether each risk was chosen and paid for; see [sourc
 return](framework/02-sources-of-return.md).
 
 ## The core pattern
-**The risk engine computes, AI analyses and narrates, a human judges.**
+**The analytics engine computes, AI interprets and narrates, a human judges.**
 
-Each workflow is redesigned around this pattern, not handed an AI tool. The risk engine is the deterministic part of
-the system, where the same data always gives the same figure and every figure can be traced and reproduced.
+Each workflow is redesigned around this pattern, not handed an AI tool. The analytics engine is the deterministic part
+of the system, where the same data always gives the same figure and every figure can be traced and reproduced.
 
 | Work | Owner |
 |---|---|
-| Gathering data, calculating, comparing to limits | Risk engine |
-| Drafting, investigating through the risk engine, challenging conclusions, extracting from documents | AI assistant |
+| Gathering data, calculating, comparing to limits | Analytics engine |
+| Drafting, investigating through the analytics engine, challenging conclusions, extracting from documents | AI assistant |
 | Judging what matters to the portfolio and its intended risk profile; bringing clarity to the risks being taken | The risk manager and head of risk |
 
 Two rules make it work:
 
-- **The AI never fabricates a number.** Every figure it reports was computed by the risk engine, in the daily run or in
-  an analysis the AI ran through it, such as an aggregation, an attribution or a what-if. The run is recorded and can
-  be reproduced, and text with a figure that has no computation behind it is rejected.
-- **Exceptions over everything.** The risk engine checks every portfolio against every rule each day and ranks what it
-  finds into a queue of exceptions and watch items. The risk manager reviews that queue rather than every portfolio,
+- **The AI never fabricates a number.** Every figure it reports was computed by the analytics engine, in the daily run
+  or in an analysis the AI ran through it, such as an aggregation, an attribution or a what-if. The run is recorded and
+  can be reproduced, and text with a figure that has no computation behind it is rejected.
+- **Exceptions over everything.** The analytics engine checks every portfolio against every rule each day and ranks what
+  it finds into a queue of exceptions and watch items. The risk manager reviews that queue rather than every portfolio,
   and signs off what goes out. [Principles](framework/05-principles.md#4-exceptions-over-everything) sets this out.
 
 ## Map

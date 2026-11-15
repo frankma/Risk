@@ -9,18 +9,18 @@ investors who stay?
 > The risk manager knows whether each portfolio can meet plausible calls on its cash in time and at a fair cost, and
 > whether the tools for managing liquidity are ready if it cannot.
 
-**How the work is done:** the risk engine measures every portfolio's liquidity every day and runs a stress test on the
-day an event fires a trigger, not when the calendar says so. The AI drafts the narrative for each triggered portfolio
-and the board paper. The risk manager reviews each triggered portfolio and makes any recommendation on liquidity
-management tools.
+**How the work is done:** the analytics engine measures every portfolio's liquidity every day and runs a stress test on
+the day an event fires a trigger, not when the calendar says so. The AI drafts the narrative for each triggered
+portfolio and the board paper. The risk manager reviews each triggered portfolio and makes any recommendation on
+liquidity management tools.
 
 | # | Step | Owner |
 |---|---|---|
-| 1 | Compute each portfolio's liquidity profile and redemption coverage | Risk engine |
-| 2 | Monitor flows, margin calls and investor concentration against each portfolio's history | Risk engine |
-| 3 | Run the stress test when an event trigger fires | Risk engine |
+| 1 | Compute each portfolio's liquidity profile and redemption coverage | Analytics engine |
+| 2 | Monitor flows, margin calls and investor concentration against each portfolio's history | Analytics engine |
+| 3 | Run the stress test when an event trigger fires | Analytics engine |
 | 4 | Draft the narrative for each triggered portfolio | AI assistant |
-| 5 | Grounding check on every draft | Risk engine |
+| 5 | Grounding check on every draft | Analytics engine |
 | 6 | Review each triggered portfolio; recommend on liquidity tools | Risk manager |
 | 7 | Draft the board paper from the period's results and events | AI assistant |
 | 8 | Review scenario calibration; edit the board paper | Risk manager |
@@ -53,8 +53,8 @@ Liquidity monitoring and stress testing is the flagship, shown in the table at t
   the stress test.
 - **Board reporting** draws on the period's monitoring and is not a separate exercise.
 - **Investigations.** Between triggers, the risk manager can ask what a redemption of a given size, or the loss of a
-  named distributor, would do to a portfolio's coverage. The AI runs the stress test through the risk engine with those
-  parameters and reports the result with the run behind it, as set out in [working with
+  named distributor, would do to a portfolio's coverage. The AI runs the stress test through the analytics engine with
+  those parameters and reports the result with the run behind it, as set out in [working with
   AI](../framework/06-working-with-ai.md#three-modes-of-working).
 - **Stale or unpriceable holdings** are shown against the measures that rest on them.
 - **Liquidity tool readiness.** A tool is ready when the governing documents provide for it, the operations to apply it
@@ -78,7 +78,7 @@ below are illustrative and are not recommendations;** each risk function sets it
 | Market liquidity | Time or cost to liquidate rising above a set level | Assets becoming harder to sell | Yes |
 | Stale or unpriceable | No price change for a set number of trading days | Holdings whose value is uncertain | No |
 
-The risk engine ranks exceptions before watch items: portfolios with coverage below its threshold come first, then
+The analytics engine ranks exceptions before watch items: portfolios with coverage below its threshold come first, then
 portfolios with a fired trigger, then other exceptions, then watch items. Stale and unpriceable holdings are also listed
 separately and routed to the owner of pricing.
 

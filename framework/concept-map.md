@@ -13,7 +13,7 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 | Three decisions | Construct, Oversee and Assess: before, during and after an investment | [Philosophy](00-philosophy.md#why-a-risk-function-exists) | Market risk's what-ifs |
 | Three dimensions | Condensation, drill-in and connection: what every piece of risk work provides | [Philosophy](00-philosophy.md#what-every-piece-of-risk-work-provides) | All pillars |
 | Decision-maker | Whoever a piece of a decomposition belongs to | [Philosophy](00-philosophy.md#2-drill-in) | Alpha and beta |
-| Mandate terms | A portfolio's objective, benchmark, style, limits and dealing terms in a form the risk engine can test, confirmed by the risk manager; hard limits are reconciled to compliance's rules | [Performance risk](../pillars/performance-risk.md#mandate-terms) | Performance risk's rules and split |
+| Mandate terms | A portfolio's objective, benchmark, style, limits and dealing terms in a form the analytics engine can test, confirmed by the risk manager; hard limits are reconciled to compliance's rules | [Performance risk](../pillars/performance-risk.md#mandate-terms) | Performance risk's rules and split |
 
 ## Scope
 
@@ -66,7 +66,7 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 | Concept | What it is | Defined in | Used by |
 |---|---|---|---|
 | Hard limit | A mandate or regulatory limit, which must be cured; compliance owns its legal reading, and its coded rule is the master reading | [Limits and escalation](04-limits-and-escalation.md#where-limits-come-from) | Investment risk, market risk |
-| Risk-measured limit | A hard limit on a measure only the risk engine computes (leverage, exposure by value at risk, counterparty exposure, liquidity); the risk function monitors it and compliance writes the breach report | [Limits and escalation](04-limits-and-escalation.md#where-limits-come-from) | Market risk, liquidity risk, new portfolio review |
+| Risk-measured limit | A hard limit on a measure only the analytics engine computes (leverage, exposure by value at risk, counterparty exposure, liquidity); the risk function monitors it and compliance writes the breach report | [Limits and escalation](04-limits-and-escalation.md#where-limits-come-from) | Market risk, liquidity risk, new portfolio review |
 | Internal limit | A soft limit the risk function sets where the mandate is silent, to produce insight first and constrain when judged necessary | [Limits and escalation](04-limits-and-escalation.md#what-internal-limits-are-for) | Market risk, liquidity risk, controls |
 | Early warning | A level ahead of a hard or internal limit, or on a measure with no limit; a reading beyond it is a watch item | [Limits and escalation](04-limits-and-escalation.md#where-limits-come-from) | All pillars |
 | Breach lifecycle | Detect, verify, classify, notify, explain, decide, cure and close | [Limits and escalation](04-limits-and-escalation.md#the-breach-lifecycle) | Market risk |
@@ -78,16 +78,16 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 
 | Concept | What it is | Defined in | Used by |
 |---|---|---|---|
-| Core pattern | The risk engine computes, AI analyses and narrates, a human judges | [Principles](05-principles.md#2-the-risk-engine-computes-ai-analyses-and-narrates-a-human-judges) | Every chapter |
-| Risk engine | The deterministic part of the system: the same data always gives the same figure | [Principles](05-principles.md#2-the-risk-engine-computes-ai-analyses-and-narrates-a-human-judges) | Every chapter |
+| Core pattern | The analytics engine computes, AI interprets and narrates, a human judges | [Principles](05-principles.md#2-the-analytics-engine-computes-ai-interprets-and-narrates-a-human-judges) | Every chapter |
+| Analytics engine | The deterministic part of the system: the same data always gives the same figure | [Principles](05-principles.md#2-the-analytics-engine-computes-ai-interprets-and-narrates-a-human-judges) | Every chapter |
 | Modes of working | Prepare, investigate and challenge: how a person and the AI work together | [Working with AI](06-working-with-ai.md#three-modes-of-working) | Market risk, liquidity risk, performance risk |
-| Analysis run | A governed analysis the AI runs through the risk engine, recorded so that its figures can be reproduced | [Working with AI](06-working-with-ai.md#where-a-figure-may-come-from) | Principles, controls |
+| Analysis run | A governed analysis the AI runs through the analytics engine, recorded so that its figures can be reproduced | [Working with AI](06-working-with-ai.md#where-a-figure-may-come-from) | Principles, controls |
 | Exploratory query | A read-only query the AI composes where no governed analysis exists; labelled unvalidated and kept out of outputs | [Working with AI](06-working-with-ai.md#where-a-figure-may-come-from) | Controls |
 | Six principles | What a redesign should follow | [Principles](05-principles.md#six-principles) | Redesign method, all pillars |
 | Seven steps | How one workflow is redesigned, from outcome to measured result | [Redesign method](07-redesign-method.md#the-seven-steps) | All pillars |
 | Step tags | Gather, Compute, Interpret, Judge, Communicate, Approve / Wait | [Redesign method](07-redesign-method.md#3-map-the-current-state) | That chapter only |
 | Risk manager's value | Judging what matters to the portfolio and its intended risk profile, bringing clarity to the risks being taken, challenge, deciding what the system flags and judgement where the data runs out; the sign-off is the accountability | [Principles](05-principles.md#what-the-risk-manager-adds) | Principles, all pillars |
-| Owners | Who or what does each step: the risk engine, the AI assistant, the risk manager or the head of risk | [Redesign method](07-redesign-method.md#4-assign-each-step-an-owner) | That chapter only |
+| Owners | Who or what does each step: the analytics engine, the AI assistant, the risk manager or the head of risk | [Redesign method](07-redesign-method.md#4-assign-each-step-an-owner) | That chapter only |
 | Four dimensions of value | Capacity, speed, quality and influence | [Measuring value](09-measuring-value.md#four-dimensions) | All pillars |
 | Baseline | The value of each measure before anything changes | [Measuring value](09-measuring-value.md#baseline-first) | Redesign method |
 | Plan for the risk manager's time | What the risk manager's time will go to, decided in advance | [Measuring value](09-measuring-value.md#a-plan-for-the-risk-managers-time) | Redesign method, measuring value |
@@ -109,7 +109,7 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 | Concept | What it is | Defined in | Used by |
 |---|---|---|---|
 | Grounding check | Every number in generated text traces to the daily run or to a recorded analysis run, or is a stated simple operation on such figures that the check recomputes; each sentence links to its facts, and direction and comparisons are checked | [Controls](08-controls.md#the-grounding-check) | Principles, working with AI, all pillars, alpha and beta |
-| AI permissions | What the AI may read, which analyses it may run and what it may never do, set by the risk function and enforced by the risk engine | [Controls](08-controls.md#ai-permissions) | Working with AI |
+| AI permissions | What the AI may read, which analyses it may run and what it may never do, set by the risk function and enforced by the analytics engine | [Controls](08-controls.md#ai-permissions) | Working with AI |
 | Sign-off point | Where a human must approve, and what they are approving | [Controls](08-controls.md#sign-off-points) | Every redesigned workflow |
 | Audit trail | The record of facts, versions, generated text, edits and approval | [Controls](08-controls.md#the-audit-trail) | Every redesigned workflow |
 | Governed parameter | A threshold or rule with an owner, a review cycle and a change record | [Controls](08-controls.md#materiality-thresholds-as-governed-parameters) | All pillars, alpha and beta |

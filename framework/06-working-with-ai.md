@@ -1,11 +1,11 @@
 # Working with AI
 
 ## The essentials
-**The rule:** the risk engine computes, the AI analyses and narrates, and a person judges.
+**The rule:** the analytics engine computes, the AI interprets and narrates, and a person judges.
 
-**Three modes:** the AI prepares outputs from what the risk engine found, investigates a person's question by running
-analyses through the risk engine, and challenges a conclusion against the data. In each mode the risk engine does the
-computing and a person keeps the judgement.
+**Three modes:** the AI prepares outputs from what the analytics engine found, investigates a person's question by
+running analyses through the analytics engine, and challenges a conclusion against the data. In each mode the analytics
+engine does the computing and a person keeps the judgement.
 
 **Numbers:** the AI never fabricates a number. Every figure it reports has a recorded computation behind it that can be
 reproduced.
@@ -20,16 +20,16 @@ The rest of this chapter is the detail behind these points.
 ## Three modes of working
 | Mode | What starts it | What the AI does | What the person does |
 |---|---|---|---|
-| **Prepare** | The daily run, a trigger or a schedule | Drafts explanations, notices, packs and minutes from what the risk engine found | Judges the ranked items, edits and signs off |
-| **Investigate** | A person's question | Runs analyses through the risk engine and reports the figures with the runs behind them | Asks, follows up and decides what the answer means |
+| **Prepare** | The daily run, a trigger or a schedule | Drafts explanations, notices, packs and minutes from what the analytics engine found | Judges the ranked items, edits and signs off |
+| **Investigate** | A person's question | Runs analyses through the analytics engine and reports the figures with the runs behind them | Asks, follows up and decides what the answer means |
 | **Challenge** | A conclusion or an explanation | Tests it against the data, looks for the figures that would contradict it and reports what it finds | Weighs the challenge and decides |
 
 **Prepare** is the mode each pillar's flagship workflow runs in.
 
 **Investigate** replaces the ad hoc query. A risk manager, or a portfolio manager before a trade, asks a question in
-plain words. The AI works out which analyses answer it, runs them through the risk engine, and reports what they show: a
-drill-down into a change, an aggregation across portfolios, an attribution over a period, a what-if on a proposed trade,
-a scenario. Every figure is tied to the run that produced it.
+plain words. The AI works out which analyses answer it, runs them through the analytics engine, and reports what they
+show: a drill-down into a change, an aggregation across portfolios, an attribution over a period, a what-if on a
+proposed trade, a scenario. Every figure is tied to the run that produced it.
 
 **Challenge** turns the AI on a conclusion. The conclusion may be a portfolio manager's explanation of a breach, a risk
 manager's own reading of a portfolio, or a draft paper for a committee. The AI looks for what would contradict it and
@@ -41,8 +41,8 @@ text that contains one is rejected.
 
 | Source of a figure | What it is | May it reach an output? |
 |---|---|---|
-| The daily run | Computed by the risk engine for every portfolio | Yes |
-| An analysis run | One of the risk engine's governed analyses, run by the AI with its own parameters: a drill-down, an aggregation, an attribution, a what-if, a scenario | Yes, with the run recorded |
+| The daily run | Computed by the analytics engine for every portfolio | Yes |
+| An analysis run | One of the analytics engine's governed analyses, run by the AI with its own parameters: a drill-down, an aggregation, an attribution, a what-if, a scenario | Yes, with the run recorded |
 | Simple arithmetic | A sum, a difference, a ratio or a percentage change of figures from the two rows above, which the grounding check recomputes | Yes |
 | A document | A figure extracted from a source passage, such as a limit in a portfolio's mandate terms | Once the risk manager has confirmed it |
 | An exploratory query | A read-only query the AI composed over the risk data, where no governed analysis answers the question | No. It is labelled unvalidated and stays out of outputs |
@@ -50,7 +50,7 @@ text that contains one is rejected.
 
 The analyses the AI may run are a [governed parameter](08-controls.md#materiality-thresholds-as-governed-parameters),
 owned by the risk function. An exploratory query is how the function learns what it cannot yet compute: one that proves
-useful is adopted into the risk engine through the same change process as any other analysis, and from then on its
+useful is adopted into the analytics engine through the same change process as any other analysis, and from then on its
 figures may reach an output. The [grounding check](08-controls.md#the-grounding-check) enforces the table.
 
 ## What the AI may do
@@ -59,12 +59,12 @@ what it may never do. The pillar chapters state these limits where they bite; th
 
 | The AI may | Examples |
 |---|---|
-| **Do alone** | Draft text from computed facts; run a governed analysis; compose an exploratory query; start a run inside the risk engine; propose scenarios, questions and challenges |
+| **Do alone** | Draft text from computed facts; run a governed analysis; compose an exploratory query; start a run inside the analytics engine; propose scenarios, questions and challenges |
 | **Do with a person's sign-off** | Anything that leaves the function: an explanation, a notice, a pack, minutes; the mandate terms it extracted from a portfolio's documents |
 | **Never do** | Send a message; write a recommendation, an opinion or its conditions; decide what matters, what to escalate or whether a breach is accepted; set a shock size; change a threshold, a limit, a rule or any other governed parameter; correct data |
 
-Everything outward stays with a person. The AI can start work inside the risk engine, but it cannot commit the function
-to a view, a message or a decision.
+Everything outward stays with a person. The AI can start work inside the analytics engine, but it cannot commit the
+function to a view, a message or a decision.
 
 ## Supervising the AI
 Working with the AI is a skill, and the hardest part of it is staying critical of fluent text.
@@ -128,8 +128,8 @@ person can show what was generated, what they changed and why.
 ## How the working relationship improves
 Each mode leaves a record, and the record is how the system gets better. Edits to drafts show where the AI's
 explanations miss. Challenges that changed a conclusion, and challenges that were set aside, show where it helps.
-Exploratory queries show what the risk engine cannot yet compute. The risk function reads these on a set cycle and turns
-them into governed changes: a new analysis, a retuned threshold, a rule added to a pillar.
+Exploratory queries show what the analytics engine cannot yet compute. The risk function reads these on a set cycle and
+turns them into governed changes: a new analysis, a retuned threshold, a rule added to a pillar.
 
 ## Sources
 - Parasuraman, R., Sheridan, T. and Wickens, C. (2000). A Model for Types and Levels of Human Interaction with

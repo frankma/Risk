@@ -9,18 +9,18 @@ escalate?
 > The risk function knows which portfolios have signals combining across pillars, and why, before any one pillar would
 > escalate them.
 
-**How the work is done:** the view computes nothing new. The risk engine reads the signals the three pillars already
-produce, for every portfolio every day, applies rules for the combinations that matter and ranks the portfolios. The AI
-drafts an account of each ranked portfolio. The risk manager judges each one and adds it to the watch list or escalates
-it.
+**How the work is done:** the view computes nothing new. The analytics engine reads the signals the three pillars
+already produce, for every portfolio every day, applies rules for the combinations that matter and ranks the portfolios.
+The AI drafts an account of each ranked portfolio. The risk manager judges each one and adds it to the watch list or
+escalates it.
 
 | # | Step | Owner |
 |---|---|---|
-| 1 | Read every pillar's signals for every portfolio; align them by date | Risk engine |
-| 2 | Apply the pattern and combination rules; rank portfolios | Risk engine |
+| 1 | Read every pillar's signals for every portfolio; align them by date | Analytics engine |
+| 2 | Apply the pattern and combination rules; rank portfolios | Analytics engine |
 | 3 | Draft an account for each ranked portfolio | AI assistant |
-| 4 | Grounding check on every account | Risk engine |
-| 5 | Assemble the committee view from the top-ranked portfolios | Risk engine |
+| 4 | Grounding check on every account | Analytics engine |
+| 5 | Assemble the committee view from the top-ranked portfolios | Analytics engine |
 | 6 | Judge each ranked portfolio; add it to the watch list or escalate | Risk manager |
 | 7 | Review and sign off the committee view | Head of risk |
 

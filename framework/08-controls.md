@@ -25,8 +25,8 @@ The rest of this chapter is the detail behind these points.
 The grounding check enforces the principle that [the AI never fabricates a
 number](05-principles.md#3-the-ai-never-fabricates-a-number). Every number in a piece of generated text is extracted and
 traced to the computed facts behind it: the facts from the daily run that the text was generated from, and the results
-of any analysis the AI ran through the risk engine, each recorded as a run. Numbers written as words, such as "three
-months", are extracted and traced in the same way as numerals.
+of any analysis the AI ran through the analytics engine, each recorded as a run. Numbers written as words, such as
+"three months", are extracted and traced in the same way as numerals.
 
 A number in generated text is grounded if it is one of the computed facts, the result of a recorded analysis run, or the
 result of a simple operation on them that the AI states and the check can recompute: a sum, a difference, a percentage
@@ -131,8 +131,8 @@ Each workflow defines what happens when a component fails.
 Because the template backend produces correct output without an AI service, the workflow can always run.
 
 ## Data handling
-A risk function sends data to an AI service only under rules set before the workflow is built. The data the risk engine
-itself reads, and the checks it passes, are set out in [risk data](03-risk-data.md).
+A risk function sends data to an AI service only under rules set before the workflow is built. The data the analytics
+engine itself reads, and the checks it passes, are set out in [risk data](03-risk-data.md).
 
 - **What may be sent.** The workflow defines which data may go to which service. Computed facts about a portfolio are
   often enough; raw positions, investor details and personal data are sent only where the service is approved for them.
