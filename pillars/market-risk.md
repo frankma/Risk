@@ -9,7 +9,8 @@
 > and why.
 
 **How the work is done:** the analytics engine measures every portfolio every day and ranks what needs attention. The AI
-drafts an explanation of each ranked item. The risk manager judges which items matter and sends what goes out.
+drafts an explanation of each ranked item. The risk manager judges which items matter and sends what goes out, or
+reviews the same day a breach notice a governed rule lets the AI send.
 
 | # | Step | Owner |
 |---|---|---|
@@ -167,7 +168,7 @@ A backtest is judged against what the chosen design implies, stated before the t
 - **Expected shortfall** is checked against the average of the losses beyond value at risk.
 
 A stable measure is paired with a responsive one. Value at risk on the long window carries the limits; volatility on a
-short window is the early warning that conditions are changing, through the rule on readings outside the portfolio's
+short window is the early sign that conditions are changing, through the rule on readings outside the portfolio's
 usual range.
 
 ### Stress and reverse stress

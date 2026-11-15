@@ -20,12 +20,12 @@ reports the close to the head of risk.
 | # | Step | Owner |
 |---|---|---|
 | 1 | Detect the breach; check it against data breaks; classify it as active or passive | Analytics engine |
-| 2 | Explain what the checks found; close a breach that came from a data break; draft the notice to the portfolio manager, investment oversight and the head of risk, and send it where a governed rule covers it | AI assistant |
+| 2 | Explain what the checks found; close a breach that came from a data break; draft the notice to the portfolio manager, investment oversight and the head of risk, and send it, once the grounding check in step 3 passes, where a governed rule covers it | AI assistant |
 | 3 | Grounding check on the notice | Analytics engine |
 | 4 | Confirm the breach and its classification; send a notice the rule does not cover; review the same day what the AI sent or closed | Risk manager |
 | 5 | Record the portfolio manager's explanation | Analytics engine |
 | 6 | Draft the decision note | AI assistant |
-| 7 | Agree the decision: rectify, accept for a set period, or escalate; take a disagreement to the risk committee | Portfolio manager and risk manager |
+| 7 | Agree the decision: rectify, or accept for a set period; take a disagreement to the risk committee | Portfolio manager and risk manager |
 | 8 | Approve an acceptance for a set period | Head of risk |
 | 9 | Track the rectification to its deadline; escalate a missed deadline | Analytics engine |
 | 10 | Confirm the close and report it to the head of risk; the record goes to the risk committee | Risk manager |
@@ -61,7 +61,8 @@ parameters](08-controls.md#materiality-thresholds-as-governed-parameters), owned
 what the mandate leaves unsaid. A mandate that sets a benchmark and a tracking error budget rarely says how much the
 portfolio may lose in total; an internal limit on value at risk says it for the risk function. Each internal limit is
 set for its portfolio, from what the mandate intends, not copied from a firm-wide number. For a new portfolio, internal
-limits are first set in the [new portfolio review](../pillars/new-portfolio-review.md).
+limits are first set in the [new portfolio review](../pillars/new-portfolio-review.md), with the head of risk's
+approval.
 
 **Early warnings sit ahead of every limit,** hard or soft, on the side a reading approaches from: below a ceiling and
 above a floor. A measure with no limit can carry an early warning of its own. A reading beyond an early warning is a
@@ -116,7 +117,7 @@ rule follows compliance's process.
 | 3 | Classify | Active, caused by a trade or decision, or passive, caused by market moves, flows or corporate actions; the analytics engine classifies from the trade records and the risk manager confirms |
 | 4 | Notify | The portfolio manager, investment oversight and the head of risk are told, with the facts; the AI sends a notice a governed rule covers, and the risk manager reviews it the same day |
 | 5 | Explain | The portfolio manager explains the position, and the explanation is recorded |
-| 6 | Decide | The portfolio manager and the risk manager agree: rectify it, accept it for a set period with the head of risk's approval, or escalate it |
+| 6 | Decide | The portfolio manager and the risk manager agree: rectify it, or accept it for a set period with the head of risk's approval; a disagreement goes to the risk committee |
 | 7 | Rectify | Where the decision is to rectify, the reading returns within the limit by a deadline |
 | 8 | Close | The outcome is recorded, with the reason, the breach is closed and the head of risk is told |
 
@@ -131,8 +132,7 @@ expiry date, and returns to the queue when it expires. Repeated acceptance is a 
 not that it should be ignored.
 
 ## Escalation
-Escalating is one of the three outcomes of the Decide stage, and it follows a stated path. **The deadlines are
-illustrative.**
+Escalation follows a stated path. **The deadlines are illustrative.**
 
 | Trigger | From | To | Deadline | What the body can decide |
 |---|---|---|---|---|
@@ -149,9 +149,8 @@ illustrative.**
 **The risk committee decides an unrectified breach of a soft limit and an escalated watch list portfolio,** and its
 decision binds the portfolio manager. It is a committee of the executive committee, with authority delegated over risk
 decisions; it is chaired by someone independent of the investment teams, and includes the head of risk and the head of
-investments. Where it cannot resolve a breach, or its decision is not followed, the breach goes to the executive
-committee, where the chief executive and the investment and business heads settle it together. The board is the last
-resort.
+investments. At the executive committee, the chief executive and the investment and business heads settle a breach
+together.
 
 **The board sees the outcomes.** On its reporting cycle, the board receives the breaches of hard limits, the breaches
 accepted and their expiry dates, the committee's binding decisions and any dissent. What the client of a segregated
@@ -161,8 +160,9 @@ mandate is told follows the mandate's reporting terms and compliance's process.
 | Decision | Who approves | Record |
 |---|---|---|
 | Acknowledging a reading beyond an early warning | Risk manager | The reading, the reason it stands and when it will be looked at again |
-| How a breach of an internal limit is handled: rectify, accept or escalate | Portfolio manager and risk manager, together | The decision note, with the reason |
+| How a breach of an internal limit is handled: rectify or accept | Portfolio manager and risk manager, together | The decision note, with the reason |
 | Accepting a breach of an internal limit for a set period | Head of risk | The breach, the reason, the expiry date and any conditions |
+| Setting a new portfolio's first internal limits | Head of risk, on the risk manager's proposal | The limits, how each was calibrated and the reason |
 | Changing an internal limit or how it is calibrated | Risk committee | The old and new values, the reason and the date it takes effect |
 | The legal reading of a hard limit, its breach report and any extension | Compliance, under its own process | Routed or reported by the risk function, with the evidence |
 
@@ -181,21 +181,21 @@ would pass. **The fund and figures are illustrative.**
 | Deadline for a decision on a passive breach | 5 business days |
 
 > Fund P's 1-day 99% VaR is 2.62%, above its internal limit of 2.50%, up from 2.41% the previous day. The breach is
-> passive: no trades were made, and the rise came from higher market volatility. A decision to rectify, accept or
-> escalate is due within 5 business days.
+> passive: no trades were made, and the rise came from higher market volatility. A decision to rectify or accept is due
+> within 5 business days.
 
 ## Controls and measures specific to limits
 The general [controls](08-controls.md) apply in full. Limits add six.
 
 - **Every breach is recorded.** Detection, verification, classification, notice, explanation, decision and close are
   kept in the audit trail.
-- **What the AI closes is reviewed.** The risk manager reviews every notice the AI sent and every breach it closed the
-  same day.
+- **What the AI sends or closes is reviewed.** The risk manager reviews every notice the AI sent and every breach it
+  closed the same day.
 - **Approvals expire.** An accepted breach returns to the queue on its expiry date.
-- **Hard limits are never accepted.** Compliance owns the legal reading and the breach report of every hard limit. The
-  risk function routes a breach of a position or eligibility rule, and detects, reports and tracks a breach of a
-  risk-measured limit.
-- **Escalation has an end.** Every path in the escalation table finishes with a body whose decision binds.
+- **Hard limits are never accepted.** A breach of one is always rectified; who routes, reports and tracks it is set out
+  under [where limits come from](04-limits-and-escalation.md#where-limits-come-from).
+- **Escalation has an end.** Every path in the escalation table finishes with a decision that binds; a dissent does not
+  suspend it.
 - **Limits are reviewed by their behaviour.** A limit that is never approached, or is breached repeatedly, is reviewed.
 
 Of the measures in [measuring value](09-measuring-value.md), speed and influence matter most here: how soon a breach is
@@ -204,7 +204,7 @@ known and decided, and whether the decisions are made and kept.
 | Dimension | Measure for limits |
 |---|---|
 | Speed | Time from detection to notice; time from notice to decision |
-| Capacity | Breaches handled with a full record, against those handled by email |
+| Capacity | Breaches handled with a full record |
 | Quality | Breaches first noticed outside the risk function; decisions made after their deadline |
 | Influence | Breaches rectified or accepted by a recorded decision; limits recalibrated from the record |
 | Limits specific | Share of internal limits that were never approached, or were breached repeatedly, in a year |

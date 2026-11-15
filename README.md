@@ -41,7 +41,7 @@ Two rules make it work:
   can be reproduced, and text with a figure that has no computation behind it is rejected.
 - **Exceptions over everything.** The analytics engine checks every portfolio against every rule each day and ranks what
   it finds into a queue of exceptions and watch items. The risk manager reviews that queue rather than every portfolio,
-  and signs off what goes out, or reviews the same day what a governed rule lets the AI send.
+  and signs off what goes out, or reviews the same day what a governed rule lets the AI send or close.
   [Principles](framework/05-principles.md#4-exceptions-over-everything) sets this out.
 
 ## Map

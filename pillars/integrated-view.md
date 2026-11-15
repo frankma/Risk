@@ -12,7 +12,7 @@ escalate?
 **How the work is done:** the view computes nothing new. The analytics engine reads the signals the three pillars
 already produce, for every portfolio every day, applies rules for the combinations that matter and ranks the portfolios.
 The AI drafts an account of each ranked portfolio. The risk manager judges each one and adds it to the watch list or
-escalates it.
+escalates it to the head of risk.
 
 | # | Step | Owner |
 |---|---|---|
@@ -21,7 +21,7 @@ escalates it.
 | 3 | Draft an account for each ranked portfolio | AI assistant |
 | 4 | Grounding check on every account | Analytics engine |
 | 5 | Assemble the committee view from the top-ranked portfolios | Analytics engine |
-| 6 | Judge each ranked portfolio; add it to the watch list or escalate | Risk manager |
+| 6 | Judge each ranked portfolio; add it to the watch list or escalate it to the head of risk | Risk manager |
 | 7 | Review and sign off the committee view | Head of risk |
 
 **Why it is needed:** the episodes that do most damage pass through all three pillars. Underperformance prompts
@@ -151,14 +151,14 @@ The general [controls](../framework/08-controls.md) apply in full. The view adds
 - **Pattern and grouping rules are governed.** Adding, removing or changing a pattern or a driver group is recorded like
   any other threshold change.
 
-Of the measures in [measuring value](../framework/09-measuring-value.md), **lead time** matters most here. It is
-measured from replays of past episodes and from live cases.
+The view's own measure, **lead time**, matters most here, ahead of the four dimensions in [measuring
+value](../framework/09-measuring-value.md). It is measured from replays of past episodes and from live cases.
 
 | Dimension | Measure for the view |
 |---|---|
-| Lead time | Days between the view ranking a portfolio and the first single-pillar escalation |
+| View-specific | Lead time: days between the view ranking a portfolio and the first single-pillar escalation |
 | Speed | Time from a combination forming to the risk manager seeing it |
-| Capacity | Portfolios covered by the integrated view: every one, against those one person recalls |
+| Capacity | Portfolios covered by the integrated view |
 | Quality | Combinations first seen through a pillar escalation rather than through the view |
 | Influence | Ranked portfolios discussed by the committee, and actions taken |
 

@@ -4,10 +4,10 @@
 **The question:** how much of a portfolio's return is beta, and how much is alpha?
 
 **The rule:** the split rests on three portfolios: the benchmark portfolio, the top-down portfolio and the real
-portfolio. The benchmark portfolio's return is policy beta. The step from it to the top-down portfolio is active
-beta, where all market and factor exposure is measured, whether an allocation call set it or a security pick carried
-it. Alpha is the step from the top-down portfolio to the real portfolio: the add-on return from security selection,
-once the top-down portfolio has carried all the beta out.
+portfolio. The benchmark portfolio's return above the risk-free rate is policy beta. The step from it to the top-down
+portfolio is active beta, where all market and factor exposure is measured, whether an allocation call set it or a
+security pick carried it. Alpha is the step from the top-down portfolio to the real portfolio: the add-on return from
+security selection, once the top-down portfolio has carried all the beta out.
 
 **How the work is done:** within [attribution reporting](performance-risk.md#workflows-in-this-pillar), the analytics
 engine builds the top-down portfolio each day, computes the split and checks that it reconciles; a split that does not
@@ -20,7 +20,7 @@ replicate a return, it joins the list. Each declared factor is tagged with the [
 generator](../framework/02-sources-of-return.md#what-generates-return) that pays it, a market risk premium or a style
 premium, so that beta can be read by generator and alpha is read as skill.
 
-This page is a companion to [sources of return](../framework/02-sources-of-return.md) and [performance
+This chapter is a companion to [sources of return](../framework/02-sources-of-return.md) and [performance
 risk](performance-risk.md). The rest of it is the detail behind these points.
 
 ## Scope and basis
@@ -37,7 +37,7 @@ an investable stand-in or cash serves as the benchmark portfolio, and the gap is
 ## The three portfolios
 | Portfolio | What it holds | What its return gives |
 |---|---|---|
-| Benchmark portfolio | The benchmark or strategic allocation in the governing documents, built mostly from indices | Policy beta |
+| Benchmark portfolio | The benchmark or strategic allocation in the governing documents, built mostly from indices | The risk-free return and, above it, policy beta |
 | Top-down portfolio | Investable ETFs, futures and cash, carrying the real portfolio's exposure to every declared factor on each day | Active beta, after the cost of holding it: its return less the benchmark portfolio's |
 | Real portfolio | The portfolio's actual holdings | Alpha: its return less the top-down portfolio's |
 
@@ -51,12 +51,12 @@ exposure, the last step is selection alone, and the record divides the step befo
 ## The beta lines
 The [sources of return](../framework/02-sources-of-return.md#who-chose-each-part) chapter groups top-down return by
 whose call it was. The method keeps the decision-maker's branch as two lines, because timing needs its own skill test.
-Policy beta is the benchmark portfolio's return, and the other lines divide the step from the benchmark portfolio to
-the top-down portfolio.
+Policy beta is the benchmark portfolio's return above the risk-free rate, and the other lines divide the step from the
+benchmark portfolio to the top-down portfolio.
 
 | Line | What it is | Who decides |
 |---|---|---|
-| Policy beta | The return of the benchmark or strategic allocation in the governing documents | [Whoever set the mandate](../framework/02-sources-of-return.md#who-chose-each-part) |
+| Policy beta | The return, above the risk-free rate, of the benchmark or strategic allocation in the governing documents | [Whoever set the mandate](../framework/02-sources-of-return.md#who-chose-each-part) |
 | Tilts | Standing positions against that allocation, recorded when taken | Whoever recorded it |
 | Timing | The return from recorded changes in exposure over time | Whoever recorded it |
 | Unintended beta | Any exposure with no record that anyone chose it, including price drift | Nobody |
@@ -100,10 +100,13 @@ and leave out the cost of holding the instruments.)
 
 | Portfolio | Return from the sector | Step | Line |
 |---|---|---|---|
-| Benchmark portfolio | 0.87% | 0.87% | Policy beta |
+| Benchmark portfolio | 0.87% | 0.87% | Risk-free return and policy beta |
 | Top-down portfolio, bucket weights | 1.09% | +0.22% | Tilt, on record |
 | Top-down portfolio, with the book's exposures | 1.14% | +0.05% | Unintended beta |
 | **Real portfolio** | **1.25%** | **+0.11%** | **Alpha** |
+
+The risk-free return is taken out on the whole benchmark portfolio, not sector by sector: a benchmark portfolio that
+returns 8.0% against a risk-free rate of 2.0% gives 6.0% of policy beta. (The figures are illustrative.)
 
 The same step applies to every declared factor: market, style, sector, country, currency, rates and spreads. Each is
 carried by an ETF or a future on the index or basket that defines it, and the top-down portfolio holds each in the
@@ -157,9 +160,9 @@ The booked book is the standard. Its profit and loss is observed, but its hedge 
 stated after borrow and financing costs and without the interest on its cash, which belongs to the cash bucket. A tag is
 a label rather than evidence, so both routes pass the same test.
 
-On either route, the construction is on record before the period starts: the benchmark portfolio, the buckets, the
-instrument inside each, the factor list and each factor's generator tag decide how much return counts as alpha and which
-generator the rest is read against. They are [governed
+On either route, the construction is on record before the period starts: the benchmark portfolio, the risk-free rate,
+the buckets, the instrument inside each, the factor list and each factor's generator tag decide how much return counts
+as policy beta and as alpha, and which generator the rest is read against. They are [governed
 parameters](../framework/08-controls.md#materiality-thresholds-as-governed-parameters), owned by the risk function and
 versioned. A factor joins the list only if an ETF or a future can hold it at the portfolio's size and a stated cost, and
 a change applies from its effective date. Weights still move during the period, but a tilt or timing call counts only if

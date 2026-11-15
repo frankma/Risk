@@ -77,17 +77,9 @@ rather than at each periodic stress test, and signals can be connected across ma
 see where they combine. The [integrated view](../pillars/integrated-view.md) is the clearest example.
 
 ## What the risk manager adds
-Under a manual process, much of a risk manager's time goes into producing outputs: gathering data, building tables,
-writing commentary and checking that the figures agree. Under a redesigned process, the system produces the outputs, and
-the risk manager's time goes to the work only a person can do, in both of the function's
-[roles](00-philosophy.md#why-a-risk-function-exists): check and balance, and serving the investment process.
-
-| From | To |
-|---|---|
-| Producing reports and packs | Judging ranked exceptions and watch items |
-| Policing limits after the fact | Bringing clarity to the risks being taken, before and after the trade |
-| Explaining figures after the fact | Challenging portfolio managers' decisions with evidence |
-| Applying thresholds by hand | Deciding what the system flags, and in what order |
+In a redesigned process the system produces the outputs, and the risk manager's time goes to the work only a person can
+do, in both of the function's [roles](00-philosophy.md#why-a-risk-function-exists): check and balance, and serving the
+investment process.
 
 The value a risk manager adds is not the sign-off. The sign-off is how a person is held accountable for an output; what
 they add is what goes into it.

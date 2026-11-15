@@ -49,7 +49,7 @@ each number belongs to, so a figure attached to the wrong one fails.
 within its limit" fails twice, though every number in it is a computed fact. (The values are illustrative.)
 
 The match allows for formatting but not for substance. A computed value of 0.0473 matches "4.7%" and "4.73%"; a computed
-value of 12,450,000 matches "12.45 million" and "12.5m"; a value expressed in basis points matches the same value
+value of 12,460,000 matches "12.46 million" and "12.5m"; a value expressed in basis points matches the same value
 expressed as a percentage. It does not match a figure that cannot be traced to a computed value, a figure rounded beyond
 the stated precision, or a figure attached to the wrong portfolio or measure. (The values are illustrative.)
 
@@ -58,6 +58,9 @@ failure noted, up to a set number of attempts; if it still fails, the item falls
 under fallback, which states the computed facts in fixed sentences, and is flagged to the risk manager. The rejection,
 the attempts and the outcome are all recorded in the audit trail. A grounding check that warns rather than rejects is
 not a control.
+
+The check runs on every piece of generated text in a workflow. The step tables show it once, after the first draft; a
+later draft, such as a message, a decision note, minutes or a board paper, passes the same check before anyone sees it.
 
 The check covers numbers, the direction of a change and comparisons with a limit or threshold. It does not test a stated
 cause, what was left out, whether the reasoning is sound or whether the emphasis is right; those remain the risk
@@ -74,8 +77,9 @@ risk manager reviews each of those the same day, and the rule is itself a govern
 recorded with its parameters, the person who asked and the result, so that any answer can be reproduced.
 
 ## Sign-off points
-Each redesigned workflow names the points at which a human must approve before an output moves on, and what exactly they
-are approving. A sign-off is a statement about content, not a click to release a document.
+Each redesigned workflow names the points at which a human must approve before an output moves on or, for a routine
+action under a governed rule, review it the same day, and what exactly they are approving. A sign-off is a statement
+about content, not a click to release a document.
 
 | Sign-off | Who | What they are approving |
 |---|---|---|
@@ -91,8 +95,8 @@ the arithmetic, which the system has already checked.
 For every output, the workflow records: the input facts it was generated from, with their data
 [versions](03-risk-data.md#versioned-as-known); the analysis runs behind it, with their parameters; the threshold,
 prompt, template and model versions in force; the text as generated; every edit the human made; the grounding check
-result; who approved it and when. The record is kept in a form that can be retrieved by output, by portfolio and by
-date.
+result; who approved it and when or, for an action under a governed rule, the rule applied and who reviewed it. The
+record is kept in a form that can be retrieved by output, by portfolio and by date.
 
 The trail serves three purposes. It allows any figure or sentence in a released output to be traced back to its source.
 It shows how often humans change generated text and in what way, which is evidence of whether the AI step is working. It
