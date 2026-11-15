@@ -11,9 +11,9 @@ engine does the computing and a person keeps the judgement.
 reproduced.
 
 **Permissions:** the AI may draft, run governed analyses and propose. Under a governed rule it may also send a routine
-breach notice and close a breach that is not real, and a person reviews each the same day.
-Anything else that leaves the function needs a person's sign-off. The AI never sends any other message, writes a
-recommendation, decides what matters or changes a governed parameter.
+breach notice and close a breach that came from a data break, and a person reviews each the same day. Anything else that
+leaves the function needs a person's sign-off. The AI never sends any other message, writes a recommendation, decides
+what matters or changes a governed parameter.
 
 **People:** supervising the AI is a skill, the craft still has to be learned, and accountability does not move.
 
@@ -45,7 +45,7 @@ text that contains one is rejected.
 |---|---|---|
 | The daily run | Computed by the analytics engine for every portfolio | Yes |
 | An analysis run | One of the analytics engine's governed analyses, run by the AI with its own parameters: a drill-down, an aggregation, an attribution, a what-if, a scenario | Yes, with the run recorded |
-| Simple arithmetic | A sum, a difference, a ratio or a percentage change of figures from the two rows above, which the grounding check recomputes | Yes |
+| Simple arithmetic | A sum, a difference, a ratio, a percentage change or a simple multiple of figures from the two rows above, which the grounding check recomputes | Yes |
 | A document | A figure extracted from a source passage, such as a limit in a portfolio's mandate terms | Once the risk manager has confirmed it |
 | An exploratory query | A read-only query the AI composed over the risk data, where no governed analysis answers the question | No. It is labelled unvalidated and stays out of outputs |
 | Nothing | A figure the AI stated with no computation behind it | Never |
@@ -125,8 +125,9 @@ reading looks like. When the system produces the output, that learning is design
 with the AI and explain what they found, review signed-off items beside an experienced colleague, and take part in
 setting the rules that decide what the system flags.
 
-**Accountability does not move.** The AI cannot be held to account, so a named person signs every output, and that
-person can show what was generated, what they changed and why.
+**Accountability does not move.** The AI cannot be held to account, so a named person signs every output, or reviews the
+same day what a governed rule let the AI send or close, and that person can show what was generated, what they changed
+and why.
 
 ## How the working relationship improves
 Each mode leaves a record, and the record is how the system gets better. Edits to drafts show where the AI's
