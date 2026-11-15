@@ -78,13 +78,15 @@ below are illustrative and are not recommendations;** each risk function sets it
 | Market liquidity | Time or cost to liquidate rising above a set level | Assets becoming harder to sell | Yes |
 | Stale or unpriceable | No price change for a set number of trading days | Holdings whose value is uncertain | No |
 
-The analytics engine ranks exceptions before watch items: portfolios with coverage below its threshold come first, then
+The analytics engine ranks exceptions before watch items: portfolios with coverage below its limit come first, then
 portfolios with a fired trigger, then other exceptions, then watch items. Stale and unpriceable holdings are also listed
 separately and routed to the owner of pricing.
 
 Where the governing documents or regulation set a liquidity limit, it is a [risk-measured hard
 limit](../framework/04-limits-and-escalation.md#where-limits-come-from): the risk function monitors it, a breach must be
-rectified, and compliance writes the breach report. The internal limit on redemption coverage sits inside it.
+rectified, and compliance writes the breach report. The internal limit on redemption coverage sits inside it, and a
+breach of the internal limit follows the [breach
+lifecycle](../framework/04-limits-and-escalation.md#the-breach-lifecycle).
 
 ## What the AI drafts
 Every number in the draft appears in the facts beside it, so the [grounding
@@ -96,11 +98,11 @@ check](../framework/08-controls.md#the-grounding-check) would pass. **The fund a
 | Redemption notified | 6.5% of net assets |
 | Large-redemption trigger | 5.0% of net assets |
 | Redemption coverage before / after | 2.4x / 1.6x |
-| Coverage threshold | 1.5x |
+| Coverage limit | 1.5x |
 | Share of the redemption met from the most liquid holdings | 80% |
 
 > Fund D has received a redemption notice for 6.5% of net assets, above the 5.0% trigger, and the stress test has been
-> rerun. Redemption coverage falls from 2.4x to 1.6x, still above the 1.5x threshold. 80% of the redemption would be met
+> rerun. Redemption coverage falls from 2.4x to 1.6x, still above the 1.5x limit. 80% of the redemption would be met
 > from the most liquid holdings.
 
 

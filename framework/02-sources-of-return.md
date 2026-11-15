@@ -18,8 +18,8 @@ measurement: which generator paid each part of the return, and whose recorded de
 beta, the step to the top-down portfolio is active beta, and the step to the real portfolio is alpha. The [alpha and
 beta method](../pillars/alpha-and-beta-method.md) sets out the computation.
 
-Two lines of a portfolio's return have no generator: the cost of holding beta, and the return of holdings that are not
-publicly traded, which is not split.
+Three lines of a portfolio's return have no generator: the risk-free return, the cost of holding beta, and the return
+of holdings that are not publicly traded, which is not split.
 
 The rest of this chapter is the detail behind these points.
 
@@ -32,8 +32,9 @@ The rest of this chapter is the detail behind these points.
 
 The line between style premia and skill moves. A return counts as skill until an index or basket can replicate it, and
 from then on it is a style premium. Value was once called alpha. A premium that no instrument holds at the portfolio's
-size, as is often true of the premium for less liquid securities, is measured as alpha until one does, and [liquidity
-risk](../pillars/liquidity-risk.md) marks the holdings that carry it.
+size, as is often true of the premium for less liquid securities, is measured as alpha until one does, and the holdings
+that [liquidity risk](../pillars/liquidity-risk.md) flags are [marked in the
+split](../pillars/alpha-and-beta-method.md#the-test-and-its-limits).
 
 A generator is not a decision. The mandate, the manager or nobody may have chosen how much of a premium a portfolio
 holds, and [who chose it](02-sources-of-return.md#who-chose-each-part) is a separate question. A timing call changes how
@@ -52,7 +53,8 @@ it more than noise, and does it cover the fee?
 
 ## What are the two sources?
 The generators group into two sources, by the decision that puts each in a portfolio: top-down views, loosely beta, and
-bottom-up selection, loosely alpha. Every part of a portfolio's return lands in exactly one place in this breakdown.
+bottom-up selection, loosely alpha. Apart from the three lines with no generator, every part of a portfolio's return
+lands in exactly one place in this breakdown.
 
 - **Portfolio return**
   - **Top-down views**, loosely beta: paid by market risk premia and style premia
@@ -66,10 +68,10 @@ Beta does not mean passive: a well-timed allocation is a good beta call.
 ## Who chose each part?
 Top-down return has three branches, according to whose call it was.
 
-- **Set in the mandate.** Policy beta is the return of the benchmark or strategic allocation in the portfolio's
-  governing documents. A client, an asset owner or a chief investment officer may have set it, or, for a pooled fund,
-  the manager when the fund was launched, which investors accepted when they bought. Whoever chose it, it is part of the
-  promise and earns no one credit.
+- **Set in the mandate.** Policy beta is the return, above the risk-free rate, of the benchmark or strategic allocation
+  in the portfolio's governing documents. A client, an asset owner or a chief investment officer may have set it, or,
+  for a pooled fund, the manager when the fund was launched, which investors accepted when they bought. Whoever chose
+  it, it is part of the promise and earns no one credit.
 - **Chosen by a decision-maker.** Tilts are standing positions against that allocation, and timing is the return from
   changing exposure over time. Both count only if recorded when taken, and each is credited to whoever recorded it: a
   chief investment officer or an allocation committee for an overlay, or the portfolio manager. Timing earns nothing
@@ -91,7 +93,8 @@ risk](../pillars/performance-risk.md) measures the split from the risk function'
 A holding's weight is split, not its return, across the [three
 portfolios](../pillars/alpha-and-beta-method.md#the-three-portfolios). In the method's [worked
 example](../pillars/alpha-and-beta-method.md#building-the-top-down-portfolio), one sector's 1.25% return splits into
-0.87% policy beta, 0.22% from a tilt on record, 0.05% unintended beta and 0.11% alpha.
+0.87% from the benchmark portfolio, which is the risk-free return and policy beta together, 0.22% from a tilt on record,
+0.05% unintended beta and 0.11% alpha.
 
 ## Sources
 - Sharpe, W. (1991). The Arithmetic of Active Management. *Financial Analysts Journal*. Before costs, active returns

@@ -14,9 +14,6 @@ redesign delivers it. The [principles](05-principles.md) say what a redesign sho
 | 6. Build in controls | What makes it safe to rely on? |
 | 7. Measure the result | Does it work, and is the risk manager's time going where it was meant to? |
 
-**What changes:** a manual workflow has the form "a human produces the output, then a human reviews it". A redesigned
-workflow has the form "the system produces the output, and the human reviews the exceptions".
-
 The rest of this chapter sets out each step, runs one generic workflow through all seven and lists the failure modes.
 
 ## The seven steps
@@ -52,7 +49,7 @@ Each tagged step is assigned to one owner, following the core pattern.
 | Tag | Owner |
 |---|---|
 | Gather, Compute | Analytics engine |
-| Interpret, Communicate | AI assistant, which drafts through the analytics engine; the risk manager's edit and approval is a step of its own |
+| Interpret, Communicate | AI assistant, which drafts from what the analytics engine computed; the risk manager's edit and approval is a step of its own |
 | Judge, Approve | The risk manager, or the head of risk for escalation and sign-off |
 | Steps that exist only because the old process was slow | Eliminated |
 
@@ -61,7 +58,7 @@ copies of the same number and chasing people for inputs exist because the manual
 not handed to the analytics engine or the AI assistant.
 
 ### 5. Redesign the flow
-The redesigned workflow changes its shape, as the essentials set out. Three changes follow.
+In the redesigned workflow the system produces the output, and the human reviews the exceptions. Three changes follow.
 
 - **Materiality thresholds are encoded.** The rules that decide what counts as an exception, and how exceptions are
   ranked, are written down as parameters rather than applied by eye.

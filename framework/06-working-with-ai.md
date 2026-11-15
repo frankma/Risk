@@ -63,7 +63,7 @@ what it may never do. The pillar chapters state these limits where they bite; th
 |---|---|
 | **Do alone** | Draft text from computed facts; run a governed analysis; compose an exploratory query; start a run inside the analytics engine; propose scenarios, questions and challenges |
 | **Do under a governed rule, reviewed the same day** | Send a breach notice the rule covers, such as a passive breach of an internal limit on a standard template, once the grounding check passes; close a breach that verification shows came from a data break |
-| **Do with a person's sign-off** | Anything that leaves the function: an explanation, a notice, a pack, minutes; the mandate terms it extracted from a portfolio's documents |
+| **Do with a person's sign-off** | Anything else that leaves the function: an explanation, a notice, a pack, minutes; the mandate terms it extracted from a portfolio's documents |
 | **Never do** | Send any other message; write a recommendation, an opinion or its conditions; decide what matters, what to escalate or whether a breach is accepted; set a shock size; change a threshold, a limit, a rule or any other governed parameter; correct data |
 
 Everything else outward stays with a person. The AI can start work inside the analytics engine and act under a rule a

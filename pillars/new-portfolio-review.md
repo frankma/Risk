@@ -11,9 +11,9 @@ enough to be a new portfolio in all but name?
 
 **How the work is done:** the review computes nothing of its own. The AI extracts the draft mandate terms from the
 documents. The analytics engine runs the pillars' measures on a model portfolio, checks data readiness and proposes
-limits and the alpha and beta construction. The risk manager confirms the terms, decides the limits and writes the
-opinion, and on launch day the analytics engine confirms that everything agreed is in place. The review can start as
-soon as draft documents exist.
+limits and the alpha and beta construction. The risk manager confirms the terms, puts the first internal limits to the
+head of risk for approval and writes the opinion, and on launch day the analytics engine confirms that everything agreed
+is in place. The review can start as soon as draft documents exist.
 
 | # | Step | Owner |
 |---|---|---|
@@ -21,12 +21,13 @@ soon as draft documents exist.
 | 2 | Confirm the terms; request the model portfolio | Risk manager |
 | 3 | Run the pillars' measures on the model portfolio; test the benchmark and the liquidity profile | Analytics engine |
 | 4 | Check data readiness; propose internal limits, early warnings and the alpha and beta construction | Analytics engine |
-| 5 | Consult the portfolio manager; decide the limits and the construction | Risk manager |
-| 6 | Draft the readiness summary | AI assistant |
-| 7 | Grounding check on the summary | Analytics engine |
-| 8 | Write the opinion and any conditions | Risk manager |
-| 9 | Sign off the opinion; product governance decides | Head of risk |
-| 10 | On launch day, confirm every agreed item is in place | Analytics engine |
+| 5 | Consult the portfolio manager; decide the early warnings and the construction; put the internal limits to the head of risk | Risk manager |
+| 6 | Approve the first internal limits | Head of risk |
+| 7 | Draft the readiness summary | AI assistant |
+| 8 | Grounding check on the summary | Analytics engine |
+| 9 | Write the opinion and any conditions | Risk manager |
+| 10 | Sign off the opinion, which goes to product governance for its decision | Head of risk |
+| 11 | On launch day, confirm every agreed item is in place | Analytics engine |
 
 **The opinion is not a veto:** product governance decides whether a portfolio launches. The risk function gives a
 recorded opinion and can escalate to the risk committee.
@@ -56,7 +57,7 @@ risk](market-risk.md#workflows-in-this-pillar), not here.
 | Limits | Internal limits and early warnings set by the risk function; the mandate and regulatory limits recorded, with each risk-measured limit set up for the risk function to monitor | [Limits and escalation](../framework/04-limits-and-escalation.md) |
 | Liquidity profile | Redemption coverage under the scenarios for calls on cash, at the launch size and the expected size, against the dealing terms | [Liquidity risk](liquidity-risk.md#calls-on-cash) |
 | Data | Every instrument the portfolio expects to hold, and every instrument in its top-down portfolio, can be priced, classified and measured by the analytics engine, or has a proxy under the policy | [Risk data](../framework/03-risk-data.md#proxies) |
-| Alpha and beta construction | The benchmark portfolio, the buckets, the instrument inside each and the factor list, declared before the first period | [Alpha and beta method](alpha-and-beta-method.md#booked-or-derived) |
+| Alpha and beta construction | The benchmark portfolio, the risk-free rate, the buckets, the instrument inside each, the factor list and each factor's generator tag, declared before the first period | [Alpha and beta method](alpha-and-beta-method.md#booked-or-derived) |
 | Liquidity management tools | The tools the documents provide for, and whether each is ready by liquidity risk's readiness test | [Liquidity risk](liquidity-risk.md#workflows-in-this-pillar) |
 | Stress | The model portfolio's stress loss against the drawdown tolerance | [Market risk](market-risk.md#stress-and-reverse-stress) |
 | Seed investors | Expected investor concentration at launch is recorded, with the date or size at which it should fall below the rule; until then the breach is expected, not an exception | [Liquidity risk](liquidity-risk.md#materiality-and-exceptions) |
@@ -89,12 +90,12 @@ reconciled to compliance's coded rule.
 | Dealing terms | Daily |
 | Benchmark tests passed | 6 of 6 |
 | Redemption coverage under the worst scenario, at the expected size | 1.3x |
-| Coverage threshold | 1.5x |
+| Coverage limit | 1.5x |
 | Expected instruments without a price source or proxy | 2 of 140 |
 | Alpha and beta construction | Declared |
 
 > Fund S passes all 6 benchmark tests, and its alpha and beta construction is declared. At its expected size, redemption
-> coverage under the worst scenario is 1.3x, below the 1.5x threshold for a fund dealing daily. 2 of the 140 instruments
+> coverage under the worst scenario is 1.3x, below the 1.5x limit for a fund dealing daily. 2 of the 140 instruments
 > it expects to hold have neither a price source nor a proxy.
 
 

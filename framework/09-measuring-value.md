@@ -21,8 +21,8 @@ The table in the essentials sets out the four. Two points add to it.
 
 - **Quality.** Issues missed or found late are the most important measure and the hardest to collect; they are recorded
   as they come to light, for example from post-event reviews.
-- **Influence.** The share of the risk manager's time spent on challenge rather than on producing outputs shows whether
-  the shift described in the [principles](05-principles.md#what-the-risk-manager-adds) is happening.
+- **Influence.** The share of the risk manager's time spent on challenge shows whether that time is going to the work
+  the [principles](05-principles.md#what-the-risk-manager-adds) describe.
 
 ## Baseline first
 Every measure needs a starting point, and the starting point must be taken before anything changes. Once a workflow has
@@ -41,7 +41,7 @@ portfolios that appear most often in the exception queue, or a structured challe
 every quarter.
 
 After the redesign, the plan is tracked like any other commitment. If the time is not going where it was planned to go,
-the reason is found and either the plan or the work is changed. Without a plan, the time is absorbed by existing work.
+the reason is found and either the plan or the work is changed.
 
 ## Why usage is not a measure
 Usage of AI tools is not a measure: high usage fits a tool inserted into an unchanged workflow, and low usage fits a
@@ -60,7 +60,7 @@ illustrative.**
 | Quality | Figure errors found in review per cycle | Whether the grounding check and reconciliation catch what a reviewer used to |
 | Quality | Parallel-run agreement on escalated items | Whether the redesigned workflow can be relied on |
 | Influence | Issues raised with portfolio managers per quarter | Whether challenge is being made |
-| Influence | Share of risk manager time on challenge | Whether the shift in the risk manager's work is happening |
+| Influence | Share of risk manager time on challenge | Whether challenge has the time it needs |
 
 The scorecard reads against the baseline. Errors found in review should fall but not to zero; a review that never finds
 one is a reason to test the review.
