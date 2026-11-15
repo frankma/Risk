@@ -34,7 +34,7 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 
 | Concept | What it is | Defined in | Used by |
 |---|---|---|---|
-| Return generator | What pays a return above cash: market risk premia, style premia or skill | [Sources of return](02-sources-of-return.md#what-generates-return) | Alpha and beta method, performance risk, market risk |
+| Return generator | What pays a return above the risk-free rate: market risk premia, style premia or skill | [Sources of return](02-sources-of-return.md#what-generates-return) | Alpha and beta method, performance risk, market risk |
 | Market risk premia | The return for holding a market (equity, term, credit), paid for losses in bad times; beta | [Sources of return](02-sources-of-return.md#what-generates-return) | Alpha and beta method |
 | Style premia | The return of a rule an index or basket can follow, such as value, momentum or carry; beta once declared | [Sources of return](02-sources-of-return.md#what-generates-return) | Alpha and beta method |
 | Skill | The return from choosing between securities that share the same exposures; alpha | [Sources of return](02-sources-of-return.md#what-generates-return) | Alpha and beta method, performance risk |
@@ -42,7 +42,7 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 | Top-down view | Holds market and style premia; loosely, beta | [Sources of return](02-sources-of-return.md#what-are-the-two-sources) | Philosophy |
 | Bottom-up selection | Earns skill; loosely, alpha | [Sources of return](02-sources-of-return.md#what-are-the-two-sources) | Philosophy |
 | Policy beta | The return of the benchmark or strategic allocation in the governing documents | [Sources of return](02-sources-of-return.md#who-chose-each-part) | Alpha and beta method |
-| Tilts | The manager's standing positions against that allocation, recorded when taken | [Sources of return](02-sources-of-return.md#who-chose-each-part) | Alpha and beta method |
+| Tilts | Standing positions against that allocation, credited to whoever recorded them when taken | [Sources of return](02-sources-of-return.md#who-chose-each-part) | Alpha and beta method |
 | Timing | The return from recorded changes in exposure over time | [Sources of return](02-sources-of-return.md#who-chose-each-part) | Alpha and beta method |
 | Unintended beta | Any exposure with no record that anyone chose it; a test of record, not of motive | [Sources of return](02-sources-of-return.md#who-chose-each-part) | Performance risk's source-of-return rule, alpha and beta method |
 | Benchmark portfolio | The benchmark or strategic allocation in the governing documents, built mostly from indices; its return is policy beta | [Alpha and beta method](../pillars/alpha-and-beta-method.md#the-three-portfolios) | Alpha and beta method |
@@ -99,7 +99,7 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 | Exception | A reading that has crossed a limit or another rule's threshold | [Each pillar's rules](../pillars/market-risk.md#materiality-and-exceptions) | Controls, integrated view |
 | Watch item | A reading approaching a limit or threshold, or an early sign that has not crossed one | [Each pillar's rules](../pillars/market-risk.md#materiality-and-exceptions) | Integrated view |
 | Ranked queue | What the human reviews instead of everything | [Principles](05-principles.md#4-exceptions-over-everything) | Market risk, redesign method |
-| Not assessed | How a portfolio with missing data is shown, never as clean | [Risk data](03-risk-data.md#quality-before-computation) | Market risk, integrated view |
+| Not assessed | How a portfolio with missing data is shown, never as clean | [Risk data](03-risk-data.md#quality-before-computation) | Integrated view |
 | Watch list | The firm's single list of portfolios with unresolved issues, owned by the risk function | [Performance risk](../pillars/performance-risk.md#workflows-in-this-pillar) | Integrated view |
 | Pattern | A named chain of signals across pillars | [Integrated view](../pillars/integrated-view.md#patterns) | Integrated view's rules |
 | Lead time | How much earlier the view ranked a portfolio than the first escalation from any single pillar | [Integrated view](../pillars/integrated-view.md#controls-and-measures-specific-to-the-view) | Integrated view |
@@ -143,7 +143,7 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 
 | Concept | What it is | Defined in | Used by |
 |---|---|---|---|
-| Beta | The return from market and factor exposure, however it arose | [Alpha and beta method](../pillars/alpha-and-beta-method.md#the-three-portfolios) | Sources of return, performance risk |
+| Beta | Return above the risk-free rate that an investable instrument could have captured: market and factor exposure, however it arose | [Alpha and beta method](../pillars/alpha-and-beta-method.md#the-three-portfolios) | Sources of return, performance risk |
 | Alpha | The add-on return from security selection: the real portfolio's return less the top-down portfolio's | [Alpha and beta method](../pillars/alpha-and-beta-method.md#the-three-portfolios) | Sources of return, performance risk |
 | Gross return and the bridge | The split's basis, and the link from it to the net return | [Alpha and beta method](../pillars/alpha-and-beta-method.md#scope-and-basis) | Performance risk |
 | Declared factor list | The factors alpha must stay neutral to, held as a governed parameter | [Alpha and beta method](../pillars/alpha-and-beta-method.md#booked-or-derived) | Market risk, performance risk |

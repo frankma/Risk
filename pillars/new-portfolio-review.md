@@ -66,10 +66,9 @@ The opinion states whether the portfolio can be monitored as its mandate promise
 the reasons. Where product governance proceeds against it, the risk function can escalate to the risk committee.
 
 ## What the AI drafts
-The AI extracts and drafts from the documents and facts it is given, and from nothing else. Every figure it extracts
-must appear in the passage it links to, and every number in a draft appears in the facts beside it, so the [grounding
-check](../framework/08-controls.md#the-grounding-check) would pass. The AI does not write the opinion or its conditions.
-**The funds and figures are illustrative.**
+Every figure the AI extracts must appear in the passage it links to, and every number in a draft appears in the facts
+beside it, so the [grounding check](../framework/08-controls.md#the-grounding-check) would pass. **The funds and figures
+are illustrative.**
 
 **Extracted mandate terms.**
 
@@ -98,13 +97,10 @@ reconciled to compliance's coded rule.
 > coverage under the worst scenario is 1.3x, below the 1.5x threshold for a fund dealing daily. 2 of the 140 instruments
 > it expects to hold have neither a price source nor a proxy.
 
-The opinion on whether Fund S should launch, and on what conditions, is the risk manager's.
 
 ## Controls and measures specific to the review
-The general [controls](../framework/08-controls.md) apply in full. The review adds three.
+The general [controls](../framework/08-controls.md) apply in full. The review adds two.
 
-- **The opinion is written by a person.** The AI drafts the summary of facts; the risk manager writes the opinion and
-  its conditions.
 - **Conditions are tracked.** Each condition has a due date and is tracked until it is met or escalated.
 - **Launch is checked.** On launch day the risk engine confirms that the terms, limits, data and construction agreed in
   the review are in place, and a gap is an exception.

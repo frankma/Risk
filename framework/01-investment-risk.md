@@ -52,12 +52,12 @@ Within scope, and handled inside the pillar workflows:
 - **Concentration, leverage and derivative exposure** are in market risk.
 - **Counterparty exposure,** to the firms a portfolio trades with, lends securities to or holds assets through, is in
   market risk.
-- **Weak and stale prices** are flagged in liquidity risk.
+- **Weak and stale prices** are flagged in liquidity risk; market risk takes prices as fair, and the owner of pricing
+  sets and challenges them.
 - **The limits of the risk function's own measures,** including any AI step, are tested in every pillar.
 
 Counterparty, valuation and model risk are therefore split. Investment risk measures and monitors; approval, pricing and
-independent validation sit with functions independent of the measure's user. Market risk takes prices as fair, liquidity
-risk flags where they may not be, and the owner of pricing sets and challenges them.
+independent validation sit with functions independent of the measure's user.
 
 At the boundary, and owned elsewhere:
 
@@ -76,8 +76,8 @@ A boundary is not a wall. Signals that matter to the owner of an adjacent risk, 
 or a breach that may have a legal reading, are routed to that owner rather than resolved inside the pillar.
 
 ## The three pillars
-Each pillar's question and outcome are at the top of this chapter. The pillars overlap in data but not in question, and
-market and performance risk are divided by time.
+Each pillar's outcome is at the top of this chapter, and its question opens its own chapter. The pillars overlap in data
+but not in question, and market and performance risk are divided by time.
 
 | | Market risk | Liquidity risk | Performance risk |
 |---|---|---|---|
@@ -92,9 +92,6 @@ Two rules keep the pillars apart.
   loss and the cost of selling, is computed once and read by both.
 - **Each forecast has a realised counterpart.** Ex-ante tracking error is tested against ex-post, value at risk against
   realised losses, and the drawdown performance risk measures sets the headroom market risk reads under stress.
-
-Each pillar's chapter sets out its workflows: [market risk](../pillars/market-risk.md), [liquidity
-risk](../pillars/liquidity-risk.md) and [performance risk](../pillars/performance-risk.md).
 
 ## Sources
 - Financial Stability Board (2023). *Revised Policy Recommendations to Address Structural Vulnerabilities from Liquidity

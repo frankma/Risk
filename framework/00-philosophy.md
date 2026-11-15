@@ -1,11 +1,8 @@
 # Investment risk philosophy
 
 ## The essentials
-**Why a risk function exists:** an asset manager needs one for two reasons. As a **check and balance**, it gives the
-firm's governance and its clients an independent view of whether every portfolio takes the risks its mandate intends, in
-the size it can bear, and challenges it where it does not. In **serving the investment process**, it brings the
-discipline of uncertainty to investment decisions: what could happen, what each position adds and whether the risk is
-paid for.
+**Why a risk function exists:** an asset manager needs one for two reasons: as a **check and balance** on every
+portfolio's risk, and to **serve the investment process** with the discipline of uncertainty.
 
 **The product is sight:** out of millions of numbers (hundreds of positions, thousands of risk factors, millions of
 possible futures), the few worth questioning and acting on.
@@ -56,7 +53,7 @@ Each is a position a reasonable firm could reject. Together they decide what the
    mandate?
 
 ## What every piece of risk work provides
-Every piece of risk work provides three things, in every pillar. All of it assumes the basics: data checked before use,
+The three apply in every pillar. All of it assumes the basics: data checked before use,
 models tested against outcomes, results reproducible, as [risk data](03-risk-data.md) sets out.
 
 | | Dimension | The question it answers |
@@ -82,11 +79,13 @@ three families: risk, exposure and liquidity.
 risk moves, and any other movement stays within a stated tolerance.
 
 ### 2. Drill-in
-**Any number opens on demand, the pieces add up, and each piece has a decision-maker.** - **Risk factor decomposition.**
-Tracking error split into factors (market, style, sector, country, currency, rates, spreads) and stock-specific risk.
-The shares sum to the whole: for instance, 55% sector bets, 25% currency, 20% stock selection (illustrative figures). A
-large share no one intended is belief 2 at work. - **Performance attribution.** Active return split two ways: by
-decision, into allocation and selection, and by factor, into exposure × factor return plus the specific return.
+**Any number opens on demand, the pieces add up, and each piece has a decision-maker.**
+
+- **Risk factor decomposition.** Tracking error split into factors (market, style, sector, country, currency, rates,
+  spreads) and stock-specific risk. The shares sum to the whole: for instance, 55% sector bets, 25% currency, 20% stock
+  selection (illustrative figures). A large share no one intended is belief 2 at work.
+- **Performance attribution.** Active return split two ways: by decision, into allocation and selection, and by factor,
+  into exposure × factor return plus the specific return.
 
 The factor split uses the risk decomposition's factors and decision-makers, so the risk a bet takes and the return it
 earns sit side by side. [Sources of return](02-sources-of-return.md) shows how a holding divides between top-down and

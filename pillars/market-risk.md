@@ -66,7 +66,7 @@ the return it has earned, which performance risk measures. The budget carries no
 ex-ante tracking error against its range. Each month, a bet that uses a large share of the budget is tested on its
 cumulative return against the risk it has used. A bet whose return is
 [significantly](performance-risk.md#windows-and-significance) below zero is challenged: the portfolio manager resizes
-it, cuts it or explains why it stays. A bet that has only earned nothing for several periods is a watch item.
+it, cuts it or explains why it stays.
 
 ## Materiality and exceptions
 The queue comes from a small number of kinds of rule, each owned and versioned as a [governed
@@ -100,10 +100,9 @@ ranking rule is itself a governed parameter, because it decides what the risk ma
 in [performance risk](performance-risk.md), where the portfolio manager answers them.
 
 ## What the AI drafts
-The AI drafts from the facts that the risk engine produced and from nothing else. Every number in the draft appears in
-the facts beside it, so the [grounding check](../framework/08-controls.md#the-grounding-check) would pass. Fund A is an
-exception, for its large one-day rise, and also a watch item, for being above its early warning. **The fund and figures
-are illustrative.**
+Every number in the draft appears in the facts beside it, so the [grounding
+check](../framework/08-controls.md#the-grounding-check) would pass. Fund A is an exception, for its large one-day rise,
+and also a watch item, for being above its early warning. **The fund and figures are illustrative.**
 
 | Fact | Value |
 |---|---|
@@ -118,8 +117,6 @@ are illustrative.**
 > Fund A's 1-day 99% VaR rose from 1.84% to 2.31%, which is 92% of its 2.50% limit. Most of the 0.47 percentage point
 > rise came from the technology equity basket (0.29 points), with a further 0.12 points from the energy equity basket.
 
-The draft recommends no action. Whether a reading matters, and what to ask the portfolio manager, is the risk manager's
-judgement at the sign-off point.
 
 ## Design choices
 A risk function chooses how each of its measures is computed, records the choice and tests it. Independent validation of
@@ -219,14 +216,11 @@ borrowers of lent securities, net of the collateral they have posted. The intern
 | AI explanations | Weight on the wrong driver, even when every number is correct | How often and how much risk managers edit the drafts; a sample reviewed against the full decomposition |
 
 ## Controls and measures specific to this pillar
-The general [controls](../framework/08-controls.md) apply in full. This pillar adds four.
+The general [controls](../framework/08-controls.md) apply in full. This pillar adds two.
 
 - **Decomposition reconciles before drafting.** The contributions by position and by factor must add up to the total
   change, within a stated tolerance, before the AI drafts from them. A decomposition that does not reconcile is an
   exception in its own right.
-- **Silence is not a clean result.** A portfolio with missing or incomplete data is shown as not assessed, never as
-  having nothing to report, as set out in [risk data](../framework/03-risk-data.md#quality-before-computation).
-- **Messages are sent by the risk manager.** Drafted messages to portfolio managers are never sent automatically.
 - **The scenario library is governed.** Scenarios the AI proposes are recorded as proposals; the risk manager's
   calibration and approval are recorded before a scenario enters the library.
 
