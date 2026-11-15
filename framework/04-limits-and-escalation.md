@@ -143,9 +143,6 @@ illustrative.**
 decision binds the portfolio manager. The committee is chaired by someone independent of the investment teams, and
 includes the head of risk and the head of investments.
 
-**A dissent has a route upward.** A member who disagrees with the committee's decision has the dissent recorded, and the
-board receives it with the decision.
-
 **The board sees the outcomes.** On its reporting cycle, the board receives the breaches of hard limits, the breaches
 accepted and their expiry dates, the committee's binding decisions and any dissent. What the client of a segregated
 mandate is told follows the mandate's reporting terms and compliance's process.
@@ -159,9 +156,8 @@ mandate is told follows the mandate's reporting terms and compliance's process.
 | The legal reading of a hard limit, its breach report and any extension | Compliance, under its own process | Routed or reported by the risk function, with the evidence |
 
 ## What the AI drafts
-The AI drafts from the facts the risk engine recorded and from nothing else. Every number in the draft appears in the
-facts beside it, so the [grounding check](08-controls.md#the-grounding-check) would pass. The AI does not decide whether
-a breach is real, how it is classified or what is done about it. **The fund and figures are illustrative.**
+Every number in the draft appears in the facts beside it, so the [grounding check](08-controls.md#the-grounding-check)
+would pass. **The fund and figures are illustrative.**
 
 | Fact | Value |
 |---|---|

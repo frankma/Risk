@@ -4,9 +4,10 @@
 **The question:** how much of a portfolio's return is beta, and how much is alpha?
 
 **The rule:** the split rests on three portfolios: the benchmark portfolio, the top-down portfolio and the real
-portfolio. Beta is the step from the first to the second, where all market and factor exposure is measured, whether an
-allocation call set it or a security pick carried it. Alpha is the step from the second to the third: the add-on return
-from security selection, once the top-down portfolio has carried all the beta out.
+portfolio. The benchmark portfolio's return is policy beta. The step from it to the top-down portfolio is active
+beta, where all market and factor exposure is measured, whether an allocation call set it or a security pick carried
+it. Alpha is the step from the top-down portfolio to the real portfolio: the add-on return from security selection,
+once the top-down portfolio has carried all the beta out.
 
 **How the work is done:** within [attribution reporting](performance-risk.md#workflows-in-this-pillar), the risk engine
 builds the top-down portfolio each day, computes the split and checks that it reconciles; a split that does not is an
@@ -15,7 +16,7 @@ check](../framework/08-controls.md#the-grounding-check) tests it. The risk manag
 whether beta was intended and which questions to put to the portfolio manager, who decides what to hold.
 
 **Alpha depends on a declared list:** it is what the declared factors leave unexplained. When an ETF or a future can
-replicate a return, it joins the list; value was once called alpha. Each declared factor is tagged with the [return
+replicate a return, it joins the list. Each declared factor is tagged with the [return
 generator](../framework/02-sources-of-return.md#what-generates-return) that pays it, a market risk premium or a style
 premium, so that beta can be read by generator and alpha is read as skill.
 
@@ -49,15 +50,15 @@ exposure, the last step is selection alone, and the record divides the step befo
 
 ## The beta lines
 The [sources of return](../framework/02-sources-of-return.md#who-chose-each-part) chapter groups top-down return by
-whose call it was. The method keeps the manager's branch as two lines, because timing needs its own skill test. Policy
-beta is the benchmark portfolio's return, and the other lines divide the step from the benchmark portfolio to the
-top-down portfolio.
+whose call it was. The method keeps the decision-maker's branch as two lines, because timing needs its own skill test.
+Policy beta is the benchmark portfolio's return, and the other lines divide the step from the benchmark portfolio to
+the top-down portfolio.
 
 | Line | What it is | Who decides |
 |---|---|---|
 | Policy beta | The return of the benchmark or strategic allocation in the governing documents | [Whoever set the mandate](../framework/02-sources-of-return.md#who-chose-each-part) |
-| Tilts | Standing positions against that allocation, recorded when taken | The manager |
-| Timing | The return from recorded changes in exposure over time | The manager |
+| Tilts | Standing positions against that allocation, recorded when taken | Whoever recorded it |
+| Timing | The return from recorded changes in exposure over time | Whoever recorded it |
 | Unintended beta | Any exposure with no record that anyone chose it, including price drift | Nobody |
 | Cost of holding beta | The return of the top-down portfolio's instruments less the return of the indices they track | Nobody |
 
@@ -89,8 +90,7 @@ in an ETF on the sector index, shown here by what is inside it. (The figures are
 | **Return from the sector** | **0.87%** | **1.09%** | **1.25%** | **0.16%** | |
 
 Of the real portfolio's 5.0% in X, 2.4% is the benchmark's, 0.6% is the tilt's and 2.0% is the manager's selection. The
-real portfolio less the top-down portfolio sums to zero within the sector: a long-short book, long what the manager
-prefers and short what is preferred less. Every portfolio has this book, including one that never shorts a security.
+book, real less top-down, sums to zero within the sector.
 
 **The book's exposures.** Zero net weight is not zero exposure. In the example above, X has a market beta of 1.3 and Y
 a market beta of 0.8, so the book has a net market beta of 0.01 (2.0% × 1.3 less 2.0% × 0.8). The top-down portfolio
@@ -122,16 +122,13 @@ run](market-risk.md#factors), from daily holdings; measuring it as often as call
 in beta. The same split applies to risk, using the same instruments: factor risk is beta and stock-specific risk is
 alpha.
 
-The top-down portfolio is rebuilt against each day's holdings. Exposure is each day's weights times betas estimated over
-a long window, so the last step is neutral to estimated exposure, not to a true exposure no one can observe. Error in
-the estimates is one of the limits set out below, and the regression test is what catches it.
+Because exposure is each day's weights times betas estimated over a long window, the last step is neutral to estimated
+exposure, not to a true exposure no one can observe.
 
 ## Computing the split
-The risk engine weights the exposures by each day's holdings, builds the top-down portfolio from them and compares its
-positions with the benchmark portfolio, the confirmed mandate terms and the tilts and timing calls on record; anything
-without a record, including price drift, is unintended beta. The risk manager's judgement on it is noted beside the line
-and does not change the line. The book's return is shown separately for names held and
-names not held.
+The risk engine compares the top-down portfolio's positions with the benchmark portfolio, the confirmed mandate terms
+and the tilts and timing calls on record. The risk manager's judgement on unintended beta is noted beside the line and
+does not change it. The book's return is shown separately for names held and names not held.
 
 The **trading effect** is the gap between the portfolio's actual return and the return of its start-of-day holdings:
 trading cost, and the gains and losses from trading during the day. A booked book charges it by trade tag. A derived
@@ -149,7 +146,7 @@ Two routes apply the same split; on the booked route, hedge error stays in alpha
 | Form | The top-down portfolio is held as a beta book beside an alpha book, with each trade tagged to one | The top-down portfolio is kept on paper, and the long-short book is computed from the portfolio's holdings |
 | Suits | Portfolios that can short | Portfolios that cannot short or do not book separately |
 | Evidence | Of each selection decision: each short was chosen | Of the manager's selection over several periods: labelled an estimate, with names held and not held shown apart |
-| Weakness | A tilt can be tagged as selection; hedge error lands in alpha | Most shorts are names nobody considered; an underweight cannot exceed the top-down weight |
+| Weakness | A tilt can be tagged as selection | Most shorts are names nobody considered; an underweight cannot exceed the top-down weight |
 
 **Hedge error is the exception to the as-held rule.** On the booked route the top-down portfolio is the beta book as
 booked, so exposure that the alpha book fails to hedge stays in the alpha line. The regression test still runs on the

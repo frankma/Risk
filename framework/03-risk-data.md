@@ -89,10 +89,9 @@ each risk function sets its own checks and tolerances.
 | Consistency | The same security described the same way in every domain; benchmark weights summing to the whole |
 | Validity | Values inside their allowed ranges, such as weights between limits and dates in order |
 
-A failed check is a **data break**. Each break is recorded with the portfolios and measures it affects, and the run then
-follows the rule set in advance under [fallback](08-controls.md#fallback): it waits for the correction, or it runs with
-the affected portfolios marked. A portfolio whose data has a break it cannot run past is shown as not assessed, never as
-clean.
+A failed check is a **data break**. Each break is recorded with the portfolios and measures it affects, and the run
+follows a rule set in advance: it waits for the correction, or it runs with the affected portfolios marked. A portfolio
+whose data has a break it cannot run past is shown as not assessed, never as clean.
 
 Stale prices are both a data check and a measure of valuation risk. The check finds them; [liquidity
 risk](../pillars/liquidity-risk.md#materiality-and-exceptions) flags the holdings to the owner of pricing and shows
@@ -121,9 +120,8 @@ store; where it cannot wait for a correction, it runs with the affected portfoli
 policy. A break is routed to the source's owner with the evidence and tracked until it is closed.
 
 ## What the AI drafts
-The AI drafts each notice from the facts the risk engine recorded about the break, and from nothing else. Every number
-in the draft appears in the facts beside it, so the [grounding check](08-controls.md#the-grounding-check) would pass.
-The AI does not decide whether a break is real; the risk manager does. **The fund and figures are illustrative.**
+Every number in the draft appears in the facts beside it, so the [grounding check](08-controls.md#the-grounding-check)
+would pass. **The fund and figures are illustrative.**
 
 | Fact | Value |
 |---|---|

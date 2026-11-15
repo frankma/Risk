@@ -87,9 +87,8 @@ limit](../framework/04-limits-and-escalation.md#where-limits-come-from): the ris
 cured, and compliance writes the breach report. The internal limit on redemption coverage sits inside it.
 
 ## What the AI drafts
-The AI drafts from the facts that the risk engine produced and from nothing else. Every number in the draft appears in
-the facts beside it, so the [grounding check](../framework/08-controls.md#the-grounding-check) would pass. **The fund
-and figures are illustrative.**
+Every number in the draft appears in the facts beside it, so the [grounding
+check](../framework/08-controls.md#the-grounding-check) would pass. **The fund and figures are illustrative.**
 
 | Fact | Value |
 |---|---|
@@ -104,7 +103,6 @@ and figures are illustrative.**
 > rerun. Redemption coverage falls from 2.4x to 1.6x, still above the 1.5x threshold. 80% of the redemption would be met
 > from the most liquid holdings.
 
-The draft does not recommend whether to use a liquidity management tool. That recommendation is the risk manager's.
 
 ## Design choices
 A risk function chooses how each of its liquidity measures is computed, records the choice and tests it. Independent
@@ -183,16 +181,12 @@ Two further calls are counted in every scenario, because they arrive whatever in
 | AI narratives | A narrative can be accurate and still understate how urgent a position is | How risk managers edit the narratives for triggered portfolios; a sample checked against the full stress results |
 
 ## Controls and measures specific to this pillar
-The general [controls](../framework/08-controls.md) apply in full. This pillar adds four.
+The general [controls](../framework/08-controls.md) apply in full. This pillar adds two.
 
 - **Every trigger is recorded.** Each firing, the stress test it ran and the result are kept in the audit trail, so the
   record shows that an event was assessed, and when.
 - **Scenario calibration is governed.** Outflow assumptions and stress adjustments to liquidation time and cost are
   governed parameters owned by the risk function, with every change recorded.
-- **The recommendation is not drafted.** The AI drafts the facts and the narrative; the recommendation on liquidity
-  management tools is written by the risk manager.
-- **Investor data is minimised.** Facts sent to an AI service describe shares and flows, not investor identities, in
-  line with [data handling](../framework/08-controls.md#data-handling).
 
 Of the measures in [measuring value](../framework/09-measuring-value.md), speed and quality matter most here: how soon
 an event is assessed, and whether any event is missed. The pillar-specific measure captures the new capability directly.

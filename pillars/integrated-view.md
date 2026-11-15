@@ -104,10 +104,9 @@ involved shows the reading as context only: it does not count towards the portfo
 otherwise rank many portfolios at once.
 
 ## What the AI drafts
-The AI drafts each portfolio's account from the signals and facts the view read, and from nothing else. Every number in
-the draft appears in the facts beside it, so the [grounding check](../framework/08-controls.md#the-grounding-check)
-would pass. The account describes the combination; it does not recommend an action or claim that one signal caused
-another. **The fund and figures are illustrative.**
+Every number in the draft appears in the facts beside it, so the [grounding
+check](../framework/08-controls.md#the-grounding-check) would pass. The account describes the combination; it does not
+claim that one signal caused another. **The fund and figures are illustrative.**
 
 | Fact | Value |
 |---|---|

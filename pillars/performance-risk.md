@@ -96,10 +96,9 @@ and the way it was achieved both depart from the promise rank highest. Overdue a
 review starts from what was agreed last time.
 
 ## What the AI drafts
-The AI drafts each item of the challenge pack from the facts that the risk engine produced and from nothing else. Every
-number in the draft appears in the facts beside it, so the [grounding
-check](../framework/08-controls.md#the-grounding-check) would pass. The questions are proposals; the risk manager
-decides which to ask. **The fund and figures are illustrative.**
+The AI drafts each item of the challenge pack. Every number in the draft appears in the facts beside it, so the
+[grounding check](../framework/08-controls.md#the-grounding-check) would pass. **The fund and figures are
+illustrative.**
 
 | Fact | Value |
 |---|---|

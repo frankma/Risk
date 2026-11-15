@@ -64,9 +64,8 @@ governed as parameters. The [market risk](../pillars/market-risk.md) chapter app
 **What it means.** A redesign changes what a risk manager spends time on, and time that is not directed is absorbed by
 existing work. The use of the time is a design decision, made at the start rather than discovered at the end.
 
-**In practice.** Before a workflow is redesigned, the risk function records what the risk manager's time will go to, for
-example deeper portfolio reviews or more frequent challenge of portfolio managers, and then tracks whether that happens.
-[Measuring value](09-measuring-value.md) sets out how.
+**In practice.** The risk function records the plan before the redesign and tracks it afterwards, as [measuring
+value](09-measuring-value.md#a-plan-for-the-risk-managers-time) sets out.
 
 ### 6. Build what the manual process could not do
 **What it means.** Doing the old process faster has a ceiling: at best the old output arrives sooner. A redesign also

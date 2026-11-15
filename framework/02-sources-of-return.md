@@ -1,19 +1,22 @@
 # Sources of return
 
 ## The essentials
-**The rule:** above the return on cash, every investment return is paid by one of three return generators: market risk
-premia, style premia and skill. An ETF or a future can hold the first two, so they are beta. Nothing can hold the third,
-so it is alpha.
+**The rule:** beta is any return above the risk-free rate that an investable instrument could have captured; market
+risk premia and style premia pay it. Alpha is the return left once beta is carved out; skill pays it. These are the
+three return generators.
 
 **Why a risk function needs it:** a generator says why a return is paid, and so how it can stop being paid.
 
 **Two more views of the same return:** by decision, top-down views decide how much of which markets and styles to hold,
 and bottom-up selection decides which securities to hold within them. By who chose it, an exposure was set in the
-mandate, chosen by the manager or chosen by nobody.
+mandate, chosen by a decision-maker who recorded it, or chosen by nobody.
 
-**How it is measured:** on three portfolios. Beta is the step from the benchmark portfolio to the top-down portfolio,
-and alpha is the step from the top-down portfolio to the real portfolio. The [alpha and beta
-method](../pillars/alpha-and-beta-method.md) sets out the computation.
+**Who owns what:** the investment process owns the decisions and the return they earn. The risk function owns the
+measurement: which generator paid each part of the return, and whose recorded decision put it there.
+
+**How it is measured:** on three portfolios. The benchmark portfolio's return above the risk-free rate is policy
+beta, the step to the top-down portfolio is active beta, and the step to the real portfolio is alpha. The [alpha and
+beta method](../pillars/alpha-and-beta-method.md) sets out the computation.
 
 Two lines of a portfolio's return have no generator: the cost of holding beta, and the return of holdings that are not
 publicly traded, which is not split.
@@ -24,7 +27,7 @@ The rest of this chapter is the detail behind these points.
 | Generator | What it is | Why it pays | Source |
 |---|---|---|---|
 | **Market risk premia** | The return for holding a market: the equity premium, the term premium in rates and the credit premium in spreads. Currency exposure is tagged here by convention | It compensates for losses that arrive in bad times, when they hurt most | Beta |
-| **Style premia** | The return of a rule that an index or basket can follow: value, momentum, size, carry, and the premium for holding less liquid public securities | Disputed: a risk, or a pattern in investor behaviour that persists; the framework takes no side, because the method needs only that an ETF or a future can hold it | Beta, once declared |
+| **Style premia** | The return of a rule that an index or basket can follow: value, momentum, size, carry, and the premium for holding less liquid public securities | Disputed: a risk, or a pattern in investor behaviour that persists; the framework takes no side, because the method needs only that an investable instrument can capture it | Beta, once declared |
 | **Skill** | The return from choosing between securities that share the same exposures | One investor finds a wrong price before others do. Measured against the market, before costs and with the market's holdings unchanged, it is zero-sum: what one manager gains, another loses | Alpha |
 
 The line between style premia and skill moves. A return counts as skill until an index or basket can replicate it, and
@@ -54,7 +57,7 @@ bottom-up selection, loosely alpha. Every part of a portfolio's return lands in 
 - **Portfolio return**
   - **Top-down views**, loosely beta: paid by market risk premia and style premia
     - **Set in the mandate:** policy beta
-    - **Chosen by the manager:** tilts and timing
+    - **Chosen by a decision-maker:** tilts and timing
     - **Chosen by nobody:** unintended beta
   - **Bottom-up selection**, loosely alpha: paid by skill, and what selection adds once top-down is out
 
@@ -66,18 +69,19 @@ Top-down return has three branches, according to whose call it was.
 - **Set in the mandate.** Policy beta is the return of the benchmark or strategic allocation in the portfolio's
   governing documents. A client, an asset owner or a chief investment officer may have set it, or, for a pooled fund,
   the manager when the fund was launched, which investors accepted when they bought. Whoever chose it, it is part of the
-  promise, and the manager earns no credit for it.
-- **Chosen by the manager.** Tilts are standing positions against that allocation, and timing is the return from
-  changing exposure over time. Both count only if recorded when taken. Timing earns nothing without skill, so it is
-  assessed on its own.
+  promise and earns no one credit.
+- **Chosen by a decision-maker.** Tilts are standing positions against that allocation, and timing is the return from
+  changing exposure over time. Both count only if recorded when taken, and each is credited to whoever recorded it: a
+  chief investment officer or an allocation committee for an overlay, or the portfolio manager. Timing earns nothing
+  without skill, so it is assessed on its own.
 - **Chosen by nobody.** Unintended beta is any exposure with no record that anyone chose it, including price drift. A
   pure stock picker still has sector and style positions, because the picks add up to them: a manager who picks cheap
   small companies earns value and size premia, which are beta however the picks were made. "Unintended" is a test of
-  record, not of motive: an exposure the manager meant to take but did not record counts here until it is recorded. A
+  record, not of motive: an exposure someone meant to take but did not record counts here until it is recorded. A
   recorded tilt is still read against the risk budget like any other bet, and a tilt outside the confirmed mandate terms
   still fails the style check.
 
-Alpha belongs to the manager who selected the securities. The manager's branch and the unintended branch together are
+Alpha belongs to whoever selected the securities. The decision-maker's branch and the unintended branch together are
 active beta, and a portfolio's active return is active beta plus alpha, after the cost of holding the beta.
 
 A portfolio manager has every reason to read good returns as skill, so [performance

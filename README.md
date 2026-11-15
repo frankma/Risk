@@ -16,10 +16,11 @@ questions:
 The pillars connect, and the [integrated view](pillars/integrated-view.md) reads them together.
 
 ## Sources of return
-Every return above cash is paid by one of three return generators: market risk premia, style premia or skill. The first
-two are beta, held through top-down views; skill is alpha, earned by bottom-up selection. A risk function uses the
-generators to ask how a return could stop, and the split to ask whether each risk was chosen and paid for; see [sources
-of return](framework/02-sources-of-return.md).
+Beta is any return above the risk-free rate that an investable instrument could have captured, paid by market risk
+premia and style premia and held through top-down views. Alpha is the return left once beta is carved out, paid by
+skill and earned by bottom-up selection. A risk function uses these three return generators to ask how a return could
+stop, and the split to ask whether each risk was chosen and paid for; see [sources of
+return](framework/02-sources-of-return.md).
 
 ## The core pattern
 **The risk engine computes, AI analyses and narrates, a human judges.**
