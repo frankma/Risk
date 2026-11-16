@@ -224,7 +224,7 @@ borrowers of lent securities, net of the collateral they have posted. The intern
 | Stress tests | Scenarios nobody thought of | Review of the library against current conditions |
 | Scenario fill-in | Correlations shift in stress, so factors filled in from past co-movement can be wrong | Comparison with co-movement in past stressed periods |
 | All measures | Thinly traded or stale-priced holdings | Flags from [liquidity risk](liquidity-risk.md) |
-| AI explanations | Weight on the wrong driver, even when every number is correct | How often and how much risk managers edit the drafts; a sample reviewed against the full decomposition |
+| AI explanations | Weight on the wrong driver, even when every number is correct | How often and how much risk managers edit the drafts; a sample reviewed against the full decomposition; seeded drafts with a wrong driver |
 
 ## Controls and measures specific to this pillar
 The general [controls](../framework/08-controls.md) apply in full. This pillar adds two.

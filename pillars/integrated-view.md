@@ -106,7 +106,8 @@ otherwise rank many portfolios at once.
 ## What the AI drafts
 Every number in the draft appears in the facts beside it, so the [grounding
 check](../framework/08-controls.md#the-grounding-check) would pass. The account describes the combination; it does not
-claim that one signal caused another. **The fund and figures are illustrative.**
+claim that one signal caused another, and the grounding check rejects a causal claim no analysis computed. **The fund
+and figures are illustrative.**
 
 | Fact | Value |
 |---|---|

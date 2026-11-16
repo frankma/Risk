@@ -47,7 +47,8 @@ how the person and the AI then work together.
 
 ### 3. The AI never fabricates a number
 **What it means.** A risk output with a wrong figure in it is worse than no output. Every figure has a recorded
-computation behind it, and generated text passes the grounding check before anyone sees it.
+computation behind it, and generated text passes the grounding check before anyone sees it. The same holds for a
+cause: a draft says what drove a change only where an attribution or decomposition computed it.
 
 **In practice.** [Working with AI](06-working-with-ai.md#where-a-figure-may-come-from) sets out where a figure may come
 from, and [controls](08-controls.md#the-grounding-check) how the check works. The check, and the other controls that

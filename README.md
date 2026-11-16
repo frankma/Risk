@@ -68,7 +68,7 @@ follows beneath it. Reading the essentials in order gives the framework; the det
 | [Principles](framework/05-principles.md) | Six principles for redesigning the work around AI, and what the risk manager adds. |
 | [Working with AI](framework/06-working-with-ai.md) | What "AI" means, three modes of working, what the AI reads, where a figure may come from and what the AI may do. |
 | [Redesign method](framework/07-redesign-method.md) | Seven steps to redesign one workflow. |
-| [Controls](framework/08-controls.md) | What makes a redesigned workflow safe to rely on, from the grounding check to fallback. |
+| [Controls](framework/08-controls.md) | What makes a redesigned workflow safe to rely on, from the grounding check and automated actions to evaluation, incidents and fallback. |
 | [Measuring value](framework/09-measuring-value.md) | How to know a redesigned workflow works. |
 | **Index** | |
 | [Concept map](framework/concept-map.md) | Every concept: what it is, where it is defined and which chapters use it. |
