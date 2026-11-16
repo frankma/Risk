@@ -113,13 +113,18 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 
 | Concept | What it is | Defined in | Used by |
 |---|---|---|---|
-| Grounding check | Every number in generated text traces to the daily run or to a recorded analysis run, or is a stated simple operation on such figures that the check recomputes; each sentence links to its facts, and direction and comparisons are checked | [Controls](08-controls.md#the-grounding-check) | Principles, working with AI, all pillars, alpha and beta |
-| AI permissions | What the AI may read, which analyses it may run, what it may do under a governed rule and what it may never do, set by the risk function and enforced by the analytics engine | [Controls](08-controls.md#ai-permissions) | Working with AI |
+| Grounding check | Every number in generated text traces to the daily run or to a recorded analysis run, or is a stated simple operation on such figures that the check recomputes; each sentence links to its facts; direction, comparisons, causes, quantifiers and severity are checked | [Controls](08-controls.md#the-grounding-check) | Principles, working with AI, all pillars, alpha and beta |
+| AI permissions | What the AI may read, which analyses it may run, what it may do under a governed rule and what it may never do, set by the risk function and enforced by the analytics engine; every run uses the asker's entitlements | [Controls](08-controls.md#ai-permissions) | Working with AI |
+| Automated action | An action taken without sign-off beforehand, allowed only if decided by a rule, standard, reversible and proven, and reviewed the same day | [Controls](08-controls.md#automated-actions) | Limits and escalation, working with AI |
+| Input handling | Text the AI reads is data, never instructions | [Controls](08-controls.md#input-handling) | That chapter only |
+| Evaluation set | Past cases with reference outcomes for each AI step, rerun at every change of model, prompt or template | [Controls](08-controls.md#evaluation) | Working with AI, measuring value |
+| Seeded review test | Drafts with a known flaw sent through review to test that reviewers read what they sign | [Controls](08-controls.md#evaluation) | Working with AI, measuring value, market risk |
 | Sign-off point | Where a human must approve, and what they are approving | [Controls](08-controls.md#sign-off-points) | Every redesigned workflow |
 | Audit trail | The record of facts, versions, generated text, edits and approval | [Controls](08-controls.md#the-audit-trail) | Every redesigned workflow |
 | Governed parameter | A threshold or rule with an owner, a review cycle and a change record | [Controls](08-controls.md#materiality-thresholds-as-governed-parameters) | All pillars, alpha and beta |
 | Parallel run | The new workflow runs beside the old one before the old one stops | [Controls](08-controls.md#parallel-runs) | Redesign method, measuring value |
 | Fallback | What happens when a component fails, including a template in place of AI text | [Controls](08-controls.md#fallback) | That chapter only |
+| Incident | An output that reached its audience wrong, an overturned automated action or a failed control; the head of risk can suspend any AI step or rule | [Controls](08-controls.md#incidents) | That chapter only |
 
 ## Measures
 

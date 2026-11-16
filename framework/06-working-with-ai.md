@@ -42,9 +42,10 @@ parameters](08-controls.md#materiality-thresholds-as-governed-parameters). The r
 investigated, with every figure tied to its run.
 
 **Investigate** replaces the ad hoc query. A risk manager, or a portfolio manager before a trade, asks a question in
-plain words. The AI works out which analyses answer it, runs them through the analytics engine, and reports what they
-show: a drill-down into a change, an aggregation across portfolios, an attribution over a period, a what-if on a
-proposed trade, a scenario. Every figure is tied to the run that produced it.
+plain words. Each run uses the entitlements of the person who asked, so a portfolio manager sees figures only for the
+portfolios they manage. The AI works out which analyses answer it, runs them through the analytics engine, and reports
+what they show: a drill-down into a change, an aggregation across portfolios, an attribution over a period, a what-if on
+a proposed trade, a scenario. Every figure is tied to the run that produced it.
 
 **Challenge** turns the AI on a conclusion. The conclusion may be a portfolio manager's explanation of a breach, a risk
 manager's own reading of a portfolio, or a draft paper for a committee. The AI looks for what would contradict it and
@@ -60,7 +61,7 @@ text that contains one is rejected.
 | An analysis run | One of the analytics engine's governed analyses, run by the AI with its own parameters: a drill-down, an aggregation, an attribution, a what-if, a scenario | Yes, with the run recorded |
 | Simple arithmetic | A sum, a difference, a ratio, a percentage change or a simple multiple of figures from the two rows above, which the grounding check recomputes | Yes |
 | A document | A figure extracted from a source passage, such as a limit in a portfolio's mandate terms or the size of a redemption in a notice | Once the risk manager has confirmed it |
-| An exploratory query | A read-only query the AI composed over the risk data, where no governed analysis answers the question | No. It is labelled unvalidated and stays out of outputs |
+| An exploratory query | A read-only query the AI composed over the risk data, where no governed analysis answers the question | No. It is labelled unvalidated, stays out of outputs and is shown only within the risk function |
 | Nothing | A figure the AI stated with no computation behind it | Never |
 
 The analyses the AI may run are a [governed parameter](08-controls.md#materiality-thresholds-as-governed-parameters),
@@ -91,7 +92,7 @@ what it may never do. The pillar chapters state these limits where they bite; th
 | The AI may | Examples |
 |---|---|
 | **Do alone** | Investigate each ranked item through the analyses set for its rule; draft text from computed facts; run a governed analysis; compose an exploratory query; start a run inside the analytics engine; extract terms, events and recorded decisions from documents, notices and minutes; cite precedent from the record; propose scenarios, questions and challenges |
-| **Do under a governed rule, reviewed the same day** | Send a breach notice the rule covers, such as a passive breach of an internal limit on a standard template, once the grounding check passes; close a breach that verification shows came from a data break |
+| **Do under a governed rule, reviewed the same day** | The [automated actions](08-controls.md#automated-actions), where the analytics engine decides the rule applies: send a breach notice the rule covers, such as a passive breach of an internal limit on a standard template, once the grounding check passes; close a breach the engine matched to a recorded data break |
 | **Do with a person's sign-off** | Anything else that leaves the function: an explanation, a notice, a pack, minutes; the terms, events and recorded decisions it extracted, before any is used |
 | **Never do** | Send any other message; write a recommendation, an opinion or its conditions; decide what matters, what to escalate or whether a breach is accepted; set a shock size; change a threshold, a limit, a rule or any other governed parameter; correct data; read external news or commentary; present a precedent as a recommendation |
 
@@ -114,7 +115,7 @@ Working with the AI is a skill, and the hardest part of it is staying critical o
 
 A sign-off given without reading is the failure this section exists to prevent, and it leaves no trace in the edits. The
 risk function therefore reviews a sample of signed-off items against the facts and runs behind them, as each pillar sets
-out for its own drafts.
+out for its own drafts, and tests the review with seeded drafts, as [evaluation](08-controls.md#evaluation) sets out.
 
 ## A worked exchange
 A risk manager asks why Fund T's ex-ante tracking error rose over the week, and whether other portfolios are exposed to
@@ -138,7 +139,7 @@ The risk manager reads this as a deliberate value tilt and asks the AI to challe
 > tilt.
 
 What the exposure means, and what to ask the portfolio manager, is the risk manager's judgement. The figure from the
-exploratory query can guide the question, but it stays out of any output.
+exploratory query can guide the question, but it stays out of any output and is never shown to the portfolio manager.
 
 ## What changes for people
 | Who | What changes |

@@ -10,17 +10,18 @@ warnings sit ahead of both. A breach of an internal limit ends in a decision the
 agree. Where they disagree, the risk committee decides and its decision binds. What the risk committee cannot resolve
 goes to the executive committee, and the board is the last resort.
 
-**How the work is done:** the analytics engine detects a breach in the daily run, checks it against data breaks,
-classifies it and tracks it to its deadline. The AI explains what the checks found, closes a breach that came from a
-data break, drafts the notice and the decision note, and sends a routine notice a governed rule covers. The risk manager
+**How the work is done:** the analytics engine detects a breach in the daily run, checks it against recorded data
+breaks, classifies it, decides whether a governed rule covers its notice and tracks it to its deadline. The AI explains
+what the checks found, drafts the notice and the decision note, and, where the engine's rule applies, sends the routine
+notice or closes a breach the engine matched to a data break. The risk manager
 confirms the breach, sends any other notice and reviews the same day what the AI sent or closed. The portfolio manager
 and the risk manager agree how the breach is handled, the head of risk approves any acceptance, and the risk manager
 reports the close to the head of risk.
 
 | # | Step | Owner |
 |---|---|---|
-| 1 | Detect the breach; check it against data breaks; classify it as active or passive | Analytics engine |
-| 2 | Explain what the checks found; close a breach that came from a data break; draft the notice to the portfolio manager, investment oversight and the head of risk, and send it, once the grounding check in step 3 passes, where a governed rule covers it | AI assistant |
+| 1 | Detect the breach; check it against recorded data breaks; classify it as active or passive; decide whether a governed rule covers its notice | Analytics engine |
+| 2 | Explain what the checks found; close a breach the engine matched to a data break; draft the notice to the portfolio manager, investment oversight and the head of risk, and send it, once the grounding check in step 3 passes, where the engine found the rule covers it | AI assistant |
 | 3 | Grounding check on the notice | Analytics engine |
 | 4 | Confirm the breach and its classification; send a notice the rule does not cover; review the same day what the AI sent or closed | Risk manager |
 | 5 | Record the portfolio manager's explanation | Analytics engine |
@@ -113,9 +114,9 @@ rule follows compliance's process.
 | # | Stage | What happens |
 |---|---|---|
 | 1 | Detect | The analytics engine finds the breach in the daily run |
-| 2 | Verify | The analytics engine checks the breach against [data breaks](03-risk-data.md#quality-before-computation): is the reading real? The risk manager confirms; a breach that came from a data break is closed by the AI, with the record |
+| 2 | Verify | The analytics engine checks the breach against recorded [data breaks](03-risk-data.md#quality-before-computation): is the reading real? A breach it matches to a break is closed by the AI with the record, and the risk manager reviews the close the same day; the risk manager confirms every other breach |
 | 3 | Classify | Active, caused by a trade or decision, or passive, caused by market moves, flows or corporate actions; the analytics engine classifies from the trade records and the risk manager confirms |
-| 4 | Notify | The portfolio manager, investment oversight and the head of risk are told, with the facts; the AI sends a notice a governed rule covers, and the risk manager reviews it the same day |
+| 4 | Notify | The portfolio manager, investment oversight and the head of risk are told, with the facts; where the engine finds a governed rule covers the notice, the AI sends it, and the risk manager reviews it the same day |
 | 5 | Explain | The portfolio manager explains the position, and the explanation is recorded |
 | 6 | Decide | The portfolio manager and the risk manager agree: rectify it, or accept it for a set period with the head of risk's approval; a disagreement goes to the risk committee |
 | 7 | Rectify | Where the decision is to rectify, the reading returns within the limit by a deadline |
@@ -177,7 +178,8 @@ would pass. **The fund and figures are illustrative.**
 | Today / previous day | 2.62% / 2.41% |
 | Limit | 2.50% |
 | Trades on the previous day | None |
-| Classification | Passive: market volatility rose |
+| Classification | Passive |
+| Change by source (decomposition) | Market volatility +0.21 points; position changes none |
 | Deadline for a decision on a passive breach | 5 business days |
 
 > Fund P's 1-day 99% VaR is 2.62%, above its internal limit of 2.50%, up from 2.41% the previous day. The breach is
@@ -190,7 +192,8 @@ The general [controls](08-controls.md) apply in full. Limits add six.
 - **Every breach is recorded.** Detection, verification, classification, notice, explanation, decision and close are
   kept in the audit trail.
 - **What the AI sends or closes is reviewed.** The risk manager reviews every notice the AI sent and every breach it
-  closed the same day.
+  closed the same day, and a review that disagrees follows the path in [automated
+  actions](08-controls.md#automated-actions).
 - **Approvals expire.** An accepted breach returns to the queue on its expiry date.
 - **Hard limits are never accepted.** A breach of one is always rectified; who routes, reports and tracks it is set out
   under [where limits come from](04-limits-and-escalation.md#where-limits-come-from).

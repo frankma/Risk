@@ -185,7 +185,7 @@ Two further calls are counted in every scenario, because they arrive whatever in
 | Redemption coverage | Outflows and market stress tend to arrive together | Scenarios that stress both sides at once |
 | Margin and collateral calls | Calls rise with the market moves that cut liquidity | One market shock applied to margin and to liquidity together |
 | Any measure using prices | Stale prices make holdings look stable | Stale flags; sale prices against prior prices |
-| AI narratives | A narrative can be accurate and still understate how urgent a position is | How risk managers edit the narratives for triggered portfolios; a sample checked against the full stress results |
+| AI narratives | A narrative can be accurate and still understate how urgent a position is | Severity words fixed to the computed state by the grounding check; how risk managers edit the narratives; a sample checked against the full stress results |
 
 ## Controls and measures specific to this pillar
 The general [controls](../framework/08-controls.md) apply in full. This pillar adds two.

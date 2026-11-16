@@ -30,13 +30,15 @@ literature it draws on.
 ## Design rules for the reference implementations
 - **The AI never fabricates a number.** Every figure is computed by code from data, in the daily run or in an analysis
   the AI layer runs through the analytics engine (an aggregation, an attribution, a what-if), with the run recorded.
-  Beyond that the AI layer at most combines figures in simple ways (a sum, difference, ratio or percentage change), and
-  a grounding check verifies that every number in generated text traces to a computed value or is recomputed from
-  computed values; text that fails is rejected.
+  Beyond that the AI layer at most combines figures in simple ways (a sum, difference, ratio, percentage change or
+  simple multiple), and states a cause only where an attribution computed it. A grounding check verifies that every
+  number in generated text traces to a computed value or is recomputed from computed values, and tests causes,
+  quantifiers and severity words against the facts; text that fails is rejected.
 - **Exceptions over everything.** Workflows rank what needs a human's attention rather than handing over everything.
 - **Every AI step has a human sign-off point and an audit trail** of what was generated and what the human changed.
-  The one exception is a routine action a governed rule allows, such as a standard breach notice: a person reviews it
-  the same day, and it is recorded in the same trail.
+  The one exception is a routine action a governed rule allows, such as a standard breach notice: the analytics engine
+  decides that the rule applies, the AI writes the text, a person reviews it the same day, and it is recorded in the
+  same trail.
 - **Examples run without an AI service.** The narrative layer has a deterministic template backend so tests and demos
   run offline; an AI backend is optional and configured by environment variable.
 - Calculations stay simple and transparent. The examples demonstrate workflows, not risk models.

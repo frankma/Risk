@@ -8,7 +8,7 @@ before anything changes. Hours are not among the measures, and neither is usage 
 |---|---|---|
 | Capacity | How much can be covered in depth? | Portfolios covered in depth per person; deep-dive reviews per month |
 | Speed | How quickly does the function know? | Data availability to signed-off output; alert to explanation |
-| Quality | Does it catch what matters? | Issues missed or found late; errors found in review; parallel-run agreement |
+| Quality | Does it catch what matters? | Issues missed or found late; errors found in review; seeded flaws caught in review; parallel-run agreement |
 | Influence | Does its work change decisions? | Issues raised and actions taken; share of time on challenge |
 
 **The risk manager's time is planned:** before a workflow is redesigned, the risk function decides what the risk
@@ -59,6 +59,7 @@ illustrative.**
 | Speed | Days from a threshold breach to an explanation | How soon the function understands a change |
 | Quality | Figure errors found in review per cycle | Whether the grounding check and reconciliation catch what a reviewer used to |
 | Quality | Parallel-run agreement on escalated items | Whether the redesigned workflow can be relied on |
+| Quality | Seeded flaws caught in review | Whether reviewers read what they sign |
 | Influence | Issues raised with portfolio managers per quarter | Whether challenge is being made |
 | Influence | Share of risk manager time on challenge | Whether challenge has the time it needs |
 
