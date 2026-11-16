@@ -11,14 +11,14 @@ escalate?
 
 **How the work is done:** the view computes nothing new. The analytics engine reads the signals the three pillars
 already produce, for every portfolio every day, applies rules for the combinations that matter and ranks the portfolios.
-The AI drafts an account of each ranked portfolio. The risk manager judges each one and adds it to the watch list or
-escalates it to the head of risk.
+The AI investigates each ranked portfolio and drafts an account of it. The risk manager judges each one and adds it to
+the watch list or escalates it to the head of risk.
 
 | # | Step | Owner |
 |---|---|---|
 | 1 | Read every pillar's signals for every portfolio; align them by date | Analytics engine |
 | 2 | Apply the pattern and combination rules; rank portfolios | Analytics engine |
-| 3 | Draft an account for each ranked portfolio | AI assistant |
+| 3 | Investigate each ranked portfolio; draft an account | AI assistant |
 | 4 | Grounding check on every account | Analytics engine |
 | 5 | Assemble the committee view from the top-ranked portfolios | Analytics engine |
 | 6 | Judge each ranked portfolio; add it to the watch list or escalate it to the head of risk | Risk manager |

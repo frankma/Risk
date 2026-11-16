@@ -3,9 +3,17 @@
 ## The essentials
 **The rule:** the analytics engine computes, the AI interprets and narrates, and a person judges.
 
-**Three modes:** the AI prepares outputs from what the analytics engine found, investigates a person's question by
-running analyses through the analytics engine, and challenges a conclusion against the data. In each mode the analytics
-engine does the computing and a person keeps the judgement.
+**What "AI" means:** the language model that investigates, drafts, extracts and challenges. Statistical and
+machine-learning models, such as a flow forecast or a market impact model, are part of the analytics engine: fitted,
+validated as models and deterministic once fitted.
+
+**Three modes:** the AI prepares outputs, investigating each ranked item through the analytics engine before it
+drafts; investigates a person's question the same way; and challenges a conclusion against the data. In each mode the
+analytics engine does the computing and a person keeps the judgement.
+
+**What it reads:** governing documents, notices, minutes and the function's own record, never external news. What it
+extracts is used only once a person has confirmed it, and what it retrieves from the record is cited as evidence,
+never as a recommendation.
 
 **Numbers:** the AI never fabricates a number. Every figure it reports has a recorded computation behind it that can be
 reproduced.
@@ -22,11 +30,16 @@ The rest of this chapter is the detail behind these points.
 ## Three modes of working
 | Mode | What starts it | What the AI does | What the person does |
 |---|---|---|---|
-| **Prepare** | The daily run, a trigger or a schedule | Drafts explanations, notices, packs and minutes from what the analytics engine found | Judges the ranked items, edits and signs off |
+| **Prepare** | The daily run, a trigger or a schedule | Investigates each ranked item through the analyses set for its rule, then drafts explanations, notices, packs and minutes from what the analytics engine found | Judges the ranked items, edits and signs off |
 | **Investigate** | A person's question | Runs analyses through the analytics engine and reports the figures with the runs behind them | Asks, follows up and decides what the answer means |
 | **Challenge** | A conclusion or an explanation | Tests it against the data, looks for the figures that would contradict it and reports what it finds | Weighs the challenge and decides |
 
-**Prepare** is the mode each pillar's flagship workflow runs in.
+**Prepare** is the mode each pillar's flagship workflow runs in, and it starts with an investigation. For each ranked
+item the AI runs the governed analyses set for that kind of rule, such as the drill-down by position and factor, the
+same driver across other portfolios and the tilts on record, up to a set number of runs, and drafts from what they
+show. The analyses for each kind of rule and the cap on runs are [governed
+parameters](08-controls.md#materiality-thresholds-as-governed-parameters). The risk manager starts from an item already
+investigated, with every figure tied to its run.
 
 **Investigate** replaces the ad hoc query. A risk manager, or a portfolio manager before a trade, asks a question in
 plain words. The AI works out which analyses answer it, runs them through the analytics engine, and reports what they
@@ -46,7 +59,7 @@ text that contains one is rejected.
 | The daily run | Computed by the analytics engine for every portfolio | Yes |
 | An analysis run | One of the analytics engine's governed analyses, run by the AI with its own parameters: a drill-down, an aggregation, an attribution, a what-if, a scenario | Yes, with the run recorded |
 | Simple arithmetic | A sum, a difference, a ratio, a percentage change or a simple multiple of figures from the two rows above, which the grounding check recomputes | Yes |
-| A document | A figure extracted from a source passage, such as a limit in a portfolio's mandate terms | Once the risk manager has confirmed it |
+| A document | A figure extracted from a source passage, such as a limit in a portfolio's mandate terms or the size of a redemption in a notice | Once the risk manager has confirmed it |
 | An exploratory query | A read-only query the AI composed over the risk data, where no governed analysis answers the question | No. It is labelled unvalidated and stays out of outputs |
 | Nothing | A figure the AI stated with no computation behind it | Never |
 
@@ -55,16 +68,32 @@ owned by the risk function. An exploratory query is how the function learns what
 useful is adopted into the analytics engine through the same change process as any other analysis, and from then on its
 figures may reach an output. The [grounding check](08-controls.md#the-grounding-check) enforces the table.
 
+## What the AI reads
+Besides what the analytics engine computed and the analyses it runs, the AI reads the
+[documents](03-risk-data.md#what-the-analytics-engine-reads) the risk function keeps as received, and the function's
+own record. It reads no external news or commentary: an event reaches it only as data in a domain or as a document in
+the store.
+
+| Source | What the AI does with it | Before it is used |
+|---|---|---|
+| Governing documents | Extracts the [mandate terms](../pillars/performance-risk.md#mandate-terms), including the provisions for each liquidity management tool, each linked to its passage | The risk manager confirms each term, and an expected term that was not found shows as a gap |
+| Dealing notices | Reads a redemption or other notice into an event, linked to the notice | The risk manager confirms the event, which then enters the run and can fire a trigger |
+| Minutes | Extracts each tilt and timing call with its decision-maker, size and date, linked to the passage | The risk manager confirms it, and the record takes the date of the minutes |
+| The function's own record | Retrieves how similar breaches were decided, and what was explained and agreed at earlier reviews | Cited with its source beside the facts of the current case |
+
+**Precedent informs; it does not decide.** A past decision shows how a similar case was judged, not how this one should
+be. The AI cites it as evidence, and the decision stays with the people who own it.
+
 ## What the AI may do
 The AI works under a permission of its own, set by the risk function: what it may read, which analyses it may run and
 what it may never do. The pillar chapters state these limits where they bite; this table holds them in one place.
 
 | The AI may | Examples |
 |---|---|
-| **Do alone** | Draft text from computed facts; run a governed analysis; compose an exploratory query; start a run inside the analytics engine; propose scenarios, questions and challenges |
+| **Do alone** | Investigate each ranked item through the analyses set for its rule; draft text from computed facts; run a governed analysis; compose an exploratory query; start a run inside the analytics engine; extract terms, events and recorded decisions from documents, notices and minutes; cite precedent from the record; propose scenarios, questions and challenges |
 | **Do under a governed rule, reviewed the same day** | Send a breach notice the rule covers, such as a passive breach of an internal limit on a standard template, once the grounding check passes; close a breach that verification shows came from a data break |
-| **Do with a person's sign-off** | Anything else that leaves the function: an explanation, a notice, a pack, minutes; the mandate terms it extracted from a portfolio's documents |
-| **Never do** | Send any other message; write a recommendation, an opinion or its conditions; decide what matters, what to escalate or whether a breach is accepted; set a shock size; change a threshold, a limit, a rule or any other governed parameter; correct data |
+| **Do with a person's sign-off** | Anything else that leaves the function: an explanation, a notice, a pack, minutes; the terms, events and recorded decisions it extracted, before any is used |
+| **Never do** | Send any other message; write a recommendation, an opinion or its conditions; decide what matters, what to escalate or whether a breach is accepted; set a shock size; change a threshold, a limit, a rule or any other governed parameter; correct data; read external news or commentary; present a precedent as a recommendation |
 
 Everything else outward stays with a person. The AI can start work inside the analytics engine and act under a rule a
 person has set, but it cannot commit the function to a view, a decision or any message the rule does not cover.

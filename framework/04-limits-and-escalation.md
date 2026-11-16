@@ -24,7 +24,7 @@ reports the close to the head of risk.
 | 3 | Grounding check on the notice | Analytics engine |
 | 4 | Confirm the breach and its classification; send a notice the rule does not cover; review the same day what the AI sent or closed | Risk manager |
 | 5 | Record the portfolio manager's explanation | Analytics engine |
-| 6 | Draft the decision note | AI assistant |
+| 6 | Draft the decision note, citing how similar breaches were decided | AI assistant |
 | 7 | Agree the decision: rectify, or accept for a set period; take a disagreement to the risk committee | Portfolio manager and risk manager |
 | 8 | Approve an acceptance for a set period | Head of risk |
 | 9 | Track the rectification to its deadline; escalate a missed deadline | Analytics engine |

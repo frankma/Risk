@@ -49,7 +49,7 @@ Each tagged step is assigned to one owner, following the core pattern.
 | Tag | Owner |
 |---|---|
 | Gather, Compute | Analytics engine |
-| Interpret, Communicate | AI assistant, which drafts from what the analytics engine computed; the risk manager's edit and approval is a step of its own |
+| Interpret, Communicate | AI assistant, which investigates through the analytics engine and drafts from what it computed; the risk manager's edit and approval is a step of its own |
 | Judge, Approve | The risk manager, or the head of risk for escalation and sign-off |
 | Steps that exist only because the old process was slow | Eliminated |
 
@@ -58,7 +58,7 @@ copies of the same number and chasing people for inputs exist because the manual
 not handed to the analytics engine or the AI assistant.
 
 ### 5. Redesign the flow
-In the redesigned workflow the system produces the output, and the human reviews the exceptions. Three changes follow.
+In the redesigned workflow the system produces the output, and the human reviews the exceptions. Four changes follow.
 
 - **Materiality thresholds are encoded.** The rules that decide what counts as an exception, and how exceptions are
   ranked, are written down as parameters rather than applied by eye.
@@ -66,6 +66,9 @@ In the redesigned workflow the system produces the output, and the human reviews
   were copied correctly, are replaced by controls in the system. Gates that exist for judgement stay.
 - **The output changes.** A long pack is replaced by what the decision needs, for example a two-page exception summary
   with drill-down into the detail behind each item.
+- **Work done for no item is done for every item.** The redesign asks what the AI makes possible that the old process
+  had no time for: investigating every exception before anyone asks, reading every document into records, testing
+  every explanation against the data.
 
 ### 6. Build in controls
 The controls are designed in this step, not added after the workflow is live; [controls](08-controls.md) sets them out.
@@ -102,15 +105,16 @@ Steps 1, 2, 6 and 8 are gathering, checking and waiting; none of them requires r
 **Step 4, owners.** Steps 1 and 3 move to the analytics engine, which reads from source systems and computes the
 measures. Step 2 exists only because data was copied by hand and is eliminated. Step 4 is eliminated because the
 analytics engine produces the output in its final format. Step 5 becomes an AI draft from the computed facts, edited by
-the risk manager. Step 6 is replaced by the grounding check and the system's reconciliation to source. Steps 7 and 8
-stay with the head of risk, who now decides on the risk manager's proposal.
+the risk manager, after the AI has investigated each exception. Step 6 is replaced by the grounding check and the
+system's reconciliation to source. Steps 7 and 8 stay with the head of risk, who now decides on the risk manager's
+proposal.
 
 **Step 5, redesigned flow.**
 
 | # | Step | Owner |
 |---|---|---|
 | 1 | Load data, compute measures, compare to thresholds, rank exceptions | Analytics engine |
-| 2 | Draft an explanation for each exception from the computed facts | AI assistant |
+| 2 | Investigate each exception through the analyses set for its rule; draft an explanation from the findings | AI assistant |
 | 3 | Grounding check on every draft | Analytics engine |
 | 4 | Review exceptions, edit explanations, propose what to escalate | Risk manager |
 | 5 | Decide what to escalate; sign off the two-page summary with drill-down | Head of risk |

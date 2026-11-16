@@ -10,21 +10,23 @@ investors who stay?
 > whether the tools for managing liquidity are ready if it cannot.
 
 **How the work is done:** the analytics engine measures every portfolio's liquidity every day and runs a stress test on
-the day an event fires a trigger, not when the calendar says so. The AI drafts the narrative for each triggered
-portfolio and the board paper. The risk manager reviews each triggered portfolio and makes any recommendation on
-liquidity management tools.
+the day an event fires a trigger, not when the calendar says so. The AI reads redemption notices into events the risk
+manager confirms, investigates each triggered portfolio and drafts its narrative and the board paper. The risk manager
+reviews each triggered portfolio and makes any recommendation on liquidity management tools.
 
 | # | Step | Owner |
 |---|---|---|
 | 1 | Compute each portfolio's liquidity profile and redemption coverage | Analytics engine |
 | 2 | Monitor flows, margin calls and investor concentration against each portfolio's history | Analytics engine |
-| 3 | Run the stress test when an event trigger fires | Analytics engine |
-| 4 | Draft the narrative for each triggered portfolio | AI assistant |
-| 5 | Grounding check on every draft | Analytics engine |
-| 6 | Review each triggered portfolio; recommend on liquidity tools | Risk manager |
-| 7 | Draft the board paper from the period's results and events | AI assistant |
-| 8 | Review scenario calibration; edit the board paper | Risk manager |
-| 9 | Review and sign off the paper | Head of risk |
+| 3 | Read each redemption notice into an event, linked to the notice | AI assistant |
+| 4 | Confirm the event | Risk manager |
+| 5 | Run the stress test when an event trigger fires | Analytics engine |
+| 6 | Investigate each triggered portfolio through the analyses set for its rule; draft the narrative | AI assistant |
+| 7 | Grounding check on every draft | Analytics engine |
+| 8 | Review each triggered portfolio; recommend on liquidity tools | Risk manager |
+| 9 | Draft the board paper from the period's results and events | AI assistant |
+| 10 | Review scenario calibration; edit the board paper | Risk manager |
+| 11 | Review and sign off the paper | Head of risk |
 
 **What "a fair cost" means:** the investors who stay must not bear the cost of others leaving, and liquidity management
 tools are the means. A segregated mandate has one client, so the question is whether the client's withdrawals and
@@ -58,7 +60,8 @@ Liquidity monitoring and stress testing is the flagship, shown in the table at t
   AI](../framework/06-working-with-ai.md#three-modes-of-working).
 - **Stale or unpriceable holdings** are shown against the measures that rest on them.
 - **Liquidity tool readiness.** A tool is ready when the governing documents provide for it, the operations to apply it
-  have been tested, and the decision to use it has a named owner and a process.
+  have been tested, and the decision to use it has a named owner and a process. The AI extracts each tool's provisions
+  with the [mandate terms](performance-risk.md#mandate-terms), and the risk manager confirms them.
 - **The firm's footprint.** The daily run computes the firm's share of each issue and of each market's daily volume for
   the [firm's footprint](integrated-view.md#the-firms-footprint).
 
@@ -95,15 +98,17 @@ check](../framework/08-controls.md#the-grounding-check) would pass. **The fund a
 | Fact | Value |
 |---|---|
 | Fund | Fund D |
-| Redemption notified | 6.5% of net assets |
+| Redemption notified, confirmed from the notice | 6.5% of net assets |
 | Large-redemption trigger | 5.0% of net assets |
 | Redemption coverage before / after | 2.4x / 1.6x |
 | Coverage limit | 1.5x |
 | Share of the redemption met from the most liquid holdings | 80% |
+| The redeeming distributor in other portfolios (run 1) | 2 portfolios, at 3.1% and 1.8% of net assets |
 
 > Fund D has received a redemption notice for 6.5% of net assets, above the 5.0% trigger, and the stress test has been
 > rerun. Redemption coverage falls from 2.4x to 1.6x, still above the 1.5x limit. 80% of the redemption would be met
-> from the most liquid holdings.
+> from the most liquid holdings. The same distributor holds 3.1% and 1.8% of net assets in two other portfolios
+> (run 1).
 
 
 ## Design choices
