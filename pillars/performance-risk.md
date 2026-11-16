@@ -9,7 +9,8 @@
 > from the sources its mandate describes.
 
 **How the work is done:** the analytics engine tracks every portfolio's realised measures and tests its exposures
-against the confirmed mandate terms. The AI drafts a challenge pack: the top issues for the portfolio, the evidence for
+against the confirmed mandate terms. The AI investigates each issue, including what was explained and agreed at earlier
+reviews, and drafts a challenge pack: the top issues for the portfolio, the evidence for
 each and the questions to ask. The risk manager runs the portfolio manager review on the risk function's agenda, with
 evidence that is independent of the portfolio manager, and the agreed actions are tracked until they are closed.
 
@@ -18,7 +19,7 @@ evidence that is independent of the portfolio manager, and the agreed actions ar
 | 1 | Track realised return, ex-post tracking error, drawdown, active share, information ratio, factors and peer position | Analytics engine |
 | 2 | Test exposures against the mandate terms; flag drift and unintended bets | Analytics engine |
 | 3 | Rank the portfolio's issues, with market risk's tracking error and risk budget exceptions | Analytics engine |
-| 4 | Draft the challenge pack: evidence and questions for each issue | AI assistant |
+| 4 | Investigate each issue, with the record of earlier reviews; draft the challenge pack: evidence and questions | AI assistant |
 | 5 | Grounding check on the pack | Analytics engine |
 | 6 | Review and edit the pack; set the agenda | Risk manager |
 | 7 | Run the meeting on the risk function's agenda | Risk manager |
@@ -67,12 +68,14 @@ person who can act on it. The other workflows feed it.
 ## Mandate terms
 Testing a portfolio against what it promised needs the promise in a form the analytics engine can test. The AI extracts
 the portfolio's stated objective, benchmark, style, limits and dealing terms from its documents into structured terms,
-each linked to the passage it came from. The risk manager confirms the terms. The analytics engine then tests holdings
-and exposures against the confirmed terms and flags style drift and unintended bets. For a hard limit, compliance's
-coded rule is the master reading: the extracted limit is reconciled to it, and a difference is routed to compliance, not
-settled by the risk manager. The risk function owns the objective and style terms, which compliance does not code, once
-the risk manager has confirmed them. For a new portfolio, the terms are first extracted and confirmed in the [new
-portfolio review](new-portfolio-review.md).
+each linked to the passage it came from, including the provisions for each liquidity management tool. The analytics
+engine checks them against a list of the terms each type of portfolio is expected to have, so that a term the AI missed
+shows as a gap to resolve rather than as nothing to confirm. The risk manager confirms the terms. The analytics engine
+then tests holdings and exposures against the confirmed terms and flags style drift and unintended bets. For a hard
+limit, compliance's coded rule is the master reading: the extracted limit is reconciled to it, and a difference is
+routed to compliance, not settled by the risk manager. The risk function owns the objective and style terms, which
+compliance does not code, once the risk manager has confirmed them. For a new portfolio, the terms are first extracted
+and confirmed in the [new portfolio review](new-portfolio-review.md).
 
 ## Materiality and exceptions
 An **exception** is a reading that has crossed a rule's threshold, and a **watch item** an early sign that has not. Each
@@ -109,10 +112,12 @@ illustrative.**
 | Currency in confirmed mandate terms | Not part of the stated strategy |
 | Currency tilt on record | None |
 | Average unhedged US dollar exposure | 14% of net assets |
+| Currency at the previous review (minutes) | Recorded as to be hedged |
 
 > Fund G returned 2.1% above its benchmark before fees over the last 12 months. Of that, 1.6% was unintended beta from
 > currency, which is not part of its stated strategy and has no tilt on record; alpha was 0.5%. The currency return is a
-> market risk premium, not skill. The fund held an average of 14% of net assets in unhedged US dollar exposure.
+> market risk premium, not skill. The fund held an average of 14% of net assets in unhedged US dollar exposure. The
+> minutes of the previous review record that the currency exposure would be hedged.
 > *Question: Is the currency exposure intended, and if so, how is it managed?*
 
 ## Design choices
@@ -194,14 +199,14 @@ split](alpha-and-beta-method.md#the-test-and-its-limits) over longer periods.
 | Risk-adjusted ratios | Rare large losses are understated until they happen | Reading them beside drawdown and stress |
 | Peer comparison | Peer groups can be poorly matched or flattered by survivors | Membership criteria and a survivorship check |
 | Factor exposures | Depend on the baskets and the estimated betas | Comparing with a regression on portfolio returns |
-| Extracted mandate terms | The AI can miss or misread a term, which would make every later test wrong | Confirmation by the risk manager before the terms are used |
+| Extracted mandate terms | The AI can miss or misread a term, which would make every later test wrong | Confirmation by the risk manager before the terms are used; the list of expected terms, which shows a missed term as a gap |
 
 ## Controls and measures specific to this pillar
 The general [controls](../framework/08-controls.md) apply in full. This pillar adds five.
 
 - **Mandate terms are confirmed before use.** Extracted terms are not tested against until the risk manager confirms
-  them, each term links to its source passage, and a change to the documents triggers re-extraction with the differences
-  shown.
+  them and every expected term is found or resolved, each term links to its source passage, and a change to the
+  documents triggers re-extraction with the differences shown.
 - **Evidence is independent.** The challenge pack is built from the risk function's own data, not from material the
   portfolio manager supplies.
 - **Questions are chosen by the risk manager.** Drafted questions are proposals; the risk manager decides what to ask.

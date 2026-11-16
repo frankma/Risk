@@ -81,9 +81,13 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 |---|---|---|---|
 | Core pattern | The analytics engine computes, AI interprets and narrates, a human judges | [Principles](05-principles.md#2-the-analytics-engine-computes-ai-interprets-and-narrates-a-human-judges) | Every chapter |
 | Analytics engine | The deterministic part of the system: the same data always gives the same figure | [Principles](05-principles.md#2-the-analytics-engine-computes-ai-interprets-and-narrates-a-human-judges) | Every chapter |
+| AI | The language model that investigates, drafts, extracts and challenges; statistical models belong to the analytics engine | [Working with AI](06-working-with-ai.md#the-essentials) | Principles, every chapter |
 | Modes of working | Prepare, investigate and challenge: how a person and the AI work together | [Working with AI](06-working-with-ai.md#three-modes-of-working) | Market risk, liquidity risk, performance risk |
+| Investigation in Prepare | The governed analyses the AI runs for each ranked item before it drafts, set for each kind of rule, with a cap on runs | [Working with AI](06-working-with-ai.md#three-modes-of-working) | Redesign method, all pillars |
+| What the AI reads | Governing documents, notices, minutes and the function's own record, never external news; extractions are confirmed before use, and precedent is cited as evidence | [Working with AI](06-working-with-ai.md#what-the-ai-reads) | Risk data, limits and escalation, liquidity risk, performance risk, alpha and beta |
 | Analysis run | A governed analysis the AI runs through the analytics engine, recorded so that its figures can be reproduced | [Working with AI](06-working-with-ai.md#where-a-figure-may-come-from) | Principles, controls |
 | Exploratory query | A read-only query the AI composes where no governed analysis exists; labelled unvalidated and kept out of outputs | [Working with AI](06-working-with-ai.md#where-a-figure-may-come-from) | Controls |
+| Expected terms | The terms each type of portfolio is expected to have, against which extracted terms are checked so that a missed term shows as a gap | [Performance risk](../pillars/performance-risk.md#mandate-terms) | Working with AI, new portfolio review |
 | Six principles | What a redesign should follow | [Principles](05-principles.md#six-principles) | Redesign method, all pillars |
 | Seven steps | How one workflow is redesigned, from outcome to measured result | [Redesign method](07-redesign-method.md#the-seven-steps) | All pillars |
 | Step tags | Gather, Compute, Interpret, Judge, Communicate, Approve / Wait | [Redesign method](07-redesign-method.md#3-map-the-current-state) | That chapter only |

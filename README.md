@@ -31,7 +31,7 @@ of the system, where the same data always gives the same figure and every figure
 | Work | Owner |
 |---|---|
 | Gathering data, calculating, comparing to limits | Analytics engine |
-| Drafting, investigating through the analytics engine, challenging conclusions, extracting from documents | AI assistant |
+| Investigating each exception through the analytics engine, drafting, challenging conclusions, extracting from documents, notices and minutes | AI assistant |
 | Judging what matters to the portfolio and its intended risk profile; bringing clarity to the risks being taken | The risk manager and head of risk |
 
 Two rules make it work:
@@ -66,7 +66,7 @@ follows beneath it. Reading the essentials in order gives the framework; the det
 | [Alpha and beta method](pillars/alpha-and-beta-method.md) | How the split is computed, on three portfolios. |
 | **The redesign around AI** | |
 | [Principles](framework/05-principles.md) | Six principles for redesigning the work around AI, and what the risk manager adds. |
-| [Working with AI](framework/06-working-with-ai.md) | Three modes of working, where a figure may come from and what the AI may do. |
+| [Working with AI](framework/06-working-with-ai.md) | What "AI" means, three modes of working, what the AI reads, where a figure may come from and what the AI may do. |
 | [Redesign method](framework/07-redesign-method.md) | Seven steps to redesign one workflow. |
 | [Controls](framework/08-controls.md) | What makes a redesigned workflow safe to rely on, from the grounding check to fallback. |
 | [Measuring value](framework/09-measuring-value.md) | How to know a redesigned workflow works. |

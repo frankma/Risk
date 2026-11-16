@@ -41,7 +41,8 @@ The analytics engine reads the same domains for every portfolio, whatever its ve
 | Flows and investors | Subscriptions, redemptions, withdrawals and the shares held by the largest investors and distributors | Liquidity risk |
 | Margin and financing | Margin and collateral calls, borrowing and its maturity, commitments, currency hedges and their roll dates, securities on loan and their collateral | Liquidity risk |
 | Mandate terms | The objective, benchmark, style, limits and dealing terms, confirmed by the risk manager, with hard limits reconciled to compliance's rules | Every pillar |
-| Records of decisions | Tilts and timing calls as recorded, and trades with their tags | Performance risk, alpha and beta |
+| Records of decisions | Tilts and timing calls as recorded, including those the AI extracted from minutes and the risk manager confirmed, and trades with their tags | Performance risk, alpha and beta |
+| Documents | Governing documents, committee minutes and dealing notices, kept as received with their date and source | Read by the AI, which extracts from them; only confirmed extractions enter the other domains |
 
 A portfolio that invests in other funds is read through to their holdings, which carry their as-of date.
 

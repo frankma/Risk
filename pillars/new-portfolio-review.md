@@ -10,24 +10,26 @@ enough to be a new portfolio in all but name?
 > promised, and has put its view on record.
 
 **How the work is done:** the review computes nothing of its own. The AI extracts the draft mandate terms from the
-documents. The analytics engine runs the pillars' measures on a model portfolio, checks data readiness and proposes
-limits and the alpha and beta construction. The risk manager confirms the terms, puts the first internal limits to the
-head of risk for approval and writes the opinion, and on launch day the analytics engine confirms that everything agreed
-is in place. The review can start as soon as draft documents exist.
+documents, and the analytics engine shows any expected term it did not find as a gap. The analytics engine runs the
+pillars' measures on a model portfolio, checks data readiness and proposes limits and the alpha and beta construction.
+The risk manager confirms the terms, puts the first internal limits to the head of risk for approval and writes the
+opinion, and on launch day the analytics engine confirms that everything agreed is in place. The review can start as
+soon as draft documents exist.
 
 | # | Step | Owner |
 |---|---|---|
 | 1 | Extract the draft mandate terms, each linked to its passage | AI assistant |
-| 2 | Confirm the terms; request the model portfolio | Risk manager |
-| 3 | Run the pillars' measures on the model portfolio; test the benchmark and the liquidity profile | Analytics engine |
-| 4 | Check data readiness; propose internal limits, early warnings and the alpha and beta construction | Analytics engine |
-| 5 | Consult the portfolio manager; decide the early warnings and the construction; put the internal limits to the head of risk | Risk manager |
-| 6 | Approve the first internal limits | Head of risk |
-| 7 | Draft the readiness summary | AI assistant |
-| 8 | Grounding check on the summary | Analytics engine |
-| 9 | Write the opinion and any conditions | Risk manager |
-| 10 | Sign off the opinion, which goes to product governance for its decision | Head of risk |
-| 11 | On launch day, confirm every agreed item is in place | Analytics engine |
+| 2 | Check the terms against those expected for the portfolio's type; show each missing term as a gap | Analytics engine |
+| 3 | Confirm the terms; request the model portfolio | Risk manager |
+| 4 | Run the pillars' measures on the model portfolio; test the benchmark and the liquidity profile | Analytics engine |
+| 5 | Check data readiness; propose internal limits, early warnings and the alpha and beta construction | Analytics engine |
+| 6 | Consult the portfolio manager; decide the early warnings and the construction; put the internal limits to the head of risk | Risk manager |
+| 7 | Approve the first internal limits | Head of risk |
+| 8 | Draft the readiness summary | AI assistant |
+| 9 | Grounding check on the summary | Analytics engine |
+| 10 | Write the opinion and any conditions | Risk manager |
+| 11 | Sign off the opinion, which goes to product governance for its decision | Head of risk |
+| 12 | On launch day, confirm every agreed item is in place | Analytics engine |
 
 **The opinion is not a veto:** product governance decides whether a portfolio launches. The risk function gives a
 recorded opinion and can escalate to the risk committee.
@@ -78,9 +80,11 @@ are illustrative.**
 | Single-issuer limit | 10% of net assets | "not more than 10% of its net assets in securities of any single issuer" |
 | Dealing | Daily | "shares may be redeemed on any business day" |
 | Benchmark | A broad index of large companies | "measured against a broad index of large companies" |
+| Liquidity management tools | Not found: a gap, as a fund dealing daily is expected to state them | None |
 
 Each extracted value is confirmed by the risk manager before it is used, and the single-issuer limit, a hard limit, is
-reconciled to compliance's coded rule.
+reconciled to compliance's coded rule. The missing liquidity management tools are a gap the risk manager resolves with
+the product team before the opinion.
 
 **A readiness summary.**
 
@@ -100,8 +104,10 @@ reconciled to compliance's coded rule.
 
 
 ## Controls and measures specific to the review
-The general [controls](../framework/08-controls.md) apply in full. The review adds two.
+The general [controls](../framework/08-controls.md) apply in full. The review adds three.
 
+- **Missing terms show.** Extracted terms are checked against those expected for the portfolio's type, and each missing
+  term is a gap resolved before the opinion.
 - **Conditions are tracked.** Each condition has a due date and is tracked until it is met or escalated.
 - **Launch is checked.** On launch day the analytics engine confirms that the terms, limits, data and construction
   agreed in the review are in place, and a gap is an exception.

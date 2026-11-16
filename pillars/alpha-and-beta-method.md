@@ -166,7 +166,9 @@ as policy beta and as alpha, and which generator the rest is read against. They 
 parameters](../framework/08-controls.md#materiality-thresholds-as-governed-parameters), owned by the risk function and
 versioned. A factor joins the list only if an ETF or a future can hold it at the portfolio's size and a stated cost, and
 a change applies from its effective date. Weights still move during the period, but a tilt or timing call counts only if
-recorded when taken.
+recorded when taken. A call made in a committee is recorded from its minutes: the AI extracts the decision-maker, the
+size and the date, linked to the passage, and the risk manager confirms it. The record takes the date of the minutes,
+and minutes written after the call's result could be known do not count.
 
 ## The test and its limits
 *It fails* when the construction is chosen after the result, or alpha carries exposure to a declared factor. *The test:*
