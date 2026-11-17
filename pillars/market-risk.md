@@ -8,17 +8,17 @@
 > The risk manager knows, every day, which portfolios carry more risk than their mandate intends, absolute or relative,
 > and why.
 
-**How the work is done:** the analytics engine measures every portfolio every day and ranks what needs attention. The AI
-investigates each ranked item through the analyses set for its rule and drafts an explanation from what they show. The
-risk manager judges which items matter and sends what goes out, or reviews the same day a breach notice a governed rule
-lets the AI send.
+**How the work is done:** the analytics engine measures every portfolio every day, ranks what needs attention and runs
+the analyses set for each ranked item's rule. The AI follows up where they point further and drafts an explanation from
+what was found. The risk manager judges which items matter and sends what goes out, or reviews the same day a breach
+notice a governed rule lets the AI send.
 
 | # | Step | Owner |
 |---|---|---|
 | 1 | Load data, compute every measure, compare to limits and the previous day | Analytics engine |
 | 2 | Decompose each change by position and risk factor | Analytics engine |
-| 3 | Rank portfolios by materiality | Analytics engine |
-| 4 | Investigate each flagged portfolio through the analyses set for its rule; draft an explanation | AI assistant |
+| 3 | Rank portfolios by materiality; run the analyses set for each flagged item's rule | Analytics engine |
+| 4 | Follow up where the findings point further; draft an explanation | AI assistant |
 | 5 | Grounding check on every draft | Analytics engine |
 | 6 | Review the ranked queue, edit explanations, decide what matters | Risk manager |
 | 7 | Draft the message to the portfolio manager and the log entry | AI assistant |
@@ -108,8 +108,8 @@ in [performance risk](performance-risk.md), where the portfolio manager answers 
 ## What the AI drafts
 Every number in the draft appears in the facts beside it, so the [grounding
 check](../framework/08-controls.md#the-grounding-check) would pass. Fund A is an exception, for its large one-day rise,
-and also a watch item, for being above its early warning. Besides the decomposition, the AI ran the two analyses set
-for a VaR exception before drafting. **The fund and figures are illustrative.**
+and also a watch item, for being above its early warning. Besides the decomposition, the analytics engine ran the two
+analyses set for a VaR exception, and the AI chose one follow-up. **The fund and figures are illustrative.**
 
 | Fact | Value |
 |---|---|
@@ -121,13 +121,13 @@ for a VaR exception before drafting. **The fund and figures are illustrative.**
 | Largest contributor (position) | Technology equity basket, +0.29 points |
 | Second contributor (position) | Energy equity basket, +0.12 points |
 | The technology basket in other portfolios (run 1) | Above 0.20 points of VaR in 3 of 40 portfolios |
-| Tilts on record for Fund A (run 2) | A technology overweight, recorded by the portfolio manager |
+| Tilts on record for Fund A (run 2) | A technology overweight, recorded from the investment committee's minutes |
+| The technology basket's contribution, by source (run 3, the AI's follow-up) | Larger position +0.21 points; higher volatility +0.08 points |
 
 > Fund A's 1-day 99% VaR rose from 1.84% to 2.31%, which is 92% of its 2.50% limit. Most of the 0.47 percentage point
 > rise came from the technology equity basket (0.29 points), with a further 0.12 points from the energy equity basket.
-> The same basket adds more than 0.20 points of VaR in 3 of 40 portfolios (run 1), and Fund A's technology overweight is
-> a tilt on record (run 2).
-
+> The technology basket adds more than 0.20 points of VaR in 3 of 40 portfolios (run 1), and Fund A's technology
+> overweight is a tilt on record (run 2). Of the basket's 0.29 points, 0.21 came from a larger position (run 3).
 
 ## Design choices
 A risk function chooses how each of its measures is computed, records the choice and tests it. Independent validation of
@@ -186,8 +186,12 @@ usual range.
   library checks that each has at least one scenario.
 - **A scenario becomes shocks to every factor** in two steps: shocks are set on the factors that drive the scenario, and
   the other factors are filled in from how they moved with those factors in the past.
+- **Proposals** for new scenarios come from what the risk function holds: the portfolio's and the firm's exposures,
+  the gaps in the library against how each return generator fails, and events that have reached the data or the
+  documents store. The AI proposes the story and never the size. A proposal is a story to calibrate, never evidence
+  that the event is under way.
 - **Shock sizes** come from data, where the analytics engine computes them from a historical episode, or from the risk
-  manager. The AI proposes the story and never the size.
+  manager.
 - **Reverse stress** works back from the loss that would break the mandate: the analytics engine searches for the
   smallest combination of shocks that would cause it, and the risk manager judges how plausible that combination is.
 

@@ -102,7 +102,6 @@ the product team before the opinion.
 > coverage under the worst scenario is 1.3x, below the 1.5x limit for a fund dealing daily. 2 of the 140 instruments
 > it expects to hold have neither a price source nor a proxy.
 
-
 ## Controls and measures specific to the review
 The general [controls](../framework/08-controls.md) apply in full. The review adds three.
 

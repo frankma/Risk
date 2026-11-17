@@ -38,7 +38,9 @@ A baseline from one cycle is approximate; where the workflow varies a lot betwee
 Before a workflow is redesigned, the risk function decides what the risk manager's time will go to, and records it. The
 plan names the activity, the expected volume, and who will do it: for example, monthly deep-dive reviews of the
 portfolios that appear most often in the exception queue, or a structured challenge session with each portfolio manager
-every quarter.
+every quarter. The plan also counts the supervision the workflow needs: confirming what the AI extracted, reviewing what
+a governed rule let it send or close, and the sample and seeded reviews that [controls](08-controls.md#evaluation) sets
+out. That time has an expected volume like any other activity, so that it is not taken from challenge.
 
 After the redesign, the plan is tracked like any other commitment. If the time is not going where it was planned to go,
 the reason is found and either the plan or the work is changed.

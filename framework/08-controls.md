@@ -48,6 +48,9 @@ combination that reproduces the number, because in a long table of facts some co
 something about a portfolio and links to no fact is rejected, and the link tells the check which portfolio and measure
 each number belongs to, so a figure attached to the wrong one fails.
 
+**A sentence that cites the record or a document** links to its passage, which is shown beside it. The check confirms
+that the passage exists and that any figure taken from it appears there; the reading stays with the reviewer.
+
 **Direction and comparison are checked.** Words of direction and comparison, such as "rose", "fell", "above", "below",
 "within" and "breached", are tested against the linked facts. With a limit of 2.00%, "VaR fell from 1.84% to 2.31%,
 within its limit" fails twice, though every number in it is a computed fact. (The values are illustrative.)
@@ -96,16 +99,21 @@ in its queue. A portfolio manager who asks a question, or runs a what-if before 
 portfolios they manage, and an aggregation across portfolios returns only the firm-level totals the risk function
 publishes. The analytics engine enforces the entitlement, not the AI.
 
+**An output takes the entitlements of its audience.** A figure or a precedent from another portfolio stays within the
+risk function unless it is a firm-level total the risk function publishes, and the analytics engine blocks a release
+that carries one.
+
 ## Automated actions
 An action may be taken without a person's sign-off beforehand only if it passes four tests. The rule that allows it is a
-governed parameter, and the risk manager reviews each action the same day.
+governed parameter, the head of risk approves that an action has passed the tests, and the risk manager reviews each
+action the same day.
 
 - **Decided by a rule.** The analytics engine decides from computed facts whether the action applies. The AI only
   writes its text, which passes the grounding check.
 - **Standard.** The output follows a fixed template, and the rule sets its audience.
 - **Reversible.** A notice can be corrected and a closed breach reopened the same day, with no loss to a client.
-- **Proven.** The action ran under sign-off for a set period, and the risk manager changed no more than a set share of
-  its outputs.
+- **Proven.** The action ran under sign-off for a set period, the risk manager changed no more than a set share of its
+  outputs, and the seeded tests of its review were caught at the set rate over that period.
 
 Two actions pass. A routine breach notice goes out where the engine finds that the breach meets the rule's conditions,
 such as a passive breach of an internal limit. A breach is closed where the engine matches it to a recorded data break.
@@ -113,16 +121,16 @@ such as a passive breach of an internal limit. A breach is closed where the engi
 **When the same-day review disagrees,** the risk manager corrects or recalls the notice and tells its recipients, or
 reopens the breach, which re-enters the lifecycle at the stage it skipped. The error is recorded as an
 [incident](08-controls.md#incidents), and the head of risk decides whether to suspend the rule while it is investigated.
-An action that fails a test returns to sign-off until it passes again.
+An action that fails a test returns to sign-off until it passes again and the head of risk approves its return.
 
 ## Input handling
 Text the AI reads is data, never instructions. Governing documents, notices and minutes come only from the risk
 function's [documents domain](03-risk-data.md#what-the-analytics-engine-reads), kept as received with their source, and
-a portfolio manager's explanation is recorded as text from a named person. Nothing in them changes what the AI may do:
-its tools are the governed analyses and the extractions set out in [working with
-AI](06-working-with-ai.md#what-the-ai-reads). A passage that reads as an instruction to the AI is flagged to the risk
-manager and not followed, and text a portfolio manager supplies is evidence to test, never a fact the AI may state as
-true.
+a portfolio manager's explanation is recorded as text from a named person, or in the risk manager's notes of a review.
+Nothing in them changes what the AI may do: its tools are the governed analyses, the exploratory query, the extractions
+and retrieval from the record set out in [working with AI](06-working-with-ai.md#what-the-ai-reads). A passage that
+reads as an instruction to the AI is flagged to the risk manager and not followed, and text a portfolio manager supplies
+is evidence to test, never a fact the AI may state as true.
 
 ## Sign-off points
 Each redesigned workflow names the points at which a human must approve before an output moves on or, for a routine
@@ -135,6 +143,7 @@ about content, not a click to release a document.
 | Escalation | Head of risk or delegate | That what is escalated, and any action the risk manager recommends, is right |
 | Release | Owner of the output | That the output may go to its audience |
 | Same-day review | Risk manager | That each notice the AI sent, and each breach it closed, under a governed rule was right |
+| Confirmation of an extraction | Risk manager | That each term, event or recorded decision says what its passage says, and that every expected term is found or resolved |
 
 The risk manager sees the computed facts alongside the generated text, so that the review is of the content and not of
 the arithmetic, which the system has already checked.
@@ -147,7 +156,9 @@ For every output, the workflow records: the input facts it was generated from, w
 [versions](03-risk-data.md#versioned-as-known); the analysis runs behind it, with their parameters; the threshold,
 prompt, template and model versions in force; the text as generated; every edit the human made; the grounding check
 result; who approved it and when or, for an action under a governed rule, the rule applied and who reviewed it. The
-record is kept in a form that can be retrieved by output, by portfolio and by date.
+record is kept in a form that can be retrieved by output, by portfolio and by date. For every extraction it records the
+document and passage, the value extracted, any expected term not found and who confirmed it, or that the risk manager
+entered it by hand.
 
 The trail serves three purposes. It allows any figure or sentence in a released output to be traced back to its source.
 It shows how often humans change generated text and in what way, which is evidence of whether the AI step is working. It
@@ -156,13 +167,14 @@ supports review by internal audit and by supervisors.
 ## Evaluation
 Each AI step has an **evaluation set**: past cases with reference outcomes, built by the risk function from its own
 record and reviewed by independent validation. For a draft, the reference is the facts it must state and the claims it
-must not make; for an extraction, the terms each document holds; for an investigation, the analyses each question should
-run. The set is rerun before first use and at every change of model, prompt or template, and a change goes live only
-when the results meet criteria set in advance.
+must not make; for an extraction, the terms each document holds; for an investigation, the follow-up analyses each case
+should run, and for a person's question the analyses that answer it. The set is rerun before first use and at every
+change of model, prompt or template, and a change goes live only when the results meet criteria set in advance.
 
 **Review is tested too.** Edit rates fall when drafts improve, and also when reviewers stop reading. On a set cycle, a
-few drafts with a known flaw, such as a wrong driver or a missing fact, are sent through review, and the share caught
-is recorded. A seeded flaw that passes is a finding about the review, not only about the reviewer.
+few drafts with a known flaw, such as a wrong driver or a missing fact, are sent through review, and the share caught is
+recorded. A seeded draft is inserted after the grounding check, marked in the audit trail and withdrawn before release
+whatever the review decides. A seeded flaw that passes is a finding about the review, not only about the reviewer.
 
 **The AI is tested against its template.** On a sample, the risk manager compares the AI's draft with the template text
 for the same item without knowing which is which. A step whose drafts are not judged better than the template is
@@ -198,24 +210,30 @@ Each workflow defines what happens when a component fails.
 
 - **Data pipeline failure.** The run follows the rule set in advance in [risk
   data](03-risk-data.md#quality-before-computation): it waits, or runs with the affected portfolios marked.
-- **AI backend failure.** The workflow falls back to a deterministic template that states the computed facts in fixed
-  sentences. The output is plainer, but complete and correct, and the workflow's deadlines still hold.
+- **AI backend failure.** The fallback depends on the kind of step. A drafting step falls back to a deterministic
+  template that states the computed facts in fixed sentences, including what the analyses set for the item's rule
+  found. The output is plainer, but complete and correct. The AI's follow-up analyses do not run, and the item says
+  so. An extraction step falls to the risk manager, who reads the document and enters the record, linked to its
+  passage and marked as entered by hand. The check against the expected terms still runs, and a document unread past
+  a set time ranks in the queue.
 
-Because the template backend produces correct output without an AI service, the workflow can always run.
+Every step has a path that needs no AI service, so a workflow can always run.
 
 ## Incidents
 An **incident** is an output that reached its audience wrong, an automated action the same-day review overturned, or a
 control that failed. Each is recorded with what went wrong, who received the output and how it was corrected; recipients
 of a wrong output are told and sent the correction. The head of risk can suspend any AI step or governed rule at once: a
-suspended step falls back to its template, and a suspended rule returns its actions to sign-off. A step returns to
-service once its evaluation set passes again.
+suspended step falls back as [fallback](08-controls.md#fallback) sets out, and a suspended rule returns its actions to
+sign-off. A step returns to service once its evaluation set passes again.
 
 ## Data handling
 A risk function sends data to an AI service only under rules set before the workflow is built. The data the analytics
 engine itself reads, and the checks it passes, are set out in [risk data](03-risk-data.md).
 
 - **What may be sent.** The workflow defines which data may go to which service. Computed facts about a portfolio are
-  often enough; raw positions, investor details and personal data are sent only where the service is approved for them.
+  often enough for a draft. Raw positions, investor details and personal data are sent only where the service is
+  approved for them, and that includes the documents and the record the AI reads: a dealing notice, a set of minutes or
+  a risk manager's notes can name investors and people.
 - **Retention.** The terms of any external service prevent the data being retained or used to train models, and this is
   verified, not assumed.
 - **Vendor and third-party risk.** An external AI service is a third party and is assessed as one: its security, its
@@ -223,6 +241,8 @@ engine itself reads, and the checks it passes, are set out in [risk data](03-ris
 
 ## Alignment with supervisory expectations
 Supervisors' expectations for AI risk management share a common shape. The controls in this chapter map onto it.
+Statistical and machine-learning models in the analytics engine are inventoried and validated as models, and count
+towards these expectations where a supervisor's definition of AI covers them.
 
 | Expectation | How a redesigned workflow meets it |
 |---|---|

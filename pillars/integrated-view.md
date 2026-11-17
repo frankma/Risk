@@ -9,16 +9,17 @@ escalate?
 > The risk function knows which portfolios have signals combining across pillars, and why, before any one pillar would
 > escalate them.
 
-**How the work is done:** the view computes nothing new. The analytics engine reads the signals the three pillars
-already produce, for every portfolio every day, applies rules for the combinations that matter and ranks the portfolios.
-The AI investigates each ranked portfolio and drafts an account of it. The risk manager judges each one and adds it to
-the watch list or escalates it to the head of risk.
+**How the work is done:** the view computes no measure of its own. The analytics engine reads the signals the three
+pillars already produce, for every portfolio every day, applies rules for the combinations that matter, ranks the
+portfolios and runs the analyses set for each ranked portfolio's pattern. The AI follows up where they point further
+and drafts an account. The risk manager judges each one and adds it to the watch list or escalates it to the head of
+risk.
 
 | # | Step | Owner |
 |---|---|---|
 | 1 | Read every pillar's signals for every portfolio; align them by date | Analytics engine |
-| 2 | Apply the pattern and combination rules; rank portfolios | Analytics engine |
-| 3 | Investigate each ranked portfolio; draft an account | AI assistant |
+| 2 | Apply the pattern and combination rules; rank portfolios; run the analyses set for each ranked portfolio's pattern | Analytics engine |
+| 3 | Follow up where the findings point further; draft an account | AI assistant |
 | 4 | Grounding check on every account | Analytics engine |
 | 5 | Assemble the committee view from the top-ranked portfolios | Analytics engine |
 | 6 | Judge each ranked portfolio; add it to the watch list or escalate it to the head of risk | Risk manager |
@@ -34,8 +35,8 @@ The rest of this chapter is the detail behind these points.
 ## What the view reads
 The view reads every rule in each pillar's table: [market risk](market-risk.md#materiality-and-exceptions), [liquidity
 risk](liquidity-risk.md#materiality-and-exceptions) and [performance
-risk](performance-risk.md#materiality-and-exceptions). Every signal carries its pillar's state (exception, watch or
-normal) and the date it was computed. The view takes the signals as the pillars produce them, and never computes its own
+risk](performance-risk.md#materiality-and-exceptions). Every signal carries its pillar's state (exception, watch item or
+within) and the date it was computed. The view takes the signals as the pillars produce them, and never computes its own
 version.
 
 ## Patterns
@@ -87,8 +88,12 @@ illustrative kinds of rule, not recommendations;** each risk function sets its o
 | Grouping | Signals that share one underlying driver count once |
 
 A pattern may also show signals as context that it does not require, such as the steady return in hidden illiquidity;
-context signals can be normal. A portfolio with an exception in one pillar and nothing elsewhere does not rank in the
+context signals can be within. A portfolio with an exception in one pillar and nothing elsewhere does not rank in the
 view. Its exception is handled by that pillar's workflow, as it would be anyway; the view is for combinations.
+
+For each ranked portfolio the analytics engine runs the analyses set for its pattern, which are governed parameters
+drawn from the pillars' governed analyses: for example, how the portfolio's weights have moved by time to sell, the
+same pattern in other portfolios, and the earlier accounts of the portfolio. The view adds no analysis of its own.
 
 **Avoiding double counting.** One driver can show in two pillars, as issuer concentration and a rising time to sell the
 same holdings, or as margin calls and the fall in coverage they cause. Signals that share a driver are grouped and count
@@ -117,17 +122,20 @@ and figures are illustrative.**
 | Net outflows, last month | 3.2% of net assets, near the top of the usual range (liquidity, watch) |
 | Redemption coverage, today / three months ago | 1.8x / 2.6x (liquidity, watch) |
 | Largest issuer weight, today / three months ago | 9.3% / 6.1% (market, watch) |
+| Holdings that take more than 5 days to sell, today / three months ago (run 1) | 31% / 22% of net assets |
 
 > Fund K matches the redemption spiral pattern. It is 4.6% below its benchmark over the last 12 months, a significant
 > shortfall. At the same time, net outflows last month were 3.2% of net assets, near the top of the portfolio's usual
 > range; redemption coverage has fallen from 2.6x to 1.8x over three months; and its largest issuer weight has risen
-> from 6.1% to 9.3%. Only the performance signal is at exception; the liquidity and market signals are at watch.
+> from 6.1% to 9.3%. Over the same three months, holdings that take more than 5 days to sell have risen from 22% to 31%
+> of net assets (run 1). Only the performance signal is at exception; the liquidity and market signals are at watch.
 
 ## Limits of the view
 The view inherits every limit of the pillar measures it reads, and adds four of its own.
 
 - **Co-occurrence is not cause.** Signals that appear together may be unrelated. The view shows that they combine; the
-  risk manager judges whether they are connected.
+  risk manager judges whether they are connected. The analyses set for a pattern give evidence either way; they do not
+  settle it.
 - **Patterns encode judgement.** The rules catch the combinations someone has defined and miss those nobody has.
 - **Signals have different cadences.** Most signals are read daily, including relative return over its rolling window,
   but runs of periods are counted in whole periods and some inputs, such as investor registers, update less often. The
@@ -138,7 +146,8 @@ The view inherits every limit of the pillar measures it reads, and adds four of 
 The function tests the view by replaying past episodes: taking portfolios that ran into difficulty and checking whether
 the view, with the rules in force at the time, would have ranked them, and how much earlier than any pillar. Episodes it
 would have missed are the main source of new patterns. The AI step is tested, as in the pillars, through the risk
-manager's edits to the accounts.
+manager's edits to the accounts, a sample reviewed against the signals and runs behind them, and seeded accounts, as
+[evaluation](../framework/08-controls.md#evaluation) sets out.
 
 ## Controls and measures specific to the view
 The general [controls](../framework/08-controls.md) apply in full. The view adds four.

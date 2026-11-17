@@ -8,22 +8,24 @@
 > The risk manager can show, with evidence, whether each portfolio is meeting its objective and whether its returns come
 > from the sources its mandate describes.
 
-**How the work is done:** the analytics engine tracks every portfolio's realised measures and tests its exposures
-against the confirmed mandate terms. The AI investigates each issue, including what was explained and agreed at earlier
-reviews, and drafts a challenge pack: the top issues for the portfolio, the evidence for
-each and the questions to ask. The risk manager runs the portfolio manager review on the risk function's agenda, with
-evidence that is independent of the portfolio manager, and the agreed actions are tracked until they are closed.
+**How the work is done:** the analytics engine tracks every portfolio's realised measures, tests its exposures against
+the confirmed mandate terms and runs the analyses set for each issue's rule. The AI follows up where they point
+further, with what was explained and agreed at earlier reviews, and drafts a challenge pack: the top issues for the
+portfolio, the evidence for each and the questions to ask. The risk manager runs the portfolio manager review on the
+risk function's agenda, with evidence that is independent of the portfolio manager, and notes what was explained and
+agreed. The AI tests the explanations against the data and drafts the minutes from the notes, and the agreed actions
+are tracked until they are closed.
 
 | # | Step | Owner |
 |---|---|---|
 | 1 | Track realised return, ex-post tracking error, drawdown, active share, information ratio, factors and peer position | Analytics engine |
 | 2 | Test exposures against the mandate terms; flag drift and unintended bets | Analytics engine |
-| 3 | Rank the portfolio's issues, with market risk's tracking error and risk budget exceptions | Analytics engine |
-| 4 | Investigate each issue, with the record of earlier reviews; draft the challenge pack: evidence and questions | AI assistant |
+| 3 | Rank the portfolio's issues, with market risk's tracking error and risk budget exceptions; run the analyses set for each issue's rule | Analytics engine |
+| 4 | Follow up where the findings point further, with the record of earlier reviews; draft the challenge pack: evidence and questions | AI assistant |
 | 5 | Grounding check on the pack | Analytics engine |
 | 6 | Review and edit the pack; set the agenda | Risk manager |
-| 7 | Run the meeting on the risk function's agenda | Risk manager |
-| 8 | Draft the minutes and the action log | AI assistant |
+| 7 | Run the meeting on the risk function's agenda; note each explanation and agreed action | Risk manager |
+| 8 | Test the explanations noted against the data; draft the minutes and the action log from the notes and the pack, with what supports and what contradicts each | AI assistant |
 | 9 | Edit and agree the minutes and actions | Risk manager |
 | 10 | Track follow-ups; escalate overdue actions to the watch list | Analytics engine |
 
@@ -118,7 +120,8 @@ illustrative.**
 > currency, which is not part of its stated strategy and has no tilt on record; alpha was 0.5%. The currency return is a
 > market risk premium, not skill. The fund held an average of 14% of net assets in unhedged US dollar exposure. The
 > minutes of the previous review record that the currency exposure would be hedged.
-> *Question: Is the currency exposure intended, and if so, how is it managed?*
+> *Question: The previous review recorded that the currency exposure would be hedged. Why is it still held, and is it
+> now intended?*
 
 ## Design choices
 A risk function chooses how each of its performance measures is computed, records the choice and tests it. Independent
@@ -199,6 +202,7 @@ split](alpha-and-beta-method.md#the-test-and-its-limits) over longer periods.
 | Risk-adjusted ratios | Rare large losses are understated until they happen | Reading them beside drawdown and stress |
 | Peer comparison | Peer groups can be poorly matched or flattered by survivors | Membership criteria and a survivorship check |
 | Factor exposures | Depend on the baskets and the estimated betas | Comparing with a regression on portfolio returns |
+| Challenge packs and minutes | A pack can put weight on the wrong source of return; minutes can be only as complete as the risk manager's notes | A sample reviewed against the facts, the record and the notes; seeded packs with a wrong source of return |
 | Extracted mandate terms | The AI can miss or misread a term, which would make every later test wrong | Confirmation by the risk manager before the terms are used; the list of expected terms, which shows a missed term as a gap |
 
 ## Controls and measures specific to this pillar

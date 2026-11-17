@@ -39,8 +39,9 @@ literature it draws on.
   The one exception is a routine action a governed rule allows, such as a standard breach notice: the analytics engine
   decides that the rule applies, the AI writes the text, a person reviews it the same day, and it is recorded in the
   same trail.
-- **Examples run without an AI service.** The narrative layer has a deterministic template backend so tests and demos
-  run offline; an AI backend is optional and configured by environment variable.
+- **Examples run without an AI service.** The narrative layer has a deterministic template backend, follow-up analyses
+  are skipped and extracted records come from fixtures, so tests and demos run offline; an AI backend is optional and
+  configured by environment variable.
 - Calculations stay simple and transparent. The examples demonstrate workflows, not risk models.
 
 ## Ask, don't assume

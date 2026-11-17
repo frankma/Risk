@@ -10,8 +10,9 @@ investors who stay?
 > whether the tools for managing liquidity are ready if it cannot.
 
 **How the work is done:** the analytics engine measures every portfolio's liquidity every day and runs a stress test on
-the day an event fires a trigger, not when the calendar says so. The AI reads redemption notices into events the risk
-manager confirms, investigates each triggered portfolio and drafts its narrative and the board paper. The risk manager
+the day an event fires a trigger, not when the calendar says so, with the analyses set for the trigger's rule. The AI
+reads redemption notices into events the risk manager confirms, follows up where the findings point further, and
+drafts each triggered portfolio's narrative and the board paper. The risk manager
 reviews each triggered portfolio and makes any recommendation on liquidity management tools.
 
 | # | Step | Owner |
@@ -20,8 +21,8 @@ reviews each triggered portfolio and makes any recommendation on liquidity manag
 | 2 | Monitor flows, margin calls and investor concentration against each portfolio's history | Analytics engine |
 | 3 | Read each redemption notice into an event, linked to the notice | AI assistant |
 | 4 | Confirm the event | Risk manager |
-| 5 | Run the stress test when an event trigger fires | Analytics engine |
-| 6 | Investigate each triggered portfolio through the analyses set for its rule; draft the narrative | AI assistant |
+| 5 | Run the stress test when an event trigger fires, with the analyses set for the trigger's rule | Analytics engine |
+| 6 | Follow up where the findings point further; draft the narrative | AI assistant |
 | 7 | Grounding check on every draft | Analytics engine |
 | 8 | Review each triggered portfolio; recommend on liquidity tools | Risk manager |
 | 9 | Draft the board paper from the period's results and events | AI assistant |
@@ -103,13 +104,12 @@ check](../framework/08-controls.md#the-grounding-check) would pass. **The fund a
 | Redemption coverage before / after | 2.4x / 1.6x |
 | Coverage limit | 1.5x |
 | Share of the redemption met from the most liquid holdings | 80% |
-| The redeeming distributor in other portfolios (run 1) | 2 portfolios, at 3.1% and 1.8% of net assets |
+| The redeeming distributor in other portfolios (run 1, set for the trigger's rule) | 2 portfolios, at 3.1% and 1.8% of net assets |
 
 > Fund D has received a redemption notice for 6.5% of net assets, above the 5.0% trigger, and the stress test has been
 > rerun. Redemption coverage falls from 2.4x to 1.6x, still above the 1.5x limit. 80% of the redemption would be met
-> from the most liquid holdings. The same distributor holds 3.1% and 1.8% of net assets in two other portfolios
+> from the most liquid holdings. The redeeming distributor holds 3.1% and 1.8% of net assets in two other portfolios
 > (run 1).
-
 
 ## Design choices
 A risk function chooses how each of its liquidity measures is computed, records the choice and tests it. Independent
@@ -188,8 +188,10 @@ Two further calls are counted in every scenario, because they arrive whatever in
 | AI narratives | A narrative can be accurate and still understate how urgent a position is | Severity words fixed to the computed state by the grounding check; how risk managers edit the narratives; a sample checked against the full stress results |
 
 ## Controls and measures specific to this pillar
-The general [controls](../framework/08-controls.md) apply in full. This pillar adds two.
+The general [controls](../framework/08-controls.md) apply in full. This pillar adds three.
 
+- **Every notice is accounted for.** Each notice in the documents domain ends as a confirmed event or a recorded
+  no-event, and one unread or unconfirmed past a set time ranks in the queue.
 - **Every trigger is recorded.** Each firing, the stress test it ran and the result are kept in the audit trail, so the
   record shows that an event was assessed, and when.
 - **Scenario calibration is governed.** Outflow assumptions and stress adjustments to liquidation time and cost are
@@ -200,7 +202,7 @@ an event is assessed, and whether any event is missed. The pillar-specific measu
 
 | Dimension | Measure for this pillar |
 |---|---|
-| Speed | Time from a triggering event to a stress result and narrative |
+| Speed | Time from a notice's arrival, or another triggering event, to a stress result and narrative |
 | Speed | Working days from period end to signed-off board paper |
 | Capacity | Portfolios with a current liquidity view |
 | Quality | Events assessed late or not at all; parallel-run agreement on coverage |
