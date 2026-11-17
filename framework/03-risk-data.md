@@ -29,7 +29,8 @@ reading the risk manager would see.
 The rest of this chapter is the detail behind these points.
 
 ## What the analytics engine reads
-The analytics engine reads the same domains for every portfolio, whatever its vehicle or strategy.
+The analytics engine computes from the same domains for every portfolio, whatever its vehicle or strategy. The last,
+documents, is read by the AI.
 
 | Domain | What it holds | Used by |
 |---|---|---|
@@ -38,16 +39,18 @@ The analytics engine reads the same domains for every portfolio, whatever its ve
 | Market data | Index and basket returns, the prices and holding costs of the ETFs and futures in top-down portfolios, rates, spreads, volatilities and trading volumes | Market and liquidity risk, alpha and beta |
 | Reference data | What each security is: issuer, type, sector, country, currency, rating, maturity | Every pillar |
 | Benchmarks | Each benchmark's constituents and weights | Market and performance risk, alpha and beta |
-| Flows and investors | Subscriptions, redemptions, withdrawals and the shares held by the largest investors and distributors | Liquidity risk |
+| Flows and investors | Subscriptions, redemptions, withdrawals and the shares held by the largest investors and distributors, including redemptions notified in dealing notices, read by the AI and confirmed by the risk manager, and matched to the dealing record when it arrives | Liquidity risk |
 | Margin and financing | Margin and collateral calls, borrowing and its maturity, commitments, currency hedges and their roll dates, securities on loan and their collateral | Liquidity risk |
 | Mandate terms | The objective, benchmark, style, limits and dealing terms, confirmed by the risk manager, with hard limits reconciled to compliance's rules | Every pillar |
 | Records of decisions | Tilts and timing calls as recorded, including those the AI extracted from minutes and the risk manager confirmed, and trades with their tags | Performance risk, alpha and beta |
-| Documents | Governing documents, committee minutes and dealing notices, kept as received with their date and source | Read by the AI, which extracts from them; only confirmed extractions enter the other domains |
+| Documents | Governing documents, committee minutes and dealing notices, kept as received with the date they were received and their source | Read by the AI, which extracts from them; only confirmed extractions enter the other domains |
 
 A portfolio that invests in other funds is read through to their holdings, which carry their as-of date.
 
-Personal data about investors is kept to what the measures need: shares and flows, not identities. The rules on what may
-be sent to an AI service are set out under [data handling](08-controls.md#data-handling).
+In the domains the analytics engine computes from, personal data about investors is kept to what the measures need:
+shares and flows, not identities. Documents kept as received can name investors and people. They are read only by an AI
+service approved for that data, and a record extracted from one carries no more personal data than the domain it
+enters. The rules on what may be sent to an AI service are set out under [data handling](08-controls.md#data-handling).
 
 ## From source to computed figure
 The analytics engine takes each item from its domain's **golden source** and nowhere else, so two outputs never disagree

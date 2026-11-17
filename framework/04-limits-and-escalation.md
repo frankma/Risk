@@ -12,11 +12,12 @@ goes to the executive committee, and the board is the last resort.
 
 **How the work is done:** the analytics engine detects a breach in the daily run, checks it against recorded data
 breaks, classifies it, decides whether a governed rule covers its notice and tracks it to its deadline. The AI explains
-what the checks found, drafts the notice and the decision note, and, where the engine's rule applies, sends the routine
-notice or closes a breach the engine matched to a data break. The risk manager
-confirms the breach, sends any other notice and reviews the same day what the AI sent or closed. The portfolio manager
-and the risk manager agree how the breach is handled, the head of risk approves any acceptance, and the risk manager
-reports the close to the head of risk.
+what the checks found, drafts the notice, tests the portfolio manager's explanation against the data in the [challenge
+mode](06-working-with-ai.md#three-modes-of-working) and drafts the decision note, and, where the engine's rule applies,
+sends the routine notice or closes a breach the engine matched to a data break. The risk manager confirms the breach,
+sends any other notice and reviews the same day what the AI sent or closed. The portfolio manager and the risk manager
+agree how the breach is handled, the head of risk approves any acceptance, and the risk manager reports the close to the
+head of risk.
 
 | # | Step | Owner |
 |---|---|---|
@@ -25,7 +26,7 @@ reports the close to the head of risk.
 | 3 | Grounding check on the notice | Analytics engine |
 | 4 | Confirm the breach and its classification; send a notice the rule does not cover; review the same day what the AI sent or closed | Risk manager |
 | 5 | Record the portfolio manager's explanation | Analytics engine |
-| 6 | Draft the decision note, citing how similar breaches were decided | AI assistant |
+| 6 | Test the portfolio manager's explanation against the data; draft the decision note with what supports and what contradicts it, citing how similar breaches were decided | AI assistant |
 | 7 | Agree the decision: rectify, or accept for a set period; take a disagreement to the risk committee | Portfolio manager and risk manager |
 | 8 | Approve an acceptance for a set period | Head of risk |
 | 9 | Track the rectification to its deadline; escalate a missed deadline | Analytics engine |
@@ -117,7 +118,7 @@ rule follows compliance's process.
 | 2 | Verify | The analytics engine checks the breach against recorded [data breaks](03-risk-data.md#quality-before-computation): is the reading real? A breach it matches to a break is closed by the AI with the record, and the risk manager reviews the close the same day; the risk manager confirms every other breach |
 | 3 | Classify | Active, caused by a trade or decision, or passive, caused by market moves, flows or corporate actions; the analytics engine classifies from the trade records and the risk manager confirms |
 | 4 | Notify | The portfolio manager, investment oversight and the head of risk are told, with the facts; where the engine finds a governed rule covers the notice, the AI sends it, and the risk manager reviews it the same day |
-| 5 | Explain | The portfolio manager explains the position, and the explanation is recorded |
+| 5 | Explain | The portfolio manager explains the position, and the explanation is recorded; the AI tests it against the data and reports what supports it and what contradicts it |
 | 6 | Decide | The portfolio manager and the risk manager agree: rectify it, or accept it for a set period with the head of risk's approval; a disagreement goes to the risk committee |
 | 7 | Rectify | Where the decision is to rectify, the reading returns within the limit by a deadline |
 | 8 | Close | The outcome is recorded, with the reason, the breach is closed and the head of risk is told |
@@ -164,6 +165,7 @@ mandate is told follows the mandate's reporting terms and compliance's process.
 | How a breach of an internal limit is handled: rectify or accept | Portfolio manager and risk manager, together | The decision note, with the reason |
 | Accepting a breach of an internal limit for a set period | Head of risk | The breach, the reason, the expiry date and any conditions |
 | Setting a new portfolio's first internal limits | Head of risk, on the risk manager's proposal | The limits, how each was calibrated and the reason |
+| Allowing an action to run under a governed rule without sign-off beforehand | Head of risk | The rule, the evidence that it passed the four tests and the date it takes effect |
 | Changing an internal limit or how it is calibrated | Risk committee | The old and new values, the reason and the date it takes effect |
 | The legal reading of a hard limit, its breach report and any extension | Compliance, under its own process | Routed or reported by the risk function, with the evidence |
 

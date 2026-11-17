@@ -167,8 +167,9 @@ parameters](../framework/08-controls.md#materiality-thresholds-as-governed-param
 versioned. A factor joins the list only if an ETF or a future can hold it at the portfolio's size and a stated cost, and
 a change applies from its effective date. Weights still move during the period, but a tilt or timing call counts only if
 recorded when taken. A call made in a committee is recorded from its minutes: the AI extracts the decision-maker, the
-size and the date, linked to the passage, and the risk manager confirms it. The record takes the date of the minutes,
-and minutes written after the call's result could be known do not count.
+size and the date of the meeting, linked to the passage, and the risk manager confirms it. The call counts from the
+date of the meeting where the minutes reached the documents domain within a set number of business days of it, and
+otherwise from the date they were received. The window is a governed parameter.
 
 ## The test and its limits
 *It fails* when the construction is chosen after the result, or alpha carries exposure to a declared factor. *The test:*

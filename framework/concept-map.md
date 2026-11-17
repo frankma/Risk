@@ -13,7 +13,7 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 | Three decisions | Construct, Oversee and Assess: before, during and after an investment | [Philosophy](00-philosophy.md#why-a-risk-function-exists) | Market risk's what-ifs |
 | Three dimensions | Condensation, drill-in and connection: what every piece of risk work provides | [Philosophy](00-philosophy.md#what-every-piece-of-risk-work-provides) | All pillars |
 | Decision-maker | Whoever a piece of a decomposition belongs to | [Philosophy](00-philosophy.md#2-drill-in) | Sources of return, alpha and beta |
-| Mandate terms | A portfolio's objective, benchmark, style, limits and dealing terms in a form the analytics engine can test, confirmed by the risk manager; hard limits are reconciled to compliance's rules | [Performance risk](../pillars/performance-risk.md#mandate-terms) | Risk data, limits and escalation, working with AI, market risk, new portfolio review, alpha and beta |
+| Mandate terms | A portfolio's objective, benchmark, style, limits and dealing terms in a form the analytics engine can test, confirmed by the risk manager; hard limits are reconciled to compliance's rules | [Performance risk](../pillars/performance-risk.md#mandate-terms) | Risk data, limits and escalation, working with AI, market risk, liquidity risk, new portfolio review, alpha and beta |
 
 ## Scope
 
@@ -73,7 +73,7 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 | Breach lifecycle | Detect, verify, classify, notify, explain, decide, rectify and close | [Limits and escalation](04-limits-and-escalation.md#the-breach-lifecycle) | Market risk, liquidity risk |
 | Escalation path | Who a missed deadline, a disagreement between the portfolio manager and the risk manager, a dissent and a hard limit breach go to; the risk committee's decision binds; what it cannot resolve goes to its parent body, the executive committee, and the board is the last resort | [Limits and escalation](04-limits-and-escalation.md#escalation) | Performance risk, new portfolio review |
 | Investment oversight | The head of investments, or the committee that supervises the portfolio managers | [Limits and escalation](04-limits-and-escalation.md#the-essentials) | Performance risk |
-| Active and passive breach | A breach caused by a trade or decision, or by markets, flows or corporate actions | [Limits and escalation](04-limits-and-escalation.md#the-breach-lifecycle) | Working with AI |
+| Active and passive breach | A breach caused by a trade or decision, or by markets, flows or corporate actions | [Limits and escalation](04-limits-and-escalation.md#the-breach-lifecycle) | Working with AI, controls |
 
 ## Redesigning the work
 
@@ -81,16 +81,16 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 |---|---|---|---|
 | Core pattern | The analytics engine computes, AI interprets and narrates, a human judges | [Principles](05-principles.md#2-the-analytics-engine-computes-ai-interprets-and-narrates-a-human-judges) | Every chapter |
 | Analytics engine | The deterministic part of the system: the same data always gives the same figure | [Principles](05-principles.md#2-the-analytics-engine-computes-ai-interprets-and-narrates-a-human-judges) | Every chapter |
-| AI | The language model that investigates, drafts, extracts and challenges; statistical models belong to the analytics engine | [Working with AI](06-working-with-ai.md#the-essentials) | Principles, every chapter |
-| Modes of working | Prepare, investigate and challenge: how a person and the AI work together | [Working with AI](06-working-with-ai.md#three-modes-of-working) | Market risk, liquidity risk, performance risk |
-| Investigation in Prepare | The governed analyses the AI runs for each ranked item before it drafts, set for each kind of rule, with a cap on runs | [Working with AI](06-working-with-ai.md#three-modes-of-working) | Redesign method, all pillars |
-| What the AI reads | Governing documents, notices, minutes and the function's own record, never external news; extractions are confirmed before use, and precedent is cited as evidence | [Working with AI](06-working-with-ai.md#what-the-ai-reads) | Risk data, limits and escalation, liquidity risk, performance risk, alpha and beta |
+| AI | The language model that investigates, drafts, extracts and challenges; statistical models belong to the analytics engine | [Working with AI](06-working-with-ai.md#the-essentials) | Every chapter but the philosophy and sources of return |
+| Modes of working | Prepare, investigate and challenge: how a person and the AI work together | [Working with AI](06-working-with-ai.md#three-modes-of-working) | Limits and escalation, market risk, liquidity risk, performance risk |
+| Investigation in Prepare | The follow-up analyses the AI chooses for each ranked item, within a cap, after the analytics engine has run the analyses set for its kind of rule | [Working with AI](06-working-with-ai.md#three-modes-of-working) | Principles, redesign method, controls, market risk, liquidity risk, performance risk, integrated view |
+| What the AI reads | Governing documents, notices, minutes and the function's own record, never external news; extractions are confirmed before use, and precedent is cited as evidence | [Working with AI](06-working-with-ai.md#what-the-ai-reads) | Risk data, limits and escalation, controls, liquidity risk, performance risk, new portfolio review, alpha and beta |
 | Analysis run | A governed analysis the AI runs through the analytics engine, recorded so that its figures can be reproduced | [Working with AI](06-working-with-ai.md#where-a-figure-may-come-from) | Principles, controls |
 | Exploratory query | A read-only query the AI composes where no governed analysis exists; labelled unvalidated and kept out of outputs | [Working with AI](06-working-with-ai.md#where-a-figure-may-come-from) | Controls |
 | Expected terms | The terms each type of portfolio is expected to have, against which extracted terms are checked so that a missed term shows as a gap | [Performance risk](../pillars/performance-risk.md#mandate-terms) | Working with AI, new portfolio review |
 | Six principles | What a redesign should follow | [Principles](05-principles.md#six-principles) | Redesign method, all pillars |
 | Seven steps | How one workflow is redesigned, from outcome to measured result | [Redesign method](07-redesign-method.md#the-seven-steps) | All pillars |
-| Step tags | Gather, Compute, Interpret, Judge, Communicate, Approve / Wait | [Redesign method](07-redesign-method.md#3-map-the-current-state) | That chapter only |
+| Step tags | Gather, Extract, Compute, Interpret, Judge, Communicate, Approve / Wait | [Redesign method](07-redesign-method.md#3-map-the-current-state) | That chapter only |
 | Risk manager's value | Judging what matters to the portfolio and its intended risk profile, bringing clarity to the risks being taken, challenge, deciding what the system flags and judgement where the data runs out; the sign-off is the accountability | [Principles](05-principles.md#what-the-risk-manager-adds) | README, working with AI, measuring value |
 | Owners | Who or what does each step: the analytics engine, the AI assistant, the risk manager or the head of risk | [Redesign method](07-redesign-method.md#4-assign-each-step-an-owner) | That chapter only |
 | Four dimensions of value | Capacity, speed, quality and influence | [Measuring value](09-measuring-value.md#four-dimensions) | All pillars |
@@ -115,15 +115,15 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 |---|---|---|---|
 | Grounding check | Every number in generated text traces to the daily run or to a recorded analysis run, or is a stated simple operation on such figures that the check recomputes; each sentence links to its facts; direction, comparisons, causes, quantifiers and severity are checked | [Controls](08-controls.md#the-grounding-check) | Principles, working with AI, all pillars, alpha and beta |
 | AI permissions | What the AI may read, which analyses it may run, what it may do under a governed rule and what it may never do, set by the risk function and enforced by the analytics engine; every run uses the asker's entitlements | [Controls](08-controls.md#ai-permissions) | Working with AI |
-| Automated action | An action taken without sign-off beforehand, allowed only if decided by a rule, standard, reversible and proven, and reviewed the same day | [Controls](08-controls.md#automated-actions) | Limits and escalation, working with AI |
+| Automated action | An action taken without sign-off beforehand, allowed only if decided by a rule, standard, reversible and proven, approved by the head of risk and reviewed the same day | [Controls](08-controls.md#automated-actions) | Limits and escalation, working with AI |
 | Input handling | Text the AI reads is data, never instructions | [Controls](08-controls.md#input-handling) | That chapter only |
-| Evaluation set | Past cases with reference outcomes for each AI step, rerun at every change of model, prompt or template | [Controls](08-controls.md#evaluation) | Working with AI, measuring value |
-| Seeded review test | Drafts with a known flaw sent through review to test that reviewers read what they sign | [Controls](08-controls.md#evaluation) | Working with AI, measuring value, market risk |
+| Evaluation set | Past cases with reference outcomes for each AI step, rerun at every change of model, prompt or template | [Controls](08-controls.md#evaluation) | Redesign method |
+| Seeded review test | Drafts with a known flaw sent through review to test that reviewers read what they sign | [Controls](08-controls.md#evaluation) | Working with AI, measuring value, market risk, performance risk, integrated view |
 | Sign-off point | Where a human must approve, and what they are approving | [Controls](08-controls.md#sign-off-points) | Every redesigned workflow |
 | Audit trail | The record of facts, versions, generated text, edits and approval | [Controls](08-controls.md#the-audit-trail) | Every redesigned workflow |
 | Governed parameter | A threshold or rule with an owner, a review cycle and a change record | [Controls](08-controls.md#materiality-thresholds-as-governed-parameters) | All pillars, alpha and beta |
 | Parallel run | The new workflow runs beside the old one before the old one stops | [Controls](08-controls.md#parallel-runs) | Redesign method, measuring value |
-| Fallback | What happens when a component fails, including a template in place of AI text | [Controls](08-controls.md#fallback) | That chapter only |
+| Fallback | What happens when a component fails: a template in place of AI text, and entry by hand in place of extraction | [Controls](08-controls.md#fallback) | That chapter only |
 | Incident | An output that reached its audience wrong, an overturned automated action or a failed control; the head of risk can suspend any AI step or rule | [Controls](08-controls.md#incidents) | That chapter only |
 
 ## Measures
@@ -135,7 +135,7 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 | Redemption coverage | What a portfolio could raise within a horizon, leaving out encumbered assets, against the calls on its cash under stress due within it; the limit sits at the horizon the dealing terms set | [Liquidity risk](../pillars/liquidity-risk.md#materiality-and-exceptions) | Philosophy, investment risk, integrated view |
 | Fairness and capacity | Selling a slice of every holding against selling the most liquid first; the gap is the cost shifted to the investors who stay | [Liquidity risk](../pillars/liquidity-risk.md#fairness-and-capacity) | Investment risk |
 | Encumbrance | Collateral posted, left out of what a portfolio can raise, and securities on loan, left out until they can be recalled | [Liquidity risk](../pillars/liquidity-risk.md#encumbrance-and-second-round-effects) | Investment risk, integrated view |
-| Trigger | A liquidity rule that, when it fires, also runs the stress test for that portfolio the same day | [Liquidity risk](../pillars/liquidity-risk.md#materiality-and-exceptions) | That chapter only |
+| Trigger | A liquidity rule that, when it fires, also runs the stress test for that portfolio the same day | [Liquidity risk](../pillars/liquidity-risk.md#materiality-and-exceptions) | Working with AI |
 | Tool readiness | A liquidity management tool is ready when the documents provide for it, its operations are tested and its use has a named owner and a process | [Liquidity risk](../pillars/liquidity-risk.md#workflows-in-this-pillar) | New portfolio review |
 | Second-round effect | The extra cost when several of the firm's portfolios sell the same holdings, or when a market move also raises margin calls | [Liquidity risk](../pillars/liquidity-risk.md#encumbrance-and-second-round-effects) | That chapter only |
 | Stale or unpriceable holding | A holding whose value is uncertain, flagged to the owner of pricing | [Liquidity risk](../pillars/liquidity-risk.md#workflows-in-this-pillar) | Market risk, integrated view, alpha and beta |

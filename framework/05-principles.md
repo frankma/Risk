@@ -11,7 +11,7 @@ workflow as it stands. The unit of change is the workflow, not the task.
 | 3 | The AI never fabricates a number | Every figure has a recorded computation behind it; generated text is checked against it. |
 | 4 | Exceptions over everything | The system reviews every portfolio; the human reviews what is material. |
 | 5 | Decide what the risk manager's time is for before starting | Time that is not directed is absorbed by existing work. |
-| 6 | Build what the manual process could not do | Look for work no one had time for: every portfolio checked, every exception investigated, every document read. |
+| 6 | Build what the manual process could not do | Look for what can now be done for every item: every portfolio checked, every exception investigated, every document read. |
 
 **Why inserting fails:** a tool placed inside a workflow that was designed for a manual process leaves that process's
 constraints in place. A report whose commentary is drafted faster still waits for data to be gathered, for work to pass
@@ -42,7 +42,9 @@ analytics engine, as [working with AI](06-working-with-ai.md#the-essentials) set
 
 **In practice.** Each step of a redesigned workflow is assigned to exactly one of the three owners. Where a step mixes
 kinds of work, it is split. A system in which the AI does the arithmetic itself, or in which a person re-types figures
-that the analytics engine produced, has the wrong owner for that step. [Working with AI](06-working-with-ai.md) sets out
+that the analytics engine produced, has the wrong owner for that step. A step a rule fully determines, such as which
+analyses run for an exception or whether a notice may go out, belongs to the analytics engine. The AI's steps are
+those that need reading, choosing or writing. [Working with AI](06-working-with-ai.md) sets out
 how the person and the AI then work together.
 
 ### 3. The AI never fabricates a number
@@ -76,10 +78,10 @@ connections than people could manage.
 
 **In practice.** Once the analytics engine covers every portfolio continuously, liquidity can be monitored continuously
 rather than at each periodic stress test, and signals can be connected across market, liquidity and performance risk to
-see where they combine. The [integrated view](../pillars/integrated-view.md) is the clearest example. The AI adds
-work of another kind: every ranked item arrives investigated, every governing document, notice and set of minutes is
-read into records the analytics engine can test, and every explanation a portfolio manager gives can be tested against
-the data.
+see where they combine. The [integrated view](../pillars/integrated-view.md) is the clearest example. The AI adds work
+of another kind: every ranked item in a pillar's queue and in the integrated view arrives investigated, every governing
+document, notice and set of minutes is read into records the analytics engine can test, and every explanation a
+portfolio manager gives can be tested against the data.
 
 ## What the risk manager adds
 In a redesigned process the system produces the outputs, and the risk manager's time goes to the work only a person can
