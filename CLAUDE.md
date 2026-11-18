@@ -57,7 +57,9 @@ estimator, a default, a threshold convention, how a pillar is scoped), stop and 
   `framework/concept-map.md`, in the same commit.
 - `framework/` holds the cross-cutting chapters; `pillars/` holds one chapter per pillar plus the integrated view,
   the alpha and beta method and the new portfolio review;
-  `reference/` is for runnable code.
+  `reference/` is for runnable code; `docs/` holds the film, served by GitHub Pages.
+- The film shows the framework's concepts, terms and steps. A change to any of them that the film shows updates
+  `docs/index.html` in the same commit.
 
 ## Working conventions
 - One coherent piece of work per branch, merged by pull request as one commit. Small fixes cluster into one branch and
