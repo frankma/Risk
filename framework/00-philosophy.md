@@ -4,8 +4,8 @@
 **Why a risk function exists:** an asset manager needs one for two reasons: as a **check and balance** on every
 portfolio's risk, and to **serve the investment process** with the discipline of uncertainty.
 
-**The product is sight:** out of millions of numbers (hundreds of positions, thousands of risk factors, millions of
-possible futures), the few worth questioning and acting on.
+**The product is insight:** out of millions of numbers, the few that show where each portfolio stands against its
+mandate and where it must be challenged.
 
 **What follows from this:** eight beliefs that decide what the rules do not, three decisions the function serves
 (construct, oversee, assess), and three dimensions that every piece of risk work provides (condensation, drill-in,
