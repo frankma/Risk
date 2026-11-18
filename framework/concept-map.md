@@ -8,7 +8,7 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 |---|---|---|---|
 | Investment risk | The chance that a portfolio's outcome departs from what its mandate intends | [Investment risk](01-investment-risk.md#the-essentials) | Every chapter |
 | Two roles | Check and balance for the firm's governance and clients, and serving the investment process under uncertainty | [Philosophy](00-philosophy.md#why-a-risk-function-exists) | README, principles |
-| Sight | The few numbers worth questioning and acting on, out of millions | [Philosophy](00-philosophy.md) | That chapter only |
+| Insight | The few numbers, out of millions, that show where each portfolio stands against its mandate and where it must be challenged | [Philosophy](00-philosophy.md) | That chapter only |
 | Beliefs | Eight positions that decide what the rules do not | [Philosophy](00-philosophy.md#beliefs) | Limits and escalation, principles, market risk |
 | Three decisions | Construct, Oversee and Assess: before, during and after an investment | [Philosophy](00-philosophy.md#why-a-risk-function-exists) | Market risk's what-ifs |
 | Three dimensions | Condensation, drill-in and connection: what every piece of risk work provides | [Philosophy](00-philosophy.md#what-every-piece-of-risk-work-provides) | All pillars |
