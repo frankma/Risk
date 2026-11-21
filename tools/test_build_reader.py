@@ -37,15 +37,6 @@ def test_links_to_chapters_become_view_anchors():
     assert body == '<a href="#principles--4-exceptions">x</a>'
 
 
-def test_the_film_has_every_scene_the_reader_embeds():
-    scenes = build_reader.film_scenes()
-    assert len(scenes) >= max(build_reader.SCENE_IN.values())
-    assert set(build_reader.SCENE_IN) <= {vid for vid, *_ in build_reader.CHAPTERS}
-
-
-def test_the_reader_embeds_the_film(page):
-    assert 'href="film/"' in page
-    assert 'src="film/?embed"' in page
-    for vid, n in build_reader.SCENE_IN.items():
-        view = page.split(f'id="view-{vid}"', 1)[1].split('<section class="view"', 1)[0]
-        assert f'src="film/?embed&amp;scene={n}"' in view
+def test_the_reader_links_the_film_and_embeds_none(page):
+    assert '<a class="rail-film" href="film/">' in page
+    assert "<iframe" not in page
