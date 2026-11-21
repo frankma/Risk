@@ -107,6 +107,14 @@ figure { margin: 0; }
 .page-foot p { max-width: 80ch; margin-bottom: 6px; }
 
 
+/* Embedded in the reader (?embed): no masthead or footer, and the drawing takes the frame's width, since the frame's
+   height follows the page. ?scene=N shows that one scene alone, without the scene controls. */
+.embed .page { padding-block: 0 4px; }
+.embed .masthead, .embed .page-foot { display: none; }
+.embed .player { border-top: 0; padding-top: 0; }
+.embed .stage > svg { max-width: none !important; }
+.solo #prev, .solo #next, .solo .segs, .solo .secname { display: none; }
+
 @media (max-width: 980px) {
   .main { grid-template-columns: minmax(0, 1fr); grid-template-areas: "stage" "cases" "controls" "narr"; }
   .narr { border-top: 0; padding-top: 0; }
@@ -193,6 +201,7 @@ figure { margin: 0; }
 <div class="page">
   <header class="masthead">
     <h1>Investment Risk Essentials</h1>
+    <p><a href="../">Read the framework</a></p>
   </header>
 
   <section class="player" aria-label="Scenes">
@@ -731,6 +740,10 @@ figure { margin: 0; }
 (() => {
   const NS = 'http://www.w3.org/2000/svg';
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const query = new URLSearchParams(location.search);
+  const embed = query.has('embed'), solo = query.has('scene');
+  document.documentElement.classList.toggle('embed', embed);
+  document.documentElement.classList.toggle('solo', solo);
   const SCENES = [
     { t: 'From data to judgement', i: 'Transparency', d: 34000,
       p: 'Every day the analytics engine takes in every portfolio\u2019s data, computes every measure and checks each against its limit; the risk manager sees only what it flags. The AI follows up what the engine found and drafts from it. The risk manager then works the flags through with the AI: a breakdown that explains VaR near its limit, and a pushed-back draft that turns stock selection into unintended value beta. The result is transparency: every flag traced to its numbers, explained, and decided on the record.' },
@@ -1066,7 +1079,7 @@ figure { margin: 0; }
       const v = j < cur ? 1 : j > cur ? 0 : (done ? 1 : Math.min(1, elapsed / SCENES[cur].d));
       f.style.width = (v * 100).toFixed(1) + '%';
     });
-    playBtn.textContent = done ? 'Replay' : playing ? 'Pause' : 'Play';
+    playBtn.textContent = done ? (elapsed ? 'Replay' : 'Play') : playing ? 'Pause' : 'Play';
     stage.classList.toggle('paused', !playing && !done);
   }
   function go(i) { show(Math.max(0, Math.min(SCENES.length - 1, i))); }
@@ -1080,6 +1093,7 @@ figure { margin: 0; }
   document.getElementById('next').addEventListener('click', () => go(cur + 1));
   document.addEventListener('keydown', e => {
     if (e.target.closest('input, textarea, select')) return;
+    if (solo && e.key !== ' ') return;
     if (e.key === 'ArrowRight') { if (cur < SCENES.length - 1) { go(cur + 1); e.preventDefault(); } }
     else if (e.key === 'ArrowLeft') { if (cur > 0) { go(cur - 1); e.preventDefault(); } }
     else if (e.key === ' ' && !e.target.closest('button')) { toggle(); e.preventDefault(); }
@@ -1098,7 +1112,13 @@ figure { margin: 0; }
     last = now;
     requestAnimationFrame(tick);
   }
-  show(0);
+  /* Embedded, the film waits for the reader to press Play, and tells the reader its height so the frame fits it. */
+  const start = Math.max(0, Math.min(SCENES.length - 1, (parseInt(query.get('scene'), 10) || 1) - 1));
+  show(start, !embed && !reduce);
+  if (embed && window.parent !== window) {
+    const post = () => window.parent.postMessage({ filmHeight: document.documentElement.scrollHeight }, '*');
+    new ResizeObserver(post).observe(document.body);
+  }
   requestAnimationFrame(tick);
 })();
 </script>

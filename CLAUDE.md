@@ -58,7 +58,8 @@ estimator, a default, a threshold convention, how a pillar is scoped), stop and 
 - `framework/` holds the cross-cutting chapters; `pillars/` holds one chapter per pillar plus the integrated view,
   the alpha and beta method and the new portfolio review;
   `reference/` is for runnable code; `docs/` holds the film; `tools/` holds the script that builds the reader from the
-  chapters. GitHub Pages publishes the film and the reader after each merge to master.
+  chapters. GitHub Pages publishes the reader at the site's root and the film at `film/` after each merge to master;
+  the reader embeds the film's scenes.
 - The film shows the framework's concepts, terms and steps. A change to any of them that the film shows updates
   `docs/index.html` in the same commit.
 

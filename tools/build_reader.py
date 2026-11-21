@@ -6,8 +6,10 @@
 """Build the framework reader, one HTML page with every chapter, from the repo's Markdown.
 
 Run: uv run tools/build_reader.py OUTPUT.html
-The output is a complete page that opens from disk. GitHub Pages publishes it as the reader after each merge to
-master (see .github/workflows/pages.yml). The chapters are the source; the page is never edited by hand.
+The output is a complete page. GitHub Pages publishes it at the site's root after each merge to master, with the film
+from docs/ beside it at film/ (see .github/workflows/pages.yml). The reader embeds the film from there, the whole
+player on the overview and single scenes in the chapters they illustrate, so the film must sit at film/ next to the
+page for those to show. The chapters are the source; the page is never edited by hand.
 """
 import html
 import pathlib
@@ -46,6 +48,17 @@ CHAPTERS = [
 ]
 FILE_TO_VIEW = {path: vid for vid, path, _, _ in CHAPTERS}
 FILE_TO_VIEW["framework/concept-map.md"] = "overview"
+
+FILM = REPO / "docs" / "index.html"
+# The film's scenes, numbered from 1, and the chapter each one illustrates.
+SCENE_IN = {
+    "risk-data": 1,
+    "philosophy": 2,
+    "integrated-view": 3,
+    "sources-of-return": 4,
+    "limits-and-escalation": 5,
+    "working-with-ai": 6,
+}
 
 # Drawn from the pillar chapters and the philosophy's three decisions.
 GLANCE = [
@@ -152,6 +165,16 @@ def render(vid, source):
     return title, body, [(i, plain(t)) for i, t in heads]
 
 
+def film_scenes():
+    """The film's scene titles, in order, read from its SCENES list."""
+    return re.findall(r"^    \{ t: '(.+?)', i: '", FILM.read_text(), flags=re.M)
+
+
+def film_frame(src, title, caption):
+    return (f'<figure class="film"><iframe class="film-frame" src="{src}" title="{html.escape(title)}" '
+            f'loading="lazy"></iframe><figcaption>{caption}</figcaption></figure>')
+
+
 def readme_parts():
     text = (REPO / "README.md").read_text()
     owners = r"Analytics engine|AI assistant|The risk manager and head of risk"
@@ -178,6 +201,9 @@ def build(out):
     map_title, map_body, map_heads = render("overview", "framework/concept-map.md")
     map_body = map_body.replace('<div class="table-wrap">', '<div class="table-wrap concepts">')
     core, rules, disclaimer, identity, backdrop = readme_parts()
+    scenes = film_scenes()
+    if len(scenes) < max(SCENE_IN.values()):
+        sys.exit(f"The film has {len(scenes)} scenes; SCENE_IN needs {max(SCENE_IN.values())}")
 
     order = [("overview", "Overview")] + [(vid, rendered[vid][0]) for vid, *_ in CHAPTERS]
     pos = {vid: i for i, (vid, _) in enumerate(order)}
@@ -234,6 +260,9 @@ def build(out):
   <div class="strip" aria-label="The core pattern">{strip}</div>
   <div class="rules">{rules}</div>
   <div class="content">
+    <h2 id="overview--the-film">The film</h2>
+    {film_frame("film/?embed", "The framework film", f'The framework in {len(scenes)} animated scenes; each scene '
+                'also opens the chapter it illustrates. <a href="film/">Watch the film on its own page</a>.')}
     <h2 id="overview--the-pillars-at-a-glance">The pillars at a glance</h2>
     <figure class="exhibit">
       <div class="table-wrap glance"><table><thead><tr>{head_cells}</tr></thead>
@@ -251,6 +280,11 @@ def build(out):
     for vid, _, group, number in CHAPTERS:
         title, body, _ = rendered[vid]
         body = body.replace("<p>", '<p class="lede">', 1)
+        if vid in SCENE_IN:
+            n = SCENE_IN[vid]
+            frame = film_frame(f"film/?embed&amp;scene={n}", f"Film scene {n}: {scenes[n - 1]}",
+                               f'Scene {n} of {len(scenes)} from the <a href="film/">film</a>.')
+            body = frame + body
         label = (f"Chapter {number}" if number else
                  {"integrated-view": "Across the pillars", "new-portfolio-review": "Across the pillars",
                   "alpha-and-beta-method": "Performance risk method"}.get(vid, "Pillar"))
@@ -361,6 +395,10 @@ main { min-width: 0; }
 .exhibit .table-wrap { margin-bottom: 0; }
 .glance table { min-width: 760px; table-layout: fixed; }
 .glance th:first-child, .glance td:first-child { width: 15%; color: var(--muted); }
+.rail-film { display: block; font: 700 14px/1.3 var(--sans); margin: -8px 0 18px; }
+.film { margin: 0 0 28px; border-top: 1px solid var(--ink); padding-top: 14px; }
+.film-frame { display: block; width: 100%; height: 640px; border: 0; }
+.film figcaption { font: 400 13px/1.5 var(--sans); color: var(--faint); margin-top: 8px; }
 .pager { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px;
   border-top: 1px solid var(--line); margin-top: 48px; padding-top: 14px; font: 400 15px/1.35 var(--sans); }
 .pager a { display: grid; gap: 4px; text-decoration: none; }
@@ -463,6 +501,14 @@ PAGE_JS = """
     });
   }
 
+  /* An embedded film reports its height; size its frame to fit. */
+  window.addEventListener('message', function (e) {
+    if (!e.data || typeof e.data.filmHeight !== 'number') { return; }
+    document.querySelectorAll('.film-frame').forEach(function (f) {
+      if (f.contentWindow === e.source) { f.style.height = Math.ceil(e.data.filmHeight) + 'px'; }
+    });
+  });
+
   select.addEventListener('change', function () { location.hash = select.value; });
   find.addEventListener('input', search);
   window.addEventListener('hashchange', route);
@@ -477,6 +523,7 @@ PAGE = """<title>Investment Risk Framework</title>
 <div class="shell">
   <aside class="rail">
     <a class="rail-name" href="#philosophy">Investment Risk Framework</a>
+    <a class="rail-film" href="film/">Watch the film</a>
     <div class="find">
       <label for="find">Find in the framework</label>
       <input id="find" type="search" placeholder="unintended beta, escalation" autocomplete="off">
