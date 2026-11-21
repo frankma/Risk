@@ -1,4 +1,4 @@
-# Investment risk philosophy
+# Philosophy
 
 ## The essentials
 **Why a risk function exists:** an asset manager needs one for two reasons: as a **check and balance** on every

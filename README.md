@@ -2,9 +2,8 @@
 
 **How a risk function at an asset manager should work, with each workflow redesigned around AI.**
 
-The [reader](https://frankma.github.io/Risk/) holds every chapter on one page, with the
-[film](https://frankma.github.io/Risk/film/) built in: the framework in six animated scenes, each also shown in the
-chapter it illustrates.
+The [reader](https://frankma.github.io/Risk/) holds every chapter on one page and links to the
+[film](https://frankma.github.io/Risk/film/): the framework in six animated scenes.
 
 ## Investment risk, in three pillars
 A risk function is a check and balance on every portfolio's risk, and a service to the investment process under
@@ -56,7 +55,7 @@ follows beneath it. Reading the essentials in order gives the framework; the det
 | Chapter | Covers |
 |---|---|
 | **Foundations** | |
-| [Investment risk philosophy](framework/00-philosophy.md) | What a risk function believes and is for. |
+| [Philosophy](framework/00-philosophy.md) | What a risk function believes and is for. |
 | [Investment risk](framework/01-investment-risk.md) | The definition, the scope and the three pillars. |
 | [Sources of return](framework/02-sources-of-return.md) | The three return generators, and the split into beta and alpha. |
 | **The pillars** | |
