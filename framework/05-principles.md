@@ -12,6 +12,7 @@ workflow as it stands. The unit of change is the workflow, not the task.
 | 4 | Exceptions over everything | The system reviews every portfolio; the human reviews what is material. |
 | 5 | Decide what the risk manager's time is for before starting | Time that is not directed is absorbed by existing work. |
 | 6 | Build what the manual process could not do | Look for what can now be done for every item: every portfolio checked, every exception investigated, every document read. |
+| 7 | Hand over judgement, not documents | The facts sit once in the shared record; what passes between people is a question, a challenge or a decision. |
 
 **Why inserting fails:** a tool placed inside a workflow that was designed for a manual process leaves that process's
 constraints in place. A report whose commentary is drafted faster still waits for data to be gathered, for work to pass
@@ -23,7 +24,7 @@ matters, bringing clarity to the risks being taken, challenging with evidence an
 The rest of this chapter is the detail behind these points. [Working with AI](06-working-with-ai.md) follows with how
 people and the AI work together.
 
-## Six principles
+## Seven principles
 ### 1. Redesign, don't insert
 **What it means.** A workflow exists to deliver an outcome, such as a decision made, a limit enforced or a portfolio
 manager challenged. A redesign starts from that outcome and asks which steps it actually needs, rather than starting
@@ -83,6 +84,23 @@ of another kind: every ranked item in a pillar's queue and in the integrated vie
 document, notice and set of minutes is read into records the analytics engine can test, and every explanation a
 portfolio manager gives can be tested against the data.
 
+### 7. Hand over judgement, not documents
+**What it means.** Once the analytics engine computes and the AI writes, a document passed from one person to another
+holds nothing its reader could not ask for. A reader who summarises what they receive, often with an AI of their own,
+shows that it should not have been sent. The facts sit once in the **shared record**: what the analytics engine
+computed, each ranked item with its account and the runs behind it, and every judgement, decision and agreed action on
+it, including the function's record of earlier decisions. Each reader reads the items for the portfolios they are
+entitled to, and asks their own questions of it in the [investigate mode](06-working-with-ai.md#three-modes-of-working).
+What passes between people is judgement: a question, a challenge, an escalation, or a decision and its reasons, each
+linked to the items it concerns.
+
+**In practice.** A message to a portfolio manager carries the question and links to the item; it does not retell the
+facts. A committee or board receives a **decision paper**: what it must decide, the risk function's view and the
+reasons, with each figure linked to the record, and its minutes record the decision. Documents the firm owes outside,
+such as reports to clients and regulators, follow their own rules. An item reaches readers outside the risk function
+only once a person has signed it off, or under a governed rule, as [controls](08-controls.md#sign-off-points) sets out.
+Each workflow's output is defined by which items in the record each reader reads and what judgement goes to whom.
+
 ## What the risk manager adds
 In a redesigned process the system produces the outputs, and the risk manager's time goes to the work only a person can
 do, in both of the function's [roles](00-philosophy.md#why-a-risk-function-exists): check and balance, and serving the
@@ -107,7 +125,7 @@ they add is what goes into it.
 - **Deciding what the system flags, and in what order.** The thresholds that decide what reaches the queue, the ranking
   that orders it, the patterns that connect the pillars and the calibration of scenarios are where judgement is written
   down. They filter what the risk manager sees, not what the portfolio may hold, and the risk function designs, tests
-  and owns them.
+  and owns them, which is where its [independence lives](10-decision-rights.md#independence-lives-in-the-rules).
 - **Judgement where the data runs out.** Shock sizes, how plausible a reverse stress is, regime changes, crowded exits
   and the direction in which each model errs ([beliefs 4 and 8](00-philosophy.md#beliefs)) have no history for the
   engine to compute from.

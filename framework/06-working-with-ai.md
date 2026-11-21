@@ -23,7 +23,8 @@ breach notice and close a breach that came from a data break, and a person revie
 leaves the function needs a person's sign-off. The AI never sends any other message, writes a recommendation, decides
 what matters or changes a governed parameter.
 
-**People:** supervising the AI is a skill, the craft still has to be learned, and accountability does not move.
+**People:** supervising the AI is a skill. Who holds each decision, how the craft is learned and why accountability
+does not move are in [decision rights](10-decision-rights.md).
 
 The rest of this chapter is the detail behind these points.
 
@@ -42,12 +43,14 @@ runs, and drafts from all of it. It may choose none. The analyses set for each k
 from and the cap on runs are [governed parameters](08-controls.md#materiality-thresholds-as-governed-parameters). The
 risk manager starts from an item already investigated, with every figure tied to its run.
 
-**Investigate** replaces the ad hoc query. A risk manager, or a portfolio manager before a trade, asks a question in
-plain words. Each run uses the entitlements of the person who asked, so a portfolio manager sees figures only for the
-portfolios they manage. The AI works out which analyses answer it, runs them through the analytics engine, and reports
-what they show: a drill-down into a change, an aggregation across portfolios, an attribution over a period, a what-if on
-a proposed trade, a scenario. Every figure is tied to the run that produced it. Where no governed analysis answers a
-portfolio manager's question, the AI says so and the question is logged for the risk function.
+**Investigate** replaces the ad hoc query, and is how a portfolio manager [serves
+themselves](10-decision-rights.md#self-service-and-challenge). A risk manager, or a portfolio manager before a trade or
+after a period, asks a question in plain words. Each run uses the entitlements of the person who asked, so a portfolio
+manager sees figures only for the portfolios they manage. The AI works out which analyses answer it, runs them through
+the analytics engine, and reports what they show: a drill-down into a change, an aggregation across portfolios, an
+attribution over a period, a what-if on a proposed trade, a scenario. Every figure is tied to the run that produced it.
+Where no governed analysis answers a portfolio manager's question, the AI says so and the question is logged for the
+risk function.
 
 **Challenge** turns the AI on a conclusion. The conclusion may be a portfolio manager's explanation of a breach, a risk
 manager's own reading of a portfolio, or a draft paper for a committee. The AI looks for what would contradict it and
@@ -146,24 +149,6 @@ The risk manager reads this as a deliberate value tilt and asks the AI to challe
 
 What the exposure means, and what to ask the portfolio manager, is the risk manager's judgement. The figure from the
 exploratory query can guide the question, but it stays out of any output and is never shown to the portfolio manager.
-
-## What changes for people
-| Who | What changes |
-|---|---|
-| Risk manager | A new skill: directing and supervising the AI, as [principles](05-principles.md#what-the-risk-manager-adds) sets out |
-| Head of risk | Owns what the AI may do in the function, the rules it works within and what risk managers' time goes to |
-| Portfolio manager | Receives questions sooner and with evidence, can ask for a what-if before a trade, and has explanations tested against the data |
-| Owners of adjacent risks and of data | Receive what is routed to them with the evidence attached |
-| Management | Decides, workflow by workflow, where AI enters the business, and judges the result by the [measures of value](09-measuring-value.md), not by usage |
-
-**The craft still has to be learned.** Producing outputs by hand was how a new risk manager learned what a normal
-reading looks like. When the system produces the output, that learning is designed in: new risk managers investigate
-with the AI and explain what they found, review signed-off items beside an experienced colleague, and take part in
-setting the rules that decide what the system flags.
-
-**Accountability does not move.** The AI cannot be held to account, so a named person signs every output, or reviews the
-same day what a governed rule let the AI send or close, and that person can show what was generated, what they changed
-and why.
 
 ## How the working relationship improves
 Each mode leaves a record, and the record is how the system gets better. Edits to drafts show where the AI's

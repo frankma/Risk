@@ -77,7 +77,8 @@ the attempts and the outcome are all recorded in the audit trail. A grounding ch
 not a control.
 
 The check runs on every piece of generated text in a workflow. The step tables show it once, after the first draft; a
-later draft, such as a message, a decision note, minutes or a board paper, passes the same check before anyone sees it.
+later draft, such as a message, a decision note, minutes or a decision paper, passes the same check before anyone sees
+it.
 
 The check covers numbers, the direction of a change, comparisons with a limit or threshold, causes, quantifiers and
 severity. It does not test what was left out, whether the reasoning is sound or whether the emphasis is right; those
@@ -91,8 +92,10 @@ enforces it. An analysis outside the governed list does not run. The one thing t
 read-only exploratory query, whose result is labelled unvalidated, kept out of outputs, shown only within the risk
 function and never used for a limit. The AI has no write access to data or to governed parameters, and nothing it
 produces leaves the function without a sign-off, except the [automated actions](08-controls.md#automated-actions) a
-governed rule allows. Every run the AI starts is recorded with its parameters, the person who asked and the result, so
-that any answer can be reproduced.
+governed rule allows. Publishing an item to readers of the [shared
+record](05-principles.md#7-hand-over-judgement-not-documents) outside the risk function counts as leaving it. Every run
+the AI starts is recorded with its parameters, the person who asked and the result, so that any answer can be
+reproduced.
 
 **Every run uses the entitlements of the person who asked.** In Prepare, that is the risk function, for the portfolios
 in its queue. A portfolio manager who asks a question, or runs a what-if before a trade, sees figures only for the
@@ -101,7 +104,8 @@ publishes. The analytics engine enforces the entitlement, not the AI.
 
 **An output takes the entitlements of its audience.** A figure or a precedent from another portfolio stays within the
 risk function unless it is a firm-level total the risk function publishes, and the analytics engine blocks a release
-that carries one.
+that carries one. The shared record works the same way: each reader sees the items for the portfolios they are
+entitled to, and the firm-level totals the risk function publishes.
 
 ## Automated actions
 An action may be taken without a person's sign-off beforehand only if it passes four tests. The rule that allows it is a
@@ -141,7 +145,7 @@ about content, not a click to release a document.
 |---|---|---|
 | Exception review | Risk manager | Which items are material, and that each explanation is fair |
 | Escalation | Head of risk or delegate | That what is escalated, and any action the risk manager recommends, is right |
-| Release | Owner of the output | That the output may go to its audience |
+| Release | Owner of the output | That the output may go to its audience, or an item be published in the shared record beyond the risk function |
 | Same-day review | Risk manager | That each notice the AI sent, and each breach it closed, under a governed rule was right |
 | Confirmation of an extraction | Risk manager | That each term, event or recorded decision says what its passage says, and that every expected term is found or resolved |
 

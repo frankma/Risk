@@ -12,8 +12,9 @@ investors who stay?
 **How the work is done:** the analytics engine measures every portfolio's liquidity every day and runs a stress test on
 the day an event fires a trigger, not when the calendar says so, with the analyses set for the trigger's rule. The AI
 reads redemption notices into events the risk manager confirms, follows up where the findings point further, and
-drafts each triggered portfolio's narrative and the board paper. The risk manager
-reviews each triggered portfolio and makes any recommendation on liquidity management tools.
+drafts each triggered portfolio's narrative and the board's [decision
+paper](../framework/05-principles.md#7-hand-over-judgement-not-documents). The risk manager reviews each triggered
+portfolio and makes any recommendation on liquidity management tools.
 
 | # | Step | Owner |
 |---|---|---|
@@ -25,9 +26,9 @@ reviews each triggered portfolio and makes any recommendation on liquidity manag
 | 6 | Follow up where the findings point further; draft the narrative | AI assistant |
 | 7 | Grounding check on every draft | Analytics engine |
 | 8 | Review each triggered portfolio; recommend on liquidity tools | Risk manager |
-| 9 | Draft the board paper from the period's results and events | AI assistant |
-| 10 | Review scenario calibration; edit the board paper | Risk manager |
-| 11 | Review and sign off the paper | Head of risk |
+| 9 | Draft the board's decision paper, with the period's results and events linked to the shared record | AI assistant |
+| 10 | Review scenario calibration; edit the decision paper | Risk manager |
+| 11 | Review and sign off the decision paper | Head of risk |
 
 **What "a fair cost" means:** the investors who stay must not bear the cost of others leaving, and liquidity management
 tools are the means. A segregated mandate has one client, so the question is whether the client's withdrawals and
@@ -47,7 +48,7 @@ The rest of this chapter is the detail behind these points.
 | Redemption and cash-call monitoring | Daily | Flows, margin and other calls against the portfolio's history | Risk manager | Whether calls are unusual |
 | Investor and distributor concentration | Daily | Largest holders' shares | Risk manager | Whether it is too high |
 | Liquidity tool readiness | Quarterly | Readiness of each tool | Risk manager, fund board | Whether tools can be used |
-| Board reporting | Monthly | Liquidity paper | Fund board | Whether liquidity is adequate |
+| Board reporting | Monthly | Decision paper; the period's results in the shared record | Fund board | Whether liquidity is adequate |
 | Stale or unpriceable holdings | Daily | Flagged holdings | Pricing owner | Whether prices need challenge |
 
 Liquidity monitoring and stress testing is the flagship, shown in the table at the top.
@@ -203,7 +204,7 @@ an event is assessed, and whether any event is missed. The pillar-specific measu
 | Dimension | Measure for this pillar |
 |---|---|
 | Speed | Time from a notice's arrival, or another triggering event, to a stress result and narrative |
-| Speed | Working days from period end to signed-off board paper |
+| Speed | Working days from period end to signed-off decision paper |
 | Capacity | Portfolios with a current liquidity view |
 | Quality | Events assessed late or not at all; parallel-run agreement on coverage |
 | Influence | Recommendations on liquidity tools made and acted on |
