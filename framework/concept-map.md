@@ -80,7 +80,7 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 | Concept | What it is | Defined in | Used by |
 |---|---|---|---|
 | Core pattern | The analytics engine computes, AI interprets and narrates, a human judges | [Principles](05-principles.md#2-the-analytics-engine-computes-ai-interprets-and-narrates-a-human-judges) | Every chapter |
-| Analytics engine | The deterministic part of the system: the same data always gives the same figure | [Principles](05-principles.md#2-the-analytics-engine-computes-ai-interprets-and-narrates-a-human-judges) | Every chapter |
+| Analytics engine | The deterministic part of the system, and the firm's one integrated system every function computes on: the same data always gives the same figure | [Principles](05-principles.md#2-the-analytics-engine-computes-ai-interprets-and-narrates-a-human-judges) | Every chapter |
 | AI | The language model that investigates, drafts, extracts and challenges; statistical models belong to the analytics engine | [Working with AI](06-working-with-ai.md#the-essentials) | Every chapter but the philosophy and sources of return |
 | Modes of working | Prepare, investigate and challenge: how a person and the AI work together | [Working with AI](06-working-with-ai.md#three-modes-of-working) | Limits and escalation, market risk, liquidity risk, performance risk |
 | Investigation in Prepare | The follow-up analyses the AI chooses for each ranked item, within a cap, after the analytics engine has run the analyses set for its kind of rule | [Working with AI](06-working-with-ai.md#three-modes-of-working) | Principles, redesign method, controls, market risk, liquidity risk, performance risk, integrated view |
@@ -107,7 +107,8 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 | Independence in the rules | The risk function owns the thresholds, rankings, limits, governed analyses, AI permissions and controls, and its holders report outside the investment line | [Decision rights](10-decision-rights.md#independence-lives-in-the-rules) | Principles |
 | Self-service | Portfolio managers run what-ifs and read attribution on governed analyses the risk function owns and challenges | [Decision rights](10-decision-rights.md#self-service-and-challenge) | Working with AI, market risk |
 | One holder for each decision | Each decision is recorded with the one person or body that made it, however many contributed | [Decision rights](10-decision-rights.md#one-holder-for-each-decision) | That chapter only |
-| Roles | What the risk manager, head of risk, portfolio manager, adjacent owners and management each hold, and the core's responsibilities for methodology, rules and evaluation | [Decision rights](10-decision-rights.md#roles) | Working with AI |
+| Roles | What the risk manager, head of risk, portfolio manager, adjacent owners and management each hold, and the core's responsibilities for methodology, the rules and what the AI must get right | [Decision rights](10-decision-rights.md#roles) | Working with AI |
+| Size of the function | Every firm needs a risk function: a small firm has one person, often in a combined role, with the analytics engine and the AI doing the work; a large firm has a dedicated team under one head of risk; a right no one is named for falls to the portfolio manager | [Decision rights](10-decision-rights.md#the-size-of-the-function) | That chapter only |
 
 ## Exceptions and ranking
 
