@@ -11,6 +11,9 @@ dist/
 .coverage
 htmlcov/
 
+# Pages build output
+_site/
+
 # Environment and secrets
 .env
 .env.*
