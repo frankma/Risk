@@ -66,7 +66,9 @@ risk](market-risk.md#workflows-in-this-pillar), not here.
 
 ## The risk function's opinion
 The opinion states whether the portfolio can be monitored as its mandate promises, any conditions that must be met, and
-the reasons. Where product governance proceeds against it, the risk function can escalate to the risk committee.
+the reasons. It links to the readiness summary and the review's results in the [shared
+record](../framework/05-principles.md#7-hand-over-judgement-not-documents), where product governance reads them. Where
+product governance proceeds against it, the risk function can escalate to the risk committee.
 
 ## What the AI drafts
 Every figure the AI extracts must appear in the passage it links to, and every number in a draft appears in the facts

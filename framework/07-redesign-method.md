@@ -26,7 +26,13 @@ does not serve it is a candidate for removal.
 ### 2. Inventory the workflows
 The risk function lists its recurring workflows and records, for each one, its cadence, its inputs, its output, who uses
 the output and for which decision. The inventory usually shows outputs that feed no decision: a report produced because
-it has always been produced, or a table nobody reads. These are eliminated, not automated.
+it has always been produced, or a table nobody reads. These are eliminated, not automated. An output its reader
+summarises before using, often with an AI of their own, shows that the reader needs the facts in the [shared
+record](05-principles.md#7-hand-over-judgement-not-documents) and a judgement, not the document.
+
+The inventory spans every function that works on the same data, such as performance measurement, compliance monitoring
+and the investment team's own analysis. A workflow two functions run is found and run once, with one owner of its
+result, as [decision rights](10-decision-rights.md#who-decides-what) sets out.
 
 ### 3. Map the current state
 The chosen workflow is mapped step by step as it actually runs, not as the procedure describes it. Each step is tagged
@@ -52,7 +58,7 @@ Each tagged step is assigned to one owner, following the core pattern.
 | Gather, Compute | Analytics engine |
 | Extract | AI assistant; the risk manager's confirmation of each record is a step of its own |
 | Interpret, Communicate | AI assistant, which follows up through the analytics engine and drafts from what it computed; the risk manager's edit and approval is a step of its own |
-| Judge, Approve | The risk manager, or the head of risk for escalation and sign-off |
+| Judge, Approve | The holder of the decision, as [decision rights](10-decision-rights.md#who-decides-what) sets out: for oversight, the risk manager, or the head of risk for escalation and sign-off |
 | Steps that exist only because the old process was slow | Eliminated |
 
 The last row matters as much as the others. Re-keying figures between systems, reformatting tables, reconciling two
@@ -66,8 +72,9 @@ In the redesigned workflow the system produces the output, and the human reviews
   ranked, are written down as parameters rather than applied by eye.
 - **Approval gates are moved.** Gates that existed to catch manual errors, such as a second person checking that figures
   were copied correctly, are replaced by controls in the system. Gates that exist for judgement stay.
-- **The output changes.** A long pack is replaced by what the decision needs, for example a two-page exception summary
-  with drill-down into the detail behind each item.
+- **The output changes.** The facts go to the shared record, where each reader reads the items that concern them and
+  drills into the detail behind each. What goes to a person is a judgement, and what goes to a committee is a decision
+  paper, as [principle 7](05-principles.md#7-hand-over-judgement-not-documents) sets out.
 - **The work covers every item.** The redesign asks what can now be done for every item: investigating every exception
   before anyone asks, reading every document into records, testing every explanation against the data.
 
@@ -118,10 +125,10 @@ risk, who now decides on the risk manager's proposal.
 | 2 | Follow up where the findings point further; draft an explanation from the findings | AI assistant |
 | 3 | Grounding check on every draft | Analytics engine |
 | 4 | Review exceptions, edit explanations, propose what to escalate | Risk manager |
-| 5 | Decide what to escalate; sign off the two-page summary with drill-down | Head of risk |
+| 5 | Decide what to escalate; sign off the decision paper, with each exception linked to the shared record | Head of risk |
 
-The output is now a ranked exception summary rather than a pack covering every portfolio at equal length, and the
-committee sees it within days of month end.
+The committee reads the ranked exceptions in the shared record within days of month end, and receives a decision
+paper for what it must decide: what to escalate and what the risk function recommends.
 
 **Steps 6 and 7.** The AI step's evaluation set passes before first use, and the redesigned report runs in parallel with
 the old one for at least one full cycle before the old one is stopped, and the risk managers' time goes to the use the
@@ -136,6 +143,8 @@ exception summary.
 | Keeping every old review gate | The output arrives no sooner | Moving gates in step 5 |
 | No decision on what the risk manager's time is for | The time is absorbed by existing work | A plan for that time before starting |
 | A tool rollout with no workflow rebuilt | Usage rises, the work does not change | Redesign one workflow fully first |
+| An AI-written output that its reader's AI condenses | The document carries nothing the reader could not ask the record for | Facts in the shared record, judgement to people ([principle 7](05-principles.md#7-hand-over-judgement-not-documents)) |
+| Two functions running one workflow | Two figures for one question, and no single owner of the result | The inventory across functions in step 2 |
 
 ## Sources
 - Hammer, M. (1990). Reengineering Work: Don't Automate, Obliterate. *Harvard Business Review*. Redesigning a process

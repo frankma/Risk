@@ -11,19 +11,21 @@
 **How the work is done:** the analytics engine tracks every portfolio's realised measures, tests its exposures against
 the confirmed mandate terms and runs the analyses set for each issue's rule. The AI follows up where they point
 further, with what was explained and agreed at earlier reviews, and drafts a challenge pack: the top issues for the
-portfolio, the evidence for each and the questions to ask. The risk manager runs the portfolio manager review on the
-risk function's agenda, with evidence that is independent of the portfolio manager, and notes what was explained and
-agreed. The AI tests the explanations against the data and drafts the minutes from the notes, and the agreed actions
-are tracked until they are closed.
+portfolio and the questions to ask, each linked to its evidence in the [shared
+record](../framework/05-principles.md#7-hand-over-judgement-not-documents), where the portfolio manager reads the same
+items before the review. The risk manager runs the portfolio manager review on the risk function's agenda, with
+evidence that is independent of the portfolio manager, and notes what was explained and agreed. The AI tests the
+explanations against the data and drafts the minutes from the notes, and the agreed actions are tracked in the shared
+record until they are closed.
 
 | # | Step | Owner |
 |---|---|---|
 | 1 | Track realised return, ex-post tracking error, drawdown, active share, information ratio, factors and peer position | Analytics engine |
 | 2 | Test exposures against the mandate terms; flag drift and unintended bets | Analytics engine |
 | 3 | Rank the portfolio's issues, with market risk's tracking error and risk budget exceptions; run the analyses set for each issue's rule | Analytics engine |
-| 4 | Follow up where the findings point further, with the record of earlier reviews; draft the challenge pack: evidence and questions | AI assistant |
+| 4 | Follow up where the findings point further, with the record of earlier reviews; draft the challenge pack: issues and questions, linked to their evidence | AI assistant |
 | 5 | Grounding check on the pack | Analytics engine |
-| 6 | Review and edit the pack; set the agenda | Risk manager |
+| 6 | Review and edit the pack; set the agenda; publish the pack's items to the shared record | Risk manager |
 | 7 | Run the meeting on the risk function's agenda; note each explanation and agreed action | Risk manager |
 | 8 | Test the explanations noted against the data; draft the minutes and the action log from the notes and the pack, with what supports and what contradicts each | AI assistant |
 | 9 | Edit and agree the minutes and actions | Risk manager |

@@ -7,7 +7,7 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 | Concept | What it is | Defined in | Used by |
 |---|---|---|---|
 | Investment risk | The chance that a portfolio's outcome departs from what its mandate intends | [Investment risk](01-investment-risk.md#the-essentials) | Every chapter |
-| Two roles | Check and balance for the firm's governance and clients, and serving the investment process under uncertainty | [Philosophy](00-philosophy.md#why-a-risk-function-exists) | README, principles |
+| Two roles | Check and balance for the firm's governance and clients, and serving the investment process under uncertainty | [Philosophy](00-philosophy.md#why-a-risk-function-exists) | README, principles, decision rights |
 | Insight | The few numbers, out of millions, that show where each portfolio stands against its mandate and where it must be challenged | [Philosophy](00-philosophy.md) | That chapter only |
 | Beliefs | Eight positions that decide what the rules do not | [Philosophy](00-philosophy.md#beliefs) | Limits and escalation, principles, market risk |
 | Three decisions | Construct, Oversee and Assess: before, during and after an investment | [Philosophy](00-philosophy.md#why-a-risk-function-exists) | Market risk's what-ifs |
@@ -88,14 +88,26 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 | Analysis run | A governed analysis the AI runs through the analytics engine, recorded so that its figures can be reproduced | [Working with AI](06-working-with-ai.md#where-a-figure-may-come-from) | Principles, controls |
 | Exploratory query | A read-only query the AI composes where no governed analysis exists; labelled unvalidated and kept out of outputs | [Working with AI](06-working-with-ai.md#where-a-figure-may-come-from) | Controls |
 | Expected terms | The terms each type of portfolio is expected to have, against which extracted terms are checked so that a missed term shows as a gap | [Performance risk](../pillars/performance-risk.md#mandate-terms) | Working with AI, new portfolio review |
-| Six principles | What a redesign should follow | [Principles](05-principles.md#six-principles) | Redesign method, all pillars |
+| Seven principles | What a redesign should follow | [Principles](05-principles.md#seven-principles) | Redesign method, all pillars |
+| Shared record | The one place the facts sit: what the analytics engine computed, each ranked item with its account and runs, and every judgement, decision and agreed action, read by each person under their entitlements | [Principles](05-principles.md#7-hand-over-judgement-not-documents) | Investment risk, redesign method, controls, decision rights, all pillars |
+| Decision paper | What a committee or board receives: what it must decide, the risk function's view and the reasons, each figure linked to the shared record | [Principles](05-principles.md#7-hand-over-judgement-not-documents) | Redesign method, market risk, liquidity risk, integrated view |
 | Seven steps | How one workflow is redesigned, from outcome to measured result | [Redesign method](07-redesign-method.md#the-seven-steps) | All pillars |
 | Step tags | Gather, Extract, Compute, Interpret, Judge, Communicate, Approve / Wait | [Redesign method](07-redesign-method.md#3-map-the-current-state) | That chapter only |
 | Risk manager's value | Judging what matters to the portfolio and its intended risk profile, bringing clarity to the risks being taken, challenge, deciding what the system flags and judgement where the data runs out; the sign-off is the accountability | [Principles](05-principles.md#what-the-risk-manager-adds) | README, working with AI, measuring value |
-| Owners | Who or what does each step: the analytics engine, the AI assistant, the risk manager or the head of risk | [Redesign method](07-redesign-method.md#4-assign-each-step-an-owner) | That chapter only |
+| Owners | Who or what does each step: the analytics engine, the AI assistant, or the person who holds the decision | [Redesign method](07-redesign-method.md#4-assign-each-step-an-owner) | That chapter only |
 | Four dimensions of value | Capacity, speed, quality and influence | [Measuring value](09-measuring-value.md#four-dimensions) | All pillars |
 | Baseline | The value of each measure before anything changes | [Measuring value](09-measuring-value.md#baseline-first) | Redesign method |
 | Plan for the risk manager's time | What the risk manager's time will go to, decided in advance | [Measuring value](09-measuring-value.md#a-plan-for-the-risk-managers-time) | Principles, redesign method |
+
+## Decision rights
+
+| Concept | What it is | Defined in | Used by |
+|---|---|---|---|
+| Decision rights | The decisions only the risk function may make, which define it; the work is shared, the decisions are not | [Decision rights](10-decision-rights.md#what-defines-the-risk-function) | README, philosophy, investment risk, redesign method |
+| Independence in the rules | The risk function owns the thresholds, rankings, limits, governed analyses, AI permissions and controls, and its holders report outside the investment line | [Decision rights](10-decision-rights.md#independence-lives-in-the-rules) | Principles |
+| Self-service | Portfolio managers run what-ifs and read attribution on governed analyses the risk function owns and challenges | [Decision rights](10-decision-rights.md#self-service-and-challenge) | Working with AI, market risk |
+| One holder for each decision | Each decision is recorded with the one person or body that made it, however many contributed | [Decision rights](10-decision-rights.md#one-holder-for-each-decision) | That chapter only |
+| Roles | What the risk manager, head of risk, portfolio manager, adjacent owners and management each hold, and the core's responsibilities for methodology, rules and evaluation | [Decision rights](10-decision-rights.md#roles) | Working with AI |
 
 ## Exceptions and ranking
 

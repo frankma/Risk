@@ -8,8 +8,9 @@ chapter it illustrates.
 
 ## Investment risk, in three pillars
 A risk function is a check and balance on every portfolio's risk, and a service to the investment process under
-uncertainty ([philosophy](framework/00-philosophy.md#why-a-risk-function-exists)). Its recurring work answers three
-questions:
+uncertainty ([philosophy](framework/00-philosophy.md#why-a-risk-function-exists)). It is defined by the decisions it
+alone may make: the work is shared across the firm, the decisions are not ([decision
+rights](framework/10-decision-rights.md)). Its recurring work answers three questions:
 
 | Pillar | Question |
 |---|---|
@@ -69,11 +70,12 @@ follows beneath it. Reading the essentials in order gives the framework; the det
 | [New portfolio review](pillars/new-portfolio-review.md) | What must be in place before a portfolio launches or changes materially. |
 | [Alpha and beta method](pillars/alpha-and-beta-method.md) | How the split is computed, on three portfolios. |
 | **The redesign around AI** | |
-| [Principles](framework/05-principles.md) | Six principles for redesigning the work around AI, and what the risk manager adds. |
+| [Principles](framework/05-principles.md) | Seven principles for redesigning the work around AI, and what the risk manager adds. |
 | [Working with AI](framework/06-working-with-ai.md) | What "AI" means, three modes of working, what the AI reads, where a figure may come from and what the AI may do. |
 | [Redesign method](framework/07-redesign-method.md) | Seven steps to redesign one workflow. |
 | [Controls](framework/08-controls.md) | What makes a redesigned workflow safe to rely on, from the grounding check and automated actions to evaluation, incidents and fallback. |
 | [Measuring value](framework/09-measuring-value.md) | How to know a redesigned workflow works. |
+| [Decision rights](framework/10-decision-rights.md) | Who decides what once the work is shared: independence in the rules, self-service, one holder for each decision, and the roles. |
 | **Index** | |
 | [Concept map](framework/concept-map.md) | Every concept: what it is, where it is defined and which chapters use it. |
 

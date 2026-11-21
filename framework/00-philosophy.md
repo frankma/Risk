@@ -22,7 +22,8 @@ The rest of this chapter is the detail behind these points.
   strategy well enough to say "yes, and size it like this", not only "no".
 
 Both rest on the same measures. Oversight escalates, service informs, and the portfolio manager decides what to hold.
-Independence is what makes the service credible. The roles meet in three decisions:
+Independence is what makes the service credible, and it rests on the decisions only the risk function may make, which
+[decision rights](10-decision-rights.md) sets out. The roles meet in three decisions:
 
 | | Decision | Role | What risk provides |
 |---|---|---|---|

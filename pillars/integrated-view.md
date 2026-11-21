@@ -174,8 +174,9 @@ value](../framework/09-measuring-value.md). It is measured from replays of past 
 
 ## Ownership
 The risk function owns the view: its patterns, its grouping of drivers, its ranking rules and its footprint thresholds.
-The risk committee sees the top-ranked portfolios, each with its account and the signals behind it, and the firm's
-footprint, and decides what the firm should do.
+The risk committee reads the top-ranked portfolios in the [shared
+record](../framework/05-principles.md#7-hand-over-judgement-not-documents), each with its account and the signals
+behind it, and the firm's footprint, and receives a decision paper for what the firm should do, which it decides.
 
 ## Sources
 - Chen, Q., Goldstein, I. and Jiang, W. (2010). Payoff Complementarities and Financial Fragility: Evidence from Mutual

@@ -75,6 +75,10 @@ At the boundary, and owned elsewhere:
 A boundary is not a wall. Signals that matter to the owner of an adjacent risk, such as a holding flagged as unpriceable
 or a breach that may have a legal reading, are routed to that owner rather than resolved inside the pillar.
 
+A boundary divides decisions, not data or computation. The functions on either side work on the same analytics engine
+and read the same shared record under their own entitlements; what the table assigns is who decides, as [decision
+rights](10-decision-rights.md#who-decides-what) sets out.
+
 ## The three pillars
 Each pillar's outcome is at the top of this chapter, and its question opens its own chapter. The pillars overlap in data
 but not in question, and market and performance risk are divided by time.
