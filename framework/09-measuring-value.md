@@ -57,7 +57,7 @@ illustrative.**
 | Dimension | Measure | What it shows |
 |---|---|---|
 | Capacity | Deep-dive portfolio reviews per month | Whether the risk manager's time is going where the plan said |
-| Speed | Working days from month end to signed-off report | Whether the committee has time to act |
+| Speed | Working days from month end to the signed-off decision paper | Whether the committee has time to act |
 | Speed | Days from a threshold breach to an explanation | How soon the function understands a change |
 | Quality | Figure errors found in review per cycle | Whether the grounding check and reconciliation catch what a reviewer used to |
 | Quality | Parallel-run agreement on escalated items | Whether the redesigned workflow can be relied on |

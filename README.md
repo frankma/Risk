@@ -75,7 +75,7 @@ follows beneath it. Reading the essentials in order gives the framework; the det
 | [Redesign method](framework/07-redesign-method.md) | Seven steps to redesign one workflow. |
 | [Controls](framework/08-controls.md) | What makes a redesigned workflow safe to rely on, from the grounding check and automated actions to evaluation, incidents and fallback. |
 | [Measuring value](framework/09-measuring-value.md) | How to know a redesigned workflow works. |
-| [Decision rights](framework/10-decision-rights.md) | Who decides what once the work is shared: independence in the rules, self-service, one holder for each decision, and the roles. |
+| [Decision rights](framework/10-decision-rights.md) | Who decides what once the work is shared: independence in the rules, self-service, one holder for each decision, the roles and the size of the function. |
 | **Index** | |
 | [Concept map](framework/concept-map.md) | Every concept: what it is, where it is defined and which chapters use it. |
 

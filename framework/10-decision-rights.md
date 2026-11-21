@@ -18,9 +18,11 @@ exception, sets internal limits, judges what matters, challenges and escalates. 
 cannot agree. Compliance, pricing, independent validation and product governance hold the decisions [investment
 risk](01-investment-risk.md#scope-and-boundaries) assigns them.
 
-**The size of the core:** the rights stay the same whatever the size of the firm; the number of people who hold them
-changes. A small, senior core holds the oversight rights, owns the rules and controls, and learns the craft by
-investigating and judging.
+**The size of the function:** every firm needs a risk function. The rights stay the same whatever the size of the
+firm; the number of people who hold them changes. A small firm has one person, often in a combined role outside the
+investment line, with the analytics engine and the AI doing the work; a large firm has a dedicated team under one head
+of risk. Either way the holders own the rules and controls and learn the craft by investigating and judging. A right no
+one is named for falls to the portfolio manager.
 
 The rest of this chapter is the detail behind these points.
 
@@ -74,11 +76,12 @@ therefore sits with whoever owns the rules.
   and independent validation and internal audit test the rules and controls themselves, as
   [controls](08-controls.md#alignment-with-supervisory-expectations) sets out.
 - **The holders report outside the investment line.** The people who hold the oversight rights report to the head of
-  risk, who reports outside the investment line, and their pay does not depend on the results of the portfolios they
-  oversee.
+  risk, who reports outside the investment line.
 - **Independence is of judgement, not of data.** Both sides read the same analytics engine and the same shared record.
   A challenge then argues about what a figure means, never about whose figure is right, and every exposure, risk and
-  return can be explained by the same factors ([connection](00-philosophy.md#3-connection)).
+  return can be explained by the same factors ([connection](00-philosophy.md#3-connection)). One system is also one
+  point of error, and a wrong figure reaches both sides at once; reconciliation to source and independent validation
+  catch it, not a second system.
 
 ## Self-service and challenge
 The portfolio manager serves the Construct and Assess decisions themselves. Before a trade, they run a what-if; after a
@@ -93,8 +96,8 @@ decides whether to add one.
   unintended beta, is challenged in the pillar workflows whether or not the portfolio manager ran it.
 - **Figures from elsewhere are evidence to test.** A figure a portfolio manager brings that the analytics engine did not
   compute is tested as any explanation is, and is never stated as a fact.
-- **No risk staff report to the investment line.** A risk manager may work alongside an investment team, and still holds
-  the oversight right for its portfolios and reports to the head of risk.
+- **No risk staff report to the investment line.** A risk manager may be colocated with an investment team, and still
+  holds the oversight right for its portfolios and reports to the head of risk.
 
 ## One holder for each decision
 Shared work spreads the doing; the record keeps the deciding with one person. Each decision in the shared record carries
@@ -115,21 +118,50 @@ out.
 | Owners of adjacent risks and of data | Their own decisions, made on the same analytics engine and shared record, with what the risk function routes to them |
 | Management | Where AI enters the business, judged by the [measures of value](09-measuring-value.md), not by usage |
 
-Within the core, three responsibilities are held by named people:
+Within the core, three responsibilities are each held by a named person, because a responsibility everyone shares is in
+practice held by no one:
 
 - **Methodology.** What each risk measure and governed analysis computes, recorded and tested as each pillar's design
-  choices set out. The analytics engine runs as a platform for the whole firm; the risk function owns what its risk
-  figures mean.
+  choices set out. The analytics engine is the firm's infrastructure: one integrated system every function computes on.
+  The risk function owns what its risk figures mean, and any change to the system that alters a risk figure passes
+  through its change record. Each methodology is agreed with the functions that use it and reviewed with them on a set
+  cycle, and independent validation reviews it at first use and at each material change, so the risk function never
+  judges its own methods alone.
 - **Stewardship of the rules.** The governed parameters, their review cycle and their change record.
-- **Evaluation of the AI.** The evaluation sets, the seeded review tests and the test against the template, as
-  [evaluation](08-controls.md#evaluation) sets out.
+- **What the AI must get right.** The standard each AI step is held to: its evaluation set and the criteria set in
+  advance, the seeded review tests and the test against the template, as [evaluation](08-controls.md#evaluation) sets
+  out. Independent validation reviews the standard and validates each step against it.
 
 These are rights held by people, not separate teams; in a small core one person holds several.
 
-## The size of the core
-The rights do not change with the size of the firm; the number of people who hold them does. In a small firm one person
-may hold every oversight right. Where a firm cannot separate that person from the investment line, the safeguards that
-stand in for separation, such as the risk committee's review of the rules and of every accepted breach, are recorded.
+## The size of the function
+Every firm needs a risk function, and its size follows the firm's: the rights do not change, the number of people who
+hold them does.
+
+**A small firm** cannot afford people dedicated to the rights. One person holds them all, often with another role
+outside the investment line, and the analytics engine and the AI do the work.
+
+- **The analytics engine and the AI do the work.** The analytics engine checks every portfolio and ranks what it finds,
+  and the AI investigates each ranked item, drafts and challenges, as in any firm. The ranked items reach the holder
+  directly, never through the portfolio manager.
+- **A person holds the rights.** The holder owns the rules the analytics engine and the AI run on, decides what matters,
+  challenges, escalates, and signs or reviews each output. The role may be part-time and held with another outside the
+  investment line, such as an independent director or the head of operations.
+- **Every right is named.** A right no one is named for is held in practice by whoever makes the decision, usually the
+  portfolio manager, and then there is no check.
+- **The holder may sit outside the firm.** A group risk function, or a third party the firm delegates to, may hold the
+  rights, and records its decisions in the same shared record under the same rules.
+- **A holder inside the investment line needs safeguards.** Where a firm cannot separate the holder from the investment
+  line, a body outside it, such as the risk committee, approves every change to the rules and reviews every accepted
+  breach, and the arrangement is recorded with its reasons.
+- **The AI is no substitute for the holder.** However independent its challenge looks, its permissions and the rules
+  behind its queue are set by a person, and independence is that person's.
+
+**A large firm** has a dedicated team: holders who do nothing else, reporting to one head of risk. The team is sized by
+the portfolios that need judgement and the rules to look after, not by the outputs it produces, which the analytics
+engine and the AI make. Its members may be colocated with investment teams. What holds them together is the reporting
+line, one set of rules and one methodology, and review of each other's judgement, so that a breach one holder escalates
+is not accepted by another. The line also gives a challenge its standing.
 
 ## Learning the craft
 Supervising the analytics engine and the AI needs people who know what a normal reading looks like and can tell when a
