@@ -23,9 +23,9 @@ jobs:
         run: uv run --python 3.12 --with markdown==3.7 --with pytest pytest tools
       - name: Build the site
         run: |
-          mkdir -p _site/reader
-          cp -R docs/. _site/
-          uv run tools/build_reader.py _site/reader/index.html
+          mkdir -p _site/film
+          cp -R docs/. _site/film/
+          uv run tools/build_reader.py _site/index.html
       - if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
 
