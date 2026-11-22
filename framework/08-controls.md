@@ -262,7 +262,7 @@ towards these expectations where a supervisor's definition of AI covers them.
 The risk function tests its own AI steps day to day, through the grounding check, parallel runs and ongoing monitoring
 above, as part of the limits of its own measures and tools that it is responsible for. It is not the only judge of them.
 The independent validation function, which sits outside the risk function as set out in [investment
-risk](01-investment-risk.md), reviews each AI step and the grounding check at first use and at each material change: a
+risk](02-investment-risk.md), reviews each AI step and the grounding check at first use and at each material change: a
 new model, a changed prompt or template, a new analysis on the governed list or a change to the check itself. Internal
 audit tests that the controls operate as described, from the audit trail, the sign-offs and the change records. A firm
 should map these expectations to the specific requirements that apply to it.

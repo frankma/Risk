@@ -6,8 +6,8 @@ enough to be a new portfolio in all but name?
 
 **The outcome:**
 
-> Before a portfolio launches or changes materially, the risk function knows that its mandate can be monitored as
-> promised, and has put its view on record.
+> Before a portfolio launches or changes materially, confirmation that its mandate can be monitored as promised, with
+> the risk function's view on record.
 
 **How the work is done:** the review computes nothing of its own. The AI extracts the draft mandate terms from the
 documents, and the analytics engine shows any expected term it did not find as a gap. The analytics engine runs the

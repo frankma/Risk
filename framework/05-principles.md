@@ -103,8 +103,7 @@ Each workflow's output is defined by which items in the record each reader reads
 
 ## What the risk manager adds
 In a redesigned process the system produces the outputs, and the risk manager's time goes to the work only a person can
-do, in both of the function's [roles](00-philosophy.md#why-a-risk-function-exists): check and balance, and serving the
-investment process.
+do, in both of the function's [purposes](00-philosophy.md#why-a-risk-function-exists): challenge and service.
 
 The value a risk manager adds is not the sign-off. The sign-off is how a person is held accountable for an output; what
 they add is what goes into it.

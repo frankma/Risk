@@ -1,27 +1,26 @@
-# Investment risk
+# What investment risk means
 
 ## The essentials
-**The definition:** investment risk is the chance that a portfolio's outcome departs from what its mandate intends: a
-loss, a shortfall against its objective or benchmark, or an inability to meet calls on its cash, such as redemptions,
-arising from what the portfolio holds and how it is funded, not from how the firm operates.
+**Investment risk** is the chance that a portfolio's outcome departs from what its mandate intends: a loss, a shortfall
+against its objective or benchmark, or an inability to meet calls on its cash. It arises from the investment decisions
+and how the portfolio is funded, not from how the firm operates.
 
-**The mandate is the reference point:** risk is measured against the promise, not against zero. The three kinds of
-departure are distinct failures with distinct causes, and each maps to one pillar.
+**The mandate is the reference point:** risk is measured against the promise, in both directions: a portfolio that takes
+more risk than its mandate intends misses it, and so does one that takes far less. The three kinds of departure are
+distinct failures with distinct causes, and each maps to one pillar. Performance is one of them because risk and
+performance are read together.
 
-**Three pillars organise the recurring work.** They are a lens on workflows, not a taxonomy of risks. Each pillar's
-question opens its own chapter.
+**Three pillars:** three questions asked of one integrated web of signals, each serving decisions. They are a lens on
+the work, not a taxonomy of risks or a set of teams. Each pillar's question opens its own chapter.
 
 | Pillar | Outcome |
 |---|---|
-| [Market risk](../pillars/market-risk.md) | The risk manager knows, every day, which portfolios carry more risk than their mandate intends, absolute or relative, and why |
-| [Liquidity risk](../pillars/liquidity-risk.md) | The risk manager knows whether each portfolio can meet plausible calls on its cash in time and at a fair cost, and whether the tools for managing liquidity are ready if it cannot |
-| [Performance risk](../pillars/performance-risk.md) | The risk manager can show, with evidence, whether each portfolio is meeting its objective and whether its returns come from the sources its mandate describes |
-
-**The scope:** every fund and segregated mandate, except money market funds, exchange-traded funds and advised model
-portfolios. Risks from how the firm operates are owned elsewhere.
+| [Market risk](../pillars/market-risk.md) | Every day, which portfolios carry more or less risk than their mandate intends, absolute or relative, and why |
+| [Liquidity risk](../pillars/liquidity-risk.md) | Whether each portfolio can meet plausible calls on its cash in time and at a fair cost, and whether the tools for managing liquidity are ready if it cannot |
+| [Performance risk](../pillars/performance-risk.md) | Evidence of whether each portfolio is meeting its objective and whether its returns come from the sources its mandate describes |
 
 **The pillars connect:** the most damaging episodes pass through all three, and the [integrated
-view](../pillars/integrated-view.md) watches the signals together.
+view](../pillars/integrated-view.md) reads their signals as one web.
 
 The rest of this chapter is the detail behind these points. The beliefs behind the definition are in the
 [philosophy](00-philosophy.md).
@@ -56,9 +55,6 @@ Within scope, and handled inside the pillar workflows:
   sets and challenges them.
 - **The limits of the risk function's own measures,** including any AI step, are tested in every pillar.
 
-Counterparty, valuation and model risk are therefore split. Investment risk measures and monitors; approval, pricing and
-independent validation sit with functions independent of the measure's user.
-
 At the boundary, and owned elsewhere:
 
 | Risk | What it covers | Why it sits outside |
@@ -85,10 +81,12 @@ but not in question, and market and performance risk are divided by time.
 
 | | Market risk | Liquidity risk | Performance risk |
 |---|---|---|---|
+| **How the mandate fails** | The portfolio takes more or less risk than the mandate intends | The portfolio cannot meet a call on its cash in time and at a fair cost | The portfolio does not deliver what was promised, in the way it was promised |
 | **Lens** | What could happen, from today's holdings, absolute and relative | Calls on cash against what the portfolio can raise | What did happen, and whether the promise is kept |
-| **Covers** | Value at risk, expected shortfall and volatility; ex-ante tracking error and the risk budget; sensitivities; concentration; stress, reverse stress and the drawdown headroom they leave; pre-trade what-ifs; leverage; counterparty exposure | Time and cost to sell, leaving out encumbered assets; every call on cash the vehicle faces; redemption coverage; readiness of liquidity management tools; stale and unpriceable holdings | Outcome against benchmark, peers or objective; ex-post tracking error and realised drawdown; attribution, including the split between the [sources of return](02-sources-of-return.md); active share and style drift; risk-adjusted returns |
+| **Data it rests on** | Holdings, market prices and factor exposures | Holdings, market depth and trading cost, dealing terms and investor flows | Returns, the benchmark or objective, and the holdings and exposures behind them |
+| **Covers** | Value at risk, expected shortfall and volatility; ex-ante tracking error and the risk budget; sensitivities; concentration; stress, reverse stress and the drawdown headroom they leave; pre-trade what-ifs; leverage; counterparty exposure | Time and cost to sell, leaving out encumbered assets; every call on cash the vehicle faces; redemption coverage; readiness of liquidity management tools; stale and unpriceable holdings | Outcome against benchmark, peers or objective; ex-post tracking error and realised drawdown; attribution, including the split between the [sources of return](01-sources-of-return.md); active share and style drift; risk-adjusted returns |
 | **Typical triggers** | A limit breach; a large move | Falling coverage; a large redemption or margin call | Significant underperformance |
-| **Main audience** | Risk and portfolio managers | Risk managers, fund boards | Portfolio managers, investment oversight |
+| **Main audience** | Risk managers and investment teams | Risk managers, fund boards | Investment teams, investment oversight |
 
 Two rules keep the pillars apart.
 

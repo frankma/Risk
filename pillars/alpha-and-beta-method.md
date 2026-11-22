@@ -4,10 +4,10 @@
 **The question:** how much of a portfolio's return is beta, and how much is alpha?
 
 **The rule:** the split rests on three portfolios: the benchmark portfolio, the top-down portfolio and the real
-portfolio. The benchmark portfolio's return above the risk-free rate is policy beta. The step from it to the top-down
-portfolio is active beta, where all market and factor exposure is measured, whether an allocation call set it or a
-security pick carried it. Alpha is the step from the top-down portfolio to the real portfolio: the add-on return from
-security selection, once the top-down portfolio has carried all the beta out.
+portfolio. The benchmark portfolio's return above the risk-free rate is policy beta. The increment from it to the
+top-down portfolio is active beta, where all market and factor exposure is measured, whether an allocation call set it
+or a security pick carried it. Alpha is the increment from the top-down portfolio to the real portfolio: the add-on
+return from security selection, once the top-down portfolio has carried all the beta out.
 
 **How the work is done:** within [attribution reporting](performance-risk.md#workflows-in-this-pillar), the analytics
 engine builds the top-down portfolio each day, computes the split and checks that it reconciles; a split that does not
@@ -17,10 +17,10 @@ whether beta was intended and which questions to put to the portfolio manager, w
 
 **Alpha depends on a declared list:** it is what the declared factors leave unexplained. When an ETF or a future can
 replicate a return, it joins the list. Each declared factor is tagged with the [return
-generator](../framework/02-sources-of-return.md#what-generates-return) that pays it, a market risk premium or a style
+generator](../framework/01-sources-of-return.md#what-generates-return) that pays it, a market risk premium or a style
 premium, so that beta can be read by generator and alpha is read as skill.
 
-This chapter is a companion to [sources of return](../framework/02-sources-of-return.md) and [performance
+This chapter is a companion to [how return is earned](../framework/01-sources-of-return.md) and [performance
 risk](performance-risk.md). The rest of it is the detail behind these points.
 
 ## Scope and basis
@@ -41,22 +41,22 @@ an investable stand-in or cash serves as the benchmark portfolio, and the gap is
 | Top-down portfolio | Investable ETFs, futures and cash, carrying the real portfolio's exposure to every declared factor on each day | Active beta, after the cost of holding it: its return less the benchmark portfolio's |
 | Real portfolio | The portfolio's actual holdings | Alpha: its return less the top-down portfolio's |
 
-The real portfolio's gross return is the benchmark portfolio's return plus the two steps, so no line is what a model
-leaves over.
+The real portfolio's gross return is the benchmark portfolio's return plus the two increments, so no line is what a
+model leaves over.
 
 The top-down portfolio follows exposure as held, not as called. If it held only the calls on record, the beta that
-security picks carry would stay in the last step and be counted as alpha. Because it holds all of the real portfolio's
-exposure, the last step is selection alone, and the record divides the step before it.
+security picks carry would stay in the last increment and be counted as alpha. Because it holds all of the real
+portfolio's exposure, the last increment is selection alone, and the record divides the increment before it.
 
 ## The beta lines
-The [sources of return](../framework/02-sources-of-return.md#who-chose-each-part) chapter groups top-down return by
+The [how return is earned](../framework/01-sources-of-return.md#who-chose-each-part) chapter groups top-down return by
 whose call it was. The method keeps the decision-maker's branch as two lines, because timing needs its own skill test.
-Policy beta is the benchmark portfolio's return above the risk-free rate, and the other lines divide the step from the
-benchmark portfolio to the top-down portfolio.
+Policy beta is the benchmark portfolio's return above the risk-free rate, and the other lines divide the increment from
+the benchmark portfolio to the top-down portfolio.
 
 | Line | What it is | Who decides |
 |---|---|---|
-| Policy beta | The return, above the risk-free rate, of the benchmark or strategic allocation in the governing documents | [Whoever set the mandate](../framework/02-sources-of-return.md#who-chose-each-part) |
+| Policy beta | The return, above the risk-free rate, of the benchmark or strategic allocation in the governing documents | [Whoever set the mandate](../framework/01-sources-of-return.md#who-chose-each-part) |
 | Tilts | Standing positions against that allocation, recorded when taken | Whoever recorded it |
 | Timing | The return from recorded changes in exposure over time | Whoever recorded it |
 | Unintended beta | Any exposure with no record that anyone chose it, including price drift | Nobody |
@@ -98,7 +98,7 @@ takes that exposure on as index futures worth 1% of net assets. With the market 
 leaves the book and joins beta. No call is on record for it, so it is unintended beta. (The figures are illustrative,
 and leave out the cost of holding the instruments.)
 
-| Portfolio | Return from the sector | Step | Line |
+| Portfolio | Return from the sector | Increment | Line |
 |---|---|---|---|
 | Benchmark portfolio | 0.87% | 0.87% | Risk-free return and policy beta |
 | Top-down portfolio, bucket weights | 1.09% | +0.22% | Tilt, on record |
@@ -125,8 +125,8 @@ run](market-risk.md#factors), from daily holdings; measuring it as often as call
 in beta. The same split applies to risk, using the same instruments: factor risk is beta and stock-specific risk is
 alpha.
 
-Because exposure is each day's weights times betas estimated over a long window, the last step is neutral to estimated
-exposure, not to a true exposure no one can observe.
+Because exposure is each day's weights times betas estimated over a long window, the last increment is neutral to
+estimated exposure, not to a true exposure no one can observe.
 
 ## Computing the split
 The analytics engine compares the top-down portfolio's positions with the benchmark portfolio, the confirmed mandate

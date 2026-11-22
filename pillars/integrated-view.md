@@ -6,8 +6,7 @@ escalate?
 
 **The outcome:**
 
-> The risk function knows which portfolios have signals combining across pillars, and why, before any one pillar would
-> escalate them.
+> Which portfolios have signals combining across pillars, and why, before any one pillar would escalate them.
 
 **How the work is done:** the view computes no measure of its own. The analytics engine reads the signals the three
 pillars already produce, for every portfolio every day, applies rules for the combinations that matter, ranks the
