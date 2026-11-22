@@ -7,7 +7,7 @@ workflow as it stands. The unit of change is the workflow, not the task.
 | # | Principle | In one line |
 |---|---|---|
 | 1 | Redesign, don't insert | Start from the outcome, then rebuild the steps. |
-| 2 | The analytics engine computes, AI interprets and narrates, a human judges | Each kind of work goes to the owner suited to it. |
+| 2 | The analytics engine computes, the AI interprets and narrates, a person judges | Each kind of work goes to the owner suited to it. |
 | 3 | The AI never fabricates a number | Every figure has a recorded computation behind it; generated text is checked against it. |
 | 4 | Exceptions over everything | The system reviews every portfolio; the human reviews what is material. |
 | 5 | Decide what the risk manager's time is for before starting | Time that is not directed is absorbed by existing work. |
@@ -34,7 +34,7 @@ from the existing steps and asking which of them AI can speed up.
 outputs are stopped (step 2), and steps that exist only because the old process was slow are removed rather than
 automated (step 4).
 
-### 2. The analytics engine computes, AI interprets and narrates, a human judges
+### 2. The analytics engine computes, the AI interprets and narrates, a person judges
 **What it means.** Each kind of work goes to its owner: the analytics engine, the deterministic part of the system,
 computes; the AI, which here means the language model, interprets, investigates, drafts, extracts and challenges a
 conclusion against the data; and the risk manager judges, escalates and signs off. When the AI's work needs a figure,

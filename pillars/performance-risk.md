@@ -23,11 +23,11 @@ record until they are closed.
 | 1 | Track realised return, ex-post tracking error, drawdown, active share, information ratio, factors and peer position | Analytics engine |
 | 2 | Test exposures against the mandate terms; flag drift and unintended bets | Analytics engine |
 | 3 | Rank the portfolio's issues, with market risk's tracking error and risk budget exceptions; run the analyses set for each issue's rule | Analytics engine |
-| 4 | Follow up where the findings point further, with the record of earlier reviews; draft the challenge pack: issues and questions, linked to their evidence | AI assistant |
+| 4 | Follow up where the findings point further, with the record of earlier reviews; draft the challenge pack: issues and questions, linked to their evidence | AI |
 | 5 | Grounding check on the pack | Analytics engine |
 | 6 | Review and edit the pack; set the agenda; publish the pack's items to the shared record | Risk manager |
 | 7 | Run the meeting on the risk function's agenda; note each explanation and agreed action | Risk manager |
-| 8 | Test the explanations noted against the data; draft the minutes and the action log from the notes and the pack, with what supports and what contradicts each | AI assistant |
+| 8 | Test the explanations noted against the data; draft the minutes and the action log from the notes and the pack, with what supports and what contradicts each | AI |
 | 9 | Edit and agree the minutes and actions | Risk manager |
 | 10 | Track follow-ups; escalate overdue actions to the watch list | Analytics engine |
 

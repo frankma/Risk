@@ -22,11 +22,11 @@ head of risk.
 | # | Step | Owner |
 |---|---|---|
 | 1 | Detect the breach; check it against recorded data breaks; classify it as active or passive; decide whether a governed rule covers its notice | Analytics engine |
-| 2 | Explain what the checks found; close a breach the engine matched to a data break; draft the notice to the portfolio manager, investment oversight and the head of risk, and send it, once the grounding check in step 3 passes, where the engine found the rule covers it | AI assistant |
+| 2 | Explain what the checks found; close a breach the engine matched to a data break; draft the notice to the portfolio manager, investment oversight and the head of risk, and send it, once the grounding check in step 3 passes, where the engine found the rule covers it | AI |
 | 3 | Grounding check on the notice | Analytics engine |
 | 4 | Confirm the breach and its classification; send a notice the rule does not cover; review the same day what the AI sent or closed | Risk manager |
 | 5 | Record the portfolio manager's explanation | Analytics engine |
-| 6 | Test the portfolio manager's explanation against the data; draft the decision note with what supports and what contradicts it, citing how similar breaches were decided | AI assistant |
+| 6 | Test the portfolio manager's explanation against the data; draft the decision note with what supports and what contradicts it, citing how similar breaches were decided | AI |
 | 7 | Agree the decision: rectify, or accept for a set period; take a disagreement to the risk committee | Portfolio manager and risk manager |
 | 8 | Approve an acceptance for a set period | Head of risk |
 | 9 | Track the rectification to its deadline; escalate a missed deadline | Analytics engine |

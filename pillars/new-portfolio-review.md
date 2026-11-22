@@ -18,14 +18,14 @@ soon as draft documents exist.
 
 | # | Step | Owner |
 |---|---|---|
-| 1 | Extract the draft mandate terms, each linked to its passage | AI assistant |
+| 1 | Extract the draft mandate terms, each linked to its passage | AI |
 | 2 | Check the terms against those expected for the portfolio's type; show each missing term as a gap | Analytics engine |
 | 3 | Confirm the terms; request the model portfolio | Risk manager |
 | 4 | Run the pillars' measures on the model portfolio; test the benchmark and the liquidity profile | Analytics engine |
 | 5 | Check data readiness; propose internal limits, early warnings and the alpha and beta construction | Analytics engine |
 | 6 | Consult the portfolio manager; decide the early warnings and the construction; put the internal limits to the head of risk | Risk manager |
 | 7 | Approve the first internal limits | Head of risk |
-| 8 | Draft the readiness summary | AI assistant |
+| 8 | Draft the readiness summary | AI |
 | 9 | Grounding check on the summary | Analytics engine |
 | 10 | Write the opinion and any conditions | Risk manager |
 | 11 | Sign off the opinion, which goes to product governance for its decision | Head of risk |

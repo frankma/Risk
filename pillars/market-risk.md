@@ -18,10 +18,10 @@ manager, or reviews the same day a breach notice a governed rule lets the AI sen
 | 1 | Load data, compute every measure, compare to limits and the previous day | Analytics engine |
 | 2 | Decompose each change by position and risk factor | Analytics engine |
 | 3 | Rank portfolios by materiality; run the analyses set for each flagged item's rule | Analytics engine |
-| 4 | Follow up where the findings point further; draft an explanation | AI assistant |
+| 4 | Follow up where the findings point further; draft an explanation | AI |
 | 5 | Grounding check on every draft | Analytics engine |
 | 6 | Review the ranked queue, edit explanations, decide what matters; sign off what is published to the shared record | Risk manager |
-| 7 | Draft the question to the portfolio manager, linked to its item in the shared record | AI assistant |
+| 7 | Draft the question to the portfolio manager, linked to its item in the shared record | AI |
 | 8 | Edit and send the question; confirm the judgement on record | Risk manager |
 
 **What reaches the risk manager:** a ranked queue. An exception is a reading that has crossed a limit or another rule's

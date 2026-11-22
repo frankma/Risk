@@ -157,7 +157,7 @@ def render(vid, source):
 
 def readme_parts():
     text = (REPO / "README.md").read_text()
-    owners = r"Analytics engine|AI assistant|The risk manager and head of risk"
+    owners = r"Analytics engine|AI|The risk manager and head of risk"
     rows = [(w, o, y or "") for w, o, y in
             re.findall(rf"^\| (.+?) \| ({owners}) \|(?: (.+?) \|)?$", text, flags=re.M)]
     # The two rules: an intro line and the bullet list after it, up to the next heading.

@@ -1,7 +1,7 @@
 # Working with AI
 
 ## The essentials
-**The rule:** the analytics engine computes, the AI interprets and narrates, and a person judges.
+**The rule:** the analytics engine computes, the AI interprets and narrates, a person judges.
 
 **What "AI" means:** the language model that investigates, drafts, extracts and challenges. Statistical and
 machine-learning models, such as a flow forecast or a market impact model, are part of the analytics engine: fitted,

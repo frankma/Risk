@@ -27,7 +27,7 @@ selection earns alpha: the return left once beta is carved out, paid by skill. P
 portfolio's return along this line; see [how return is earned](framework/01-sources-of-return.md).
 
 ## The core pattern
-**The analytics engine computes, AI interprets and narrates, a human judges.**
+**The analytics engine computes, the AI interprets and narrates, a person judges.**
 
 Each workflow is redesigned around this pattern, not handed an AI tool. The analytics engine is the deterministic part
 of the system, where the same data always gives the same figure and every figure can be traced and reproduced.
@@ -35,7 +35,7 @@ of the system, where the same data always gives the same figure and every figure
 | Work | Owner |
 |---|---|
 | Gathering data, calculating, comparing to limits | Analytics engine |
-| Investigating each exception through the analytics engine, drafting, challenging conclusions, extracting from documents, notices and minutes | AI assistant |
+| Investigating each exception through the analytics engine, drafting, challenging conclusions, extracting from documents, notices and minutes | AI |
 | Checking the work, challenging it, judging what matters to the portfolio and its intended risk profile, and deciding | The risk manager and head of risk |
 
 Two rules make it work:
