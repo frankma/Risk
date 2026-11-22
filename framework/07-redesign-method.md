@@ -56,14 +56,14 @@ Each tagged step is assigned to one owner, following the core pattern.
 | Tag | Owner |
 |---|---|
 | Gather, Compute | Analytics engine |
-| Extract | AI assistant; the risk manager's confirmation of each record is a step of its own |
-| Interpret, Communicate | AI assistant, which follows up through the analytics engine and drafts from what it computed; the risk manager's edit and approval is a step of its own |
+| Extract | The AI; the risk manager's confirmation of each record is a step of its own |
+| Interpret, Communicate | The AI, which follows up through the analytics engine and drafts from what it computed; the risk manager's edit and approval is a step of its own |
 | Judge, Approve | The holder of the decision, as [decision rights](10-decision-rights.md#who-decides-what) sets out: for oversight, the risk manager, or the head of risk for escalation and sign-off |
 | Steps that exist only because the old process was slow | Eliminated |
 
 The last row matters as much as the others. Re-keying figures between systems, reformatting tables, reconciling two
 copies of the same number and chasing people for inputs exist because the manual process needed them. They are removed,
-not handed to the analytics engine or the AI assistant.
+not handed to the analytics engine or the AI.
 
 ### 5. Redesign the flow
 In the redesigned workflow the system produces the output, and the human reviews the exceptions. Four changes follow.
@@ -122,7 +122,7 @@ risk, who now decides on the risk manager's proposal.
 | # | Step | Owner |
 |---|---|---|
 | 1 | Load data, compute measures, compare to thresholds, rank exceptions; run the analyses set for each exception's rule | Analytics engine |
-| 2 | Follow up where the findings point further; draft an explanation from the findings | AI assistant |
+| 2 | Follow up where the findings point further; draft an explanation from the findings | AI |
 | 3 | Grounding check on every draft | Analytics engine |
 | 4 | Review exceptions, edit explanations, propose what to escalate | Risk manager |
 | 5 | Decide what to escalate; sign off the decision paper, with each exception linked to the shared record | Head of risk |

@@ -17,7 +17,7 @@ each ranked break and decides whether to run the day's measures, wait or mark th
 | 2 | Reconcile positions to accounting values; check prices against each security's history | Analytics engine |
 | 3 | Apply proxies under the policy and flag them | Analytics engine |
 | 4 | Rank breaks by the portfolios and measures they affect | Analytics engine |
-| 5 | Draft a notice for each break to the owner of its source | AI assistant |
+| 5 | Draft a notice for each break to the owner of its source | AI |
 | 6 | Grounding check on every notice | Analytics engine |
 | 7 | Judge each ranked break; decide whether to run, wait or mark | Risk manager |
 | 8 | Edit and send the notices | Risk manager |

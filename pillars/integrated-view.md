@@ -18,7 +18,7 @@ risk.
 |---|---|---|
 | 1 | Read every pillar's signals for every portfolio; align them by date | Analytics engine |
 | 2 | Apply the pattern and combination rules; rank portfolios; run the analyses set for each ranked portfolio's pattern | Analytics engine |
-| 3 | Follow up where the findings point further; draft an account | AI assistant |
+| 3 | Follow up where the findings point further; draft an account | AI |
 | 4 | Grounding check on every account | Analytics engine |
 | 5 | Assemble the committee view from the top-ranked portfolios | Analytics engine |
 | 6 | Judge each ranked portfolio; add it to the watch list or escalate it to the head of risk | Risk manager |

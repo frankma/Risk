@@ -3,7 +3,7 @@
 ## The essentials
 Fundamentally, a portfolio's return is driven by two decisions: **top-down views** on which markets to hold, how much
 and for how long, and **bottom-up selection** of the securities within them. They are two sources with different skills,
-often with different decision holders, and they need to work together toward one result.
+often with different decision-makers, and they need to work together toward one result.
 
 Loosely, top-down views earn beta: any return above the risk-free rate that an index fund or a future could have
 delivered, paid by market risk premia and style premia. Bottom-up selection earns alpha: the return left once beta is
@@ -12,7 +12,7 @@ carved out, paid by skill.
 [Performance risk](../pillars/performance-risk.md) dissects each portfolio's return along this line, on three
 portfolios. The benchmark portfolio's return above the risk-free rate is policy beta, the increment from it to the
 top-down portfolio is active beta, and the increment from the top-down portfolio to the real portfolio is alpha. Because
-the two sources sit with different skills and decision holders, a clear attribution lets each call be judged on its
+the two sources sit with different skills and decision-makers, a clear attribution lets each call be judged on its
 merits and supports a fair reward system that encourages more right calls, for the longevity of the team and the firm.
 The [alpha and beta method](../pillars/alpha-and-beta-method.md) sets out the computation.
 

@@ -81,8 +81,8 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 
 | Concept | What it is | Defined in | Used by |
 |---|---|---|---|
-| Core pattern | The analytics engine computes, AI interprets and narrates, a human judges | [Principles](05-principles.md#2-the-analytics-engine-computes-ai-interprets-and-narrates-a-human-judges) | Every chapter |
-| Analytics engine | The deterministic part of the system, and the firm's one integrated system every function computes on: the same data always gives the same figure | [Principles](05-principles.md#2-the-analytics-engine-computes-ai-interprets-and-narrates-a-human-judges) | Every chapter |
+| Core pattern | The analytics engine computes, the AI interprets and narrates, a person judges | [Principles](05-principles.md#2-the-analytics-engine-computes-the-ai-interprets-and-narrates-a-person-judges) | Every chapter |
+| Analytics engine | The deterministic part of the system, and the firm's one integrated system every function computes on: the same data always gives the same figure | [Principles](05-principles.md#2-the-analytics-engine-computes-the-ai-interprets-and-narrates-a-person-judges) | Every chapter |
 | AI | The language model that investigates, drafts, extracts and challenges; statistical models belong to the analytics engine | [Working with AI](06-working-with-ai.md#the-essentials) | Every chapter but how return is earned |
 | Modes of working | Prepare, investigate and challenge: how a person and the AI work together | [Working with AI](06-working-with-ai.md#three-modes-of-working) | Limits and escalation, market risk, liquidity risk, performance risk |
 | Investigation in Prepare | The follow-up analyses the AI chooses for each ranked item, within a cap, after the analytics engine has run the analyses set for its kind of rule | [Working with AI](06-working-with-ai.md#three-modes-of-working) | Principles, redesign method, controls, market risk, liquidity risk, performance risk, integrated view |
@@ -96,7 +96,7 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 | Seven steps | How one workflow is redesigned, from outcome to measured result | [Redesign method](07-redesign-method.md#the-seven-steps) | All pillars |
 | Step tags | Gather, Extract, Compute, Interpret, Judge, Communicate, Approve / Wait | [Redesign method](07-redesign-method.md#3-map-the-current-state) | That chapter only |
 | Risk manager's value | Judging what matters to the portfolio and its intended risk profile, bringing clarity to the risks being taken, challenge, deciding what the system flags and judgement where the data runs out; the sign-off is the accountability | [Principles](05-principles.md#what-the-risk-manager-adds) | README, working with AI, measuring value |
-| Owners | Who or what does each step: the analytics engine, the AI assistant, or the person who holds the decision | [Redesign method](07-redesign-method.md#4-assign-each-step-an-owner) | That chapter only |
+| Owners | Who or what does each step: the analytics engine, the AI, or the person who holds the decision | [Redesign method](07-redesign-method.md#4-assign-each-step-an-owner) | That chapter only |
 | Four dimensions of value | Capacity, speed, quality and influence | [Measuring value](09-measuring-value.md#four-dimensions) | All pillars |
 | Baseline | The value of each measure before anything changes | [Measuring value](09-measuring-value.md#baseline-first) | Redesign method |
 | Plan for the risk manager's time | What the risk manager's time will go to, decided in advance | [Measuring value](09-measuring-value.md#a-plan-for-the-risk-managers-time) | Principles, redesign method |

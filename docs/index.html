@@ -232,7 +232,7 @@ figure { margin: 0; }
           </g>
           <g class="fx fade" style="--d:7s">
             <path class="rule" d="M40 200 H200"/>
-            <text class="hd" x="40" y="226">AI assistant</text>
+            <text class="hd" x="40" y="226">AI</text>
             <text class="s" x="40" y="250">follows up, then drafts</text>
           </g>
           <text class="s fx fade" x="40" y="272" style="--d:12.2s">investigates when asked</text>
@@ -569,7 +569,7 @@ figure { margin: 0; }
 
         <!-- 5 Limits and escalation: the lifecycle loop around the analytics engine and the AI; dotted lines show who is
              involved at each stage; AI shortcuts close what needs no decision; red side tracks escalate -->
-        <svg class="scene" style="--k:1.5" viewBox="0 0 800 560" role="img" aria-label="The breach lifecycle as a continuous loop around the analytics engine and the AI assistant. Dotted lines show who is involved at each stage: the engine detects; the engine verifies and classifies, the AI explains what the checks found and the risk manager confirms; the AI sends a routine notice under a rule and the risk manager reviews it, with the portfolio manager, investment oversight and the head of risk told; the portfolio manager explains it, the AI tests the explanation against the data, and the two managers agree the decision, with the head of risk approving any acceptance; the portfolio manager rectifies while the engine tracks; the risk manager reports the close to the head of risk. The AI closes a breach that came from a data break. A disagreement goes to the risk committee, a committee of the executive committee, whose decision binds; what it cannot resolve goes to the executive committee, and the board is the last resort. A hard limit breach goes to compliance the same day." hidden>
+        <svg class="scene" style="--k:1.5" viewBox="0 0 800 560" role="img" aria-label="The breach lifecycle as a continuous loop around the analytics engine and the AI. Dotted lines show who is involved at each stage: the engine detects; the engine verifies and classifies, the AI explains what the checks found and the risk manager confirms; the AI sends a routine notice under a rule and the risk manager reviews it, with the portfolio manager, investment oversight and the head of risk told; the portfolio manager explains it, the AI tests the explanation against the data, and the two managers agree the decision, with the head of risk approving any acceptance; the portfolio manager rectifies while the engine tracks; the risk manager reports the close to the head of risk. The AI closes a breach that came from a data break. A disagreement goes to the risk committee, a committee of the executive committee, whose decision binds; what it cannot resolve goes to the executive committee, and the board is the last resort. A hard limit breach goes to compliance the same day." hidden>
           <defs>
             <marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" style="fill:var(--ink)"/></marker>
             <marker id="ah-beni" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" style="fill:var(--beni)"/></marker>
@@ -582,7 +582,7 @@ figure { margin: 0; }
           <text class="hd fx fade" x="40" y="30" style="--d:.1s">The breach lifecycle: a loop that never stops</text>
           <path class="ln draw fx" pathLength="1" d="M290 80 A165 165 0 1 1 289.9 80" style="--d:.2s;--t:1.2s"/>
           <text class="hd fx fade" x="290" y="232" text-anchor="middle" style="--d:.4s;font-size:14px">Analytics engine</text>
-          <text class="hd fx fade" x="290" y="270" text-anchor="middle" style="--d:.5s;font-size:14px;fill:var(--ai)">AI assistant</text>
+          <text class="hd fx fade" x="290" y="270" text-anchor="middle" style="--d:.5s;font-size:14px;fill:var(--ai)">AI</text>
           <g id="flashes"></g>
           <g id="life2"></g>
           <g id="parties"></g>
@@ -648,7 +648,7 @@ figure { margin: 0; }
 
           <!-- 3 the AI follows up once, drafts, and the engine checks the draft -->
           <path class="rule draw fx" pathLength="1" d="M410 52 H600" style="--d:7.3s;stroke:var(--ai)"/>
-          <text class="hd fx fade" x="410" y="72" style="--d:7.4s;font-size:14px;fill:var(--ai)">AI assistant</text>
+          <text class="hd fx fade" x="410" y="72" style="--d:7.4s;font-size:14px;fill:var(--ai)">AI</text>
           <text class="k fx fade" x="410" y="90" style="--d:7.5s;font-size:12.5px">follows up, then drafts</text>
           <rect class="fx pop" x="410" y="106" width="9" height="9" style="--d:7.8s;fill:var(--ai)"/>
           <text class="fx fade" x="426" y="115" style="--d:8s;font-size:12.5px">Run 3, its follow-up:</text>
@@ -826,7 +826,7 @@ figure { margin: 0; }
     el('text', { x: 250, y: 92, class: 'hd fx fade', style: '--d:11.9s' }, g, 'VaR, near its limit');
     el('text', { x: 760, y: 92, 'text-anchor': 'end', class: 'hd fx fade', style: '--d:11.9s;font-size:15px' }, g, 'Watch');
     who(250, 120, 'Risk manager', 12.3); say(120, 'Why is VaR this close to its limit?', 12.3);
-    who(250, 148, 'AI assistant', 13.2); say(148, 'VaR by factor, run through the analytics engine:', 13.2);
+    who(250, 148, 'AI', 13.2); say(148, 'VaR by factor, run through the analytics engine:', 13.2);
     const parts = [['rates', 45, 'f-washi'], ['equity', 30, 'f-line'], ['credit', 15, 'f-washi'], ['specific', 10, 'f-line']];
     let x = 360;
     parts.forEach(([n, v, f], i) => {
@@ -843,9 +843,9 @@ figure { margin: 0; }
     el('path', { d: 'M250 268 H760', class: 'rule fx draw', pathLength: 1, style: '--d:17s' }, g);
     el('text', { x: 250, y: 290, class: 'hd fx fade', style: '--d:17.1s' }, g, 'Tracking error, over budget');
     el('text', { x: 760, y: 290, 'text-anchor': 'end', class: 'hd acc fx fade', style: '--d:17.1s;font-size:15px' }, g, 'Exception');
-    who(250, 314, 'AI assistant', 17.6); say(314, 'Draft: the rise comes from stock selection.', 17.6);
+    who(250, 314, 'AI', 17.6); say(314, 'Draft: the rise comes from stock selection.', 17.6);
     who(250, 337, 'Risk manager', 18.8); say(337, 'Push back: check that against the factors.', 18.8, 's acc');
-    who(250, 360, 'AI assistant', 20.2); say(360, 'Rerun by factor: value went from 0.5 to 1.1 points.', 20.2);
+    who(250, 360, 'AI', 20.2); say(360, 'Rerun by factor: value went from 0.5 to 1.1 points.', 20.2);
     say(382, 'No tilt is on record, so it is unintended beta.', 21.4);
     who(250, 404, 'Risk manager', 22.8); say(404, 'Ask the portfolio manager: was it intended?', 22.8, 't2');
   })();

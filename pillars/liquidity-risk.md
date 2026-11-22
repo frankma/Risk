@@ -20,13 +20,13 @@ portfolio and makes any recommendation on liquidity management tools.
 |---|---|---|
 | 1 | Compute each portfolio's liquidity profile and redemption coverage | Analytics engine |
 | 2 | Monitor flows, margin calls and investor concentration against each portfolio's history | Analytics engine |
-| 3 | Read each redemption notice into an event, linked to the notice | AI assistant |
+| 3 | Read each redemption notice into an event, linked to the notice | AI |
 | 4 | Confirm the event | Risk manager |
 | 5 | Run the stress test when an event trigger fires, with the analyses set for the trigger's rule | Analytics engine |
-| 6 | Follow up where the findings point further; draft the narrative | AI assistant |
+| 6 | Follow up where the findings point further; draft the narrative | AI |
 | 7 | Grounding check on every draft | Analytics engine |
 | 8 | Review each triggered portfolio; recommend on liquidity tools | Risk manager |
-| 9 | Draft the board's decision paper, with the period's results and events linked to the shared record | AI assistant |
+| 9 | Draft the board's decision paper, with the period's results and events linked to the shared record | AI |
 | 10 | Review scenario calibration; edit the decision paper | Risk manager |
 | 11 | Review and sign off the decision paper | Head of risk |
 
