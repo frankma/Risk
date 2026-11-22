@@ -1,42 +1,26 @@
 # Performance risk
 
 ## The essentials
-**The question:** is a portfolio delivering what was promised, in the way it was promised?
+**Performance risk** asks whether a portfolio is delivering what was promised, in the way it was promised.
 
-**The outcome:**
+**Oversee, every day:** the analytics engine tracks every portfolio's realised return, risk and drawdown, tests its
+exposures against the confirmed [mandate terms](performance-risk.md#mandate-terms) and triages what needs attention. The
+AI drills into each item and drafts a daily brief, so the risk manager and the investment team see each day what
+drove the return and where style drift or unintended bets are forming. The risk manager prioritises, and what matters
+goes into the next review.
 
-> Evidence of whether each portfolio is meeting its objective and whether its returns come from the sources its mandate
-> describes.
+**Assess, after a period:** attribution splits each portfolio's return by source, and the analytics engine triages the
+period's issues. The AI investigates them, with what was agreed at earlier reviews, and drafts a challenge pack, each
+question linked to its evidence. The risk manager prioritises the agenda and runs the portfolio manager review on
+evidence independent of the portfolio manager; the AI tests each explanation against the data, and agreed actions are
+tracked until closed.
 
-**How the work is done:** the analytics engine tracks every portfolio's realised measures, tests its exposures against
-the confirmed mandate terms and runs the analyses set for each issue's rule. The AI follows up where they point
-further, with what was explained and agreed at earlier reviews, and drafts a challenge pack: the top issues for the
-portfolio and the questions to ask, each linked to its evidence in the [shared
-record](../framework/05-principles.md#7-hand-over-judgement-not-documents), where the portfolio manager reads the same
-items before the review. The risk manager runs the portfolio manager review on the risk function's agenda, with
-evidence that is independent of the portfolio manager, and notes what was explained and agreed. The AI tests the
-explanations against the data and drafts the minutes from the notes, and the agreed actions are tracked in the shared
-record until they are closed.
+**Both halves count:** a portfolio that beats its benchmark through an exposure its mandate does not describe is not
+delivering what was promised, and the success may not last.
 
-| # | Step | Owner |
-|---|---|---|
-| 1 | Track realised return, ex-post tracking error, drawdown, active share, information ratio, factors and peer position | Analytics engine |
-| 2 | Test exposures against the mandate terms; flag drift and unintended bets | Analytics engine |
-| 3 | Rank the portfolio's issues, with market risk's tracking error and risk budget exceptions; run the analyses set for each issue's rule | Analytics engine |
-| 4 | Follow up where the findings point further, with the record of earlier reviews; draft the challenge pack: issues and questions, linked to their evidence | AI |
-| 5 | Grounding check on the pack | Analytics engine |
-| 6 | Review and edit the pack; set the agenda; publish the pack's items to the shared record | Risk manager |
-| 7 | Run the meeting on the risk function's agenda; note each explanation and agreed action | Risk manager |
-| 8 | Test the explanations noted against the data; draft the minutes and the action log from the notes and the pack, with what supports and what contradicts each | AI |
-| 9 | Edit and agree the minutes and actions | Risk manager |
-| 10 | Track follow-ups; escalate overdue actions to the watch list | Analytics engine |
-
-**Both halves of the outcome count:** a portfolio that beats its benchmark through an exposure its mandate does not
-describe is not delivering what was promised, and the success may not last.
-
-**Where it connects:** underperformance often comes before redemptions, and the [integrated view](integrated-view.md)
-reads that combination; [market risk](market-risk.md)'s tracking error and risk budget exceptions feed the challenge
-pack.
+**Where it connects:** [market risk](market-risk.md)'s tracking error and risk budget exceptions feed the challenge
+pack, and its forecasts are tested against what is realised here; underperformance often comes before redemptions, which
+[liquidity risk](liquidity-risk.md) and the [integrated view](integrated-view.md) read.
 
 The rest of this chapter is the detail behind these points.
 
@@ -46,13 +30,27 @@ The rest of this chapter is the detail behind these points.
 |---|---|---|---|---|
 | Portfolio manager review | Quarterly | Challenge pack, minutes, actions | Risk manager | What must be explained |
 | Attribution reporting | Monthly | Return by source | Risk manager | Whether returns come from intended sources |
+| Daily brief | Daily | What drove the day's return; drift and unintended bets as they form | Risk manager, investment team | What to take into the next review |
 | Realised risk and drawdown | Daily | Ex-post tracking error; drawdown, absolute and relative | Risk manager | Whether the portfolio runs beyond its promise |
 | Peer comparison | Monthly | Position against peers | Investment oversight | Whether the outcome is competitive |
 | Style and mandate consistency | Daily | Exposures against mandate terms | Risk manager | Whether the portfolio drifts |
 | Watch list management | Monthly | Portfolios under watch, with actions | Investment oversight | Whether to escalate |
 
-The portfolio manager review is the flagship, shown in the table at the top: it is where the pillar's evidence meets the
-person who can act on it. The other workflows feed it.
+The portfolio manager review is the flagship: it is where the pillar's evidence meets the person who can act on it. The
+other workflows feed it. It runs in ten steps:
+
+| # | Step | Owner |
+|---|---|---|
+| 1 | Track realised return, ex-post tracking error, drawdown, active share, information ratio, factors and peer position | Analytics engine |
+| 2 | Test exposures against the mandate terms; flag drift and unintended bets | Analytics engine |
+| 3 | Triage the portfolio's issues, with market risk's tracking error and risk budget exceptions; run the analyses set for each issue's rule | Analytics engine |
+| 4 | Follow up where the findings point further, with the record of earlier reviews; draft the challenge pack: issues and questions, linked to their evidence | AI |
+| 5 | Grounding check on the pack | Analytics engine |
+| 6 | Review and edit the pack; set the agenda; publish the pack's items to the shared record | Risk manager |
+| 7 | Run the meeting on the risk function's agenda; note each explanation and agreed action | Risk manager |
+| 8 | Test the explanations noted against the data; draft the minutes and the action log from the notes and the pack, with what supports and what contradicts each | AI |
+| 9 | Edit and agree the minutes and actions | Risk manager |
+| 10 | Track follow-ups; escalate overdue actions to the watch list | Analytics engine |
 
 - **Attribution** separates the two [sources of return](../framework/01-sources-of-return.md), using the [alpha and beta
   method](alpha-and-beta-method.md), and shows each beta line by the [return
@@ -60,6 +58,10 @@ person who can act on it. The other workflows feed it.
   premia, with alpha read as skill. The generator tells the risk manager [how the return could
   stop](../framework/01-sources-of-return.md#how-does-each-generator-fail), which sets the question to put to the
   portfolio manager.
+- **Daily brief.** The AI drills into each day's items through the analytics engine, in the prepare mode, and
+  drafts what drove the return and where drift or an unintended bet is forming, with every figure from the day's run.
+  The risk manager and the investment team read the same brief, and what the risk manager judges to matter goes
+  into the next challenge pack.
 - **The watch list** holds the portfolios whose issues have not been resolved. It is a single list for the firm, owned
   by the risk function, to which this pillar and the [integrated view](integrated-view.md) both add portfolios.
   Investment oversight uses it to decide escalation, and an escalated portfolio goes to the risk committee, as [limits
@@ -97,10 +99,10 @@ values below are illustrative and are not recommendations;** each risk function 
 | Style consistency | Exposures outside the confirmed mandate terms | Style drift | Exception |
 | Overdue action | An agreed action past its due date | Follow-up that has stalled | Exception |
 
-The analytics engine ranks issues for each portfolio, exceptions before watch items. Significant issues rank above those
-that are not, because significance weighs both the size of a shortfall and how long it has lasted. Issues where the
-outcome and the way it was achieved both depart from the promise rank highest. Overdue actions are always shown, so that
-the review starts from what was agreed last time.
+The analytics engine triages issues for each portfolio, exceptions before watch items. Significant issues come above
+those that are not, because significance weighs both the size of a shortfall and how long it has lasted. Issues where
+the outcome and the way it was achieved both depart from the promise come first. Overdue actions are always shown, so
+that the review starts from what was agreed last time.
 
 ## What the AI drafts
 The AI drafts each item of the challenge pack. Every number in the draft appears in the facts beside it, so the

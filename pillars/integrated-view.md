@@ -1,33 +1,23 @@
 # Integrated view
 
 ## The essentials
-**The question:** where are signals combining across market, liquidity and performance risk, before any one pillar would
-escalate?
+**The integrated view** asks where signals are combining across market, liquidity and performance risk, before any one
+pillar would escalate.
 
-**The outcome:**
+**Oversee, every day:** the analytics engine reads the signals the three pillars already produce, applies rules for the
+combinations that matter and triages the portfolios. The AI investigates each one and drafts an account. The risk
+manager prioritises, judges whether the signals are connected, and adds the portfolio to the watch list or escalates it.
 
-> Which portfolios have signals combining across pillars, and why, before any one pillar would escalate them.
+**Assess, after a period:** on a set cycle, and whenever market conditions call for it, the view reads performance
+risk's split by strategy across all portfolios: whether each strategy's skill holds and, with the firm's footprint,
+where the same skill runs through many portfolios. It informs the chief investment officer's decisions on strategy
+capacity and the product range.
 
-**How the work is done:** the view computes no measure of its own. The analytics engine reads the signals the three
-pillars already produce, for every portfolio every day, applies rules for the combinations that matter, ranks the
-portfolios and runs the analyses set for each ranked portfolio's pattern. The AI follows up where they point further
-and drafts an account. The risk manager judges each one and adds it to the watch list or escalates it to the head of
-risk.
-
-| # | Step | Owner |
-|---|---|---|
-| 1 | Read every pillar's signals for every portfolio; align them by date | Analytics engine |
-| 2 | Apply the pattern and combination rules; rank portfolios; run the analyses set for each ranked portfolio's pattern | Analytics engine |
-| 3 | Follow up where the findings point further; draft an account | AI |
-| 4 | Grounding check on every account | Analytics engine |
-| 5 | Assemble the committee view from the top-ranked portfolios | Analytics engine |
-| 6 | Judge each ranked portfolio; add it to the watch list or escalate it to the head of risk | Risk manager |
-| 7 | Review and sign off the committee view | Head of risk |
-
-**Why it is needed:** the episodes that do most damage pass through all three pillars. Underperformance prompts
-redemptions, redemptions are met by selling the most liquid assets, and the portfolio that remains is more concentrated
-and more volatile, which makes further underperformance more likely. Each pillar sees its own signal as moderate, so no
-single threshold is breached and no single workflow escalates.
+**Why it is needed:** the pillars are connected by nature: they read one portfolio, its holdings and its investors, so a
+move in one travels to the others. A wrong call, top-down or bottom-up, or an exposure nobody chose, brings
+underperformance; underperformance prompts redemptions; redemptions are met by selling the most liquid assets; and what
+remains is more concentrated and more volatile. Read pillar by pillar, each signal looks moderate and no single workflow
+escalates; read as one web, the cycle shows.
 
 The rest of this chapter is the detail behind these points.
 
@@ -35,8 +25,18 @@ The rest of this chapter is the detail behind these points.
 The view reads every rule in each pillar's table: [market risk](market-risk.md#materiality-and-exceptions), [liquidity
 risk](liquidity-risk.md#materiality-and-exceptions) and [performance
 risk](performance-risk.md#materiality-and-exceptions). Every signal carries its pillar's state (exception, watch item or
-within) and the date it was computed. The view takes the signals as the pillars produce them, and never computes its own
-version.
+within) and the date it was computed. The view computes no measure of its own: it takes the signals as the pillars
+produce them, and never computes its own version. The daily run has seven steps:
+
+| # | Step | Owner |
+|---|---|---|
+| 1 | Read every pillar's signals for every portfolio; align them by date | Analytics engine |
+| 2 | Apply the pattern and combination rules; triage portfolios; run the analyses set for each one's pattern | Analytics engine |
+| 3 | Follow up where the findings point further; draft an account | AI |
+| 4 | Grounding check on every account | Analytics engine |
+| 5 | Assemble the committee view from the top of the queue | Analytics engine |
+| 6 | Prioritise and judge each portfolio in the queue; add it to the watch list or escalate it to the head of risk | Risk manager |
+| 7 | Review and sign off the committee view | Head of risk |
 
 ## Patterns
 A pattern is a named chain of signals across pillars that, together, describe a known way for a portfolio to get into
@@ -74,23 +74,23 @@ which market risk moves first, and its links follow within days rather than quar
 
 The view weights early signals, because by the time market risk readings rise the cycle is usually under way.
 
-## Combination rules and ranking
-The rules that decide which portfolios rank, and in what order, are [governed
+## Combination rules and triage
+The rules that decide which portfolios enter the view, and in what order, are [governed
 parameters](../framework/08-controls.md#materiality-thresholds-as-governed-parameters). **The rules below are
 illustrative kinds of rule, not recommendations;** each risk function sets its own.
 
 | Kind of rule | Example (illustrative) |
 |---|---|
-| Pattern match | A portfolio ranks if every signal a named pattern requires is at watch or exception |
-| Breadth | A portfolio ranks if it has signals at watch or exception in at least two pillars |
+| Pattern match | A portfolio enters the view if every signal a named pattern requires is at watch or exception |
+| Breadth | A portfolio enters the view if it has signals at watch or exception in at least two pillars |
 | Ordering | Pattern matches first, then more exceptions, then more pillars at watch, then signals held for longer |
 | Grouping | Signals that share one underlying driver count once |
 
 A pattern may also show signals as context that it does not require, such as the steady return in hidden illiquidity;
-context signals can be within. A portfolio with an exception in one pillar and nothing elsewhere does not rank in the
+context signals can be within. A portfolio with an exception in one pillar and nothing elsewhere does not enter the
 view. Its exception is handled by that pillar's workflow, as it would be anyway; the view is for combinations.
 
-For each ranked portfolio the analytics engine runs the analyses set for its pattern, which are governed parameters
+For each portfolio in the view the analytics engine runs the analyses set for its pattern, which are governed parameters
 drawn from the pillars' governed analyses: for example, how the portfolio's weights have moved by time to sell, the
 same pattern in other portfolios, and the earlier accounts of the portfolio. The view adds no analysis of its own.
 
@@ -100,12 +100,23 @@ once for breadth; investor concentration is a separate driver. The groups are go
 *concentrated and hard to sell* still names the combination.
 
 ## The firm's footprint
-Portfolios do not net, so the firm's footprint is read across them rather than ranked within them. The pillars compute
-it: [market risk](market-risk.md#workflows-in-this-pillar) the firm's totals by issuer, counterparty and factor,
+Portfolios do not net, so the firm's footprint is read across them rather than counted in any one of them. The pillars
+compute it: [market risk](market-risk.md#workflows-in-this-pillar) the firm's totals by issuer, counterparty and factor,
 [liquidity risk](liquidity-risk.md#workflows-in-this-pillar) its share of each issue and of each market's daily volume.
-The view lists the readings above a governed threshold, largest first, beside the ranked portfolios. Each portfolio
-involved shows the reading as context only: it does not count towards the portfolio's rank, because one reading could
-otherwise rank many portfolios at once.
+The view lists the readings above a governed threshold, largest first, beside the portfolios in the view. Each portfolio
+involved shows the reading as context only: it does not count towards the portfolio's place in the view, because one
+reading could otherwise bring many portfolios into it at once.
+
+## What the firm is paid for
+On a set cycle, annual by default, and whenever market conditions call for it, such as a change of regime, a crowded
+reversal in a style premium or a sharp change in a strategy's results, the view reads [performance
+risk](performance-risk.md)'s split of return by strategy across all portfolios. The reading is unweighted, so that a
+small strategy with lasting skill is as visible as a large one. It shows how much of each strategy's return is beta that
+an index fund or a future could have delivered and how much is skill; whether that skill holds, read through performance
+risk's [significance tests](performance-risk.md#windows-and-significance) over successive periods; and, with the firm's
+footprint, where the same skill runs through many portfolios and would fail in all of them at once. The view computes
+nothing new. The reading informs the chief investment officer's decisions on strategy capacity and the product range; it
+is not a measure of the firm's business, and the decisions are not the risk function's.
 
 ## What the AI drafts
 Every number in the draft appears in the facts beside it, so the [grounding
@@ -139,12 +150,13 @@ The view inherits every limit of the pillar measures it reads, and adds four of 
 - **Signals have different cadences.** Most signals are read daily, including relative return over its rolling window,
   but runs of periods are counted in whole periods and some inputs, such as investor registers, update less often. The
   view shows each signal's as-of date and treats a signal beyond a set age as stale.
-- **Too many ranked portfolios defeats the purpose.** If the view ranks most portfolios, it becomes another report. The
-  share of ranked portfolios the risk manager judges worth action is watched, and the rules are tightened when it falls.
+- **Too many portfolios in the view defeats the purpose.** If the view picks up most portfolios, it becomes another
+  report. The share of portfolios in the view the risk manager judges worth action is watched, and the rules are
+  tightened when it falls.
 
 The function tests the view by replaying past episodes: taking portfolios that ran into difficulty and checking whether
-the view, with the rules in force at the time, would have ranked them, and how much earlier than any pillar. Episodes it
-would have missed are the main source of new patterns. The AI step is tested, as in the pillars, through the risk
+the view, with the rules in force at the time, would have picked them up, and how much earlier than any pillar. Episodes
+it would have missed are the main source of new patterns. The AI step is tested, as in the pillars, through the risk
 manager's edits to the accounts, a sample reviewed against the signals and runs behind them, and seeded accounts, as
 [evaluation](../framework/08-controls.md#evaluation) sets out.
 
@@ -155,8 +167,8 @@ The general [controls](../framework/08-controls.md) apply in full. The view adds
 - **Missing data is not health.** A portfolio with missing signals from a pillar is shown as partly assessed, never as
   healthy.
 - **The view never overrides a pillar.** A pillar's exception still goes through that pillar's workflow, whether or not
-  the view ranks the portfolio, and actions the view raises route back to the pillar that owns them. The view holds no
-  actions of its own.
+  the view picks up the portfolio, and actions the view raises route back to the pillar that owns them. The view holds
+  no actions of its own.
 - **Pattern and grouping rules are governed.** Adding, removing or changing a pattern or a driver group is recorded like
   any other threshold change.
 
@@ -165,17 +177,18 @@ value](../framework/09-measuring-value.md). It is measured from replays of past 
 
 | Dimension | Measure for the view |
 |---|---|
-| View-specific | Lead time: days between the view ranking a portfolio and the first single-pillar escalation |
+| View-specific | Lead time: days between the view picking up a portfolio and the first single-pillar escalation |
 | Speed | Time from a combination forming to the risk manager seeing it |
 | Capacity | Portfolios covered by the integrated view |
 | Quality | Combinations first seen through a pillar escalation rather than through the view |
-| Influence | Ranked portfolios discussed by the committee, and actions taken |
+| Influence | Portfolios in the view discussed by the committee, and actions taken |
 
 ## Ownership
-The risk function owns the view: its patterns, its grouping of drivers, its ranking rules and its footprint thresholds.
-The risk committee reads the top-ranked portfolios in the [shared
-record](../framework/05-principles.md#7-hand-over-judgement-not-documents), each with its account and the signals
-behind it, and the firm's footprint, and receives a decision paper for what the firm should do, which it decides.
+The risk function owns the view: its patterns, its grouping of drivers, its triage rules and its footprint thresholds.
+The risk committee reads the portfolios at the top of the queue in the [shared
+record](../framework/05-principles.md#7-hand-over-judgement-not-documents), each with its account and the signals behind
+it, and the firm's footprint, and receives a decision paper for what the firm should do, which it decides. The reading
+of what the firm is paid for goes to the chief investment officer, who decides.
 
 ## Sources
 - Chen, Q., Goldstein, I. and Jiang, W. (2010). Payoff Complementarities and Financial Fragility: Evidence from Mutual

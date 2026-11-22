@@ -6,8 +6,8 @@ risk function exists to **challenge** those decisions against the mandate, while
 insight into the risks it takes.
 
 **The system does the work; people judge:** the system has two parts, the analytics engine, which computes, and the AI,
-which investigates iteratively with it and drafts. People check, challenge, decide and are accountable. The AI adds
-breadth and depth, never a figure or a rule of its own, and weaves the signals into one integrated web.
+which investigates iteratively with it and drafts. People prioritise, check, challenge, decide and are accountable. The
+AI adds breadth and depth, never a figure or a rule of its own, and weaves the signals into one integrated web.
 
 **At its root, risk work is insight:** the few numbers, out of millions, that show where each portfolio stands against
 its mandate and what to challenge.
@@ -32,9 +32,9 @@ Independence is what makes the service credible, and it rests on the decisions o
 
 | | Decision | Purpose | What risk provides |
 |---|---|---|---|
-| Before | **Construct** | Serve | What-ifs and marginal risk the investment team runs before the trade, on analyses the risk function owns: what this position adds to risk and to time to sell, and what it crowds out of the budget |
+| Before | **Construct** | Serve | What-ifs and marginal risk before the trade, on analyses the risk function owns and anyone can trace: what this position adds to risk and to time to sell, and what it crowds out of the budget |
 | During | **Oversee** | Challenge | Risk against budgets and limits, monitored daily, with escalation to the head of risk and the risk committee |
-| After | **Assess** | Serve | Attribution the investment team reads after the period, on analyses the risk function owns: return split by source, beta included; significance over several periods as evidence of skill rather than luck; and return per unit of risk by bet and by manager |
+| After | **Assess** | Serve | Attribution after the period, on analyses the risk function owns, at any level from a single bet to the whole firm: return split by source, beta included; significance over several periods as evidence of skill rather than luck; and return per unit of risk |
 
 ## How the work is done
 **Decisions, not departments.** A risk function is defined by the decisions it must make, not by titles, teams or who
@@ -46,10 +46,11 @@ each firm to decide, as [decision rights](10-decision-rights.md) sets out.
 engine computes every figure for every portfolio every day. The AI investigates like an analyst, working iteratively
 with the analytics engine: it reads the findings, chooses the next analysis from a governed list, runs it through the
 analytics engine and reads the result, until the picture holds. Only then does it draft, and only then does a person see
-it: they check it against the facts, challenge it and decide, and are accountable for the decision. Every workflow is
-designed this way from the start. The AI adds breadth and depth, never a figure or a rule of its own: it takes on, for
-every item, the small steps of reading, connecting and following up that were never worth a person's time, and weaves
-them into one integrated web of signals, as [working with AI](06-working-with-ai.md) sets out.
+it: they weigh it against the rest of the queue, check it against the facts, challenge it and decide, and are
+accountable for the decision. Every workflow is designed this way from the start. The AI adds breadth and depth, never a
+figure or a rule of its own: it takes on, for every item, the small steps of reading, connecting and following up that
+were never worth a person's time, and weaves them into one integrated web of signals, as [working with
+AI](06-working-with-ai.md) sets out.
 
 ## Beliefs
 Each is a position a reasonable firm could reject. Together they decide what the rules do not.

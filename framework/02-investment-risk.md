@@ -66,7 +66,7 @@ At the boundary, and owned elsewhere:
 | Pricing | Setting and challenging the prices of holdings | Independent of those who use the prices. |
 | Model validation | Independent validation of models across the firm, including the AI steps in the risk function's workflows | Independent of those who build and use them. |
 | Sustainability risk | Environmental, social and governance events that could lower a holding's value, and the portfolio's own sustainability commitments | Owned by a sustainability function; the pillars take its data as an input. |
-| Strategy capacity | How much money a strategy can run before its returns suffer | A decision about the investment business, owned by the chief investment officer; liquidity risk's figures are an input. |
+| Strategy capacity | How much money a strategy can run before its returns suffer | A decision about the investment business, owned by the chief investment officer; liquidity risk's figures and the integrated view's reading of what the firm is paid for are inputs. |
 
 A boundary is not a wall. Signals that matter to the owner of an adjacent risk, such as a holding flagged as unpriceable
 or a breach that may have a legal reading, are routed to that owner rather than resolved inside the pillar.
@@ -83,6 +83,7 @@ but not in question, and market and performance risk are divided by time.
 |---|---|---|---|
 | **How the mandate fails** | The portfolio takes more or less risk than the mandate intends | The portfolio cannot meet a call on its cash in time and at a fair cost | The portfolio does not deliver what was promised, in the way it was promised |
 | **Lens** | What could happen, from today's holdings, absolute and relative | Calls on cash against what the portfolio can raise | What did happen, and whether the promise is kept |
+| **Decisions served** | Construct, before a trade; Oversee, every day | Construct, before a trade; Oversee, every day | Oversee, every day; Assess, after a period |
 | **Data it rests on** | Holdings, market prices and factor exposures | Holdings, market depth and trading cost, dealing terms and investor flows | Returns, the benchmark or objective, and the holdings and exposures behind them |
 | **Covers** | Value at risk, expected shortfall and volatility; ex-ante tracking error and the risk budget; sensitivities; concentration; stress, reverse stress and the drawdown headroom they leave; pre-trade what-ifs; leverage; counterparty exposure | Time and cost to sell, leaving out encumbered assets; every call on cash the vehicle faces; redemption coverage; readiness of liquidity management tools; stale and unpriceable holdings | Outcome against benchmark, peers or objective; ex-post tracking error and realised drawdown; attribution, including the split between the [sources of return](01-sources-of-return.md); active share and style drift; risk-adjusted returns |
 | **Typical triggers** | A limit breach; a large move | Falling coverage; a large redemption or margin call | Significant underperformance |

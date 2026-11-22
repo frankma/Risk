@@ -137,7 +137,7 @@ reads as an instruction to the AI is flagged to the risk manager and not followe
 is evidence to test, never a fact the AI may state as true.
 
 ## Sign-off points
-Each redesigned workflow names the points at which a human must approve before an output moves on or, for a routine
+Each redesigned workflow names the points at which a person must approve before an output moves on or, for a routine
 action under a governed rule, review it the same day, and what exactly they are approving. A sign-off is a statement
 about content, not a click to release a document.
 
@@ -158,7 +158,7 @@ off; an action under a governed rule names the rule.
 ## The audit trail
 For every output, the workflow records: the input facts it was generated from, with their data
 [versions](03-risk-data.md#versioned-as-known); the analysis runs behind it, with their parameters; the threshold,
-prompt, template and model versions in force; the text as generated; every edit the human made; the grounding check
+prompt, template and model versions in force; the text as generated; every edit the person made; the grounding check
 result; who approved it and when or, for an action under a governed rule, the rule applied and who reviewed it. The
 record is kept in a form that can be retrieved by output, by portfolio and by date. For every extraction it records the
 document and passage, the value extracted, any expected term not found and who confirmed it, or that the risk manager
@@ -185,7 +185,7 @@ for the same item without knowing which is which. A step whose drafts are not ju
 replaced by it.
 
 ## Materiality thresholds as governed parameters
-The thresholds that decide what counts as an exception, and the rules that rank exceptions, determine what the risk
+The thresholds that decide what counts as an exception, and the rules that triage exceptions, determine what the risk
 manager sees and what they do not. They encode the risk function's judgement and should be governed like any other risk
 parameter.
 
@@ -219,7 +219,7 @@ Each workflow defines what happens when a component fails.
   found. The output is plainer, but complete and correct. The AI's follow-up analyses do not run, and the item says
   so. An extraction step falls to the risk manager, who reads the document and enters the record, linked to its
   passage and marked as entered by hand. The check against the expected terms still runs, and a document unread past
-  a set time ranks in the queue.
+  a set time enters the queue.
 
 Every step has a path that needs no AI service, so a workflow can always run.
 

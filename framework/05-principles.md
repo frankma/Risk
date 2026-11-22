@@ -9,7 +9,7 @@ workflow as it stands. The unit of change is the workflow, not the task.
 | 1 | Redesign, don't insert | Start from the outcome, then rebuild the steps. |
 | 2 | The analytics engine computes, the AI interprets and narrates, a person judges | Each kind of work goes to the owner suited to it. |
 | 3 | The AI never fabricates a number | Every figure has a recorded computation behind it; generated text is checked against it. |
-| 4 | Exceptions over everything | The system reviews every portfolio; the human reviews what is material. |
+| 4 | Exceptions over everything | The analytics engine triages every portfolio; a person prioritises and reviews what is material. |
 | 5 | Decide what the risk manager's time is for before starting | Time that is not directed is absorbed by existing work. |
 | 6 | Build what the manual process could not do | Look for what can now be done for every item: every portfolio checked, every exception investigated, every document read. |
 | 7 | Hand over judgement, not documents | The facts sit once in the shared record; what passes between people is a question, a challenge or a decision. |
@@ -58,12 +58,12 @@ from, and [controls](08-controls.md#the-grounding-check) how the check works. Th
 make it safe to rely on generated text, are what allow manual checking to be reduced.
 
 ### 4. Exceptions over everything
-**What it means.** The system checks every portfolio against every threshold and ranks the results; the human reviews
-what is material.
+**What it means.** The analytics engine checks every portfolio against every threshold and triages the results, the AI
+investigates each item, and a person prioritises and reviews what is material.
 
-**In practice.** The main output of a monitoring workflow is a ranked exception queue with an explanation for each item,
-not a long pack. The materiality thresholds that decide what counts as an exception are set by the risk function and
-governed as parameters. The [market risk](../pillars/market-risk.md) chapter applies this to daily monitoring.
+**In practice.** The main output of a monitoring workflow is a triaged exception queue with an explanation for each
+item, not a long pack. The materiality thresholds that decide what counts as an exception are set by the risk function
+and governed as parameters. The [market risk](../pillars/market-risk.md) chapter applies this to daily monitoring.
 
 ### 5. Decide what the risk manager's time is for before starting
 **What it means.** A redesign changes what a risk manager spends time on, and time that is not directed is absorbed by
@@ -80,7 +80,7 @@ connections than people could manage.
 **In practice.** Once the analytics engine covers every portfolio continuously, liquidity can be monitored continuously
 rather than at each periodic stress test, and signals can be connected across market, liquidity and performance risk to
 see where they combine. The [integrated view](../pillars/integrated-view.md) is the clearest example. The AI adds work
-of another kind: every ranked item in a pillar's queue and in the integrated view arrives investigated, every governing
+of another kind: every item in a pillar's queue and in the integrated view arrives investigated, every governing
 document, notice and set of minutes is read into records the analytics engine can test, and every explanation a
 portfolio manager gives can be tested against the data.
 
@@ -88,11 +88,11 @@ portfolio manager gives can be tested against the data.
 **What it means.** Once the analytics engine computes and the AI writes, a document passed from one person to another
 holds nothing its reader could not ask for. A reader who summarises what they receive, often with an AI of their own,
 shows that it should not have been sent. The facts sit once in the **shared record**: what the analytics engine
-computed, each ranked item with its account and the runs behind it, and every judgement, decision and agreed action on
-it, including the function's record of earlier decisions. Each reader reads the items for the portfolios they are
-entitled to, and asks their own questions of it in the [investigate mode](06-working-with-ai.md#three-modes-of-working).
-What passes between people is judgement: a question, a challenge, an escalation, or a decision and its reasons, each
-linked to the items it concerns.
+computed, each item in the queue with its account and the runs behind it, and every judgement, decision and agreed
+action on it, including the function's record of earlier decisions. Each reader reads the items for the portfolios they
+are entitled to, and asks their own questions of it in the [investigate
+mode](06-working-with-ai.md#three-modes-of-working). What passes between people is judgement: a question, a challenge,
+an escalation, or a decision and its reasons, each linked to the items it concerns.
 
 **In practice.** A message to a portfolio manager carries the question and links to the item; it does not retell the
 facts. A committee or board receives a **decision paper**: what it must decide, the risk function's view and the
@@ -108,11 +108,11 @@ do, in both of the function's [purposes](00-philosophy.md#why-a-risk-function-ex
 The value a risk manager adds is not the sign-off. The sign-off is how a person is held accountable for an output; what
 they add is what goes into it.
 
-- **Judging what matters to the portfolio and its intended risk profile.** The analytics engine ranks readings by their
-  size against a threshold; the risk manager decides whether a reading matters for this portfolio, given the risks its
-  mandate intends. That means telling intended risk from unintended, telling signals that are connected from signals
-  that merely appear together, and seeing when a drafted explanation gives weight to the wrong driver, which the
-  grounding check cannot test.
+- **Judging what matters to the portfolio and its intended risk profile.** The analytics engine triages readings by
+  their size against a threshold; the risk manager prioritises what to act on first and decides whether a reading
+  matters for this portfolio, given the risks its mandate intends. That means telling intended risk from unintended,
+  telling signals that are connected from signals that merely appear together, and seeing when a drafted explanation
+  gives weight to the wrong driver, which the grounding check cannot test.
 - **Bringing clarity to the risks being taken.** Every unit of active risk should be paid for ([belief
   3](00-philosophy.md#beliefs)). The risk manager makes clear which risks a portfolio runs, whether they were chosen,
   what each uses of the budget and whether it is paid for. Before a trade, a what-if shows what a position adds and what
@@ -121,7 +121,7 @@ they add is what goes into it.
 - **Challenge that changes decisions.** Evidence put to the portfolio manager, and escalation where an issue stays
   unresolved. Influence is the dimension of [value](09-measuring-value.md#four-dimensions) closest to the function's
   purpose.
-- **Deciding what the system flags, and in what order.** The thresholds that decide what reaches the queue, the ranking
+- **Deciding what the system flags, and in what order.** The thresholds that decide what reaches the queue, the triage
   that orders it, the patterns that connect the pillars and the calibration of scenarios are where judgement is written
   down. They filter what the risk manager sees, not what the portfolio may hold, and the risk function designs, tests
   and owns them, which is where its [independence lives](10-decision-rights.md#independence-lives-in-the-rules).
