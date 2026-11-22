@@ -1,35 +1,55 @@
 # Philosophy
 
 ## The essentials
-**Why a risk function exists:** an asset manager needs one for two reasons: as a **check and balance** on every
-portfolio's risk, and to **serve the investment process** with the discipline of uncertainty.
+An asset manager earns its return through two kinds of investment decision: top-down views and bottom-up selection. A
+risk function exists to **challenge** those decisions against the mandate, while **serving** the investment team with
+insight into the risks it takes.
 
-**The product is insight:** out of millions of numbers, the few that show where each portfolio stands against its
-mandate and where it must be challenged.
+**The system does the work; people judge:** the system has two parts, the analytics engine, which computes, and the AI,
+which investigates iteratively with it and drafts. People check, challenge, decide and are accountable. The AI adds
+breadth and depth, never a figure or a rule of its own, and weaves the signals into one integrated web.
 
-**What follows from this:** eight beliefs that decide what the rules do not, three decisions the function serves
-(construct, oversee, assess), and three dimensions that every piece of risk work provides (condensation, drill-in,
-connection). None depends on a particular model; any model a risk function uses is judged against them.
+**At its root, risk work is insight:** the few numbers, out of millions, that show where each portfolio stands against
+its mandate and what to challenge.
+
+**What guides the work:** eight beliefs settle what the rules leave open; the two purposes meet in three decisions
+(construct, oversee, assess); and every piece of the work condenses, drills in and connects. No model is assumed; every
+model is judged against these.
 
 The rest of this chapter is the detail behind these points.
 
 ## Why a risk function exists
-- **Check and balance.** An independent view, for the firm's governance and its clients, of whether every portfolio
-  takes the risks its mandate intends, in the size it can bear, with challenge where it does not, escalated where it
-  stays unresolved.
-- **Serving the investment process.** The discipline of uncertainty brought to investment decisions: what could happen,
-  what each position adds and whether the risk is paid for, before and after the trade. It comes from understanding the
-  strategy well enough to say "yes, and size it like this", not only "no".
+- **Challenge.** An independent test, for the firm's governance and its clients, of whether the investment decisions in
+  every portfolio take the risks its mandate intends, in the size it can bear. Where they do not, the function
+  challenges them, and escalates what stays unresolved.
+- **Serve.** Insight into the risks the investment team takes, brought to its decisions: what could happen, what each
+  position adds and whether the risk is paid for, before and after the trade. It comes from understanding the strategy
+  well enough to say "yes, and size it like this", not only "no".
 
-Both rest on the same measures. Oversight escalates, service informs, and the portfolio manager decides what to hold.
+Both rest on the same measures. Challenge escalates, service informs, and the portfolio manager decides what to hold.
 Independence is what makes the service credible, and it rests on the decisions only the risk function may make, which
-[decision rights](10-decision-rights.md) sets out. The roles meet in three decisions:
+[decision rights](10-decision-rights.md) sets out. The two purposes meet in three decisions:
 
-| | Decision | Role | What risk provides |
+| | Decision | Purpose | What risk provides |
 |---|---|---|---|
-| Before | **Construct** | Serving the investment process | What-ifs and marginal risk inside the investment process, before the trade: what this position adds, and what it crowds out of the budget |
-| During | **Oversee** | Check and balance | Risk against budgets and limits, monitored daily, with escalation to the head of risk and the risk committee |
-| After | **Assess** | Serving the investment process | Attribution that splits return by source, beta included; significance over several periods as evidence of skill rather than luck; and return per unit of risk by bet and by manager |
+| Before | **Construct** | Serve | What-ifs and marginal risk the investment team runs before the trade, on analyses the risk function owns: what this position adds to risk and to time to sell, and what it crowds out of the budget |
+| During | **Oversee** | Challenge | Risk against budgets and limits, monitored daily, with escalation to the head of risk and the risk committee |
+| After | **Assess** | Serve | Attribution the investment team reads after the period, on analyses the risk function owns: return split by source, beta included; significance over several periods as evidence of skill rather than luck; and return per unit of risk by bet and by manager |
+
+## How the work is done
+**Decisions, not departments.** A risk function is defined by the decisions it must make, not by titles, teams or who
+does the work: what counts as an exception, whether a reading matters, what to challenge and what to escalate. Each
+decision has a named holder, independent of the investment line; who does the work, and how it is organised, is for
+each firm to decide, as [decision rights](10-decision-rights.md) sets out.
+
+**The system does the work; people judge.** The system has two parts, the analytics engine and the AI. The analytics
+engine computes every figure for every portfolio every day. The AI investigates like an analyst, working iteratively
+with the analytics engine: it reads the findings, chooses the next analysis from a governed list, runs it through the
+analytics engine and reads the result, until the picture holds. Only then does it draft, and only then does a person see
+it: they check it against the facts, challenge it and decide, and are accountable for the decision. Every workflow is
+designed this way from the start. The AI adds breadth and depth, never a figure or a rule of its own: it takes on, for
+every item, the small steps of reading, connecting and following up that were never worth a person's time, and weaves
+them into one integrated web of signals, as [working with AI](06-working-with-ai.md) sets out.
 
 ## Beliefs
 Each is a position a reasonable firm could reject. Together they decide what the rules do not.
@@ -63,6 +83,9 @@ models tested against outcomes, results reproducible, as [risk data](03-risk-dat
 | 2 | **Drill-in** (decompose) | Where do risk and return come from, and were they intended? |
 | 3 | **Connection** (over time) | Is the risk we take paid for by the return we earn? |
 
+The analytics engine provides all three for every portfolio; the AI makes them readable and answers questions on demand,
+so drill-in is open to anyone entitled to the portfolio.
+
 ### 1. Condensation
 **Millions of numbers become a few that people can act on, without losing what matters.** A portfolio needs summaries in
 three families: risk, exposure and liquidity.
@@ -89,7 +112,7 @@ risk moves, and any other movement stays within a stated tolerance.
   into exposure × factor return plus the specific return.
 
 The factor split uses the risk decomposition's factors and decision-makers, so the risk a bet takes and the return it
-earns sit side by side. [Sources of return](02-sources-of-return.md) shows how a holding divides between top-down and
+earns sit side by side. [How return is earned](01-sources-of-return.md) shows how a holding divides between top-down and
 bottom-up, and its [method](../pillars/alpha-and-beta-method.md) joins the two splits. *It fails* when the parts do not
 sum to the whole, or a residual nobody can explain is left over. *The test:* every decomposition reconciles, within a
 stated tolerance.
@@ -98,7 +121,7 @@ stated tolerance.
 **Exposure, risk and performance on one timeline, in one language.** Each is credible only through the others. The links
 are return per unit of risk, by bet and by manager; the [risk
 budget](../pillars/market-risk.md#workflows-in-this-pillar) against return; each forecast against its [realised
-counterpart](01-investment-risk.md#the-three-pillars); and drawdown against tolerance.
+counterpart](02-investment-risk.md#the-three-pillars); and drawdown against tolerance.
 
 *It fails* when risk and performance come from different systems and cannot be reconciled. *The test:* any period's
 return and any period's change in risk can be explained by the same factors and decision-makers.
@@ -108,11 +131,13 @@ Portfolios don't net (belief 6), so the firm's footprint across them is read on 
 view](../pillars/integrated-view.md#the-firms-footprint) sets out.
 
 ## Boundaries
-Numbers do not replace judgement; they tell judgement where to look. Some things they cannot settle: regime changes,
-crowded exits, liquidity in a panic, the next crisis that history never showed. There the risk committee decides,
-informed by stress and reverse stress, not replaced by them.
+Neither the numbers nor the AI replace judgement; they tell it where to look. Some things they cannot settle: regime
+changes, crowded exits, liquidity in a panic, the next crisis that history never showed. There the risk committee
+decides, informed by stress and reverse stress, not replaced by them.
 
 ## Sources
+- Fama, E. and Jensen, M. (1983). Separation of Ownership and Control. *Journal of Law and Economics*. Separating the
+  management of decisions from their control, which defines a function by the decisions it holds.
 - Grinold, R. and Kahn, R. (2000). *Active Portfolio Management*, 2nd edition. McGraw-Hill. The information ratio,
   active risk and its allocation to bets.
 - Litterman, R. (1996). Hot Spots and Hedges. *Journal of Portfolio Management*, special issue. Decomposing risk into

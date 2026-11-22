@@ -1,60 +1,27 @@
-# Sources of return
+# How return is earned
 
 ## The essentials
-**The rule:** beta is any return above the risk-free rate that an investable instrument could have captured; market
-risk premia and style premia pay it. Alpha is the return left once beta is carved out; skill pays it. These are the
-three return generators.
+Fundamentally, a portfolio's return is driven by two decisions: **top-down views** on which markets to hold, how much
+and for how long, and **bottom-up selection** of the securities within them. They are two sources with different skills,
+often with different decision holders, and they need to work together toward one result.
 
-**Why a risk function needs it:** a generator says why a return is paid, and so how it can stop being paid.
+Loosely, top-down views earn beta: any return above the risk-free rate that an index fund or a future could have
+delivered, paid by market risk premia and style premia. Bottom-up selection earns alpha: the return left once beta is
+carved out, paid by skill.
 
-**Two more views of the same return:** by decision, top-down views decide how much of which markets and styles to hold,
-and bottom-up selection decides which securities to hold within them. By who chose it, an exposure was set in the
-mandate, chosen by a decision-maker who recorded it, or chosen by nobody.
-
-**Who owns what:** the investment process owns the decisions and the return they earn. The risk function owns the
-measurement: which generator paid each part of the return, and whose recorded decision put it there.
-
-**How it is measured:** on three portfolios. The benchmark portfolio's return above the risk-free rate is policy
-beta, the step to the top-down portfolio is active beta, and the step to the real portfolio is alpha. The [alpha and
-beta method](../pillars/alpha-and-beta-method.md) sets out the computation.
-
-Three lines of a portfolio's return have no generator: the risk-free return, the cost of holding beta, and the return
-of holdings that are not publicly traded, which is not split.
+[Performance risk](../pillars/performance-risk.md) dissects each portfolio's return along this line, on three
+portfolios. The benchmark portfolio's return above the risk-free rate is policy beta, the increment from it to the
+top-down portfolio is active beta, and the increment from the top-down portfolio to the real portfolio is alpha. Because
+the two sources sit with different skills and decision holders, a clear attribution lets each call be judged on its
+merits and supports a fair reward system that encourages more right calls, for the longevity of the team and the firm.
+The [alpha and beta method](../pillars/alpha-and-beta-method.md) sets out the computation.
 
 The rest of this chapter is the detail behind these points.
 
-## What generates return?
-| Generator | What it is | Why it pays | Source |
-|---|---|---|---|
-| **Market risk premia** | The return for holding a market: the equity premium, the term premium in rates and the credit premium in spreads. Currency exposure is tagged here by convention | It compensates for losses that arrive in bad times, when they hurt most | Beta |
-| **Style premia** | The return of a rule that an index or basket can follow: value, momentum, size, carry, and the premium for holding less liquid public securities | Disputed: a risk, or a pattern in investor behaviour that persists; the framework takes no side, because the method needs only that an investable instrument can capture it | Beta, once declared |
-| **Skill** | The return from choosing between securities that share the same exposures | One investor finds a wrong price before others do. Measured against the market, before costs and with the market's holdings unchanged, it is zero-sum: what one manager gains, another loses | Alpha |
-
-The line between style premia and skill moves. A return counts as skill until an index or basket can replicate it, and
-from then on it is a style premium. Value was once called alpha. A premium that no instrument holds at the portfolio's
-size, as is often true of the premium for less liquid securities, is measured as alpha until one does, and the holdings
-that [liquidity risk](../pillars/liquidity-risk.md) flags are [marked in the
-split](../pillars/alpha-and-beta-method.md#the-test-and-its-limits).
-
-A generator is not a decision. The mandate, the manager or nobody may have chosen how much of a premium a portfolio
-holds, and [who chose it](02-sources-of-return.md#who-chose-each-part) is a separate question. A timing call changes how
-much of a premium is held; the return the change adds is the timing line.
-
-## How does each generator fail?
-| Generator | How it fails | Where it is watched |
-|---|---|---|
-| **Market risk premia** | A large drawdown when the economy or the markets turn, with equities, rates and spreads often moving together | Market risk's [stress tests](../pillars/market-risk.md#stress-and-reverse-stress) and its rule on drawdown headroom |
-| **Style premia** | Long periods that pay nothing, and sharp reversals when many holders leave at once. The premium for less liquid securities is lost when they must be sold | The stress tests, the [firm's footprint](../pillars/integrated-view.md#the-firms-footprint) and [liquidity risk](../pillars/liquidity-risk.md) |
-| **Skill** | It decays as others find the same prices, crowded books lose together, and one period's result is mostly noise | Performance risk's [significance tests](../pillars/performance-risk.md#windows-and-significance) and the firm's footprint |
-
-The generator sets the question a risk manager asks of a return. Of a market risk premium: was the exposure chosen, and
-can the mandate bear its drawdown? Of a style premium: is it in the mandate terms, and how crowded is it? Of skill: is
-it more than noise, and does it cover the fee?
-
 ## What are the two sources?
-The generators group into two sources, by the decision that puts each in a portfolio: top-down views, loosely beta, and
-bottom-up selection, loosely alpha. Apart from the three lines with no generator, every part of a portfolio's return
-lands in exactly one place in this breakdown.
+A portfolio's return divides into two sources, by the decision that puts each part there: top-down views, loosely beta,
+and bottom-up selection, loosely alpha. Apart from the risk-free return, the cost of holding beta and holdings that are
+not publicly traded, every part of a portfolio's return lands in exactly one place in this breakdown.
 
 - **Portfolio return**
   - **Top-down views**, loosely beta: paid by market risk premia and style premia
@@ -64,6 +31,36 @@ lands in exactly one place in this breakdown.
   - **Bottom-up selection**, loosely alpha: paid by skill, and what selection adds once top-down is out
 
 Beta does not mean passive: a well-timed allocation is a good beta call.
+
+## What generates return?
+Three return generators pay the two sources: market risk premia and style premia pay beta, and skill pays alpha.
+
+| Generator | What it is | Why it pays | Source |
+|---|---|---|---|
+| **Market risk premia** | The return for holding a market: the equity premium, the term premium in rates and the credit premium in spreads. Currency exposure is tagged here by convention | It compensates for losses that arrive in bad times, when they hurt most | Beta |
+| **Style premia** | The return of a rule that an index or basket can follow: value, momentum, size, carry, and the premium for holding less liquid public securities | Disputed: a risk, or a pattern in investor behaviour that persists; the framework takes no side, because the method needs only that an index fund or a future can deliver it | Beta, once declared |
+| **Skill** | The return from choosing between securities that share the same exposures | One investor finds a wrong price before others do. Measured against the market, before costs and with the market's holdings unchanged, it is zero-sum: what one manager gains, another loses | Alpha |
+
+The line between style premia and skill moves. A return counts as skill until an index or basket can replicate it, and
+from then on it is a style premium. Value was once called alpha. A premium that no instrument holds at the portfolio's
+size, as is often true of the premium for less liquid securities, is measured as alpha until one does, and the holdings
+that [liquidity risk](../pillars/liquidity-risk.md) flags are [marked in the
+split](../pillars/alpha-and-beta-method.md#the-test-and-its-limits).
+
+A generator is not a decision. The mandate, the manager or nobody may have chosen how much of a premium a portfolio
+holds, and [who chose it](01-sources-of-return.md#who-chose-each-part) is a separate question. A timing call changes how
+much of a premium is held; the return the change adds is the timing line.
+
+## How does each generator fail?
+| Generator | How it fails | Where it is watched |
+|---|---|---|
+| **Market risk premia** | A large drawdown when the economy or the markets turn, with equities, rates and spreads often moving together | Market risk's [stress tests](../pillars/market-risk.md#stress-and-reverse-stress) and its rule on drawdown headroom |
+| **Style premia** | Long periods that pay nothing, and sharp reversals when many holders leave at once. The premium for less liquid securities is lost when they must be sold | The stress tests, the [firm's footprint](../pillars/integrated-view.md#the-firms-footprint) and [liquidity risk](../pillars/liquidity-risk.md) |
+| **Skill** | It decays as others find the same prices, crowded books lose together, and one period's result is mostly noise | Performance risk's [significance tests](../pillars/performance-risk.md#windows-and-significance) and the firm's footprint |
+
+[Performance risk](../pillars/performance-risk.md) puts a different question to the portfolio manager for each
+generator. Of a market risk premium: was the exposure chosen, and can the mandate bear its drawdown? Of a style premium:
+is it in the mandate terms, and how crowded is it? Of skill: is it more than noise, and does it cover the fee?
 
 ## Who chose each part?
 Top-down return has three branches, according to whose call it was.

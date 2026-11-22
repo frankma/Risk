@@ -29,8 +29,8 @@ BACKDROP, PRACTICE, REDESIGN, PILLARS = "Foundations", "Practice", "The redesign
 GROUPS = (BACKDROP, PILLARS, PRACTICE, REDESIGN)
 CHAPTERS = [
     ("philosophy", "framework/00-philosophy.md", BACKDROP, "00"),
-    ("investment-risk", "framework/01-investment-risk.md", BACKDROP, "01"),
-    ("sources-of-return", "framework/02-sources-of-return.md", BACKDROP, "02"),
+    ("sources-of-return", "framework/01-sources-of-return.md", BACKDROP, "01"),
+    ("investment-risk", "framework/02-investment-risk.md", BACKDROP, "02"),
     ("market-risk", "pillars/market-risk.md", PILLARS, ""),
     ("liquidity-risk", "pillars/liquidity-risk.md", PILLARS, ""),
     ("performance-risk", "pillars/performance-risk.md", PILLARS, ""),
@@ -52,7 +52,8 @@ FILE_TO_VIEW["framework/concept-map.md"] = "overview"
 # Drawn from the pillar chapters and the philosophy's three decisions.
 GLANCE = [
     ("", "Market risk", "Liquidity risk", "Performance risk", "Integrated view"),
-    ("Question", "How much could a portfolio lose, in total and against its benchmark?",
+    ("Question", "Does a portfolio carry the risk its mandate intends, no more and no less, and how much could it "
+     "lose?",
      "Can the portfolio meet every call on its cash, in time and at a fair cost, without disadvantaging the investors "
      "who stay?",
      "Is the portfolio delivering what was promised, in the way it was promised?", "Where are signals combining?"),

@@ -1,12 +1,11 @@
 # Market risk
 
 ## The essentials
-**The question:** how much could a portfolio lose, in total and against its benchmark?
+**The question:** does a portfolio carry the risk its mandate intends, no more and no less, and how much could it lose?
 
 **The outcome:**
 
-> The risk manager knows, every day, which portfolios carry more risk than their mandate intends, absolute or relative,
-> and why.
+> Every day, which portfolios carry more or less risk than their mandate intends, absolute or relative, and why.
 
 **How the work is done:** the analytics engine measures every portfolio every day, ranks what needs attention and runs
 the analyses set for each ranked item's rule. The AI follows up where they point further and drafts an explanation from
@@ -45,10 +44,10 @@ The rest of this chapter is the detail behind these points.
 | Risk budget review | Daily use; monthly review | Budget use against realised return, by bet | Risk manager | Which bets to challenge |
 | Risk committee review | Monthly | Each portfolio's risk profile in the shared record; a decision paper | Risk committee | Whether profiles fit appetite |
 | Stress and scenario testing | Daily run; library reviewed monthly and on events | Stress losses by portfolio | Risk committee | Whether tolerable |
-| Pre-trade what-ifs | On request | What a proposed trade adds to risk | Portfolio managers | Whether and how much to trade |
+| Pre-trade what-ifs | On request | What a proposed trade adds to risk and to time to sell | Investment team | Whether and how much to trade |
 | Counterparty exposure monitoring | Daily | Exposure against limits | Risk manager | Whether to reduce exposure |
 | New instrument review | On request | How it is measured | Risk manager, investment team | Whether it can be held |
-| Ad hoc queries | On request | Answers on exposures and risk | Portfolio managers | Positioning decisions |
+| Ad hoc queries | On request | Answers on exposures and risk | Investment team | Positioning decisions |
 
 Daily monitoring is the flagship, shown in the table at the top: it runs most often, and most of the other workflows
 draw on what it computes.
@@ -58,9 +57,10 @@ draw on what it computes.
   example](../framework/07-redesign-method.md#worked-example-a-monthly-risk-and-performance-report).
 - **Stress and scenario testing.** Runs every scenario in the library against every portfolio, daily; how the library is
   built and governed is under [stress and reverse stress](market-risk.md#stress-and-reverse-stress).
-- **Pre-trade what-ifs.** The portfolio manager runs them in the investigate mode: the analytics engine runs the daily
-  calculations on a proposed trade and computes what it adds to VaR, concentration, tracking error and budget use. The
-  risk function owns the analysis and the portfolio manager decides, as [decision
+- **Pre-trade what-ifs.** The investment team runs them in the investigate mode: the analytics engine runs the daily
+  calculations on a proposed trade and computes what it adds to VaR, concentration, tracking error and budget use, and,
+  from [liquidity risk](liquidity-risk.md#workflows-in-this-pillar)'s measures, to time to sell and redemption coverage.
+  The risk function owns the analysis and the portfolio manager decides, as [decision
   rights](../framework/10-decision-rights.md#self-service-and-challenge) sets out.
 - **Counterparty exposure monitoring.** Runs inside the daily process, with its own limits. Approving which
   counterparties may be used stays with the function that owns that decision.
@@ -139,7 +139,7 @@ analyses set for a VaR exception, and the AI chose one follow-up. **The fund and
 ## Design choices
 A risk function chooses how each of its measures is computed, records the choice and tests it. Independent validation of
 the models sits outside the risk function, as set out in [investment
-risk](../framework/01-investment-risk.md#scope-and-boundaries).
+risk](../framework/02-investment-risk.md#scope-and-boundaries).
 
 ### Value at risk and expected shortfall
 | Choice | Options | Trade-off |
@@ -187,8 +187,8 @@ usual range.
 ### Stress and reverse stress
 - **The library** holds historical episodes, hypothetical scenarios and sensitivity shocks to single factors, and is
   reviewed on a set cycle and when conditions change.
-- **The library covers how each return generator fails.** The [sources of
-  return](../framework/02-sources-of-return.md#how-does-each-generator-fail) chapter names three ways: a drawdown in
+- **The library covers how each return generator fails.** The [how return is
+  earned](../framework/01-sources-of-return.md#how-does-each-generator-fail) chapter names three ways: a drawdown in
   market risk premia, a crowded reversal in a style premium, and books built on skill losing together. The review of the
   library checks that each has at least one scenario.
 - **A scenario becomes shocks to every factor** in two steps: shocks are set on the factors that drive the scenario, and

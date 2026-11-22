@@ -43,14 +43,14 @@ runs, and drafts from all of it. It may choose none. The analyses set for each k
 from and the cap on runs are [governed parameters](08-controls.md#materiality-thresholds-as-governed-parameters). The
 risk manager starts from an item already investigated, with every figure tied to its run.
 
-**Investigate** replaces the ad hoc query, and is how a portfolio manager [serves
-themselves](10-decision-rights.md#self-service-and-challenge). A risk manager, or a portfolio manager before a trade or
-after a period, asks a question in plain words. Each run uses the entitlements of the person who asked, so a portfolio
-manager sees figures only for the portfolios they manage. The AI works out which analyses answer it, runs them through
-the analytics engine, and reports what they show: a drill-down into a change, an aggregation across portfolios, an
-attribution over a period, a what-if on a proposed trade, a scenario. Every figure is tied to the run that produced it.
-Where no governed analysis answers a portfolio manager's question, the AI says so and the question is logged for the
-risk function.
+**Investigate** replaces the ad hoc query, and is how an investment team [serves
+itself](10-decision-rights.md#self-service-and-challenge). A risk manager, or a member of an investment team before a
+trade or after a period, asks a question in plain words. Each run uses the entitlements of the person who asked, so a
+member of an investment team sees figures only for the portfolios the team manages. The AI works out which analyses
+answer it, runs them through the analytics engine, and reports what they show: a drill-down into a change, an
+aggregation across portfolios, an attribution over a period, a what-if on a proposed trade, a scenario. Every figure is
+tied to the run that produced it. Where no governed analysis answers an investment team's question, the AI says so and
+the question is logged for the risk function.
 
 **Challenge** turns the AI on a conclusion. The conclusion may be a portfolio manager's explanation of a breach, a risk
 manager's own reading of a portfolio, or a draft paper for a committee. The AI looks for what would contradict it and

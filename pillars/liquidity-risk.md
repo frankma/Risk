@@ -6,8 +6,8 @@ investors who stay?
 
 **The outcome:**
 
-> The risk manager knows whether each portfolio can meet plausible calls on its cash in time and at a fair cost, and
-> whether the tools for managing liquidity are ready if it cannot.
+> Whether each portfolio can meet plausible calls on its cash in time and at a fair cost, and whether the tools for
+> managing liquidity are ready if it cannot.
 
 **How the work is done:** the analytics engine measures every portfolio's liquidity every day and runs a stress test on
 the day an event fires a trigger, not when the calendar says so, with the analyses set for the trigger's rule. The AI
@@ -60,6 +60,8 @@ Liquidity monitoring and stress testing is the flagship, shown in the table at t
   named distributor, would do to a portfolio's coverage. The AI runs the stress test through the analytics engine with
   those parameters and reports the result with the run behind it, as set out in [working with
   AI](../framework/06-working-with-ai.md#three-modes-of-working).
+- **Before a trade.** The investment team's [pre-trade what-if](market-risk.md#workflows-in-this-pillar) reads this
+  pillar's time to sell and redemption coverage, so a trade that would weaken coverage shows before it is made.
 - **Stale or unpriceable holdings** are shown against the measures that rest on them.
 - **Liquidity tool readiness.** A tool is ready when the governing documents provide for it, the operations to apply it
   have been tested, and the decision to use it has a named owner and a process. The AI extracts each tool's provisions
@@ -115,7 +117,7 @@ check](../framework/08-controls.md#the-grounding-check) would pass. **The fund a
 ## Design choices
 A risk function chooses how each of its liquidity measures is computed, records the choice and tests it. Independent
 validation of the models sits outside the risk function, as set out in [investment
-risk](../framework/01-investment-risk.md#scope-and-boundaries).
+risk](../framework/02-investment-risk.md#scope-and-boundaries).
 
 ### Fairness and capacity
 A portfolio can meet a call on its cash in two ways, and each answers a different question, so both are computed.

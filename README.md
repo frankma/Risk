@@ -6,25 +6,25 @@ The [reader](https://frankma.github.io/Risk/) holds every chapter on one page an
 [film](https://frankma.github.io/Risk/film/): the framework in six animated scenes.
 
 ## Investment risk, in three pillars
-A risk function is a check and balance on every portfolio's risk, and a service to the investment process under
-uncertainty ([philosophy](framework/00-philosophy.md#why-a-risk-function-exists)). It is defined by the decisions it
-alone may make: the work is shared across the firm, the decisions are not ([decision
+A risk function challenges investment decisions against the mandate, and serves the investment team with insight into
+the risks it takes ([philosophy](framework/00-philosophy.md#why-a-risk-function-exists)). It is defined by the decisions
+it alone may make: the work is shared across the firm, the decisions are not ([decision
 rights](framework/10-decision-rights.md)). Its recurring work answers three questions:
 
 | Pillar | Question |
 |---|---|
-| **Market risk** | How much could a portfolio lose, in total and against its benchmark? |
+| **Market risk** | Does a portfolio carry the risk its mandate intends, no more and no less, and how much could it lose? |
 | **Liquidity risk** | Can a portfolio meet every call on its cash, in time and at a fair cost, without disadvantaging the investors who stay? |
 | **Performance risk** | Is a portfolio delivering what was promised, in the way it was promised? |
 
 The pillars connect, and the [integrated view](pillars/integrated-view.md) reads them together.
 
-## Sources of return
-Beta is any return above the risk-free rate that an investable instrument could have captured, paid by market risk
-premia and style premia and held through top-down views. Alpha is the return left once beta is carved out, paid by
-skill and earned by bottom-up selection. A risk function uses these three return generators to ask how a return could
-stop, and the split to ask whether each risk was chosen and paid for; see [sources of
-return](framework/02-sources-of-return.md).
+## How return is earned
+Fundamentally, a portfolio's return is driven by two decisions: top-down views on which markets to hold, how much and
+for how long, and bottom-up selection of the securities within them. Loosely, top-down views earn beta: any return above
+the risk-free rate that an index fund or a future could have delivered, paid by market and style premia. Bottom-up
+selection earns alpha: the return left once beta is carved out, paid by skill. Performance risk dissects each
+portfolio's return along this line; see [how return is earned](framework/01-sources-of-return.md).
 
 ## The core pattern
 **The analytics engine computes, AI interprets and narrates, a human judges.**
@@ -36,7 +36,7 @@ of the system, where the same data always gives the same figure and every figure
 |---|---|
 | Gathering data, calculating, comparing to limits | Analytics engine |
 | Investigating each exception through the analytics engine, drafting, challenging conclusions, extracting from documents, notices and minutes | AI assistant |
-| Judging what matters to the portfolio and its intended risk profile; bringing clarity to the risks being taken | The risk manager and head of risk |
+| Checking the work, challenging it, judging what matters to the portfolio and its intended risk profile, and deciding | The risk manager and head of risk |
 
 Two rules make it work:
 
@@ -56,10 +56,10 @@ follows beneath it. Reading the essentials in order gives the framework; the det
 |---|---|
 | **Foundations** | |
 | [Philosophy](framework/00-philosophy.md) | What a risk function believes and is for. |
-| [Investment risk](framework/01-investment-risk.md) | The definition, the scope and the three pillars. |
-| [Sources of return](framework/02-sources-of-return.md) | The three return generators, and the split into beta and alpha. |
+| [How return is earned](framework/01-sources-of-return.md) | Top-down views and bottom-up selection, beta and alpha, and how the split is read. |
+| [What investment risk means](framework/02-investment-risk.md) | The definition, the scope and the three pillars. |
 | **The pillars** | |
-| [Market risk](pillars/market-risk.md) | How much a portfolio could lose: daily monitoring as a ranked queue with drafted explanations. |
+| [Market risk](pillars/market-risk.md) | Whether a portfolio carries the risk its mandate intends: daily monitoring as a ranked queue with drafted explanations. |
 | [Liquidity risk](pillars/liquidity-risk.md) | Whether a portfolio can meet its calls on cash fairly: continuous monitoring with event-triggered stress tests. |
 | [Performance risk](pillars/performance-risk.md) | Whether the promise is kept: portfolio manager reviews on the risk function's agenda. |
 | [Integrated view](pillars/integrated-view.md) | Where signals combine across the pillars, and the firm's footprint. |

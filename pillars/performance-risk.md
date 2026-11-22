@@ -5,8 +5,8 @@
 
 **The outcome:**
 
-> The risk manager can show, with evidence, whether each portfolio is meeting its objective and whether its returns come
-> from the sources its mandate describes.
+> Evidence of whether each portfolio is meeting its objective and whether its returns come from the sources its mandate
+> describes.
 
 **How the work is done:** the analytics engine tracks every portfolio's realised measures, tests its exposures against
 the confirmed mandate terms and runs the analyses set for each issue's rule. The AI follows up where they point
@@ -54,11 +54,11 @@ The rest of this chapter is the detail behind these points.
 The portfolio manager review is the flagship, shown in the table at the top: it is where the pillar's evidence meets the
 person who can act on it. The other workflows feed it.
 
-- **Attribution** separates the two [sources of return](../framework/02-sources-of-return.md), using the [alpha and beta
+- **Attribution** separates the two [sources of return](../framework/01-sources-of-return.md), using the [alpha and beta
   method](alpha-and-beta-method.md), and shows each beta line by the [return
-  generator](../framework/02-sources-of-return.md#what-generates-return) that paid it: market risk premia or style
+  generator](../framework/01-sources-of-return.md#what-generates-return) that paid it: market risk premia or style
   premia, with alpha read as skill. The generator tells the risk manager [how the return could
-  stop](../framework/02-sources-of-return.md#how-does-each-generator-fail), which sets the question to put to the
+  stop](../framework/01-sources-of-return.md#how-does-each-generator-fail), which sets the question to put to the
   portfolio manager.
 - **The watch list** holds the portfolios whose issues have not been resolved. It is a single list for the firm, owned
   by the risk function, to which this pillar and the [integrated view](integrated-view.md) both add portfolios.
@@ -128,7 +128,7 @@ illustrative.**
 ## Design choices
 A risk function chooses how each of its performance measures is computed, records the choice and tests it. Independent
 validation of the models sits outside the risk function, as set out in [investment
-risk](../framework/01-investment-risk.md#scope-and-boundaries).
+risk](../framework/02-investment-risk.md#scope-and-boundaries).
 
 ### Risk-adjusted measures
 Each measure misleads in a known way.

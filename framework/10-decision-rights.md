@@ -3,20 +3,20 @@
 ## The essentials
 **The rule:** a risk function is defined by the decisions it alone may make, not by a department or by the outputs it
 produces. **The work is shared; the decisions are not.** The analytics engine and the [shared
-record](05-principles.md#7-hand-over-judgement-not-documents) serve the whole firm, portfolio managers serve themselves
+record](05-principles.md#7-hand-over-judgement-not-documents) serve the whole firm, investment teams serve themselves
 with the risk function's governed analyses, and the AI investigates and drafts. Each decision still has one named
 holder.
 
 | Rule | In one line |
 |---|---|
 | Independence lives in the rules | The risk function owns what the system flags and how each risk figure is computed, and its holders report outside the investment line. |
-| Self-service, independent challenge | Portfolio managers run what-ifs and read attribution themselves on governed analyses; the risk function owns the analyses and challenges what they show. |
+| Self-service, independent challenge | Investment teams run what-ifs and read attribution themselves on governed analyses; the risk function owns the analyses and challenges what they show. |
 | One holder for each decision | However many people and systems contribute, each decision is recorded with the one person or body that made it. |
 
 **Who decides what:** the portfolio manager decides what a portfolio holds. The risk function decides what counts as an
 exception, sets internal limits, judges what matters, challenges and escalates. The risk committee settles what the two
 cannot agree. Compliance, pricing, independent validation and product governance hold the decisions [investment
-risk](01-investment-risk.md#scope-and-boundaries) assigns them.
+risk](02-investment-risk.md#scope-and-boundaries) assigns them.
 
 **The size of the function:** every firm needs a risk function. The rights stay the same whatever the size of the
 firm; the number of people who hold them changes. A small firm has one person, often in a combined role outside the
@@ -27,10 +27,10 @@ one is named for falls to the portfolio manager.
 The rest of this chapter is the detail behind these points.
 
 ## What defines the risk function
-The function has two [roles](00-philosophy.md#why-a-risk-function-exists): a check and balance on every portfolio's
-risk, and a service to the investment process. Each rests on something different.
+The function has two [purposes](00-philosophy.md#why-a-risk-function-exists): to challenge investment decisions against
+the mandate, and to serve the investment team with insight into the risks it takes. Each rests on something different.
 
-- **The check and balance rests on rights.** Deciding what counts as an exception, setting internal limits, judging what
+- **The challenge rests on rights.** Deciding what counts as an exception, setting internal limits, judging what
   matters, challenging and escalating can be done only by someone independent of the portfolio being overseen. These
   rights are what make the function.
 - **The service rests on analyses.** A what-if before a trade or an attribution after a period is a governed analysis
@@ -61,7 +61,7 @@ for that portfolio, whatever their title, and "head of risk" the person who hold
 | What the firm does about combined signals and its footprint | Risk committee | [Integrated view](../pillars/integrated-view.md#ownership) |
 | The risk function's opinion on a new portfolio; whether it launches | Head of risk; product governance | [New portfolio review](../pillars/new-portfolio-review.md#the-risk-functions-opinion) |
 | The legal reading of a hard limit | Compliance | [Limits and escalation](04-limits-and-escalation.md#where-limits-come-from) |
-| Prices, model validation and counterparty approval | The owners [investment risk](01-investment-risk.md#scope-and-boundaries) names | Investment risk |
+| Prices, model validation and counterparty approval | The owners named at the boundary | [What investment risk means](02-investment-risk.md#scope-and-boundaries) |
 | Where AI enters the business | Management | [Roles](10-decision-rights.md#roles) |
 
 ## Independence lives in the rules
@@ -84,17 +84,17 @@ therefore sits with whoever owns the rules.
   catch it, not a second system.
 
 ## Self-service and challenge
-The portfolio manager serves the Construct and Assess decisions themselves. Before a trade, they run a what-if; after a
-period, they read their portfolio's attribution and its split by [source of return](02-sources-of-return.md). Both run
-in the [investigate mode](06-working-with-ai.md#three-modes-of-working), on governed analyses and under the portfolio
-manager's entitlements. Where no governed analysis answers their question, the question is logged and the risk function
+The investment team serves the Construct and Assess decisions itself. Before a trade, it runs a what-if; after a period,
+it reads its portfolio's attribution and its split by [source of return](01-sources-of-return.md). Both run in the
+[investigate mode](06-working-with-ai.md#three-modes-of-working), on governed analyses and under the entitlements of the
+person who runs them. Where no governed analysis answers a question, the question is logged and the risk function
 decides whether to add one.
 
 - **The risk function owns the analyses.** What each one computes, how it is validated and when it changes are the risk
   function's decisions, so a self-served figure is the same figure the risk manager sees.
 - **The risk function challenges what they show.** A what-if that crowds out the budget, or an attribution that shows
-  unintended beta, is challenged in the pillar workflows whether or not the portfolio manager ran it.
-- **Figures from elsewhere are evidence to test.** A figure a portfolio manager brings that the analytics engine did not
+  unintended beta, is challenged in the pillar workflows whether or not the investment team ran it.
+- **Figures from elsewhere are evidence to test.** A figure the investment team brings that the analytics engine did not
   compute is tested as any explanation is, and is never stated as a fact.
 - **No risk staff report to the investment line.** A risk manager may be colocated with an investment team, and still
   holds the oversight right for its portfolios and reports to the head of risk.
@@ -114,7 +114,7 @@ out.
 |---|---|
 | Risk manager | The oversight right for a set of portfolios: judging ranked items, challenging the portfolio manager, confirming what the AI extracted and reviewing what it sent or closed; a share of the function's rules |
 | Head of risk | The function's rights as a whole: what the AI may do, which actions run under a governed rule, escalation and the acceptance of breaches; and what risk managers' time goes to |
-| Portfolio manager | What the portfolio holds; what-ifs and attribution served on governed analyses; answers to challenge, with evidence |
+| Portfolio manager | What the portfolio holds; answers to challenge, with evidence; with the investment team, what-ifs and attribution served on governed analyses |
 | Owners of adjacent risks and of data | Their own decisions, made on the same analytics engine and shared record, with what the risk function routes to them |
 | Management | Where AI enters the business, judged by the [measures of value](09-measuring-value.md), not by usage |
 
