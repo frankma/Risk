@@ -9,10 +9,10 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 | Investment risk | The chance that a portfolio's outcome departs from what its mandate intends | [What investment risk means](02-investment-risk.md#the-essentials) | Every chapter |
 | Two purposes | Challenge investment decisions against the mandate, for the firm's governance and clients, and serve the investment team with insight into the risks it takes | [Philosophy](00-philosophy.md#why-a-risk-function-exists) | README, principles, decision rights |
 | Decisions, not departments | A risk function is defined by the decisions it must make; each has a named holder independent of the investment line, and each firm decides who does the work and how it is organised | [Philosophy](00-philosophy.md#how-the-work-is-done) | Decision rights |
-| The system does the work; people judge | The analytics engine computes, the AI investigates iteratively with it and drafts, and people check, challenge, decide and are accountable; the AI adds breadth and depth, never a figure or a rule of its own | [Philosophy](00-philosophy.md#how-the-work-is-done) | Principles, working with AI |
+| The system does the work; people judge | The analytics engine computes, the AI investigates iteratively with it and drafts, and people prioritise, check, challenge, decide and are accountable; the AI adds breadth and depth, never a figure or a rule of its own | [Philosophy](00-philosophy.md#how-the-work-is-done) | Principles, working with AI |
 | Insight | The few numbers, out of millions, that show where each portfolio stands against its mandate and what to challenge | [Philosophy](00-philosophy.md) | That chapter only |
 | Beliefs | Eight positions that decide what the rules do not | [Philosophy](00-philosophy.md#beliefs) | Limits and escalation, principles, market risk |
-| Three decisions | Construct, Oversee and Assess: before, during and after an investment | [Philosophy](00-philosophy.md#why-a-risk-function-exists) | Market risk's what-ifs, liquidity risk |
+| Three decisions | Construct, Oversee and Assess: before, during and after an investment | [Philosophy](00-philosophy.md#why-a-risk-function-exists) | Every pillar, which labels its essentials by the decisions it serves |
 | Three dimensions | Condensation, drill-in and connection: what every piece of risk work provides | [Philosophy](00-philosophy.md#what-every-piece-of-risk-work-provides) | All pillars |
 | Decision-maker | Whoever a piece of a decomposition belongs to | [Philosophy](00-philosophy.md#2-drill-in) | How return is earned, alpha and beta |
 | Mandate terms | A portfolio's objective, benchmark, style, limits and dealing terms in a form the analytics engine can test, confirmed by the risk manager; hard limits are reconciled to compliance's rules | [Performance risk](../pillars/performance-risk.md#mandate-terms) | Risk data, limits and escalation, working with AI, market risk, liquidity risk, new portfolio review, alpha and beta |
@@ -50,8 +50,9 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 | New portfolio review | What must be in place before a portfolio launches or changes materially | [New portfolio review](../pillars/new-portfolio-review.md) | Performance risk, limits and escalation |
 | Risk opinion | The risk function's recorded view on a launch, with conditions; product governance decides | [New portfolio review](../pillars/new-portfolio-review.md#the-risk-functions-opinion) | That chapter only |
 | Material change | A change of strategy or benchmark, a merger or a change in dealing terms, reviewed as a launch | [New portfolio review](../pillars/new-portfolio-review.md#what-the-review-covers) | That chapter only |
-| Integrated view | One view that ranks portfolios where signals across pillars combine | [Integrated view](../pillars/integrated-view.md) | Principles, what investment risk means, all pillars |
+| Integrated view | One view that triages portfolios where signals across pillars combine, and reads what the firm is paid for | [Integrated view](../pillars/integrated-view.md) | Principles, what investment risk means, all pillars |
 | Firm's footprint | Holdings aggregated across portfolios, which do not net | [Integrated view](../pillars/integrated-view.md#the-firms-footprint) | Philosophy, how return is earned, market risk, liquidity risk, integrated view, alpha and beta |
+| What the firm is paid for | The split by strategy across all portfolios, unweighted, read on a set cycle and when market conditions call for it: whether each strategy's skill holds and where it is crowded | [Integrated view](../pillars/integrated-view.md#what-the-firm-is-paid-for) | How return is earned, what investment risk means |
 
 ## Risk data
 
@@ -85,13 +86,13 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 | Analytics engine | The deterministic part of the system, and the firm's one integrated system every function computes on: the same data always gives the same figure | [Principles](05-principles.md#2-the-analytics-engine-computes-the-ai-interprets-and-narrates-a-person-judges) | Every chapter |
 | AI | The language model that investigates, drafts, extracts and challenges; statistical models belong to the analytics engine | [Working with AI](06-working-with-ai.md#the-essentials) | Every chapter but how return is earned |
 | Modes of working | Prepare, investigate and challenge: how a person and the AI work together | [Working with AI](06-working-with-ai.md#three-modes-of-working) | Limits and escalation, market risk, liquidity risk, performance risk |
-| Investigation in Prepare | The follow-up analyses the AI chooses for each ranked item, within a cap, after the analytics engine has run the analyses set for its kind of rule | [Working with AI](06-working-with-ai.md#three-modes-of-working) | Principles, redesign method, controls, market risk, liquidity risk, performance risk, integrated view |
+| Investigation in Prepare | The follow-up analyses the AI chooses for each item in the queue, within a cap, after the analytics engine has run the analyses set for its kind of rule | [Working with AI](06-working-with-ai.md#three-modes-of-working) | Principles, redesign method, controls, market risk, liquidity risk, performance risk, integrated view |
 | What the AI reads | Governing documents, notices, minutes and the function's own record, never external news; extractions are confirmed before use, and precedent is cited as evidence | [Working with AI](06-working-with-ai.md#what-the-ai-reads) | Risk data, limits and escalation, controls, liquidity risk, performance risk, new portfolio review, alpha and beta |
 | Analysis run | A governed analysis the AI runs through the analytics engine, recorded so that its figures can be reproduced | [Working with AI](06-working-with-ai.md#where-a-figure-may-come-from) | Principles, controls |
 | Exploratory query | A read-only query the AI composes where no governed analysis exists; labelled unvalidated and kept out of outputs | [Working with AI](06-working-with-ai.md#where-a-figure-may-come-from) | Controls |
 | Expected terms | The terms each type of portfolio is expected to have, against which extracted terms are checked so that a missed term shows as a gap | [Performance risk](../pillars/performance-risk.md#mandate-terms) | Working with AI, new portfolio review |
 | Seven principles | What a redesign should follow | [Principles](05-principles.md#seven-principles) | Redesign method, all pillars |
-| Shared record | The one place the facts sit: what the analytics engine computed, each ranked item with its account and runs, and every judgement, decision and agreed action, read by each person under their entitlements | [Principles](05-principles.md#7-hand-over-judgement-not-documents) | What investment risk means, redesign method, controls, decision rights, all pillars |
+| Shared record | The one place the facts sit: what the analytics engine computed, each item in the queue with its account and runs, and every judgement, decision and agreed action, read by each person under their entitlements | [Principles](05-principles.md#7-hand-over-judgement-not-documents) | What investment risk means, redesign method, controls, decision rights, all pillars |
 | Decision paper | What a committee or board receives: what it must decide, the risk function's view and the reasons, each figure linked to the shared record | [Principles](05-principles.md#7-hand-over-judgement-not-documents) | Redesign method, market risk, liquidity risk, integrated view |
 | Seven steps | How one workflow is redesigned, from outcome to measured result | [Redesign method](07-redesign-method.md#the-seven-steps) | All pillars |
 | Step tags | Gather, Extract, Compute, Interpret, Judge, Communicate, Approve / Wait | [Redesign method](07-redesign-method.md#3-map-the-current-state) | That chapter only |
@@ -106,23 +107,26 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 | Concept | What it is | Defined in | Used by |
 |---|---|---|---|
 | Decision rights | The decisions only the risk function may make, which define it; the work is shared, the decisions are not | [Decision rights](10-decision-rights.md#what-defines-the-risk-function) | README, philosophy, what investment risk means, redesign method |
-| Independence in the rules | The risk function owns the thresholds, rankings, limits, governed analyses, AI permissions and controls, and its holders report outside the investment line | [Decision rights](10-decision-rights.md#independence-lives-in-the-rules) | Principles |
+| Independence in the rules | The risk function owns the thresholds, triage rules, limits, governed analyses, AI permissions and controls, and its holders report outside the investment line | [Decision rights](10-decision-rights.md#independence-lives-in-the-rules) | Principles |
 | Self-service | Investment teams run what-ifs and read attribution on governed analyses the risk function owns and challenges | [Decision rights](10-decision-rights.md#self-service-and-challenge) | Working with AI, market risk |
+| One set of numbers | Everyone sees the same figures from the same governed analyses, and the logic behind them is an open book: each figure traces to its rule and data | [Market risk](../pillars/market-risk.md#the-essentials) | Philosophy, liquidity risk, decision rights |
 | One holder for each decision | Each decision is recorded with the one person or body that made it, however many contributed | [Decision rights](10-decision-rights.md#one-holder-for-each-decision) | That chapter only |
 | Roles | What the risk manager, head of risk, portfolio manager, adjacent owners and management each hold, and the core's responsibilities for methodology, the rules and what the AI must get right | [Decision rights](10-decision-rights.md#roles) | Working with AI |
 | Size of the function | Every firm needs a risk function: a small firm has one person, often in a combined role, with the analytics engine and the AI doing the work; a large firm has a dedicated team under one head of risk; a right no one is named for falls to the portfolio manager | [Decision rights](10-decision-rights.md#the-size-of-the-function) | That chapter only |
 
-## Exceptions and ranking
+## Exceptions and triage
 
 | Concept | What it is | Defined in | Used by |
 |---|---|---|---|
 | Exception | A reading that has crossed a limit or another rule's threshold | [Each pillar's rules](../pillars/market-risk.md#materiality-and-exceptions) | Controls, integrated view |
 | Watch item | A reading approaching a limit or threshold, or an early sign that has not crossed one | [Each pillar's rules](../pillars/market-risk.md#materiality-and-exceptions) | Integrated view |
-| Ranked queue | What the human reviews instead of everything | [Principles](05-principles.md#4-exceptions-over-everything) | Market risk, redesign method |
+| Triage | The analytics engine sorts every reading into tiers under governed rules, breaches first, and decides what reaches the queue and in what order | [Market risk](../pillars/market-risk.md#materiality-and-exceptions) | Every workflow, integrated view, controls |
+| Queue | What a person reviews instead of everything: the triaged exceptions and watch items, each investigated by the AI | [Principles](05-principles.md#4-exceptions-over-everything) | Market risk, redesign method |
+| Prioritise | The risk manager's choice of what in the queue to act on first, with context no rule captures | [Principles](05-principles.md#what-the-risk-manager-adds) | Every workflow, decision rights |
 | Not assessed | How a portfolio whose data has a break the run cannot pass is shown, never as clean; the integrated view shows a portfolio missing one pillar's signals as partly assessed | [Risk data](03-risk-data.md#quality-before-computation) | Integrated view |
 | Watch list | The firm's single list of portfolios with unresolved issues, owned by the risk function | [Performance risk](../pillars/performance-risk.md#workflows-in-this-pillar) | Integrated view, limits and escalation |
 | Pattern | A named chain of signals across pillars | [Integrated view](../pillars/integrated-view.md#patterns) | Integrated view's rules |
-| Lead time | How much earlier the view ranked a portfolio than the first escalation from any single pillar | [Integrated view](../pillars/integrated-view.md#controls-and-measures-specific-to-the-view) | Integrated view |
+| Lead time | How much earlier the view picked up a portfolio than the first escalation from any single pillar | [Integrated view](../pillars/integrated-view.md#controls-and-measures-specific-to-the-view) | Integrated view |
 
 ## Controls
 
@@ -134,7 +138,7 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 | Input handling | Text the AI reads is data, never instructions | [Controls](08-controls.md#input-handling) | That chapter only |
 | Evaluation set | Past cases with reference outcomes for each AI step, rerun at every change of model, prompt or template | [Controls](08-controls.md#evaluation) | Redesign method |
 | Seeded review test | Drafts with a known flaw sent through review to test that reviewers read what they sign | [Controls](08-controls.md#evaluation) | Working with AI, measuring value, market risk, performance risk, integrated view |
-| Sign-off point | Where a human must approve, and what they are approving | [Controls](08-controls.md#sign-off-points) | Every redesigned workflow |
+| Sign-off point | Where a person must approve, and what they are approving | [Controls](08-controls.md#sign-off-points) | Every redesigned workflow |
 | Audit trail | The record of facts, versions, generated text, edits and approval | [Controls](08-controls.md#the-audit-trail) | Every redesigned workflow |
 | Governed parameter | A threshold or rule with an owner, a review cycle and a change record | [Controls](08-controls.md#materiality-thresholds-as-governed-parameters) | All pillars, alpha and beta |
 | Parallel run | The new workflow runs beside the old one before the old one stops | [Controls](08-controls.md#parallel-runs) | Redesign method, measuring value |

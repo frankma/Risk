@@ -1,34 +1,17 @@
 # Market risk
 
 ## The essentials
-**The question:** does a portfolio carry the risk its mandate intends, no more and no less, and how much could it lose?
+**Market risk** asks whether a portfolio carries the risk its mandate intends, no more and no less, and how much it
+could lose.
 
-**The outcome:**
+**Construct, before a trade:** everyone sees the same numbers, and the logic behind them is an open book. A what-if
+shows what a proposed trade adds to risk, to the budget and to time to sell, whoever runs it, and the portfolio manager
+makes a risk-informed call, so that the trade adds no risk that was not intended.
 
-> Every day, which portfolios carry more or less risk than their mandate intends, absolute or relative, and why.
-
-**How the work is done:** the analytics engine measures every portfolio every day, ranks what needs attention and runs
-the analyses set for each ranked item's rule. The AI follows up where they point further and drafts an explanation from
-what was found. The risk manager judges which items matter, signs off what is published to the [shared
-record](../framework/05-principles.md#7-hand-over-judgement-not-documents) and puts the questions to the portfolio
-manager, or reviews the same day a breach notice a governed rule lets the AI send.
-
-| # | Step | Owner |
-|---|---|---|
-| 1 | Load data, compute every measure, compare to limits and the previous day | Analytics engine |
-| 2 | Decompose each change by position and risk factor | Analytics engine |
-| 3 | Rank portfolios by materiality; run the analyses set for each flagged item's rule | Analytics engine |
-| 4 | Follow up where the findings point further; draft an explanation | AI |
-| 5 | Grounding check on every draft | Analytics engine |
-| 6 | Review the ranked queue, edit explanations, decide what matters; sign off what is published to the shared record | Risk manager |
-| 7 | Draft the question to the portfolio manager, linked to its item in the shared record | AI |
-| 8 | Edit and send the question; confirm the judgement on record | Risk manager |
-
-**What reaches the risk manager:** a ranked queue. An exception is a reading that has crossed a limit or another rule's
-threshold, and a watch item is a reading approaching one. Every portfolio is checked in full, and breaches rank first.
-
-**What reaches the portfolio manager:** each signed-off item on their portfolios, in the shared record, and a question
-where the risk manager has one.
+**Oversee, every day:** the analytics engine measures every portfolio and triages what needs attention. The AI
+investigates each item and drafts an explanation. The risk manager prioritises, judges what matters and challenges the
+portfolio manager where it does, on the same items both read in the [shared
+record](../framework/05-principles.md#7-hand-over-judgement-not-documents).
 
 **Where it connects:** the pillar's forward-looking measures have realised counterparts in [performance
 risk](performance-risk.md), and its signals feed [liquidity risk](liquidity-risk.md) and the [integrated
@@ -40,27 +23,43 @@ The rest of this chapter is the detail behind these points.
 
 | Workflow | Cadence | Output | Used by | For which decision |
 |---|---|---|---|---|
-| Daily monitoring and exceptions | Daily | Ranked queue, explained | Risk manager | What to escalate or query |
+| Daily monitoring and exceptions | Daily | Triaged queue, explained | Risk manager | What to escalate or query |
 | Risk budget review | Daily use; monthly review | Budget use against realised return, by bet | Risk manager | Which bets to challenge |
 | Risk committee review | Monthly | Each portfolio's risk profile in the shared record; a decision paper | Risk committee | Whether profiles fit appetite |
 | Stress and scenario testing | Daily run; library reviewed monthly and on events | Stress losses by portfolio | Risk committee | Whether tolerable |
-| Pre-trade what-ifs | On request | What a proposed trade adds to risk and to time to sell | Investment team | Whether and how much to trade |
+| Pre-trade what-ifs | On request | What a proposed trade adds to risk and to time to sell | Investment team, risk manager | Whether and how much to trade |
 | Counterparty exposure monitoring | Daily | Exposure against limits | Risk manager | Whether to reduce exposure |
 | New instrument review | On request | How it is measured | Risk manager, investment team | Whether it can be held |
-| Ad hoc queries | On request | Answers on exposures and risk | Investment team | Positioning decisions |
+| Ad hoc queries | On request | Answers on exposures and risk | Investment team, risk manager | Positioning decisions |
 
-Daily monitoring is the flagship, shown in the table at the top: it runs most often, and most of the other workflows
-draw on what it computes.
+Daily monitoring is the flagship: it runs most often, and most of the other workflows draw on what it computes. It
+runs in eight steps:
+
+| # | Step | Owner |
+|---|---|---|
+| 1 | Load data, compute every measure, compare to limits and the previous day | Analytics engine |
+| 2 | Decompose each change by position and risk factor | Analytics engine |
+| 3 | Triage by materiality; run the analyses set for each item's rule | Analytics engine |
+| 4 | Follow up where the findings point further; draft an explanation | AI |
+| 5 | Grounding check on every draft | Analytics engine |
+| 6 | Prioritise the queue, edit explanations, decide what matters; sign off what is published to the shared record | Risk manager |
+| 7 | Draft the question to the portfolio manager, linked to its item in the shared record | AI |
+| 8 | Edit and send the question; confirm the judgement on record | Risk manager |
+
+The portfolio manager reads each signed-off item on their portfolios in the shared record, with a question where the
+risk manager has one.
 
 - **Risk committee review.** The committee reads the month's exceptions and their resolution in the shared record, and
   receives a decision paper for what it must decide, as in the [redesign method's worked
   example](../framework/07-redesign-method.md#worked-example-a-monthly-risk-and-performance-report).
 - **Stress and scenario testing.** Runs every scenario in the library against every portfolio, daily; how the library is
   built and governed is under [stress and reverse stress](market-risk.md#stress-and-reverse-stress).
-- **Pre-trade what-ifs.** The investment team runs them in the investigate mode: the analytics engine runs the daily
-  calculations on a proposed trade and computes what it adds to VaR, concentration, tracking error and budget use, and,
-  from [liquidity risk](liquidity-risk.md#workflows-in-this-pillar)'s measures, to time to sell and redemption coverage.
-  The risk function owns the analysis and the portfolio manager decides, as [decision
+- **Pre-trade what-ifs.** Whoever needs them runs them in the investigate mode, on the same governed analyses: the
+  analytics engine runs the daily calculations on a proposed trade and computes what it adds to VaR, concentration,
+  tracking error and budget use, and, from [liquidity risk](liquidity-risk.md#workflows-in-this-pillar)'s measures, to
+  time to sell and redemption coverage. Everyone sees the same figures, and anyone can trace each one to the rule and
+  the data that made it, so the discussion is about the trade, not about whose numbers are right. The risk function owns
+  the analysis and the portfolio manager makes the call, as [decision
   rights](../framework/10-decision-rights.md#self-service-and-challenge) sets out.
 - **Counterparty exposure monitoring.** Runs inside the daily process, with its own limits. Approving which
   counterparties may be used stays with the function that owns that decision.
@@ -78,6 +77,9 @@ cumulative return against the risk it has used. A bet whose return is
 it, cuts it or explains why it stays.
 
 ## Materiality and exceptions
+An exception is a reading that has crossed a limit or another rule's threshold, and a watch item is a reading
+approaching one. Every portfolio is checked in full against every rule.
+
 The queue comes from a small number of kinds of rule, each owned and versioned as a [governed
 parameter](../framework/08-controls.md#materiality-thresholds-as-governed-parameters). **The example values below are
 illustrative and are not recommendations;** each risk function sets its own.
@@ -105,9 +107,10 @@ reported to compliance the same day, as [limits and escalation](../framework/04-
 lifecycle](../framework/04-limits-and-escalation.md#the-breach-lifecycle): the AI may send a notice a governed rule
 covers, and the risk manager reviews it the same day.
 
-**Ranking.** Breaches rank first, then the other exceptions, then early warnings, then persistence. Within a tier, items
-are ordered by size relative to the threshold, and a portfolio with several items ranks above a portfolio with one. The
-ranking rule is itself a governed parameter, because it decides what the risk manager reads first.
+**Triage.** Breaches come first, then the other exceptions, then early warnings, then persistence. Within a tier, items
+are ordered by size relative to the threshold, and a portfolio with several items comes above a portfolio with one. The
+triage rule is itself a governed parameter, because it decides what the risk manager reads first; what to act on first
+is then the risk manager's call.
 
 **Shared with performance risk.** Ex-ante tracking error and risk budget exceptions also go into the next challenge pack
 in [performance risk](performance-risk.md), where the portfolio manager answers them.

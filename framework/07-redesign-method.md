@@ -66,10 +66,10 @@ copies of the same number and chasing people for inputs exist because the manual
 not handed to the analytics engine or the AI.
 
 ### 5. Redesign the flow
-In the redesigned workflow the system produces the output, and the human reviews the exceptions. Four changes follow.
+In the redesigned workflow the system produces the output, and a person reviews the exceptions. Four changes follow.
 
 - **Materiality thresholds are encoded.** The rules that decide what counts as an exception, and how exceptions are
-  ranked, are written down as parameters rather than applied by eye.
+  triaged, are written down as parameters rather than applied by eye.
 - **Approval gates are moved.** Gates that existed to catch manual errors, such as a second person checking that figures
   were copied correctly, are replaced by controls in the system. Gates that exist for judgement stay.
 - **The output changes.** The facts go to the shared record, where each reader reads the items that concern them and
@@ -121,13 +121,13 @@ risk, who now decides on the risk manager's proposal.
 
 | # | Step | Owner |
 |---|---|---|
-| 1 | Load data, compute measures, compare to thresholds, rank exceptions; run the analyses set for each exception's rule | Analytics engine |
+| 1 | Load data, compute measures, compare to thresholds, triage exceptions; run the analyses set for each exception's rule | Analytics engine |
 | 2 | Follow up where the findings point further; draft an explanation from the findings | AI |
 | 3 | Grounding check on every draft | Analytics engine |
 | 4 | Review exceptions, edit explanations, propose what to escalate | Risk manager |
 | 5 | Decide what to escalate; sign off the decision paper, with each exception linked to the shared record | Head of risk |
 
-The committee reads the ranked exceptions in the shared record within days of month end, and receives a decision
+The committee reads the triaged exceptions in the shared record within days of month end, and receives a decision
 paper for what it must decide: what to escalate and what the risk function recommends.
 
 **Steps 6 and 7.** The AI step's evaluation set passes before first use, and the redesigned report runs in parallel with

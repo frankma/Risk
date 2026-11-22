@@ -7,9 +7,9 @@
 machine-learning models, such as a flow forecast or a market impact model, are part of the analytics engine: fitted,
 validated as models and deterministic once fitted.
 
-**Three modes:** the AI prepares outputs, starting from the analyses the analytics engine ran for each ranked item and
-following up where they point further; investigates a person's question; and challenges a conclusion against the data.
-In each mode the analytics engine does the computing and a person keeps the judgement.
+**Three modes:** the AI prepares outputs, starting from the analyses the analytics engine ran for each item in the queue
+and following up where they point further; investigates a person's question; and challenges a conclusion against the
+data. In each mode the analytics engine does the computing and a person keeps the judgement.
 
 **What it reads:** governing documents, notices, minutes and the function's own record, never external news. What it
 extracts is used only once a person has confirmed it, and what it retrieves from the record is cited as evidence,
@@ -31,13 +31,13 @@ The rest of this chapter is the detail behind these points.
 ## Three modes of working
 | Mode | What starts it | What the AI does | What the person does |
 |---|---|---|---|
-| **Prepare** | The daily run, a trigger or a schedule | Reads the analyses the analytics engine ran for each ranked item, chooses follow-up analyses where the findings point further, then drafts explanations, notices, packs and minutes from what was found | Judges the ranked items, edits and signs off |
+| **Prepare** | The daily run, a trigger or a schedule | Reads the analyses the analytics engine ran for each item in the queue, chooses follow-up analyses where the findings point further, then drafts explanations, briefs, notices, packs and minutes from what was found | Prioritises and judges the items, edits and signs off |
 | **Investigate** | A person's question | Runs analyses through the analytics engine and reports the figures with the runs behind them | Asks, follows up and decides what the answer means |
 | **Challenge** | A conclusion or an explanation | Tests it against the data, looks for the figures that would contradict it and reports what it finds | Weighs the challenge and decides |
 
-**Prepare** is the mode each pillar's flagship workflow runs in. For each ranked item the analytics engine first runs
-the analyses set for that kind of rule, such as the same driver across other portfolios and the tilts on record. The
-rule fixes them, so they are the engine's work and arrive as computed facts. The AI's investigation starts there: it
+**Prepare** is the mode each pillar's flagship workflow runs in. For each item in the queue the analytics engine first
+runs the analyses set for that kind of rule, such as the same driver across other portfolios and the tilts on record.
+The rule fixes them, so they are the engine's work and arrive as computed facts. The AI's investigation starts there: it
 chooses which follow-up analyses to run from the governed list, given what the first ones show, up to a set number of
 runs, and drafts from all of it. It may choose none. The analyses set for each kind of rule, the list the AI may choose
 from and the cap on runs are [governed parameters](08-controls.md#materiality-thresholds-as-governed-parameters). The
@@ -65,7 +65,7 @@ text that contains one is rejected.
 
 | Source of a figure | What it is | May it reach an output? |
 |---|---|---|
-| The daily run | Computed by the analytics engine for every portfolio, with the analyses set for each ranked item's rule | Yes |
+| The daily run | Computed by the analytics engine for every portfolio, with the analyses set for each item's rule | Yes |
 | An analysis run | One of the analytics engine's governed analyses, run by the AI with its own parameters: a drill-down, an aggregation, an attribution, a what-if, a scenario | Yes, with the run recorded |
 | Simple arithmetic | A sum, a difference, a ratio, a percentage change or a simple multiple of figures from the two rows above, which the grounding check recomputes | Yes |
 | A document | A figure extracted from a source passage, such as a limit in a portfolio's mandate terms or the size of a redemption in a notice | Once the risk manager has confirmed it |
@@ -100,7 +100,7 @@ what it may never do. The pillar chapters state these limits where they bite; th
 
 | The AI may | Examples |
 |---|---|
-| **Do alone** | Follow up each ranked item with further governed analyses, within the cap; draft text from computed facts; run a governed analysis; compose an exploratory query; start a run inside the analytics engine; extract terms, events and recorded decisions from documents, notices and minutes; cite precedent from the record; propose scenarios, questions and challenges |
+| **Do alone** | Follow up each item in the queue with further governed analyses, within the cap; draft text from computed facts; run a governed analysis; compose an exploratory query; start a run inside the analytics engine; extract terms, events and recorded decisions from documents, notices and minutes; cite precedent from the record; propose scenarios, questions and challenges |
 | **Do under a governed rule, reviewed the same day** | The [automated actions](08-controls.md#automated-actions), where the analytics engine decides the rule applies: send a breach notice the rule covers, such as a passive breach of an internal limit on a standard template, once the grounding check passes; close a breach the engine matched to a recorded data break |
 | **Do with a person's sign-off** | Anything else that leaves the function: an explanation, a notice, a pack, minutes; the terms, events and recorded decisions it extracted, before any is used |
 | **Never do** | Send any other message; write a recommendation, an opinion or its conditions; decide what matters, what to escalate or whether a breach is accepted; set a shock size; change a threshold, a limit, a rule or any other governed parameter; correct data; read external news or commentary; present a precedent as a recommendation |

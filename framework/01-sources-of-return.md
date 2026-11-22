@@ -62,6 +62,9 @@ much of a premium is held; the return the change adds is the timing line.
 generator. Of a market risk premium: was the exposure chosen, and can the mandate bear its drawdown? Of a style premium:
 is it in the mandate terms, and how crowded is it? Of skill: is it more than noise, and does it cover the fee?
 
+Across portfolios, the [integrated view](../pillars/integrated-view.md#what-the-firm-is-paid-for) reads the split by
+strategy to show what the firm is paid for.
+
 ## Who chose each part?
 Top-down return has three branches, according to whose call it was.
 

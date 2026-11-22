@@ -1,38 +1,19 @@
 # Liquidity risk
 
 ## The essentials
-**The question:** can a portfolio meet every call on its cash, in time and at a fair cost, without disadvantaging the
-investors who stay?
+**Liquidity risk** asks whether a portfolio can meet every call on its cash, in time and at a fair cost, without
+disadvantaging the investors who stay.
 
-**The outcome:**
+**Construct, before a trade:** [market risk](market-risk.md)'s what-if reads this pillar's time to sell and redemption
+coverage, so a trade that would weaken coverage shows before it is made, on the same numbers for everyone.
 
-> Whether each portfolio can meet plausible calls on its cash in time and at a fair cost, and whether the tools for
-> managing liquidity are ready if it cannot.
+**Oversee, every day:** the analytics engine measures every portfolio's liquidity and triages what needs attention, and
+it runs a stress test on the day an event fires a trigger, not when the calendar says so. The AI reads redemption
+notices into events, investigates each item and drafts the narrative. The risk manager prioritises, judges what matters
+and recommends when a liquidity management tool should be used; the tool's named owner decides.
 
-**How the work is done:** the analytics engine measures every portfolio's liquidity every day and runs a stress test on
-the day an event fires a trigger, not when the calendar says so, with the analyses set for the trigger's rule. The AI
-reads redemption notices into events the risk manager confirms, follows up where the findings point further, and
-drafts each triggered portfolio's narrative and the board's [decision
-paper](../framework/05-principles.md#7-hand-over-judgement-not-documents). The risk manager reviews each triggered
-portfolio and makes any recommendation on liquidity management tools.
-
-| # | Step | Owner |
-|---|---|---|
-| 1 | Compute each portfolio's liquidity profile and redemption coverage | Analytics engine |
-| 2 | Monitor flows, margin calls and investor concentration against each portfolio's history | Analytics engine |
-| 3 | Read each redemption notice into an event, linked to the notice | AI |
-| 4 | Confirm the event | Risk manager |
-| 5 | Run the stress test when an event trigger fires, with the analyses set for the trigger's rule | Analytics engine |
-| 6 | Follow up where the findings point further; draft the narrative | AI |
-| 7 | Grounding check on every draft | Analytics engine |
-| 8 | Review each triggered portfolio; recommend on liquidity tools | Risk manager |
-| 9 | Draft the board's decision paper, with the period's results and events linked to the shared record | AI |
-| 10 | Review scenario calibration; edit the decision paper | Risk manager |
-| 11 | Review and sign off the decision paper | Head of risk |
-
-**What "a fair cost" means:** the investors who stay must not bear the cost of others leaving, and liquidity management
-tools are the means. A segregated mandate has one client, so the question is whether the client's withdrawals and
-planned cash needs can be met in time and at a fair cost.
+**A fair cost:** the investors who stay must not bear the cost of others leaving, and liquidity management tools are the
+means. For a segregated mandate, the calls are the one client's withdrawals and planned cash needs.
 
 **Where it connects:** [market risk](market-risk.md) raises the time and cost of selling, underperformance in
 [performance risk](performance-risk.md) often comes before redemptions, and the [integrated view](integrated-view.md)
@@ -51,7 +32,21 @@ The rest of this chapter is the detail behind these points.
 | Board reporting | Monthly | Decision paper; the period's results in the shared record | Fund board | Whether liquidity is adequate |
 | Stale or unpriceable holdings | Daily | Flagged holdings | Pricing owner | Whether prices need challenge |
 
-Liquidity monitoring and stress testing is the flagship, shown in the table at the top.
+Liquidity monitoring and stress testing is the flagship. It runs in eleven steps:
+
+| # | Step | Owner |
+|---|---|---|
+| 1 | Compute each portfolio's liquidity profile and redemption coverage | Analytics engine |
+| 2 | Monitor flows, margin calls and investor concentration against each portfolio's history | Analytics engine |
+| 3 | Read each redemption notice into an event, linked to the notice | AI |
+| 4 | Confirm the event | Risk manager |
+| 5 | Run the stress test when an event trigger fires, with the analyses set for the trigger's rule | Analytics engine |
+| 6 | Follow up where the findings point further; draft the narrative | AI |
+| 7 | Grounding check on every draft | Analytics engine |
+| 8 | Review each triggered portfolio; recommend on liquidity tools | Risk manager |
+| 9 | Draft the board's decision paper, with the period's results and events linked to the shared record | AI |
+| 10 | Review scenario calibration; edit the decision paper | Risk manager |
+| 11 | Review and sign off the decision paper | Head of risk |
 
 - **Monitoring of redemptions, other calls and concentration** feeds it: these are the sources of the triggers that run
   the stress test.
@@ -60,8 +55,9 @@ Liquidity monitoring and stress testing is the flagship, shown in the table at t
   named distributor, would do to a portfolio's coverage. The AI runs the stress test through the analytics engine with
   those parameters and reports the result with the run behind it, as set out in [working with
   AI](../framework/06-working-with-ai.md#three-modes-of-working).
-- **Before a trade.** The investment team's [pre-trade what-if](market-risk.md#workflows-in-this-pillar) reads this
-  pillar's time to sell and redemption coverage, so a trade that would weaken coverage shows before it is made.
+- **Before a trade.** The [pre-trade what-if](market-risk.md#workflows-in-this-pillar) reads this pillar's time to sell
+  and redemption coverage, so a trade that would weaken coverage shows before it is made, on the same numbers for
+  everyone.
 - **Stale or unpriceable holdings** are shown against the measures that rest on them.
 - **Liquidity tool readiness.** A tool is ready when the governing documents provide for it, the operations to apply it
   have been tested, and the decision to use it has a named owner and a process. The AI extracts each tool's provisions
@@ -85,7 +81,7 @@ below are illustrative and are not recommendations;** each risk function sets it
 | Market liquidity | Time or cost to liquidate rising above a set level | Assets becoming harder to sell | Yes |
 | Stale or unpriceable | No price change for a set number of trading days | Holdings whose value is uncertain | No |
 
-The analytics engine ranks exceptions before watch items: portfolios with coverage below its limit come first, then
+The analytics engine triages exceptions before watch items: portfolios with coverage below its limit come first, then
 portfolios with a fired trigger, then other exceptions, then watch items. Stale and unpriceable holdings are also listed
 separately and routed to the owner of pricing.
 
@@ -130,7 +126,7 @@ A portfolio can meet a call on its cash in two ways, and each answers a differen
 The first is also called vertical slicing, or selling pro rata, and the second horizontal slicing, or a waterfall.
 Redemption coverage reads the capacity test, because it asks whether the call can be met at all. The gap between the two
 is shown beside it: it measures how much of the cost of meeting the call would be shifted onto the investors who stay if
-the portfolio sold its most liquid holdings first, which is the "fair cost" in the pillar's outcome made measurable.
+the portfolio sold its most liquid holdings first, which is the "fair cost" in the pillar's question made measurable.
 
 **Coverage has a horizon.** Assets that take a month to sell do not cover a call due in two days, so coverage compares
 what can be raised within a period with the calls due within it. It is shown over several horizons, illustrated here as
@@ -194,7 +190,7 @@ Two further calls are counted in every scenario, because they arrive whatever in
 The general [controls](../framework/08-controls.md) apply in full. This pillar adds three.
 
 - **Every notice is accounted for.** Each notice in the documents domain ends as a confirmed event or a recorded
-  no-event, and one unread or unconfirmed past a set time ranks in the queue.
+  no-event, and one unread or unconfirmed past a set time enters the queue.
 - **Every trigger is recorded.** Each firing, the stress test it ran and the result are kept in the audit trail, so the
   record shows that an event was assessed, and when.
 - **Scenario calibration is governed.** Outflow assumptions and stress adjustments to liquidation time and cost are

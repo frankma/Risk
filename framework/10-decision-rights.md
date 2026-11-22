@@ -49,9 +49,9 @@ for that portfolio, whatever their title, and "head of risk" the person who hold
 | Decision | Holder | Set out in |
 |---|---|---|
 | What a portfolio holds, and each trade | Portfolio manager | [Philosophy](00-philosophy.md#why-a-risk-function-exists) |
-| What counts as an exception, how the queue is ranked, the analyses set for each rule and the list the AI may choose from | Risk function, through the change record | [Controls](08-controls.md#materiality-thresholds-as-governed-parameters) |
+| What counts as an exception, how the queue is triaged, the analyses set for each rule and the list the AI may choose from | Risk function, through the change record | [Controls](08-controls.md#materiality-thresholds-as-governed-parameters) |
 | A new portfolio's first internal limits; a change to an internal limit | Head of risk; risk committee | [Limits and escalation](04-limits-and-escalation.md#who-approves-what) |
-| Whether a ranked item matters, and what to put to the portfolio manager | Risk manager | [Principles](05-principles.md#what-the-risk-manager-adds) |
+| Which items to act on first, whether each matters, and what to put to the portfolio manager | Risk manager | [Principles](05-principles.md#what-the-risk-manager-adds) |
 | How a breach of an internal limit is handled | Portfolio manager and risk manager together; the risk committee where they disagree | [Limits and escalation](04-limits-and-escalation.md#the-breach-lifecycle) |
 | Accepting a breach of an internal limit for a set period | Head of risk | [Limits and escalation](04-limits-and-escalation.md#who-approves-what) |
 | Shock sizes, scenario calibration and how plausible a reverse stress is | Risk manager | [Market risk](../pillars/market-risk.md#stress-and-reverse-stress) |
@@ -59,6 +59,7 @@ for that portfolio, whatever their title, and "head of risk" the person who hold
 | A recommendation on a liquidity management tool | Risk manager; the tool's named owner decides its use | [Liquidity risk](../pillars/liquidity-risk.md#workflows-in-this-pillar) |
 | What the AI may read, run and do, and which actions run under a governed rule | Head of risk | [Working with AI](06-working-with-ai.md#what-the-ai-may-do) |
 | What the firm does about combined signals and its footprint | Risk committee | [Integrated view](../pillars/integrated-view.md#ownership) |
+| Strategy capacity and the product range | Chief investment officer, informed by the reading of what the firm is paid for | [Integrated view](../pillars/integrated-view.md#what-the-firm-is-paid-for) |
 | The risk function's opinion on a new portfolio; whether it launches | Head of risk; product governance | [New portfolio review](../pillars/new-portfolio-review.md#the-risk-functions-opinion) |
 | The legal reading of a hard limit | Compliance | [Limits and escalation](04-limits-and-escalation.md#where-limits-come-from) |
 | Prices, model validation and counterparty approval | The owners named at the boundary | [What investment risk means](02-investment-risk.md#scope-and-boundaries) |
@@ -70,7 +71,7 @@ every portfolio every day. It scales a weakened rule in the same way: a threshol
 in a portfolio hides that portfolio every day, and no review of the queue shows what never reached it. Independence
 therefore sits with whoever owns the rules.
 
-- **The rules belong to the risk function.** The materiality thresholds, ranking rules, patterns, internal limits, the
+- **The rules belong to the risk function.** The materiality thresholds, triage rules, patterns, internal limits, the
   analyses set for each rule, the governed list of analyses, the AI's permissions, the evaluation sets and the controls
   are owned by the risk function. Anyone may propose a change; the risk function decides it through the change record,
   and independent validation and internal audit test the rules and controls themselves, as
@@ -112,7 +113,7 @@ out.
 ## Roles
 | Role | What it holds |
 |---|---|
-| Risk manager | The oversight right for a set of portfolios: judging ranked items, challenging the portfolio manager, confirming what the AI extracted and reviewing what it sent or closed; a share of the function's rules |
+| Risk manager | The oversight right for a set of portfolios: prioritising and judging items in the queue, challenging the portfolio manager, confirming what the AI extracted and reviewing what it sent or closed; a share of the function's rules |
 | Head of risk | The function's rights as a whole: what the AI may do, which actions run under a governed rule, escalation and the acceptance of breaches; and what risk managers' time goes to |
 | Portfolio manager | What the portfolio holds; answers to challenge, with evidence; with the investment team, what-ifs and attribution served on governed analyses |
 | Owners of adjacent risks and of data | Their own decisions, made on the same analytics engine and shared record, with what the risk function routes to them |
@@ -141,9 +142,9 @@ hold them does.
 **A small firm** cannot afford people dedicated to the rights. One person holds them all, often with another role
 outside the investment line, and the analytics engine and the AI do the work.
 
-- **The analytics engine and the AI do the work.** The analytics engine checks every portfolio and ranks what it finds,
-  and the AI investigates each ranked item, drafts and challenges, as in any firm. The ranked items reach the holder
-  directly, never through the portfolio manager.
+- **The analytics engine and the AI do the work.** The analytics engine checks every portfolio and triages what it
+  finds, and the AI investigates each item, drafts and challenges, as in any firm. The items reach the holder directly,
+  never through the portfolio manager.
 - **A person holds the rights.** The holder owns the rules the analytics engine and the AI run on, decides what matters,
   challenges, escalates, and signs or reviews each output. The role may be part-time and held with another outside the
   investment line, such as an independent director or the head of operations.

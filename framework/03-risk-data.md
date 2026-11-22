@@ -7,23 +7,23 @@
 data, flows and the terms of each mandate. The data is checked before anything is computed, versioned as it was known so
 that any past output can be reproduced, filled with flagged proxies where it has gaps, and corrected at its source.
 
-**How the work is done:** the analytics engine takes in every domain, runs every check on every portfolio and ranks the
-breaks by what they could change. The AI drafts a notice to the owner of each break's source. The risk manager judges
-each ranked break and decides whether to run the day's measures, wait or mark them.
+**How the work is done:** the analytics engine takes in every domain, runs every check on every portfolio and triages
+the breaks by what they could change. The AI drafts a notice to the owner of each break's source. The risk manager
+prioritises the breaks, judges each and decides whether to run the day's measures, wait or mark them.
 
 | # | Step | Owner |
 |---|---|---|
 | 1 | Take in every domain; check completeness, timeliness and validity | Analytics engine |
 | 2 | Reconcile positions to accounting values; check prices against each security's history | Analytics engine |
 | 3 | Apply proxies under the policy and flag them | Analytics engine |
-| 4 | Rank breaks by the portfolios and measures they affect | Analytics engine |
+| 4 | Triage breaks by the portfolios and measures they affect | Analytics engine |
 | 5 | Draft a notice for each break to the owner of its source | AI |
 | 6 | Grounding check on every notice | Analytics engine |
-| 7 | Judge each ranked break; decide whether to run, wait or mark | Risk manager |
+| 7 | Prioritise and judge each break; decide whether to run, wait or mark | Risk manager |
 | 8 | Edit and send the notices | Risk manager |
 | 9 | Track each break to closure | Analytics engine |
 
-A break affecting a large share of a portfolio, or a measure close to its limit, ranks above one that could not move any
+A break affecting a large share of a portfolio, or a measure close to its limit, comes above one that could not move any
 reading the risk manager would see.
 
 The rest of this chapter is the detail behind these points.
