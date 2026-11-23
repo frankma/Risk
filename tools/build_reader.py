@@ -52,8 +52,8 @@ FILE_TO_VIEW["framework/concept-map.md"] = "overview"
 # Drawn from the pillar chapters and the philosophy's three decisions.
 GLANCE = [
     ("", "Market risk", "Liquidity risk", "Performance risk", "Integrated view"),
-    ("Question", "Does a portfolio carry the risk its mandate intends, no more and no less, and how much could it "
-     "lose?",
+    ("Question", "Does a portfolio carry the risk its mandate intends, within the range it allows, and how much "
+     "could it lose?",
      "Can the portfolio meet every call on its cash, in time and at a fair cost, without disadvantaging the investors "
      "who stay?",
      "Is the portfolio delivering what was promised, in the way it was promised?", "Where are signals combining?"),

@@ -232,7 +232,7 @@ sign-off. A step returns to service once its evaluation set passes again.
 
 ## Data handling
 A risk function sends data to an AI service only under rules set before the workflow is built. The data the analytics
-engine itself reads, and the checks it passes, are set out in [risk data](03-risk-data.md).
+engine itself reads, and the checks it passes, are set out in [data integrity](03-risk-data.md).
 
 - **What may be sent.** The workflow defines which data may go to which service. Computed facts about a portfolio are
   often enough for a draft. Raw positions, investor details and personal data are sent only where the service is

@@ -69,7 +69,7 @@ text that contains one is rejected.
 | An analysis run | One of the analytics engine's governed analyses, run by the AI with its own parameters: a drill-down, an aggregation, an attribution, a what-if, a scenario | Yes, with the run recorded |
 | Simple arithmetic | A sum, a difference, a ratio, a percentage change or a simple multiple of figures from the two rows above, which the grounding check recomputes | Yes |
 | A document | A figure extracted from a source passage, such as a limit in a portfolio's mandate terms or the size of a redemption in a notice | Once the risk manager has confirmed it |
-| An exploratory query | A read-only query the AI composed over the risk data, where no governed analysis answers the question | No. It is labelled unvalidated, stays out of outputs and is shown only within the risk function |
+| An exploratory query | A read-only query the AI composed over the data store, where no governed analysis answers the question | No. It is labelled unvalidated, stays out of outputs and is shown only within the risk function |
 | Nothing | A figure the AI stated with no computation behind it | Never |
 
 The analyses the AI may run are a [governed parameter](08-controls.md#materiality-thresholds-as-governed-parameters),

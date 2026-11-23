@@ -55,7 +55,8 @@ for that portfolio, whatever their title, and "head of risk" the person who hold
 | How a breach of an internal limit is handled | Portfolio manager and risk manager together; the risk committee where they disagree | [Limits and escalation](04-limits-and-escalation.md#the-breach-lifecycle) |
 | Accepting a breach of an internal limit for a set period | Head of risk | [Limits and escalation](04-limits-and-escalation.md#who-approves-what) |
 | Shock sizes, scenario calibration and how plausible a reverse stress is | Risk manager | [Market risk](../pillars/market-risk.md#stress-and-reverse-stress) |
-| Whether the day's measures run on data with a break | Risk manager | [Risk data](03-risk-data.md#quality-before-computation) |
+| Whether the day's measures run on data with a break | Risk manager | [Data integrity](03-risk-data.md#quality-before-computation) |
+| Correcting data at source | Each domain's named owner | [Data integrity](03-risk-data.md#who-owns-what) |
 | A recommendation on a liquidity management tool | Risk manager; the tool's named owner decides its use | [Liquidity risk](../pillars/liquidity-risk.md#workflows-in-this-pillar) |
 | What the AI may read, run and do, and which actions run under a governed rule | Head of risk | [Working with AI](06-working-with-ai.md#what-the-ai-may-do) |
 | What the firm does about combined signals and its footprint | Risk committee | [Integrated view](../pillars/integrated-view.md#ownership) |

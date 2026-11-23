@@ -13,7 +13,7 @@ rights](framework/10-decision-rights.md)). Its recurring work answers three ques
 
 | Pillar | Question |
 |---|---|
-| **Market risk** | Does a portfolio carry the risk its mandate intends, no more and no less, and how much could it lose? |
+| **Market risk** | Does a portfolio carry the risk its mandate intends, within the range it allows, and how much could it lose? |
 | **Liquidity risk** | Can a portfolio meet every call on its cash, in time and at a fair cost, without disadvantaging the investors who stay? |
 | **Performance risk** | Is a portfolio delivering what was promised, in the way it was promised? |
 
@@ -64,8 +64,8 @@ follows beneath it. Reading the essentials in order gives the framework; the det
 | [Performance risk](pillars/performance-risk.md) | Whether the promise is kept: portfolio manager reviews on the risk function's agenda. |
 | [Integrated view](pillars/integrated-view.md) | Where signals combine across the pillars, the firm's footprint, and what the firm is paid for. |
 | **Practice** | |
-| [Risk data](framework/03-risk-data.md) | The data every figure rests on: checked, versioned, proxied and corrected at source. |
-| [Limits and escalation](framework/04-limits-and-escalation.md) | Hard limits, internal limits and early warnings; the breach lifecycle and the escalation path. |
+| [Data integrity](framework/03-risk-data.md) | The data every figure rests on: checked, versioned, proxied and corrected at source. |
+| [Limits and escalation](framework/04-limits-and-escalation.md) | The band each mandate intends, marked by hard limits, internal limits and early warnings; the breach lifecycle and the escalation path. |
 | [New portfolio review](pillars/new-portfolio-review.md) | What must be in place before a portfolio launches or changes materially. |
 | [Alpha and beta method](pillars/alpha-and-beta-method.md) | How the split is computed, on three portfolios. |
 | **The redesign around AI** | |

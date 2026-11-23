@@ -111,9 +111,9 @@ check](../framework/08-controls.md#the-grounding-check) would pass. **The fund a
 > (run 1).
 
 ## Design choices
-A risk function chooses how each of its liquidity measures is computed, records the choice and tests it. Independent
-validation of the models sits outside the risk function, as set out in [investment
-risk](../framework/02-investment-risk.md#scope-and-boundaries).
+A risk function chooses how each of its liquidity measures is computed, whether in software it buys or builds in-house,
+records the choice and tests it. Independent validation of the models sits outside the risk function, as set out in
+[investment risk](../framework/02-investment-risk.md#scope-and-boundaries).
 
 ### Fairness and capacity
 A portfolio can meet a call on its cash in two ways, and each answers a different question, so both are computed.

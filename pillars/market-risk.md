@@ -1,8 +1,8 @@
 # Market risk
 
 ## The essentials
-**Market risk** asks whether a portfolio carries the risk its mandate intends, no more and no less, and how much it
-could lose.
+**Market risk** asks whether a portfolio carries the risk its mandate intends, within the range it allows, and how much
+it could lose.
 
 **Construct, before a trade:** everyone sees the same numbers, and the logic behind them is an open book. A what-if
 shows what a proposed trade adds to risk, to the budget and to time to sell, whoever runs it, and the portfolio manager
@@ -140,8 +140,8 @@ analyses set for a VaR exception, and the AI chose one follow-up. **The fund and
 > overweight is a tilt on record (run 2). Of the basket's 0.29 points, 0.21 came from a larger position (run 3).
 
 ## Design choices
-A risk function chooses how each of its measures is computed, records the choice and tests it. Independent validation of
-the models sits outside the risk function, as set out in [investment
+A risk function chooses how each of its measures is computed, whether in software it buys or builds in-house, records
+the choice and tests it. Independent validation of the models sits outside the risk function, as set out in [investment
 risk](../framework/02-investment-risk.md#scope-and-boundaries).
 
 ### Value at risk and expected shortfall
