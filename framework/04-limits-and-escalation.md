@@ -1,40 +1,21 @@
 # Limits and escalation
 
 ## The essentials
-**The question:** which limits apply to a portfolio, who owns each, and what happens when one is breached?
+**Limits and escalation** asks which limits apply to a portfolio, who owns each, and what happens when one is breached.
 
-**The rule:** limits turn a mandate's intent into readings a risk function can watch every day. They come in three
-layers. Mandate and regulatory limits are hard: a breach must be rectified, and compliance owns the legal reading.
-Internal limits are soft: the risk function sets them where the mandate is silent, to produce insight first. Early
-warnings sit ahead of both. A breach of an internal limit ends in a decision the portfolio manager and the risk manager
-agree. Where they disagree, the risk committee decides and its decision binds. What the risk committee cannot resolve
-goes to the executive committee, and the board is the last resort.
+**A band, not a line:** a mandate intends a range of risk, and leeway within it is expected. Limits and early warnings
+put numbers on the edges of that range, so that the portfolio manager, the risk manager and investment oversight stay on
+top of where each portfolio stands. Hard limits, from the mandate or regulation, must be rectified, and compliance owns
+their legal reading. Internal limits are soft: the risk function sets them where the mandate is silent, to produce
+insight first. Early warnings sit ahead of both.
 
-**How the work is done:** the analytics engine detects a breach in the daily run, checks it against recorded data
-breaks, classifies it, decides whether a governed rule covers its notice and tracks it to its deadline. The AI explains
-what the checks found, drafts the notice, tests the portfolio manager's explanation against the data in the [challenge
-mode](06-working-with-ai.md#three-modes-of-working) and drafts the decision note, and, where the engine's rule applies,
-sends the routine notice or closes a breach the engine matched to a data break. The risk manager confirms the breach,
-sends any other notice and reviews the same day what the AI sent or closed. The portfolio manager and the risk manager
-agree how the breach is handled, the head of risk approves any acceptance, and the risk manager reports the close to the
-head of risk.
+**How the work is done:** the analytics engine detects a breach in the daily run, checks it against data breaks and
+classifies it as active or passive. The AI explains what the checks found, drafts the notice and tests the portfolio
+manager's explanation against the data. The portfolio manager and the risk manager agree how a breach of an internal
+limit is handled: rectify it, or accept it for a set period with the head of risk's approval.
 
-| # | Step | Owner |
-|---|---|---|
-| 1 | Detect the breach; check it against recorded data breaks; classify it as active or passive; decide whether a governed rule covers its notice | Analytics engine |
-| 2 | Explain what the checks found; close a breach the engine matched to a data break; draft the notice to the portfolio manager, investment oversight and the head of risk, and send it, once the grounding check in step 3 passes, where the engine found the rule covers it | AI |
-| 3 | Grounding check on the notice | Analytics engine |
-| 4 | Confirm the breach and its classification; send a notice the rule does not cover; review the same day what the AI sent or closed | Risk manager |
-| 5 | Record the portfolio manager's explanation | Analytics engine |
-| 6 | Test the portfolio manager's explanation against the data; draft the decision note with what supports and what contradicts it, citing how similar breaches were decided | AI |
-| 7 | Agree the decision: rectify, or accept for a set period; take a disagreement to the risk committee | Portfolio manager and risk manager |
-| 8 | Approve an acceptance for a set period | Head of risk |
-| 9 | Track the rectification to its deadline; escalate a missed deadline | Analytics engine |
-| 10 | Confirm the close and report it to the head of risk; the record goes to the risk committee | Risk manager |
-
-Every breach carries its classification, its explanation, its decision and, where accepted, its expiry. The record shows
-which limits are breached repeatedly, which is the evidence for recalibrating them. **Investment oversight** is the head
-of investments, or the committee that supervises the portfolio managers on the firm's behalf.
+**Escalation has an end:** where the two disagree, the risk committee decides and its decision binds. What it cannot
+resolve goes to the executive committee, and the board is the last resort.
 
 The rest of this chapter is the detail behind these points.
 
@@ -122,6 +103,24 @@ rule follows compliance's process.
 | 6 | Decide | The portfolio manager and the risk manager agree: rectify it, or accept it for a set period with the head of risk's approval; a disagreement goes to the risk committee |
 | 7 | Rectify | Where the decision is to rectify, the reading returns within the limit by a deadline |
 | 8 | Close | The outcome is recorded, with the reason, the breach is closed and the head of risk is told |
+
+Who does each step:
+
+| # | Step | Owner |
+|---|---|---|
+| 1 | Detect the breach; check it against recorded data breaks; classify it as active or passive; decide whether a governed rule covers its notice | Analytics engine |
+| 2 | Explain what the checks found; close a breach the engine matched to a data break; draft the notice to the portfolio manager, investment oversight and the head of risk, and send it, once the grounding check in step 3 passes, where the engine found the rule covers it | AI |
+| 3 | Grounding check on the notice | Analytics engine |
+| 4 | Confirm the breach and its classification; send a notice the rule does not cover; review the same day what the AI sent or closed | Risk manager |
+| 5 | Record the portfolio manager's explanation | Analytics engine |
+| 6 | Test the portfolio manager's explanation against the data; draft the decision note with what supports and what contradicts it, citing how similar breaches were decided | AI |
+| 7 | Agree the decision: rectify, or accept for a set period; take a disagreement to the risk committee | Portfolio manager and risk manager |
+| 8 | Approve an acceptance for a set period | Head of risk |
+| 9 | Track the rectification to its deadline; escalate a missed deadline | Analytics engine |
+| 10 | Confirm the close and report it to the head of risk; the record goes to the risk committee | Risk manager |
+
+**Investment oversight**, told at the Notify stage, is the head of investments, or the committee that supervises the
+portfolio managers on the firm's behalf.
 
 **Active and passive breaches differ.** An active breach comes from a choice, so the question is why it was made and
 whether it should stand. A passive breach comes from markets or flows, so the question is whether the position still

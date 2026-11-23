@@ -128,9 +128,9 @@ illustrative.**
 > now intended?*
 
 ## Design choices
-A risk function chooses how each of its performance measures is computed, records the choice and tests it. Independent
-validation of the models sits outside the risk function, as set out in [investment
-risk](../framework/02-investment-risk.md#scope-and-boundaries).
+A risk function chooses how each of its performance measures is computed, whether in software it buys or builds
+in-house, records the choice and tests it. Independent validation of the models sits outside the risk function, as set
+out in [investment risk](../framework/02-investment-risk.md#scope-and-boundaries).
 
 ### Risk-adjusted measures
 Each measure misleads in a known way.

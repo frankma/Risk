@@ -47,10 +47,11 @@ engine computes every figure for every portfolio every day. The AI investigates 
 with the analytics engine: it reads the findings, chooses the next analysis from a governed list, runs it through the
 analytics engine and reads the result, until the picture holds. Only then does it draft, and only then does a person see
 it: they weigh it against the rest of the queue, check it against the facts, challenge it and decide, and are
-accountable for the decision. Every workflow is designed this way from the start. The AI adds breadth and depth, never a
-figure or a rule of its own: it takes on, for every item, the small steps of reading, connecting and following up that
-were never worth a person's time, and weaves them into one integrated web of signals, as [working with
-AI](06-working-with-ai.md) sets out.
+accountable for the decision. Every workflow is designed this way from the start. Whether the system's tools are bought
+or built in-house is for each firm to decide; with the AI, building is within reach for much that once had to be bought.
+The AI adds breadth and depth, never a figure or a rule of its own: it takes on, for every item, the small steps of
+reading, connecting and following up that were never worth a person's time, and weaves them into one integrated web of
+signals, as [working with AI](06-working-with-ai.md) sets out.
 
 ## Beliefs
 Each is a position a reasonable firm could reject. Together they decide what the rules do not.
@@ -76,7 +77,7 @@ Each is a position a reasonable firm could reject. Together they decide what the
 
 ## What every piece of risk work provides
 The three apply in every pillar. All of it assumes the basics: data checked before use,
-models tested against outcomes, results reproducible, as [risk data](03-risk-data.md) sets out.
+models tested against outcomes, results reproducible, as [data integrity](03-risk-data.md) sets out.
 
 | | Dimension | The question it answers |
 |---|---|---|

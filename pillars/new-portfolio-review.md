@@ -1,20 +1,35 @@
 # New portfolio review
 
 ## The essentials
-**The question:** is everything the pillars rely on in place before a portfolio takes its first client money, or changes
-enough to be a new portfolio in all but name?
+**New portfolio review** asks whether everything the pillars rely on is in place before a portfolio takes its first
+client money, or changes enough to be a new portfolio in all but name.
 
-**The outcome:**
+**How the work is done:** the AI extracts the draft mandate terms from the documents, and the analytics engine shows any
+expected term it did not find as a gap, runs the pillars' measures on a model portfolio and checks that the data is
+ready. The risk manager confirms the terms, proposes the first internal limits to the head of risk and writes the
+opinion. On launch day the analytics engine confirms that everything agreed is in place.
 
-> Before a portfolio launches or changes materially, confirmation that its mandate can be monitored as promised, with
-> the risk function's view on record.
+**The opinion is not a veto:** product governance decides whether a portfolio launches. The risk function gives a
+recorded opinion and can escalate to the risk committee.
 
-**How the work is done:** the review computes nothing of its own. The AI extracts the draft mandate terms from the
-documents, and the analytics engine shows any expected term it did not find as a gap. The analytics engine runs the
-pillars' measures on a model portfolio, checks data readiness and proposes limits and the alpha and beta construction.
-The risk manager confirms the terms, puts the first internal limits to the head of risk for approval and writes the
-opinion, and on launch day the analytics engine confirms that everything agreed is in place. The review can start as
-soon as draft documents exist.
+**Ready on day one:** a portfolio is monitored as promised from its first day only if its mandate terms, internal
+limits, data and a liquidity profile that fits its dealing terms are in place before launch. The review starts as soon
+as draft documents exist and closes the gaps before the first client money arrives.
+
+The rest of this chapter is the detail behind these points.
+
+## What the review covers
+- **New open-ended and closed-ended funds.**
+- **New segregated mandates.**
+- **Material changes to an existing portfolio:** a change of strategy or benchmark, a merger, or a change in dealing
+  terms. A change of strategy is a relaunch in everything but name, and is reviewed as one.
+
+A change to a portfolio's governing documents triggers the re-extraction of its mandate terms, as set out in
+[performance risk](performance-risk.md#controls-and-measures-specific-to-this-pillar); where the change is material, it
+also triggers this review. A new instrument that an existing portfolio wants to hold is reviewed in [market
+risk](market-risk.md#workflows-in-this-pillar), not here.
+
+The review runs in twelve steps:
 
 | # | Step | Owner |
 |---|---|---|
@@ -31,26 +46,6 @@ soon as draft documents exist.
 | 11 | Sign off the opinion, which goes to product governance for its decision | Head of risk |
 | 12 | On launch day, confirm every agreed item is in place | Analytics engine |
 
-**The opinion is not a veto:** product governance decides whether a portfolio launches. The risk function gives a
-recorded opinion and can escalate to the risk committee.
-
-**Why before launch:** a portfolio that launches without confirmed mandate terms, internal limits, data for its
-instruments or a liquidity profile that fits its dealing terms is monitored badly from its first day. The gaps are
-cheapest to fix before launch.
-
-The rest of this chapter is the detail behind these points.
-
-## What the review covers
-- **New open-ended and closed-ended funds.**
-- **New segregated mandates.**
-- **Material changes to an existing portfolio:** a change of strategy or benchmark, a merger, or a change in dealing
-  terms. A change of strategy is a relaunch in everything but name, and is reviewed as one.
-
-A change to a portfolio's governing documents triggers the re-extraction of its mandate terms, as set out in
-[performance risk](performance-risk.md#controls-and-measures-specific-to-this-pillar); where the change is material, it
-also triggers this review. A new instrument that an existing portfolio wants to hold is reviewed in [market
-risk](market-risk.md#workflows-in-this-pillar), not here.
-
 ## What must be in place before launch
 | Item | What is tested | Defined in |
 |---|---|---|
@@ -58,7 +53,7 @@ risk](market-risk.md#workflows-in-this-pillar), not here.
 | Benchmark | It passes the benchmark tests: specified in advance, investable, unambiguous, measurable, appropriate to the style and owned | [Performance risk](performance-risk.md#benchmarks-and-peer-groups) |
 | Limits | Internal limits and early warnings set by the risk function; the mandate and regulatory limits recorded, with each risk-measured limit set up for the risk function to monitor | [Limits and escalation](../framework/04-limits-and-escalation.md) |
 | Liquidity profile | Redemption coverage under the scenarios for calls on cash, at the launch size and the expected size, against the dealing terms | [Liquidity risk](liquidity-risk.md#calls-on-cash) |
-| Data | Every instrument the portfolio expects to hold, and every instrument in its top-down portfolio, can be priced, classified and measured by the analytics engine, or has a proxy under the policy | [Risk data](../framework/03-risk-data.md#proxies) |
+| Data | Every instrument the portfolio expects to hold, and every instrument in its top-down portfolio, can be priced, classified and measured by the analytics engine, or has a proxy under the policy | [Data integrity](../framework/03-risk-data.md#proxies) |
 | Alpha and beta construction | The benchmark portfolio, the risk-free rate, the buckets, the instrument inside each, the factor list and each factor's generator tag, declared before the first period | [Alpha and beta method](alpha-and-beta-method.md#booked-or-derived) |
 | Liquidity management tools | The tools the documents provide for, and whether each is ready by liquidity risk's readiness test | [Liquidity risk](liquidity-risk.md#workflows-in-this-pillar) |
 | Stress | The model portfolio's stress loss against the drawdown tolerance | [Market risk](market-risk.md#stress-and-reverse-stress) |

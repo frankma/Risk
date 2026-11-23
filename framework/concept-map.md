@@ -15,7 +15,7 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 | Three decisions | Construct, Oversee and Assess: before, during and after an investment | [Philosophy](00-philosophy.md#why-a-risk-function-exists) | Every pillar, which labels its essentials by the decisions it serves |
 | Three dimensions | Condensation, drill-in and connection: what every piece of risk work provides | [Philosophy](00-philosophy.md#what-every-piece-of-risk-work-provides) | All pillars |
 | Decision-maker | Whoever a piece of a decomposition belongs to | [Philosophy](00-philosophy.md#2-drill-in) | How return is earned, alpha and beta |
-| Mandate terms | A portfolio's objective, benchmark, style, limits and dealing terms in a form the analytics engine can test, confirmed by the risk manager; hard limits are reconciled to compliance's rules | [Performance risk](../pillars/performance-risk.md#mandate-terms) | Risk data, limits and escalation, working with AI, market risk, liquidity risk, new portfolio review, alpha and beta |
+| Mandate terms | A portfolio's objective, benchmark, style, limits and dealing terms in a form the analytics engine can test, confirmed by the risk manager; hard limits are reconciled to compliance's rules | [Performance risk](../pillars/performance-risk.md#mandate-terms) | Data integrity, limits and escalation, working with AI, market risk, liquidity risk, new portfolio review, alpha and beta |
 
 ## How return is earned
 
@@ -54,28 +54,29 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 | Firm's footprint | Holdings aggregated across portfolios, which do not net | [Integrated view](../pillars/integrated-view.md#the-firms-footprint) | Philosophy, how return is earned, market risk, liquidity risk, integrated view, alpha and beta |
 | What the firm is paid for | The split by strategy across all portfolios, unweighted, read on a set cycle and when market conditions call for it: whether each strategy's skill holds and where it is crowded | [Integrated view](../pillars/integrated-view.md#what-the-firm-is-paid-for) | How return is earned, what investment risk means |
 
-## Risk data
+## Data integrity
 
 | Concept | What it is | Defined in | Used by |
 |---|---|---|---|
-| Golden source | The one source each domain is read from | [Risk data](03-risk-data.md#from-source-to-computed-figure) | That chapter only |
-| Snapshot | The checked and enriched data a run computes from, and only from | [Risk data](03-risk-data.md#from-source-to-computed-figure) | That chapter only |
-| Versioned as known | Each record keeps the date it describes and the date it became known, so past outputs can be reproduced | [Risk data](03-risk-data.md#versioned-as-known) | Controls |
-| Data break | A failed quality check, recorded with the portfolios and measures it affects | [Risk data](03-risk-data.md#quality-before-computation) | Limits and escalation, working with AI, controls |
-| Proxy policy | How gaps in data are filled: flagged, governed, measured and temporary | [Risk data](03-risk-data.md#proxies) | Market risk, new portfolio review |
-| Fitness for use | The risk function's call on whether data is good enough to compute from; correction stays with the source's owner | [Risk data](03-risk-data.md#who-owns-what) | That chapter only |
+| Golden source | The one source each domain is read from | [Data integrity](03-risk-data.md#from-source-to-computed-figure) | That chapter only |
+| Snapshot | The checked and enriched data a run computes from, and only from | [Data integrity](03-risk-data.md#from-source-to-computed-figure) | That chapter only |
+| Versioned as known | Each record keeps the date it describes and the date it became known, so past outputs can be reproduced | [Data integrity](03-risk-data.md#versioned-as-known) | Controls |
+| Data break | A failed quality check, recorded with the portfolios and measures it affects | [Data integrity](03-risk-data.md#quality-before-computation) | Limits and escalation, working with AI, controls |
+| Proxy policy | How gaps in data are filled: flagged, governed, measured and temporary | [Data integrity](03-risk-data.md#proxies) | Market risk, new portfolio review |
+| Fitness for use | The risk function's call on whether data is good enough to compute from; correction stays with each domain's named owner | [Data integrity](03-risk-data.md#who-owns-what) | That chapter only |
 
 ## Limits and escalation
 
 | Concept | What it is | Defined in | Used by |
 |---|---|---|---|
-| Hard limit | A mandate or regulatory limit, which must be rectified; compliance owns its legal reading, and its coded rule is the master reading | [Limits and escalation](04-limits-and-escalation.md#where-limits-come-from) | Risk data, market risk, performance risk, new portfolio review |
+| Band | The range of risk a mandate intends; leeway within it is expected, and limits and early warnings mark its edges | [Limits and escalation](04-limits-and-escalation.md#the-essentials) | Market risk, what investment risk means |
+| Hard limit | A mandate or regulatory limit, which must be rectified; compliance owns its legal reading, and its coded rule is the master reading | [Limits and escalation](04-limits-and-escalation.md#where-limits-come-from) | Data integrity, market risk, performance risk, new portfolio review |
 | Risk-measured limit | A hard limit on a measure only the analytics engine computes (leverage, exposure by value at risk, counterparty exposure, liquidity); the risk function monitors it and compliance writes the breach report | [Limits and escalation](04-limits-and-escalation.md#where-limits-come-from) | Market risk, liquidity risk, new portfolio review |
 | Internal limit | A soft limit the risk function sets where the mandate is silent, to produce insight first and constrain when judged necessary | [Limits and escalation](04-limits-and-escalation.md#what-internal-limits-are-for) | Market risk, liquidity risk, controls |
 | Early warning | A level ahead of a hard or internal limit, or on a measure with no limit; a reading beyond it is a watch item | [Limits and escalation](04-limits-and-escalation.md#where-limits-come-from) | Market risk, new portfolio review |
 | Breach lifecycle | Detect, verify, classify, notify, explain, decide, rectify and close | [Limits and escalation](04-limits-and-escalation.md#the-breach-lifecycle) | Market risk, liquidity risk |
 | Escalation path | Who a missed deadline, a disagreement between the portfolio manager and the risk manager, a dissent and a hard limit breach go to; the risk committee's decision binds; what it cannot resolve goes to its parent body, the executive committee, and the board is the last resort | [Limits and escalation](04-limits-and-escalation.md#escalation) | Performance risk, new portfolio review |
-| Investment oversight | The head of investments, or the committee that supervises the portfolio managers | [Limits and escalation](04-limits-and-escalation.md#the-essentials) | Performance risk |
+| Investment oversight | The head of investments, or the committee that supervises the portfolio managers | [Limits and escalation](04-limits-and-escalation.md#the-breach-lifecycle) | Performance risk |
 | Active and passive breach | A breach caused by a trade or decision, or by markets, flows or corporate actions | [Limits and escalation](04-limits-and-escalation.md#the-breach-lifecycle) | Working with AI, controls |
 
 ## Redesigning the work
@@ -87,7 +88,7 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 | AI | The language model that investigates, drafts, extracts and challenges; statistical models belong to the analytics engine | [Working with AI](06-working-with-ai.md#the-essentials) | Every chapter but how return is earned |
 | Modes of working | Prepare, investigate and challenge: how a person and the AI work together | [Working with AI](06-working-with-ai.md#three-modes-of-working) | Limits and escalation, market risk, liquidity risk, performance risk |
 | Investigation in Prepare | The follow-up analyses the AI chooses for each item in the queue, within a cap, after the analytics engine has run the analyses set for its kind of rule | [Working with AI](06-working-with-ai.md#three-modes-of-working) | Principles, redesign method, controls, market risk, liquidity risk, performance risk, integrated view |
-| What the AI reads | Governing documents, notices, minutes and the function's own record, never external news; extractions are confirmed before use, and precedent is cited as evidence | [Working with AI](06-working-with-ai.md#what-the-ai-reads) | Risk data, limits and escalation, controls, liquidity risk, performance risk, new portfolio review, alpha and beta |
+| What the AI reads | Governing documents, notices, minutes and the function's own record, never external news; extractions are confirmed before use, and precedent is cited as evidence | [Working with AI](06-working-with-ai.md#what-the-ai-reads) | Data integrity, limits and escalation, controls, liquidity risk, performance risk, new portfolio review, alpha and beta |
 | Analysis run | A governed analysis the AI runs through the analytics engine, recorded so that its figures can be reproduced | [Working with AI](06-working-with-ai.md#where-a-figure-may-come-from) | Principles, controls |
 | Exploratory query | A read-only query the AI composes where no governed analysis exists; labelled unvalidated and kept out of outputs | [Working with AI](06-working-with-ai.md#where-a-figure-may-come-from) | Controls |
 | Expected terms | The terms each type of portfolio is expected to have, against which extracted terms are checked so that a missed term shows as a gap | [Performance risk](../pillars/performance-risk.md#mandate-terms) | Working with AI, new portfolio review |
@@ -123,7 +124,7 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 | Triage | The analytics engine sorts every reading into tiers under governed rules, breaches first, and decides what reaches the queue and in what order | [Market risk](../pillars/market-risk.md#materiality-and-exceptions) | Every workflow, integrated view, controls |
 | Queue | What a person reviews instead of everything: the triaged exceptions and watch items, each investigated by the AI | [Principles](05-principles.md#4-exceptions-over-everything) | Market risk, redesign method |
 | Prioritise | The risk manager's choice of what in the queue to act on first, with context no rule captures | [Principles](05-principles.md#what-the-risk-manager-adds) | Every workflow, decision rights |
-| Not assessed | How a portfolio whose data has a break the run cannot pass is shown, never as clean; the integrated view shows a portfolio missing one pillar's signals as partly assessed | [Risk data](03-risk-data.md#quality-before-computation) | Integrated view |
+| Not assessed | How a portfolio whose data has a break the run cannot pass is shown, never as clean; the integrated view shows a portfolio missing one pillar's signals as partly assessed | [Data integrity](03-risk-data.md#quality-before-computation) | Integrated view |
 | Watch list | The firm's single list of portfolios with unresolved issues, owned by the risk function | [Performance risk](../pillars/performance-risk.md#workflows-in-this-pillar) | Integrated view, limits and escalation |
 | Pattern | A named chain of signals across pillars | [Integrated view](../pillars/integrated-view.md#patterns) | Integrated view's rules |
 | Lead time | How much earlier the view picked up a portfolio than the first escalation from any single pillar | [Integrated view](../pillars/integrated-view.md#controls-and-measures-specific-to-the-view) | Integrated view |

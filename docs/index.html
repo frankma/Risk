@@ -217,9 +217,9 @@ figure { margin: 0; }
           <text class="hl" x="30" y="30"><tspan class="acc" font-weight="700">Transparency:</tspan> every flag traced to its numbers, explained and decided on the record.</text>
           <text class="s" x="30" y="52" style="font-size:15px">How does a day's data become a decision someone can defend?</text>
           <g transform="translate(0 60)">
-          <!-- phase 1: the nine data domains feed the analytics engine, which starts in the centre -->
+          <!-- phase 1: the ten data domains feed the analytics engine, which starts in the centre -->
           <g id="feeds" class="fx gone" style="--t:3.2s">
-            <text class="k" x="410" y="462" text-anchor="middle">millions of data points, every portfolio, every day</text>
+            <text class="k" x="410" y="488" text-anchor="middle">millions of data points, every portfolio, every day</text>
           </g>
           <g id="dots"></g>
 
@@ -327,7 +327,7 @@ figure { margin: 0; }
           <g class="fx fade" style="--d:27.6s"><rect class="f-beni" x="250" y="31" width="8" height="8"/><text class="hd" x="264" y="40" style="font-size:15px">Every flag ends traced, explained and decided</text></g>
           <path class="hair fx fade" d="M40 430 H760" style="--d:28.2s"/>
           <text class="hd fx fade" x="40" y="452" style="--d:28.4s;font-size:14px">Data</text>
-          <text class="k fx fade" x="40" y="470" style="--d:28.4s;font-size:12.5px">nine domains</text>
+          <text class="k fx fade" x="40" y="470" style="--d:28.4s;font-size:12.5px">ten domains</text>
           <text class="s fx fade" x="40" y="487" style="--d:28.4s;font-size:12.5px">versioned as known</text>
           <path class="ln fx fade" d="M151 447 H173" marker-end="url(#ah1-ink)" style="--d:28.60s"/>
           <text class="hd fx fade" x="185" y="452" style="--d:28.75s;font-size:14px">Measure</text>
@@ -729,7 +729,7 @@ figure { margin: 0; }
   </section>
 
   <footer class="page-foot">
-    <p>Drawn from the investment risk framework: the philosophy, how return is earned, what investment risk means, risk data, working with AI
+    <p>Drawn from the investment risk framework: the philosophy, how return is earned, what investment risk means, data integrity, working with AI
       and the alpha and beta method, the three pillars and the integrated view, limits and escalation, controls and
       the redesign method.</p>
     <p>Portfolios, figures and proportions are illustrative.</p>
@@ -770,16 +770,16 @@ figure { margin: 0; }
     return e;
   };
 
-  /* Scene 1: the nine data domains of the risk data chapter, in a ring, streaming into the analytics engine */
+  /* Scene 1: the data domains of the data integrity chapter, in a ring, streaming into the analytics engine */
   (() => {
     let s = 7;
     const rnd = () => { s = (s * 16807) % 2147483647; return (s - 1) / 2147483646; };
     const g = document.getElementById('dots'), f = document.getElementById('feeds');
-    const names = ['Positions', 'Prices', 'Market data', 'Reference data', 'Benchmarks', 'Flows and investors',
-      'Margin and financing', 'Mandate terms', 'Records of decisions'];
+    const names = ['Positions', 'Prices', 'Market data', 'Reference data', 'Benchmarks', 'Returns and valuations',
+      'Flows and investors', 'Margin and financing', 'Mandate terms', 'Records of decisions'];
     const ex = 410, ey = 228;  /* the vanishing point: the data converges here; the square then slides to the centre of the charts */
     names.forEach((n, k) => {
-      const a = (-90 + k * 40) * Math.PI / 180;
+      const a = (-90 + k * 36) * Math.PI / 180;
       const cx = 400 + 300 * Math.cos(a), cy = 232 + 180 * Math.sin(a);
       for (let i = 0; i < 16; i++) {
         const x = cx - 42 + rnd() * 84, y = cy - 20 + rnd() * 40;

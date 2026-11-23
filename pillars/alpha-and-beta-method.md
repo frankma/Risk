@@ -1,27 +1,22 @@
 # Alpha and beta method
 
 ## The essentials
-**The question:** how much of a portfolio's return is beta, and how much is alpha?
+**The alpha and beta method** answers how much of a portfolio's return is beta, and how much is alpha.
 
-**The rule:** the split rests on three portfolios: the benchmark portfolio, the top-down portfolio and the real
-portfolio. The benchmark portfolio's return above the risk-free rate is policy beta. The increment from it to the
-top-down portfolio is active beta, where all market and factor exposure is measured, whether an allocation call set it
-or a security pick carried it. Alpha is the increment from the top-down portfolio to the real portfolio: the add-on
-return from security selection, once the top-down portfolio has carried all the beta out.
+**Three portfolios:** policy beta is the benchmark portfolio's return above the risk-free rate. Active beta is the
+increment to the top-down portfolio, which carries all of the real portfolio's market and factor exposure. Alpha is the
+increment to the real portfolio: the return from selection alone.
 
-**How the work is done:** within [attribution reporting](performance-risk.md#workflows-in-this-pillar), the analytics
-engine builds the top-down portfolio each day, computes the split and checks that it reconciles; a split that does not
-is an exception and is not drafted. The AI drafts the explanation, and the [grounding
-check](../framework/08-controls.md#the-grounding-check) tests it. The risk manager judges whether alpha persists,
-whether beta was intended and which questions to put to the portfolio manager, who decides what to hold.
+**How the work is done:** each day the analytics engine builds the top-down portfolio and computes the split, the AI
+drafts the explanation, and the risk manager judges whether alpha persists and beta was intended, and challenges the
+portfolio manager where it matters.
 
-**Alpha depends on a declared list:** it is what the declared factors leave unexplained. When an ETF or a future can
-replicate a return, it joins the list. Each declared factor is tagged with the [return
-generator](../framework/01-sources-of-return.md#what-generates-return) that pays it, a market risk premium or a style
-premium, so that beta can be read by generator and alpha is read as skill.
+**Alpha depends on a declared list:** it is what the declared factors leave unexplained. A return an ETF or a future can
+replicate joins the list, tagged with the [return generator](../framework/01-sources-of-return.md#what-generates-return)
+that pays it.
 
 This chapter is a companion to [how return is earned](../framework/01-sources-of-return.md) and [performance
-risk](performance-risk.md). The rest of it is the detail behind these points.
+risk](performance-risk.md); the rest of it is the detail behind these points.
 
 ## Scope and basis
 The split runs on publicly traded holdings and on gross returns: after trading and financing costs, before fees.
@@ -129,6 +124,10 @@ Because exposure is each day's weights times betas estimated over a long window,
 estimated exposure, not to a true exposure no one can observe.
 
 ## Computing the split
+Each day, within [attribution reporting](performance-risk.md#workflows-in-this-pillar), the analytics engine checks that
+the split reconciles: the benchmark portfolio's return and the two increments must add up to the real portfolio's gross
+return. A split that does not reconcile is an exception and is not drafted.
+
 The analytics engine compares the top-down portfolio's positions with the benchmark portfolio, the confirmed mandate
 terms and the tilts and timing calls on record. The risk manager's judgement on unintended beta is noted beside the line
 and does not change it. The book's return is shown separately for names held and names not held.
