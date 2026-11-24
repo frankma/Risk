@@ -1,9 +1,9 @@
 # Controls
 
 ## The essentials
-**The rule:** a redesign removes steps that existed to catch errors, such as a second person checking figures. Those
-steps can be removed only if something at least as reliable takes their place. The controls below are designed in step 6
-of the [redesign method](07-redesign-method.md), not added after the workflow is live.
+A redesign removes steps that existed to catch errors, such as a second person checking figures; they can be removed
+only if something **at least as reliable** takes their place. The controls below are designed in step 6 of the [redesign
+method](07-redesign-method.md), not added after the workflow is live.
 
 | Control | What it protects against |
 |---|---|
@@ -20,17 +20,17 @@ of the [redesign method](07-redesign-method.md), not added after the workflow is
 | Incidents | An error repeating, or an output already sent left uncorrected |
 | Data handling | Sensitive data reaching a service it should not |
 
-**Who owns them:** the risk function designs and owns the controls, under independent validation, and can then remove
-its own manual checks on that basis.
+**Who owns them:** the risk function designs and owns the controls, under independent validation that covers the tools
+it builds in-house as well as its AI steps, and can then remove its own manual checks on that basis.
 
 The rest of this chapter is the detail behind these points.
 
 ## The grounding check
-The grounding check enforces the principle that [the AI never fabricates a
-number](05-principles.md#3-the-ai-never-fabricates-a-number). Every number in a piece of generated text is extracted and
-traced to the computed facts behind it: the facts from the daily run that the text was generated from, and the results
-of any analysis the AI ran through the analytics engine, each recorded as a run. Numbers written as words, such as
-"three months", are extracted and traced in the same way as numerals.
+The grounding check enforces the principle that [a number that cannot be reproduced is
+rejected](05-principles.md#3-a-number-that-cannot-be-reproduced-is-rejected). Every number in a piece of generated text
+is extracted and traced to the computed facts behind it: the facts from the daily run that the text was generated from,
+and the results of any analysis the AI ran through the analytics engine, each recorded as a run. Numbers written as
+words, such as "three months", are extracted and traced in the same way as numerals.
 
 A number in generated text is grounded if it is one of the computed facts, the result of a recorded analysis run, or the
 result of a simple operation on them that the AI states and the check can recompute: a sum, a difference, a percentage
@@ -86,13 +86,10 @@ remain the risk manager's judgement at the sign-off point, and [evaluation](08-c
 that judgement is exercised.
 
 ## AI permissions
-The AI works under a permission that the risk function sets and records: the data it may read, the analyses it may run
-and the actions it may never take, as set out in [working with AI](06-working-with-ai.md#what-the-ai-may-do). The engine
-enforces it. An analysis outside the governed list does not run. The one thing the AI may run outside the list is a
-read-only exploratory query, whose result is labelled unvalidated, kept out of outputs, shown only within the risk
-function and never used for a limit. The AI has no write access to data or to governed parameters, and nothing it
-produces leaves the function without a sign-off, except the [automated actions](08-controls.md#automated-actions) a
-governed rule allows. Publishing an item to readers of the [shared
+The AI works under a permission the risk function sets and records, as [working with
+AI](06-working-with-ai.md#what-the-ai-may-do) sets out. The analytics engine enforces it: an analysis outside the
+governed list does not run, an exploratory query stays labelled unvalidated and out of outputs, and the AI has no write
+access to data or to governed parameters. Publishing an item to readers of the [shared
 record](05-principles.md#7-hand-over-judgement-not-documents) outside the risk function counts as leaving it. Every run
 the AI starts is recorded with its parameters, the person who asked and the result, so that any answer can be
 reproduced.
@@ -262,10 +259,10 @@ towards these expectations where a supervisor's definition of AI covers them.
 The risk function tests its own AI steps day to day, through the grounding check, parallel runs and ongoing monitoring
 above, as part of the limits of its own measures and tools that it is responsible for. It is not the only judge of them.
 The independent validation function, which sits outside the risk function as set out in [investment
-risk](02-investment-risk.md), reviews each AI step and the grounding check at first use and at each material change: a
-new model, a changed prompt or template, a new analysis on the governed list or a change to the check itself. Internal
-audit tests that the controls operate as described, from the audit trail, the sign-offs and the change records. A firm
-should map these expectations to the specific requirements that apply to it.
+risk](02-investment-risk.md), reviews each AI step, the grounding check and each tool the risk function builds in-house,
+at first use and at each material change: a new model, a changed prompt or template, a new analysis on the governed list
+or a change to the check itself. Internal audit tests that the controls operate as described, from the audit trail, the
+sign-offs and the change records. A firm should map these expectations to the specific requirements that apply to it.
 
 ## Sources
 - International Organization of Securities Commissions (2021). *The Use of Artificial Intelligence and Machine Learning

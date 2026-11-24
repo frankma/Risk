@@ -1,30 +1,22 @@
 # Working with AI
 
 ## The essentials
-**The rule:** the analytics engine computes, the AI interprets and narrates, a person judges.
+**The AI** interprets and narrates; it never computes and never judges. It is the language model that investigates,
+drafts, extracts and challenges; statistical and machine-learning models belong to the analytics engine, validated as
+models and deterministic once fitted.
 
-**What "AI" means:** the language model that investigates, drafts, extracts and challenges. Statistical and
-machine-learning models, such as a flow forecast or a market impact model, are part of the analytics engine: fitted,
-validated as models and deterministic once fitted.
-
-**Three modes:** the AI prepares outputs, starting from the analyses the analytics engine ran for each item in the queue
-and following up where they point further; investigates a person's question; and challenges a conclusion against the
-data. In each mode the analytics engine does the computing and a person keeps the judgement.
+**Three modes:** the AI prepares outputs from the analyses run for each item in the queue, following up where they point
+further; investigates a person's question; and challenges a conclusion against the data.
 
 **What it reads:** governing documents, notices, minutes and the function's own record, never external news. What it
-extracts is used only once a person has confirmed it, and what it retrieves from the record is cited as evidence,
-never as a recommendation.
+extracts is used only once a person has confirmed it.
 
-**Numbers:** the AI never fabricates a number. Every figure it reports has a recorded computation behind it that can be
-reproduced.
+**Numbers:** a number that cannot be reproduced from a recorded computation is rejected. What the check cannot catch,
+such as omission or a wrong driver, a person does.
 
-**Permissions:** the AI may draft, run governed analyses and propose. Under a governed rule it may also send a routine
-breach notice and close a breach that came from a data break, and a person reviews each the same day. Anything else that
-leaves the function needs a person's sign-off. The AI never sends any other message, writes a recommendation, decides
-what matters or changes a governed parameter.
-
-**People:** supervising the AI is a skill. Who holds each decision, how the craft is learned and why accountability
-does not move are in [decision rights](10-decision-rights.md).
+**What it may do:** draft, run governed analyses and propose. Under a governed rule it may also send a routine breach
+notice or close a breach that came from a data break, and a person reviews each the same day. It never decides what
+matters, writes a recommendation or changes a governed parameter.
 
 The rest of this chapter is the detail behind these points.
 
@@ -44,7 +36,7 @@ from and the cap on runs are [governed parameters](08-controls.md#materiality-th
 risk manager starts from an item already investigated, with every figure tied to its run.
 
 **Investigate** replaces the ad hoc query, and is how an investment team [serves
-itself](10-decision-rights.md#self-service-and-challenge). A risk manager, or a member of an investment team before a
+itself](09-decision-rights.md#self-service-and-challenge). A risk manager, or a member of an investment team before a
 trade or after a period, asks a question in plain words. Each run uses the entitlements of the person who asked, so a
 member of an investment team sees figures only for the portfolios the team manages. The AI works out which analyses
 answer it, runs them through the analytics engine, and reports what they show: a drill-down into a change, an
@@ -60,8 +52,8 @@ reports the evidence either way. A challenge is evidence put to a person, not a 
 before anything uses it.
 
 ## Where a figure may come from
-A figure may reach an output only from the sources below; a figure with no computation behind it is a fabrication, and
-text that contains one is rejected.
+A figure may reach an output only from the sources below; a figure that cannot be reproduced from one of them is
+rejected, and so is text that contains one.
 
 | Source of a figure | What it is | May it reach an output? |
 |---|---|---|
@@ -125,6 +117,9 @@ Working with the AI is a skill, and the hardest part of it is staying critical o
 A sign-off given without reading is the failure this section exists to prevent, and it leaves no trace in the edits. The
 risk function therefore reviews a sample of signed-off items against the facts and runs behind them, as each pillar sets
 out for its own drafts, and tests the review with seeded drafts, as [evaluation](08-controls.md#evaluation) sets out.
+
+Who holds each decision, how the craft is learned and why accountability does not move are set out in [decision
+rights](09-decision-rights.md).
 
 ## A worked exchange
 A risk manager asks why Fund T's ex-ante tracking error rose over the week, and whether other portfolios are exposed to

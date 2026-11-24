@@ -196,8 +196,9 @@ The general [controls](../framework/08-controls.md) apply in full. This pillar a
 - **Scenario calibration is governed.** Outflow assumptions and stress adjustments to liquidation time and cost are
   governed parameters owned by the risk function, with every change recorded.
 
-Of the measures in [measuring value](../framework/09-measuring-value.md), speed and quality matter most here: how soon
-an event is assessed, and whether any event is missed. The pillar-specific measure captures the new capability directly.
+Of the [four dimensions](../framework/07-redesign-method.md#four-dimensions) a redesigned workflow is measured on, speed
+and quality matter most here: how soon an event is assessed, and whether any event is missed. The pillar-specific
+measure captures the new capability directly.
 
 | Dimension | Measure for this pillar |
 |---|---|

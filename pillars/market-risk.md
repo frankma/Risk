@@ -60,7 +60,7 @@ risk manager has one.
   time to sell and redemption coverage. Everyone sees the same figures, and anyone can trace each one to the rule and
   the data that made it, so the discussion is about the trade, not about whose numbers are right. The risk function owns
   the analysis and the portfolio manager makes the call, as [decision
-  rights](../framework/10-decision-rights.md#self-service-and-challenge) sets out.
+  rights](../framework/09-decision-rights.md#self-service-and-challenge) sets out.
 - **Counterparty exposure monitoring.** Runs inside the daily process, with its own limits. Approving which
   counterparties may be used stays with the function that owns that decision.
 - **Ad hoc queries.** They become investigations: someone asks in plain words, and the AI runs the drill-down, the
@@ -249,7 +249,8 @@ The general [controls](../framework/08-controls.md) apply in full. This pillar a
 - **The scenario library is governed.** Scenarios the AI proposes are recorded as proposals; the risk manager's
   calibration and approval are recorded before a scenario enters the library.
 
-Of the measures in [measuring value](../framework/09-measuring-value.md), speed and capacity matter most here.
+Of the [four dimensions](../framework/07-redesign-method.md#four-dimensions) a redesigned workflow is measured on, speed
+and capacity matter most here.
 
 | Dimension | Measure for this pillar |
 |---|---|

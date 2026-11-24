@@ -28,7 +28,7 @@ The rest of this chapter is the detail behind these points.
 
 Both rest on the same measures. Challenge escalates, service informs, and the portfolio manager decides what to hold.
 Independence is what makes the service credible, and it rests on the decisions only the risk function may make, which
-[decision rights](10-decision-rights.md) sets out. The two purposes meet in three decisions:
+[decision rights](09-decision-rights.md) sets out. The two purposes meet in three decisions:
 
 | | Decision | Purpose | What risk provides |
 |---|---|---|---|
@@ -39,8 +39,8 @@ Independence is what makes the service credible, and it rests on the decisions o
 ## How the work is done
 **Decisions, not departments.** A risk function is defined by the decisions it must make, not by titles, teams or who
 does the work: what counts as an exception, whether a reading matters, what to challenge and what to escalate. Each
-decision has a named holder, independent of the investment line; who does the work, and how it is organised, is for
-each firm to decide, as [decision rights](10-decision-rights.md) sets out.
+decision has a named decision-maker, accountable for it and independent of the investment line; who does the work, and
+how it is organised, is for each firm to decide, as [decision rights](09-decision-rights.md) sets out.
 
 **The system does the work; people judge.** The system has two parts, the analytics engine and the AI. The analytics
 engine computes every figure for every portfolio every day. The AI investigates like an analyst, working iteratively

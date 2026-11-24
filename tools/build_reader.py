@@ -43,8 +43,7 @@ CHAPTERS = [
     ("working-with-ai", "framework/06-working-with-ai.md", REDESIGN, "06"),
     ("redesign-method", "framework/07-redesign-method.md", REDESIGN, "07"),
     ("controls", "framework/08-controls.md", REDESIGN, "08"),
-    ("measuring-value", "framework/09-measuring-value.md", REDESIGN, "09"),
-    ("decision-rights", "framework/10-decision-rights.md", REDESIGN, "10"),
+    ("decision-rights", "framework/09-decision-rights.md", REDESIGN, "09"),
 ]
 FILE_TO_VIEW = {path: vid for vid, path, _, _ in CHAPTERS}
 FILE_TO_VIEW["framework/concept-map.md"] = "overview"

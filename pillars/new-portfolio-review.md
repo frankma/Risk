@@ -108,7 +108,8 @@ The general [controls](../framework/08-controls.md) apply in full. The review ad
 - **Launch is checked.** On launch day the analytics engine confirms that the terms, limits, data and construction
   agreed in the review are in place, and a gap is an exception.
 
-The measures for the review, from [measuring value](../framework/09-measuring-value.md):
+The measures for the review, on the [four dimensions](../framework/07-redesign-method.md#four-dimensions) a redesigned
+workflow is measured on:
 
 | Dimension | Measure for the review |
 |---|---|

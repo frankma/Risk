@@ -1,8 +1,8 @@
 # Redesign method
 
 ## The essentials
-**The rule:** a workflow is redesigned in seven steps, from the outcome it exists to deliver to measuring whether the
-redesign delivers it. The [principles](05-principles.md) say what a redesign should achieve, and this method says how.
+A workflow is **redesigned** in seven steps, from the **outcome** it exists to deliver to measuring whether the redesign
+delivers it. The [principles](05-principles.md) say what a redesign should achieve; this method says how.
 
 | Step | Question it answers |
 |---|---|
@@ -14,7 +14,12 @@ redesign delivers it. The [principles](05-principles.md) say what a redesign sho
 | 6. Build in controls | What makes it safe to rely on? |
 | 7. Measure the result | Does it work, and is the risk manager's time going where it was meant to? |
 
-The rest of this chapter sets out each step, runs one generic workflow through all seven and lists the failure modes.
+**The result is measured:** on four dimensions, capacity, speed, quality and influence, against a baseline taken before
+anything changes; hours and usage of AI tools are not measures. Before the redesign, the risk function decides what the
+risk manager's time will go to, and then tracks whether it does.
+
+The rest of this chapter sets out each step, runs one generic workflow through all seven, sets out how the result is
+measured and lists the failure modes.
 
 ## The seven steps
 ### 1. Define the outcome
@@ -32,7 +37,7 @@ record](05-principles.md#7-hand-over-judgement-not-documents) and a judgement, n
 
 The inventory spans every function that works on the same data, such as performance measurement, compliance monitoring
 and the investment team's own analysis. A workflow two functions run is found and run once, with one owner of its
-result, as [decision rights](10-decision-rights.md#who-decides-what) sets out.
+result, as [decision rights](09-decision-rights.md#who-decides-what) sets out.
 
 ### 3. Map the current state
 The chosen workflow is mapped step by step as it actually runs, not as the procedure describes it. Each step is tagged
@@ -58,7 +63,7 @@ Each tagged step is assigned to one owner, following the core pattern.
 | Gather, Compute | Analytics engine |
 | Extract | The AI; the risk manager's confirmation of each record is a step of its own |
 | Interpret, Communicate | The AI, which follows up through the analytics engine and drafts from what it computed; the risk manager's edit and approval is a step of its own |
-| Judge, Approve | The holder of the decision, as [decision rights](10-decision-rights.md#who-decides-what) sets out: for oversight, the risk manager, or the head of risk for escalation and sign-off |
+| Judge, Approve | The decision-maker, as [decision rights](09-decision-rights.md#who-decides-what) sets out: for oversight, the risk manager, or the head of risk for escalation and sign-off |
 | Steps that exist only because the old process was slow | Eliminated |
 
 The last row matters as much as the others. Re-keying figures between systems, reformatting tables, reconciling two
@@ -66,25 +71,27 @@ copies of the same number and chasing people for inputs exist because the manual
 not handed to the analytics engine or the AI.
 
 ### 5. Redesign the flow
-In the redesigned workflow the system produces the output, and a person reviews the exceptions. Four changes follow.
+In the redesigned workflow the system produces the output, and a person judges the exceptions. Five changes follow.
 
 - **Materiality thresholds are encoded.** The rules that decide what counts as an exception, and how exceptions are
   triaged, are written down as parameters rather than applied by eye.
 - **Approval gates are moved.** Gates that existed to catch manual errors, such as a second person checking that figures
   were copied correctly, are replaced by controls in the system. Gates that exist for judgement stay.
-- **The output changes.** The facts go to the shared record, where each reader reads the items that concern them and
-  drills into the detail behind each. What goes to a person is a judgement, and what goes to a committee is a decision
-  paper, as [principle 7](05-principles.md#7-hand-over-judgement-not-documents) sets out.
-- **The work covers every item.** The redesign asks what can now be done for every item: investigating every exception
-  before anyone asks, reading every document into records, testing every explanation against the data.
+- **The output changes.** The facts go to the shared record, and what passes between people is a judgement, as
+  [principle 7](05-principles.md#7-hand-over-judgement-not-documents) sets out.
+- **The work covers every item.** The redesign asks what can now be done for every item, as [principle
+  6](05-principles.md#6-build-what-the-manual-process-could-not-do) sets out.
+- **Tools are built where building is within reach.** For each step's tooling, the redesign asks whether to buy it or
+  build it in-house. With the AI's help, building is within reach for much that once had to be bought, shaped to the
+  workflow and under the same [independent validation](02-investment-risk.md#scope-and-boundaries) as any model.
 
 ### 6. Build in controls
 The controls are designed in this step, not added after the workflow is live; [controls](08-controls.md) sets them out.
 
 ### 7. Measure the result
 The redesigned workflow is measured against a baseline taken before it started, across capacity, speed, quality and
-influence, and the risk manager's time is directed to the use decided at the start. [Measuring
-value](09-measuring-value.md) sets out how.
+influence, and the risk manager's time is directed to the use decided at the start. [Measuring the
+result](07-redesign-method.md#measuring-the-result) sets out how.
 
 ## Worked example: a monthly risk and performance report
 The example below runs one generic workflow through the method. The steps are illustrative.
@@ -135,6 +142,70 @@ the old one for at least one full cycle before the old one is stopped, and the r
 risk function chose at the start, for example monthly deep-dive reviews of the portfolios that appear most often in the
 exception summary.
 
+## Measuring the result
+A redesigned workflow has to be **shown to work**: it is measured on four dimensions, against a baseline taken before
+anything changes. Hours are not among the measures, and neither is usage of AI tools.
+
+### Four dimensions
+| Dimension | Question | Example measures |
+|---|---|---|
+| Capacity | How much can be covered in depth? | Portfolios covered in depth per person; deep-dive reviews per month |
+| Speed | How quickly does the function know? | Data availability to signed-off output; alert to explanation |
+| Quality | Does it catch what matters? | Issues missed or found late; errors found in review; seeded flaws caught in review; parallel-run agreement |
+| Influence | Does its work change decisions? | Issues raised and actions taken; share of time on challenge |
+
+Two points add to the table.
+
+- **Quality.** Issues missed or found late are the most important measure and the hardest to collect; they are recorded
+  as they come to light, for example from post-event reviews.
+- **Influence.** The share of the risk manager's time spent on challenge shows whether that time is going to the work
+  the [principles](05-principles.md#what-the-risk-manager-adds) describe.
+
+### Baseline first
+Every measure needs a starting point, and the starting point must be taken before anything changes. Once a workflow has
+been redesigned, the old process can no longer be observed, and estimates made afterwards tend to flatter the result.
+
+The baseline records the current value of each measure that applies: how many portfolios are reviewed in depth, how soon
+an issue reaches a portfolio manager, how many issues are found late and how many are raised. It is taken alongside the
+current-state map in step 3.
+
+A baseline from one cycle is approximate; where the workflow varies a lot between cycles, a second cycle refines it.
+
+### A plan for the risk manager's time
+Before a workflow is redesigned, the risk function decides what the risk manager's time will go to, and records it. The
+plan names the activity, the expected volume, and who will do it: for example, monthly deep-dive reviews of the
+portfolios that appear most often in the exception queue, or a structured challenge session with each portfolio manager
+every quarter. The plan also counts the supervision the workflow needs: confirming what the AI extracted, reviewing what
+a governed rule let it send or close, and the sample and seeded reviews that [controls](08-controls.md#evaluation) sets
+out. That time has an expected volume like any other activity, so that it is not taken from challenge.
+
+After the redesign, the plan is tracked like any other commitment. If the time is not going where it was planned to go,
+the reason is found and either the plan or the work is changed. What that time should go to is set out in
+[principles](05-principles.md#what-the-risk-manager-adds).
+
+### Why usage is not a measure
+Usage of AI tools is not a measure: high usage fits a tool inserted into an unchanged workflow, and low usage fits a
+workflow where AI runs without anyone prompting it. It can serve as a diagnostic of adoption.
+
+### Illustrative scorecard
+The scorecard below is for one redesigned workflow, the monthly risk and performance report from the [worked
+example](07-redesign-method.md#worked-example-a-monthly-risk-and-performance-report) above. **The measures are
+illustrative.**
+
+| Dimension | Measure | What it shows |
+|---|---|---|
+| Capacity | Deep-dive portfolio reviews per month | Whether the risk manager's time is going where the plan said |
+| Speed | Working days from month end to the signed-off decision paper | Whether the committee has time to act |
+| Speed | Days from a threshold breach to an explanation | How soon the function understands a change |
+| Quality | Figure errors found in review per cycle | Whether the grounding check and reconciliation catch what a reviewer used to |
+| Quality | Parallel-run agreement on escalated items | Whether the redesigned workflow can be relied on |
+| Quality | Seeded flaws caught in review | Whether reviewers read what they sign |
+| Influence | Issues raised with portfolio managers per quarter | Whether challenge is being made |
+| Influence | Share of risk manager time on challenge | Whether challenge has the time it needs |
+
+The scorecard reads against the baseline. Errors found in review should fall but not to zero; a review that never finds
+one is a reason to test the review.
+
 ## Common failure modes
 | Failure mode | What happens | What prevents it |
 |---|---|---|
@@ -149,3 +220,5 @@ exception summary.
 ## Sources
 - Hammer, M. (1990). Reengineering Work: Don't Automate, Obliterate. *Harvard Business Review*. Redesigning a process
   around what technology makes possible, rather than speeding up the steps it already has.
+- Kaplan, R. and Norton, D. (1992). The Balanced Scorecard: Measures That Drive Performance. *Harvard Business Review*.
+  Measuring a function on several dimensions read together, rather than on one.
