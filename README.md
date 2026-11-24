@@ -24,7 +24,7 @@ Fundamentally, a portfolio's return is driven by two decisions: top-down views o
 for how long, and bottom-up selection of the securities within them. Loosely, top-down views earn beta: any return above
 the risk-free rate that an index fund or a future could have delivered, paid by market and style premia. Bottom-up
 selection earns alpha: the return left once beta is carved out, paid by skill. Performance risk dissects each
-portfolio's return along this line; see [how return is earned](framework/01-sources-of-return.md).
+portfolio's return along this line; see [how return is earned](framework/01-return.md).
 
 ## The core pattern
 **The analytics engine computes, the AI interprets and narrates, a person judges.**
@@ -58,7 +58,7 @@ follows beneath it. Reading the essentials in order gives the framework; the det
 |---|---|
 | **Foundations** | |
 | [Philosophy](framework/00-philosophy.md) | What a risk function believes and is for. |
-| [How return is earned](framework/01-sources-of-return.md) | Top-down views and bottom-up selection, beta and alpha, and how the split is read. |
+| [How return is earned](framework/01-return.md) | Top-down views and bottom-up selection, beta and alpha, and how the split is read. |
 | [What investment risk means](framework/02-investment-risk.md) | The definition, the scope and the three pillars. |
 | **The pillars** | |
 | [Market risk](pillars/market-risk.md) | Whether a portfolio carries the risk its mandate intends: daily monitoring as a triaged queue with drafted explanations. |
@@ -66,7 +66,7 @@ follows beneath it. Reading the essentials in order gives the framework; the det
 | [Performance risk](pillars/performance-risk.md) | Whether the promise is kept: portfolio manager reviews on the risk function's agenda. |
 | [Integrated view](pillars/integrated-view.md) | Where signals combine across the pillars, the firm's footprint, and what the firm is paid for. |
 | **Practice** | |
-| [Data integrity](framework/03-risk-data.md) | The data every figure rests on: checked, versioned, proxied and corrected at source. |
+| [Data integrity](framework/03-data-integrity.md) | The data every figure rests on: checked, versioned, proxied and corrected at source. |
 | [Limits and escalation](framework/04-limits-and-escalation.md) | The band each mandate intends, marked by hard limits, internal limits and early warnings; the breach lifecycle and the escalation path. |
 | [New portfolio review](pillars/new-portfolio-review.md) | What must be in place before a portfolio launches or changes materially. |
 | [Alpha and beta method](pillars/alpha-and-beta-method.md) | How the split is computed, on three portfolios. |

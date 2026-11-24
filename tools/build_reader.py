@@ -29,13 +29,13 @@ BACKDROP, PRACTICE, REDESIGN, PILLARS = "Foundations", "Practice", "The redesign
 GROUPS = (BACKDROP, PILLARS, PRACTICE, REDESIGN)
 CHAPTERS = [
     ("philosophy", "framework/00-philosophy.md", BACKDROP, "00"),
-    ("sources-of-return", "framework/01-sources-of-return.md", BACKDROP, "01"),
+    ("return", "framework/01-return.md", BACKDROP, "01"),
     ("investment-risk", "framework/02-investment-risk.md", BACKDROP, "02"),
     ("market-risk", "pillars/market-risk.md", PILLARS, ""),
     ("liquidity-risk", "pillars/liquidity-risk.md", PILLARS, ""),
     ("performance-risk", "pillars/performance-risk.md", PILLARS, ""),
     ("integrated-view", "pillars/integrated-view.md", PILLARS, ""),
-    ("risk-data", "framework/03-risk-data.md", PRACTICE, "03"),
+    ("data-integrity", "framework/03-data-integrity.md", PRACTICE, "03"),
     ("limits-and-escalation", "framework/04-limits-and-escalation.md", PRACTICE, "04"),
     ("new-portfolio-review", "pillars/new-portfolio-review.md", PRACTICE, ""),
     ("alpha-and-beta-method", "pillars/alpha-and-beta-method.md", PRACTICE, ""),

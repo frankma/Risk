@@ -170,7 +170,7 @@ duration times spread for credit and the currency weight for currency, each scal
 with a duration of 6 against a basket of 4 has an exposure of 1.5. Equity market and style exposures are betas,
 estimated together against all the baskets so that overlapping baskets do not count the same return twice, over a long
 window with gradual decay ([belief 7](../framework/00-philosophy.md#beliefs)). A security with little history uses a
-proxy under the [proxy policy](../framework/03-risk-data.md#proxies), such as its sector's beta. (The figures are
+proxy under the [proxy policy](../framework/03-data-integrity.md#proxies), such as its sector's beta. (The figures are
 illustrative.)
 
 ### Backtesting
@@ -191,7 +191,7 @@ usual range.
 - **The library** holds historical episodes, hypothetical scenarios and sensitivity shocks to single factors, and is
   reviewed on a set cycle and when conditions change.
 - **The library covers how each return generator fails.** The [how return is
-  earned](../framework/01-sources-of-return.md#how-does-each-generator-fail) chapter names three ways: a drawdown in
+  earned](../framework/01-return.md#how-does-each-generator-fail) chapter names three ways: a drawdown in
   market risk premia, a crowded reversal in a style premium, and books built on skill losing together. The review of the
   library checks that each has at least one scenario.
 - **A scenario becomes shocks to every factor** in two steps: shocks are set on the factors that drive the scenario, and
