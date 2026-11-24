@@ -30,7 +30,8 @@ portfolio's return along this line; see [how return is earned](framework/01-retu
 **The analytics engine computes, the AI interprets and narrates, a person judges.**
 
 Each workflow is redesigned around this pattern, not handed an AI tool. The analytics engine is the deterministic part
-of the system, where the same data always gives the same figure and every figure can be traced and reproduced.
+of the system, where the same data and the same logic always give the same figure and every figure can be traced and
+reproduced.
 
 | Work | Owner |
 |---|---|
