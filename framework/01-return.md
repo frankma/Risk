@@ -5,7 +5,7 @@ Fundamentally, a portfolio's return is driven by two decisions: **top-down views
 and for how long, and **bottom-up selection** of the securities within them. They are two sources with different skills,
 often with different decision-makers, and they need to work together toward one result.
 
-Loosely, top-down views earn beta: any return above the risk-free rate that an index fund or a future could have
+Loosely, top-down views earn beta: any return above the risk-free rate that an ETF or a future could have
 delivered, paid by market risk premia and style premia. Bottom-up selection earns alpha: the return left once beta is
 carved out, paid by skill.
 
@@ -38,10 +38,10 @@ Three return generators pay the two sources: market risk premia and style premia
 | Generator | What it is | Why it pays | Source |
 |---|---|---|---|
 | **Market risk premia** | The return for holding a market: the equity premium, the term premium in rates and the credit premium in spreads. Currency exposure is tagged here by convention | It compensates for losses that arrive in bad times, when they hurt most | Beta |
-| **Style premia** | The return of a rule that an index or basket can follow: value, momentum, size, carry, and the premium for holding less liquid public securities | Disputed: a risk, or a pattern in investor behaviour that persists; the framework takes no side, because the method needs only that an index fund or a future can deliver it | Beta, once declared |
+| **Style premia** | The return of a rule that an index or basket can follow: value, momentum, size, carry, and the premium for holding less liquid public securities | Disputed: a risk, or a pattern in investor behaviour that persists; the framework takes no side, because the method needs only that an ETF or a future can deliver it | Beta, once declared |
 | **Skill** | The return from choosing between securities that share the same exposures | One investor finds a wrong price before others do. Measured against the market, before costs and with the market's holdings unchanged, it is zero-sum: what one manager gains, another loses | Alpha |
 
-The line between style premia and skill moves. A return counts as skill until an index or basket can replicate it, and
+The line between style premia and skill moves. A return counts as skill until an ETF or a future can replicate it, and
 from then on it is a style premium. Value was once called alpha. A premium that no instrument holds at the portfolio's
 size, as is often true of the premium for less liquid securities, is measured as alpha until one does, and the holdings
 that [liquidity risk](../pillars/liquidity-risk.md) flags are [marked in the

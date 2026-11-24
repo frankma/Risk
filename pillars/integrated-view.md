@@ -26,7 +26,7 @@ The view reads every rule in each pillar's table: [market risk](market-risk.md#m
 risk](liquidity-risk.md#materiality-and-exceptions) and [performance
 risk](performance-risk.md#materiality-and-exceptions). Every signal carries its pillar's state (exception, watch item or
 within) and the date it was computed. The view computes no measure of its own: it takes the signals as the pillars
-produce them, and never computes its own version. The daily run has seven steps:
+produce them. The daily run has seven steps:
 
 | # | Step | Owner |
 |---|---|---|
@@ -76,7 +76,7 @@ The view weights early signals, because by the time market risk readings rise th
 
 ## Combination rules and triage
 The rules that decide which portfolios enter the view, and in what order, are [governed
-parameters](../framework/08-controls.md#materiality-thresholds-as-governed-parameters). **The rules below are
+parameters](../framework/08-controls.md#governed-parameters). **The rules below are
 illustrative kinds of rule, not recommendations;** each risk function sets its own.
 
 | Kind of rule | Example (illustrative) |
@@ -92,7 +92,7 @@ view. Its exception is handled by that pillar's workflow, as it would be anyway;
 
 For each portfolio in the view the analytics engine runs the analyses set for its pattern, which are governed parameters
 drawn from the pillars' governed analyses: for example, how the portfolio's weights have moved by time to sell, the
-same pattern in other portfolios, and the earlier accounts of the portfolio. The view adds no analysis of its own.
+same pattern in other portfolios, and the earlier accounts of the portfolio.
 
 **Avoiding double counting.** One driver can show in two pillars, as issuer concentration and a rising time to sell the
 same holdings, or as margin calls and the fall in coverage they cause. Signals that share a driver are grouped and count
@@ -112,11 +112,11 @@ On a set cycle, annual by default, and whenever market conditions call for it, s
 reversal in a style premium or a sharp change in a strategy's results, the view reads [performance
 risk](performance-risk.md)'s split of return by strategy across all portfolios. The reading is unweighted, so that a
 small strategy with lasting skill is as visible as a large one. It shows how much of each strategy's return is beta that
-an index fund or a future could have delivered and how much is skill; whether that skill holds, read through performance
+an ETF or a future could have delivered and how much is skill; whether that skill holds, read through performance
 risk's [significance tests](performance-risk.md#windows-and-significance) over successive periods; and, with the firm's
-footprint, where the same skill runs through many portfolios and would fail in all of them at once. The view computes
-nothing new. The reading informs the chief investment officer's decisions on strategy capacity and the product range; it
-is not a measure of the firm's business, and the decisions are not the risk function's.
+footprint, where the same skill runs through many portfolios and would fail in all of them at once. The reading
+informs the chief investment officer's decisions on strategy capacity and the product range; it is not a measure of the
+firm's business, and the decisions are not the risk function's.
 
 ## What the AI drafts
 Every number in the draft appears in the facts beside it, so the [grounding

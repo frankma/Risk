@@ -32,7 +32,7 @@ runs the analyses set for that kind of rule, such as the same driver across othe
 The rule fixes them, so they are the engine's work and arrive as computed facts. The AI's investigation starts there: it
 chooses which follow-up analyses to run from the governed list, given what the first ones show, up to a set number of
 runs, and drafts from all of it. It may choose none. The analyses set for each kind of rule, the list the AI may choose
-from and the cap on runs are [governed parameters](08-controls.md#materiality-thresholds-as-governed-parameters). The
+from and the cap on runs are [governed parameters](08-controls.md#governed-parameters). The
 risk manager starts from an item already investigated, with every figure tied to its run.
 
 **Investigate** replaces the ad hoc query, and is how an investment team [serves
@@ -64,7 +64,7 @@ rejected, and so is text that contains one.
 | An exploratory query | A read-only query the AI composed over the data store, where no governed analysis answers the question | No. It is labelled unvalidated, stays out of outputs and is shown only within the risk function |
 | Nothing | A figure the AI stated with no computation behind it | Never |
 
-The analyses the AI may run are a [governed parameter](08-controls.md#materiality-thresholds-as-governed-parameters),
+The analyses the AI may run are a [governed parameter](08-controls.md#governed-parameters),
 owned by the risk function. An exploratory query is how the function learns what it cannot yet compute: one that proves
 useful is adopted into the analytics engine through the same change process as any other analysis, and from then on its
 figures may reach an output. The [grounding check](08-controls.md#the-grounding-check) enforces the table.

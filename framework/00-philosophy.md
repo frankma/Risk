@@ -12,9 +12,9 @@ AI adds breadth and depth, never a figure or a rule of its own, and weaves the s
 **At its root, risk work is insight:** the few numbers, out of millions, that show where each portfolio stands against
 its mandate and what to challenge.
 
-**What guides the work:** eight beliefs settle what the rules leave open; the two purposes meet in three decisions
-(construct, oversee, assess); and every piece of the work condenses, drills in and connects. No model is assumed; every
-model is judged against these.
+**What guides the work:** eight beliefs settle what the rules leave open. The two purposes meet in three decisions:
+construct, oversee and assess. Every piece of the work condenses, drills in and connects. No model is assumed; every
+model is judged against all of these.
 
 The rest of this chapter is the detail behind these points.
 
@@ -34,7 +34,7 @@ Independence is what makes the service credible, and it rests on the decisions o
 |---|---|---|---|
 | Before | **Construct** | Serve | What-ifs and marginal risk before the trade, on analyses the risk function owns and anyone can trace: what this position adds to risk and to time to sell, and what it crowds out of the budget |
 | During | **Oversee** | Challenge | Risk against budgets and limits, monitored daily, with escalation to the head of risk and the risk committee |
-| After | **Assess** | Serve | Attribution after the period, on analyses the risk function owns, at any level from a single bet to the whole firm: return split by source, beta included; significance over several periods as evidence of skill rather than luck; and return per unit of risk |
+| After | **Assess** | Serve and challenge | Attribution after the period, on analyses the risk function owns, at any level from a single bet to the whole firm: return split by source, beta included; significance over several periods as evidence of skill rather than luck; and return per unit of risk. The portfolio manager review puts what it shows to the portfolio manager |
 
 ## How the work is done
 **Decisions, not departments.** A risk function is defined by the decisions it must make, not by titles, teams or who
@@ -47,17 +47,17 @@ engine computes every figure for every portfolio every day. The AI investigates 
 with the analytics engine: it reads the findings, chooses the next analysis from a governed list, runs it through the
 analytics engine and reads the result, until the picture holds. Only then does it draft, and only then does a person see
 it: they weigh it against the rest of the queue, check it against the facts, challenge it and decide, and are
-accountable for the decision. Every workflow is designed this way from the start. Whether the system's tools are bought
-or built in-house is for each firm to decide; with the AI, building is within reach for much that once had to be bought.
-The AI adds breadth and depth, never a figure or a rule of its own: it takes on, for every item, the small steps of
-reading, connecting and following up that were never worth a person's time, and weaves them into one integrated web of
-signals, as [working with AI](06-working-with-ai.md) sets out.
+accountable for the decision. Every workflow is designed this way from the start. The AI adds breadth and depth, never
+a figure or a rule of its own: it takes on, for every item, the small steps of reading, connecting and following up that
+were never worth a person's time, and weaves them into one integrated web of signals, as [working with
+AI](06-working-with-ai.md) sets out.
 
 ## Beliefs
 Each is a position a reasonable firm could reject. Together they decide what the rules do not.
 
 1. **The mandate defines the risk.** Appetite belongs to the client, expressed as a benchmark, a tracking error budget,
-   guidelines and liquidity terms, not a firm-wide number. The capital at risk is the clients', not the firm's.
+   a drawdown tolerance, guidelines and liquidity terms, not a firm-wide number. The capital at risk is the clients',
+   not the firm's.
 2. **Intended risk is the product; unintended risk is the hazard.** Clients pay for the bets the investment team means
    to take. The first job is to find the ones nobody chose: a value tilt in a growth portfolio, a rates bet in a credit
    portfolio, a crowded factor riding along with stock picks.
@@ -76,8 +76,8 @@ Each is a position a reasonable firm could reject. Together they decide what the
    mandate?
 
 ## What every piece of risk work provides
-The three apply in every pillar. All of it assumes the basics: data checked before use,
-models tested against outcomes, results reproducible, as [data integrity](03-data-integrity.md) sets out.
+Three dimensions apply in every pillar. All of them assume the basics: data checked before
+use, models tested against outcomes, results reproducible, as [data integrity](03-data-integrity.md) sets out.
 
 | | Dimension | The question it answers |
 |---|---|---|
@@ -98,7 +98,7 @@ three families: risk, exposure and liquidity.
 | Active share | Exposure, active |
 | VaR, expected shortfall, maximum drawdown | Risk, absolute |
 | Equity beta, duration, duration times spread | Exposure |
-| Days to liquidate | Liquidity |
+| Time to sell | Liquidity |
 | Redemption coverage | Liquidity |
 
 *It fails* when the summary hides what it should show, or moves for no reason. *The test:* the number moves when the

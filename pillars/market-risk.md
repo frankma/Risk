@@ -63,6 +63,9 @@ risk manager has one.
   rights](../framework/09-decision-rights.md#self-service-and-challenge) sets out.
 - **Counterparty exposure monitoring.** Runs inside the daily process, with its own limits. Approving which
   counterparties may be used stays with the function that owns that decision.
+- **New instrument review.** Before an existing portfolio holds a new kind of instrument, the analytics engine checks
+  that it can be priced, classified and measured, or has a proxy under the [proxy
+  policy](../framework/03-data-integrity.md#proxies), and the risk manager decides whether it can be held.
 - **Ad hoc queries.** They become investigations: someone asks in plain words, and the AI runs the drill-down, the
   aggregation or the what-if through the analytics engine and reports the figures with the runs behind them, as set out
   in [working with AI](../framework/06-working-with-ai.md#three-modes-of-working).
@@ -81,7 +84,7 @@ An exception is a reading that has crossed a limit or another rule's threshold, 
 approaching one. Every portfolio is checked in full against every rule.
 
 The queue comes from a small number of kinds of rule, each owned and versioned as a [governed
-parameter](../framework/08-controls.md#materiality-thresholds-as-governed-parameters). **The example values below are
+parameter](../framework/08-controls.md#governed-parameters). **The example values below are
 illustrative and are not recommendations;** each risk function sets its own.
 
 | Kind of rule | Example (illustrative) | What it catches | What it gives |

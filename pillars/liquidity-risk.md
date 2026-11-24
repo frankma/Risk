@@ -13,7 +13,8 @@ notices into events, investigates each item and drafts the narrative. The risk m
 and recommends when a liquidity management tool should be used; the tool's named owner decides.
 
 **A fair cost:** the investors who stay must not bear the cost of others leaving, and liquidity management tools are the
-means. For a segregated mandate, the calls are the one client's withdrawals and planned cash needs.
+means. A segregated mandate has no other investors to protect: its calls are the one client's withdrawals and planned
+cash needs.
 
 **Where it connects:** [market risk](market-risk.md) raises the time and cost of selling, underperformance in
 [performance risk](performance-risk.md) often comes before redemptions, and the [integrated view](integrated-view.md)
@@ -44,8 +45,8 @@ Liquidity monitoring and stress testing is the flagship. It runs in eleven steps
 | 6 | Follow up where the findings point further; draft the narrative | AI |
 | 7 | Grounding check on every draft | Analytics engine |
 | 8 | Review each triggered portfolio; recommend on liquidity tools | Risk manager |
-| 9 | Draft the board's decision paper, with the period's results and events linked to the shared record | AI |
-| 10 | Review scenario calibration; edit the decision paper | Risk manager |
+| 9 | Draft the facts of the board's decision paper, with the period's results and events linked to the shared record | AI |
+| 10 | Review scenario calibration; edit the decision paper and write the risk function's recommendation | Risk manager |
 | 11 | Review and sign off the decision paper | Head of risk |
 
 - **Monitoring of redemptions, other calls and concentration** feeds it: these are the sources of the triggers that run
@@ -56,8 +57,7 @@ Liquidity monitoring and stress testing is the flagship. It runs in eleven steps
   those parameters and reports the result with the run behind it, as set out in [working with
   AI](../framework/06-working-with-ai.md#three-modes-of-working).
 - **Before a trade.** The [pre-trade what-if](market-risk.md#workflows-in-this-pillar) reads this pillar's time to sell
-  and redemption coverage, so a trade that would weaken coverage shows before it is made, on the same numbers for
-  everyone.
+  and redemption coverage.
 - **Stale or unpriceable holdings** are shown against the measures that rest on them.
 - **Liquidity tool readiness.** A tool is ready when the governing documents provide for it, the operations to apply it
   have been tested, and the decision to use it has a named owner and a process. The AI extracts each tool's provisions
@@ -68,7 +68,7 @@ Liquidity monitoring and stress testing is the flagship. It runs in eleven steps
 ## Materiality and exceptions
 An **exception** in this pillar is a reading that has crossed a rule's threshold, and a **watch item** is a reading
 drifting towards one. A rule marked as a trigger also runs the stress test for that portfolio the same day. Each rule is
-a [governed parameter](../framework/08-controls.md#materiality-thresholds-as-governed-parameters). **The example values
+a [governed parameter](../framework/08-controls.md#governed-parameters). **The example values
 below are illustrative and are not recommendations;** each risk function sets its own.
 
 | Kind of rule | Example (illustrative) | What it catches | Trigger |
@@ -78,7 +78,7 @@ below are illustrative and are not recommendations;** each risk function sets it
 | Margin and collateral calls | Calls under stress above a set share of unencumbered liquid assets | Derivative positions draining liquidity | Yes |
 | Flows against history | Net outflows outside the portfolio's usual range | Unusual investor behaviour | No |
 | Investor and distributor concentration | One investor or distributor above a set share of the portfolio | Dependence on few investors or distributors | Yes |
-| Market liquidity | Time or cost to liquidate rising above a set level | Assets becoming harder to sell | Yes |
+| Market liquidity | Time or cost to sell rising above a set level | Assets becoming harder to sell | Yes |
 | Stale or unpriceable | No price change for a set number of trading days | Holdings whose value is uncertain | No |
 
 The analytics engine triages exceptions before watch items: portfolios with coverage below its limit come first, then
@@ -178,7 +178,7 @@ Two further calls are counted in every scenario, because they arrive whatever in
 ### Where the measures are weak
 | Measure | Where it is weak | How the function tests it |
 |---|---|---|
-| Time and cost to liquidate | Volumes and costs worsen under stress, when redemptions rise | Comparison with trading in stressed periods |
+| Time and cost to sell | Volumes and costs worsen under stress, when redemptions rise | Comparison with trading in stressed periods |
 | Market-impact model | Impact depends on who else is selling | Comparison with the cost of past large sales |
 | Scenarios for calls on cash | Investor behaviour differs from the assumption | Comparison with realised flows |
 | Redemption coverage | Outflows and market stress tend to arrive together | Scenarios that stress both sides at once |

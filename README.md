@@ -22,7 +22,7 @@ The pillars connect, and the [integrated view](pillars/integrated-view.md) reads
 ## How return is earned
 Fundamentally, a portfolio's return is driven by two decisions: top-down views on which markets to hold, how much and
 for how long, and bottom-up selection of the securities within them. Loosely, top-down views earn beta: any return above
-the risk-free rate that an index fund or a future could have delivered, paid by market and style premia. Bottom-up
+the risk-free rate that an ETF or a future could have delivered, paid by market and style premia. Bottom-up
 selection earns alpha: the return left once beta is carved out, paid by skill. Performance risk dissects each
 portfolio's return along this line; see [how return is earned](framework/01-return.md).
 
