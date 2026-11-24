@@ -3,7 +3,7 @@
 **How a risk function at an asset manager should work, with each workflow redesigned around AI.**
 
 The [reader](https://frankma.github.io/Risk/) holds every chapter on one page and links to the
-[film](https://frankma.github.io/Risk/film/): the framework in six animated scenes.
+[film](https://frankma.github.io/Risk/film/): the framework in seven animated scenes.
 
 ## Investment risk, in three pillars
 A risk function challenges investment decisions against the mandate, and serves the investment team with insight into
