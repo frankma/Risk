@@ -14,8 +14,8 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 | Beliefs | Eight positions that decide what the rules do not | [Philosophy](00-philosophy.md#beliefs) | Limits and escalation, principles, market risk |
 | Three decisions | Construct, Oversee and Assess: before, during and after an investment | [Philosophy](00-philosophy.md#why-a-risk-function-exists) | Every pillar, which labels its essentials by the decisions it serves |
 | Three dimensions | Condensation, drill-in and connection: what every piece of risk work provides | [Philosophy](00-philosophy.md#what-every-piece-of-risk-work-provides) | All pillars |
-| Decision-maker | Whoever a piece of a decomposition belongs to | [Philosophy](00-philosophy.md#2-drill-in) | How return is earned, alpha and beta |
-| Mandate terms | A portfolio's objective, benchmark, style, limits and dealing terms in a form the analytics engine can test, confirmed by the risk manager; hard limits are reconciled to compliance's rules | [Performance risk](../pillars/performance-risk.md#mandate-terms) | Data integrity, limits and escalation, working with AI, market risk, liquidity risk, new portfolio review, alpha and beta |
+| Decision-maker | The person or committee that holds a decision; in a decomposition, whoever made the call behind each piece | [Decision rights](09-decision-rights.md#who-decides-what) | Philosophy, how return is earned, limits and escalation, alpha and beta |
+| Mandate terms | A portfolio's objective, benchmark, style, limits, drawdown tolerance and dealing terms in a form the analytics engine can test, confirmed by the risk manager; hard limits are reconciled to compliance's rules | [Performance risk](../pillars/performance-risk.md#mandate-terms) | Data integrity, limits and escalation, working with AI, market risk, liquidity risk, new portfolio review, alpha and beta |
 
 ## How return is earned
 
@@ -29,7 +29,7 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 | Top-down view | Holds market and style premia; loosely, beta | [How return is earned](01-return.md#what-are-the-two-sources) | Philosophy |
 | Bottom-up selection | Earns skill; loosely, alpha | [How return is earned](01-return.md#what-are-the-two-sources) | Philosophy |
 | Policy beta | The return, above the risk-free rate, of the benchmark or strategic allocation in the governing documents | [How return is earned](01-return.md#who-chose-each-part) | Alpha and beta method |
-| Risk-free return | What a portfolio would earn at the risk-free rate, which no generator pays; the rate is declared with the construction | [Alpha and beta method](../pillars/alpha-and-beta-method.md#the-beta-lines) | How return is earned, new portfolio review |
+| Risk-free return | What a portfolio would earn at the risk-free rate, which no generator pays; the rate is declared with the construction | [Alpha and beta method](../pillars/alpha-and-beta-method.md#the-three-portfolios) | How return is earned, new portfolio review |
 | Tilts | Standing positions against that allocation, credited to whoever recorded them when taken | [How return is earned](01-return.md#who-chose-each-part) | Alpha and beta method |
 | Timing | The return from recorded changes in exposure over time | [How return is earned](01-return.md#who-chose-each-part) | Alpha and beta method |
 | Unintended beta | Any exposure with no record that anyone chose it; a test of record, not of motive | [How return is earned](01-return.md#who-chose-each-part) | Performance risk's source-of-return rule, alpha and beta method |
@@ -75,7 +75,7 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 | Internal limit | A soft limit the risk function sets where the mandate is silent, to produce insight first and constrain when judged necessary | [Limits and escalation](04-limits-and-escalation.md#what-internal-limits-are-for) | Market risk, liquidity risk, controls |
 | Early warning | A level ahead of a hard or internal limit, or on a measure with no limit; a reading beyond it is a watch item | [Limits and escalation](04-limits-and-escalation.md#where-limits-come-from) | Market risk, new portfolio review |
 | Breach lifecycle | Detect, verify, classify, notify, explain, decide, rectify and close | [Limits and escalation](04-limits-and-escalation.md#the-breach-lifecycle) | Market risk, liquidity risk |
-| Escalation path | Who a missed deadline, a disagreement between the portfolio manager and the risk manager, a dissent and a hard limit breach go to; the risk committee's decision binds; what it cannot resolve goes to its parent body, the executive committee, and the board is the last resort | [Limits and escalation](04-limits-and-escalation.md#escalation) | Performance risk, new portfolio review |
+| Escalation path | Who a missed deadline, a risk manager's disagreement with the portfolio manager's decision, a dissent and a hard limit breach go to; the risk committee's decision binds; what it cannot resolve goes to its parent body, the executive committee, and the board is the last resort | [Limits and escalation](04-limits-and-escalation.md#escalation) | Performance risk, new portfolio review |
 | Investment oversight | The head of investments, or the committee that supervises the portfolio managers | [Limits and escalation](04-limits-and-escalation.md#the-breach-lifecycle) | Performance risk |
 | Active and passive breach | A breach caused by a trade or decision, or by markets, flows or corporate actions | [Limits and escalation](04-limits-and-escalation.md#the-breach-lifecycle) | Working with AI, controls |
 
@@ -110,10 +110,10 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 | Decision rights | The decisions only the risk function may make, which define it; the work is shared, the decisions are not | [Decision rights](09-decision-rights.md#what-defines-the-risk-function) | README, philosophy, what investment risk means, redesign method |
 | Independence in the rules | The risk function owns the thresholds, triage rules, limits, governed analyses, AI permissions and controls, and its holders report outside the investment line | [Decision rights](09-decision-rights.md#independence-lives-in-the-rules) | Principles |
 | Self-service | Investment teams run what-ifs and read attribution on governed analyses the risk function owns and challenges | [Decision rights](09-decision-rights.md#self-service-and-challenge) | Working with AI, market risk |
-| One set of numbers | Everyone sees the same figures from the same governed analyses, and the logic behind them is an open book: each figure traces to its rule and data | [Market risk](../pillars/market-risk.md#the-essentials) | Philosophy, liquidity risk, decision rights |
+| One set of numbers | Everyone sees the same figures from the same governed analyses, and the logic behind them is an open book: each figure traces to its rule and data | [Market risk](../pillars/market-risk.md#the-essentials) | Philosophy, data integrity, liquidity risk, decision rights |
 | One decision-maker for each decision | Each decision is a person's or a committee's, recorded with the one who made it, however many contributed; that decision-maker is accountable for it | [Decision rights](09-decision-rights.md#one-decision-maker-for-each-decision) | That chapter only |
 | Roles | What the risk manager, head of risk, portfolio manager, adjacent owners and management each hold, and the core's responsibilities for methodology, the rules and what the AI must get right | [Decision rights](09-decision-rights.md#roles) | Working with AI |
-| Size of the function | Every firm needs a risk function: a small firm has one person, often in a combined role, with the analytics engine and the AI doing the work; a large firm has a dedicated team under one head of risk; a right no one is named for falls to the portfolio manager | [Decision rights](09-decision-rights.md#the-size-of-the-function) | That chapter only |
+| Size of the function | Every firm needs a risk function: a small firm has one person, often in a combined role, with the analytics engine and the AI doing the work; a large firm has a dedicated team under one head of risk; every right is named, because one that is not falls in practice to the portfolio manager, with no check | [Decision rights](09-decision-rights.md#the-size-of-the-function) | That chapter only |
 
 ## Exceptions and triage
 
@@ -126,6 +126,9 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 | Prioritise | The risk manager's choice of what in the queue to act on first, with context no rule captures | [Principles](05-principles.md#what-the-risk-manager-adds) | Every workflow, decision rights |
 | Not assessed | How a portfolio whose data has a break the run cannot pass is shown, never as clean; the integrated view shows a portfolio missing one pillar's signals as partly assessed | [Data integrity](03-data-integrity.md#quality-before-computation) | Integrated view |
 | Watch list | The firm's single list of portfolios with unresolved issues, owned by the risk function | [Performance risk](../pillars/performance-risk.md#workflows-in-this-pillar) | Integrated view, limits and escalation |
+| Daily brief | What drove each portfolio's return that day, and where drift or unintended bets are forming, read by the risk manager and the investment team | [Performance risk](../pillars/performance-risk.md#workflows-in-this-pillar) | That chapter only |
+| Portfolio manager review | The periodic meeting where the risk function puts a portfolio's issues to its portfolio manager, on the risk function's agenda and evidence | [Performance risk](../pillars/performance-risk.md#workflows-in-this-pillar) | README |
+| Challenge pack | The issues and questions for a portfolio manager review, each linked to its evidence, drafted by the AI and set by the risk manager | [Performance risk](../pillars/performance-risk.md#workflows-in-this-pillar) | Market risk |
 | Pattern | A named chain of signals across pillars | [Integrated view](../pillars/integrated-view.md#patterns) | Integrated view's rules |
 | Lead time | How much earlier the view picked up a portfolio than the first escalation from any single pillar | [Integrated view](../pillars/integrated-view.md#controls-and-measures-specific-to-the-view) | Integrated view |
 
@@ -141,7 +144,7 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 | Seeded review test | Drafts with a known flaw sent through review to test that reviewers read what they sign | [Controls](08-controls.md#evaluation) | Working with AI, redesign method, market risk, performance risk, integrated view |
 | Sign-off point | Where a person must approve, and what they are approving | [Controls](08-controls.md#sign-off-points) | Every redesigned workflow |
 | Audit trail | The record of facts, versions, generated text, edits and approval | [Controls](08-controls.md#the-audit-trail) | Every redesigned workflow |
-| Governed parameter | A threshold or rule with an owner, a review cycle and a change record | [Controls](08-controls.md#materiality-thresholds-as-governed-parameters) | All pillars, alpha and beta |
+| Governed parameter | A threshold or rule with an owner, a review cycle and a change record; the steward of the rules proposes a change and the head of risk approves it | [Controls](08-controls.md#governed-parameters) | All pillars, alpha and beta |
 | Parallel run | The new workflow runs beside the old one before the old one stops | [Controls](08-controls.md#parallel-runs) | Redesign method |
 | Fallback | What happens when a component fails: a template in place of AI text, and entry by hand in place of extraction | [Controls](08-controls.md#fallback) | That chapter only |
 | Incident | An output that reached its audience wrong, an overturned automated action or a failed control; the head of risk can suspend any AI step or rule | [Controls](08-controls.md#incidents) | That chapter only |
@@ -173,7 +176,7 @@ Each concept is defined in the chapter named under "Defined in", where the reaso
 
 | Concept | What it is | Defined in | Used by |
 |---|---|---|---|
-| Beta | Return above the risk-free rate that an index fund or a future could have delivered: market and factor exposure, however it arose | [How return is earned](01-return.md#the-essentials) | Alpha and beta method, performance risk |
+| Beta | Return above the risk-free rate that an ETF or a future could have delivered: market and factor exposure, however it arose | [How return is earned](01-return.md#the-essentials) | Alpha and beta method, performance risk |
 | Alpha | The add-on return from security selection: the real portfolio's return less the top-down portfolio's | [Alpha and beta method](../pillars/alpha-and-beta-method.md#the-three-portfolios) | How return is earned, performance risk |
 | Gross return and the bridge | The split's basis, and the link from it to the net return | [Alpha and beta method](../pillars/alpha-and-beta-method.md#scope-and-basis) | Performance risk |
 | Declared factor list | The factors alpha must stay neutral to, held as a governed parameter | [Alpha and beta method](../pillars/alpha-and-beta-method.md#booked-or-derived) | Market risk, performance risk |

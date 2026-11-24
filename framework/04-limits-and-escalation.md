@@ -11,11 +11,11 @@ insight first. Early warnings sit ahead of both.
 
 **How the work is done:** the analytics engine detects a breach in the daily run, checks it against data breaks and
 classifies it as active or passive. The AI explains what the checks found, drafts the notice and tests the portfolio
-manager's explanation against the data. The portfolio manager and the risk manager agree how a breach of an internal
-limit is handled: rectify it, or accept it for a set period with the head of risk's approval.
+manager's explanation against the data. The portfolio manager decides how a breach of an internal limit is handled:
+rectify it, or accept it for a set period with the head of risk's approval.
 
-**Escalation has an end:** where the two disagree, the risk committee decides and its decision binds. What it cannot
-resolve goes to the executive committee, and the board is the last resort.
+**Escalation has an end:** where the risk manager disagrees with the decision, the risk committee decides and its
+decision binds. What it cannot resolve goes to the executive committee, and the board is the last resort.
 
 The rest of this chapter is the detail behind these points.
 
@@ -40,7 +40,7 @@ warnings ahead of them, and routes any breach it sees to compliance.
 detects and verifies a breach, tells compliance and the portfolio manager on the same day, and tracks the rectification.
 
 **Internal limits are soft limits.** They are [governed
-parameters](08-controls.md#materiality-thresholds-as-governed-parameters), owned by the risk function, and they cover
+parameters](08-controls.md#governed-parameters), owned by the risk function, and they cover
 what the mandate leaves unsaid. A mandate that sets a benchmark and a tracking error budget rarely says how much the
 portfolio may lose in total; an internal limit on value at risk says it for the risk function. Each internal limit is
 set for its portfolio, from what the mandate intends, not copied from a firm-wide number. For a new portfolio, internal
@@ -86,7 +86,7 @@ anchor to.
 
 Whatever the approach, a limit is tested by how it behaves. A limit that is never approached says nothing, and one that
 is breached all the time is ignored; both are reviewed on the cycle set out in
-[controls](08-controls.md#materiality-thresholds-as-governed-parameters).
+[controls](08-controls.md#governed-parameters).
 
 ## The breach lifecycle
 The lifecycle below applies to internal limits. A breach of a risk-measured hard limit follows the same stages, except
@@ -100,7 +100,7 @@ rule follows compliance's process.
 | 3 | Classify | Active, caused by a trade or decision, or passive, caused by market moves, flows or corporate actions; the analytics engine classifies from the trade records and the risk manager confirms |
 | 4 | Notify | The portfolio manager, investment oversight and the head of risk are told, with the facts; where the engine finds a governed rule covers the notice, the AI sends it, and the risk manager reviews it the same day |
 | 5 | Explain | The portfolio manager explains the position, and the explanation is recorded; the AI tests it against the data and reports what supports it and what contradicts it |
-| 6 | Decide | The portfolio manager and the risk manager agree: rectify it, or accept it for a set period with the head of risk's approval; a disagreement goes to the risk committee |
+| 6 | Decide | The portfolio manager decides: rectify it, or accept it for a set period with the head of risk's approval; where the risk manager disagrees, the risk committee decides |
 | 7 | Rectify | Where the decision is to rectify, the reading returns within the limit by a deadline |
 | 8 | Close | The outcome is recorded, with the reason, the breach is closed and the head of risk is told |
 
@@ -114,10 +114,11 @@ Who does each step:
 | 4 | Confirm the breach and its classification; send a notice the rule does not cover; review the same day what the AI sent or closed | Risk manager |
 | 5 | Record the portfolio manager's explanation | Analytics engine |
 | 6 | Test the portfolio manager's explanation against the data; draft the decision note with what supports and what contradicts it, citing how similar breaches were decided | AI |
-| 7 | Agree the decision: rectify, or accept for a set period; take a disagreement to the risk committee | Portfolio manager and risk manager |
-| 8 | Approve an acceptance for a set period | Head of risk |
-| 9 | Track the rectification to its deadline; escalate a missed deadline | Analytics engine |
-| 10 | Confirm the close and report it to the head of risk; the record goes to the risk committee | Risk manager |
+| 7 | Decide: rectify, or accept for a set period | Portfolio manager |
+| 8 | Take a decision the risk manager disagrees with to the risk committee | Risk manager |
+| 9 | Approve an acceptance for a set period | Head of risk |
+| 10 | Track the rectification to its deadline; escalate a missed deadline | Analytics engine |
+| 11 | Confirm the close and report it to the head of risk; the record goes to the risk committee | Risk manager |
 
 **Investment oversight**, told at the Notify stage, is the head of investments, or the committee that supervises the
 portfolio managers on the firm's behalf.
@@ -139,7 +140,7 @@ Escalation follows a stated path. **The deadlines are illustrative.**
 |---|---|---|---|---|
 | A rectification passes its deadline | Analytics engine | Head of risk | The same day | Require the rectification, or extend the deadline once, with a reason |
 | A decision on a breach passes its deadline | Analytics engine | The risk committee's chair | The same day | Decide, or call the committee |
-| The portfolio manager and the risk manager disagree on a breach of an internal limit | Risk manager, presented by the head of risk | Risk committee | Its next meeting, or one called within 5 business days | Require rectification by a date, accept the breach for a set period, or change the limit |
+| The risk manager disagrees with the portfolio manager's decision on a breach of an internal limit | Risk manager, presented by the head of risk | Risk committee | Its next meeting, or one called within 5 business days | Require rectification by a date, accept the breach for a set period, or change the limit |
 | The risk committee cannot resolve a breach, or its decision is not followed | The risk committee's chair | The executive committee, the risk committee's parent body | Its next meeting, or one called sooner | Direct the outcome |
 | The executive committee cannot resolve a breach | The executive committee's chair | The board | Its next meeting, or one called sooner | Direct the outcome; the board is the last resort |
 | A member of the risk committee dissents from its decision | The member | The board | The board's next report | Ask the committee to review its decision; the decision stands until then |
@@ -161,9 +162,10 @@ mandate is told follows the mandate's reporting terms and compliance's process.
 | Decision | Who approves | Record |
 |---|---|---|
 | Acknowledging a reading beyond an early warning | Risk manager | The reading, the reason it stands and when it will be looked at again |
-| How a breach of an internal limit is handled: rectify or accept | Portfolio manager and risk manager, together | The decision note, with the reason |
+| How a breach of an internal limit is handled: rectify or accept | Portfolio manager; the risk committee where the risk manager disagrees | The decision note, with the reason |
 | Accepting a breach of an internal limit for a set period | Head of risk | The breach, the reason, the expiry date and any conditions |
 | Setting a new portfolio's first internal limits | Head of risk, on the risk manager's proposal | The limits, how each was calibrated and the reason |
+| Setting a drawdown tolerance the governing documents do not state | Head of risk, on the risk manager's proposal | The tolerance, what the mandate intends and the reason |
 | Allowing an action to run under a governed rule without sign-off beforehand | Head of risk | The rule, the evidence that it passed the four tests and the date it takes effect |
 | Changing an internal limit or how it is calibrated | Risk committee | The old and new values, the reason and the date it takes effect |
 | The legal reading of a hard limit, its breach report and any extension | Compliance, under its own process | Routed or reported by the risk function, with the evidence |

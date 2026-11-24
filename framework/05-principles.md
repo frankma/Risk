@@ -11,7 +11,7 @@ workflow as it stands. The unit of change is the workflow, not the task.
 | 3 | A number that cannot be reproduced is rejected | Every figure traces to a recorded computation that can be rerun; generated text is checked against it. |
 | 4 | The system checks everything; people judge the exceptions | The analytics engine triages every portfolio; a person prioritises and judges what is material. |
 | 5 | Decide what the risk manager's time is for before starting | Time that is not directed is absorbed by existing work. |
-| 6 | Build what the manual process could not do | Every portfolio checked, every exception investigated, every document read, and tools built in-house where they once had to be bought. |
+| 6 | Build what the manual process could not do | Every portfolio checked, every exception investigated, every document read. |
 | 7 | Hand over judgement, not documents | The facts sit once in the shared record; what passes between people is a question, a challenge or a decision. |
 
 **What the risk manager adds:** once the system produces the outputs, the risk manager's time goes to prioritising and
@@ -81,8 +81,8 @@ and governed as parameters. The [market risk](../pillars/market-risk.md) chapter
 **What it means.** A redesign changes what a risk manager spends time on, and time that is not directed is absorbed by
 existing work. The use of the time is a design decision, made at the start rather than discovered at the end.
 
-**In practice.** The risk function records the plan before the redesign and tracks it afterwards, as [measuring
-the result](07-redesign-method.md#a-plan-for-the-risk-managers-time) sets out.
+**In practice.** The risk function records the plan before the redesign and tracks it afterwards, as the redesign
+method's [plan for the risk manager's time](07-redesign-method.md#a-plan-for-the-risk-managers-time) sets out.
 
 ### 6. Build what the manual process could not do
 **What it means.** Doing the old process faster has a ceiling: at best the old output arrives sooner. A redesign also
@@ -94,9 +94,7 @@ rather than at each periodic stress test, and signals can be connected across ma
 see where they combine. The [integrated view](../pillars/integrated-view.md) is the clearest example. The AI adds work
 of another kind: every item in a pillar's queue and in the integrated view arrives investigated, every governing
 document, notice and set of minutes is read into records the analytics engine can test, and every explanation a
-portfolio manager gives can be tested against the data. A redesign also asks what can now be built rather than bought:
-with the AI's help, a risk function can build in-house much of the tooling it once bought, shaped to its own workflows
-and under the same independent validation as any model.
+portfolio manager gives can be tested against the data.
 
 ### 7. Hand over judgement, not documents
 **What it means.** Once the analytics engine computes and the AI writes, a document passed from one person to another
@@ -147,7 +145,8 @@ Deciding what the system flags matters most, because it scales: done well, it ma
 across every portfolio every day, not only to the portfolios they had time to look at.
 
 Which rights the risk manager holds is set out in [decision rights](09-decision-rights.md#roles), and how their time is
-planned in the redesign method's [measuring the result](07-redesign-method.md#a-plan-for-the-risk-managers-time).
+planned in the redesign method's [plan for the risk manager's
+time](07-redesign-method.md#a-plan-for-the-risk-managers-time).
 
 ## Sources
 - Hammer, M. (1990). Reengineering Work: Don't Automate, Obliterate. *Harvard Business Review*. Rebuilding a process

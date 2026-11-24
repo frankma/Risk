@@ -33,7 +33,8 @@ The risk function lists its recurring workflows and records, for each one, its c
 the output and for which decision. The inventory usually shows outputs that feed no decision: a report produced because
 it has always been produced, or a table nobody reads. These are eliminated, not automated. An output its reader
 summarises before using, often with an AI of their own, shows that the reader needs the facts in the [shared
-record](05-principles.md#7-hand-over-judgement-not-documents) and a judgement, not the document.
+record](05-principles.md#7-hand-over-judgement-not-documents) and a judgement, not the document. From the inventory,
+the risk function chooses the workflow to redesign first.
 
 The inventory spans every function that works on the same data, such as performance measurement, compliance monitoring
 and the investment team's own analysis. A workflow two functions run is found and run once, with one owner of its
@@ -137,9 +138,9 @@ risk, who now decides on the risk manager's proposal.
 The committee reads the triaged exceptions in the shared record within days of month end, and receives a decision
 paper for what it must decide: what to escalate and what the risk function recommends.
 
-**Steps 6 and 7.** The AI step's evaluation set passes before first use, and the redesigned report runs in parallel with
-the old one for at least one full cycle before the old one is stopped, and the risk managers' time goes to the use the
-risk function chose at the start, for example monthly deep-dive reviews of the portfolios that appear most often in the
+**Steps 6 and 7.** The AI step's evaluation set passes before first use. The redesigned report runs in parallel with the
+old one for at least one full cycle before the old one is stopped. The risk managers' time goes to the use the risk
+function chose at the start, for example monthly deep-dive reviews of the portfolios that appear most often in the
 exception summary.
 
 ## Measuring the result

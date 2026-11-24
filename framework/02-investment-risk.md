@@ -7,8 +7,7 @@ and how the portfolio is funded, not from how the firm operates.
 
 **The mandate is the reference point:** risk is measured against the promise, in both directions: a portfolio that takes
 more risk than its mandate intends misses it, and so does one that takes far less. The three kinds of departure are
-distinct failures with distinct causes, and each maps to one pillar. Performance is one of them because risk and
-performance are read together.
+distinct failures with distinct causes, and each maps to one pillar.
 
 **Three pillars:** three questions asked of one integrated web of signals, each serving decisions. They are a lens on
 the work, not a taxonomy of risks or a set of teams. Each pillar's question opens its own chapter.
@@ -30,7 +29,7 @@ The framework covers open-ended and closed-ended funds and segregated mandates, 
 return and other objective-based strategies, multi-asset, long-short and leveraged strategies, fixed income and credit,
 and funds of funds, which are read through to their holdings. It calls each a **portfolio**, and says fund or mandate
 only where the type matters. **The mandate** is the promise, whatever the vehicle: the objective, benchmark, style,
-limits and dealing or withdrawal terms in the governing documents.
+limits, drawdown tolerance and dealing or withdrawal terms in the governing documents.
 
 Three kinds of portfolio sit outside it:
 
@@ -76,8 +75,7 @@ and read the same shared record under their own entitlements; what the table ass
 rights](09-decision-rights.md#who-decides-what) sets out.
 
 ## The three pillars
-Each pillar's outcome is at the top of this chapter, and its question opens its own chapter. The pillars overlap in data
-but not in question, and market and performance risk are divided by time.
+The pillars overlap in data but not in question, and market and performance risk are divided by time.
 
 | | Market risk | Liquidity risk | Performance risk |
 |---|---|---|---|

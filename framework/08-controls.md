@@ -14,8 +14,8 @@ method](07-redesign-method.md), not added after the workflow is live.
 | Sign-off points | An output reaching its audience without accountable review |
 | Audit trail | Being unable to show what was produced, changed and approved |
 | Evaluation | An AI step that has stopped working, or a review that has stopped reading |
-| Governed thresholds | Silent changes to what counts as material |
-| Parallel run | Switching to a workflow that disagrees with the one it replaces |
+| Governed parameters | Silent changes to what counts as material, or to how a figure is computed |
+| Parallel runs | Switching to a workflow that disagrees with the one it replaces |
 | Fallback | A failed component stopping the workflow |
 | Incidents | An error repeating, or an output already sent left uncorrected |
 | Data handling | Sensitive data reaching a service it should not |
@@ -181,16 +181,21 @@ whatever the review decides. A seeded flaw that passes is a finding about the re
 for the same item without knowing which is which. A step whose drafts are not judged better than the template is
 replaced by it.
 
-## Materiality thresholds as governed parameters
+## Governed parameters
 The thresholds that decide what counts as an exception, and the rules that triage exceptions, determine what the risk
-manager sees and what they do not. They encode the risk function's judgement and should be governed like any other risk
-parameter.
+manager sees and what they do not. They encode the risk function's judgement and are governed like any other risk
+parameter. So is every other choice that decides a figure or what the system flags: the proxy policy, the analyses set
+for each rule and the list the AI may choose from, the measurement windows and linking method, and the alpha and beta
+construction.
 
-- **Ownership.** Each threshold is owned by the risk function, which sets it, reviews it and records every change.
-- **Review.** Thresholds are reviewed on a set cycle, and when the exception queue shows signs of being set too tight
-  (too many items to review properly) or too loose (issues found outside the queue).
+- **Ownership.** Each parameter is owned by the risk function, which sets it, reviews it and records every change.
+- **Review.** Parameters are reviewed on a set cycle, and thresholds also when the exception queue shows signs of being
+  set too tight (too many items to review properly) or too loose (issues found outside the queue).
+- **Approval.** A change is proposed by the person who holds stewardship of the rules and approved by the head of risk.
+  Internal limits are the exception: the risk committee approves a change to one, as [limits and
+  escalation](04-limits-and-escalation.md#who-approves-what) sets out.
 - **Change record.** Every change records the old and new values, the reason, who approved it and when it took effect.
-  Thresholds are versioned, so that any past output can be reproduced with the thresholds in force at the time.
+  Parameters are versioned, so that any past output can be reproduced with the parameters in force at the time.
 
 Internal limits are governed in the same way. [Limits and escalation](04-limits-and-escalation.md) sets out where limits
 come from, how internal limits are calibrated and how a breach is handled.
@@ -209,8 +214,8 @@ as a result of the run.
 ## Fallback
 Each workflow defines what happens when a component fails.
 
-- **Data pipeline failure.** The run follows the rule set in advance in [risk
-  data](03-data-integrity.md#quality-before-computation): it waits, or runs with the affected portfolios marked.
+- **Data pipeline failure.** The run follows the rule set in advance in [data
+  integrity](03-data-integrity.md#quality-before-computation): it waits, or runs with the affected portfolios marked.
 - **AI backend failure.** The fallback depends on the kind of step. A drafting step falls back to a deterministic
   template that states the computed facts in fixed sentences, including what the analyses set for the item's rule
   found. The output is plainer, but complete and correct. The AI's follow-up analyses do not run, and the item says
@@ -257,7 +262,7 @@ towards these expectations where a supervisor's definition of AI covers them.
 | Board and senior management oversight | Regular reporting of AI use, results, incidents and suspensions |
 
 The risk function tests its own AI steps day to day, through the grounding check, parallel runs and ongoing monitoring
-above, as part of the limits of its own measures and tools that it is responsible for. It is not the only judge of them.
+above, because the limits of its own measures and tools are its responsibility. It is not the only judge of them.
 The independent validation function, which sits outside the risk function as set out in [investment
 risk](02-investment-risk.md), reviews each AI step, the grounding check and each tool the risk function builds in-house,
 at first use and at each material change: a new model, a changed prompt or template, a new analysis on the governed list

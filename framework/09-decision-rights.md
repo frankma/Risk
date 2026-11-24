@@ -14,14 +14,14 @@ decision-maker.
 | One decision-maker for each decision | However many people and systems contribute, each decision is a person's or a committee's, recorded with the one who made it, who is accountable for it. |
 
 **Who decides what:** the portfolio manager decides what a portfolio holds. The risk function decides what counts as an
-exception, sets internal limits, judges what matters, challenges and escalates. The risk committee settles what the two
-cannot agree. Compliance, pricing, independent validation and product governance hold the decisions [investment
+exception, sets internal limits, judges what matters, challenges and escalates. The risk committee decides what the risk
+function escalates. Compliance, pricing, independent validation and product governance hold the decisions [investment
 risk](02-investment-risk.md#scope-and-boundaries) assigns them.
 
 **The size of the function:** every firm needs a risk function, and the rights stay the same whatever its size; the
 number of people who hold them changes. A small firm has one person, often in a combined role outside the investment
-line, with the analytics engine and the AI doing the work; a large firm has a dedicated team under one head of risk. A
-right no one is named for falls to the portfolio manager.
+line, with the analytics engine and the AI doing the work; a large firm has a dedicated team under one head of risk.
+Every right is named, because one that is not falls in practice to the portfolio manager, and then there is no check.
 
 The rest of this chapter is the detail behind these points.
 
@@ -49,11 +49,13 @@ as a whole.
 | Decision | Decision-maker | Set out in |
 |---|---|---|
 | What a portfolio holds, and each trade | Portfolio manager | [Philosophy](00-philosophy.md#why-a-risk-function-exists) |
-| What counts as an exception, how the queue is triaged, the analyses set for each rule and the list the AI may choose from | Risk function, through the change record | [Controls](08-controls.md#materiality-thresholds-as-governed-parameters) |
+| What counts as an exception, how the queue is triaged, the analyses set for each rule and the list the AI may choose from | Head of risk, on the proposal of the steward of the rules | [Controls](08-controls.md#governed-parameters) |
 | A new portfolio's first internal limits; a change to an internal limit | Head of risk; risk committee | [Limits and escalation](04-limits-and-escalation.md#who-approves-what) |
+| A drawdown tolerance the governing documents do not state | Head of risk | [Performance risk](../pillars/performance-risk.md#mandate-terms) |
 | Which items to act on first, whether each matters, and what to put to the portfolio manager | Risk manager | [Principles](05-principles.md#what-the-risk-manager-adds) |
-| How a breach of an internal limit is handled | Portfolio manager and risk manager together; the risk committee where they disagree | [Limits and escalation](04-limits-and-escalation.md#the-breach-lifecycle) |
+| How a breach of an internal limit is handled | Portfolio manager; the risk committee where the risk manager disagrees | [Limits and escalation](04-limits-and-escalation.md#the-breach-lifecycle) |
 | Accepting a breach of an internal limit for a set period | Head of risk | [Limits and escalation](04-limits-and-escalation.md#who-approves-what) |
+| Whether a new kind of instrument can be held, as the risk function measures it | Risk manager | [Market risk](../pillars/market-risk.md#workflows-in-this-pillar) |
 | Shock sizes, scenario calibration and how plausible a reverse stress is | Risk manager | [Market risk](../pillars/market-risk.md#stress-and-reverse-stress) |
 | Whether the day's measures run on data with a break | Risk manager | [Data integrity](03-data-integrity.md#quality-before-computation) |
 | Correcting data at source | Each domain's named owner | [Data integrity](03-data-integrity.md#who-owns-what) |
@@ -74,9 +76,9 @@ therefore sits with whoever owns the rules.
 
 - **The rules belong to the risk function.** The materiality thresholds, triage rules, patterns, internal limits, the
   analyses set for each rule, the governed list of analyses, the AI's permissions, the evaluation sets and the controls
-  are owned by the risk function. Anyone may propose a change; the risk function decides it through the change record,
-  and independent validation and internal audit test the rules and controls themselves, as
-  [controls](08-controls.md#alignment-with-supervisory-expectations) sets out.
+  are owned by the risk function. Anyone may propose a change through the steward of the rules, and the head of risk
+  decides it; a change to an internal limit goes to the risk committee. Independent validation and internal audit test
+  the rules and controls themselves, as [controls](08-controls.md#alignment-with-supervisory-expectations) sets out.
 - **The holders report outside the investment line.** The people who hold the oversight rights report to the head of
   risk, who reports outside the investment line.
 - **Independence is of judgement, not of data.** Both sides read the same analytics engine and the same shared record.
@@ -120,7 +122,7 @@ or the portfolio manager who explained, and a committee answers for its decision
 | Role | What it holds |
 |---|---|
 | Risk manager | The oversight right for a set of portfolios: prioritising and judging items in the queue, challenging the portfolio manager, confirming what the AI extracted and reviewing what it sent or closed; a share of the function's rules |
-| Head of risk | The function's rights as a whole: what the AI may do, which actions run under a governed rule, escalation and the acceptance of breaches; and what risk managers' time goes to |
+| Head of risk | The function's rights as a whole: what the AI may do, which actions run under a governed rule, changes to the governed parameters, escalation and the acceptance of breaches; and what risk managers' time goes to |
 | Portfolio manager | What the portfolio holds; answers to challenge, with evidence; with the investment team, what-ifs and attribution served on governed analyses |
 | Owners of adjacent risks and of data | Their own decisions, made on the same analytics engine and shared record, with what the risk function routes to them |
 | Management | Where AI enters the business, judged by the [measures of value](07-redesign-method.md#measuring-the-result), not by usage |
@@ -137,7 +139,8 @@ practice held by no one:
   risk figure passes through its change record. Each methodology is agreed with the functions that use it and reviewed
   with them on a set cycle, and independent validation reviews it at first use and at each material change, so the risk
   function never judges its own methods alone.
-- **Stewardship of the rules.** The governed parameters, their review cycle and their change record.
+- **Stewardship of the rules.** The governed parameters, their review cycle and their change record; the steward
+  proposes each change to the head of risk.
 - **What the AI must get right.** The standard each AI step is held to: its evaluation set and the criteria set in
   advance, the seeded review tests and the test against the template, as [evaluation](08-controls.md#evaluation) sets
   out. Independent validation reviews the standard and validates each step against it.

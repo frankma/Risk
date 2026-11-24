@@ -53,9 +53,9 @@ GLANCE = [
     ("", "Market risk", "Liquidity risk", "Performance risk", "Integrated view"),
     ("Question", "Does a portfolio carry the risk its mandate intends, within the range it allows, and how much "
      "could it lose?",
-     "Can the portfolio meet every call on its cash, in time and at a fair cost, without disadvantaging the investors "
+     "Can a portfolio meet every call on its cash, in time and at a fair cost, without disadvantaging the investors "
      "who stay?",
-     "Is the portfolio delivering what was promised, in the way it was promised?", "Where are signals combining?"),
+     "Is a portfolio delivering what was promised, in the way it was promised?", "Where are signals combining?"),
     ("Lens", "Forward-looking: what could happen, absolute and relative", "Calls on cash against assets",
      "Realised: whether the promise is kept", "Combinations across pillars"),
     ("Decisions served", "Construct, Oversee", "Construct, Oversee", "Oversee, Assess", "Oversee, Assess"),

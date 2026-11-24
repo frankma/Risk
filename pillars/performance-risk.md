@@ -50,7 +50,7 @@ other workflows feed it. It runs in ten steps:
 | 7 | Run the meeting on the risk function's agenda; note each explanation and agreed action | Risk manager |
 | 8 | Test the explanations noted against the data; draft the minutes and the action log from the notes and the pack, with what supports and what contradicts each | AI |
 | 9 | Edit and agree the minutes and actions | Risk manager |
-| 10 | Track follow-ups; escalate overdue actions to the watch list | Analytics engine |
+| 10 | Track follow-ups; raise an overdue action as an exception, for the risk manager to add to the watch list | Analytics engine |
 
 - **Attribution** separates the two [sources of return](../framework/01-return.md), using the [alpha and beta
   method](alpha-and-beta-method.md), and shows each beta line by the [return
@@ -73,10 +73,12 @@ other workflows feed it. It runs in ten steps:
 
 ## Mandate terms
 Testing a portfolio against what it promised needs the promise in a form the analytics engine can test. The AI extracts
-the portfolio's stated objective, benchmark, style, limits and dealing terms from its documents into structured terms,
-each linked to the passage it came from, including the provisions for each liquidity management tool. The analytics
-engine checks them against a list of the terms each type of portfolio is expected to have, so that a term the AI missed
-shows as a gap to resolve rather than as nothing to confirm. The risk manager confirms the terms. The analytics engine
+the portfolio's stated objective, benchmark, style, limits, drawdown tolerance and dealing terms from its documents into
+structured terms, each linked to the passage it came from, including the provisions for each liquidity management tool.
+The analytics engine checks them against a list of the terms each type of portfolio is expected to have, so that a term
+the AI missed shows as a gap to resolve rather than as nothing to confirm. The risk manager confirms the terms. Where
+the documents state no drawdown tolerance, the risk manager proposes one from what the mandate intends, the head of risk
+approves it, and it is recorded as a term like any other. The analytics engine
 then tests holdings and exposures against the confirmed terms and flags style drift and unintended bets. For a hard
 limit, compliance's coded rule is the master reading: the extracted limit is reconciled to it, and a difference is
 routed to compliance, not settled by the risk manager. The risk function owns the objective and style terms, which
@@ -85,7 +87,7 @@ and confirmed in the [new portfolio review](new-portfolio-review.md).
 
 ## Materiality and exceptions
 An **exception** is a reading that has crossed a rule's threshold, and a **watch item** an early sign that has not. Each
-rule is a [governed parameter](../framework/08-controls.md#materiality-thresholds-as-governed-parameters). **The example
+rule is a [governed parameter](../framework/08-controls.md#governed-parameters). **The example
 values below are illustrative and are not recommendations;** each risk function sets its own.
 
 | Kind of rule | Example (illustrative) | What it catches | What it gives |
@@ -193,7 +195,7 @@ and membership is reviewed on a set cycle.
 
 ### Linking attribution over time
 Published linking methods give slightly different answers, so the method is stated, held as a [governed
-parameter](../framework/08-controls.md#materiality-thresholds-as-governed-parameters), and changed only from a recorded
+parameter](../framework/08-controls.md#governed-parameters), and changed only from a recorded
 effective date. The same applies to linking the lines of the [alpha and beta
 split](alpha-and-beta-method.md#the-test-and-its-limits) over longer periods.
 

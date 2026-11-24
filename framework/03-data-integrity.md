@@ -33,7 +33,7 @@ the last domain, are read by the AI.
 | Returns and valuations | Net asset values, accounting values, fees and the cash flows behind time-weighted returns, gross and net | Performance risk, alpha and beta |
 | Flows and investors | Subscriptions, redemptions, withdrawals and the shares held by the largest investors and distributors, including redemptions notified in dealing notices, read by the AI and confirmed by the risk manager, and matched to the dealing record when it arrives | Liquidity risk |
 | Margin and financing | Margin and collateral calls, borrowing and its maturity, commitments, currency hedges and their roll dates, securities on loan and their collateral | Liquidity risk |
-| Mandate terms | The objective, benchmark, style, limits and dealing terms, confirmed by the risk manager, with hard limits reconciled to compliance's rules | Every pillar |
+| Mandate terms | The objective, benchmark, style, limits, drawdown tolerance and dealing terms, confirmed by the risk manager, with hard limits reconciled to compliance's rules | Every pillar |
 | Records of decisions | Tilts and timing calls as recorded, including those the AI extracted from minutes and the risk manager confirmed, and trades with their tags | Performance risk, alpha and beta |
 | Documents | Governing documents, committee minutes and dealing notices, kept as received with the date they were received and their source | Read by the AI, which extracts from them; only confirmed extractions enter the other domains |
 
@@ -72,7 +72,7 @@ Each record in the data store carries two dates: the date it describes and the d
 
 A correction never overwrites what was known before. Both versions stay, and the audit trail records which one each
 output used. The same applies to thresholds and other governed parameters, which are
-[versioned](08-controls.md#materiality-thresholds-as-governed-parameters) with the dates they took effect. Data and the
+[versioned](08-controls.md#governed-parameters) with the dates they took effect. Data and the
 logic applied to it are versioned together, as [principle
 2](05-principles.md#2-the-analytics-engine-computes-the-ai-interprets-and-narrates-a-person-judges) sets out.
 
@@ -121,7 +121,7 @@ The risk function sets one proxy policy for all domains.
 
 - **Every proxy is flagged.** A figure computed partly from a proxy says so, wherever it appears.
 - **Every proxy is governed.** The choice of proxy for each kind of gap is a [governed
-  parameter](08-controls.md#materiality-thresholds-as-governed-parameters), owned by the risk function.
+  parameter](08-controls.md#governed-parameters), owned by the risk function.
 - **Proxies are measured.** The share of each portfolio, by value, that rests on proxies is reported beside its
   measures, and a share above a set level is a data break in its own right.
 - **Proxies are temporary.** A proxy is replaced as soon as the real data arrives, and a proxy that has stayed beyond a
