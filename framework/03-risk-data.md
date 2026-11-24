@@ -72,7 +72,9 @@ Each record in the data store carries two dates: the date it describes and the d
 
 A correction never overwrites what was known before. Both versions stay, and the audit trail records which one each
 output used. The same applies to thresholds and other governed parameters, which are
-[versioned](08-controls.md#materiality-thresholds-as-governed-parameters) with the dates they took effect.
+[versioned](08-controls.md#materiality-thresholds-as-governed-parameters) with the dates they took effect. Data and the
+logic applied to it are versioned together, as [principle
+2](05-principles.md#2-the-analytics-engine-computes-the-ai-interprets-and-narrates-a-person-judges) sets out.
 
 ## Quality before computation
 Every domain passes checks in five dimensions before the snapshot is fixed. **The examples below are illustrative;**
@@ -156,8 +158,8 @@ would pass. **The fund and figures are illustrative.**
 The rules above (a checked snapshot, breaks shown, corrections at source, a reproducible past) are this chapter's
 controls; the general [controls](08-controls.md) apply in full.
 
-Of the measures in [measuring value](09-measuring-value.md), speed and quality matter most here: how soon the day's
-measures can be trusted, and whether a break reaches an output unseen.
+Of the [four dimensions](07-redesign-method.md#four-dimensions) a redesigned workflow is measured on, speed and quality
+matter most here: how soon the day's measures can be trusted, and whether a break reaches an output unseen.
 
 | Dimension | Measure for data integrity |
 |---|---|

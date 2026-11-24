@@ -28,14 +28,15 @@ The text stays jurisdiction-neutral, and each chapter ends with a Sources sectio
 literature it draws on.
 
 ## Design rules for the reference implementations
-- **The AI never fabricates a number.** Every figure is computed by code from data, in the daily run or in an analysis
-  the AI layer runs through the analytics engine (an aggregation, an attribution, a what-if), with the run recorded.
-  Beyond that the AI layer at most combines figures in simple ways (a sum, difference, ratio, percentage change or
-  simple multiple), and states a cause only where an attribution computed it. A grounding check verifies that every
-  number in generated text traces to a computed value or is recomputed from computed values, and tests causes,
+- **A number that cannot be reproduced is rejected.** Every figure is computed by code from data, in the daily run or in
+  an analysis the AI layer runs through the analytics engine (an aggregation, an attribution, a what-if), with the run
+  recorded. Beyond that the AI layer at most combines figures in simple ways (a sum, difference, ratio, percentage
+  change or simple multiple), and states a cause only where an attribution computed it. A grounding check verifies that
+  every number in generated text traces to a computed value or is recomputed from computed values, and tests causes,
   quantifiers and severity words against the facts; text that fails is rejected.
-- **Exceptions over everything.** Workflows rank what needs a human's attention rather than handing over everything.
-- **Every AI step has a human sign-off point and an audit trail** of what was generated and what the human changed.
+- **The system checks everything; people judge the exceptions.** Workflows triage what needs a person's attention rather
+  than handing over everything.
+- **Every AI step has a person's sign-off point and an audit trail** of what was generated and what the person changed.
   The one exception is a routine action a governed rule allows, such as a standard breach notice: the analytics engine
   decides that the rule applies, the AI writes the text, a person reviews it the same day, and it is recorded in the
   same trail.

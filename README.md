@@ -9,7 +9,7 @@ The [reader](https://frankma.github.io/Risk/) holds every chapter on one page an
 A risk function challenges investment decisions against the mandate, and serves the investment team with insight into
 the risks it takes ([philosophy](framework/00-philosophy.md#why-a-risk-function-exists)). It is defined by the decisions
 it alone may make: the work is shared across the firm, the decisions are not ([decision
-rights](framework/10-decision-rights.md)). Its recurring work answers three questions:
+rights](framework/09-decision-rights.md)). Its recurring work answers three questions:
 
 | Pillar | Question |
 |---|---|
@@ -40,13 +40,15 @@ of the system, where the same data always gives the same figure and every figure
 
 Two rules make it work:
 
-- **The AI never fabricates a number.** Every figure it reports was computed by the analytics engine, in the daily run
-  or in an analysis the AI ran through it, such as an aggregation, an attribution or a what-if. The run is recorded and
-  can be reproduced, and text with a figure that has no computation behind it is rejected.
-- **Exceptions over everything.** The analytics engine checks every portfolio against every rule each day and triages
-  what it finds into a queue of exceptions and watch items. The risk manager prioritises and reviews that queue rather
-  than every portfolio, and signs off what goes out, or reviews the same day what a governed rule lets the AI send or
-  close. [Principles](framework/05-principles.md#4-exceptions-over-everything) sets this out.
+- **A number that cannot be reproduced is rejected.** Every figure the AI reports was computed by the analytics engine,
+  in the daily run or in an analysis the AI ran through it, such as an aggregation, an attribution or a what-if. The run
+  is recorded and can be reproduced, and text with a figure that has no such computation behind it is rejected. The
+  check does not catch what was left out, wrong emphasis or a misleading frame; the person who signs off does.
+- **The system checks everything; people judge the exceptions.** Each day the analytics engine checks every portfolio
+  against every rule and triages what it finds into a queue of exceptions and watch items. The risk manager prioritises
+  and reviews that queue rather than every portfolio, and signs off what goes out, or reviews the same day what a
+  governed rule lets the AI send or close.
+  [Principles](framework/05-principles.md#4-the-system-checks-everything-people-judge-the-exceptions) sets this out.
 
 ## Map
 Every chapter except the concept map opens with **The essentials**, which states the chapter whole, and the detail
@@ -71,10 +73,9 @@ follows beneath it. Reading the essentials in order gives the framework; the det
 | **The redesign around AI** | |
 | [Principles](framework/05-principles.md) | Seven principles for redesigning the work around AI, and what the risk manager adds. |
 | [Working with AI](framework/06-working-with-ai.md) | What "AI" means, three modes of working, what the AI reads, where a figure may come from and what the AI may do. |
-| [Redesign method](framework/07-redesign-method.md) | Seven steps to redesign one workflow. |
+| [Redesign method](framework/07-redesign-method.md) | Seven steps to redesign one workflow, and how to measure the result. |
 | [Controls](framework/08-controls.md) | What makes a redesigned workflow safe to rely on, from the grounding check and automated actions to evaluation, incidents and fallback. |
-| [Measuring value](framework/09-measuring-value.md) | How to know a redesigned workflow works. |
-| [Decision rights](framework/10-decision-rights.md) | Who decides what once the work is shared: independence in the rules, self-service, one holder for each decision, the roles and the size of the function. |
+| [Decision rights](framework/09-decision-rights.md) | Who decides what once the work is shared: independence in the rules, self-service, one decision-maker for each decision, the roles and the size of the function. |
 | **Index** | |
 | [Concept map](framework/concept-map.md) | Every concept: what it is, where it is defined and which chapters use it. |
 

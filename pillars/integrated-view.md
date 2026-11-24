@@ -172,8 +172,9 @@ The general [controls](../framework/08-controls.md) apply in full. The view adds
 - **Pattern and grouping rules are governed.** Adding, removing or changing a pattern or a driver group is recorded like
   any other threshold change.
 
-The view's own measure, **lead time**, matters most here, ahead of the four dimensions in [measuring
-value](../framework/09-measuring-value.md). It is measured from replays of past episodes and from live cases.
+The view's own measure, **lead time**, matters most here, ahead of the [four
+dimensions](../framework/07-redesign-method.md#four-dimensions) a redesigned workflow is measured on. It is measured
+from replays of past episodes and from live cases.
 
 | Dimension | Measure for the view |
 |---|---|

@@ -202,8 +202,8 @@ The general [controls](08-controls.md) apply in full. Limits add six.
   suspend it.
 - **Limits are reviewed by their behaviour.** A limit that is never approached, or is breached repeatedly, is reviewed.
 
-Of the measures in [measuring value](09-measuring-value.md), speed and influence matter most here: how soon a breach is
-known and decided, and whether the decisions are made and kept.
+Of the [four dimensions](07-redesign-method.md#four-dimensions) a redesigned workflow is measured on, speed and
+influence matter most here: how soon a breach is known and decided, and whether the decisions are made and kept.
 
 | Dimension | Measure for limits |
 |---|---|

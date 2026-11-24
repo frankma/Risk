@@ -1,28 +1,27 @@
 # Decision rights
 
 ## The essentials
-**The rule:** a risk function is defined by the decisions it alone may make, not by a department or by the outputs it
-produces. **The work is shared; the decisions are not.** The analytics engine and the [shared
+A risk function is defined by the **decisions** it alone may make, not by a department or by the outputs it produces:
+**the work is shared; the decisions are not.** The analytics engine and the [shared
 record](05-principles.md#7-hand-over-judgement-not-documents) serve the whole firm, investment teams serve themselves
 with the risk function's governed analyses, and the AI investigates and drafts. Each decision still has one named
-holder.
+decision-maker.
 
 | Rule | In one line |
 |---|---|
 | Independence lives in the rules | The risk function owns what the system flags and how each risk figure is computed, and its holders report outside the investment line. |
 | Self-service, independent challenge | Investment teams run what-ifs and read attribution themselves on governed analyses; the risk function owns the analyses and challenges what they show. |
-| One holder for each decision | However many people and systems contribute, each decision is recorded with the one person or body that made it. |
+| One decision-maker for each decision | However many people and systems contribute, each decision is a person's or a committee's, recorded with the one who made it, who is accountable for it. |
 
 **Who decides what:** the portfolio manager decides what a portfolio holds. The risk function decides what counts as an
 exception, sets internal limits, judges what matters, challenges and escalates. The risk committee settles what the two
 cannot agree. Compliance, pricing, independent validation and product governance hold the decisions [investment
 risk](02-investment-risk.md#scope-and-boundaries) assigns them.
 
-**The size of the function:** every firm needs a risk function. The rights stay the same whatever the size of the
-firm; the number of people who hold them changes. A small firm has one person, often in a combined role outside the
-investment line, with the analytics engine and the AI doing the work; a large firm has a dedicated team under one head
-of risk. Either way the holders own the rules and controls and learn the craft by investigating and judging. A right no
-one is named for falls to the portfolio manager.
+**The size of the function:** every firm needs a risk function, and the rights stay the same whatever its size; the
+number of people who hold them changes. A small firm has one person, often in a combined role outside the investment
+line, with the analytics engine and the AI doing the work; a large firm has a dedicated team under one head of risk. A
+right no one is named for falls to the portfolio manager.
 
 The rest of this chapter is the detail behind these points.
 
@@ -42,11 +41,12 @@ function is therefore the set of rights below, held by people independent of the
 analyses, rules and controls it owns. Its place on the organisation chart follows from that.
 
 ## Who decides what
-The table names the holder of each decision across the framework, and the chapter that sets out how it is made. The step
-tables in each chapter name the role that holds each step: "risk manager" means the person who holds the oversight right
-for that portfolio, whatever their title, and "head of risk" the person who holds the function's rights as a whole.
+The table names the decision-maker for each decision across the framework, and the chapter that sets out how it is made.
+The step tables in each chapter name the role that holds each step: "risk manager" means the person who holds the
+oversight right for that portfolio, whatever their title, and "head of risk" the person who holds the function's rights
+as a whole.
 
-| Decision | Holder | Set out in |
+| Decision | Decision-maker | Set out in |
 |---|---|---|
 | What a portfolio holds, and each trade | Portfolio manager | [Philosophy](00-philosophy.md#why-a-risk-function-exists) |
 | What counts as an exception, how the queue is triaged, the analyses set for each rule and the list the AI may choose from | Risk function, through the change record | [Controls](08-controls.md#materiality-thresholds-as-governed-parameters) |
@@ -64,7 +64,7 @@ for that portfolio, whatever their title, and "head of risk" the person who hold
 | The risk function's opinion on a new portfolio; whether it launches | Head of risk; product governance | [New portfolio review](../pillars/new-portfolio-review.md#the-risk-functions-opinion) |
 | The legal reading of a hard limit | Compliance | [Limits and escalation](04-limits-and-escalation.md#where-limits-come-from) |
 | Prices, model validation and counterparty approval | The owners named at the boundary | [What investment risk means](02-investment-risk.md#scope-and-boundaries) |
-| Where AI enters the business | Management | [Roles](10-decision-rights.md#roles) |
+| Where AI enters the business | Management | [Roles](09-decision-rights.md#roles) |
 
 ## Independence lives in the rules
 [Deciding what the system flags](05-principles.md#what-the-risk-manager-adds) scales a risk manager's judgement across
@@ -101,15 +101,20 @@ decides whether to add one.
 - **No risk staff report to the investment line.** A risk manager may be colocated with an investment team, and still
   holds the oversight right for its portfolios and reports to the head of risk.
 
-## One holder for each decision
+## One decision-maker for each decision
 Shared work spreads the doing; the record keeps the deciding with one person. Each decision in the shared record carries
-its holder's name, what they decided, the reasons, and what was generated that they relied on, as the [audit
+its decision-maker's name, what they decided, the reasons, and what was generated that they relied on, as the [audit
 trail](08-controls.md#the-audit-trail) sets out. A committee's decision names the committee and its chair.
 
 Where many contribute to one decision (the analytics engine computing, the AI drafting and testing, the portfolio
-manager explaining), only the holder the table names decides; the others contribute evidence. A decision whose deadline
-passes without a recorded holder escalates, as [limits and escalation](04-limits-and-escalation.md#escalation) sets
-out.
+manager explaining), only the decision-maker the table names decides; the others contribute evidence. A decision whose
+deadline passes without a recorded decision-maker escalates, as [limits and
+escalation](04-limits-and-escalation.md#escalation) sets out.
+
+**The decision-maker is accountable.** A decision is always a person's, or a committee's, never the system's: the
+analytics engine and the AI contribute evidence and never decide. The person who decides is the one held to account for
+the decision. Accountability never rests with those who only contributed, whether the risk manager who ran an analysis
+or the portfolio manager who explained, and a committee answers for its decision through its chair.
 
 ## Roles
 | Role | What it holds |
@@ -118,17 +123,20 @@ out.
 | Head of risk | The function's rights as a whole: what the AI may do, which actions run under a governed rule, escalation and the acceptance of breaches; and what risk managers' time goes to |
 | Portfolio manager | What the portfolio holds; answers to challenge, with evidence; with the investment team, what-ifs and attribution served on governed analyses |
 | Owners of adjacent risks and of data | Their own decisions, made on the same analytics engine and shared record, with what the risk function routes to them |
-| Management | Where AI enters the business, judged by the [measures of value](09-measuring-value.md), not by usage |
+| Management | Where AI enters the business, judged by the [measures of value](07-redesign-method.md#measuring-the-result), not by usage |
 
 Within the core, three responsibilities are each held by a named person, because a responsibility everyone shares is in
 practice held by no one:
 
 - **Methodology.** What each risk measure and governed analysis computes, recorded and tested as each pillar's design
-  choices set out. The analytics engine is the firm's infrastructure: one integrated system every function computes on.
-  The risk function owns what its risk figures mean, and any change to the system that alters a risk figure passes
-  through its change record. Each methodology is agreed with the functions that use it and reviewed with them on a set
-  cycle, and independent validation reviews it at first use and at each material change, so the risk function never
-  judges its own methods alone.
+  choices set out. The analytics engine is the firm's infrastructure: one integrated system of data and logic every
+  function computes on, as [principle
+  2](05-principles.md#2-the-analytics-engine-computes-the-ai-interprets-and-narrates-a-person-judges) sets out. Whether
+  its parts are bought or built in-house is decided with the functions that use it, and what is built passes the same
+  independent validation. The risk function owns what its risk figures mean, and any change to the system that alters a
+  risk figure passes through its change record. Each methodology is agreed with the functions that use it and reviewed
+  with them on a set cycle, and independent validation reviews it at first use and at each material change, so the risk
+  function never judges its own methods alone.
 - **Stewardship of the rules.** The governed parameters, their review cycle and their change record.
 - **What the AI must get right.** The standard each AI step is held to: its evaluation set and the criteria set in
   advance, the seeded review tests and the test against the template, as [evaluation](08-controls.md#evaluation) sets

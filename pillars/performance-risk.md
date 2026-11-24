@@ -224,8 +224,8 @@ The general [controls](../framework/08-controls.md) apply in full. This pillar a
   to the gross return, and alpha must show no exposure to a declared factor, within stated tolerances, before the AI
   drafts from them. A split that fails is an exception in its own right. A missing-factor flag goes to the risk manager.
 
-Of the measures in [measuring value](../framework/09-measuring-value.md), influence matters most here, because the
-purpose of the review is to change what happens.
+Of the [four dimensions](../framework/07-redesign-method.md#four-dimensions) a redesigned workflow is measured on,
+influence matters most here, because the purpose of the review is to change what happens.
 
 | Dimension | Measure for this pillar |
 |---|---|

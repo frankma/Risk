@@ -1,25 +1,22 @@
 # Principles
 
 ## The essentials
-**The rule:** AI changes investment risk work when a workflow is redesigned around it, not when it is inserted into the
+AI changes investment risk work when a workflow is **redesigned** around it, not when it is **inserted** into the
 workflow as it stands. The unit of change is the workflow, not the task.
 
 | # | Principle | In one line |
 |---|---|---|
 | 1 | Redesign, don't insert | Start from the outcome, then rebuild the steps. |
-| 2 | The analytics engine computes, the AI interprets and narrates, a person judges | Each kind of work goes to the owner suited to it. |
-| 3 | The AI never fabricates a number | Every figure has a recorded computation behind it; generated text is checked against it. |
-| 4 | Exceptions over everything | The analytics engine triages every portfolio; a person prioritises and reviews what is material. |
+| 2 | The analytics engine computes, the AI interprets and narrates, a person judges | Each kind of work goes to its owner, on one integrated system of data and logic. |
+| 3 | A number that cannot be reproduced is rejected | Every figure traces to a recorded computation that can be rerun; generated text is checked against it. |
+| 4 | The system checks everything; people judge the exceptions | The analytics engine triages every portfolio; a person prioritises and judges what is material. |
 | 5 | Decide what the risk manager's time is for before starting | Time that is not directed is absorbed by existing work. |
-| 6 | Build what the manual process could not do | Look for what can now be done for every item: every portfolio checked, every exception investigated, every document read. |
+| 6 | Build what the manual process could not do | Every portfolio checked, every exception investigated, every document read, and tools built in-house where they once had to be bought. |
 | 7 | Hand over judgement, not documents | The facts sit once in the shared record; what passes between people is a question, a challenge or a decision. |
 
-**Why inserting fails:** a tool placed inside a workflow that was designed for a manual process leaves that process's
-constraints in place. A report whose commentary is drafted faster still waits for data to be gathered, for work to pass
-between people and for review queues, so it arrives on the same day and says the same thing.
-
-**What the risk manager adds:** once the system produces the outputs, the risk manager's time goes to judging what
-matters, bringing clarity to the risks being taken, challenging with evidence and deciding what the system flags.
+**What the risk manager adds:** once the system produces the outputs, the risk manager's time goes to prioritising and
+judging what matters, bringing clarity to the risks being taken, challenging with evidence and deciding what the system
+flags.
 
 The rest of this chapter is the detail behind these points. [Working with AI](06-working-with-ai.md) follows with how
 people and the AI work together.
@@ -33,6 +30,10 @@ from the existing steps and asking which of them AI can speed up.
 **In practice.** Each workflow is redesigned end to end, using the [redesign method](07-redesign-method.md): unused
 outputs are stopped (step 2), and steps that exist only because the old process was slow are removed rather than
 automated (step 4).
+
+**Why inserting fails.** A tool placed inside a workflow that was designed for a manual process leaves that process's
+constraints in place. A report whose commentary is drafted faster still waits for data to be gathered, for work to pass
+between people and for review queues, so it arrives on the same day and says the same thing.
 
 ### 2. The analytics engine computes, the AI interprets and narrates, a person judges
 **What it means.** Each kind of work goes to its owner: the analytics engine, the deterministic part of the system,
@@ -48,16 +49,27 @@ analyses run for an exception or whether a notice may go out, belongs to the ana
 those that need reading, choosing or writing. [Working with AI](06-working-with-ai.md) sets out
 how the person and the AI then work together.
 
-### 3. The AI never fabricates a number
+**One integrated system.** The analytics engine is the firm's one integrated system: one set of data and one set of
+logic, versioned together and open to everyone who works on a portfolio. The same data and the same logic always give
+the same figure, for anyone, at any later date. That is what lets everyone see the same numbers before a trade, and what
+lets any past figure be rebuilt exactly, as [data integrity](03-risk-data.md#versioned-as-known) sets out.
+
+### 3. A number that cannot be reproduced is rejected
 **What it means.** A risk output with a wrong figure in it is worse than no output. Every figure has a recorded
-computation behind it, and generated text passes the grounding check before anyone sees it. The same holds for a
-cause: a draft says what drove a change only where an attribution or decomposition computed it.
+computation behind it, with the data snapshot and the version of the logic it ran on, so it can be rebuilt exactly;
+generated text passes the grounding check before anyone sees it, and text with a figure that cannot be reproduced is
+rejected. The same holds for a cause: a draft says what drove a change only where an attribution or decomposition
+computed it.
+
+**What the check does not show.** It shows that each figure, direction, cause and severity word traces to the facts. It
+does not show that the text is complete, rightly weighted or fairly framed: omission, wrong emphasis, a wrong driver and
+misleading framing are left to the person who reviews it, so review is never a formality.
 
 **In practice.** [Working with AI](06-working-with-ai.md#where-a-figure-may-come-from) sets out where a figure may come
 from, and [controls](08-controls.md#the-grounding-check) how the check works. The check, and the other controls that
 make it safe to rely on generated text, are what allow manual checking to be reduced.
 
-### 4. Exceptions over everything
+### 4. The system checks everything; people judge the exceptions
 **What it means.** The analytics engine checks every portfolio against every threshold and triages the results, the AI
 investigates each item, and a person prioritises and reviews what is material.
 
@@ -70,7 +82,7 @@ and governed as parameters. The [market risk](../pillars/market-risk.md) chapter
 existing work. The use of the time is a design decision, made at the start rather than discovered at the end.
 
 **In practice.** The risk function records the plan before the redesign and tracks it afterwards, as [measuring
-value](09-measuring-value.md#a-plan-for-the-risk-managers-time) sets out.
+the result](07-redesign-method.md#a-plan-for-the-risk-managers-time) sets out.
 
 ### 6. Build what the manual process could not do
 **What it means.** Doing the old process faster has a ceiling: at best the old output arrives sooner. A redesign also
@@ -82,7 +94,9 @@ rather than at each periodic stress test, and signals can be connected across ma
 see where they combine. The [integrated view](../pillars/integrated-view.md) is the clearest example. The AI adds work
 of another kind: every item in a pillar's queue and in the integrated view arrives investigated, every governing
 document, notice and set of minutes is read into records the analytics engine can test, and every explanation a
-portfolio manager gives can be tested against the data.
+portfolio manager gives can be tested against the data. A redesign also asks what can now be built rather than bought:
+with the AI's help, a risk function can build in-house much of the tooling it once bought, shaped to its own workflows
+and under the same independent validation as any model.
 
 ### 7. Hand over judgement, not documents
 **What it means.** Once the analytics engine computes and the AI writes, a document passed from one person to another
@@ -119,18 +133,21 @@ they add is what goes into it.
   it crowds out of the budget; after it, the review shows which bets earned their risk. That clarity lets the portfolio
   manager take risk deliberately.
 - **Challenge that changes decisions.** Evidence put to the portfolio manager, and escalation where an issue stays
-  unresolved. Influence is the dimension of [value](09-measuring-value.md#four-dimensions) closest to the function's
+  unresolved. Influence is the dimension of [value](07-redesign-method.md#four-dimensions) closest to the function's
   purpose.
 - **Deciding what the system flags, and in what order.** The thresholds that decide what reaches the queue, the triage
   that orders it, the patterns that connect the pillars and the calibration of scenarios are where judgement is written
   down. They filter what the risk manager sees, not what the portfolio may hold, and the risk function designs, tests
-  and owns them, which is where its [independence lives](10-decision-rights.md#independence-lives-in-the-rules).
+  and owns them, which is where its [independence lives](09-decision-rights.md#independence-lives-in-the-rules).
 - **Judgement where the data runs out.** Shock sizes, how plausible a reverse stress is, regime changes, crowded exits
   and the direction in which each model errs ([beliefs 4 and 8](00-philosophy.md#beliefs)) have no history for the
   engine to compute from.
 
 Deciding what the system flags matters most, because it scales: done well, it makes a risk manager's judgement apply
 across every portfolio every day, not only to the portfolios they had time to look at.
+
+Which rights the risk manager holds is set out in [decision rights](09-decision-rights.md#roles), and how their time is
+planned in the redesign method's [measuring the result](07-redesign-method.md#a-plan-for-the-risk-managers-time).
 
 ## Sources
 - Hammer, M. (1990). Reengineering Work: Don't Automate, Obliterate. *Harvard Business Review*. Rebuilding a process
