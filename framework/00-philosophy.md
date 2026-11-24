@@ -77,7 +77,7 @@ Each is a position a reasonable firm could reject. Together they decide what the
 
 ## What every piece of risk work provides
 The three apply in every pillar. All of it assumes the basics: data checked before use,
-models tested against outcomes, results reproducible, as [data integrity](03-risk-data.md) sets out.
+models tested against outcomes, results reproducible, as [data integrity](03-data-integrity.md) sets out.
 
 | | Dimension | The question it answers |
 |---|---|---|
@@ -114,7 +114,7 @@ risk moves, and any other movement stays within a stated tolerance.
   into exposure × factor return plus the specific return.
 
 The factor split uses the risk decomposition's factors and decision-makers, so the risk a bet takes and the return it
-earns sit side by side. [How return is earned](01-sources-of-return.md) shows how a holding divides between top-down and
+earns sit side by side. [How return is earned](01-return.md) shows how a holding divides between top-down and
 bottom-up, and its [method](../pillars/alpha-and-beta-method.md) joins the two splits. *It fails* when the parts do not
 sum to the whole, or a residual nobody can explain is left over. *The test:* every decomposition reconciles, within a
 stated tolerance.

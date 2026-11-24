@@ -52,7 +52,7 @@ how the person and the AI then work together.
 **One integrated system.** The analytics engine is the firm's one integrated system: one set of data and one set of
 logic, versioned together and open to everyone who works on a portfolio. The same data and the same logic always give
 the same figure, for anyone, at any later date. That is what lets everyone see the same numbers before a trade, and what
-lets any past figure be rebuilt exactly, as [data integrity](03-risk-data.md#versioned-as-known) sets out.
+lets any past figure be rebuilt exactly, as [data integrity](03-data-integrity.md#versioned-as-known) sets out.
 
 ### 3. A number that cannot be reproduced is rejected
 **What it means.** A risk output with a wrong figure in it is worse than no output. Every figure has a recorded

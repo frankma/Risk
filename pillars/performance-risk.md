@@ -52,11 +52,11 @@ other workflows feed it. It runs in ten steps:
 | 9 | Edit and agree the minutes and actions | Risk manager |
 | 10 | Track follow-ups; escalate overdue actions to the watch list | Analytics engine |
 
-- **Attribution** separates the two [sources of return](../framework/01-sources-of-return.md), using the [alpha and beta
+- **Attribution** separates the two [sources of return](../framework/01-return.md), using the [alpha and beta
   method](alpha-and-beta-method.md), and shows each beta line by the [return
-  generator](../framework/01-sources-of-return.md#what-generates-return) that paid it: market risk premia or style
+  generator](../framework/01-return.md#what-generates-return) that paid it: market risk premia or style
   premia, with alpha read as skill. The generator tells the risk manager [how the return could
-  stop](../framework/01-sources-of-return.md#how-does-each-generator-fail), which sets the question to put to the
+  stop](../framework/01-return.md#how-does-each-generator-fail), which sets the question to put to the
   portfolio manager.
 - **Daily brief.** The AI drills into each day's items through the analytics engine, in the prepare mode, and
   drafts what drove the return and where drift or an unintended bet is forming, with every figure from the day's run.

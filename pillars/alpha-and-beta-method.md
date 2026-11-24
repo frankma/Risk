@@ -12,10 +12,10 @@ drafts the explanation, and the risk manager judges whether alpha persists and b
 portfolio manager where it matters.
 
 **Alpha depends on a declared list:** it is what the declared factors leave unexplained. A return an ETF or a future can
-replicate joins the list, tagged with the [return generator](../framework/01-sources-of-return.md#what-generates-return)
+replicate joins the list, tagged with the [return generator](../framework/01-return.md#what-generates-return)
 that pays it.
 
-This chapter is a companion to [how return is earned](../framework/01-sources-of-return.md) and [performance
+This chapter is a companion to [how return is earned](../framework/01-return.md) and [performance
 risk](performance-risk.md); the rest of it is the detail behind these points.
 
 ## Scope and basis
@@ -44,14 +44,14 @@ security picks carry would stay in the last increment and be counted as alpha. B
 portfolio's exposure, the last increment is selection alone, and the record divides the increment before it.
 
 ## The beta lines
-The [how return is earned](../framework/01-sources-of-return.md#who-chose-each-part) chapter groups top-down return by
+The [how return is earned](../framework/01-return.md#who-chose-each-part) chapter groups top-down return by
 whose call it was. The method keeps the decision-maker's branch as two lines, because timing needs its own skill test.
 Policy beta is the benchmark portfolio's return above the risk-free rate, and the other lines divide the increment from
 the benchmark portfolio to the top-down portfolio.
 
 | Line | What it is | Who decides |
 |---|---|---|
-| Policy beta | The return, above the risk-free rate, of the benchmark or strategic allocation in the governing documents | [Whoever set the mandate](../framework/01-sources-of-return.md#who-chose-each-part) |
+| Policy beta | The return, above the risk-free rate, of the benchmark or strategic allocation in the governing documents | [Whoever set the mandate](../framework/01-return.md#who-chose-each-part) |
 | Tilts | Standing positions against that allocation, recorded when taken | Whoever recorded it |
 | Timing | The return from recorded changes in exposure over time | Whoever recorded it |
 | Unintended beta | Any exposure with no record that anyone chose it, including price drift | Nobody |

@@ -71,10 +71,10 @@ figures may reach an output. The [grounding check](08-controls.md#the-grounding-
 
 ## What the AI reads
 Besides what the analytics engine computed and the analyses it runs, the AI reads the
-[documents](03-risk-data.md#what-the-analytics-engine-reads) the risk function keeps as received, and the function's
-own record. It reads no external news or commentary, and no recording or transcript of a meeting: an event reaches it
-only as data in a domain or as a document in the store, and what was said at a meeting reaches it as the risk manager's
-notes.
+[documents](03-data-integrity.md#what-the-analytics-engine-reads) the risk function keeps as received, and the
+function's own record. It reads no external news or commentary, and no recording or transcript of a meeting: an event
+reaches it only as data in a domain or as a document in the store, and what was said at a meeting reaches it as the risk
+manager's notes.
 
 | Source | What the AI does with it | Before it is used |
 |---|---|---|

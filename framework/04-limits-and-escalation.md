@@ -96,7 +96,7 @@ rule follows compliance's process.
 | # | Stage | What happens |
 |---|---|---|
 | 1 | Detect | The analytics engine finds the breach in the daily run |
-| 2 | Verify | The analytics engine checks the breach against recorded [data breaks](03-risk-data.md#quality-before-computation): is the reading real? A breach it matches to a break is closed by the AI with the record, and the risk manager reviews the close the same day; the risk manager confirms every other breach |
+| 2 | Verify | The analytics engine checks the breach against recorded [data breaks](03-data-integrity.md#quality-before-computation): is the reading real? A breach it matches to a break is closed by the AI with the record, and the risk manager reviews the close the same day; the risk manager confirms every other breach |
 | 3 | Classify | Active, caused by a trade or decision, or passive, caused by market moves, flows or corporate actions; the analytics engine classifies from the trade records and the risk manager confirms |
 | 4 | Notify | The portfolio manager, investment oversight and the head of risk are told, with the facts; where the engine finds a governed rule covers the notice, the AI sends it, and the risk manager reviews it the same day |
 | 5 | Explain | The portfolio manager explains the position, and the explanation is recorded; the AI tests it against the data and reports what supports it and what contradicts it |

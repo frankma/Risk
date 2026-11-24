@@ -126,12 +126,12 @@ An action that fails a test returns to sign-off until it passes again and the he
 
 ## Input handling
 Text the AI reads is data, never instructions. Governing documents, notices and minutes come only from the risk
-function's [documents domain](03-risk-data.md#what-the-analytics-engine-reads), kept as received with their source, and
-a portfolio manager's explanation is recorded as text from a named person, or in the risk manager's notes of a review.
-Nothing in them changes what the AI may do: its tools are the governed analyses, the exploratory query, the extractions
-and retrieval from the record set out in [working with AI](06-working-with-ai.md#what-the-ai-reads). A passage that
-reads as an instruction to the AI is flagged to the risk manager and not followed, and text a portfolio manager supplies
-is evidence to test, never a fact the AI may state as true.
+function's [documents domain](03-data-integrity.md#what-the-analytics-engine-reads), kept as received with their source,
+and a portfolio manager's explanation is recorded as text from a named person, or in the risk manager's notes of a
+review. Nothing in them changes what the AI may do: its tools are the governed analyses, the exploratory query, the
+extractions and retrieval from the record set out in [working with AI](06-working-with-ai.md#what-the-ai-reads). A
+passage that reads as an instruction to the AI is flagged to the risk manager and not followed, and text a portfolio
+manager supplies is evidence to test, never a fact the AI may state as true.
 
 ## Sign-off points
 Each redesigned workflow names the points at which a person must approve before an output moves on or, for a routine
@@ -154,7 +154,7 @@ off; an action under a governed rule names the rule.
 
 ## The audit trail
 For every output, the workflow records: the input facts it was generated from, with their data
-[versions](03-risk-data.md#versioned-as-known); the analysis runs behind it, with their parameters; the threshold,
+[versions](03-data-integrity.md#versioned-as-known); the analysis runs behind it, with their parameters; the threshold,
 prompt, template and model versions in force; the text as generated; every edit the person made; the grounding check
 result; who approved it and when or, for an action under a governed rule, the rule applied and who reviewed it. The
 record is kept in a form that can be retrieved by output, by portfolio and by date. For every extraction it records the
@@ -210,7 +210,7 @@ as a result of the run.
 Each workflow defines what happens when a component fails.
 
 - **Data pipeline failure.** The run follows the rule set in advance in [risk
-  data](03-risk-data.md#quality-before-computation): it waits, or runs with the affected portfolios marked.
+  data](03-data-integrity.md#quality-before-computation): it waits, or runs with the affected portfolios marked.
 - **AI backend failure.** The fallback depends on the kind of step. A drafting step falls back to a deterministic
   template that states the computed facts in fixed sentences, including what the analyses set for the item's rule
   found. The output is plainer, but complete and correct. The AI's follow-up analyses do not run, and the item says
@@ -229,7 +229,7 @@ sign-off. A step returns to service once its evaluation set passes again.
 
 ## Data handling
 A risk function sends data to an AI service only under rules set before the workflow is built. The data the analytics
-engine itself reads, and the checks it passes, are set out in [data integrity](03-risk-data.md).
+engine itself reads, and the checks it passes, are set out in [data integrity](03-data-integrity.md).
 
 - **What may be sent.** The workflow defines which data may go to which service. Computed facts about a portfolio are
   often enough for a draft. Raw positions, investor details and personal data are sent only where the service is

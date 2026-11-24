@@ -48,7 +48,7 @@ that [liquidity risk](../pillars/liquidity-risk.md) flags are [marked in the
 split](../pillars/alpha-and-beta-method.md#the-test-and-its-limits).
 
 A generator is not a decision. The mandate, the manager or nobody may have chosen how much of a premium a portfolio
-holds, and [who chose it](01-sources-of-return.md#who-chose-each-part) is a separate question. A timing call changes how
+holds, and [who chose it](01-return.md#who-chose-each-part) is a separate question. A timing call changes how
 much of a premium is held; the return the change adds is the timing line.
 
 ## How does each generator fail?
