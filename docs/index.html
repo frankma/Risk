@@ -209,7 +209,7 @@ figure { margin: 0; }
       <figure class="stage" id="stage">
 
         <!-- 1 Core pattern: data in, engine computes against limits, AI drafts, then AI and risk manager work it through -->
-        <svg class="scene" viewBox="0 0 800 560" role="img" aria-label="Data flows into the analytics engine, which draws each measure against its limit and triages an exception and a watch item. The AI investigates and drafts. The risk manager prioritises the exception, challenges a stock selection draft until the AI shows unintended value beta, then asks the AI to break VaR down and acknowledges it.">
+        <svg class="scene" viewBox="0 0 800 560" role="img" aria-label="Data flows into the analytics engine, which draws each measure against its limit, tracking error within its intended band until it rises above the budget, and triages an exception and a watch item. The AI investigates and drafts. The risk manager prioritises the exception, challenges a stock selection draft until the AI shows unintended value beta, then asks the AI to break VaR down and acknowledges it.">
           <defs>
             <marker id="ah1-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" style="fill:var(--ink)"/></marker>
             <marker id="ah1-ai" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" style="fill:var(--ai)"/></marker>
@@ -280,6 +280,9 @@ figure { margin: 0; }
               <text class="s" x="520" y="250" style="font-size:15px">Liquidity profile</text>
               <path class="rule" d="M250 200 H480 M520 200 H750 M250 360 H480 M520 360 H750"/>
             </g>
+            <!-- tracking error: the mandate intends a band, and the budget marks its top edge; drawn under the line -->
+            <rect class="fx fade" x="250" y="140" width="230" height="50" style="--d:4.3s;fill:var(--grid)"/>
+            <text class="k fx fade" x="476" y="184" text-anchor="end" style="--d:4.3s;font-size:12px">intended band</text>
             <path class="ln draw fx" pathLength="1" d="M250 184 L272 180 L294 182 L316 174 L338 170 L360 166 L382 158 L404 152 L426 144 L448 132 L470 124" style="--d:4.4s;--t:1.4s"/>
             <path class="ln draw fx" pathLength="1" d="M520 186 L542 182 L564 184 L586 176 L608 172 L630 170 L652 162 L674 156 L696 150 L718 142 L740 136" style="--d:4.7s;--t:1.4s"/>
             <rect class="f-washi grow fx" x="300" y="292" width="20" height="68" style="--d:5.0s"/>
@@ -438,12 +441,95 @@ figure { margin: 0; }
           </g>
         </svg>
 
-        <!-- 3 Pillars: market and performance on one timeline, a liquidity stress day, and the integrated view combining signals -->
-        <svg class="scene" viewBox="0 0 800 560" role="img" aria-label="Performance risk looks back and market risk looks forward from today, each forecast tested against its outcome. On a stress day, calls of 15% are covered 1.6 times by what can be sold within 7 days. Three watch items on one portfolio combine, and the integrated view puts it first." hidden>
+        <!-- 3 One set of numbers: the portfolio manager and the risk manager run the same what-if, see the same figures,
+             open one to its rule, data and run, then talk about the trade; the portfolio manager makes the call -->
+        <svg class="scene" viewBox="0 0 800 560" role="img" aria-label="Before a trade, the portfolio manager and the risk manager run the same what-if through the analytics engine, buying 2% of one stock, and see the same figures: tracking error from 3.2% to 3.6%, budget use from 80% to 90% of 4.0%, and coverage at 7 days from 1.6 to 1.5 times. The figure 3.6% opens to the rule, the data and the run behind it. The talk turns to the trade: a rerun at 1.5% gives 3.5%, 88% of the budget, and the portfolio manager buys 1.5%." hidden>
+          <defs>
+            <marker id="ah3-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" style="fill:var(--ink)"/></marker>
+          </defs>
+          <text class="hl" x="30" y="30"><tspan class="acc" font-weight="700">Trust:</tspan> one set of numbers, an open book, the portfolio manager's call.</text>
+          <text class="s" x="30" y="52" style="font-size:15px">Before a trade, how do the investment team and the risk function come to the same figures?</text>
+          <g transform="translate(0 60)">
+
+          <!-- two people ask the same question -->
+          <text class="hd fx fade" x="40" y="28" style="--d:.2s">Portfolio manager</text>
+          <text class="s fx fade" x="40" y="48" style="--d:.3s;font-size:14px">runs a what-if</text>
+          <text class="hd fx fade" x="760" y="28" text-anchor="end" style="--d:1.2s">Risk manager</text>
+          <text class="s fx fade" x="760" y="48" text-anchor="end" style="--d:1.3s;font-size:14px">runs the same what-if</text>
+          <text class="fx fade" x="400" y="34" text-anchor="middle" style="--d:.6s;font-size:15px">Buy 2% of one stock</text>
+          <path class="ln draw fx" pathLength="1" d="M120 58 C 160 100, 300 100, 360 112" marker-end="url(#ah3-ink)" style="--d:.8s;--t:.7s"/>
+          <path class="ln draw fx" pathLength="1" d="M680 58 C 640 100, 500 100, 440 112" marker-end="url(#ah3-ink)" style="--d:1.6s;--t:.7s"/>
+
+          <!-- one analysis, one snapshot -->
+          <path class="rule draw fx" pathLength="1" d="M310 104 H490" style="--d:2.2s"/>
+          <text class="hd fx fade" x="400" y="128" text-anchor="middle" style="--d:2.3s;font-size:15px">Analytics engine</text>
+          <text class="k fx fade" x="400" y="146" text-anchor="middle" style="--d:2.4s;font-size:12.5px">one governed analysis, one snapshot of data</text>
+          <path class="ln fx fade" d="M340 156 C 300 168, 260 170, 220 180" marker-end="url(#ah3-ink)" style="--d:2.9s;--t:.4s;stroke-width:1.25"/>
+          <path class="ln fx fade" d="M460 156 C 500 168, 540 170, 580 180" marker-end="url(#ah3-ink)" style="--d:2.9s;--t:.4s;stroke-width:1.25"/>
+
+          <!-- the same figures on both screens -->
+          <g class="fx fade" style="--d:3.2s">
+            <path class="hair" d="M40 192 H340"/>
+            <text class="k" x="40" y="212" style="font-size:13px">Tracking error</text>
+            <text x="340" y="212" text-anchor="end" style="font-size:13.5px">3.2% → 3.6%</text>
+            <text class="k" x="40" y="234" style="font-size:13px">Budget used, of 4.0%</text>
+            <text x="340" y="234" text-anchor="end" style="font-size:13.5px">80% → 90%</text>
+            <text class="k" x="40" y="256" style="font-size:13px">Coverage at 7 days</text>
+            <text x="340" y="256" text-anchor="end" style="font-size:13.5px">1.6x → 1.5x</text>
+            <path class="hair" d="M40 266 H340"/>
+          </g>
+          <g class="fx fade" style="--d:3.6s">
+            <path class="hair" d="M460 192 H760"/>
+            <text class="k" x="460" y="212" style="font-size:13px">Tracking error</text>
+            <text x="760" y="212" text-anchor="end" style="font-size:13.5px">3.2% → 3.6%</text>
+            <text class="k" x="460" y="234" style="font-size:13px">Budget used, of 4.0%</text>
+            <text x="760" y="234" text-anchor="end" style="font-size:13.5px">80% → 90%</text>
+            <text class="k" x="460" y="256" style="font-size:13px">Coverage at 7 days</text>
+            <text x="760" y="256" text-anchor="end" style="font-size:13.5px">1.6x → 1.5x</text>
+            <path class="hair" d="M460 266 H760"/>
+          </g>
+          <text class="t acc fx pop" x="400" y="238" text-anchor="middle" style="--d:4.4s">=</text>
+          <text class="k fx fade" x="400" y="258" text-anchor="middle" style="--d:4.7s;font-size:12.5px">the same figures</text>
+
+          <!-- the open book: one figure opens to its rule, data and run -->
+          <ellipse class="fx pop" cx="746" cy="208" rx="20" ry="11" style="--d:5.6s;fill:none;stroke:var(--beni);stroke-width:1.5"/>
+          <path class="lnb fx draw" pathLength="1" d="M766 208 H778 V292" style="--d:6s;--t:.5s;stroke-width:1.5"/>
+          <path class="rule draw fx" pathLength="1" d="M40 292 H760" style="--d:6.2s"/>
+          <text class="hd fx fade" x="40" y="314" style="--d:6.3s;font-size:14px">The open book: 3.6% opens to what made it</text>
+          <rect class="f-ink fx pop" x="40" y="330" width="8" height="8" style="--d:6.7s"/>
+          <text class="fx fade" x="56" y="338" style="--d:6.7s;font-size:13.5px">Rule</text>
+          <text class="s fx fade" x="56" y="356" style="--d:6.8s;font-size:12.5px">the governed risk model</text>
+          <path class="ln fx fade" d="M222 340 H262" marker-end="url(#ah3-ink)" style="--d:7.1s;stroke-width:1.25"/>
+          <rect class="f-ink fx pop" x="280" y="330" width="8" height="8" style="--d:7.2s"/>
+          <text class="fx fade" x="296" y="338" style="--d:7.2s;font-size:13.5px">Data</text>
+          <text class="s fx fade" x="296" y="356" style="--d:7.3s;font-size:12.5px">today's checked snapshot</text>
+          <path class="ln fx fade" d="M462 340 H502" marker-end="url(#ah3-ink)" style="--d:7.6s;stroke-width:1.25"/>
+          <rect class="f-ink fx pop" x="520" y="330" width="8" height="8" style="--d:7.7s"/>
+          <text class="fx fade" x="536" y="338" style="--d:7.7s;font-size:13.5px">Run</text>
+          <text class="s fx fade" x="536" y="356" style="--d:7.8s;font-size:12.5px">recorded, so anyone can rerun it</text>
+
+          <!-- the talk turns to the trade, and the portfolio manager makes the call -->
+          <path class="hair fx fade" d="M40 378 H760" style="--d:8.6s"/>
+          <text class="k fx fade" x="40" y="398" style="--d:8.8s;font-size:12.5px">Portfolio manager</text>
+          <text class="s fx rise" x="190" y="398" style="--d:8.8s;font-size:14px">At 2% it uses 90% of the budget. What does 1.5% use?</text>
+          <text class="k fx fade" x="40" y="420" style="--d:10s;font-size:12.5px">Analytics engine</text>
+          <text class="s fx rise" x="190" y="420" style="--d:10s;font-size:14px">Rerun at 1.5%: tracking error 3.5%, 88% of the budget.</text>
+          <rect class="f-beni fx pop" x="40" y="436" width="8" height="8" style="--d:11.3s"/>
+          <text class="hd fx fade" x="56" y="445" style="--d:11.3s;font-size:14px">The portfolio manager decides</text>
+          <text class="t2 fx rise" x="300" y="446" style="--d:11.5s">Buy 1.5%, and keep room in the budget.</text>
+          <text class="k fx fade" x="40" y="470" style="--d:12.3s;font-size:12.5px">The risk function owns the analysis; the portfolio manager makes a risk-informed call.</text>
+
+          </g>
+        </svg>
+
+        <!-- 4 Pillars, each labelled with the decisions it serves: market and performance on one timeline, a liquidity stress day, and the integrated view combining signals -->
+        <svg class="scene" viewBox="0 0 800 560" role="img" aria-label="Market and liquidity risk serve the Construct and Oversee decisions; performance risk and the integrated view serve Oversee and Assess. Performance risk looks back and market risk looks forward from today, each forecast tested against its outcome. On a stress day, calls of 15% are covered 1.6 times by what can be sold within 7 days. Three watch items on one portfolio combine, and the integrated view puts it first." hidden>
           <text class="hl" x="30" y="30"><tspan class="acc" font-weight="700">Connection:</tspan> forecasts tested against outcomes, signals joined across pillars.</text>
           <text class="s" x="30" y="52" style="font-size:15px">What does each pillar watch, and what do they see together that none sees alone?</text>
           <g transform="translate(0 60)">
           <text class="hd fx fade" x="60" y="34" style="--d:.2s">Performance risk</text>
+          <text class="k fx fade" x="206" y="34" style="--d:.25s;font-size:12.5px">Oversee, Assess</text>
+          <text class="k fx fade" x="628" y="34" text-anchor="end" style="--d:1.55s;font-size:12.5px">Construct, Oversee</text>
           <text class="s fx fade" x="60" y="54" style="--d:.3s;font-size:15px">What did happen: is the promise kept?</text>
           <text class="hd fx fade" x="740" y="34" text-anchor="end" style="--d:1.5s">Market risk</text>
           <text class="s fx fade" x="740" y="54" text-anchor="end" style="--d:1.6s;font-size:15px">What could happen from today?</text>
@@ -463,6 +549,7 @@ figure { margin: 0; }
           <!-- Liquidity: a stress day -->
           <path class="rule draw fx" pathLength="1" d="M40 244 H380" style="--d:3.8s"/>
           <text class="hd fx fade" x="40" y="266" style="--d:3.9s">Liquidity risk</text>
+          <text class="k fx fade" x="162" y="266" style="--d:3.95s;font-size:12.5px">Construct, Oversee</text>
           <text class="s fx fade" x="40" y="287" style="--d:4s;font-size:15px">A stress day: can every call be met?</text>
           <g class="fx fade" style="--d:4.2s">
             <text class="k" x="40" y="314" style="font-size:13px">calls in 7 days</text>
@@ -483,6 +570,7 @@ figure { margin: 0; }
           <!-- Integrated view: three watch items on one portfolio combine -->
           <path class="rule draw fx" pathLength="1" d="M420 244 H760" style="--d:8.2s"/>
           <text class="hd fx fade" x="420" y="266" style="--d:8.3s">Integrated view</text>
+          <text class="k fx fade" x="556" y="266" style="--d:8.35s;font-size:12.5px">Oversee, Assess</text>
           <text class="s fx fade" x="420" y="287" style="--d:8.4s;font-size:15px">Portfolio 22: three watch items, no exception</text>
           <rect class="f-washi ln fx pop" x="420" y="303" width="10" height="10" style="stroke-width:1;--d:8.8s"/>
           <text class="s fx fade" x="438" y="313" style="--d:8.8s;font-size:14px">Market: VaR at 96% of its limit</text>
@@ -507,13 +595,13 @@ figure { margin: 0; }
           </g>
         </svg>
 
-        <!-- 4 How return is earned: the three portfolios as a waterfall -->
-        <svg class="scene" viewBox="0 0 800 560" role="img" aria-label="Three portfolios side by side: the benchmark portfolio returns 8.0%, of which 6.0 points above the risk-free rate are policy beta; the top-down portfolio adds 1.2 points of active beta; the real portfolio adds 0.8 points of alpha, for 10.0%." hidden>
+        <!-- 5 How return is earned: the two decisions, then the three portfolios as a waterfall -->
+        <svg class="scene" viewBox="0 0 800 560" role="img" aria-label="Top-down views earn beta and bottom-up selection earns alpha. Three portfolios side by side: the benchmark portfolio returns 8.0%, of which 6.0 points above the risk-free rate are policy beta; the top-down portfolio adds 1.2 points of active beta; the real portfolio adds 0.8 points of alpha, for 10.0%." hidden>
           <text class="hl" x="30" y="30"><tspan class="acc" font-weight="700">Attribution:</tspan> the return split into parts that add up exactly.</text>
           <text class="s" x="30" y="52" style="font-size:15px">How much of a return is beta, how much is alpha, and who earned each part?</text>
           <g transform="translate(0 60)">
-          <text class="s fx fade" x="40" y="34" style="--d:.2s"><tspan font-weight="700" style="fill:var(--ink)">Beta</tspan> is any return above the risk-free rate that an ETF or a future could have delivered;</text>
-          <text class="s fx fade" x="40" y="56" style="--d:.5s"><tspan font-weight="700" class="acc">Alpha</tspan> is what is left once beta is carved out, and skill pays it.</text>
+          <text class="s fx fade" x="40" y="34" style="--d:.2s;font-size:15px"><tspan font-weight="700" style="fill:var(--ink)">Top-down views</tspan> earn beta: return above the risk-free rate that an ETF or a future could deliver;</text>
+          <text class="s fx fade" x="40" y="56" style="--d:.5s;font-size:15px"><tspan font-weight="700" class="acc">Bottom-up selection</tspan> earns alpha: what is left once beta is carved out, paid by skill.</text>
 
           <path class="rule" d="M120 340 H720"/>
 
@@ -567,9 +655,9 @@ figure { margin: 0; }
         </svg>
 
 
-        <!-- 5 Limits and escalation: the lifecycle loop around the analytics engine and the AI; dotted lines show who is
+        <!-- 6 Limits and escalation: the lifecycle loop around the analytics engine and the AI; dotted lines show who is
              involved at each stage; AI shortcuts close what needs no decision; red side tracks escalate -->
-        <svg class="scene" style="--k:1.5" viewBox="0 0 800 560" role="img" aria-label="The breach lifecycle as a continuous loop around the analytics engine and the AI. Dotted lines show who is involved at each stage: the engine detects; the engine verifies and classifies, the AI explains what the checks found and the risk manager confirms; the AI sends a routine notice under a rule and the risk manager reviews it, with the portfolio manager, investment oversight and the head of risk told; the portfolio manager explains it, the AI tests the explanation against the data, and the two managers agree the decision, with the head of risk approving any acceptance; the portfolio manager rectifies while the engine tracks; the risk manager reports the close to the head of risk. The AI closes a breach that came from a data break. A disagreement goes to the risk committee, a committee of the executive committee, whose decision binds; what it cannot resolve goes to the executive committee, and the board is the last resort. A hard limit breach goes to compliance the same day." hidden>
+        <svg class="scene" style="--k:1.5" viewBox="0 0 800 560" role="img" aria-label="The breach lifecycle as a continuous loop around the analytics engine and the AI. Dotted lines show who is involved at each stage: the engine detects; the engine verifies and classifies, the AI explains what the checks found and the risk manager confirms; the AI sends a routine notice under a rule and the risk manager reviews it, with the portfolio manager, investment oversight and the head of risk told; the portfolio manager explains it, the AI tests the explanation against the data, and the portfolio manager decides, with the head of risk approving any acceptance; the portfolio manager rectifies while the engine tracks; the risk manager reports the close to the head of risk. The AI closes a breach that came from a data break. Where the risk manager disagrees, the breach goes to the risk committee, a committee of the executive committee, whose decision binds; what it cannot resolve goes to the executive committee, and the board is the last resort. A hard limit breach goes to compliance the same day." hidden>
           <defs>
             <marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" style="fill:var(--ink)"/></marker>
             <marker id="ah-beni" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" style="fill:var(--beni)"/></marker>
@@ -590,7 +678,7 @@ figure { margin: 0; }
           </g>
         </svg>
 
-        <!-- 6 Rebuilt around AI: one exception from flag to judgement. The engine flags and runs the analyses set for the
+        <!-- 7 Rebuilt around AI: one exception from flag to judgement. The engine flags and runs the analyses set for the
              rule, one of them resting on a record the AI read from minutes; the AI chooses one follow-up and drafts; the
              grounding check passes the draft; the risk manager judges -->
         <svg class="scene" viewBox="0 0 800 560" role="img" aria-label="One exception from flag to judgement. The analytics engine flags Fund A's VaR at 2.31%, 92% of its limit, after a rise of 0.47 in one day, and runs the analyses set for a VaR exception: the technology basket gave 0.29 of the rise, the same driver appears in 3 of 40 portfolios, and the overweight is a tilt on record, read earlier by the AI from committee minutes and confirmed by the risk manager. The AI follows up, splitting the basket's 0.29 into a larger position, 0.21, and higher volatility, 0.08, and drafts. The draft passes the grounding check on its numbers, its causes, its quantifier and its severity. The risk manager judges: a tilt on record, but the position grew and other portfolios share the driver, so they ask the portfolio manager whether the larger size and the crowding are intended." hidden>
@@ -697,8 +785,8 @@ figure { margin: 0; }
           <text class="s fx fade" x="410" y="430" style="--d:13.6s;font-size:12.5px">checked before anyone reads it;</text>
           <text class="s fx fade" x="410" y="446" style="--d:13.6s;font-size:12.5px">what it reads is confirmed</text>
           <text class="hd fx fade" x="632" y="412" style="--d:13.7s;font-size:13.5px">Judged by a person</text>
-          <text class="s fx fade" x="632" y="430" style="--d:13.8s;font-size:12.5px">a named sign-off,</text>
-          <text class="s fx fade" x="632" y="446" style="--d:13.8s;font-size:12.5px">on the record</text>
+          <text class="s fx fade" x="632" y="430" style="--d:13.8s;font-size:12.5px">a named decision-maker,</text>
+          <text class="s fx fade" x="632" y="446" style="--d:13.8s;font-size:12.5px">accountable, on the record</text>
 
           </g>
         </svg>
@@ -719,11 +807,12 @@ figure { margin: 0; }
       <div class="narr" aria-live="polite">
         <p class="mark" id="sins">Transparency</p>
         <h2 id="stitle">From data to judgement</h2>
-        <p id="stext">Every day the analytics engine takes in every portfolio's data, computes every measure and checks each
-          against its limit; the risk manager sees only what it flags. The AI follows up what the engine found and drafts from it. The risk
-          manager then works the flags through with the AI: a breakdown that explains VaR near its limit, and a
-          pushed-back draft that turns stock selection into unintended value beta. The result is transparency: every flag
-          traced to its numbers, explained, and decided on the record.</p>
+        <p id="stext">Every day the analytics engine takes in every portfolio's data, computes every measure, checks each
+          against its limit and triages what needs attention. The AI investigates what the engine found and drafts from
+          it. The risk manager prioritises, taking the exception first, and works the flags through with the AI: a
+          challenged draft that turns stock selection into unintended value beta, then a breakdown that explains VaR near
+          its limit. The result is transparency: every flag traced to its numbers, explained, and decided on the
+          record.</p>
       </div>
     </div>
   </section>
@@ -749,10 +838,12 @@ figure { margin: 0; }
       p: 'Every day the analytics engine takes in every portfolio\u2019s data, computes every measure, checks each against its limit and triages what needs attention. The AI investigates what the engine found and drafts from it. The risk manager prioritises, taking the exception first, and works the flags through with the AI: a challenged draft that turns stock selection into unintended value beta, then a breakdown that explains VaR near its limit. The result is transparency: every flag traced to its numbers, explained, and decided on the record.' },
     { t: 'Why a risk function exists', i: 'Balance', d: 15500,
       p: 'A risk function challenges investment decisions against the mandate, and serves the investment team with insight into the risks it takes. The two purposes meet in three decisions: before the trade, a what-if shows what a position adds; during, every reading is checked against its limit; after, attribution splits the return and tests whether alpha is skill. Balance is holding both: independence is what makes the service credible.' },
+    { t: 'One set of numbers', i: 'Trust', d: 14000,
+      p: 'Before a trade, the portfolio manager and the risk manager run the same what-if on the same governed analysis and see the same figures: buying 2% of one stock takes tracking error from 3.2% to 3.6%, 90% of the 4.0% budget, and coverage at 7 days from 1.6 to 1.5 times. Each figure opens to the rule, the data and the run behind it, so the logic is an open book and the talk is about the trade, not about whose numbers are right. A rerun at 1.5% uses 88% of the budget, and the portfolio manager buys 1.5%. Trust: one set of numbers, an open book, and the portfolio manager\u2019s risk-informed call.' },
     { t: 'What risk watches', i: 'Connection', d: 15000,
-      p: 'Market risk looks forward from today\u2019s holdings; performance risk looks back at whether the promise is kept, and each forecast is tested against its outcome. Liquidity risk asks whether a stress day\u2019s calls can be met: here calls of 15% of net assets are covered 1.6 times by what can be sold within 7 days. The integrated view computes no measure of its own: three watch items on one portfolio combine, and it comes first before any one pillar would escalate. That is connection: forecasts tested against outcomes, and signals joined across pillars.' },
+      p: 'Each pillar serves its own decisions: market and liquidity risk construct and oversee, performance risk and the integrated view oversee and assess. Market risk looks forward from today\u2019s holdings; performance risk looks back at whether the promise is kept, and each forecast is tested against its outcome. Liquidity risk asks whether a stress day\u2019s calls can be met: here calls of 15% of net assets are covered 1.6 times by what can be sold within 7 days. The integrated view computes no measure of its own: three watch items on one portfolio combine, and it comes first before any one pillar would escalate. That is connection: forecasts tested against outcomes, and signals joined across pillars.' },
     { t: 'Where return comes from', i: 'Attribution', d: 10000,
-      p: 'Three portfolios split the return, and the increments add up exactly. The benchmark portfolio holds the indices the mandate sets; its return above the risk-free rate is policy beta, and belongs to whoever set the mandate. The top-down portfolio holds ETFs, futures and cash carrying all the real portfolio\u2019s exposure; the increment to it is active beta, credited to whoever recorded each tilt or timing call, and to nobody where no one did. The real portfolio adds alpha, which belongs to whoever selected the securities. Figures are illustrative. Attribution: the return split into parts that add up exactly, with each part traced to whoever chose it.' },
+      p: 'Two decisions drive the return: top-down views earn beta, and bottom-up selection earns alpha. Three portfolios split the return, and the increments add up exactly. The benchmark portfolio holds the indices the mandate sets; its return above the risk-free rate is policy beta, and belongs to whoever set the mandate. The top-down portfolio holds ETFs, futures and cash carrying all the real portfolio\u2019s exposure; the increment to it is active beta, credited to whoever recorded each tilt or timing call, and to nobody where no one did. The real portfolio adds alpha, which belongs to whoever selected the securities. Figures are illustrative. Attribution: the return split into parts that add up exactly, with each part traced to whoever chose it.' },
     { t: 'When a limit breaks', i: 'Governance', d: 23000,
       p: 'A typical breach. The analytics engine detects the breach; the engine verifies and classifies it, the AI explains what the checks found, and the risk manager confirms. Under a governed rule the AI sends the routine notice and the risk manager reviews it the same day, with the portfolio manager, investment oversight and the head of risk told. The portfolio manager explains it, the AI tests the explanation against the data, and the portfolio manager decides: rectify it, or accept it for a set period with the head of risk\u2019s approval. Where the decision is to rectify, the portfolio manager rectifies while the engine tracks; the risk manager reports the close to the head of risk. Monitoring carries on.' },
     { t: 'Rebuilt around AI', i: 'Augmentation', d: 17000,
@@ -776,10 +867,10 @@ figure { margin: 0; }
     const rnd = () => { s = (s * 16807) % 2147483647; return (s - 1) / 2147483646; };
     const g = document.getElementById('dots'), f = document.getElementById('feeds');
     const names = ['Positions', 'Prices', 'Market data', 'Reference data', 'Benchmarks', 'Returns and valuations',
-      'Flows and investors', 'Margin and financing', 'Mandate terms', 'Records of decisions'];
+      'Flows and investors', 'Margin and financing', 'Mandate terms', 'Records of decisions', 'Documents'];
     const ex = 410, ey = 228;  /* the vanishing point: the data converges here; the square then slides to the centre of the charts */
     names.forEach((n, k) => {
-      const a = (-90 + k * 36) * Math.PI / 180;
+      const a = (-90 + k * 360 / names.length) * Math.PI / 180;
       const cx = 400 + 300 * Math.cos(a), cy = 232 + 180 * Math.sin(a);
       for (let i = 0; i < 16; i++) {
         const x = cx - 42 + rnd() * 84, y = cy - 20 + rnd() * 40;
