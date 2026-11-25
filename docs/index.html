@@ -79,9 +79,9 @@ figure { margin: 0; }
 .player { border-top: 1px solid var(--line); padding-top: 28px; }
 .main { min-width: 0; display: grid; gap: 18px 32px; align-items: start;
   grid-template-columns: minmax(0, 1fr) minmax(260px, 330px);
-  grid-template-areas: "stage narr" "cases cases" "controls controls"; }
-.stage { grid-area: stage; } .cases { grid-area: cases; } .controls { grid-area: controls; } .narr { grid-area: narr; }
-.stage { border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); padding-block: 12px; }
+  grid-template-areas: "stage narr" "controls controls"; }
+.stage { grid-area: stage; } .controls { grid-area: controls; } .narr { grid-area: narr; }
+.stage { position: relative; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); padding-block: 12px; }
 /* the drawing never grows so tall that the controls below it leave the screen: its width is capped by the window's height */
 .stage > svg { display: block; width: 100%; height: auto; max-width: calc((100vh - 300px) * 1.43); margin: 0 auto; }
 .stage > svg[hidden] { display: none; }
@@ -98,7 +98,10 @@ figure { margin: 0; }
 .secname { min-width: 9.5em; box-sizing: border-box; margin-left: 8px; padding: 9px 14px; border: 1px solid var(--line);
   font: 700 14px/1 var(--sans); color: var(--ink); text-align: center; white-space: nowrap; }
 .secname.peek { color: var(--muted); }
-.narr { display: grid; gap: 8px; border-top: 1px solid var(--ink); padding-top: 16px; }
+/* the narration is as tall as the stage and scrolls inside it if it must, so the control row never moves between
+   scenes */
+.narr { align-self: stretch; position: relative; border-top: 1px solid var(--ink); }
+.narr-body { position: absolute; inset: 16px 0 0; overflow-y: auto; display: grid; gap: 8px; align-content: start; }
 .narr .count { font-size: 13px; color: var(--faint); font-variant-numeric: tabular-nums; }
 .narr p { font-size: 15.5px; line-height: 1.6; max-width: 72ch; }
 .narr h2 { font-size: 22px; }
@@ -113,18 +116,24 @@ figure { margin: 0; }
 .embed .masthead, .embed .page-foot { display: none; }
 .embed .player { border-top: 0; padding-top: 0; }
 .embed .stage > svg { max-width: none !important; }
+.embed .stage .cases { right: 0; }
 .solo #prev, .solo #next, .solo .segs, .solo .secname { display: none; }
 
 @media (max-width: 980px) {
-  .main { grid-template-columns: minmax(0, 1fr); grid-template-areas: "stage" "cases" "controls" "narr"; }
-  .narr { border-top: 0; padding-top: 0; }
+  .main { grid-template-columns: minmax(0, 1fr); grid-template-areas: "stage" "controls" "narr"; }
+  .narr { border-top: 0; }
+  .narr-body { position: static; overflow: visible; }
   .narr p { font-size: 17px; line-height: 1.65; }
   .stage > svg { max-width: calc((100vh - 330px) * 1.43); }
+  .stage .cases { right: max(0px, calc((100% - (100vh - 330px) * 1.43) / 2)); }
 }
 @media (max-width: 480px) {
   .segs { grid-column: 1 / -1; grid-row: 2; margin-left: 0; }
   .controls { grid-template-columns: auto auto auto minmax(0, 1fr); }
   .secname { grid-column: 4; grid-row: 1; justify-self: end; min-width: 0; }
+  .cases-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .stage .cases { bottom: 12px; }
+  .stage .cases select { font-size: 12.5px; height: 24px; padding: 0 4px; }
 }
 
 /* Diagram type and strokes, in viewBox units (800 wide) */
@@ -167,11 +176,13 @@ figure { margin: 0; }
 .flash1 { opacity: 0; }
 .run .flash1 { animation: flash1 calc(2.2s * var(--k, 1)) linear calc(var(--d, 0s) * var(--k, 1)) both; }
 @keyframes flash1 { 0% { opacity: 0; } 10% { opacity: 1; } 75% { opacity: 1; } 100% { opacity: 0; } }
+/* the breach scene's cases: a dropdown in the drawing's free bottom-right corner, aligned to the drawing's right edge */
 .cases[hidden] { display: none; }
-.cases { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+.cases { position: absolute; bottom: 14px; right: max(0px, calc((100% - (100vh - 300px) * 1.43) / 2));
+  display: flex; align-items: center; gap: 8px; }
 .cases-label { font-size: 13.5px; color: var(--muted); }
-.case-list { display: flex; flex-wrap: wrap; gap: 6px; }
-.case-list button { font: 400 14px/1 var(--sans); padding: 8px 12px; }
+.cases select { font: 400 14px/1.2 var(--sans); color: var(--ink); background: var(--bg); border: 1px solid var(--line);
+  border-radius: 0; padding: 5px 6px; }
 @keyframes orbit { to { transform: rotate(360deg); } }
 .run .gone { animation-name: gone; }
 .run .out { animation-name: out; }
@@ -824,11 +835,11 @@ figure { margin: 0; }
 
           </g>
         </svg>
+        <div class="cases" id="cases" hidden>
+          <label class="cases-label" for="case-pick">Play a case</label>
+          <select id="case-pick"></select>
+        </div>
       </figure>
-      <div class="cases" id="cases" hidden>
-        <span class="cases-label">Play a case</span>
-        <div class="case-list" id="case-list" role="group" aria-label="Play a case"></div>
-      </div>
 
       <div class="controls">
         <button id="prev" type="button" aria-label="Previous scene">&#8592;</button>
@@ -839,14 +850,14 @@ figure { margin: 0; }
       </div>
 
       <div class="narr" aria-live="polite">
-        <p class="mark" id="sins">Transparency</p>
-        <h2 id="stitle">From data to judgement</h2>
-        <p id="stext">Every day the analytics engine takes in every portfolio's data, computes every measure, checks each
-          against its limit and triages what needs attention. The AI investigates what the engine found and drafts from
-          it. The risk manager prioritises, taking the exception first, and works the flags through with the AI: a
-          challenged draft that turns stock selection into unintended value beta, then a breakdown that explains VaR near
-          its limit. The result is transparency: every flag traced to its numbers, explained, and decided on the
-          record.</p>
+        <div class="narr-body">
+          <h2 id="stitle">From data to judgement</h2>
+          <p id="stext">Every day the analytics engine takes in every portfolio’s data, computes every measure, checks
+          each against its limit and triages what needs attention. The AI investigates what the engine found and
+          drafts from it. The risk manager prioritises, taking the exception first, and works the flags through with
+          the AI: a challenged draft that turns stock selection into unintended value beta, then a breakdown that
+          explains VaR near its limit.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -869,19 +880,19 @@ figure { margin: 0; }
   document.documentElement.classList.toggle('solo', solo);
   const SCENES = [
     { t: 'From data to judgement', i: 'Transparency', d: 29500,
-      p: 'Every day the analytics engine takes in every portfolio\u2019s data, computes every measure, checks each against its limit and triages what needs attention. The AI investigates what the engine found and drafts from it. The risk manager prioritises, taking the exception first, and works the flags through with the AI: a challenged draft that turns stock selection into unintended value beta, then a breakdown that explains VaR near its limit. The result is transparency: every flag traced to its numbers, explained, and decided on the record.' },
+      p: 'Every day the analytics engine takes in every portfolio\u2019s data, computes every measure, checks each against its limit and triages what needs attention. The AI investigates what the engine found and drafts from it. The risk manager prioritises, taking the exception first, and works the flags through with the AI: a challenged draft that turns stock selection into unintended value beta, then a breakdown that explains VaR near its limit.' },
     { t: 'Why a risk function exists', i: 'Balance', d: 15500,
-      p: 'A risk function challenges investment decisions against the mandate, and serves the investment team with insight into the risks it takes. The two purposes meet in three decisions: before the trade, a what-if shows what a position adds; during, every reading is checked against its limit; after, attribution splits the return and tests whether alpha is skill, and the risk manager challenges what it shows at the portfolio manager review. Balance is holding both: independence is what makes the service credible.' },
+      p: 'A risk function challenges investment decisions against the mandate, and serves the investment team with insight into the risks it takes. The two purposes meet in three decisions: before the trade, a what-if shows what a position adds; during, every reading is checked against its limit; after, attribution splits the return and tests whether alpha is skill, and the risk manager challenges what it shows at the review. Independence is what makes the service credible.' },
     { t: 'One set of numbers', i: 'Trust', d: 14000,
-      p: 'Before a trade, the portfolio manager and the risk manager run the same what-if on the same governed analysis and see the same figures: buying 2% of one stock takes tracking error from 3.2% to 3.6%, 90% of the 4.0% budget, and coverage at 7 days from 1.8 to 1.7 times. Each figure opens to the rule, the data and the run behind it, so the logic is an open book and the talk is about the trade, not about whose numbers are right. A rerun at 1.5% uses 88% of the budget, and the portfolio manager buys 1.5%. Trust: one set of numbers, an open book, and the portfolio manager\u2019s risk-informed call.' },
+      p: 'Before a trade, the portfolio manager and the risk manager run the same what-if on the same governed analysis and see the same figures: buying 2% of one stock takes tracking error from 3.2% to 3.6%, 90% of the 4.0% budget, and coverage at 7 days from 1.8 to 1.7 times. Each figure opens to the rule, the data and the run behind it, so the talk is about the trade, not whose numbers are right. A rerun at 1.5% uses 88% of the budget, and the portfolio manager makes the call: buy 1.5%.' },
     { t: 'What risk watches', i: 'Connection', d: 15000,
-      p: 'Each pillar serves its own decisions: market and liquidity risk construct and oversee, performance risk and the integrated view oversee and assess. Market risk looks forward from today\u2019s holdings; performance risk looks back at whether the promise is kept, and each forecast is tested against its outcome. Liquidity risk asks whether a stress day\u2019s calls can be met: here calls of 15% of net assets are covered 1.6 times by what can be sold within 7 days. The integrated view computes no measure of its own: three watch items on one portfolio, a widening shortfall, rising outflows with falling coverage and rising issuer concentration, match the redemption spiral, and it comes first before any one pillar would escalate. That is connection: forecasts tested against outcomes, and signals joined across pillars.' },
+      p: 'Market and liquidity risk serve Construct and Oversee; performance risk and the integrated view serve Oversee and Assess. Market risk looks forward from today\u2019s holdings, performance risk looks back at whether the promise is kept, and each forecast is tested against its outcome. On a stress day, calls of 15% of net assets are covered 1.6 times by what can be sold within 7 days. On one portfolio, a widening shortfall, rising outflows with falling coverage and rising concentration match the redemption spiral: the integrated view puts it first, before any pillar escalates.' },
     { t: 'Where return comes from', i: 'Attribution', d: 10000,
-      p: 'Two decisions drive the return: top-down views earn beta, and bottom-up selection earns alpha. Three portfolios split the return, and the increments add up exactly. The benchmark portfolio holds the indices the mandate sets; its return above the risk-free rate is policy beta, and belongs to whoever set the mandate. The top-down portfolio holds ETFs, futures and cash carrying all the real portfolio\u2019s exposure; the increment to it is active beta, credited to whoever recorded each tilt or timing call, and to nobody where no one did. The real portfolio adds alpha, which belongs to whoever selected the securities. Figures are illustrative. Attribution: the return split into parts that add up exactly, with each part traced to whoever chose it.' },
+      p: 'Two decisions drive the return: top-down views earn beta, bottom-up selection earns alpha. Three portfolios split it exactly. The benchmark portfolio holds the indices the mandate sets; its return above the risk-free rate is policy beta, which belongs to whoever set the mandate. The top-down portfolio holds ETFs, futures and cash carrying all the real portfolio\u2019s exposure; the increment to it is active beta, credited to whoever recorded each tilt or timing call, or to nobody. The real portfolio adds alpha, which belongs to whoever selected the securities.' },
     { t: 'When a limit breaks', i: 'Governance', d: 23000,
-      p: 'A typical breach. The analytics engine detects the breach; the engine verifies and classifies it, the AI explains what the checks found, and the risk manager confirms. Under a governed rule the AI sends the routine notice and the risk manager reviews it the same day, with the portfolio manager, investment oversight and the head of risk told. The portfolio manager explains it, the AI tests the explanation against the data, and the portfolio manager decides: rectify it, or accept it for a set period with the head of risk\u2019s approval. Where the decision is to rectify, the portfolio manager rectifies while the engine tracks; the risk manager reports the close to the head of risk. Monitoring carries on.' },
+      p: 'A typical breach. The analytics engine detects, verifies and classifies it; the AI explains what the checks found, and the risk manager confirms. Under a governed rule the AI sends the routine notice, which the risk manager reviews the same day. The portfolio manager explains, the AI tests the explanation against the data, and the portfolio manager decides: rectify, or accept for a set period with the head of risk\u2019s approval. The engine tracks the rectification, and the risk manager reports the close to the head of risk.' },
     { t: 'Rebuilt around AI', i: 'Augmentation', d: 17000,
-      p: 'One exception, from flag to judgement. The analytics engine flags Fund A\u2019s VaR at 2.31%, 92% of its limit, after a rise of 0.47 in one day, and runs the analyses set for a VaR exception: the decomposition, the same driver across other portfolios, and the tilts on record, one of which the AI read from committee minutes and the risk manager confirmed. The AI follows up where the findings point further, splitting the basket\u2019s 0.29 points into a larger position and higher volatility, and drafts. The draft passes the grounding check on its numbers, its causes, its quantifier and its severity, yet it leaves out the energy basket\u2019s 0.12, which no check can catch. The risk manager asks what was left out, judges what it means and puts the question to the portfolio manager, linked to the item in the shared record. Augmentation: the AI investigates and reads; people keep the judgement.' },
+      p: 'The analytics engine flags Fund A\u2019s VaR at 2.31%, 92% of its limit, and runs the analyses set for the rule: the decomposition, the same driver in other portfolios and the tilts on record, one read by the AI from minutes and confirmed by the risk manager. The AI follows up, splitting the technology basket\u2019s 0.29 into a larger position and higher volatility, and drafts. The draft passes the grounding check yet leaves out the energy basket\u2019s 0.12, which no check catches. The risk manager asks about it, judges, and puts the question to the portfolio manager.' },
   ];
 
   const el = (tag, attrs, parent, text) => {
@@ -1008,7 +1019,7 @@ figure { margin: 0; }
       missed: { label: 'Overdue', route: [0, 1, 2, 3, 4, 5, 6], side: 'missed', after: [7] },
       hard: { label: 'Hard limit', route: [0, 1, 2, 3], side: 'hard', after: [6, 7] } };
     const TEXT = {
-      typical: "A typical breach. The analytics engine detects the breach; the engine verifies and classifies it, the AI explains what the checks found, and the risk manager confirms. Under a governed rule the AI sends the routine notice and the risk manager reviews it the same day, with the portfolio manager, investment oversight and the head of risk told. The portfolio manager explains it, the AI tests the explanation against the data, and the portfolio manager decides: rectify it, or accept it for a set period with the head of risk's approval. Where the decision is to rectify, the portfolio manager rectifies while the engine tracks; the risk manager reports the close to the head of risk. Monitoring carries on. Governance: every stage has an owner, and every breach ends in a recorded decision.",
+      typical: "A typical breach. The analytics engine detects, verifies and classifies it; the AI explains what the checks found, and the risk manager confirms. Under a governed rule the AI sends the routine notice, which the risk manager reviews the same day. The portfolio manager explains, the AI tests the explanation against the data, and the portfolio manager decides: rectify, or accept for a set period with the head of risk\u2019s approval. The engine tracks the rectification, and the risk manager reports the close to the head of risk.",
       false: "A data break. The engine detects a breach, and verification shows the reading came from a data break. The AI closes it with the record, and the risk manager reviews the closure the same day.",
       disagree: "A disputed breach. The risk manager disagrees with how the portfolio manager decides to handle the breach, so it goes straight to the risk committee, presented by the head of risk, and the committee's decision binds. The risk committee is a committee of the executive committee: what it cannot resolve goes up to the executive committee, where the chief executive and the investment and business heads settle it together. The board is the last resort.",
       missed: "An overdue rectification. The portfolio manager decides to rectify, but the reading is still beyond the limit when the deadline passes. The analytics engine escalates it to the head of risk the same day, who requires the rectification or extends the deadline once, with a reason. Once the reading is back within the limit, the risk manager reports the close.",
@@ -1170,20 +1181,19 @@ figure { margin: 0; }
   /* Each scene plays once and then waits; only the viewer moves on (click or arrow keys). */
   let cur = 0, playing = false, done = false, elapsed = 0;
   const limIdx = svgs.findIndex(s => s.querySelector('#life2'));
-  const casesEl = document.getElementById('cases'), caseBtns = [];
+  const casesEl = document.getElementById('cases'), casePick = document.getElementById('case-pick');
   if (LIM && limIdx >= 0) {
     SCENES[limIdx].p = LIM.TEXT.typical;
     SCENES[limIdx].d = LIM.build('typical');
     Object.entries(LIM.SC).forEach(([key, sc]) => {
-      const b = document.createElement('button');
-      b.type = 'button'; b.textContent = sc.label; b.setAttribute('aria-pressed', key === 'typical' ? 'true' : 'false');
-      b.addEventListener('click', () => {
-        caseBtns.forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
-        SCENES[limIdx].d = LIM.build(key);
-        SCENES[limIdx].p = LIM.TEXT[key];
-        show(limIdx, !reduce);
-      });
-      document.getElementById('case-list').appendChild(b); caseBtns.push(b);
+      const o = document.createElement('option');
+      o.value = key; o.textContent = sc.label; casePick.appendChild(o);
+    });
+    casePick.value = 'typical';
+    casePick.addEventListener('change', () => {
+      SCENES[limIdx].d = LIM.build(casePick.value);
+      SCENES[limIdx].p = LIM.TEXT[casePick.value];
+      show(limIdx, !reduce);
     });
   }
 
@@ -1198,7 +1208,6 @@ figure { margin: 0; }
     casesEl.hidden = i !== limIdx;
     if (playing) restart(svgs[i]); else svgs[i].classList.remove('run');
     document.getElementById('stitle').textContent = SCENES[i].t;
-    document.getElementById('sins').textContent = SCENES[i].i;
     document.getElementById('stext').textContent = SCENES[i].p;
     segBtns.forEach((b, j) => j === i ? b.setAttribute('aria-current', 'step') : b.removeAttribute('aria-current'));
     secname.textContent = SCENES[i].i; secname.classList.remove('peek');
