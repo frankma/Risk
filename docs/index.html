@@ -290,12 +290,12 @@ figure { margin: 0; }
             <path class="ln draw fx" pathLength="1" d="M520 186 L542 182 L564 184 L586 176 L608 172 L630 170 L652 162 L674 156 L696 150 L718 142 L740 136" style="--d:2.82s;--t:0.84s"/>
             <!-- performance attribution: active return built up by source, as a waterfall -->
             <rect class="f-washi grow fx" x="282" y="317" width="30" height="35" style="--d:3s"/>
-            <rect class="f-washi grow fx" x="327" y="289" width="30" height="28" style="--d:3.12s"/>
-            <rect class="f-washi grow fx" x="372" y="268" width="30" height="21" style="--d:3.24s"/>
-            <rect class="f-nez grow fx" x="427" y="268" width="30" height="84" style="--d:3.36s"/>
-            <path class="hair dash fx fade" d="M312 317 H327 M357 289 H372 M402 268 H427" style="--d:3.36s"/>
+            <rect class="f-washi grow fx" x="327" y="296" width="30" height="21" style="--d:3.12s"/>
+            <rect class="f-washi grow fx" x="372" y="275" width="30" height="21" style="--d:3.24s"/>
+            <rect class="f-nez grow fx" x="427" y="275" width="30" height="77" style="--d:3.36s"/>
+            <path class="hair dash fx fade" d="M312 317 H327 M357 296 H372 M402 275 H427" style="--d:3.36s"/>
             <path class="rule fx fade" d="M276 352 H463" style="--d:3s"/>
-            <text class="fx fade" x="442" y="286" text-anchor="middle" style="--d:3.42s;font-size:12px">+1.2%</text>
+            <text class="fx fade" x="442" y="293" text-anchor="middle" style="--d:3.42s;font-size:12px">+1.1%</text>
             <text class="k fx fade" x="297" y="374" text-anchor="middle" style="--d:3s;font-size:12px">tilt</text>
             <text class="k fx fade" x="342" y="374" text-anchor="middle" style="--d:3.12s;font-size:12px">unintended</text>
             <text class="k fx fade" x="387" y="388" text-anchor="middle" style="--d:3.24s;font-size:12px">alpha</text>
@@ -318,7 +318,7 @@ figure { margin: 0; }
               <text class="k" x="440" y="130" style="font-size:12px">budget</text>
               <text class="k" x="522" y="124">limit</text>
             </g>
-            <text class="k fx fade" x="250" y="222" style="--d:4.44s">Draft: 4.6% against a 4.0% budget</text>
+            <text class="k fx fade" x="250" y="222" style="--d:4.44s">Draft: 4.6%, above its intended band</text>
             <text class="k fx fade" x="520" y="222" style="--d:4.68s">Draft: VaR at 96% of its limit</text>
             <path class="lnb draw fx" pathLength="1" d="M365 188 L427 172.1" style="--d:5.52s;--t:0.3s;stroke-width:3"/>
             <circle class="f-beni fx pop" cx="427" cy="172" r="5" style="--d:5.7s"/>
@@ -424,15 +424,15 @@ figure { margin: 0; }
           <!-- Assess: active return split by source, and whether alpha is skill -->
           <g class="fx fade" style="--d:9.7s">
             <path class="hair" d="M530 232 H750"/>
-            <text class="s" x="530" y="254" style="font-size:15px">After: active return +1.2%</text>
+            <text class="s" x="530" y="254" style="font-size:15px">After: active return +1.1%</text>
           </g>
           <rect class="f-washi fx growx" x="530" y="268" width="83" height="16" style="--d:10s;--t:.5s"/>
-          <rect class="f-nez fx growx" x="613" y="268" width="67" height="16" style="--d:10.4s;--t:.5s"/>
-          <rect class="f-beni fx growx" x="680" y="268" width="50" height="16" style="--d:10.8s;--t:.5s"/>
+          <rect class="f-nez fx growx" x="613" y="268" width="50" height="16" style="--d:10.4s;--t:.5s"/>
+          <rect class="f-beni fx growx" x="663" y="268" width="50" height="16" style="--d:10.8s;--t:.5s"/>
           <text class="k fx fade" x="532" y="300" style="--d:10.2s;font-size:13px">tilt 0.5</text>
           <path class="hair fx fade" d="M614 284 V306" style="--d:10.6s"/>
-          <text class="k fx fade" x="617" y="316" style="--d:10.6s;font-size:13px">unintended 0.4</text>
-          <text class="k acc fx fade" x="683" y="300" style="--d:11s;font-size:13px">alpha 0.3</text>
+          <text class="k fx fade" x="617" y="316" style="--d:10.6s;font-size:13px">unintended 0.3</text>
+          <text class="k acc fx fade" x="666" y="300" style="--d:11s;font-size:13px">alpha 0.3</text>
           <text class="s fx rise" x="530" y="358" style="--d:11.4s;font-size:15px">Alpha 0.3 points, t-stat 0.8:</text>
           <text class="s fx rise" x="530" y="378" style="--d:11.6s;font-size:15px">not yet evidence of skill.</text>
 
@@ -454,7 +454,7 @@ figure { margin: 0; }
 
         <!-- 3 One set of numbers: the portfolio manager and the risk manager run the same what-if, see the same figures,
              open one to its rule, data and run, then talk about the trade; the portfolio manager makes the call -->
-        <svg class="scene" viewBox="0 0 800 560" role="img" aria-label="Before a trade, the portfolio manager and the risk manager run the same what-if through the analytics engine, buying 2% of one stock, and see the same figures: tracking error from 3.2% to 3.6%, budget use from 80% to 90% of 4.0%, and coverage at 7 days from 1.6 to 1.5 times. The figure 3.6% opens to the rule, the data and the run behind it. The talk turns to the trade: a rerun at 1.5% gives 3.5%, 88% of the budget, and the portfolio manager buys 1.5%, keeping room in the budget, as a meter of budget use shows." hidden>
+        <svg class="scene" viewBox="0 0 800 560" role="img" aria-label="Before a trade, the portfolio manager and the risk manager run the same what-if through the analytics engine, buying 2% of one stock, and see the same figures: tracking error from 3.2% to 3.6%, budget use from 80% to 90% of 4.0%, and coverage at 7 days from 1.8 to 1.7 times. The figure 3.6% opens to the rule, the data and the run behind it. The talk turns to the trade: a rerun at 1.5% gives 3.5%, 88% of the budget, and the portfolio manager buys 1.5%, keeping room in the budget, as a meter of budget use shows." hidden>
           <defs>
             <marker id="ah3-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" style="fill:var(--ink)"/></marker>
           </defs>
@@ -488,7 +488,7 @@ figure { margin: 0; }
             <text class="k" x="40" y="234" style="font-size:13px">Budget used, of 4.0%</text>
             <text x="340" y="234" text-anchor="end" style="font-size:13.5px">80% → 90%</text>
             <text class="k" x="40" y="256" style="font-size:13px">Coverage at 7 days</text>
-            <text x="340" y="256" text-anchor="end" style="font-size:13.5px">1.6x → 1.5x</text>
+            <text x="340" y="256" text-anchor="end" style="font-size:13.5px">1.8x → 1.7x</text>
             <path class="hair" d="M40 266 H340"/>
           </g>
           <g class="fx fade" style="--d:3.6s">
@@ -498,7 +498,7 @@ figure { margin: 0; }
             <text class="k" x="460" y="234" style="font-size:13px">Budget used, of 4.0%</text>
             <text x="760" y="234" text-anchor="end" style="font-size:13.5px">80% → 90%</text>
             <text class="k" x="460" y="256" style="font-size:13px">Coverage at 7 days</text>
-            <text x="760" y="256" text-anchor="end" style="font-size:13.5px">1.6x → 1.5x</text>
+            <text x="760" y="256" text-anchor="end" style="font-size:13.5px">1.8x → 1.7x</text>
             <path class="hair" d="M460 266 H760"/>
           </g>
           <text class="t acc fx pop" x="400" y="238" text-anchor="middle" style="--d:4.4s">=</text>
@@ -873,7 +873,7 @@ figure { margin: 0; }
     { t: 'Why a risk function exists', i: 'Balance', d: 15500,
       p: 'A risk function challenges investment decisions against the mandate, and serves the investment team with insight into the risks it takes. The two purposes meet in three decisions: before the trade, a what-if shows what a position adds; during, every reading is checked against its limit; after, attribution splits the return and tests whether alpha is skill, and the risk manager challenges what it shows at the portfolio manager review. Balance is holding both: independence is what makes the service credible.' },
     { t: 'One set of numbers', i: 'Trust', d: 14000,
-      p: 'Before a trade, the portfolio manager and the risk manager run the same what-if on the same governed analysis and see the same figures: buying 2% of one stock takes tracking error from 3.2% to 3.6%, 90% of the 4.0% budget, and coverage at 7 days from 1.6 to 1.5 times. Each figure opens to the rule, the data and the run behind it, so the logic is an open book and the talk is about the trade, not about whose numbers are right. A rerun at 1.5% uses 88% of the budget, and the portfolio manager buys 1.5%. Trust: one set of numbers, an open book, and the portfolio manager\u2019s risk-informed call.' },
+      p: 'Before a trade, the portfolio manager and the risk manager run the same what-if on the same governed analysis and see the same figures: buying 2% of one stock takes tracking error from 3.2% to 3.6%, 90% of the 4.0% budget, and coverage at 7 days from 1.8 to 1.7 times. Each figure opens to the rule, the data and the run behind it, so the logic is an open book and the talk is about the trade, not about whose numbers are right. A rerun at 1.5% uses 88% of the budget, and the portfolio manager buys 1.5%. Trust: one set of numbers, an open book, and the portfolio manager\u2019s risk-informed call.' },
     { t: 'What risk watches', i: 'Connection', d: 15000,
       p: 'Each pillar serves its own decisions: market and liquidity risk construct and oversee, performance risk and the integrated view oversee and assess. Market risk looks forward from today\u2019s holdings; performance risk looks back at whether the promise is kept, and each forecast is tested against its outcome. Liquidity risk asks whether a stress day\u2019s calls can be met: here calls of 15% of net assets are covered 1.6 times by what can be sold within 7 days. The integrated view computes no measure of its own: three watch items on one portfolio, a widening shortfall, rising outflows with falling coverage and rising issuer concentration, match the redemption spiral, and it comes first before any one pillar would escalate. That is connection: forecasts tested against outcomes, and signals joined across pillars.' },
     { t: 'Where return comes from', i: 'Attribution', d: 10000,
@@ -948,9 +948,9 @@ figure { margin: 0; }
     const who = (x, y, name, d) => el('text', { x, y, class: 'k fx fade', style: `--d:${T1(d)}s` }, g, name);
     const say = (y, text, d, cls = 's') => el('text', { x: 360, y, class: `${cls} fx rise`, style: `--d:${T1(d)}s` }, g, text);
     /* the risk manager prioritises: the exception first */
-    /* exchange A: tracking error over budget, a draft challenged, a cleaner attribution */
+    /* exchange A: tracking error above its band, a draft challenged, a cleaner attribution */
     el('path', { d: 'M250 70 H760', class: 'rule fx draw', pathLength: 1, style: '--d:7.24s' }, g);
-    el('text', { x: 250, y: 92, class: 'hd fx fade', style: '--d:7.34s' }, g, 'Tracking error, over budget');
+    el('text', { x: 250, y: 92, class: 'hd fx fade', style: '--d:7.34s' }, g, 'Tracking error, above its band');
     el('text', { x: 760, y: 92, 'text-anchor': 'end', class: 'hd acc fx fade', style: '--d:7.34s;font-size:15px' }, g, 'Exception, first');
     who(250, 116, 'AI', 12.3); say(116, 'Draft: the rise comes from stock selection.', 12.3);
     who(250, 139, 'Risk manager', 13.5); say(139, 'Challenge: check that against the factors.', 13.5, 's acc');
