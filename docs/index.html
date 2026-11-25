@@ -155,8 +155,8 @@ figure { margin: 0; }
 .run .lit { animation-name: lit; --t: .35s; }
 .run .travel { animation-name: travel; animation-timing-function: linear; }
 .run .sweep { animation-name: sweep; animation-timing-function: linear; }
-.run .sink { animation: sink 1.3s var(--d, 0s) both cubic-bezier(.5, 0, .7, 1); }
-.run .sinkhot { animation: sinkhot 1.3s var(--d, 0s) both cubic-bezier(.5, 0, .7, 1); }
+.run .sink { animation: sink .9s var(--d, 0s) both cubic-bezier(.5, 0, .7, 1); }
+.run .sinkhot { animation: sinkhot .9s var(--d, 0s) both cubic-bezier(.5, 0, .7, 1); }
 .accrete { transform-box: fill-box; transform-origin: center; }
 .run .accrete { animation: accrete var(--t) linear var(--d) both; }
 .orbit { transform-box: view-box; transform-origin: 180px 205px; }
@@ -209,7 +209,7 @@ figure { margin: 0; }
       <figure class="stage" id="stage">
 
         <!-- 1 Core pattern: data in, engine computes against limits, AI drafts, then AI and risk manager work it through -->
-        <svg class="scene" viewBox="0 0 800 560" role="img" aria-label="Data flows into the analytics engine, which draws each measure against its limit, tracking error within its intended band until it rises above the budget, and triages an exception and a watch item. The AI investigates and drafts. The risk manager prioritises the exception, challenges a stock selection draft until the AI shows unintended value beta, then asks the AI to break VaR down and acknowledges it.">
+        <svg class="scene" viewBox="0 0 800 560" role="img" aria-label="Data flows into the analytics engine, which draws four charts, tracking error as a dial against its band and budget, VaR as a line against its limit, performance attribution as a waterfall and exposure as a donut, and triages an exception and a watch item. The AI investigates and drafts. The risk manager prioritises the exception, challenges a stock selection draft until the AI shows unintended value beta, then asks the AI to break VaR down and acknowledges it.">
           <defs>
             <marker id="ah1-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" style="fill:var(--ink)"/></marker>
             <marker id="ah1-ai" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" style="fill:var(--ai)"/></marker>
@@ -218,142 +218,152 @@ figure { margin: 0; }
           <text class="s" x="30" y="52" style="font-size:15px">How does a day's data become a decision someone can defend?</text>
           <g transform="translate(0 60)">
           <!-- phase 1: the ten data domains feed the analytics engine, which starts in the centre -->
-          <g id="feeds" class="fx gone" style="--t:3.2s">
+          <g id="feeds" class="fx gone" style="--t:1.92s">
             <text class="k" x="410" y="488" text-anchor="middle">millions of data points, every portfolio, every day</text>
           </g>
           <g id="dots"></g>
 
           <!-- the left rail: the analytics engine takes in the data where it sits, then slides into place -->
-          <g class="fx fade" style="--d:3.4s;--t:.6s">
-            <path class="rule draw fx" pathLength="1" d="M40 90 H200" style="--d:.1s"/>
-            <text class="hd fx fade" x="40" y="116" style="--d:.2s">Analytics engine</text>
-            <text class="s fx fade" x="40" y="140" style="--d:.4s">every portfolio, every day</text>
-            <text class="s fx fade" x="40" y="162" style="--d:.5s">triages against every limit</text>
+          <g class="fx fade" style="--d:2.04s;--t:0.36s">
+            <path class="rule draw fx" pathLength="1" d="M40 90 H200" style="--d:0.06s"/>
+            <text class="hd fx fade" x="40" y="116" style="--d:0.12s">Analytics engine</text>
+            <text class="s fx fade" x="40" y="140" style="--d:0.24s">every portfolio, every day</text>
+            <text class="s fx fade" x="40" y="162" style="--d:0.3s">triages against every limit</text>
           </g>
-          <g class="fx fade" style="--d:7s">
+          <g class="fx fade" style="--d:4.2s">
             <path class="rule" d="M40 200 H200"/>
             <text class="hd" x="40" y="226">AI</text>
             <text class="s" x="40" y="250">investigates, then drafts</text>
           </g>
-          <text class="s fx fade" x="40" y="272" style="--d:18.5s">and answers when asked</text>
-          <g class="fx fade" style="--d:8.8s">
+          <text class="s fx fade" x="40" y="272" style="--d:13.94s">and answers when asked</text>
+          <g class="fx fade" style="--d:5.28s">
             <path class="rule" d="M40 300 H200"/>
             <text class="hd" x="40" y="326">Risk manager</text>
             <text class="s" x="40" y="350">prioritises, judges</text>
           </g>
-          <text class="s fx fade" x="40" y="372" style="--d:13.5s">and challenges</text>
+          <text class="s fx fade" x="40" y="372" style="--d:8.94s">and challenges</text>
 
           <!-- phase 2 to 4: the engine's charts, the AI's drafts and the risk manager's marks; they clear for the exchanges -->
-          <g class="fx out" style="--d:11.4s;--t:.6s">
+          <g class="fx out" style="--d:6.84s;--t:0.36s">
             <!-- the engine projects: a beam to each chart as it draws, then fades -->
-            <g class="fx out" style="--d:6.2s;--t:.8s">
-<path class="draw fx" pathLength="1" d="M490 208 L250 70" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:3.90s;--t:.35s"/>
-              <path class="draw fx" pathLength="1" d="M510 208 L480 70" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:3.94s;--t:.35s"/>
-              <path class="draw fx" pathLength="1" d="M510 228 L480 200" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:3.98s;--t:.35s"/>
-              <path class="draw fx" pathLength="1" d="M490 228 L250 200" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:4.02s;--t:.35s"/>
-              <rect class="fx fade" x="250" y="70" width="230" height="130" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:4.25s;--t:.3s"/>
-              <path class="draw fx" pathLength="1" d="M490 208 L520 70" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:4.15s;--t:.35s"/>
-              <path class="draw fx" pathLength="1" d="M510 208 L750 70" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:4.19s;--t:.35s"/>
-              <path class="draw fx" pathLength="1" d="M510 228 L750 200" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:4.23s;--t:.35s"/>
-              <path class="draw fx" pathLength="1" d="M490 228 L520 200" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:4.27s;--t:.35s"/>
-              <rect class="fx fade" x="520" y="70" width="230" height="130" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:4.50s;--t:.3s"/>
-              <path class="draw fx" pathLength="1" d="M490 208 L250 236" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:4.40s;--t:.35s"/>
-              <path class="draw fx" pathLength="1" d="M510 208 L480 236" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:4.44s;--t:.35s"/>
-              <path class="draw fx" pathLength="1" d="M510 228 L480 360" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:4.48s;--t:.35s"/>
-              <path class="draw fx" pathLength="1" d="M490 228 L250 360" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:4.52s;--t:.35s"/>
-              <rect class="fx fade" x="250" y="236" width="230" height="124" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:4.75s;--t:.3s"/>
-              <path class="draw fx" pathLength="1" d="M490 208 L520 236" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:4.65s;--t:.35s"/>
-              <path class="draw fx" pathLength="1" d="M510 208 L750 236" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:4.69s;--t:.35s"/>
-              <path class="draw fx" pathLength="1" d="M510 228 L750 360" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:4.73s;--t:.35s"/>
-              <path class="draw fx" pathLength="1" d="M490 228 L520 360" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:4.77s;--t:.35s"/>
-              <rect class="fx fade" x="520" y="236" width="230" height="124" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:5.00s;--t:.3s"/>
+            <g class="fx out" style="--d:3.72s;--t:0.48s">
+<path class="draw fx" pathLength="1" d="M490 208 L250 70" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:2.34s;--t:0.21s"/>
+              <path class="draw fx" pathLength="1" d="M510 208 L480 70" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:2.36s;--t:0.21s"/>
+              <path class="draw fx" pathLength="1" d="M510 228 L480 200" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:2.39s;--t:0.21s"/>
+              <path class="draw fx" pathLength="1" d="M490 228 L250 200" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:2.41s;--t:0.21s"/>
+              <rect class="fx fade" x="250" y="70" width="230" height="130" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:2.55s;--t:0.18s"/>
+              <path class="draw fx" pathLength="1" d="M490 208 L520 70" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:2.49s;--t:0.21s"/>
+              <path class="draw fx" pathLength="1" d="M510 208 L750 70" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:2.51s;--t:0.21s"/>
+              <path class="draw fx" pathLength="1" d="M510 228 L750 200" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:2.54s;--t:0.21s"/>
+              <path class="draw fx" pathLength="1" d="M490 228 L520 200" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:2.56s;--t:0.21s"/>
+              <rect class="fx fade" x="520" y="70" width="230" height="130" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:2.7s;--t:0.18s"/>
+              <path class="draw fx" pathLength="1" d="M490 208 L250 236" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:2.64s;--t:0.21s"/>
+              <path class="draw fx" pathLength="1" d="M510 208 L480 236" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:2.66s;--t:0.21s"/>
+              <path class="draw fx" pathLength="1" d="M510 228 L480 360" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:2.69s;--t:0.21s"/>
+              <path class="draw fx" pathLength="1" d="M490 228 L250 360" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:2.71s;--t:0.21s"/>
+              <rect class="fx fade" x="250" y="236" width="230" height="124" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:2.85s;--t:0.18s"/>
+              <path class="draw fx" pathLength="1" d="M490 208 L520 236" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:2.79s;--t:0.21s"/>
+              <path class="draw fx" pathLength="1" d="M510 208 L750 236" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:2.81s;--t:0.21s"/>
+              <path class="draw fx" pathLength="1" d="M510 228 L750 360" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:2.84s;--t:0.21s"/>
+              <path class="draw fx" pathLength="1" d="M490 228 L520 360" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:2.86s;--t:0.21s"/>
+              <rect class="fx fade" x="520" y="236" width="230" height="124" style="fill:none;stroke:var(--washi);stroke-width:1.25;--d:3s;--t:0.18s"/>
               <!-- the square forms where the data converges, then slides to the centre of the four charts before it projects -->
-              <g class="fx travel" style="--fx:-90px;--fy:10px;--d:3.35s;--t:.5s;animation-timing-function:cubic-bezier(.4,0,.2,1)"><rect class="f-beni accrete" x="490" y="208" width="20" height="20" style="--d:1.9s;--t:1.4s"/></g>
+              <g class="fx travel" style="--fx:-90px;--fy:10px;--d:2.01s;--t:0.3s;animation-timing-function:cubic-bezier(.4,0,.2,1)"><rect class="f-beni accrete" x="490" y="208" width="20" height="20" style="--d:1.14s;--t:0.84s"/></g>
             </g>
             <!-- the two red readings stay hidden until they leave the square -->
-            <g class="fx fade" style="--d:5.6s;--t:.15s"><circle class="f-beni fx travel" cx="470" cy="124" r="3.6" style="--fx:30px;--fy:94px;--d:5.6s;--t:1s;animation-timing-function:cubic-bezier(.4,0,.2,1)"/></g>
-            <g class="fx fade" style="--d:5.8s;--t:.15s"><circle class="f-beni fx travel" cx="740" cy="136" r="3.6" style="--fx:-240px;--fy:82px;--d:5.8s;--t:1.2s;animation-timing-function:cubic-bezier(.4,0,.2,1)"/></g>
-            <g class="fx fade" style="--d:4.1s">
+            <g class="fx fade" style="--d:3.36s;--t:0.09s"><circle class="f-beni fx travel" cx="427" cy="172" r="3.6" style="--fx:73px;--fy:46px;--d:3.36s;--t:0.6s;animation-timing-function:cubic-bezier(.4,0,.2,1)"/></g>
+            <g class="fx fade" style="--d:3.48s;--t:0.09s"><circle class="f-beni fx travel" cx="740" cy="136" r="3.6" style="--fx:-240px;--fy:82px;--d:3.48s;--t:0.72s;animation-timing-function:cubic-bezier(.4,0,.2,1)"/></g>
+            <g class="fx fade" style="--d:2.46s">
               <text class="s" x="250" y="84" style="font-size:15px">Tracking error</text>
               <text class="s" x="520" y="84" style="font-size:15px">VaR</text>
-              <text class="s" x="250" y="250" style="font-size:15px">Redemption coverage</text>
-              <text class="s" x="520" y="250" style="font-size:15px">Liquidity profile</text>
+              <text class="s" x="250" y="250" style="font-size:15px">Performance attribution</text>
+              <text class="s" x="520" y="250" style="font-size:15px">Exposure by asset class</text>
               <path class="rule" d="M250 200 H480 M520 200 H750 M250 360 H480 M520 360 H750"/>
             </g>
-            <!-- tracking error: the mandate intends a band, and the budget marks its top edge; drawn under the line -->
-            <rect class="fx fade" x="250" y="140" width="230" height="50" style="--d:4.3s;fill:var(--grid)"/>
-            <text class="k fx fade" x="476" y="184" text-anchor="end" style="--d:4.3s;font-size:12px">intended band</text>
-            <path class="ln draw fx" pathLength="1" d="M250 184 L272 180 L294 182 L316 174 L338 170 L360 166 L382 158 L404 152 L426 144 L448 132 L470 124" style="--d:4.4s;--t:1.4s"/>
-            <path class="ln draw fx" pathLength="1" d="M520 186 L542 182 L564 184 L586 176 L608 172 L630 170 L652 162 L674 156 L696 150 L718 142 L740 136" style="--d:4.7s;--t:1.4s"/>
-            <rect class="f-washi grow fx" x="300" y="292" width="20" height="68" style="--d:5.0s"/>
-            <rect class="f-washi grow fx" x="330" y="286" width="20" height="74" style="--d:5.1s"/>
-            <rect class="f-washi grow fx" x="360" y="296" width="20" height="64" style="--d:5.2s"/>
-            <rect class="f-washi grow fx" x="390" y="284" width="20" height="76" style="--d:5.3s"/>
-            <rect class="f-washi grow fx" x="420" y="290" width="20" height="70" style="--d:5.4s"/>
-            <rect class="f-washi grow fx" x="450" y="288" width="20" height="72" style="--d:5.5s"/>
-            <rect class="f-washi grow fx" x="600" y="328.5" width="20" height="31.5" style="--d:5.6s"/>
-            <text class="k fx fade" x="610" y="377" text-anchor="middle" style="--d:5.6s;font-size:12px">1d</text>
-            <rect class="f-washi grow fx" x="630" y="306.0" width="20" height="54.0" style="--d:5.7s"/>
-            <text class="k fx fade" x="640" y="377" text-anchor="middle" style="--d:5.7s;font-size:12px">7d</text>
-            <rect class="f-washi grow fx" x="660" y="288.0" width="20" height="72.0" style="--d:5.8s"/>
-            <text class="k fx fade" x="670" y="377" text-anchor="middle" style="--d:5.8s;font-size:12px">30d</text>
-            <rect class="f-washi grow fx" x="690" y="277.2" width="20" height="82.8" style="--d:5.9s"/>
-            <text class="k fx fade" x="700" y="377" text-anchor="middle" style="--d:5.9s;font-size:12px">90d</text>
-            <rect class="f-washi grow fx" x="720" y="270.0" width="20" height="90.0" style="--d:6.0s"/>
-            <text class="k fx fade" x="730" y="377" text-anchor="middle" style="--d:6.0s;font-size:12px">>90d</text>
-            <g class="fx fade" style="--d:6s">
-              <path class="ln dash" d="M250 140 H480 M520 130 H750 M250 335 H480 M520 342 H750" style="stroke-width:1.25"/>
-              <text class="k" x="252" y="134">budget</text>
-              <text class="k" x="522" y="124">limit</text>
-              <text class="k" x="252" y="331" style="font-size:13px">minimum</text>
-              <text class="k" x="522" y="338" style="font-size:13px">stressed calls</text>
+            <!-- tracking error: a dial from 0 to 5%, the intended band shaded and the budget marked at 4.0% -->
+            <path class="fx fade" d="M293 188 A72 72 0 0 1 437 188" style="--d:2.58s;fill:none;stroke:var(--grid);stroke-width:12"/>
+            <path class="fx fade" d="M342.8 119.5 A72 72 0 0 1 423.2 145.7" style="--d:2.64s;fill:none;stroke:var(--washi);stroke-width:12"/>
+            <text class="k fx fade" x="392" y="104" text-anchor="middle" style="--d:2.64s;font-size:11.5px">intended band</text>
+            <path class="ln draw fx" pathLength="1" d="M365 188 L427 172.1" style="--d:2.76s;--t:0.54s;stroke-width:2"/>
+            <circle class="f-ink fx pop" cx="365" cy="188" r="4" style="--d:2.76s"/>
+            <text class="fx fade" x="365" y="170" text-anchor="middle" style="--d:3.12s;font-size:17px">4.6%</text>
+            <path class="ln draw fx" pathLength="1" d="M520 186 L542 182 L564 184 L586 176 L608 172 L630 170 L652 162 L674 156 L696 150 L718 142 L740 136" style="--d:2.82s;--t:0.84s"/>
+            <!-- performance attribution: active return built up by source, as a waterfall -->
+            <rect class="f-washi grow fx" x="282" y="317" width="30" height="35" style="--d:3s"/>
+            <rect class="f-washi grow fx" x="327" y="289" width="30" height="28" style="--d:3.12s"/>
+            <rect class="f-washi grow fx" x="372" y="268" width="30" height="21" style="--d:3.24s"/>
+            <rect class="f-nez grow fx" x="427" y="268" width="30" height="84" style="--d:3.36s"/>
+            <path class="hair dash fx fade" d="M312 317 H327 M357 289 H372 M402 268 H427" style="--d:3.36s"/>
+            <path class="rule fx fade" d="M276 352 H463" style="--d:3s"/>
+            <text class="fx fade" x="442" y="286" text-anchor="middle" style="--d:3.42s;font-size:12px">+1.2%</text>
+            <text class="k fx fade" x="297" y="374" text-anchor="middle" style="--d:3s;font-size:12px">tilt</text>
+            <text class="k fx fade" x="342" y="374" text-anchor="middle" style="--d:3.12s;font-size:12px">unintended</text>
+            <text class="k fx fade" x="387" y="388" text-anchor="middle" style="--d:3.24s;font-size:12px">alpha</text>
+            <path class="hair fx fade" d="M387 362 V377" style="--d:3.24s"/>
+            <text class="k fx fade" x="442" y="374" text-anchor="middle" style="--d:3.36s;font-size:12px">total</text>
+            <!-- exposure: a donut by asset class -->
+            <g transform="rotate(-90 610 306)">
+              <circle class="fx fade" cx="610" cy="306" r="38" style="--d:3.36s;fill:none;stroke:var(--washi);stroke-width:16;stroke-dasharray:143.26 238.76"/>
+              <circle class="fx fade" cx="610" cy="306" r="38" style="--d:3.45s;fill:none;stroke:var(--nezumi);stroke-width:16;stroke-dasharray:71.63 238.76;stroke-dashoffset:-143.26"/>
+              <circle class="fx fade" cx="610" cy="306" r="38" style="--d:3.54s;fill:none;stroke:var(--ink);stroke-width:16;stroke-dasharray:23.88 238.76;stroke-dashoffset:-214.89"/>
             </g>
-            <text class="k fx fade" x="250" y="222" style="--d:7.4s">Draft: 4.6% against a 4.0% budget</text>
-            <text class="k fx fade" x="520" y="222" style="--d:7.8s">Draft: VaR at 96% of its limit</text>
-            <path class="lnb draw fx" pathLength="1" d="M433 140 L448 132 L470 124" style="--d:9.2s;--t:.5s;stroke-width:3"/>
-            <circle class="f-beni fx pop" cx="470" cy="124" r="5" style="--d:9.5s"/>
-            <text class="hd acc fx fade" x="480" y="84" text-anchor="end" style="--d:9.6s;font-size:15px">Exception</text>
-            <circle class="ln fx pop" cx="740" cy="136" r="8" style="--d:9.9s;stroke-width:1.5"/>
-            <text class="hd fx fade" x="750" y="84" text-anchor="end" style="--d:10s;font-size:15px">Watch</text>
-            <text class="k fx fade" x="480" y="250" text-anchor="end" style="--d:10.3s">within</text>
-            <text class="k fx fade" x="750" y="250" text-anchor="end" style="--d:10.4s">within</text>
+            <rect class="f-washi fx fade" x="664" y="282" width="8" height="8" style="--d:3.36s"/>
+            <text class="k fx fade" x="678" y="290" style="--d:3.36s;font-size:12px">equity 60%</text>
+            <rect class="f-nez fx fade" x="664" y="300" width="8" height="8" style="--d:3.45s"/>
+            <text class="k fx fade" x="678" y="308" style="--d:3.45s;font-size:12px">bonds 30%</text>
+            <rect class="f-ink fx fade" x="664" y="318" width="8" height="8" style="--d:3.54s"/>
+            <text class="k fx fade" x="678" y="326" style="--d:3.54s;font-size:12px">cash 10%</text>
+            <g class="fx fade" style="--d:3.6s">
+              <path class="ln dash" d="M520 130 H750 M413.5 152.7 L434.6 137.4" style="stroke-width:1.25"/>
+              <text class="k" x="440" y="130" style="font-size:12px">budget</text>
+              <text class="k" x="522" y="124">limit</text>
+            </g>
+            <text class="k fx fade" x="250" y="222" style="--d:4.44s">Draft: 4.6% against a 4.0% budget</text>
+            <text class="k fx fade" x="520" y="222" style="--d:4.68s">Draft: VaR at 96% of its limit</text>
+            <path class="lnb draw fx" pathLength="1" d="M365 188 L427 172.1" style="--d:5.52s;--t:0.3s;stroke-width:3"/>
+            <circle class="f-beni fx pop" cx="427" cy="172" r="5" style="--d:5.7s"/>
+            <text class="hd acc fx fade" x="480" y="84" text-anchor="end" style="--d:5.76s;font-size:15px">Exception</text>
+            <circle class="ln fx pop" cx="740" cy="136" r="8" style="--d:5.94s;stroke-width:1.5"/>
+            <text class="hd fx fade" x="750" y="84" text-anchor="end" style="--d:6s;font-size:15px">Watch</text>
+            <text class="k fx fade" x="480" y="250" text-anchor="end" style="--d:6.18s">within</text>
+            <text class="k fx fade" x="750" y="250" text-anchor="end" style="--d:6.24s">within</text>
           </g>
 
           <!-- phase 5: two exchanges between the risk manager and the AI -->
           <g id="rail-links"></g>
           <g id="talk"></g>
 
-          <g class="fx fade" style="--d:0s"><g class="fx out" style="--d:3.4s;--t:.4s"><rect class="f-beni" x="250" y="31" width="8" height="8"/><text class="hd" x="264" y="40" style="font-size:15px">Data arrives: every portfolio, every domain</text></g></g>
-          <g class="fx fade" style="--d:3.4s"><g class="fx out" style="--d:7s;--t:.4s"><rect class="f-beni" x="250" y="31" width="8" height="8"/><text class="hd" x="264" y="40" style="font-size:15px">The engine computes every measure against its limit</text></g></g>
-          <g class="fx fade" style="--d:7s"><g class="fx out" style="--d:11.4s;--t:.4s"><rect class="f-beni" x="250" y="31" width="8" height="8"/><text class="hd" x="264" y="40" style="font-size:15px">The engine triages; the AI investigates and drafts</text></g></g>
-          <g class="fx fade" style="--d:11.4s"><g class="fx out" style="--d:27.6s;--t:.4s"><rect class="f-beni" x="250" y="31" width="8" height="8"/><text class="hd" x="264" y="40" style="font-size:15px">The risk manager prioritises and works the flags through</text></g></g>
-          <g class="fx fade" style="--d:27.6s"><rect class="f-beni" x="250" y="31" width="8" height="8"/><text class="hd" x="264" y="40" style="font-size:15px">Every flag ends traced, explained and decided</text></g>
-          <path class="hair fx fade" d="M40 430 H760" style="--d:28.2s"/>
-          <text class="hd fx fade" x="40" y="452" style="--d:28.4s;font-size:14px">Data</text>
-          <text class="k fx fade" x="40" y="470" style="--d:28.4s;font-size:12.5px">eleven domains</text>
-          <text class="s fx fade" x="40" y="487" style="--d:28.4s;font-size:12.5px">versioned as known</text>
-          <path class="ln fx fade" d="M151 447 H173" marker-end="url(#ah1-ink)" style="--d:28.60s"/>
-          <text class="hd fx fade" x="185" y="452" style="--d:28.75s;font-size:14px">Measure</text>
-          <text class="k fx fade" x="185" y="470" style="--d:28.75s;font-size:12.5px">analytics engine</text>
-          <text class="s fx fade" x="185" y="487" style="--d:28.75s;font-size:12.5px">reproducible run</text>
-          <path class="ln fx fade" d="M301 447 H323" marker-end="url(#ah1-ink)" style="--d:28.95s"/>
-          <text class="hd fx fade" x="335" y="452" style="--d:29.099999999999998s;font-size:14px">Triage</text>
-          <text class="k fx fade" x="335" y="470" style="--d:29.099999999999998s;font-size:12.5px">analytics engine</text>
-          <text class="s fx fade" x="335" y="487" style="--d:29.099999999999998s;font-size:12.5px">against its limit</text>
-          <path class="ln fx fade" d="M446 447 H468" marker-end="url(#ah1-ink)" style="--d:29.30s"/>
-          <text class="hd fx fade" x="480" y="452" style="--d:29.45s;font-size:14px">Explanation</text>
-          <text class="k fx fade" x="480" y="470" style="--d:29.45s;font-size:12.5px;fill:var(--ai)">AI, then grounding check</text>
-          <text class="s fx fade" x="480" y="487" style="--d:29.45s;font-size:12.5px">every number traced</text>
-          <path class="ln fx fade" d="M606 447 H628" marker-end="url(#ah1-ink)" style="--d:29.65s"/>
-          <text class="hd fx fade" x="640" y="452" style="--d:29.799999999999997s;font-size:14px">Decision</text>
-          <text class="k fx fade" x="640" y="470" style="--d:29.799999999999997s;font-size:12.5px">risk manager</text>
-          <text class="s fx fade" x="640" y="487" style="--d:29.799999999999997s;font-size:12.5px">who, what and why</text>
+          <g class="fx fade" style="--d:0s"><g class="fx out" style="--d:2.04s;--t:0.24s"><rect class="f-beni" x="250" y="31" width="8" height="8"/><text class="hd" x="264" y="40" style="font-size:15px">Data arrives: every portfolio, every domain</text></g></g>
+          <g class="fx fade" style="--d:2.04s"><g class="fx out" style="--d:4.2s;--t:0.24s"><rect class="f-beni" x="250" y="31" width="8" height="8"/><text class="hd" x="264" y="40" style="font-size:15px">The engine computes every measure against its limit</text></g></g>
+          <g class="fx fade" style="--d:4.2s"><g class="fx out" style="--d:6.84s;--t:0.24s"><rect class="f-beni" x="250" y="31" width="8" height="8"/><text class="hd" x="264" y="40" style="font-size:15px">The engine triages; the AI investigates and drafts</text></g></g>
+          <g class="fx fade" style="--d:6.84s"><g class="fx out" style="--d:23.04s;--t:.4s"><rect class="f-beni" x="250" y="31" width="8" height="8"/><text class="hd" x="264" y="40" style="font-size:15px">The risk manager prioritises and works the flags through</text></g></g>
+          <g class="fx fade" style="--d:23.04s"><rect class="f-beni" x="250" y="31" width="8" height="8"/><text class="hd" x="264" y="40" style="font-size:15px">Every flag ends traced, explained and decided</text></g>
+          <path class="hair fx fade" d="M40 430 H760" style="--d:23.64s"/>
+          <text class="hd fx fade" x="40" y="452" style="--d:23.84s;font-size:14px">Data</text>
+          <text class="k fx fade" x="40" y="470" style="--d:23.84s;font-size:12.5px">eleven domains</text>
+          <text class="s fx fade" x="40" y="487" style="--d:23.84s;font-size:12.5px">versioned as known</text>
+          <path class="ln fx fade" d="M151 447 H173" marker-end="url(#ah1-ink)" style="--d:24.04s"/>
+          <text class="hd fx fade" x="185" y="452" style="--d:24.19s;font-size:14px">Measure</text>
+          <text class="k fx fade" x="185" y="470" style="--d:24.19s;font-size:12.5px">analytics engine</text>
+          <text class="s fx fade" x="185" y="487" style="--d:24.19s;font-size:12.5px">reproducible run</text>
+          <path class="ln fx fade" d="M301 447 H323" marker-end="url(#ah1-ink)" style="--d:24.39s"/>
+          <text class="hd fx fade" x="335" y="452" style="--d:24.54s;font-size:14px">Triage</text>
+          <text class="k fx fade" x="335" y="470" style="--d:24.54s;font-size:12.5px">analytics engine</text>
+          <text class="s fx fade" x="335" y="487" style="--d:24.54s;font-size:12.5px">against its limit</text>
+          <path class="ln fx fade" d="M446 447 H468" marker-end="url(#ah1-ink)" style="--d:24.74s"/>
+          <text class="hd fx fade" x="480" y="452" style="--d:24.89s;font-size:14px">Explanation</text>
+          <text class="k fx fade" x="480" y="470" style="--d:24.89s;font-size:12.5px;fill:var(--ai)">AI, then grounding check</text>
+          <text class="s fx fade" x="480" y="487" style="--d:24.89s;font-size:12.5px">every number traced</text>
+          <path class="ln fx fade" d="M606 447 H628" marker-end="url(#ah1-ink)" style="--d:25.09s"/>
+          <text class="hd fx fade" x="640" y="452" style="--d:25.24s;font-size:14px">Judgement</text>
+          <text class="k fx fade" x="640" y="470" style="--d:25.24s;font-size:12.5px">risk manager</text>
+          <text class="s fx fade" x="640" y="487" style="--d:25.24s;font-size:12.5px">recorded, with the reason</text>
 
           </g>
         </svg>
 
         <!-- 2 Two purposes, three decisions, each shown as one concrete moment -->
-        <svg class="scene" viewBox="0 0 800 560" role="img" aria-label="Two purposes: challenge and serve. Before the trade a what-if shows a trade adds 0.4 points of tracking error within budget; during, a daily reading stays within its limit; after, attribution splits active return and tests whether alpha is skill." hidden>
+        <svg class="scene" viewBox="0 0 800 560" role="img" aria-label="Two purposes: challenge and serve. Before the trade a what-if shows a trade adds 0.4 points of tracking error within budget; during, a daily reading stays within its limit; after, attribution splits active return and tests whether alpha is skill, and the risk manager challenges what it shows at the review." hidden>
           <text class="hl" x="30" y="30"><tspan class="acc" font-weight="700">Balance:</tspan> oversight escalates, service informs, the portfolio manager decides.</text>
           <text class="s" x="30" y="52" style="font-size:15px">Why does an asset manager need a risk function, and what does it do around each trade?</text>
           <g transform="translate(0 60)">
@@ -375,7 +385,8 @@ figure { margin: 0; }
           <text class="k fx fade" x="640" y="146" text-anchor="middle" style="--d:2.9s">After</text>
           <rect class="f-ink fx pop" x="155" y="155" width="10" height="10" style="--d:2.2s"/>
           <rect class="f-beni fx pop" x="395" y="155" width="10" height="10" style="--d:2.6s"/>
-          <rect class="f-ink fx pop" x="635" y="155" width="10" height="10" style="--d:3s"/>
+          <rect class="f-ink fx pop" x="635" y="155" width="5" height="10" style="--d:3s"/>
+          <rect class="f-beni fx pop" x="640" y="155" width="5" height="10" style="--d:3s"/>
           <text class="t fx rise" x="160" y="196" text-anchor="middle" style="--d:2.4s">Construct</text>
           <text class="t fx rise" x="400" y="196" text-anchor="middle" style="--d:2.8s">Oversee</text>
           <text class="t fx rise" x="640" y="196" text-anchor="middle" style="--d:3.2s">Assess</text>
@@ -432,8 +443,8 @@ figure { margin: 0; }
           <text class=" fx fade" x="290" y="418" style="--d:12.65s;font-size:13.5px">Within the limit, it informs;</text>
           <text class=" fx fade" x="290" y="435" style="--d:12.65s;font-size:13.5px">beyond it, it escalates.</text>
           <text class="k fx fade" x="530" y="400" style="--d:12.9s;font-size:12px">who decides</text>
-          <text class=" fx fade" x="530" y="418" style="--d:12.9s;font-size:13.5px">Investment oversight acts on</text>
-          <text class=" fx fade" x="530" y="435" style="--d:12.9s;font-size:13.5px">evidence of skill, not luck.</text>
+          <text class=" fx fade" x="530" y="418" style="--d:12.9s;font-size:13.5px">Risk challenges at the review;</text>
+          <text class=" fx fade" x="530" y="435" style="--d:12.9s;font-size:13.5px">oversight acts on skill, not luck.</text>
           <path class="hair fx fade" d="M40 452 H760" style="--d:13.3s"/>
           <text class="s fx fade" x="400" y="474" text-anchor="middle" style="--d:13.4s;font-size:14px">Both purposes read the same measures, computed once by the analytics engine;</text>
           <text class="s fx fade" x="400" y="492" text-anchor="middle" style="--d:13.5s;font-size:14px">independence from the investment teams is what makes the service credible.</text>
@@ -443,7 +454,7 @@ figure { margin: 0; }
 
         <!-- 3 One set of numbers: the portfolio manager and the risk manager run the same what-if, see the same figures,
              open one to its rule, data and run, then talk about the trade; the portfolio manager makes the call -->
-        <svg class="scene" viewBox="0 0 800 560" role="img" aria-label="Before a trade, the portfolio manager and the risk manager run the same what-if through the analytics engine, buying 2% of one stock, and see the same figures: tracking error from 3.2% to 3.6%, budget use from 80% to 90% of 4.0%, and coverage at 7 days from 1.6 to 1.5 times. The figure 3.6% opens to the rule, the data and the run behind it. The talk turns to the trade: a rerun at 1.5% gives 3.5%, 88% of the budget, and the portfolio manager buys 1.5%." hidden>
+        <svg class="scene" viewBox="0 0 800 560" role="img" aria-label="Before a trade, the portfolio manager and the risk manager run the same what-if through the analytics engine, buying 2% of one stock, and see the same figures: tracking error from 3.2% to 3.6%, budget use from 80% to 90% of 4.0%, and coverage at 7 days from 1.6 to 1.5 times. The figure 3.6% opens to the rule, the data and the run behind it. The talk turns to the trade: a rerun at 1.5% gives 3.5%, 88% of the budget, and the portfolio manager buys 1.5%, keeping room in the budget, as a meter of budget use shows." hidden>
           <defs>
             <marker id="ah3-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" style="fill:var(--ink)"/></marker>
           </defs>
@@ -457,8 +468,10 @@ figure { margin: 0; }
           <text class="hd fx fade" x="760" y="28" text-anchor="end" style="--d:1.2s">Risk manager</text>
           <text class="s fx fade" x="760" y="48" text-anchor="end" style="--d:1.3s;font-size:14px">runs the same what-if</text>
           <text class="fx fade" x="400" y="34" text-anchor="middle" style="--d:.6s;font-size:15px">Buy 2% of one stock</text>
-          <path class="ln draw fx" pathLength="1" d="M120 58 C 160 100, 300 100, 360 112" marker-end="url(#ah3-ink)" style="--d:.8s;--t:.7s"/>
-          <path class="ln draw fx" pathLength="1" d="M680 58 C 640 100, 500 100, 440 112" marker-end="url(#ah3-ink)" style="--d:1.6s;--t:.7s"/>
+          <path class="ln draw fx" pathLength="1" d="M120 58 C 160 100, 300 100, 360 112" style="--d:.8s;--t:.7s"/>
+          <path class="ln fx fade" d="M352 110.4 L360 112" marker-end="url(#ah3-ink)" style="--d:1.45s;--t:.2s"/>
+          <path class="ln draw fx" pathLength="1" d="M680 58 C 640 100, 500 100, 440 112" style="--d:1.6s;--t:.7s"/>
+          <path class="ln fx fade" d="M448 110.4 L440 112" marker-end="url(#ah3-ink)" style="--d:2.25s;--t:.2s"/>
 
           <!-- one analysis, one snapshot -->
           <path class="rule draw fx" pathLength="1" d="M310 104 H490" style="--d:2.2s"/>
@@ -514,6 +527,22 @@ figure { margin: 0; }
           <text class="s fx rise" x="190" y="398" style="--d:8.8s;font-size:14px">At 2% it uses 90% of the budget. What does 1.5% use?</text>
           <text class="k fx fade" x="40" y="420" style="--d:10s;font-size:12.5px">Analytics engine</text>
           <text class="s fx rise" x="190" y="420" style="--d:10s;font-size:14px">Rerun at 1.5%: tracking error 3.5%, 88% of the budget.</text>
+          <!-- the budget meter: 80% used now, 90% at 2%, 88% at 1.5%, with room left -->
+          <g class="fx fade" style="--d:8.8s">
+            <text class="k" x="600" y="396" style="font-size:12px">Budget used</text>
+            <rect x="600" y="404" width="160" height="12" style="fill:var(--grid)"/>
+            <path class="ln dash" d="M760 398 V422" style="stroke-width:1.25"/>
+          </g>
+          <rect class="f-washi fx growx" x="600" y="404" width="128" height="12" style="--d:8.9s;--t:.6s"/>
+          <text class="fx fade" x="604" y="414" style="--d:9.3s;font-size:10.5px">now 80%</text>
+          <g class="fx fade" style="--d:9.4s"><g class="fx out" style="--d:10s;--t:.4s">
+            <rect class="f-nez" x="728" y="404" width="16" height="12"/>
+            <text class="k" x="760" y="436" text-anchor="end" style="font-size:12px">at 2%: 90%</text>
+          </g></g>
+          <rect class="f-ink fx growx" x="728" y="404" width="12.8" height="12" style="--d:10.3s;--t:.4s"/>
+          <text class="k fx fade" x="760" y="436" text-anchor="end" style="--d:10.3s;font-size:12px">at 1.5%: 88%</text>
+          <path class="lnb fx draw" pathLength="1" d="M741 402 V398 H759 V402" style="--d:11.6s;--t:.4s;stroke-width:1.25"/>
+          <text class="k acc fx fade" x="736" y="396" text-anchor="end" style="--d:11.7s;font-size:12px">room left</text>
           <rect class="f-beni fx pop" x="40" y="436" width="8" height="8" style="--d:11.3s"/>
           <text class="hd fx fade" x="56" y="445" style="--d:11.3s;font-size:14px">The portfolio manager decides</text>
           <text class="t2 fx rise" x="300" y="446" style="--d:11.5s">Buy 1.5%, and keep room in the budget.</text>
@@ -523,7 +552,7 @@ figure { margin: 0; }
         </svg>
 
         <!-- 4 Pillars, each labelled with the decisions it serves: market and performance on one timeline, a liquidity stress day, and the integrated view combining signals -->
-        <svg class="scene" viewBox="0 0 800 560" role="img" aria-label="Market and liquidity risk serve the Construct and Oversee decisions; performance risk and the integrated view serve Oversee and Assess. Performance risk looks back and market risk looks forward from today, each forecast tested against its outcome. On a stress day, calls of 15% are covered 1.6 times by what can be sold within 7 days. Three watch items on one portfolio combine, and the integrated view puts it first." hidden>
+        <svg class="scene" viewBox="0 0 800 560" role="img" aria-label="Market and liquidity risk serve the Construct and Oversee decisions; performance risk and the integrated view serve Oversee and Assess. Performance risk looks back and market risk looks forward from today, each forecast tested against its outcome. On a stress day, calls of 15% are covered 1.6 times by what can be sold within 7 days. Three watch items on one portfolio, a widening shortfall, rising outflows with falling coverage, and rising issuer concentration, match the redemption spiral, and the integrated view puts it first in the queue." hidden>
           <text class="hl" x="30" y="30"><tspan class="acc" font-weight="700">Connection:</tspan> forecasts tested against outcomes, signals joined across pillars.</text>
           <text class="s" x="30" y="52" style="font-size:15px">What does each pillar watch, and what do they see together that none sees alone?</text>
           <g transform="translate(0 60)">
@@ -573,14 +602,14 @@ figure { margin: 0; }
           <text class="k fx fade" x="556" y="266" style="--d:8.35s;font-size:12.5px">Oversee, Assess</text>
           <text class="s fx fade" x="420" y="287" style="--d:8.4s;font-size:15px">Portfolio 22: three watch items, no exception</text>
           <rect class="f-washi ln fx pop" x="420" y="303" width="10" height="10" style="stroke-width:1;--d:8.8s"/>
-          <text class="s fx fade" x="438" y="313" style="--d:8.8s;font-size:14px">Market: VaR at 96% of its limit</text>
+          <text class="s fx fade" x="438" y="313" style="--d:8.8s;font-size:14px">Performance: shortfall widening</text>
           <rect class="f-washi ln fx pop" x="420" y="327" width="10" height="10" style="stroke-width:1;--d:9.4s"/>
-          <text class="s fx fade" x="438" y="337" style="--d:9.4s;font-size:14px">Liquidity: coverage falling for three weeks</text>
+          <text class="s fx fade" x="438" y="337" style="--d:9.4s;font-size:14px">Liquidity: outflows rising, coverage falling</text>
           <rect class="f-washi ln fx pop" x="420" y="351" width="10" height="10" style="stroke-width:1;--d:10s"/>
-          <text class="s fx fade" x="438" y="361" style="--d:10s;font-size:14px">Performance: shortfall widening</text>
+          <text class="s fx fade" x="438" y="361" style="--d:10s;font-size:14px">Market: issuer concentration rising</text>
           <path class="ln draw fx" pathLength="1" d="M736 302 H748 V362 H736 M748 332 H756 V391 H744" style="--d:10.6s;--t:.7s"/>
           <rect class="f-beni fx pop" x="420" y="386" width="10" height="10" style="--d:11.3s"/>
-          <text class="hd acc fx fade" x="438" y="396" style="--d:11.4s;font-size:15px">First in the queue, before any pillar escalates</text>
+          <text class="hd acc fx fade" x="438" y="396" style="--d:11.4s;font-size:15px">Redemption spiral: first in the queue</text>
 
           <text class="k fx fade" x="230" y="172" text-anchor="middle" style="--d:1.4s;font-size:12.5px">what did happen</text>
           <text class="k fx fade" x="560" y="82" text-anchor="middle" style="--d:2.9s;font-size:12.5px">the range of what could happen</text>
@@ -657,7 +686,7 @@ figure { margin: 0; }
 
         <!-- 6 Limits and escalation: the lifecycle loop around the analytics engine and the AI; dotted lines show who is
              involved at each stage; AI shortcuts close what needs no decision; red side tracks escalate -->
-        <svg class="scene" style="--k:1.5" viewBox="0 0 800 560" role="img" aria-label="The breach lifecycle as a continuous loop around the analytics engine and the AI. Dotted lines show who is involved at each stage: the engine detects; the engine verifies and classifies, the AI explains what the checks found and the risk manager confirms; the AI sends a routine notice under a rule and the risk manager reviews it, with the portfolio manager, investment oversight and the head of risk told; the portfolio manager explains it, the AI tests the explanation against the data, and the portfolio manager decides, with the head of risk approving any acceptance; the portfolio manager rectifies while the engine tracks; the risk manager reports the close to the head of risk. The AI closes a breach that came from a data break. Where the risk manager disagrees, the breach goes to the risk committee, a committee of the executive committee, whose decision binds; what it cannot resolve goes to the executive committee, and the board is the last resort. A hard limit breach goes to compliance the same day." hidden>
+        <svg class="scene" style="--k:1.5" viewBox="0 0 800 560" role="img" aria-label="The breach lifecycle as a continuous loop around the analytics engine and the AI. Dotted lines show who is involved at each stage: the engine detects; the engine verifies and classifies, the AI explains what the checks found and the risk manager confirms; the AI sends a routine notice under a rule and the risk manager reviews it, with the portfolio manager, investment oversight and the head of risk told; the portfolio manager explains it, the AI tests the explanation against the data, and the portfolio manager decides, with the head of risk approving any acceptance; the portfolio manager rectifies while the engine tracks; the risk manager reports the close to the head of risk. The AI closes a breach that came from a data break. Where the risk manager disagrees, the breach goes to the risk committee, a committee of the executive committee, whose decision binds; what it cannot resolve goes to the executive committee, and the board is the last resort. An overdue rectification goes from the engine to the head of risk the same day, who requires it or extends the deadline once. A hard limit breach goes to compliance the same day." hidden>
           <defs>
             <marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" style="fill:var(--ink)"/></marker>
             <marker id="ah-beni" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" style="fill:var(--beni)"/></marker>
@@ -681,7 +710,7 @@ figure { margin: 0; }
         <!-- 7 Rebuilt around AI: one exception from flag to judgement. The engine flags and runs the analyses set for the
              rule, one of them resting on a record the AI read from minutes; the AI chooses one follow-up and drafts; the
              grounding check passes the draft; the risk manager judges -->
-        <svg class="scene" viewBox="0 0 800 560" role="img" aria-label="One exception from flag to judgement. The analytics engine flags Fund A's VaR at 2.31%, 92% of its limit, after a rise of 0.47 in one day, and runs the analyses set for a VaR exception: the technology basket gave 0.29 of the rise, the same driver appears in 3 of 40 portfolios, and the overweight is a tilt on record, read earlier by the AI from committee minutes and confirmed by the risk manager. The AI follows up, splitting the basket's 0.29 into a larger position, 0.21, and higher volatility, 0.08, and drafts. The draft passes the grounding check on its numbers, its causes, its quantifier and its severity. The risk manager judges: a tilt on record, but the position grew and other portfolios share the driver, so they ask the portfolio manager whether the larger size and the crowding are intended." hidden>
+        <svg class="scene" viewBox="0 0 800 560" role="img" aria-label="One exception from flag to judgement. The analytics engine flags Fund A's VaR at 2.31%, 92% of its limit, after a rise of 0.47 in one day, and runs the analyses set for a VaR exception: the technology basket gave 0.29 of the rise, the same driver appears in 3 of 40 portfolios, and the overweight is a tilt on record, read earlier by the AI from committee minutes and confirmed by the risk manager. The AI follows up, splitting the basket's 0.29 into a larger position, 0.21, and higher volatility, 0.08, and drafts. The draft passes the grounding check on its numbers, its causes, its quantifier and its severity, though it leaves out the energy basket's 0.12, which no check catches. The risk manager asks what was left out, and judges: a tilt on record, but the position grew and other portfolios share the driver, so they ask the portfolio manager whether the larger size and the crowding are intended." hidden>
           <defs>
             <marker id="ah-ink6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" style="fill:var(--ink)"/></marker>
             <marker id="ah-ai6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" style="fill:var(--ai)"/></marker>
@@ -711,8 +740,9 @@ figure { margin: 0; }
           <text class="k fx fade" x="196" y="90" style="--d:2.8s;font-size:12.5px">runs the analyses set for the rule</text>
           <rect class="f-ink fx pop" x="196" y="166" width="9" height="9" style="--d:3s"/>
           <path class="ln fx fade" d="M205 170 C 215 170, 213 124, 223 124" marker-end="url(#ah-ink6)" style="--d:3.2s;--t:.4s;stroke-width:1.25"/>
-          <text class="fx fade" x="229" y="122" style="--d:3.4s;font-size:12.5px">Decomposition: the</text>
-          <text class="s fx fade" x="229" y="138" style="--d:3.4s;font-size:12.5px">technology basket, +0.29</text>
+          <text class="fx fade" x="229" y="112" style="--d:3.4s;font-size:12.5px">Decomposition:</text>
+          <text class="s fx fade" x="229" y="128" style="--d:3.4s;font-size:12.5px">technology basket +0.29</text>
+          <text class="s fx fade" x="229" y="144" style="--d:3.5s;font-size:12.5px">energy basket +0.12</text>
           <path class="ln fx fade" d="M205 170 H223" marker-end="url(#ah-ink6)" style="--d:3.9s;--t:.4s;stroke-width:1.25"/>
           <text class="fx fade" x="229" y="168" style="--d:4.1s;font-size:12.5px">Run 1: the same driver</text>
           <text class="s fx fade" x="229" y="184" style="--d:4.1s;font-size:12.5px">in 3 of 40 portfolios</text>
@@ -767,14 +797,18 @@ figure { margin: 0; }
             <text x="632" y="154" style="font-size:12.5px">3 portfolios share</text>
             <text x="632" y="172" style="font-size:12.5px">the driver.</text>
           </g>
-          <g class="fx fade" style="--d:12.5s">
-            <text x="632" y="202" style="font-size:12.5px">Asks the portfolio</text>
-            <text x="632" y="220" style="font-size:12.5px">manager whether the</text>
-            <text x="632" y="238" style="font-size:12.5px">larger size and the</text>
-            <text x="632" y="256" style="font-size:12.5px">crowding are intended.</text>
+          <g class="fx fade" style="--d:12.4s">
+            <text class="acc" x="632" y="196" style="font-size:12.5px">Asks what the draft</text>
+            <text class="acc" x="632" y="214" style="font-size:12.5px">left out: energy, +0.12.</text>
           </g>
-          <rect class="f-beni fx pop" x="632" y="278" width="8" height="8" style="--d:12.9s"/>
-          <text class="hd fx fade" x="646" y="286" style="--d:12.9s;font-size:14px">The judgement</text>
+          <g class="fx fade" style="--d:12.8s">
+            <text x="632" y="244" style="font-size:12.5px">Asks the portfolio</text>
+            <text x="632" y="262" style="font-size:12.5px">manager whether the</text>
+            <text x="632" y="280" style="font-size:12.5px">larger size and the</text>
+            <text x="632" y="298" style="font-size:12.5px">crowding are intended.</text>
+          </g>
+          <rect class="f-beni fx pop" x="632" y="320" width="8" height="8" style="--d:13.1s"/>
+          <text class="hd fx fade" x="646" y="328" style="--d:13.1s;font-size:14px">The judgement</text>
 
           <path class="rule fx fade" d="M30 392 H382" style="--d:13.3s"/>
           <path class="fx fade" d="M410 392 H602" style="--d:13.5s;stroke:var(--ai);stroke-width:1"/>
@@ -834,20 +868,20 @@ figure { margin: 0; }
   document.documentElement.classList.toggle('embed', embed);
   document.documentElement.classList.toggle('solo', solo);
   const SCENES = [
-    { t: 'From data to judgement', i: 'Transparency', d: 34000,
+    { t: 'From data to judgement', i: 'Transparency', d: 29500,
       p: 'Every day the analytics engine takes in every portfolio\u2019s data, computes every measure, checks each against its limit and triages what needs attention. The AI investigates what the engine found and drafts from it. The risk manager prioritises, taking the exception first, and works the flags through with the AI: a challenged draft that turns stock selection into unintended value beta, then a breakdown that explains VaR near its limit. The result is transparency: every flag traced to its numbers, explained, and decided on the record.' },
     { t: 'Why a risk function exists', i: 'Balance', d: 15500,
-      p: 'A risk function challenges investment decisions against the mandate, and serves the investment team with insight into the risks it takes. The two purposes meet in three decisions: before the trade, a what-if shows what a position adds; during, every reading is checked against its limit; after, attribution splits the return and tests whether alpha is skill. Balance is holding both: independence is what makes the service credible.' },
+      p: 'A risk function challenges investment decisions against the mandate, and serves the investment team with insight into the risks it takes. The two purposes meet in three decisions: before the trade, a what-if shows what a position adds; during, every reading is checked against its limit; after, attribution splits the return and tests whether alpha is skill, and the risk manager challenges what it shows at the portfolio manager review. Balance is holding both: independence is what makes the service credible.' },
     { t: 'One set of numbers', i: 'Trust', d: 14000,
       p: 'Before a trade, the portfolio manager and the risk manager run the same what-if on the same governed analysis and see the same figures: buying 2% of one stock takes tracking error from 3.2% to 3.6%, 90% of the 4.0% budget, and coverage at 7 days from 1.6 to 1.5 times. Each figure opens to the rule, the data and the run behind it, so the logic is an open book and the talk is about the trade, not about whose numbers are right. A rerun at 1.5% uses 88% of the budget, and the portfolio manager buys 1.5%. Trust: one set of numbers, an open book, and the portfolio manager\u2019s risk-informed call.' },
     { t: 'What risk watches', i: 'Connection', d: 15000,
-      p: 'Each pillar serves its own decisions: market and liquidity risk construct and oversee, performance risk and the integrated view oversee and assess. Market risk looks forward from today\u2019s holdings; performance risk looks back at whether the promise is kept, and each forecast is tested against its outcome. Liquidity risk asks whether a stress day\u2019s calls can be met: here calls of 15% of net assets are covered 1.6 times by what can be sold within 7 days. The integrated view computes no measure of its own: three watch items on one portfolio combine, and it comes first before any one pillar would escalate. That is connection: forecasts tested against outcomes, and signals joined across pillars.' },
+      p: 'Each pillar serves its own decisions: market and liquidity risk construct and oversee, performance risk and the integrated view oversee and assess. Market risk looks forward from today\u2019s holdings; performance risk looks back at whether the promise is kept, and each forecast is tested against its outcome. Liquidity risk asks whether a stress day\u2019s calls can be met: here calls of 15% of net assets are covered 1.6 times by what can be sold within 7 days. The integrated view computes no measure of its own: three watch items on one portfolio, a widening shortfall, rising outflows with falling coverage and rising issuer concentration, match the redemption spiral, and it comes first before any one pillar would escalate. That is connection: forecasts tested against outcomes, and signals joined across pillars.' },
     { t: 'Where return comes from', i: 'Attribution', d: 10000,
       p: 'Two decisions drive the return: top-down views earn beta, and bottom-up selection earns alpha. Three portfolios split the return, and the increments add up exactly. The benchmark portfolio holds the indices the mandate sets; its return above the risk-free rate is policy beta, and belongs to whoever set the mandate. The top-down portfolio holds ETFs, futures and cash carrying all the real portfolio\u2019s exposure; the increment to it is active beta, credited to whoever recorded each tilt or timing call, and to nobody where no one did. The real portfolio adds alpha, which belongs to whoever selected the securities. Figures are illustrative. Attribution: the return split into parts that add up exactly, with each part traced to whoever chose it.' },
     { t: 'When a limit breaks', i: 'Governance', d: 23000,
       p: 'A typical breach. The analytics engine detects the breach; the engine verifies and classifies it, the AI explains what the checks found, and the risk manager confirms. Under a governed rule the AI sends the routine notice and the risk manager reviews it the same day, with the portfolio manager, investment oversight and the head of risk told. The portfolio manager explains it, the AI tests the explanation against the data, and the portfolio manager decides: rectify it, or accept it for a set period with the head of risk\u2019s approval. Where the decision is to rectify, the portfolio manager rectifies while the engine tracks; the risk manager reports the close to the head of risk. Monitoring carries on.' },
     { t: 'Rebuilt around AI', i: 'Augmentation', d: 17000,
-      p: 'One exception, from flag to judgement. The analytics engine flags Fund A\u2019s VaR at 2.31%, 92% of its limit, after a rise of 0.47 in one day, and runs the analyses set for a VaR exception: the decomposition, the same driver across other portfolios, and the tilts on record, one of which the AI read from committee minutes and the risk manager confirmed. The AI follows up where the findings point further, splitting the basket\u2019s 0.29 points into a larger position and higher volatility, and drafts. The draft passes the grounding check on its numbers, its causes, its quantifier and its severity. The risk manager judges what it means and puts the question to the portfolio manager, linked to the item in the shared record. Augmentation: the AI investigates and reads; people keep the judgement.' },
+      p: 'One exception, from flag to judgement. The analytics engine flags Fund A\u2019s VaR at 2.31%, 92% of its limit, after a rise of 0.47 in one day, and runs the analyses set for a VaR exception: the decomposition, the same driver across other portfolios, and the tilts on record, one of which the AI read from committee minutes and the risk manager confirmed. The AI follows up where the findings point further, splitting the basket\u2019s 0.29 points into a larger position and higher volatility, and drafts. The draft passes the grounding check on its numbers, its causes, its quantifier and its severity, yet it leaves out the energy basket\u2019s 0.12, which no check can catch. The risk manager asks what was left out, judges what it means and puts the question to the portfolio manager, linked to the item in the shared record. Augmentation: the AI investigates and reads; people keep the judgement.' },
   ];
 
   const el = (tag, attrs, parent, text) => {
@@ -871,31 +905,32 @@ figure { margin: 0; }
     const ex = 410, ey = 228;  /* the vanishing point: the data converges here; the square then slides to the centre of the charts */
     names.forEach((n, k) => {
       const a = (-90 + k * 360 / names.length) * Math.PI / 180;
-      const cx = 400 + 300 * Math.cos(a), cy = 232 + 180 * Math.sin(a);
+      const cx = 400 + 300 * Math.cos(a), cy = 250 + 160 * Math.sin(a);
       for (let i = 0; i < 16; i++) {
         const x = cx - 42 + rnd() * 84, y = cy - 20 + rnd() * 40;
         /* two red dots per pocket: the few readings that will turn out to matter */
         const hot = i === 4 || i === 11;
         el('circle', { cx: x.toFixed(1), cy: y.toFixed(1), r: hot ? '2.6' : (1.4 + rnd() * 1.5).toFixed(1), class: hot ? 'f-muted sinkhot' : 'f-muted sink',
-          style: `--dx:${(ex - x).toFixed(0)}px;--dy:${(ey - y).toFixed(0)}px;--d:${(0.6 + k * 0.08 + rnd() * 0.9).toFixed(2)}s` }, g);
+          style: `--dx:${(ex - x).toFixed(0)}px;--dy:${(ey - y).toFixed(0)}px;--d:${(0.6 * (0.6 + k * 0.08 + rnd() * 0.9)).toFixed(2)}s` }, g);
       }
-      const ly = cy <= 232 ? cy - 28 : cy + 38;
+      const ly = cy <= 250 ? cy - 28 : cy + 38;
       el('text', { x: cx.toFixed(1), y: ly.toFixed(1), 'text-anchor': 'middle', class: 'k', style: 'font-size:13px' }, f, n);
       /* lines stop at a box around the engine and its caption, so they never cross the text */
       const vx = cx - ex, vy = cy - ey, len = Math.hypot(vx, vy);
       const x0 = cx - vx / len * 30, y0 = cy - vy / len * 26, x1 = ex + vx / len * 22, y1 = ey + vy / len * 22;
       el('path', { d: `M${x0.toFixed(1)} ${y0.toFixed(1)} L${x1.toFixed(1)} ${y1.toFixed(1)}`, pathLength: 1, class: 'hair draw fx',
-        style: `--d:${(0.15 + k * 0.05).toFixed(2)}s;--t:.7s;stroke:var(--washi);stroke-width:1.5` }, f);
+        style: `--d:${(0.6 * (0.15 + k * 0.05)).toFixed(2)}s;--t:.42s;stroke:var(--washi);stroke-width:1.5` }, f);
     });
   })();
 
   /* Scene 1, phase 5: the risk manager and the AI work two flags through */
   (() => {
+    const T1 = d => +(d <= 11.4 ? d * 0.6 : d - 4.56).toFixed(2);  /* the scene's timeline, its opening shortened */
     const g = document.getElementById('talk');
     /* who is talking to whom, in the left rail: dotted arrows that flash at each turn */
     const RL = document.getElementById('rail-links');
     const link = (d, path, col, dir) => {
-      const at = { d: path, class: 'flash1', style: `fill:none;stroke:${col === 'ai' ? 'var(--ai)' : 'var(--ink)'};stroke-width:1.75;stroke-dasharray:2 3;--d:${d}s` };
+      const at = { d: path, class: 'flash1', style: `fill:none;stroke:${col === 'ai' ? 'var(--ai)' : 'var(--ink)'};stroke-width:1.75;stroke-dasharray:2 3;--d:${T1(d)}s` };
       const m = `url(#ah1-${col})`;
       if (dir !== 'start') at['marker-end'] = m;
       if (dir !== 'end') at['marker-start'] = m;
@@ -910,28 +945,28 @@ figure { margin: 0; }
     link(18.5, AI_RM, 'ink', 'start');   /* the risk manager asks the AI */
     link(19.4, ENG_AI, 'ai', 'both');    /* the AI runs VaR by factor through the engine */
     link(21.2, AI_RM, 'ink', 'end');     /* the AI answers the risk manager */
-    const who = (x, y, name, d) => el('text', { x, y, class: 'k fx fade', style: `--d:${d}s` }, g, name);
-    const say = (y, text, d, cls = 's') => el('text', { x: 360, y, class: `${cls} fx rise`, style: `--d:${d}s` }, g, text);
+    const who = (x, y, name, d) => el('text', { x, y, class: 'k fx fade', style: `--d:${T1(d)}s` }, g, name);
+    const say = (y, text, d, cls = 's') => el('text', { x: 360, y, class: `${cls} fx rise`, style: `--d:${T1(d)}s` }, g, text);
     /* the risk manager prioritises: the exception first */
     /* exchange A: tracking error over budget, a draft challenged, a cleaner attribution */
-    el('path', { d: 'M250 70 H760', class: 'rule fx draw', pathLength: 1, style: '--d:11.8s' }, g);
-    el('text', { x: 250, y: 92, class: 'hd fx fade', style: '--d:11.9s' }, g, 'Tracking error, over budget');
-    el('text', { x: 760, y: 92, 'text-anchor': 'end', class: 'hd acc fx fade', style: '--d:11.9s;font-size:15px' }, g, 'Exception, first');
+    el('path', { d: 'M250 70 H760', class: 'rule fx draw', pathLength: 1, style: '--d:7.24s' }, g);
+    el('text', { x: 250, y: 92, class: 'hd fx fade', style: '--d:7.34s' }, g, 'Tracking error, over budget');
+    el('text', { x: 760, y: 92, 'text-anchor': 'end', class: 'hd acc fx fade', style: '--d:7.34s;font-size:15px' }, g, 'Exception, first');
     who(250, 116, 'AI', 12.3); say(116, 'Draft: the rise comes from stock selection.', 12.3);
     who(250, 139, 'Risk manager', 13.5); say(139, 'Challenge: check that against the factors.', 13.5, 's acc');
     who(250, 162, 'AI', 14.9); say(162, 'Rerun by factor: value went from 0.5 to 1.1 points.', 14.9);
     say(184, 'No tilt is on record, so it is unintended beta.', 16.1);
     who(250, 206, 'Risk manager', 17.3); say(206, 'Ask the portfolio manager: was it intended?', 17.3, 't2');
     /* exchange B: VaR near its limit, broken down, acknowledged */
-    el('path', { d: 'M250 224 H760', class: 'rule fx draw', pathLength: 1, style: '--d:18s' }, g);
-    el('text', { x: 250, y: 246, class: 'hd fx fade', style: '--d:18.1s' }, g, 'VaR, near its limit');
-    el('text', { x: 760, y: 246, 'text-anchor': 'end', class: 'hd fx fade', style: '--d:18.1s;font-size:15px' }, g, 'Watch, next');
+    el('path', { d: 'M250 224 H760', class: 'rule fx draw', pathLength: 1, style: '--d:13.44s' }, g);
+    el('text', { x: 250, y: 246, class: 'hd fx fade', style: '--d:13.54s' }, g, 'VaR, near its limit');
+    el('text', { x: 760, y: 246, 'text-anchor': 'end', class: 'hd fx fade', style: '--d:13.54s;font-size:15px' }, g, 'Watch, next');
     who(250, 272, 'Risk manager', 18.5); say(272, 'Why is VaR this close to its limit?', 18.5);
     who(250, 298, 'AI', 19.4); say(298, 'VaR by factor, run through the analytics engine:', 19.4);
     const parts = [['rates', 45, 'f-washi'], ['equity', 30, 'f-line'], ['credit', 15, 'f-washi'], ['specific', 10, 'f-line']];
     let x = 360;
     parts.forEach(([n, v, f], i) => {
-      const w = v / 100 * 390, d = (20 + i * 0.25).toFixed(2);
+      const w = v / 100 * 390, d = T1(20 + i * 0.25).toFixed(2);
       el('rect', { x: x.toFixed(1), y: 308, width: w.toFixed(1), height: 14, class: `${f} fx growx`, style: `--d:${d}s;--t:.5s` }, g);
       el('path', { d: `M${x.toFixed(1)} 306 V324`, class: 'rule fx fade', style: `--d:${d}s` }, g);
       el('text', { x: (x + 4).toFixed(1), y: i % 2 ? 354 : 339, class: 'k fx fade', style: `--d:${d}s;font-size:13px` }, g, `${n} ${v}%`);
@@ -970,11 +1005,13 @@ figure { margin: 0; }
       typical: { label: 'Typical', route: [0, 1, 2, 3, 4, 5, 6, 7], back: true },
       false: { label: 'Data break', route: [0, 1], short: 'false', after: [7] },
       disagree: { label: 'Disputed', route: [0, 1, 2, 3, 4, 5], side: 'disagree' },
+      missed: { label: 'Overdue', route: [0, 1, 2, 3, 4, 5, 6], side: 'missed', after: [7] },
       hard: { label: 'Hard limit', route: [0, 1, 2, 3], side: 'hard', after: [6, 7] } };
     const TEXT = {
       typical: "A typical breach. The analytics engine detects the breach; the engine verifies and classifies it, the AI explains what the checks found, and the risk manager confirms. Under a governed rule the AI sends the routine notice and the risk manager reviews it the same day, with the portfolio manager, investment oversight and the head of risk told. The portfolio manager explains it, the AI tests the explanation against the data, and the portfolio manager decides: rectify it, or accept it for a set period with the head of risk's approval. Where the decision is to rectify, the portfolio manager rectifies while the engine tracks; the risk manager reports the close to the head of risk. Monitoring carries on. Governance: every stage has an owner, and every breach ends in a recorded decision.",
       false: "A data break. The engine detects a breach, and verification shows the reading came from a data break. The AI closes it with the record, and the risk manager reviews the closure the same day.",
       disagree: "A disputed breach. The risk manager disagrees with how the portfolio manager decides to handle the breach, so it goes straight to the risk committee, presented by the head of risk, and the committee's decision binds. The risk committee is a committee of the executive committee: what it cannot resolve goes up to the executive committee, where the chief executive and the investment and business heads settle it together. The board is the last resort.",
+      missed: "An overdue rectification. The portfolio manager decides to rectify, but the reading is still beyond the limit when the deadline passes. The analytics engine escalates it to the head of risk the same day, who requires the rectification or extends the deadline once, with a reason. Once the reading is back within the limit, the risk manager reports the close.",
       hard: "A hard limit breach: a limit set by the mandate or by regulation. After detection, verification and classification, it is reported to compliance the same day, and compliance writes the breach report. The decision is always to rectify: the portfolio manager rectifies while the engine tracks, and the breach closes." };
     const node = i => { const a = (-90 + i * 45) * Math.PI / 180; return [cx + r * Math.cos(a), cy + r * Math.sin(a), a]; };
     const clear = id => { const g = document.getElementById(id); while (g.firstChild) g.removeChild(g.firstChild); return g; };
@@ -1093,8 +1130,9 @@ figure { margin: 0; }
       const sideMissed = d => {
         /* the engine flags the missed deadline to the head of risk */
         el('path', { d: `M${cx + 70} 286 C 420 300, 520 290, 594 266`, 'marker-end': 'url(#ah-beni)', class: 'lnb fx fade', style: `--d:${d}s;stroke-dasharray:3 4;stroke-width:1.75` }, S2);
-        el('text', { x: 486, y: 312, class: 'k acc fx fade', style: `--d:${d}s;font-size:12px` }, S2, 'deadline missed');
-        el('text', { x: 600, y: 277, class: 'k fx fade', style: `--d:${(d + 0.4).toFixed(1)}s;font-size:12px` }, S2, 'requires rectification');
+        el('text', { x: 486, y: 312, class: 'k acc fx fade', style: `--d:${d}s;font-size:12px` }, S2, 'overdue');
+        el('text', { x: 600, y: 277, class: 'k fx fade', style: `--d:${(d + 0.4).toFixed(1)}s;font-size:12px` }, S2, 'require rectification,');
+        el('text', { x: 600, y: 291, class: 'k fx fade', style: `--d:${(d + 0.4).toFixed(1)}s;font-size:12px` }, S2, 'or extend once');
       };
       const sideHard = d => {
         el('path', { d: `M${(nx + 7).toFixed(1)} ${(ny - 6).toFixed(1)} C 560 330, 600 370, 610 410`, 'marker-end': 'url(#ah-beni)', class: 'lnb fx fade', style: `--d:${d}s;stroke-dasharray:3 4;stroke-width:1.75` }, S2);
