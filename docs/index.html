@@ -69,13 +69,13 @@ button.primary, button[aria-pressed="true"] { background: var(--ink); border-col
 button:disabled { opacity: 0.4; cursor: default; }
 :focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 footer { font: 400 12.5px/1.5 var(--sans); color: var(--faint); border-top: 1px solid var(--line); padding-top: 16px; }
+footer p { max-width: none; }   /* footers are short reference text: they may use the whole column */
 figure { margin: 0; }
 
 /* Layout: the stage beside a narration column, with the control row full width beneath; one column under 980px. */
 .page { max-width: 1200px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 36px 56px; }
 .masthead { display: grid; gap: 12px; margin: 0 0 28px; }
-.masthead .lede { max-width: 60ch; }
 .player { border-top: 1px solid var(--line); padding-top: 28px; }
 /* On a short, wide window the drawing is held to the window's height; a one-line header gives it that height back. */
 @media (min-width: 981px) and (max-height: 880px) {
@@ -112,11 +112,11 @@ figure { margin: 0; }
 .narr { align-self: stretch; position: relative; border-top: 1px solid var(--ink); }
 .narr-body { position: absolute; inset: 16px 0 0; overflow-y: auto; display: grid; gap: 8px; align-content: start; }
 .narr .count { font-size: 13px; color: var(--faint); font-variant-numeric: tabular-nums; }
-.narr p { font-size: 15.5px; line-height: 1.6; max-width: 72ch; }
+.narr p { font-size: 15.5px; line-height: 1.6; }
 .narr h2 { font-size: 22px; }
 .narr .mark { font-size: 13.5px; }
 .page-foot { margin: 48px 0 0; }
-.page-foot p { max-width: 80ch; margin-bottom: 6px; }
+.page-foot p { margin-bottom: 6px; }
 
 
 /* Embedded in the reader (?embed): no masthead or footer, and the drawing takes the frame's width, since the frame's
