@@ -326,10 +326,10 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 main { min-width: 0; }
 .masthead { display: grid; gap: 12px; margin-bottom: 8px; }
 .masthead .lede { max-width: 64ch; }
-.backdrop { max-width: 66ch; }
+.backdrop { max-width: 64ch; }
 .content { font-size: 17px; }
 .content > .lede { margin: 16px 0 28px; }
-.content p, .content ul, .content ol, .content blockquote { max-width: 66ch; }
+.content p, .content ul, .content ol, .content blockquote { max-width: 64ch; }
 .content p { margin-block: 0 14px; }
 .content ul, .content ol { padding-left: 22px; margin-block: 0 14px; }
 .content li { margin-bottom: 8px; }
@@ -355,8 +355,8 @@ main { min-width: 0; }
 .strip .cell:first-child { border-left: 0; padding-left: 0; }
 .strip .work { font: 400 19px/1.3 var(--sans); }
 .strip .why { font: 400 13.5px/1.5 var(--sans); color: var(--muted); }
-.rules { font: 400 14px/1.55 var(--sans); color: var(--muted); margin-top: 14px; max-width: 80ch; }
-.rules p { margin: 0 0 6px; max-width: 80ch; }
+.rules { font: 400 14px/1.55 var(--sans); color: var(--muted); margin-top: 14px; max-width: 64ch; }
+.rules p { margin: 0 0 6px; }
 .rules ul { margin: 0; padding-left: 18px; }
 .rules li { margin-bottom: 6px; }
 .rules strong { color: var(--ink); }
@@ -371,7 +371,7 @@ main { min-width: 0; }
 .pager a:hover { text-decoration: underline; text-decoration-color: var(--beni); }
 .pager .next { text-align: right; }
 .page-foot { margin-top: 32px; }
-.page-foot p { max-width: 80ch; margin-bottom: 6px; }
+.page-foot p { margin-bottom: 6px; }
 @media (max-width: 900px) {
   .shell { grid-template-columns: minmax(0, 1fr); gap: 20px; padding-block: 20px 44px; }
   .rail { position: static; max-height: none; overflow: visible; padding-block: 0; }
