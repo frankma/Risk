@@ -230,7 +230,7 @@ def build(out):
 <section class="view" id="view-overview" data-id="overview" data-title="Overview" hidden>
   <header class="masthead">
     <p class="mark">Asset management</p>
-    <h1>Risk: an investment risk framework, redesigned around AI</h1>
+    <h1>Risk: an investment risk framework</h1>
     <p class="lede">{html.escape(identity)}</p>
     {f'<p class="backdrop">{html.escape(backdrop)}</p>' if backdrop else ""}
   </header>
