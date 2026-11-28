@@ -230,7 +230,7 @@ def build(out):
 <section class="view" id="view-overview" data-id="overview" data-title="Overview" hidden>
   <header class="masthead">
     <p class="mark">Asset management</p>
-    <h1>Investment Risk Framework</h1>
+    <h1>Risk: an investment risk framework, redesigned around AI</h1>
     <p class="lede">{html.escape(identity)}</p>
     {f'<p class="backdrop">{html.escape(backdrop)}</p>' if backdrop else ""}
   </header>
@@ -474,13 +474,13 @@ PAGE_JS = """
 })();
 """
 
-PAGE = """<title>Investment Risk Framework</title>
+PAGE = """<title>Risk</title>
 <style>
 {css}
 </style>
 <div class="shell">
   <aside class="rail">
-    <a class="rail-name" href="#philosophy">Investment Risk Framework</a>
+    <a class="rail-name" href="#philosophy">Risk</a>
     <a class="rail-film" href="film/">Watch the film</a>
     <div class="find">
       <label for="find">Find in the framework</label>

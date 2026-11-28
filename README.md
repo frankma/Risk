@@ -1,4 +1,4 @@
-# Investment risk framework
+# Risk
 
 **How a risk function at an asset manager should work, with each workflow redesigned around AI.**
 
