@@ -12,7 +12,7 @@ def page(tmp_path_factory):
 def test_the_page_is_a_complete_document(page):
     assert page.startswith("<!doctype html>")
     assert page.endswith("</html>\n")
-    assert "<title>Investment Risk Framework</title>" in page
+    assert "<title>Risk</title>" in page
 
 
 def test_every_chapter_has_a_view(page):
